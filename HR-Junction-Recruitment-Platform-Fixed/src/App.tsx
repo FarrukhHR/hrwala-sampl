@@ -8,7 +8,36 @@ import {
   type Role,
 } from "./data"
 
-type Screen = "auth" | "home" | "portal"
+type Screen = "auth" | "home" | "portal" | "discover"
+type Session = { role: Role; name: string }
+
+// DISCOVER PAGE FILE — APNI NAYI HTML FILE YAHAN CONNECT KAREIN.
+// 1. Complete HTML page ko project ke public folder mein upload karein.
+// 2. Neeche "" ki jagah file ka naam likhein, misal: "discover.html".
+// 3. Us page ke images/CSS/JS bhi public mein unke sahi paths par rakhein.
+// Khali rehne par Discover ka reserved page khulega, "Coming Soon" nahi.
+const DISCOVER_PAGE_FILE: string = ""
+
+function readSession(): Session | null {
+  try {
+    const stored = sessionStorage.getItem("hrj-session")
+    if (!stored) return null
+    const value: unknown = JSON.parse(stored)
+    if (
+      value && typeof value === "object" &&
+      "role" in value && (value.role === "candidate" || value.role === "employer") &&
+      "name" in value && typeof value.name === "string" && value.name.trim()
+    ) return { role: value.role, name: value.name }
+  } catch {
+    // An unavailable or invalid saved demo session must not block the homepage.
+  }
+  return null
+}
+
+function readScreen(): Screen {
+  const hash = window.location.hash.slice(1)
+  return hash === "auth" || hash === "portal" || hash === "discover" ? hash : "home"
+}
 type IconName = "arrow" | "bookmark" | "briefcase" | "calendar" | "check" | "chevron" | "close" | "document" | "download" | "edit" | "location" | "menu" | "search" | "settings" | "user"
 
 function Icon({ name, size = 20 }: { name: IconName; size?: number }) {
@@ -97,15 +126,18 @@ function Logo({
   light = false,
   brandName = "HR Junction",
   inlineBold = false,
+  onHome,
 }: {
   light?: boolean
   brandName?: "HR Junction" | "HR Wala"
   inlineBold?: boolean
+  onHome?: () => void
 }) {
   return (
     <button
       className={`logo ${light ? "logo-light" : ""}`}
-      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      type="button"
+      onClick={onHome || (() => window.scrollTo({ top: 0, behavior: "smooth" }))}
       aria-label="HR Junction home"
     >
       <span className="logo-mark">
@@ -280,8 +312,10 @@ function CustomSelect({
 
 function Auth({
   onSuccess,
+  onCancel,
 }: {
   onSuccess: (role: Role, name: string) => void
+  onCancel: () => void
 }) {
   const [mode, setMode] = useState<"signup" | "signin">("signup")
   const [role, setRole] = useState<Role>("candidate")
@@ -292,8 +326,11 @@ function Auth({
   const [terms, setTerms] = useState(false)
   const [loading, setLoading] = useState(false)
   const [errors, setErrors] = useState<Record<string, string>>({})
+  const submitTimeout = useRef<number | undefined>(undefined)
+  useEffect(() => () => window.clearTimeout(submitTimeout.current), [])
   const submit = (event: React.FormEvent) => {
     event.preventDefault()
+    if (loading) return
     const next: Record<string, string> = {}
     if (mode === "signup" && !name.trim())
       next.name = "Please enter your full name."
@@ -306,7 +343,7 @@ function Auth({
     setErrors(next)
     if (Object.keys(next).length) return
     setLoading(true)
-    window.setTimeout(
+    submitTimeout.current = window.setTimeout(
       () =>
         onSuccess(
           role,
@@ -319,7 +356,7 @@ function Auth({
     <main className="auth-page">
       <section className="auth-brand">
         <div className="auth-brand-inner">
-          <Logo light brandName="HR Wala" />
+          <Logo light brandName="HR Wala" onHome={onCancel} />
           <div>
             <span className="eyebrow light">
               PAKISTAN’S PROFESSIONAL TALENT PLATFORM
@@ -345,8 +382,11 @@ function Auth({
       </section>
       <section className="auth-form-side">
         <form className="auth-card" onSubmit={submit} noValidate>
+          <div style={{ marginBottom: 20 }}>
+            <Button variant="ghost" onClick={onCancel}>← Back to website</Button>
+          </div>
           <div className="mobile-auth-logo">
-            <Logo brandName="HR Wala" />
+            <Logo brandName="HR Wala" onHome={onCancel} />
           </div>
           <div className="auth-tabs">
             <button
@@ -482,17 +522,29 @@ function Auth({
   )
 }
 
+type HeaderProps = {
+  role: Role
+  name: string
+  isAuthenticated: boolean
+  currentPage: "home" | "discover"
+  onHome: () => void
+  onDiscover: () => void
+  onSignIn: () => void
+  onPortal: () => void
+  onSignOut: () => void
+}
+
 function Header({
   role,
   name,
+  isAuthenticated,
+  currentPage,
+  onHome,
+  onDiscover,
+  onSignIn,
   onPortal,
   onSignOut,
-}: {
-  role: Role
-  name: string
-  onPortal: () => void
-  onSignOut: () => void
-}) {
+}: HeaderProps) {
   const [menu, setMenu] = useState(false)
   const [mobile, setMobile] = useState(false)
   const initials = name
@@ -500,74 +552,72 @@ function Header({
     .map((part) => part[0])
     .slice(0, 2)
     .join("")
-  const scroll = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
+  const visit = (action: () => void) => {
     setMobile(false)
+    setMenu(false)
+    action()
   }
   return (
     <header className="site-header">
       <div className="container header-inner">
-        <Logo brandName="HR Wala" inlineBold />
+        <Logo brandName="HR Wala" inlineBold onHome={() => visit(onHome)} />
         <nav
           className={mobile ? "main-nav open" : "main-nav"}
           aria-label="Main navigation"
         >
-          {/* <button onClick={() => scroll("top")}>Discover</button>
-          <button onClick={() => scroll("talent")}>Jobs</button>
-          <button onClick={() => scroll("latest-jobs")}>Software</button>
-          <button onClick={onPortal}>My Portal</button> */}
-
-          <nav>
-  <button
-    type="button"
-    onClick={() => window.location.assign("/coming-soon.html")}
-  >
-    Discover
-  </button>
-
-  <button type="button" aria-current="page">
-    Jobs
-  </button>
-
-  <button
-    type="button"
-    onClick={() => window.location.assign("/coming-soon.html")}
-  >
-    Software
-  </button>
-
-  <button type="button" onClick={onPortal}>
-    My Portal
-  </button>
-</nav>
+          <button
+            type="button"
+            aria-current={currentPage === "discover" ? "page" : undefined}
+            style={currentPage === "discover" ? { color: "var(--blue)", fontWeight: 700 } : undefined}
+            onClick={() => visit(onDiscover)}
+          >
+            Discover
+          </button>
+          <button
+            type="button"
+            aria-current={currentPage === "home" ? "page" : undefined}
+            style={currentPage === "home" ? { color: "var(--blue)", fontWeight: 700 } : undefined}
+            onClick={() => visit(onHome)}
+          >
+            Jobs
+          </button>
+          <button
+            type="button"
+            onClick={() => visit(() => window.location.assign(`${import.meta.env.BASE_URL}coming-soon.html`))}
+          >
+            Software
+          </button>
+          <button type="button" onClick={() => visit(onPortal)}>My Portal</button>
         </nav>
 
-                  <div className="profile-wrap">
+        <div className="profile-wrap">
           <button
+            type="button"
             className="profile-trigger"
-            onClick={() => setMenu(!menu)}
-            aria-expanded={menu}
+            onClick={() => isAuthenticated ? setMenu(!menu) : visit(onSignIn)}
+            aria-label={isAuthenticated ? "Open profile menu" : "Log in or sign up"}
+            aria-expanded={isAuthenticated ? menu : undefined}
           >
-            <span className="avatar">{initials}</span>
+            <span className="avatar">{isAuthenticated ? initials : <Icon name="user" />}</span>
             <span>
-              <b>{name}</b>
-              <small>{role === "candidate" ? "Candidate" : "Employer"}</small>
+              <b>{isAuthenticated ? name : "My Account"}</b>
+              <small>{isAuthenticated ? (role === "candidate" ? "Candidate" : "Employer") : "Log in / Sign up"}</small>
             </span>
-            <Icon name="chevron" size={16} />
+            {isAuthenticated && <Icon name="chevron" size={16} />}
           </button>
-          {menu && (
+          {isAuthenticated && menu && (
             <div className="profile-menu">
-              <button onClick={onPortal}>
+              <button onClick={() => visit(onPortal)}>
                 <Icon name="edit" /> View / Edit Profile
               </button>
-              <button onClick={onPortal}>
+              <button onClick={() => visit(onPortal)}>
                 <Icon name="briefcase" /> My Portal
               </button>
-              <button onClick={onPortal}>
+              <button onClick={() => visit(onPortal)}>
                 <Icon name="settings" /> Settings
               </button>
               <hr />
-              <button onClick={onSignOut}>Sign out</button>
+              <button onClick={() => visit(onSignOut)}>Sign out</button>
             </div>
           )}
         </div>
@@ -575,6 +625,7 @@ function Header({
           className="mobile-menu"
           onClick={() => setMobile(!mobile)}
           aria-label="Toggle navigation"
+          aria-expanded={mobile}
         >
           <Icon name={mobile ? "close" : "menu"} />
         </button>
@@ -880,11 +931,15 @@ function ProfileDrawer({
 function JobDrawer({
   job,
   role,
+  isAuthenticated,
+  onSignIn,
   onClose,
   onApply,
 }: {
   job: Job
   role: Role
+  isAuthenticated: boolean
+  onSignIn: () => void
   onClose: () => void
   onApply: () => void
 }) {
@@ -927,7 +982,9 @@ function JobDrawer({
           Illustrative demo listing; verify all details with the employer.
         </small>
       </div>
-      {role === "candidate" ? (
+      {!isAuthenticated ? (
+        <Button className="full" onClick={onSignIn}>Log in / Sign up to apply</Button>
+      ) : role === "candidate" ? (
         <Button className="full" disabled={applied} onClick={apply}>
           {applied ? "Application submitted" : "Apply with demo profile"}
         </Button>
@@ -944,7 +1001,7 @@ function JobDrawer({
   )
 }
 
-function Footer({ onPortal }: { onPortal: () => void }) {
+function Footer({ onPortal, onHome }: { onPortal: () => void; onHome?: () => void }) {
   const pending = () =>
     window.alert(
       "Prototype content pending: live support and legal policy details are not configured.",
@@ -953,32 +1010,32 @@ function Footer({ onPortal }: { onPortal: () => void }) {
     <footer className="footer container">
       <div className="footer-grid">
         <div className="footer-brand">
-          <Logo light />
+          <Logo light onHome={onHome} />
           <p>Connecting professionals and employers across Pakistan.</p>
           <span>Where talent meets opportunity.</span>
         </div>
         <div>
           <h4>Explore</h4>
           <button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            onClick={onHome || (() => window.scrollTo({ top: 0, behavior: "smooth" }))}
           >
             Home
           </button>
           <button
-            onClick={() =>
+            onClick={onHome || (() =>
               document
                 .getElementById("talent")
                 ?.scrollIntoView({ behavior: "smooth" })
-            }
+            )}
           >
             Find Talent
           </button>
           <button
-            onClick={() =>
+            onClick={onHome || (() =>
               document
                 .getElementById("latest-jobs")
                 ?.scrollIntoView({ behavior: "smooth" })
-            }
+            )}
           >
             Latest Jobs
           </button>
@@ -1004,17 +1061,8 @@ function Footer({ onPortal }: { onPortal: () => void }) {
   )
 }
 
-function Home({
-  role,
-  name,
-  onPortal,
-  onSignOut,
-}: {
-  role: Role
-  name: string
-  onPortal: () => void
-  onSignOut: () => void
-}) {
+function Home(props: HeaderProps) {
+  const { role, isAuthenticated, onPortal, onSignIn } = props
   const [functionFilter, setFunctionFilter] = useState("HR")
   const [category, setCategory] = useState("HR Management")
   const [jobType, setJobType] = useState("Full-time")
@@ -1058,12 +1106,7 @@ function Home({
   }
   return (
     <div id="top">
-      <Header
-        role={role}
-        name={name}
-        onPortal={onPortal}
-        onSignOut={onSignOut}
-      />
+      <Header {...props} />
       <Hero />
       <main>
         <section className="section container" id="talent">
@@ -1191,6 +1234,10 @@ function Home({
                     job={job}
                     saved={saved.includes(job.company)}
                     onSave={() => {
+                      if (!isAuthenticated) {
+                        onSignIn()
+                        return
+                      }
                       setSaved((items) =>
                         items.includes(job.company)
                           ? items.filter((item) => item !== job.company)
@@ -1228,6 +1275,7 @@ function Home({
             )}
           </div>
         </section>
+        <HomeComingSoon />
       </main>
       <Footer onPortal={onPortal} />
       {activeCandidate && (
@@ -1240,6 +1288,8 @@ function Home({
         <JobDrawer
           job={activeJob}
           role={role}
+          isAuthenticated={isAuthenticated}
+          onSignIn={onSignIn}
           onClose={() => setActiveJob(null)}
           onApply={() => notify("Application added to My Portal")}
         />
@@ -1250,6 +1300,55 @@ function Home({
           {toast}
         </div>
       )}
+    </div>
+  )
+}
+
+function HomeComingSoon() {
+  return (
+    <section className="section container" id="coming-soon" aria-labelledby="coming-soon-title" style={{ paddingBottom: 0 }}>
+      <div style={{
+        padding: "clamp(40px, 7vw, 80px) 24px",
+        borderRadius: 20,
+        textAlign: "center",
+        background: "linear-gradient(135deg, var(--navy, #142b49), var(--blue-dark, #174ec8))",
+        color: "var(--white, #ffffff)",
+      }}>
+        <span className="eyebrow light">WHAT’S NEXT</span>
+        <h2 id="coming-soon-title" style={{ fontSize: "clamp(36px, 5vw, 56px)", lineHeight: 1.15, letterSpacing: "-.03em", margin: "18px 0 14px" }}>
+          Coming Soon
+        </h2>
+        <p style={{ maxWidth: 520, margin: "0 auto", color: "#dbeafe" }}>
+          More ways to connect talent with opportunity. Stay tuned.
+        </p>
+      </div>
+    </section>
+  )
+}
+
+function DiscoverPage(props: HeaderProps) {
+  return (
+    <div id="top">
+      <Header {...props} />
+      <main className="section container" style={{ minHeight: "65vh" }}>
+        <div className="section-heading">
+          <div>
+            <span className="eyebrow">HR WALA</span>
+            <h1 style={{ color: "var(--navy)", fontSize: "clamp(36px, 5vw, 56px)", marginTop: 18 }}>Discover</h1>
+          </div>
+          <Button variant="secondary" onClick={props.onHome}>Back to Jobs</Button>
+        </div>
+
+        {/* DISCOVER CONTENT START
+            React/TSX page ho to yahan us ka component render karein.
+            Complete HTML file ho to upar DISCOVER_PAGE_FILE mein us ka naam
+            dein aur file public folder mein upload karein.
+            Yeh reserved area jaan-boojh kar khali hai.
+        */}
+        <div id="discover-page-content" style={{ minHeight: 280 }} />
+        {/* DISCOVER CONTENT END */}
+      </main>
+      <Footer onPortal={props.onPortal} onHome={props.onHome} />
     </div>
   )
 }
@@ -2169,39 +2268,96 @@ function JobPostDrawer({ onClose }: { onClose: () => void }) {
 }
 
 export default function App() {
-  const existing = sessionStorage.getItem("hrj-session")
-  const initial = existing
-    ? JSON.parse(existing) as { role: Role; name: string }
-    : null
-  const [screen, setScreen] = useState<Screen>(initial ? "home" : "auth")
-  const [role, setRole] = useState<Role>(initial?.role || "candidate")
-  const [name, setName] = useState(initial?.name || "")
+  // The bare domain always opens Home, even when no user has signed in.
+  const [session, setSession] = useState<Session | null>(readSession)
+  const [screen, setScreen] = useState<Screen>(readScreen)
+  const [authDestination, setAuthDestination] = useState<"home" | "portal" | "discover">("home")
+  const [authReturnScreen, setAuthReturnScreen] = useState<"home" | "discover">("home")
+  const role = session?.role || "candidate"
+  const name = session?.name || ""
+
+  const navigate = (next: Screen, replace = false) => {
+    const hash = next === "home" ? "" : `#${next}`
+    const url = `${window.location.pathname}${window.location.search}${hash}`
+    if (replace) window.history.replaceState(null, "", url)
+    else if (window.location.hash !== hash) window.history.pushState(null, "", url)
+    setScreen(next)
+  }
+
+  useEffect(() => {
+    const syncScreen = () => setScreen(readScreen())
+    window.addEventListener("popstate", syncScreen)
+    window.addEventListener("hashchange", syncScreen)
+    return () => {
+      window.removeEventListener("popstate", syncScreen)
+      window.removeEventListener("hashchange", syncScreen)
+    }
+  }, [])
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" })
+  }, [screen])
+
+  const requestAuth = (destination: "home" | "portal" | "discover") => {
+    setAuthDestination(destination)
+    setAuthReturnScreen(screen === "discover" ? "discover" : "home")
+    navigate("auth")
+  }
+
   const authenticate = (nextRole: Role, nextName: string) => {
-    setRole(nextRole)
-    setName(nextName)
-    sessionStorage.setItem(
-      "hrj-session",
-      JSON.stringify({ role: nextRole, name: nextName }),
-    )
-    setScreen("home")
+    const nextSession = { role: nextRole, name: nextName }
+    setSession(nextSession)
+    try {
+      sessionStorage.setItem("hrj-session", JSON.stringify(nextSession))
+    } catch {
+      // Continue for this visit when the browser blocks session storage.
+    }
+    navigate(screen === "portal" ? "portal" : authDestination, true)
   }
+
   const signOut = () => {
-    sessionStorage.removeItem("hrj-session")
-    setScreen("auth")
+    try {
+      sessionStorage.removeItem("hrj-session")
+    } catch {
+      // The in-memory session is still cleared.
+    }
+    setSession(null)
+    navigate("home", true)
   }
-  if (screen === "auth") return <Auth onSuccess={authenticate} />
-  if (screen === "portal")
+
+  const openPortal = () => {
+    if (session) navigate("portal")
+    else requestAuth("portal")
+  }
+
+  const openDiscover = () => {
+    if (DISCOVER_PAGE_FILE.trim()) {
+      window.location.assign(`${import.meta.env.BASE_URL}${DISCOVER_PAGE_FILE.replace(/^\/+/, "")}`)
+    } else {
+      navigate("discover")
+    }
+  }
+
+  if (screen === "auth" || (screen === "portal" && !session)) {
+    return <Auth onSuccess={authenticate} onCancel={() => navigate(authReturnScreen, true)} />
+  }
+  if (screen === "portal" && session)
     return role === "candidate" ? (
-      <CandidatePortal name={name} onHome={() => setScreen("home")} />
+      <CandidatePortal name={name} onHome={() => navigate("home")} />
     ) : (
-      <EmployerPortal name={name} onHome={() => setScreen("home")} />
+      <EmployerPortal name={name} onHome={() => navigate("home")} />
     )
-  return (
-    <Home
-      role={role}
-      name={name}
-      onPortal={() => setScreen("portal")}
-      onSignOut={signOut}
-    />
-  )
+
+  const headerProps: HeaderProps = {
+    role,
+    name,
+    isAuthenticated: !!session,
+    currentPage: screen === "discover" ? "discover" : "home",
+    onHome: () => navigate("home"),
+    onDiscover: openDiscover,
+    onSignIn: () => requestAuth(screen === "discover" ? "discover" : "home"),
+    onPortal: openPortal,
+    onSignOut: signOut,
+  }
+  return screen === "discover" ? <DiscoverPage {...headerProps} /> : <Home {...headerProps} />
 }
