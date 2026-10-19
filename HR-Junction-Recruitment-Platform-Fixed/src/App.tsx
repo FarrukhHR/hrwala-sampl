@@ -512,9 +512,9 @@ function Header({
           className={mobile ? "main-nav open" : "main-nav"}
           aria-label="Main navigation"
         >
-          <button onClick={() => scroll("top")}>Home</button>
-          <button onClick={() => scroll("talent")}>Find Talent</button>
-          <button onClick={() => scroll("latest-jobs")}>Jobs</button>
+          <button onClick={() => scroll("top")}>Discover</button>
+          <button onClick={() => scroll("talent")}>Jobs</button>
+          <button onClick={() => scroll("latest-jobs")}>Softwares</button>
           <button onClick={onPortal}>My Portal</button>
         </nav>
         <div className="profile-wrap">
