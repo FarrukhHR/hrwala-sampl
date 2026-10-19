@@ -526,7 +526,7 @@ function Header({
   Discover
 </button>
 
-<button type="button" aria-current="page">
+<button type="button" aria-current="/App.tsx">
   Jobs
 </button>
 
