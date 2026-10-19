@@ -515,31 +515,34 @@ function Header({
           {/* <button onClick={() => scroll("top")}>Discover</button>
           <button onClick={() => scroll("talent")}>Jobs</button>
           <button onClick={() => scroll("latest-jobs")}>Software</button>
-          <button onClick={onPortal}>My Portal</button>
-        </nav> */}
+          <button onClick={onPortal}>My Portal</button> */}
 
-          <button
-  onClick={() => {
-    window.location.href = "/coming-soon.html";
-  }}
->
-  Discover
-</button>
+          <nav>
+  <button
+    type="button"
+    onClick={() => window.location.assign("/coming-soon.html")}
+  >
+    Discover
+  </button>
 
-<button type="button" aria-current="/App.tsx">
-  Jobs
-</button>
+  <button type="button" aria-current="page">
+    Jobs
+  </button>
 
-<button
-  onClick={() => {
-    window.location.href = "/coming-soon.html";
-  }}
->
-  Software
-</button>
+  <button
+    type="button"
+    onClick={() => window.location.assign("/coming-soon.html")}
+  >
+    Software
+  </button>
 
-<button onClick={onPortal}>My Portal</button>
-        <div className="profile-wrap">
+  <button type="button" onClick={onPortal}>
+    My Portal
+  </button>
+</nav>
+        </nav>
+
+                  <div className="profile-wrap">
           <button
             className="profile-trigger"
             onClick={() => setMenu(!menu)}
