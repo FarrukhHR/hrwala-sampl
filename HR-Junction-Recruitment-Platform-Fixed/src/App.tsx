@@ -514,7 +514,7 @@ function Header({
         >
           <button onClick={() => scroll("top")}>Discover</button>
           <button onClick={() => scroll("talent")}>Jobs</button>
-          <button onClick={() => scroll("latest-jobs")}>Softwares</button>
+          <button onClick={() => scroll("latest-jobs")}>Software</button>
           <button onClick={onPortal}>My Portal</button>
         </nav>
         <div className="profile-wrap">
