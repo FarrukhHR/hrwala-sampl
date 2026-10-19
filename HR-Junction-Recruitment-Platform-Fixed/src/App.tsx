@@ -11,12 +11,9 @@ import {
 type Screen = "auth" | "home" | "portal" | "discover"
 type Session = { role: Role; name: string }
 
-// DISCOVER PAGE FILE — APNI NAYI HTML FILE YAHAN CONNECT KAREIN.
-// 1. Complete HTML page ko project ke public folder mein upload karein.
-// 2. Neeche "" ki jagah file ka naam likhein, misal: "discover.html".
-// 3. Us page ke images/CSS/JS bhi public mein unke sahi paths par rakhein.
-// Khali rehne par Discover ka reserved page khulega, "Coming Soon" nahi.
-const DISCOVER_PAGE_FILE: string = ""
+// Front page: upload the supplied discover.html to the project's public folder.
+// Bare domain -> Discover. The existing recruitment page is available at /#jobs.
+const DISCOVER_PAGE_FILE: string = "discover.html"
 
 function readSession(): Session | null {
   try {
@@ -36,7 +33,10 @@ function readSession(): Session | null {
 
 function readScreen(): Screen {
   const hash = window.location.hash.slice(1)
-  return hash === "auth" || hash === "portal" || hash === "discover" ? hash : "home"
+  if (hash === "jobs" || hash === "home") return "home"
+  if (hash === "auth" || hash === "login" || hash === "register") return "auth"
+  if (hash === "portal") return "portal"
+  return "discover"
 }
 type IconName = "arrow" | "bookmark" | "briefcase" | "calendar" | "check" | "chevron" | "close" | "document" | "download" | "edit" | "location" | "menu" | "search" | "settings" | "user"
 
@@ -313,11 +313,13 @@ function CustomSelect({
 function Auth({
   onSuccess,
   onCancel,
+  initialMode = "signup",
 }: {
   onSuccess: (role: Role, name: string) => void
   onCancel: () => void
+  initialMode?: "signup" | "signin"
 }) {
-  const [mode, setMode] = useState<"signup" | "signin">("signup")
+  const [mode, setMode] = useState<"signup" | "signin">(initialMode)
   const [role, setRole] = useState<Role>("candidate")
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
@@ -560,7 +562,7 @@ function Header({
   return (
     <header className="site-header">
       <div className="container header-inner">
-        <Logo brandName="HR Wala" inlineBold onHome={() => visit(onHome)} />
+        <Logo brandName="HR Wala" inlineBold onHome={() => visit(onDiscover)} />
         <nav
           className={mobile ? "main-nav open" : "main-nav"}
           aria-label="Main navigation"
@@ -1022,20 +1024,20 @@ function Footer({ onPortal, onHome }: { onPortal: () => void; onHome?: () => voi
             Home
           </button>
           <button
-            onClick={onHome || (() =>
+            onClick={() =>
               document
                 .getElementById("talent")
                 ?.scrollIntoView({ behavior: "smooth" })
-            )}
+            }
           >
             Find Talent
           </button>
           <button
-            onClick={onHome || (() =>
+            onClick={() =>
               document
                 .getElementById("latest-jobs")
                 ?.scrollIntoView({ behavior: "smooth" })
-            )}
+            }
           >
             Latest Jobs
           </button>
@@ -1277,7 +1279,7 @@ function Home(props: HeaderProps) {
         </section>
         <HomeComingSoon />
       </main>
-      <Footer onPortal={onPortal} />
+      <Footer onPortal={onPortal} onHome={props.onDiscover} />
       {activeCandidate && (
         <ProfileDrawer
           person={activeCandidate}
@@ -1326,30 +1328,17 @@ function HomeComingSoon() {
   )
 }
 
-function DiscoverPage(props: HeaderProps) {
+function DiscoverPage() {
+  const href = `${import.meta.env.BASE_URL}${DISCOVER_PAGE_FILE}`
+  useEffect(() => {
+    // Replace this intermediate entry so Back does not repeat the redirect.
+    window.location.replace(href)
+  }, [href])
   return (
-    <div id="top">
-      <Header {...props} />
-      <main className="section container" style={{ minHeight: "65vh" }}>
-        <div className="section-heading">
-          <div>
-            <span className="eyebrow">HR WALA</span>
-            <h1 style={{ color: "var(--navy)", fontSize: "clamp(36px, 5vw, 56px)", marginTop: 18 }}>Discover</h1>
-          </div>
-          <Button variant="secondary" onClick={props.onHome}>Back to Jobs</Button>
-        </div>
-
-        {/* DISCOVER CONTENT START
-            React/TSX page ho to yahan us ka component render karein.
-            Complete HTML file ho to upar DISCOVER_PAGE_FILE mein us ka naam
-            dein aur file public folder mein upload karein.
-            Yeh reserved area jaan-boojh kar khali hai.
-        */}
-        <div id="discover-page-content" style={{ minHeight: 280 }} />
-        {/* DISCOVER CONTENT END */}
-      </main>
-      <Footer onPortal={props.onPortal} onHome={props.onHome} />
-    </div>
+    <main className="section container" style={{ minHeight: "60vh" }}>
+      <p role="status">Opening Discover…</p>
+      <a className="btn btn-primary" href={href}>Continue to Discover</a>
+    </main>
   )
 }
 
@@ -2268,16 +2257,22 @@ function JobPostDrawer({ onClose }: { onClose: () => void }) {
 }
 
 export default function App() {
-  // The bare domain always opens Home, even when no user has signed in.
+  // The bare domain opens Discover. The existing Home component is the Jobs page.
   const [session, setSession] = useState<Session | null>(readSession)
   const [screen, setScreen] = useState<Screen>(readScreen)
-  const [authDestination, setAuthDestination] = useState<"home" | "portal" | "discover">("home")
-  const [authReturnScreen, setAuthReturnScreen] = useState<"home" | "discover">("home")
+  const [authDestination, setAuthDestination] = useState<"home" | "portal" | "discover">("discover")
+  const [authReturnScreen, setAuthReturnScreen] = useState<"home" | "discover">("discover")
   const role = session?.role || "candidate"
   const name = session?.name || ""
 
   const navigate = (next: Screen, replace = false) => {
-    const hash = next === "home" ? "" : `#${next}`
+    if (next === "discover") {
+      const href = `${import.meta.env.BASE_URL}${DISCOVER_PAGE_FILE}`
+      if (replace) window.location.replace(href)
+      else window.location.assign(href)
+      return
+    }
+    const hash = next === "home" ? "#jobs" : `#${next}`
     const url = `${window.location.pathname}${window.location.search}${hash}`
     if (replace) window.history.replaceState(null, "", url)
     else if (window.location.hash !== hash) window.history.pushState(null, "", url)
@@ -2322,7 +2317,7 @@ export default function App() {
       // The in-memory session is still cleared.
     }
     setSession(null)
-    navigate("home", true)
+    navigate("discover", true)
   }
 
   const openPortal = () => {
@@ -2331,21 +2326,21 @@ export default function App() {
   }
 
   const openDiscover = () => {
-    if (DISCOVER_PAGE_FILE.trim()) {
-      window.location.assign(`${import.meta.env.BASE_URL}${DISCOVER_PAGE_FILE.replace(/^\/+/, "")}`)
-    } else {
-      navigate("discover")
-    }
+    navigate("discover")
   }
 
   if (screen === "auth" || (screen === "portal" && !session)) {
-    return <Auth onSuccess={authenticate} onCancel={() => navigate(authReturnScreen, true)} />
+    return <Auth
+      initialMode={window.location.hash === "#login" ? "signin" : "signup"}
+      onSuccess={authenticate}
+      onCancel={() => navigate(authReturnScreen, true)}
+    />
   }
   if (screen === "portal" && session)
     return role === "candidate" ? (
-      <CandidatePortal name={name} onHome={() => navigate("home")} />
+      <CandidatePortal name={name} onHome={() => navigate("discover")} />
     ) : (
-      <EmployerPortal name={name} onHome={() => navigate("home")} />
+      <EmployerPortal name={name} onHome={() => navigate("discover")} />
     )
 
   const headerProps: HeaderProps = {
@@ -2359,5 +2354,5 @@ export default function App() {
     onPortal: openPortal,
     onSignOut: signOut,
   }
-  return screen === "discover" ? <DiscoverPage {...headerProps} /> : <Home {...headerProps} />
+  return screen === "discover" ? <DiscoverPage /> : <Home {...headerProps} />
 }
