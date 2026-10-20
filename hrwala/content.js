@@ -1,0 +1,35 @@
+/* Edit this file to replace demonstration content with approved business assets. */
+window.HRWALA = {
+  contactEndpoint: '', // HTTPS endpoint accepting a JSON POST. Empty = downloadable enquiry only.
+  services: [
+    {title:'HR Consultants', tag:'People & strategy', icon:'people', text:'Build stronger teams with people-first advice, practical policies and a clear HR direction.', video:'assets/service-1.mp4', poster:'assets/poster-1.webp', demo:true, detail:'From organisational structure and workforce planning to employee relations, align your people practices with your business goals.'},
+    {title:'Brand Standards', tag:'Consistency & compliance', icon:'shield', text:'Turn your standards into everyday practices that protect your people and your brand.', video:'assets/service-2.mp4', poster:'assets/poster-2.webp', demo:true, detail:'Establish clear operating standards, review compliance and create consistent employee and customer experiences across your organisation.'},
+    {title:'Job Portal', tag:'Talent & opportunity', icon:'briefcase', text:'A considered space for candidates and employers to find their next great connection.', video:'assets/service-3.mp4', poster:'assets/poster-3.webp', demo:true, detail:'Explore opportunities, save the roles that fit and build a profile that introduces your skills. This preview uses illustrative listings.'},
+    {title:'HR Wala Software', tag:'Systems & simplicity', icon:'grid', text:'Bring the employee lifecycle together in one connected HRIS experience.', video:'assets/service-4.mp4', poster:'assets/poster-4.webp', demo:true, detail:'Connect your HR workflows, from talent acquisition and onboarding to payroll, performance and separation.'}
+  ],
+  modules:[
+    ['Budgeting','Plan people costs with clarity.','Map workforce budgets, departmental allocations and planned employee costs.','Finance'],
+    ['Talent Acquisition','Bring the right people on board.','Organise vacancies, candidate pipelines and hiring stages in one place.','People'],
+    ['On-boarding','Make every first day count.','Coordinate joining tasks, documentation and an organised welcome for new employees.','People'],
+    ['Leaves & Attendance','Keep time and leave connected.','View attendance, manage leave requests and simplify approval workflows.','Operations'],
+    ['Payroll','Make payday more organised.','Prepare payroll inputs, salary components and payslip workflows.','Finance'],
+    ['Employee Dashboard','A personal space for every employee.','Give employees a clear view of their information, requests and everyday HR tasks.','People'],
+    ['Separation','Close the loop professionally.','Coordinate exit requests, clearance activities and offboarding documentation.','Operations'],
+    ['Employee Benefits','Make benefits easier to manage.','Organise benefit records and employee entitlements with a consistent process.','Finance'],
+    ['360 degree Performance','See performance from every angle.','Structure goals and feedback from multiple perspectives to support development.','Growth'],
+    ['HR Dashboards','Turn information into perspective.','Bring key workforce information together for clearer HR reporting.','Operations'],
+    ['E-Learning','Keep your people moving forward.','Organise learning resources and track employee development activities.','Growth'],
+    ['Discipline & Policies','Put clarity behind every policy.','Maintain policy resources and structured records for disciplinary processes.','Operations']
+  ],
+  certifications:['Brand standards and compliance','Certified P & C Practitioner','Certified Administrator','Certified Manager Learning & Development','Certified P & C Business Partner','Certified Master Trainer','Certified HRIS Administrator','Certified International Recruiter'],
+  team: Array.from({length:8},(_,i)=>({name:'Team member '+String(i+1).padStart(2,'0'),role:['Leadership','HR Consulting','Brand Standards','Talent Acquisition','Learning & Development','HR Technology','People Operations','Client Experience'][i],image:'',bio:'Approved member name, professional portrait and biography will appear here.'})),
+  partners: Array.from({length:16},(_,i)=>({name:'Partner '+String(i+1).padStart(2,'0'),logo:''})),
+  jobs:[
+    {id:1,title:'People & Culture Manager',company:'Example Company A',location:'Karachi',type:'Full-time',mode:'On-site',level:'Mid-level',salary:'PKR 180,000–250,000',category:'Human Resources',description:'Lead people operations and help create a thoughtful employee experience.',requirements:['Experience managing HR operations and employee relations','Strong communication and team leadership','Confidence with HR reporting and local workplace practices']},
+    {id:2,title:'Talent Acquisition Specialist',company:'Example Company B',location:'Lahore',type:'Full-time',mode:'Hybrid',level:'Mid-level',salary:'PKR 100,000–160,000',category:'Recruitment',description:'Connect talented people with meaningful opportunities across a growing team.',requirements:['Experience managing end-to-end recruitment','Clear stakeholder communication','Comfort working with candidate pipelines']},
+    {id:3,title:'HRIS Administrator',company:'Example Company C',location:'Islamabad',type:'Full-time',mode:'Remote',level:'Mid-level',salary:'PKR 120,000–180,000',category:'HR Technology',description:'Support reliable HR systems and organised employee information.',requirements:['Experience supporting HR information systems','Careful data handling and attention to detail','Ability to train and support system users']},
+    {id:4,title:'Learning & Development Lead',company:'Example Company D',location:'Karachi',type:'Contract',mode:'Hybrid',level:'Senior',salary:'PKR 200,000–300,000',category:'Learning & Development',description:'Create learning experiences that help employees develop relevant skills.',requirements:['Experience designing learning programmes','Facilitation and stakeholder management','Ability to evaluate learning outcomes']},
+    {id:5,title:'HR Operations Associate',company:'Example Company E',location:'Lahore',type:'Full-time',mode:'On-site',level:'Entry-level',salary:'PKR 60,000–90,000',category:'Human Resources',description:'Support smooth onboarding, employee records and everyday people operations.',requirements:['Strong organisation and communication','Familiarity with spreadsheets','Interest in employee experience']},
+    {id:6,title:'Employer Brand Designer',company:'Example Company F',location:'Islamabad',type:'Part-time',mode:'Remote',level:'Mid-level',salary:'PKR 80,000–120,000',category:'Brand & Compliance',description:'Bring an employer brand to life through thoughtful visual communication.',requirements:['A portfolio of brand and digital work','Understanding of visual identity systems','Ability to collaborate with HR and marketing teams']}
+  ]
+};
