@@ -1,0 +1,101 @@
+HR WALA.NET — COMPLETE FIGMA MAKE DESIGN & IMPLEMENTATION BRIEF
+
+Create a premium, responsive, two-page website for HR Wala.net. Deliver complete, organised, GitHub-ready code with no missing imports or unpublished dependencies. The two pages are Discover (the default landing page) and Job Portal. Other sections open within Discover or in accessible dialogs; do not create extra navigation pages. Use English interface copy.
+
+POSITIONING & EXPERIENCE
+HR Wala connects organisations, employees, candidates and employers through HR consultancy, brand standards, professional development, job opportunities and HRIS software. Make the interface as understandable and task-focused as LinkedIn or Indeed, but with an original visual identity. Avoid copying either platform. Blend a premium editorial landing page with a clear, practical jobs interface.
+
+DESIGN SYSTEM
+Royal Blue #1738B4; Deep Royal Blue #132875; Royal Golden #B68A39; pale gold #EEE0BD; Royal Black #10151F; warm ivory #F9F9F6; white #FFFFFF; text #192132; muted text #647084; hairline #E2E5EB. Use ivory/white for most reading areas. Reserve black for the software section and footer, deep blue for the contact section. Use gold as a controlled accent, not as small low-contrast body text.
+Typography: Inter or a similarly clean professional sans serif. Headings 500–600 weight, compact tracking; body 400. Desktop H1 60–66px, H2 42–48px, paragraph 15–17px. Mobile H1 36–44px, H2 30–34px. Small numbered section labels in uppercase with generous letter spacing. Avoid ornate fonts, excessive gradients, heavy glass effects and generic purple SaaS styling.
+Desktop design: 1440px frame, centred content max-width 1280px, outer margins around 48–80px, 12-column grid, 80–96px section spacing. Small rounded controls (6–8px), media corners 12–16px, thin dividers, soft selective shadows. Use varied editorial compositions rather than putting everything inside identical cards.
+Mobile frame: 390px, 18–20px horizontal margins, 48–56px section spacing, no horizontal page overflow. Tablet frame: 768px.
+
+HEADER
+Sticky, approximately 80–90px high desktop. Left: a restrained typographic HR Wala.net wordmark, blue square monogram and gold .net detail. This is a provisional mark until an approved logo is supplied. Centre: exactly two primary page links, Discover and Job Portal. Active page uses a blue underline. Right: For employers (links to Contact), Create your profile (opens a profile flow). Mobile uses an accessible menu with an expanded/collapsed state. Do not add dead links, fictitious social URLs or extra pages.
+
+DISCOVER — EXACT SECTION ORDER
+
+1. HERO / ANIMATED SLIDING BANNER
+Use a split editorial composition: strong copy on the left, a large circular portrait treatment on the right. The reference concept is a person inside a circle, surrounded by floating labels. Create a new photorealistic professional South Asian woman in a tailored royal blue blazer over an ivory blouse, arms folded, warm confident expression. Use a transparent cutout inside an ivory/gold/soft-blue circular disc with a white rim and two fine orbit rings. Do not reuse the reference speaker’s face, name, words or purple palette.
+Around the circle place three restrained white floating labels: People first / HR CONSULTING; Your next chapter / CAREER OPPORTUNITIES; Work, simplified / CONNECTED HRIS. Animate slow, independent vertical floating motion, 5–7 seconds, 6–12px travel. Include tiny gold/blue orbit dots. Make the labels DOM elements, not text baked into the photograph.
+Hero copy slide 1: eyebrow PEOPLE AT THE HEART OF PROGRESS; headline “Better people. Stronger businesses. New possibilities.” with the final phrase blue; body “Expertise, opportunity and technology. Everything your people need to move forward.” CTA “Discover our solutions” and secondary “Find your next role”.
+Slide 2: “Your experience. Your ambition. Your next chapter.” Body: “A space for meaningful career connections. Find the opportunity that moves you forward.”
+Slide 3: “Connected systems. Clearer decisions. People, empowered.” Body: “Bring the employee journey together. Make room for what matters most.”
+Use a gentle slideshow around 6–7 seconds with manual dots and a pause control. No aggressive blinking or flashes. Pause on focus/hover and respect prefers-reduced-motion. Avoid layout jumps between headlines. Under hero, add a fine divider with slide index and scroll cue, followed by a narrow light-grey strip: People-led thinking / Professional standards / Meaningful opportunities / Connected technology.
+
+2. FOUR SERVICE VIDEOS
+Heading “A conversation. A clearer way forward.” Four equal video tiles in one desktop row, 2×2 on mobile. Services: HR Consultants, Brand Standards, Job Portal, HR Wala Software. Each tile has its video, compact category, title, play affordance and sound toggle. Actual team videos describe the relevant service.
+All four loop muted and inline automatically; sound may attempt to start on mouse hover, but account for browser sound restrictions with an explicit tap/click sound toggle. Only one video can have audio at a time. On pointer exit, mute. On click, open a large inset video dialog with small margins on every side, dark blurred backdrop and native playback controls. This is an inset overlay, not the Fullscreen API. Pause background videos; close by Escape, explicit close button or backdrop click. Restore focus on close. Stop the modal audio when it closes. Respect reduced motion and pause media when the page is hidden.
+Until actual team videos are supplied, use clearly labelled motion previews, never pretend generic stock presenters are the real team. Store the replacement paths in one editable content configuration.
+
+3. FOUR SERVICE SUMMARIES
+Place immediately below the video section in the same order. Use four aligned editorial columns separated by fine rules, restrained line icons, short descriptions and a relevant action.
+HR Consultants: “Build stronger teams with people-first advice, practical policies and a clear HR direction.”
+Brand Standards: “Turn your standards into everyday practices that protect your people and your brand.”
+Job Portal: “A considered space for candidates and employers to find their next great connection.”
+HR Wala Software: “Bring the employee lifecycle together in one connected HRIS experience.”
+Consultancy/standards actions open details and an enquiry action. Job Portal navigates to its page. Software scrolls to the HRIS section.
+
+4. HR WALA SOFTWARE / HRIS
+Create a full-width royal black section. The top is a premium banner: left text “Manage your employees.” then gold “Empower your people.” Supporting copy “A clearer view of your workforce. A simpler way to manage the everyday.” CTA “Let’s talk HRIS”. Right: a photorealistic woman in a side/three-quarter pose holding a smartphone, with an HRIS dashboard visible on its screen. Use royal blue professional clothing and a fine gold circular accent. No fake operational metrics. A small white floating panel may read “Your people. Connected.” and “One employee lifecycle. One workspace.”
+Under the banner, heading “Built around the employee journey.” Display all 12 required modules in a clean 4×3 desktop grid, 3 columns tablet and 2 columns mobile. Each has a number, short title, one-line benefit and details interaction. Use tabs All functions / People / Operations / Finance / Growth. All functions is default.
+Required modules, exact inclusion:
+01 Budgeting — Plan people costs with clarity.
+02 Talent Acquisition — Bring the right people on board.
+03 On-boarding — Make every first day count.
+04 Leaves & Attendance — Keep time and leave connected.
+05 Payroll — Make payday more organised.
+06 Employee Dashboard — A personal space for every employee.
+07 Separation — Close the loop professionally.
+08 Employee Benefits — Make benefits easier to manage.
+09 360 degree Performance — See performance from every angle.
+10 HR Dashboards — Turn information into perspective.
+11 E-Learning — Keep your people moving forward.
+12 Discipline & Policies — Put clarity behind every policy.
+Do not claim integrations, live functionality, security certifications, cost savings or quantified outcomes without verified information.
+
+5. PROFESSIONAL CERTIFICATIONS AND BADGES
+Heading “Build your expertise. Stand for something.” Use an asymmetrical layout: an ivory/gold seal panel on the left and a numbered list of eight programmes on the right. Each row has a simple arrow and opens details with an enquiry action. Keep long programme names readable without truncation.
+The eight required programme titles:
+• Brand standards and compliance
+• Certified P & C Practitioner
+• Certified Administrator
+• Certified Manager Learning & Development
+• Certified P & C Business Partner
+• Certified Master Trainer
+• Certified HRIS Administrator
+• Certified International Recruiter
+Do not invent awarding institutions, accreditation, schedules, fees, eligibility or course duration. Details are to be confirmed by HR Wala.
+Below, a separate row “Recognition that tells your story.” with three elegant badge panels:
+• Job-Ready Candidate
+• HRWala Verified Candidate
+• HRWala Trusted Employer
+Use gold, blue and black badge emblems respectively. They are badge categories, not proof that the visitor or an example account has been verified. Verification criteria must be confirmed before live use.
+
+6. TEAM PROFILES — EXACTLY EIGHT
+Heading “Human expertise. A shared commitment.” 4×2 desktop, 2 columns mobile. Each profile has a professional portrait, member name, designation and brief introduction. Use restrained portrait framing, clean captions and a small arrow revealing an expanded biography. Until approved portraits and biographies are supplied, show clearly labelled portrait placeholders and “Team member 01” through “Team member 08”. Suggested role slots: Leadership, HR Consulting, Brand Standards, Talent Acquisition, Learning & Development, HR Technology, People Operations, Client Experience. These are suggested slots, not claims about actual staff. Do not fabricate personal names or credentials.
+
+7. FEATURED PARTNERS — EXACTLY SIXTEEN UNIQUE SLOTS
+Heading “Better, together.” Use a quiet horizontally moving monochrome logo strip with 16 unique partner positions. Duplicate the set only for a seamless visual loop and hide duplicate items from assistive technology. Pause on hover/focus, offer a visible pause control, and respect reduced motion. Until logos are provided use labelled placeholders “Partner 01” through “Partner 16”, not real company logos implying affiliation.
+
+8. CONTACT FORM
+Deep royal blue background. Left: editorial headline “Your next step starts with a hello.” with hello in pale gold, short welcoming copy, and three numbered steps. Right: a white form panel with name, work email, organisation, service interest, message and a required sharing acknowledgement. Service dropdown includes the four services, Professional Certifications and Partnerships. Clicking an enquiry CTA should preselect the relevant service and optionally fill the programme name.
+Provide clear labels, browser validation, sending state, success and error feedback. If no endpoint is configured, make the action “Download enquiry” and explicitly say the enquiry is not being sent. Never show false submission success. With a configured HTTPS endpoint, POST JSON and handle network/server failures. Real backend integration must include server validation, appropriate access controls, anti-spam, delivery and an approved privacy notice.
+
+9. FOOTER
+Royal black, consistent wordmark, short brand description, Explore links, Our solutions links and Contact link. Include a clear preview privacy notice and local-data deletion action for the demonstration. No fabricated phone, email, street address, client testimonials, social accounts or stats. Footer copyright and restrained brand line “People. Possibilities. Progress.”
+
+JOB PORTAL — SECOND PAGE
+Keep the same header, palette, typography and footer. Light ivory/soft-blue top section with headline “Find work. Find your possibility.” Search form for title/skill/company and location. Suggested topic chips: Human Resources, Recruitment, HR Technology.
+Desktop: left filters sidebar and right job list; mobile filters collapse into a compact grid above results. Filters: location, work arrangement (On-site, Hybrid, Remote), employment type (Full-time, Part-time, Contract), experience (Entry-level, Mid-level, Senior). Include result count, reset control, saved-jobs filter, save/unsave interaction and a thoughtful empty state.
+Jobs display title, company, location, arrangement, type, level, salary and details action. Use clearly labelled sample listings until a real vacancy data source is connected. No misleading “live” counts or fake verified employers. Detail dialogs contain description, requirements and an honest preview notice. Do not accept or simulate sent applications without a backend.
+Create a profile dialog with role choice Candidate / Employee / Employer; name, email, headline, location and bio. In a static demo save it only in browser localStorage, show that clearly, and provide edit, export and delete. This is a local prototype, not secure authentication or public profile registration. Do not store passwords, CVs or sensitive identity documents in localStorage.
+Finish the page with a refined employer CTA linking to Discover’s contact section.
+
+INTERACTION, ACCESSIBILITY AND QUALITY
+Use semantic HTML, real links for navigation, buttons for actions, visible keyboard focus, labelled inputs, useful image alt text and accessible dialogs with focus containment/return. Respect reduced motion. Keep text contrast readable. Avoid autoplay sound, horizontal overflow, layout jumps, clipped long labels, dead controls and excessive motion. All navigation must survive direct page refresh and subdirectory hosting.
+Use local assets and relative paths. Lazy-load below-the-fold imagery, optimise images, use compressed H.264 MP4 with faststart and poster frames. Make missing videos degrade gracefully to a useful poster and availability message. Use a single content file to configure videos, team, partners, modules, certifications and jobs.
+
+DELIVERY
+Return the complete source project, all required local assets, an accurate README with deployment instructions and an asset replacement guide. Default entry must open Discover. Only Discover and Job Portal are top-level pages. For a simple static build use index.html, jobs.html, styles.css, content.js, app.js and assets/. It must run without a build command. For React/Vite output, include package.json, lockfile, all imports/assets, tested npm build and documented output directory; never deliver only a component or screenshot. Clearly separate implemented front-end interactions from future authentication, roles, employer posting, application processing, database and server integration. Do not claim the platform is production operational until those integrations and actual business content are supplied.
