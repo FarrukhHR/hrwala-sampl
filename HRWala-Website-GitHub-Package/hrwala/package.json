@@ -1,0 +1,12 @@
+{
+  "name": "hrwala-website",
+  "version": "1.0.1",
+  "private": true,
+  "description": "HR Wala Discover and Job Portal static frontend",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
