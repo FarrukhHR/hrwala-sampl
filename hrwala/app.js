@@ -172,6 +172,43 @@ if (!isJobs) {
         `<article class="service-card"><div class="service-icon">${icon(s.icon)}</div><h3>${esc(s.title)}</h3><p>${esc(s.text)}</p>${i === 2 ? '<a class="text-link" href="jobs.html">Explore opportunities ↗</a>' : i === 3 ? '<a class="text-link" href="#software">Explore the platform ↗</a>' : `<button class="text-link" data-service="${i}">Explore this solution ↗</button>`}</article>`,
     )
     .join("");
+  $("#video-grid").innerHTML = C.services
+    .map(
+      (s, i) =>
+        `<article class="video-card"><button class="video-open" type="button" data-preview="${i}" aria-label="Play ${esc(s.title)} preview"><video muted loop playsinline preload="none" poster="${asset(s.poster)}" aria-hidden="true"><source src="${asset(s.video)}" type="video/mp4"></video><div class="video-overlay" aria-hidden="true"><span class="video-overline">${String(i + 1).padStart(2, "0")} / ${esc(s.tag)}</span><div class="video-caption"><span class="play-icon">&#9654;</span><h3>${esc(s.title)}</h3><small>${esc(s.tag)}</small></div></div></button><button class="sound-toggle" type="button" aria-label="Turn sound on for ${esc(s.title)} preview" aria-pressed="false">&#9835;</button></article>`,
+    )
+    .join("");
+  $$(".video-card").forEach((card) => {
+    const video = $("video", card);
+    const preview = $(".video-open", card);
+    const playIcon = $(".play-icon", card);
+    const sound = $(".sound-toggle", card);
+    const title = C.services[Number(preview.dataset.preview)].title;
+    const updatePlayback = () => {
+      preview.setAttribute(
+        "aria-label",
+        `${video.paused ? "Play" : "Pause"} ${title} preview`,
+      );
+      playIcon.textContent = video.paused ? "▶" : "Ⅱ";
+    };
+    video.autoplay = !reduced.matches;
+    if (video.autoplay) video.play().catch(() => {});
+    preview.onclick = () => {
+      if (video.paused) video.play().catch(() => {});
+      else video.pause();
+    };
+    video.addEventListener("play", updatePlayback);
+    video.addEventListener("pause", updatePlayback);
+    sound.onclick = () => {
+      video.muted = !video.muted;
+      sound.setAttribute("aria-pressed", String(!video.muted));
+      sound.setAttribute(
+        "aria-label",
+        `${video.muted ? "Turn sound on" : "Turn sound off"} for ${title} preview`,
+      );
+      sound.classList.toggle("is-on", !video.muted);
+    };
+  });
   $$("[data-service]").forEach(
     (b) =>
       (b.onclick = () => {

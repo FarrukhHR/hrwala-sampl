@@ -81,7 +81,7 @@ Production authentication, server-enforced candidate/employee/employer roles, da
 
 ## Media behavior
 
-The hero text rotates automatically and respects reduced-motion preferences and page visibility. Six service and career labels surround the hero portrait. The Discover page currently goes directly from the hero to section 02; the former video-preview section and its playback controls are not displayed. The four preview clips and posters remain in `public/assets/` for possible future use. The partner strip loops continuously and respects reduced-motion preferences.
+The hero text rotates automatically and respects reduced-motion preferences and page visibility. Six service and career labels surround the hero portrait. Four silent service previews appear below the Discover page's "A Way Forward" heading, with playback and sound controls; their posters remain visible when motion is reduced. The partner strip loops continuously and respects reduced-motion preferences.
 
 ## Asset origin
 
@@ -95,6 +95,6 @@ The two campaign portraits were generated for this project and are not actual st
 
 ## Requested visual refinements — v1.1.2
 
-The header logo is smaller, navigation is centred, and the right-side actions are removed. The hero portrait is visible inside a smaller, higher circle. Six labels are arranged in matching left/right pairs close to the circle. The PEOPLE AT THE TOP headline uses Poppins. The hero buttons, note, slide controls, promise strip and former section 01 have been removed so section 02 follows the hero. Hero copy continues to rotate, fades between slides, and respects reduced-motion preferences.
+The header logo is smaller, navigation is centred, and the right-side actions are removed. The hero portrait is visible inside a larger, aligned circle. Six labels are arranged in matching left/right pairs close to the circle. The PEOPLE AT THE TOP headline uses Poppins. The hero buttons, note, slide controls, promise strip and former section 01 have been removed so section 02 follows the hero. Four service video previews sit beneath the section heading and before the service cards. Hero copy continues to rotate, fades between slides, and respects reduced-motion preferences.
 
 The approved actual logo was not supplied. The existing blue mark remains a placeholder until it is supplied. These changes affect the front-end only; existing deployment settings remain Framework Vite, npm run build, output dist.
