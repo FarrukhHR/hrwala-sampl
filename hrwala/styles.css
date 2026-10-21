@@ -345,7 +345,11 @@ small {
   margin-bottom: 30px;
   min-height: 3.6em;
 }
-
+.hero-rotating > h1 {
+  font-size: clamp(40px, 4.35vw, 66px);
+  font-weight: 600;
+  margin-bottom: 25px;
+}
 .hero-note {
   margin-top: 40px;
   font-size: 11px;
