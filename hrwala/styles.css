@@ -3102,7 +3102,7 @@ dialog::backdrop {
   }
   .hero-art {
     height: 220px;
-    margin: 12px 0 0;
+    margin: 32px 0 0;
   }
   .hero-disc {
     width: 320px;
@@ -3129,13 +3129,13 @@ dialog::backdrop {
   .orbit {
     width: 390px;
     height: 390px;
-    top: -30px;
+    top: -6px;
     transform: translateX(-50%) scale(0.55);
   }
   .orbit-two {
     width: 470px;
     height: 470px;
-    top: -47px;
+    top: -18px;
   }
   .float-one,
   .float-job {
