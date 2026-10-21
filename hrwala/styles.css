@@ -656,7 +656,7 @@ small {
   color: var(--ink);
 }
 .service-section {
-  padding-top: 10;
+  padding-top: 20;
 }
 .service-section .section-head h2 {
   color: var(--ink);
