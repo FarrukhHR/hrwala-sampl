@@ -2869,7 +2869,7 @@ dialog::backdrop {
 .hero {
   min-height: 0;
   padding-top: 42px;
-  padding-bottom: 0;
+  padding-bottom: 24px;
 }
 .hero-tagline {
   font-family: Poppins, Arial, Helvetica, sans-serif;
@@ -3181,7 +3181,7 @@ dialog::backdrop {
 .section.wrap.service-section {
   position: relative;
   isolation: isolate;
-  padding-top: 24px;
+  padding-top: 36px;
   padding-bottom: 52px;
 }
 .section.wrap.service-section::before {
@@ -3198,13 +3198,13 @@ dialog::backdrop {
 }
 @media (max-width: 850px) {
   .section.wrap.service-section {
-    padding-top: 24px;
+    padding-top: 30px;
     padding-bottom: 42px;
   }
 }
 @media (max-width: 620px) {
   .section.wrap.service-section {
-    padding-top: 18px;
+    padding-top: 24px;
     padding-bottom: 34px;
   }
 }
