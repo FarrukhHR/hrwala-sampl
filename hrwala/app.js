@@ -175,38 +175,49 @@ if (!isJobs) {
   $("#video-grid").innerHTML = C.services
     .map(
       (s, i) =>
-        `<article class="video-card"><button class="video-open" type="button" data-preview="${i}" aria-label="Play ${esc(s.title)} preview"><video muted loop playsinline preload="none" poster="${asset(s.poster)}" aria-hidden="true"><source src="${asset(s.video)}" type="video/mp4"></video><div class="video-overlay" aria-hidden="true"><span class="video-overline">${String(i + 1).padStart(2, "0")} / ${esc(s.tag)}</span><div class="video-caption"><span class="play-icon">&#9654;</span><h3>${esc(s.title)}</h3><small>${esc(s.tag)}</small></div></div></button><button class="sound-toggle" type="button" aria-label="Turn sound on for ${esc(s.title)} preview" aria-pressed="false">&#9835;</button></article>`,
+        `<article class="video-card"><button class="video-open" type="button" data-preview="${i}" aria-label="Play ${esc(s.title)} preview"><img class="video-poster" src="${asset(s.poster)}" alt="" loading="lazy"><span class="video-wash" aria-hidden="true"></span><div class="video-overlay" aria-hidden="true"><span class="video-overline">${String(i + 1).padStart(2, "0")} / ${esc(s.tag)}</span><div class="video-caption"><span class="play-icon">&#9654;</span><h3>${esc(s.title)}</h3><small>${esc(s.tag)}</small></div></div></button><button class="sound-toggle" type="button" aria-label="Turn sound on for ${esc(s.title)} preview" aria-pressed="false">&#9835;</button></article>`,
     )
     .join("");
   $$(".video-card").forEach((card) => {
-    const video = $("video", card);
     const preview = $(".video-open", card);
     const playIcon = $(".play-icon", card);
     const sound = $(".sound-toggle", card);
-    const title = C.services[Number(preview.dataset.preview)].title;
+    const service = C.services[Number(preview.dataset.preview)];
+    let video = null;
+    let muted = true;
     const updatePlayback = () => {
       preview.setAttribute(
         "aria-label",
-        `${video.paused ? "Play" : "Pause"} ${title} preview`,
+        `${video.paused ? "Play" : "Pause"} ${service.title} preview`,
       );
       playIcon.textContent = video.paused ? "▶" : "Ⅱ";
     };
-    video.autoplay = !reduced.matches;
-    if (video.autoplay) video.play().catch(() => {});
     preview.onclick = () => {
+      if (!video) {
+        video = document.createElement("video");
+        video.className = "video-media";
+        video.muted = muted;
+        video.loop = true;
+        video.playsInline = true;
+        video.preload = "none";
+        video.src = asset(service.video);
+        video.setAttribute("aria-hidden", "true");
+        card.insertBefore(video, preview);
+        video.addEventListener("play", updatePlayback);
+        video.addEventListener("pause", updatePlayback);
+      }
       if (video.paused) video.play().catch(() => {});
       else video.pause();
     };
-    video.addEventListener("play", updatePlayback);
-    video.addEventListener("pause", updatePlayback);
     sound.onclick = () => {
-      video.muted = !video.muted;
-      sound.setAttribute("aria-pressed", String(!video.muted));
+      muted = !muted;
+      if (video) video.muted = muted;
+      sound.setAttribute("aria-pressed", String(!muted));
       sound.setAttribute(
         "aria-label",
-        `${video.muted ? "Turn sound on" : "Turn sound off"} for ${title} preview`,
+        `${muted ? "Turn sound on" : "Turn sound off"} for ${service.title} preview`,
       );
-      sound.classList.toggle("is-on", !video.muted);
+      sound.classList.toggle("is-on", !muted);
     };
   });
   $$("[data-service]").forEach(

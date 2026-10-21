@@ -81,7 +81,7 @@ Production authentication, server-enforced candidate/employee/employer roles, da
 
 ## Media behavior
 
-The hero text rotates automatically and respects reduced-motion preferences and page visibility. Six service and career labels surround the hero portrait. Four silent service previews appear below the Discover page's "A Way Forward" heading, with playback and sound controls; their posters remain visible when motion is reduced. The partner strip loops continuously and respects reduced-motion preferences.
+The hero text rotates automatically and respects reduced-motion preferences and page visibility. Six service and career labels surround the hero portrait. Four poster-first service previews appear below the Discover page's "A Way Forward" heading. A preview loads when played, and sound is user-controlled. The partner strip loops continuously and respects reduced-motion preferences.
 
 ## Asset origin
 
