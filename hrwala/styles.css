@@ -2869,6 +2869,7 @@ dialog::backdrop {
 .hero {
   min-height: 0;
   padding-top: 42px;
+  padding-bottom: 24px;
 }
 .hero-tagline {
   font-family: Poppins, Arial, Helvetica, sans-serif;
