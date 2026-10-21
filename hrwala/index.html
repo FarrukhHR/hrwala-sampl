@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HRWala.net — People. Possibilities. Progress.</title>
+    <meta
+      name="description"
+      content="Discover HR consultancy, brand standards, career opportunities, professional certifications and connected HRIS software at HRWala.net."
+    />
+    <meta name="theme-color" content="#0b1f4b" />
+    <link rel="icon" href="./images/hrwala-logo.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="refinements.css" />
+    <link rel="stylesheet" href="branding.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body data-page="discover">
+    <a class="skip" href="#main">Skip to content</a>
+    <div id="header"></div>
+    <main id="main">
+      <section class="hero wrap" aria-label="Discover HRWala">
+        <div class="hero-copy">
+          <h1 class="hero-tagline">People at<br /><em>the Top</em></h1>
+        </div>
+        <div
+          class="people-orbit hero-orbit"
+          tabindex="0"
+          aria-label="People and opportunities. Focus or hover to pause floating labels."
+        >
+          <div class="orbit-ring ring-outer" aria-hidden="true"></div>
+          <div class="orbit-ring ring-inner" aria-hidden="true"></div>
+          <div class="portrait-circle">
+            <img
+              src="./images/hero.webp"
+              alt="Professional woman in a royal blue blazer"
+              fetchpriority="high"
+            />
+          </div>
+          <span class="orbit-label label-1">People first</span
+          ><span class="orbit-label label-2">Your next chapter</span
+          ><span class="orbit-label label-3">Work simplified</span
+          ><span class="orbit-label label-4">The human side of business</span
+          ><a class="orbit-label label-5" href="jobs.html"
+            >Get job <span aria-hidden="true">↗</span></a
+          ><a
+            class="orbit-label label-6"
+            href="#contact"
+            data-interest="Job Portal"
+            >Get people <span aria-hidden="true">↗</span></a
+          >
+        </div>
+      </section>
+      <section class="section wrap" id="stories">
+        <div class="section-head"><h2>A Way Forward</h2></div>
+        <div class="video-grid" id="videos"></div>
+      </section>
+      <section
+        class="section wrap service-section"
+        id="services"
+        aria-label="Our services"
+      >
+        <div class="service-grid" id="service-grid"></div>
+      </section>
+      <section class="software-section" id="software">
+        <div class="wrap">
+          <h2 class="software-title">HRWala <span>Software</span></h2>
+          <div class="software-banner">
+            <div class="software-copy">
+              <h3>Manage your<br />employees</h3>
+              <p class="software-subtitle">Employee Management Dashboard</p>
+            </div>
+            <div
+              class="people-orbit software-orbit"
+              tabindex="0"
+              aria-label="Software operations. Focus or hover to pause floating labels."
+            >
+              <div class="orbit-ring ring-outer" aria-hidden="true"></div>
+              <div class="orbit-ring ring-inner" aria-hidden="true"></div>
+              <div class="portrait-circle">
+                <img
+                  src="./images/software.webp"
+                  alt="Professional woman holding a phone with the HRIS dashboard"
+                  loading="lazy"
+                />
+              </div>
+              <span class="orbit-label label-1">Talent Acquisition</span
+              ><span class="orbit-label label-2">On-boarding</span
+              ><span class="orbit-label label-3">Payroll</span
+              ><span class="orbit-label label-4">Employee Benefits</span
+              ><span class="orbit-label label-5">HR Dashboards</span
+              ><span class="orbit-label label-6">E-Learning</span>
+            </div>
+          </div>
+          <div class="module-heading"><h3>Software Operations</h3></div>
+          <div id="modules" class="module-grid"></div>
+        </div>
+      </section>
+      <section class="section wrap" id="certifications">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Professional Certification</div>
+            <h2>Skills Development</h2>
+          </div>
+        </div>
+        <div class="cert-layout">
+          <aside class="cert-feature">
+            <div class="seal">
+              <span>HRWala</span><strong aria-hidden="true">✧</strong
+              ><span>Professional Development</span>
+            </div>
+            <h3>Expertise with Purpose</h3>
+          </aside>
+          <div
+            class="cert-list"
+            id="cert-list"
+            aria-label="Professional certifications and portal badges"
+          ></div>
+        </div>
+      </section>
+      <section class="team-section" id="team">
+        <div class="wrap section">
+          <div class="section-head"><h2>Team HRWala</h2></div>
+          <div class="team-grid" id="team-grid"></div>
+        </div>
+      </section>
+      <section class="section partner-section" id="partners">
+        <div class="wrap partner-heading"><h2>Featured Partners</h2></div>
+        <div
+          class="partner-marquee"
+          tabindex="0"
+          aria-label="Featured partner logos. Hover or focus to pause."
+        >
+          <div class="partner-track" id="partner-track"></div>
+        </div>
+      </section>
+      <section class="contact-section" id="contact">
+        <div class="wrap contact-layout">
+          <div class="contact-copy">
+            <h2>Hello<span>.</span></h2>
+            <p>
+              Tell us what you’re working towards.<br />Let’s explore how HRWala
+              can help.
+            </p>
+            <div class="contact-lines">
+              <div><span>01</span> Tell us what matters to you.</div>
+              <div><span>02</span> Explore the right solution.</div>
+              <div><span>03</span> Move forward with clarity.</div>
+            </div>
+          </div>
+          <form id="contact-form" class="contact-form">
+            <div class="form-top">
+              <h3>What can we help you with?</h3>
+              <span>↗</span>
+            </div>
+            <div class="two-col">
+              <label
+                >Your name<input
+                  name="name"
+                  placeholder="Full name"
+                  required
+                  maxlength="100"
+                  autocomplete="name" /></label
+              ><label
+                >Work email<input
+                  name="email"
+                  type="email"
+                  placeholder="you@company.com"
+                  required
+                  autocomplete="email"
+              /></label>
+            </div>
+            <div class="two-col">
+              <label
+                >Organisation<input
+                  name="organisation"
+                  placeholder="Company name"
+                  maxlength="150"
+                  autocomplete="organization" /></label
+              ><label
+                >I’m interested in<select name="interest" id="contact-interest">
+                  <option>HR Consultants</option>
+                  <option>Brand Standards</option>
+                  <option>Job Portal</option>
+                  <option>HRWala Software</option>
+                  <option>Professional Certifications</option>
+                  <option>Partnerships</option>
+                </select></label
+              >
+            </div>
+            <label
+              >A little about your goals<textarea
+                name="message"
+                placeholder="What would you like to make possible?"
+                rows="4"
+                required
+                maxlength="4000"
+              ></textarea></label
+            ><label class="checkbox-line"
+              ><input type="checkbox" required />
+              <span
+                >I agree to share these details for this enquiry.</span
+              ></label
+            >
+            <p class="form-note" id="contact-note">
+              Preview mode: download your enquiry. Nothing is sent until a
+              contact endpoint is connected.
+            </p>
+            <button class="button primary" type="submit" id="contact-submit">
+              Download enquiry <span>↗</span>
+            </button>
+            <p class="status" id="contact-status" role="status"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+    <div id="footer"></div>
+    <dialog id="detail-dialog" class="detail-dialog">
+      <button class="dialog-close" aria-label="Close dialog">×</button>
+      <div id="detail-content"></div>
+    </dialog>
+    <dialog id="video-dialog" class="video-dialog">
+      <button class="dialog-close" aria-label="Close video">×</button>
+      <div id="video-title"></div>
+      <video id="modal-video" controls playsinline></video>
+      <p id="video-description"></p>
+    </dialog>
+    <div class="toast" id="toast" role="status"></div>
+  </body>
+</html>

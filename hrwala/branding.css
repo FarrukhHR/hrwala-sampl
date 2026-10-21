@@ -1,0 +1,162 @@
+/* Approved uploaded logo and its navy/gold palette. */
+:root {
+  --blue: #0b1f4b;
+  --blue-deep: #081737;
+  --gold: #d4af37;
+  --gold-pale: #f2e7bd;
+  --font: Arial, Helvetica, sans-serif;
+  --display: var(--font);
+}
+.brand-logo {
+  display: block;
+  width: 200px;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+.site-header .brand {
+  min-width: 0;
+}
+.site-footer .brand {
+  width: 224px;
+  max-width: 100%;
+  padding: 12px;
+  background: #fbfaf7;
+  border-radius: 6px;
+}
+.site-footer .brand-logo {
+  width: 200px;
+}
+.software-section {
+  background: var(--blue);
+}
+.software-orbit .portrait-circle {
+  border-color: #23375c;
+}
+.contact-section {
+  background: var(--blue-deep);
+}
+.orbit-label,
+a.orbit-label {
+  color: #29394d;
+  font-weight: 500;
+}
+.software-orbit .orbit-label {
+  color: #e9edf5;
+}
+
+/* Keep the complete supplied portrait inside the circle, including the hair. */
+.portrait-circle img,
+.software-orbit .portrait-circle img {
+  width: 90%;
+  height: 94%;
+  left: 5%;
+  bottom: 0;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+/* Match the Job Portal font family, heading weight and letter spacing. */
+body,
+input,
+select,
+textarea,
+button {
+  font-family: var(--font);
+}
+.hero-copy .hero-tagline,
+.software-copy h3 {
+  font-family: var(--font);
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 1.13;
+}
+.hero-tagline em {
+  font-style: normal;
+  font-weight: inherit;
+}
+.section-head h2,
+.partner-heading h2,
+.contact-copy h2 {
+  font-family: var(--font);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 1.13;
+}
+.cert-feature h3 {
+  font-family: var(--font);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+}
+
+/* Keep the compact illustration; align its outer frame with all eleven rows. */
+.cert-feature {
+  transform: none;
+  width: 100%;
+  min-width: 240px;
+  justify-self: center;
+  align-self: stretch;
+  min-height: 0;
+  margin: 0;
+  padding: 28px 18px;
+  gap: 25px;
+}
+.cert-feature .seal {
+  width: 196px;
+  height: 196px;
+}
+.cert-feature .seal span {
+  font-size: 8px;
+  letter-spacing: 0.09em;
+}
+.cert-feature .seal span:first-child {
+  font-size: 17px;
+  letter-spacing: -0.035em;
+}
+.cert-feature .seal strong {
+  font-size: 42px;
+}
+.cert-feature h3 {
+  font-size: 23px;
+  max-width: 190px;
+}
+@media (max-width: 850px) {
+  .brand-logo {
+    width: 170px;
+  }
+  .cert-feature {
+    width: 100%;
+    min-width: 0;
+    padding: 26px 14px;
+  }
+  .cert-feature .seal {
+    width: 180px;
+    height: 180px;
+  }
+  .cert-feature .seal span {
+    font-size: 7.5px;
+  }
+}
+@media (max-width: 620px) {
+  .brand-logo {
+    width: 164px;
+  }
+  .cert-feature {
+    width: min(100%, 310px);
+    min-height: 0;
+    align-self: start;
+    margin: 0;
+    padding: 30px 20px;
+    gap: 24px;
+  }
+  .cert-feature .seal {
+    width: 196px;
+    height: 196px;
+  }
+  .cert-feature .seal span {
+    font-size: 8px;
+  }
+  .cert-feature h3 {
+    max-width: none;
+  }
+}
