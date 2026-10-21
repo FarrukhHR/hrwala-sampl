@@ -3177,7 +3177,7 @@ dialog::backdrop {
 .section.wrap.service-section {
   position: relative;
   isolation: isolate;
-  padding-top: 44px;
+  padding-top: 20px;
   padding-bottom: 52px;
 }
 .section.wrap.service-section::before {
