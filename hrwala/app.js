@@ -427,6 +427,7 @@ if (!isJobs) {
       if (!heroCanRun()) return;
       renderHeroSlide((slide + 1) % slides.length);
       rotating.classList.remove("is-fading");
+      $(".hero-tagline").classList.remove("is-fading");
       heroTimer = setTimeout(scheduleHero, 1000);
     }, 1000);
   }
