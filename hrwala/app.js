@@ -355,34 +355,42 @@ if (!isJobs) {
   };
   const slides = [
     {
-      h: "Hire smarter<br>Manage Better<br><em>Grow Faster</em>",
+      t: "HR All-in-One",
+      h: "Hire Smarter<br>Manage Better<br><em>Grow Faster</em>",
       p: "Recruitment, payroll and HR in one place.<br>Everything your people need.",
     },
     {
+      t: "HRwala Software",
       h: "Simplify HR<br>Automate Payroll<br><em>Empower People</em>",
       p: "One system for every employee record.<br>Less paperwork, more progress.",
     },
     {
+      t: "Brand Standards",
       h: "Service Industry<br>Serving People<br><em>One Partner</em>",
       p: "From hotels to hospitals to retail.<br>HR built around your brand standards.",
     },
     {
+      t: "HR Certifications",
       h: "Get certified<br>Get Noticed<br><em>Get Ahead</em>",
       p: "Recognized credentials for working professionals.<br>Your next career step starts here.",
     },
     {
+      t: "Job Portal",
       h: "Find Talent<br>Find Opportunity<br><em>Meet here</em>",
       p: "Verified jobs and qualified candidates<br>Where employers and careers connect.",
     },
     {
+      t: "Your Advisor",
       h: "Expert HR Advice<br>Compliant Workplaces<br><em>Confident Leaders</em>",
       p: "Strategy, policies and labor law support.<br>Build an organization that lasts.",
     },
     {
+      t: "Head Hunting",
       h: "Right people<br>Right roles<br><em>Real growth</em>",
       p: "Executive search and talent acquisition.<br>Your next great hire starts here.",
     },
     {
+      t: "Hospitality Talent",
       h: "Hoteliers<br>Star Performers<br><em>Get Connected</em>",
       p: "First ever dedicated hospitality people<br>Job Portal connecting people with hoteliers",
     },
@@ -394,6 +402,7 @@ if (!isJobs) {
   const rotating = $(".hero-rotating");
   function renderHeroSlide(i) {
     slide = i;
+    $(".hero-tagline span").textContent = slides[i].t;
     $(".hero-copy h1").innerHTML = slides[i].h;
     $(".hero-rotating>p").innerHTML = slides[i].p;
   }
@@ -407,11 +416,13 @@ if (!isJobs) {
   function restoreHero() {
     clearTimeout(heroTimer);
     rotating.classList.remove("is-fading");
+    $(".hero-tagline").classList.remove("is-fading");
     scheduleHero();
   }
   function advanceHero() {
     if (!heroCanRun()) return;
     rotating.classList.add("is-fading");
+    $(".hero-tagline").classList.add("is-fading");
     heroTimer = setTimeout(() => {
       if (!heroCanRun()) return;
       renderHeroSlide((slide + 1) % slides.length);
