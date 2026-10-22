@@ -2898,12 +2898,12 @@ dialog::backdrop {
 }
 .hero-rotating > h1 > em {
   color: #dfc38a;
-  font-weight: 400;
+  font-weight: 600;
 }
 .hero-rotating > h1 {
   font-family: Poppins, Arial, Helvetica, sans-serif;
   font-size: clamp(45px, 0vw, 49px);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: -0.045em;
   line-height: 1.12;
   margin-bottom: 20px;
