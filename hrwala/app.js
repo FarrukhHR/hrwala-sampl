@@ -355,16 +355,36 @@ if (!isJobs) {
   };
   const slides = [
     {
-      h: "Better people<br>Stronger businesses<br><em>New possibilities</em>",
-      p: "Expertise, opportunity and technology.<br>Everything your people need to move forward.",
+      h: "Hire smarter<br>Manage Better<br><em>Grow Faster</em>",
+      p: "Recruitment, payroll and HR in one place.<br>Everything your people need.",
     },
     {
-      h: "Your experience<br>Your ambition<br><em>Your next chapter</em>",
-      p: "A space for meaningful career connections.<br>Find the opportunity that moves you forward.",
+      h: "Simplify HR<br>Automate Payroll<br><em>Empower People</em>",
+      p: "One system for every employee record.<br>Less paperwork, more progress.",
     },
     {
-      h: "Connected systems<br>Clearer decisions<br><em>People, empowered</em>",
-      p: "Bring the employee journey together.<br>Make room for what matters most.",
+      h: "Service Industry<br>Serving People<br><em>One Partner</em>",
+      p: "From hotels to hospitals to retail.<br>HR built around your brand standards.",
+    },
+    {
+      h: "Get certified<br>Get Noticed<br><em>Get Ahead</em>",
+      p: "Recognized credentials for working professionals.<br>Your next career step starts here.",
+    },
+    {
+      h: "Find Talent<br>Find Opportunity<br><em>Meet here</em>",
+      p: "Verified jobs and qualified candidates<br>Where employers and careers connect.",
+    },
+    {
+      h: "Expert HR Advice<br>Compliant Workplaces<br><em>Confident Leaders</em>",
+      p: "Strategy, policies and labor law support.<br>Build an organization that lasts.",
+    },
+    {
+      h: "Right people<br>Right roles<br><em>Real growth</em>",
+      p: "Executive search and talent acquisition.<br>Your next great hire starts here.",
+    },
+    {
+      h: "Hoteliers<br>Star Performers<br><em>Get Connected</em>",
+      p: "First ever dedicated hospitality people<br>Job Portal connecting people with hoteliers",
     },
   ];
   // HERO_ROTATION_START: 3 seconds hold + 1 second fade out + 1 second fade in.
