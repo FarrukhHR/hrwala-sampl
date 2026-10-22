@@ -2873,7 +2873,7 @@ dialog::backdrop {
 }
 .hero-tagline {
   font-family: Poppins, Arial, Helvetica, sans-serif;
-  color: #e4b24f;
+  color: var(--ink);
   font-size: clamp(52px, 4.5vw, 58px);
   font-weight: 800;
   letter-spacing: -0.045em;
@@ -2881,7 +2881,7 @@ dialog::backdrop {
   margin-bottom: 20px;
 }
 .hero-tagline span {
-  color: var(--blue);
+  color: #d2ad62;
 }
 .hero-tagline .tagline-at {
   color: #dfc38a;
