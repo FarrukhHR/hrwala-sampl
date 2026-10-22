@@ -2669,10 +2669,10 @@ dialog::backdrop {
 .hero-tagline {
   font-size: 50px;
   font-weight: 600;
-  letter-spacing: -0.045em;
   line-height: 1.1;
   color: var(--blue);
   margin-bottom: 24px;
+  font-family: poppins, sans-serif;
 }
 .hero-copy h1 {
   font-size: clamp(32px, 3.48vw, 52.8px);
