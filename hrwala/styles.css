@@ -2873,7 +2873,7 @@ dialog::backdrop {
 }
 .hero-tagline {
   font-family: Poppins, Arial, Helvetica, sans-serif;
-  color: var(--ink);
+  color: #e4b24f;
   font-size: clamp(52px, 4.5vw, 58px);
   font-weight: 800;
   letter-spacing: -0.045em;
@@ -2899,13 +2899,13 @@ dialog::backdrop {
 .hero-rotating > h1 > em {
   font-weight: 700;
   font-size: clamp(40px, 0vw, 44px);
-  color: #e4b24f;
+  color: (--ink);
 }
 .hero-rotating > h1 {
   font-family: Poppins, Arial, Helvetica, sans-serif;
   font-size: clamp(45px, 0vw, 49px);
   font-weight: 700;
-  color: #e4b24f;
+  color: var(--ink);
   letter-spacing: -0.045em;
   line-height: 1.12;
   margin-bottom: 20px;
