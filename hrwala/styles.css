@@ -2874,7 +2874,7 @@ dialog::backdrop {
 .hero-tagline {
   font-family: Poppins, Arial, Helvetica, sans-serif;
   color: var(--ink);
-  font-size: clamp(56px, 4.5vw, 64px);
+  font-size: clamp(52px, 4.5vw, 58px);
   font-weight: 800;
   letter-spacing: -0.045em;
   line-height: 1.12;
