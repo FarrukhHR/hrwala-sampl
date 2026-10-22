@@ -2874,7 +2874,7 @@ dialog::backdrop {
 .hero-tagline {
   font-family: Poppins, Arial, Helvetica, sans-serif;
   color: var(--ink);
-  font-size: clamp(40px, 0vw, 54px);
+  font-size: clamp(56px, 4.5vw, 64px);
   font-weight: 800;
   letter-spacing: -0.045em;
   line-height: 1.12;
@@ -2882,6 +2882,9 @@ dialog::backdrop {
 }
 .hero-tagline span {
   color: var(--blue);
+}
+.hero-tagline .tagline-at {
+  color: #dfc38a;
 }
 .hero-copy h1 {
   font-size: clamp(29px, 3vw, 42px);
@@ -3006,7 +3009,7 @@ dialog::backdrop {
     transform: none;
   }
   .hero-tagline {
-    font-size: clamp(38px, 0vw, 48px);
+    font-size: clamp(48px, 5vw, 56px);
   }
   .hero-copy h1 {
     font-size: clamp(28px, 3.3vw, 36px);
@@ -3066,7 +3069,7 @@ dialog::backdrop {
     font-size: 13px;
   }
   .hero-tagline {
-    font-size: clamp(34px, 5vw, 42px);
+    font-size: clamp(44px, 7vw, 52px);
   }
   .hero-copy h1 {
     font-size: clamp(25px, 3.6vw, 30px);
@@ -3089,7 +3092,7 @@ dialog::backdrop {
     padding-top: 28px;
   }
   .hero-tagline {
-    font-size: clamp(32px, 8vw, 42px);
+    font-size: clamp(40px, 11vw, 48px);
     margin-bottom: 16px;
   }
   .hero-copy h1 {
