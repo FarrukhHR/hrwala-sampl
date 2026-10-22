@@ -8,7 +8,7 @@ window.HRWALA = {
       icon: "people",
       text: "Build stronger teams with people-first advice, practical policies and a clear HR direction.",
       video: "assets/service-1.mp4",
-      poster: "assets/poster-1.webp",
+      poster: "assets/HR_Consultants_Thumbnail.png",
       demo: true,
       detail:
         "From organisational structure and workforce planning to employee relations, align your people practices with your business goals.",
@@ -19,7 +19,7 @@ window.HRWALA = {
       icon: "shield",
       text: "Turn your standards into everyday practices that protect your people and your brand.",
       video: "assets/service-2.mp4",
-      poster: "assets/poster-2.webp",
+      poster: "assets/Brand_Standards_Thumbnail.png",
       demo: true,
       detail:
         "Establish clear operating standards, review compliance and create consistent employee and customer experiences across your organisation.",
@@ -30,7 +30,7 @@ window.HRWALA = {
       icon: "briefcase",
       text: "A considered space for candidates and employers to find their next great connection.",
       video: "assets/service-3.mp4",
-      poster: "assets/poster-3.webp",
+      poster: "assets/Job_Portal_Thumbnail.png",
       demo: true,
       detail:
         "Explore opportunities, save the roles that fit and build a profile that introduces your skills. This preview uses illustrative listings.",
@@ -41,7 +41,7 @@ window.HRWALA = {
       icon: "grid",
       text: "Bring the employee lifecycle together in one connected HRIS experience.",
       video: "assets/service-4.mp4",
-      poster: "assets/poster-4.webp",
+      poster: "assets/HR_Wala_Software_Thumbnail.png",
       demo: true,
       detail:
         "Connect your HR workflows, from talent acquisition and onboarding to payroll, performance and separation.",
