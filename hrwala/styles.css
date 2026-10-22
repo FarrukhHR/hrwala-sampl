@@ -2896,7 +2896,7 @@ dialog::backdrop {
   margin-bottom: 0;
   min-height: 0;
 }
-.hero-rotating > h1 > em {
+/* .hero-rotating > h1 > em {
   color-var: (--ink);
   font-weight: 750;
   font-size: clamp(40px, 0vw, 44px);
@@ -2908,7 +2908,7 @@ dialog::backdrop {
   letter-spacing: -0.045em;
   line-height: 1.12;
   margin-bottom: 20px;
-}
+} */
 .hero-art {
   height: 330px;
   margin-top: 0;
