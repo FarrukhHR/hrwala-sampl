@@ -4726,14 +4726,13 @@ body {
   width: 100%;
   height: 460px;
   min-height: 0;
-  animation: bob 6s ease-in-out infinite;
 }
 .software-visual > img {
   top: 50%;
   bottom: auto;
   left: 50%;
-  width: min(410px, 90%);
-  height: min(410px, 90%);
+  width: min(290px, 90%);
+  height: min(290px, 90%);
   transform: translate(-50%, -50%);
   object-fit: cover;
   object-position: center top;
@@ -4745,9 +4744,31 @@ body {
   top: 50%;
   bottom: auto;
   left: 50%;
-  width: min(440px, 96%);
-  height: min(440px, 96%);
+  width: min(330px, 96%);
+  height: min(330px, 96%);
   transform: translate(-50%, -50%);
+}
+.software-feature {
+  animation: hero-label-float 5.2s ease-in-out infinite;
+  will-change: transform;
+}
+.feature-talent {
+  animation-delay: -0.4s;
+}
+.feature-onboarding {
+  animation-delay: -2.6s;
+}
+.feature-attendance {
+  animation-delay: -1.5s;
+}
+.feature-payroll {
+  animation-delay: -4.1s;
+}
+.feature-dashboard {
+  animation-delay: -3.2s;
+}
+.feature-performance {
+  animation-delay: -5.2s;
 }
 .software-modules {
   min-width: 0;
@@ -4789,6 +4810,14 @@ body {
   .software-visual {
     height: 410px;
   }
+  .software-visual > img {
+    width: min(252px, 90%);
+    height: min(252px, 90%);
+  }
+  .software-halo {
+    width: min(294px, 96%);
+    height: min(294px, 96%);
+  }
 }
 @media (max-width: 850px) {
   .software-banner {
@@ -4801,12 +4830,12 @@ body {
     margin: 0 auto;
   }
   .software-visual > img {
-    width: min(410px, 90%);
-    height: min(410px, 90%);
+    width: min(210px, 90%);
+    height: min(210px, 90%);
   }
   .software-halo {
-    width: min(440px, 96%);
-    height: min(440px, 96%);
+    width: min(240px, 96%);
+    height: min(240px, 96%);
   }
 }
 @media (max-width: 620px) {
@@ -4817,13 +4846,13 @@ body {
     height: min(350px, 92vw);
   }
   .software-visual > img {
-    width: min(300px, 78vw);
-    height: min(300px, 78vw);
+    width: min(210px, 78vw);
+    height: min(210px, 78vw);
     border-width: 10px;
   }
   .software-halo {
-    width: min(320px, 84vw);
-    height: min(320px, 84vw);
+    width: min(240px, 84vw);
+    height: min(240px, 84vw);
   }
   .software-feature {
     max-width: 112px;
@@ -4856,7 +4885,8 @@ body {
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .software-visual {
+  .software-feature {
     animation: none;
+    will-change: auto;
   }
 }
