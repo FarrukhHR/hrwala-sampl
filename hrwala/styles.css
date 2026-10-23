@@ -4896,11 +4896,11 @@ body {
     left: 44%;
   }
 }
-.software-feature.feature-talent,
+.software-feature .feature-talent,
 .software-feature.feature-attendance,
 .software-feature.feature-dashboard {
-  left: 10;
-  right: 10;
+  left: -10;
+  right: 0;
 }
 .software-feature.feature-onboarding,
 .software-feature.feature-payroll,
