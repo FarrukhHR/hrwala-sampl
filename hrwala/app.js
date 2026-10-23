@@ -412,7 +412,7 @@ if (!isJobs) {
   }
   function scheduleHero() {
     clearTimeout(heroTimer);
-    if (heroCanRun()) heroTimer = setTimeout(advanceHero, 5000);
+    if (heroCanRun()) heroTimer = setTimeout(advanceHero, 4000);
   }
   function restoreHero() {
     clearTimeout(heroTimer);
