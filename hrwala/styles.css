@@ -4407,6 +4407,116 @@ h2 em {
     gap: 24px;
   }
 }
+.brand-section {
+  padding: 76px 0;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+}
+.brand-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.35fr);
+  gap: clamp(32px, 5vw, 68px);
+  align-items: center;
+}
+.brand-copy h2 {
+  margin-bottom: 28px;
+  color: var(--ink);
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-size: clamp(34px, 3.8vw, 46px);
+  font-weight: 700;
+}
+.brand-copy h2 em {
+  color: var(--blue);
+}
+.brand-outcomes {
+  display: grid;
+  gap: 13px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.brand-outcomes li {
+  position: relative;
+  padding-left: 17px;
+  color: var(--ink);
+  font-size: 12px;
+  line-height: 1.6;
+}
+.brand-outcomes li::before {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  content: "";
+}
+.brand-industries h3 {
+  margin-bottom: 14px;
+  color: #876521;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.brand-industry-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.brand-industry-grid li {
+  display: grid;
+  place-items: center;
+  min-height: 60px;
+  padding: 9px 7px;
+  border: 1px solid #cbd1dc;
+  border-radius: 4px;
+  background: #fff;
+  color: var(--blue-deep);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+}
+@media (max-width: 850px) {
+  .brand-section {
+    padding: 58px 0;
+  }
+  .brand-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+  .brand-copy h2 {
+    margin-bottom: 22px;
+  }
+  .brand-outcomes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 24px;
+  }
+}
+@media (max-width: 620px) {
+  .brand-section {
+    padding: 46px 0;
+  }
+  .brand-copy h2 {
+    font-size: 34px;
+  }
+  .brand-outcomes {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+  .brand-industry-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 380px) {
+  .brand-industry-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
 body {
   overflow-x: hidden;
 }
