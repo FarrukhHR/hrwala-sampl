@@ -4939,3 +4939,40 @@ body {
     left: 50%;
   }
 }
+@media (min-width: 851px) {
+  .software-visual {
+    --software-circle-radius: 145px;
+  }
+  .software-feature.feature-talent,
+  .software-feature.feature-attendance,
+  .software-feature.feature-dashboard {
+    right: calc(56% + var(--software-circle-radius) + 8px);
+    left: auto;
+  }
+  .software-feature.feature-onboarding,
+  .software-feature.feature-payroll,
+  .software-feature.feature-performance {
+    right: auto;
+    left: calc(44% + var(--software-circle-radius) + 8px);
+  }
+  .software-feature.feature-talent,
+  .software-feature.feature-onboarding {
+    top: calc(50% - var(--software-circle-radius) - 35px);
+    bottom: auto;
+  }
+  .software-feature.feature-attendance,
+  .software-feature.feature-payroll {
+    top: calc(50% - 16px);
+    bottom: auto;
+  }
+  .software-feature.feature-dashboard,
+  .software-feature.feature-performance {
+    top: calc(50% + var(--software-circle-radius) + 4px);
+    bottom: auto;
+  }
+}
+@media (min-width: 851px) and (max-width: 1100px) {
+  .software-visual {
+    --software-circle-radius: 126px;
+  }
+}
