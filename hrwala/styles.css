@@ -4258,6 +4258,119 @@ h2 em {
 .team-section .section-head h2 {
   margin-bottom: 0;
 }
+.job-portal-section {
+  padding: 84px 0;
+  background: #fff;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.job-portal-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) repeat(2, minmax(0, 0.85fr));
+  gap: 42px;
+  align-items: start;
+}
+.job-portal-intro .eyebrow {
+  margin-bottom: 14px;
+}
+.job-portal-intro h2 {
+  margin-bottom: 20px;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-size: clamp(36px, 4vw, 48px);
+  font-weight: 700;
+}
+.job-portal-intro p {
+  margin-bottom: 14px;
+  font-size: 13px;
+  line-height: 1.75;
+}
+.job-portal-intro strong {
+  color: var(--ink);
+}
+.job-portal-intro .button {
+  margin-top: 4px;
+}
+.job-portal-audience-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 42px;
+  margin-bottom: 15px;
+}
+.job-portal-mark {
+  display: grid;
+  place-items: center;
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #b68a3966;
+  border-radius: 50%;
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 700;
+}
+.job-portal-audience-heading h3 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+}
+.job-portal-audience-heading h3 em {
+  color: var(--muted);
+  font-style: normal;
+}
+.job-portal-features {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+}
+.job-portal-features li {
+  position: relative;
+  min-height: 39px;
+  padding: 10px 8px 9px 19px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 12px;
+  line-height: 1.55;
+}
+.job-portal-features li::before {
+  position: absolute;
+  top: 17px;
+  left: 3px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+  content: "";
+}
+@media (max-width: 850px) {
+  .job-portal-section {
+    padding: 58px 0;
+  }
+  .job-portal-layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 24px;
+  }
+  .job-portal-intro {
+    grid-column: 1 / -1;
+    max-width: 700px;
+  }
+}
+@media (max-width: 620px) {
+  .job-portal-section {
+    padding: 44px 0;
+  }
+  .job-portal-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+  .job-portal-intro {
+    grid-column: auto;
+  }
+  .job-portal-intro h2 {
+    font-size: 36px;
+  }
+}
 body {
   overflow-x: hidden;
 }
