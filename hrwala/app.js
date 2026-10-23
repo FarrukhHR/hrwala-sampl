@@ -261,26 +261,6 @@ if (!isJobs) {
         modules(b.dataset.moduleFilter);
       }),
   );
-  $("#cert-list").innerHTML = C.certifications
-    .map(
-      (c, i) =>
-        `<button class="cert-row" data-cert="${i}"><span class="number">${String(i + 1).padStart(2, "0")}</span><span class="cert-title">${esc(c)}</span><span class="arrow">↗</span></button>`,
-    )
-    .join("");
-  $$("[data-cert]").forEach(
-    (b) =>
-      (b.onclick = () => {
-        const title = C.certifications[+b.dataset.cert];
-        openDetail(
-          `<div class="eyebrow">PROFESSIONAL CERTIFICATIONS</div><h2>${esc(title)}</h2><p>Start a conversation about this professional development pathway.</p><p>Programme duration, eligibility, fees, assessment and awarding arrangements will be confirmed by HR Wala. No accreditation or enrolment availability is implied in this preview.</p><button class="button primary" id="enquire-cert">Request programme details ↗</button>`,
-        );
-        $("#enquire-cert").onclick = () => {
-          interest("Professional Certifications");
-          $("#contact-form textarea").value =
-            "I would like details about " + title + ".";
-        };
-      }),
-  );
   const silhouette =
     '<svg viewBox="0 0 200 180" aria-hidden="true"><circle cx="100" cy="56" r="38" fill="currentColor"/><path d="M14 190v-30a86 86 0 0 1 172 0v30" fill="currentColor"/></svg>';
   $("#team-grid").innerHTML = C.team

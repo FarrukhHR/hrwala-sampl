@@ -5024,7 +5024,7 @@ body {
 }
 .academy-credentials,
 .academy-badges {
-  padding-top: calc(clamp(32px, 3.2vw, 42px) * 1.13 + 16px);
+  padding-top: calc(clamp(32px, 3.2vw, 42px) * 1.13 + 10px);
 }
 .academy-promise {
   padding: 22px 24px 24px;
