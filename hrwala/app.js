@@ -355,14 +355,14 @@ if (!isJobs) {
   };
   const slides = [
     {
-      t: "HR All-in-One",
-      h: "Hire Smarter<br>Manage Better<br><em>Grow Faster</em>",
-      p: "Recruitment, payroll and HR in one place.<br>Everything your people need.",
+      t: "Job Portal",
+      h: "Find Talent<br>Find Opportunity<br><em>Meet here</em>",
+      p: "Verified jobs and qualified candidates<br>Where employers and careers connect.",
     },
     {
-      t: "HRwala Software",
-      h: "Simplify HR<br>Automate Payroll<br><em>Empower People</em>",
-      p: "One system for every employee record.<br>Less paperwork, more progress.",
+      t: "Hospitality Talent",
+      h: "Hoteliers<br>Star Performers<br><em>Get Connected</em>",
+      p: "First ever dedicated hospitality people<br>Job Portal connecting people with hoteliers",
     },
     {
       t: "Brand Standards",
@@ -375,9 +375,9 @@ if (!isJobs) {
       p: "Recognized credentials for working professionals.<br>Your next career step starts here.",
     },
     {
-      t: "Job Portal",
-      h: "Find Talent<br>Find Opportunity<br><em>Meet here</em>",
-      p: "Verified jobs and qualified candidates<br>Where employers and careers connect.",
+       t: "HR All-in-One",
+      h: "Hire Smarter<br>Manage Better<br><em>Grow Faster</em>",
+      p: "Recruitment, payroll and HR in one place.<br>Everything your people need.",
     },
     {
       t: "Your Advisor",
@@ -390,10 +390,11 @@ if (!isJobs) {
       p: "Executive search and talent acquisition.<br>Your next great hire starts here.",
     },
     {
-      t: "Hospitality Talent",
-      h: "Hoteliers<br>Star Performers<br><em>Get Connected</em>",
-      p: "First ever dedicated hospitality people<br>Job Portal connecting people with hoteliers",
+        t: "HRwala Software",
+      h: "Simplify HR<br>Automate Payroll<br><em>Empower People</em>",
+      p: "One system for every employee record.<br>Less paperwork, more progress.",
     },
+   
   ];
   // HERO_ROTATION_START: 3 seconds hold + 1 second fade out + 1 second fade in.
   let slide = 0,
@@ -411,7 +412,7 @@ if (!isJobs) {
   }
   function scheduleHero() {
     clearTimeout(heroTimer);
-    if (heroCanRun()) heroTimer = setTimeout(advanceHero, 3000);
+    if (heroCanRun()) heroTimer = setTimeout(advanceHero, 5000);
   }
   function restoreHero() {
     clearTimeout(heroTimer);

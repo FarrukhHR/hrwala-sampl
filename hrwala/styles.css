@@ -1093,7 +1093,7 @@ small {
   color: #788397;
 }
 .partner-heading {
-  text-align: center;
+  text-align: start;
 }
 .partner-heading .eyebrow {
   margin-bottom: 18px;
@@ -3238,7 +3238,7 @@ dialog::backdrop {
 }
 .software-section-heading {
   padding: 52px 0 6px;
-  text-align: center;
+  text-align: start;
 }
 .software-section-heading .eyebrow {
   margin-bottom: 12px;
@@ -3580,7 +3580,7 @@ dialog::backdrop {
 }
 .team-section .section-head > div {
   width: 100%;
-  text-align: center;
+  text-align: start;
 }
 .team-section .section-head .eyebrow {
   margin-bottom: 9px;
@@ -4344,7 +4344,7 @@ h2 em {
 }
 .job-portal-features {
   display: grid;
-  gap: 7px;
+  gap: 8px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -4353,25 +4353,38 @@ h2 em {
   position: relative;
   display: flex;
   align-items: center;
-  min-height: 40px;
-  padding: 8px 9px 8px 23px;
-  border: 1px solid #e1e5ed;
-  border-radius: 4px;
+  min-height: 68px;
+  padding: 10px 12px;
+  border: 1px solid #dce2ec;
+  border-top: 2px solid var(--blue);
+  border-radius: 6px;
   background: #fff;
   color: var(--ink);
   font-size: 11px;
   line-height: 1.45;
+  box-shadow: 0 4px 12px #19213208;
+  transition:
+    transform 0.2s,
+    border-color 0.2s,
+    box-shadow 0.2s,
+    background 0.2s;
+}
+.job-portal-features li:hover {
+  transform: translateY(-2px);
+  border-color: #c6cfde;
+  border-top-color: var(--blue);
+  background: #f7f9ff;
+  box-shadow: 0 9px 20px #19213212;
+}
+.employer-audience .job-portal-features li {
+  border-top-color: var(--gold);
+}
+.employer-audience .job-portal-features li:hover {
+  border-top-color: var(--gold);
+  background: #fffdf8;
 }
 .job-portal-features li::before {
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--gold);
-  content: "";
-  transform: translateY(-50%);
+  display: none;
 }
 @media (max-width: 850px) {
   .job-portal-section {
@@ -5032,8 +5045,8 @@ body {
   margin-bottom: 20px;
   padding-bottom: 15px;
   border-bottom: 1px solid #ffffff26;
-  color: var(--gold);
-  font-size: 11px;
+  color: white;
+  font-size: 14px;
   font-weight: 700;
 }
 .academy-promise-top span {
@@ -5107,8 +5120,8 @@ body {
 .academy-image-slot {
   display: block;
   flex: 0 0 76px;
-  width: 76px;
-  height: 76px;
+  width: 86px;
+  height: 86px;
   aspect-ratio: 1;
   border: 1px dashed #b8c0ce;
   border-radius: 50%;
