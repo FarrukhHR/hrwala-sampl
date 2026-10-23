@@ -4982,7 +4982,7 @@ body {
 }
 /* calc(56% + var(--software-circle-radius) - 24px) */
 .academy-section {
-  padding: 72px 0;
+  padding: 72px 50;
   background: #fff;
   border-bottom: 1px solid var(--line);
 }
