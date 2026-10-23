@@ -4899,8 +4899,8 @@ body {
 .software-feature.feature-talent,
 .software-feature.feature-attendance,
 .software-feature.feature-dashboard {
-  left: 0;
-  right: auto;
+  left: 10;
+  right: 10;
 }
 .software-feature.feature-onboarding,
 .software-feature.feature-payroll,
@@ -4976,3 +4976,4 @@ body {
     --software-circle-radius: 126px;
   }
 }
+/* calc(56% + var(--software-circle-radius) - 24px) */
