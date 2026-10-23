@@ -5160,93 +5160,96 @@ body {
     min-height: 88px;
   }
 }
+/* Three evenly spaced label pairs around the circle */
 .software-visual {
-  --software-circle-radius: 145px;
-  --software-diagonal-anchor: 140px;
-  --software-label-offset: 55px;
+  --software-label-spacing: 96px;
 }
-.software-visual > img {
-  width: 290px;
-  height: 290px;
+
+.software-visual > img,
+.software-visual > .software-halo {
+  left: 50%;
 }
-.software-feature {
+
+.software-visual > .software-feature {
   top: 50%;
   bottom: auto;
-  width: max-content;
-  max-width: none;
-  white-space: nowrap;
-  transform: translateY(-50%);
+  width: 32%;
+  max-width: 156px;
+  min-height: 42px;
+  padding: 9px 8px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: normal;
+  line-height: 1.25;
+
+  animation: software-label-float 5.2s ease-in-out infinite;
+  animation-delay: 0s;
+  will-change: transform;
 }
-.software-feature.feature-talent,
-.software-feature.feature-dashboard,
-.software-feature.feature-attendance {
-  left: auto;
-}
-.software-feature.feature-talent,
-.software-feature.feature-onboarding {
-  top: calc(50% - var(--software-label-offset));
-}
-.software-feature.feature-dashboard,
-.software-feature.feature-performance {
-  top: calc(50% + var(--software-label-offset));
-}
-.software-feature.feature-talent,
-.software-feature.feature-dashboard {
-  right: calc(50% + var(--software-diagonal-anchor));
-}
-.software-feature.feature-attendance {
-  right: calc(50% + var(--software-circle-radius));
-}
-.software-feature.feature-onboarding,
-.software-feature.feature-performance,
-.software-feature.feature-payroll {
+
+/* Left column */
+.software-visual > .feature-talent,
+.software-visual > .feature-attendance,
+.software-visual > .feature-dashboard {
+  left: 0;
   right: auto;
 }
-.software-feature.feature-onboarding,
-.software-feature.feature-performance {
-  left: calc(50% + var(--software-diagonal-anchor));
+
+/* Right column */
+.software-visual > .feature-onboarding,
+.software-visual > .feature-payroll,
+.software-visual > .feature-performance {
+  left: auto;
+  right: 0;
 }
-.software-feature.feature-payroll {
-  left: calc(50% + var(--software-circle-radius));
+
+/* Top pair */
+.software-visual > .feature-talent,
+.software-visual > .feature-onboarding {
+  top: calc(50% - var(--software-label-spacing));
 }
+
+/* Bottom pair */
+.software-visual > .feature-dashboard,
+.software-visual > .feature-performance {
+  top: calc(50% + var(--software-label-spacing));
+}
+
+/* Float together so the rows stay aligned */
+@keyframes software-label-float {
+  0%, 100% {
+    transform: translateY(-50%);
+  }
+  50% {
+    transform: translateY(calc(-50% - 11px));
+  }
+}
+
 @media (max-width: 850px) {
   .software-visual {
-    --software-circle-radius: min(125px, 31vw);
-    --software-diagonal-anchor: min(120px, 29.5vw);
-    --software-label-offset: min(48px, 12vw);
-  }
-  .software-visual > img {
-    width: min(250px, 62vw);
-    height: min(250px, 62vw);
+    --software-label-spacing: 88px;
   }
 }
+
 @media (max-width: 620px) {
   .software-visual {
-    --software-circle-radius: min(75px, 22.5vw);
-    --software-diagonal-anchor: min(71px, 21vw);
-    --software-label-offset: min(28px, 8vw);
+    --software-label-spacing: clamp(62px, 18vw, 88px);
   }
-  .software-visual > img {
-    width: min(150px, 45vw);
-    height: min(150px, 45vw);
-  }
-  .software-feature {
-    padding: 6px 7px;
-    font-size: 8px;
+
+  .software-visual > .software-feature {
+    min-height: 36px;
+    padding: 7px 5px;
+    font-size: clamp(8px, 2.1vw, 11px);
   }
 }
-@media (max-width: 380px) {
-  .software-visual {
-    --software-circle-radius: min(64px, 20vw);
-    --software-diagonal-anchor: min(60px, 18.75vw);
-    --software-label-offset: min(24px, 7.5vw);
-  }
-  .software-visual > img {
-    width: min(128px, 40vw);
-    height: min(128px, 40vw);
-  }
-  .software-feature {
-    padding: 4px 5px;
-    font-size: 6px;
+
+@media (prefers-reduced-motion: reduce) {
+  .software-visual > .software-feature {
+    animation: none;
+    transform: translateY(-50%);
   }
 }
