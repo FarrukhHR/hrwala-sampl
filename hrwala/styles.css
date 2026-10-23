@@ -4890,3 +4890,36 @@ body {
     will-change: auto;
   }
 }
+@media (min-width: 851px) {
+  .software-visual > img,
+  .software-halo {
+    left: 44%;
+  }
+  .software-feature.feature-talent,
+  .software-feature.feature-dashboard {
+    left: 21%;
+  }
+  .software-feature.feature-onboarding,
+  .software-feature.feature-performance {
+    right: 35%;
+  }
+  .software-feature.feature-attendance {
+    left: 4%;
+  }
+  .software-feature.feature-payroll {
+    right: 18%;
+  }
+}
+.software-halo {
+  border: 0;
+  background: none;
+}
+.software-halo::after {
+  display: none;
+}
+@media (max-width: 850px) {
+  .software-visual > img,
+  .software-halo {
+    left: 50%;
+  }
+}
