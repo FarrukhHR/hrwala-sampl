@@ -3353,8 +3353,8 @@ dialog::backdrop {
   gap: 12px;
 }
 .module-card {
-  min-height: 0;
-  padding: 16px;
+  min-height: 104px;
+  padding: 10px 14px;
   border: 1px solid #ffffff20;
   border-radius: 10px;
   background: #ffffff08;
@@ -3364,14 +3364,15 @@ dialog::backdrop {
   background: #ffffff12;
 }
 .module-card .module-number {
-  margin-bottom: 9px;
+  margin-bottom: 5px;
 }
 .module-card h4 {
   font-size: 14px;
+  margin-bottom: 4px;
 }
 .module-card p {
   font-size: 10px;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 @media (max-width: 850px) {
   .software-section {
