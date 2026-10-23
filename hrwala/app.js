@@ -30,6 +30,12 @@ $("#header").innerHTML =
   `<header class="site-header"><div class="wrap header-inner">${logo}<nav class="desktop-nav" id="main-nav" aria-label="Main navigation"><a href="index.html" class="${!isJobs ? "active" : ""}" ${!isJobs ? 'aria-current="page"' : ""}>Discover</a><a href="jobs.html" class="${isJobs ? "active" : ""}" ${isJobs ? 'aria-current="page"' : ""}>Job Portal <span aria-hidden="true"> ↗</span></a></nav><button class="menu-button" aria-label="Open menu" aria-controls="main-nav" aria-expanded="false">☰</button></div></header>`;
 $("#footer").innerHTML =
   `<footer class="site-footer"><div class="wrap"><div class="footer-grid"><div class="footer-brand">${logo}<span class="footer-promise">PEOPLE. POSSIBILITIES. PROGRESS.</span><p>People-first HR support for stronger teams, trusted standards and connected workplaces.</p></div><div class="footer-col"><h4>Explore</h4><a href="index.html">Discover HRWala</a><a href="jobs.html">Find opportunities</a><a href="index.html#team">Meet the team</a><a href="index.html#partners">Our partners</a></div><div class="footer-col"><h4>People &amp; work</h4><a href="index.html#services">HR consulting</a><a href="index.html#services">Brand standards</a><a href="index.html#certifications">Skills development</a><a href="index.html#software">HRWala Software</a></div><div class="footer-col"><h4>Your space</h4><a href="index.html#contact">Contact our team</a><a href="jobs.html">Career opportunities</a><button data-profile>Your local profile</button><button data-privacy>Privacy &amp; data</button></div></div><div class="footer-bottom"><span>© 2015 HRWala.net. All rights reserved.</span><span>Built around people. Designed for progress.</span><button class="plain" data-privacy>Privacy notice</button></div></div></footer>`;
+$(".footer-brand").insertAdjacentHTML(
+  "beforeend",
+  '<address class="footer-contact"><h4>Contact</h4><a href="tel:+923008523878">+92 300 8523878</a><a href="tel:+923055243737">+92 305 5243737</a><a href="mailto:hello@hrwala.net">hello@hrwala.net</a></address>',
+);
+$('.footer-col a[href="index.html#certifications"]').href =
+  "index.html#future-academy";
 $(".menu-button").addEventListener("click", (e) => {
   const open = $("#main-nav").classList.toggle("open");
   e.currentTarget.setAttribute("aria-expanded", open);
@@ -336,7 +342,7 @@ if (!isJobs) {
   const slides = [
     {
       t: "Job Portal",
-      h: "Find Talent<br>Find Opportunity<br><em>Meet here</em>",
+      h: "Find Talent<br>Find Opportunity<br><em>Meet Here</em>",
       p: "Verified jobs and qualified candidates<br>Where employers and careers connect.",
     },
     {
@@ -351,7 +357,7 @@ if (!isJobs) {
     },
     {
       t: "HR Certifications",
-      h: "Get certified<br>Get Noticed<br><em>Get Ahead</em>",
+      h: "Get Certified<br>Get Noticed<br><em>Get Ahead</em>",
       p: "Recognized credentials for working professionals.<br>Your next career step starts here.",
     },
     {
@@ -366,7 +372,7 @@ if (!isJobs) {
     },
     {
       t: "Head Hunting",
-      h: "Right people<br>Right roles<br><em>Real growth</em>",
+      h: "Right People<br>Right Roles<br><em>Real Growth</em>",
       p: "Executive search and talent acquisition.<br>Your next great hire starts here.",
     },
     {
