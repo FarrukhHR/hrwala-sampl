@@ -4946,18 +4946,18 @@ body {
   .software-feature.feature-talent,
   .software-feature.feature-attendance,
   .software-feature.feature-dashboard {
-    right: calc(56% + var(--software-circle-radius) - 16px);
+    right: calc(56% + var(--software-circle-radius) - 24px);
     left: auto;
   }
   .software-feature.feature-onboarding,
   .software-feature.feature-payroll,
   .software-feature.feature-performance {
     right: auto;
-    left: calc(44% + var(--software-circle-radius) - 16px);
+    left: calc(44% + var(--software-circle-radius) - 24px);
   }
   .software-feature.feature-talent,
   .software-feature.feature-onboarding {
-    top: calc(50% - var(--software-circle-radius) - 22px);
+    top: calc(50% - var(--software-circle-radius) - 14px);
     bottom: auto;
   }
   .software-feature.feature-attendance,
@@ -4967,7 +4967,7 @@ body {
   }
   .software-feature.feature-dashboard,
   .software-feature.feature-performance {
-    top: calc(50% + var(--software-circle-radius) - 22px);
+    top: calc(50% + var(--software-circle-radius) - 30px);
     bottom: auto;
   }
 }
