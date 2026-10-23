@@ -1,8 +1,8 @@
 :root {
   --blue: #1738b4;
   --blue-deep: #132875;
-  --gold: #b68a39;
-  --gold-pale: #eee0bd;
+  --gold: #dfc38a;
+  --gold-pale: #dfc38a;
   --black: #10151f;
   --ink: #192132;
   --muted: #647084;
@@ -61,7 +61,7 @@ a:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline: 3px solid #d5aa54;
+  outline: 3px solid var(--gold);
   outline-offset: 4px;
 }
 h1,
@@ -121,7 +121,7 @@ small {
   margin-bottom: 23px;
 }
 .eyebrow.light {
-  color: #d8c298;
+  color: var(--gold);
 }
 .small-line {
   display: inline-block;
@@ -836,8 +836,8 @@ small {
   font-size: 11px;
 }
 .filter-tabs button.selected {
-  background: #eee0bd;
-  border-color: #eee0bd;
+  background: var(--gold);
+  border-color: var(--gold);
   color: #10151f;
 }
 .module-grid {
@@ -4454,7 +4454,7 @@ h2 em {
 }
 .brand-industries h3 {
   margin-bottom: 14px;
-  color: #876521;
+  color: var(--gold);
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 0;
@@ -4470,16 +4470,29 @@ h2 em {
 .brand-industry-grid li {
   display: grid;
   place-items: center;
-  min-height: 60px;
-  padding: 9px 7px;
-  border: 1px solid #cbd1dc;
-  border-radius: 4px;
+  min-height: 68px;
+  padding: 10px 9px;
+  border: 1px solid #dce2ec;
+  border-top: 2px solid var(--gold);
+  border-radius: 6px;
   background: #fff;
-  color: var(--blue-deep);
+  color: var(--ink);
   font-size: 11px;
   font-weight: 600;
   line-height: 1.4;
   text-align: center;
+  box-shadow: 0 4px 12px #19213208;
+  transition:
+    transform 0.2s,
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+.brand-industry-grid li:hover {
+  transform: translateY(-2px);
+  border-color: #c6cfde;
+  border-top-color: var(--gold);
+  background: #fffdf8;
+  box-shadow: 0 9px 20px #19213212;
 }
 @media (max-width: 850px) {
   .brand-section {
@@ -4632,8 +4645,8 @@ body {
   color: var(--blue);
 }
 .hero-art .float-icon.gold {
-  background: #f6f0e3;
-  color: #967029;
+  background: color-mix(in srgb, var(--gold) 18%, white);
+  color: var(--gold);
 }
 .hero-art .float-one {
   animation-delay: -0.4s;
