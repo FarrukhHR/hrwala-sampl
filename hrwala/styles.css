@@ -4899,7 +4899,7 @@ body {
 .software-feature .feature-talent,
 .software-feature.feature-attendance,
 .software-feature.feature-dashboard {
-  left: -10;
+  left: -30;
   right: 0;
 }
 .software-feature.feature-onboarding,
