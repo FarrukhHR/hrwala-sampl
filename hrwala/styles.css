@@ -4344,6 +4344,7 @@ h2 em {
 }
 .job-portal-features {
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
   margin: 0;
   padding: 0;
@@ -4353,7 +4354,7 @@ h2 em {
   position: relative;
   display: flex;
   align-items: center;
-  min-height: 68px;
+  min-height: 52px;
   padding: 10px 12px;
   border: 1px solid #dce2ec;
   border-top: 2px solid var(--blue);
@@ -4418,6 +4419,11 @@ h2 em {
     grid-template-columns: minmax(0, 1fr);
     grid-column: auto;
     gap: 24px;
+  }
+}
+@media (max-width: 380px) {
+  .job-portal-features {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 .brand-section {
