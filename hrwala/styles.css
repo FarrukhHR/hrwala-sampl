@@ -4993,7 +4993,7 @@ body {
   align-items: stretch;
 }
 .academy-intro h2 {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   color: var(--ink);
   font-family: Poppins, Arial, Helvetica, sans-serif;
   font-size: clamp(32px, 3.2vw, 42px);
@@ -5003,41 +5003,76 @@ body {
   color: var(--blue);
 }
 .academy-promise {
-  min-height: 100%;
-  padding: 18px 20px 22px;
-  background: #07072f;
+  padding: 22px 24px 24px;
+  border: 1px solid #192858;
+  border-top: 3px solid var(--gold);
+  border-radius: 8px;
+  background: linear-gradient(145deg, #101a3d, #07072f 72%);
   color: #fff;
+  box-shadow: 0 12px 28px #101a3d16;
+}
+.academy-promise-lead {
+  max-width: 300px;
+  margin-bottom: 22px;
+  color: #fff;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.45;
 }
 .academy-promise-top {
   display: flex;
   justify-content: space-between;
-  gap: 10px;
-  margin-bottom: 32px;
+  counter-reset: academy-step;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ffffff26;
   color: var(--gold);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
+}
+.academy-promise-top span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  counter-increment: academy-step;
+}
+.academy-promise-top span::before {
+  display: grid;
+  place-items: center;
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #dfc38a80;
+  border-radius: 50%;
+  color: #f2dca8;
+  content: counter(academy-step);
+  font-size: 10px;
 }
 .academy-promise ul {
   display: grid;
-  gap: 8px;
+  gap: 10px;
   margin: 0;
-  padding: 0 0 0 18px;
-  color: var(--gold);
+  padding: 0;
+  color: #f2f3f8;
   font-size: 12px;
-  line-height: 1.5;
+  line-height: 1.55;
   list-style: none;
 }
 .academy-promise li {
   position: relative;
+  padding-left: 20px;
 }
 .academy-promise li::before {
   position: absolute;
-  top: 0.6em;
-  left: -14px;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--gold);
+  top: 0.25em;
+  left: 2px;
+  width: 6px;
+  height: 10px;
+  border-right: 1.5px solid var(--gold);
+  border-bottom: 1.5px solid var(--gold);
+  transform: rotate(45deg);
   content: "";
 }
 .academy-credentials h3,
@@ -5065,41 +5100,16 @@ body {
   font-weight: 600;
   line-height: 1.45;
 }
-.academy-medal {
-  position: relative;
-  display: grid;
-  place-items: center;
+.academy-image-slot {
+  display: block;
   flex: 0 0 76px;
   width: 76px;
   height: 76px;
-  border: 4px double #f7e9c7;
+  aspect-ratio: 1;
+  border: 1px dashed #b8c0ce;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #f5e1ad, #b98c3f 62%, #79551e);
-  box-shadow: 0 2px 8px #15213b24, 0 0 0 1px #b98c3f;
-  color: #13213a;
-}
-.academy-medal::after {
-  position: absolute;
-  inset: 6px;
-  border: 1px solid #fff9;
-  border-radius: 50%;
-  content: "";
-}
-.academy-medal > span {
-  z-index: 1;
-  font-family: Poppins, Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  font-weight: 800;
-}
-.academy-medal.medal-blue {
-  background: radial-gradient(circle at 35% 30%, #92a8dc, #254478 62%, #111d35);
-  box-shadow: 0 2px 8px #15213b24, 0 0 0 1px #536d9a;
-  color: #f3d99e;
-}
-.academy-medal.medal-green {
-  background: radial-gradient(circle at 35% 30%, #abc48a, #41643a 62%, #1c3524);
-  box-shadow: 0 2px 8px #15213b24, 0 0 0 1px #6d8a56;
-  color: #f3d99e;
+  background: #f5f6f8;
+  box-shadow: inset 0 0 0 5px #fff;
 }
 .academy-badges .academy-awards li {
   flex-direction: row-reverse;
@@ -5134,6 +5144,9 @@ body {
   }
   .academy-promise-top {
     font-size: 10px;
+  }
+  .academy-promise {
+    padding: 20px;
   }
   .academy-awards li {
     min-height: 88px;
