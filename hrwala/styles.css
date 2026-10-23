@@ -4259,19 +4259,19 @@ h2 em {
   margin-bottom: 0;
 }
 .job-portal-section {
-  padding: 70px 0 76px;
+  padding: 72px 0;
   background: #f8f9fb;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
 .job-portal-layout {
   display: grid;
-  gap: 45px;
+  grid-template-columns: minmax(0, 1.05fr) repeat(2, minmax(0, 0.9fr));
+  gap: 34px;
+  align-items: start;
 }
 .job-portal-heading {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
+  max-width: 440px;
 }
 .job-portal-heading .eyebrow {
   margin-bottom: 10px;
@@ -4280,25 +4280,28 @@ h2 em {
   text-transform: uppercase;
 }
 .job-portal-heading h2 {
-  margin-bottom: 13px;
+  margin-bottom: 20px;
   font-family: Poppins, Arial, Helvetica, sans-serif;
-  font-size: clamp(34px, 3.7vw, 46px);
+  font-size: clamp(38px, 4vw, 50px);
   font-weight: 700;
 }
 .job-portal-heading h2 em {
   color: var(--blue);
 }
 .job-portal-heading > p {
-  max-width: 620px;
-  margin: 0 auto 22px;
-  font-size: 14px;
-  line-height: 1.75;
+  margin: 0 0 14px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.job-portal-heading > p strong {
+  color: var(--ink);
 }
 .job-portal-actions {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 22px;
+  justify-content: flex-start;
+  gap: 18px;
+  margin-top: 20px;
   flex-wrap: wrap;
 }
 .job-portal-actions .button {
@@ -4317,13 +4320,14 @@ h2 em {
 }
 .job-portal-audiences {
   display: grid;
+  grid-column: span 2;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 38px;
+  gap: 20px;
 }
 .job-portal-audience-heading {
-  min-height: 42px;
-  margin-bottom: 10px;
-  padding-top: 15px;
+  min-height: 44px;
+  margin-bottom: 12px;
+  padding-top: 14px;
   border-top: 2px solid var(--blue);
 }
 .employer-audience .job-portal-audience-heading {
@@ -4331,59 +4335,58 @@ h2 em {
 }
 .job-portal-audience-heading h3 {
   margin: 0 0 4px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
 }
 .job-portal-audience-heading h3 em {
   color: var(--muted);
   font-style: normal;
 }
-.job-portal-steps {
+.job-portal-features {
+  display: grid;
+  gap: 7px;
   margin: 0;
   padding: 0;
   list-style: none;
-  counter-reset: portal-step;
 }
-.job-portal-steps li {
-  display: grid;
-  grid-template-columns: 34px minmax(0, 1fr);
-  gap: 12px;
-  padding: 15px 0;
-  border-bottom: 1px solid var(--line);
-  counter-increment: portal-step;
+.job-portal-features li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 8px 9px 8px 23px;
+  border: 1px solid #e1e5ed;
+  border-radius: 4px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 11px;
+  line-height: 1.45;
 }
-.job-portal-steps li > span {
-  display: grid;
-  place-items: center;
-  width: 30px;
-  height: 30px;
-  border: 1px solid #1738b433;
+.job-portal-features li::before {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
-  color: var(--blue);
-  font-size: 10px;
-  font-weight: 700;
-}
-.employer-audience .job-portal-steps li > span {
-  border-color: #b68a3966;
-  color: #94702f;
-}
-.job-portal-steps h4 {
-  margin: 0 0 4px;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0;
-}
-.job-portal-steps p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.6;
+  background: var(--gold);
+  content: "";
+  transform: translateY(-50%);
 }
 @media (max-width: 850px) {
   .job-portal-section {
     padding: 58px 0;
   }
+  .job-portal-layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px 24px;
+  }
+  .job-portal-heading {
+    grid-column: 1 / -1;
+    max-width: 680px;
+  }
   .job-portal-audiences {
+    grid-column: 1 / -1;
     gap: 24px;
   }
 }
@@ -4392,14 +4395,16 @@ h2 em {
     padding: 46px 0;
   }
   .job-portal-layout {
-    gap: 34px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
   }
-  .job-portal-heading h2 {
-    font-size: 34px;
+  .job-portal-heading {
+    grid-column: auto;
   }
   .job-portal-audiences {
     grid-template-columns: minmax(0, 1fr);
-    gap: 26px;
+    grid-column: auto;
+    gap: 24px;
   }
 }
 body {
