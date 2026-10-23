@@ -5002,6 +5002,10 @@ body {
 .academy-intro h2 em {
   color: var(--blue);
 }
+.academy-credentials,
+.academy-badges {
+  padding-top: calc(clamp(32px, 3.2vw, 42px) * 1.13 + 16px);
+}
 .academy-promise {
   padding: 22px 24px 24px;
   border: 1px solid #192858;
@@ -5123,6 +5127,10 @@ body {
   }
   .academy-intro {
     grid-column: 1 / -1;
+  }
+  .academy-credentials,
+  .academy-badges {
+    padding-top: 0;
   }
   .academy-intro h2 {
     margin-bottom: 16px;
