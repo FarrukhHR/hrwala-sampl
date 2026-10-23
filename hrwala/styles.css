@@ -4946,33 +4946,64 @@ body {
   .software-feature.feature-talent,
   .software-feature.feature-attendance,
   .software-feature.feature-dashboard {
-    right: calc(56% + var(--software-circle-radius) + 8px);
+    right: calc(56% + var(--software-circle-radius) - 16px);
     left: auto;
   }
   .software-feature.feature-onboarding,
   .software-feature.feature-payroll,
   .software-feature.feature-performance {
     right: auto;
-    left: calc(44% + var(--software-circle-radius) + 8px);
+    left: calc(44% + var(--software-circle-radius) - 16px);
   }
   .software-feature.feature-talent,
   .software-feature.feature-onboarding {
-    top: calc(50% - var(--software-circle-radius) - 35px);
+    top: calc(50% - var(--software-circle-radius) - 22px);
     bottom: auto;
   }
   .software-feature.feature-attendance,
   .software-feature.feature-payroll {
-    top: calc(50% - 16px);
+    top: calc(50% - 18px);
     bottom: auto;
   }
   .software-feature.feature-dashboard,
   .software-feature.feature-performance {
-    top: calc(50% + var(--software-circle-radius) + 4px);
+    top: calc(50% + var(--software-circle-radius) - 22px);
     bottom: auto;
   }
 }
 @media (min-width: 851px) and (max-width: 1100px) {
   .software-visual {
     --software-circle-radius: 126px;
+  }
+}
+.software-feature {
+  width: max-content;
+  max-width: none;
+  padding: 12px 15px 12px 19px;
+  border: 1px solid #ffffff36;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 11px;
+  line-height: 1.25;
+  white-space: nowrap;
+  box-shadow: 0 12px 28px #0003;
+}
+.software-feature::before {
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 0;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: var(--blue);
+  content: "";
+}
+@media (max-width: 620px) {
+  .software-feature {
+    max-width: 124px;
+    padding: 9px 10px 9px 14px;
+    font-size: 8px;
+    white-space: normal;
   }
 }
