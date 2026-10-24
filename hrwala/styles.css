@@ -5105,6 +5105,7 @@ body {
   border-right: 1.5px solid var(--gold);
   border-bottom: 1.5px solid var(--gold);
   transform: rotate(45deg);
+  object-fit: contain;
   content: "";
 }
 .academy-credentials h3,
