@@ -1,5 +1,68 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>HRWala.net | Find your next chapter</title><meta name="description" content="Find opportunities, build your CV and connect with employers on HRWala."><link rel="stylesheet" href="./job-portal.css"></head><body><!-- INTEGRATION: Put these three files together (in public/ for an existing Vite project).
-On the EXISTING Discover page, link the Job Portal button to ./job-portal.html.
-Example: <a href="./job-portal.html">Job Portal</a>
-No iframe, new Vite setup or dependencies needed. Discover links return to ./.
-This is the interactive frontend preview; production authentication/database/payments remain separate. --><div id="app"></div><div id="modal"></div><div id="toast"></div><div id="printcv" class="hide"></div><script src="./job-portal.js" defer></script></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>HRWala.net | Find your next chapter</title>
+    <meta
+      name="description"
+      content="Find opportunities, build your CV and connect with employers on HRWala."
+    />
+    <link rel="stylesheet" href="./job-portal.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div style="max-width: 1100px; margin: 64px auto; padding: 32px 20px; font-family: Arial, sans-serif; color: #192135;">
+        <div style="display:inline-block;padding:8px 14px;border-radius:999px;background:#edf1ff;color:#213bb6;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">Job Portal</div>
+        <h1 style="font-size: clamp(2.4rem, 4vw, 4rem); margin: 20px 0 12px;">Find your next chapter.</h1>
+        <p style="font-size: 1.1rem; max-width: 680px; line-height: 1.7; color: #495468; margin: 0 0 24px;">Explore career opportunities, discover people-first employers, and build a stronger next move with HRWala.net.</p>
+        <div style="display:flex; flex-wrap:wrap; gap: 12px; margin-bottom: 28px;">
+          <a href="./index.html" style="display:inline-block;padding: 12px 18px;border-radius: 10px;background: #213bb6;color:white;font-weight:600;text-decoration:none;">Back to Discover</a>
+          <a href="#jobs" style="display:inline-block;padding: 12px 18px;border-radius: 10px;background: #fff;border:1px solid #dce1f3;color: #213bb6;font-weight:600;text-decoration:none;">Browse roles</a>
+        </div>
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+          <div style="background:white;border:1px solid #e5e8f0;border-radius:16px;padding:20px; box-shadow: 0 8px 24px rgba(25,33,53,.04);">
+            <h2 style="margin:0 0 8px; font-size:1.2rem;">For candidates</h2>
+            <p style="margin:0; color:#5d677d; line-height:1.7;">Build a CV, explore verified jobs, and keep your next steps organized.</p>
+          </div>
+          <div style="background:white;border:1px solid #e5e8f0;border-radius:16px;padding:20px; box-shadow: 0 8px 24px rgba(25,33,53,.04);">
+            <h2 style="margin:0 0 8px; font-size:1.2rem;">For employers</h2>
+            <p style="margin:0; color:#5d677d; line-height:1.7;">Post openings, shortlist talent, and manage hiring in one place.</p>
+          </div>
+          <div style="background:white;border:1px solid #e5e8f0;border-radius:16px;padding:20px; box-shadow: 0 8px 24px rgba(25,33,53,.04);">
+            <h2 style="margin:0 0 8px; font-size:1.2rem;">For teams</h2>
+            <p style="margin:0; color:#5d677d; line-height:1.7;">Track applications, review candidates, and stay aligned from hire to onboarding.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="modal"></div>
+    <div id="toast"></div>
+    <div id="printcv" class="hide"></div>
+    <noscript>
+      <div style="max-width:900px;margin:80px auto;padding:24px;text-align:center;color:#192135;font-family:Arial,sans-serif;">
+        JavaScript is required to use the interactive HRWala Job Portal preview.
+      </div>
+    </noscript>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const root = document.getElementById('app');
+        if (root && !root.innerHTML.trim()) {
+          root.innerHTML = `
+            <div style="max-width: 1100px; margin: 64px auto; padding: 32px 20px; font-family: Arial, sans-serif; color: #192135;">
+              <div style="display:inline-block;padding:8px 14px;border-radius:999px;background:#edf1ff;color:#213bb6;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">Job Portal</div>
+              <h1 style="font-size: clamp(2.4rem, 4vw, 4rem); margin: 20px 0 12px;">Discover your next opportunity.</h1>
+              <p style="font-size: 1.1rem; max-width: 680px; line-height: 1.7; color: #495468; margin: 0 0 24px;">The interactive portal is loading. If it does not appear, please refresh the page or return to the Discover homepage.</p>
+              <div style="display:flex; flex-wrap:wrap; gap: 12px;">
+                <a href="./index.html" style="display:inline-block;padding: 12px 18px;border-radius: 10px;background: #213bb6;color:white;font-weight:600;text-decoration:none;">Discover</a>
+                <a href="./job-portal.html" style="display:inline-block;padding: 12px 18px;border-radius: 10px;background: #fff;border:1px solid #dce1f3;color: #213bb6;font-weight:600;text-decoration:none;">Refresh portal</a>
+              </div>
+            </div>
+          `;
+        }
+      });
+    </script>
+    <script src="./job-portal.js" defer></script>
+  </body>
+</html>
+
