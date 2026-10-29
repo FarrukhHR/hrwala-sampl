@@ -250,6 +250,11 @@ small {
   gap: 10px;
   white-space: nowrap;
 }
+.brand-logo {
+  width: auto;
+  height: 44px;
+  object-fit: contain;
+}
 .brand-mark {
   display: grid;
   place-items: center;
@@ -3731,6 +3736,9 @@ dialog::backdrop {
 }
 .footer-brand .brand {
   gap: 9px;
+}
+.footer-brand .brand-logo {
+  height: 36px;
 }
 .footer-brand .brand-mark {
   width: 42px;

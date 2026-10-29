@@ -25,7 +25,7 @@ const svg = {
 const icon = (n) =>
   `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${svg[n]}</svg>`;
 const logo =
-  '<a class="brand" href="index.html" aria-label="HR Wala.net Discover"><span class="brand-mark">hr</span><span class="brand-name">HR<b>Wala</b><small>.net</small></span></a>';
+  '<a class="brand" href="index.html" aria-label="HR Wala.net Discover"><span class="brand-mark" aria-hidden="true">hr</span><span class="brand-name">HR <b>Wala</b><small>.net</small></span></a>';
 $("#header").innerHTML =
   `<header class="site-header"><div class="wrap header-inner">${logo}<nav class="desktop-nav" id="main-nav" aria-label="Main navigation"><a href="index.html" class="${!isJobs ? "active" : ""}" ${!isJobs ? 'aria-current="page"' : ""}>Discover</a><a href="job-portal.html" class="${isJobs ? "active" : ""}" ${isJobs ? 'aria-current="page"' : ""}>Job Portal <span aria-hidden="true"> ↗</span></a></nav><button class="menu-button" aria-label="Open menu" aria-controls="main-nav" aria-expanded="false">☰</button></div></header>`;
 $("#footer").innerHTML =

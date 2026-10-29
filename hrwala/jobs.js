@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })[char]);
 
   const logo =
-    '<a class="brand" href="index.html" aria-label="HR Wala.net Discover"><span class="brand-mark">hr</span><span class="brand-name">HR<b>Wala</b><small>.net</small></span></a>';
+    '<a class="brand" href="index.html" aria-label="HR Wala.net Discover"><img class="brand-logo" src="assets/HRWala-full-blue-gold.png" alt=""></a>';
 
   $("#header").innerHTML = `
     <header class="site-header"><div class="wrap header-inner">${logo}<nav class="desktop-nav" id="main-nav" aria-label="Main navigation"><a href="index.html">Discover</a><a href="jobs.html" class="active" aria-current="page">Job Portal <span aria-hidden="true"> ↗</span></a></nav><button class="menu-button" aria-label="Open menu" aria-controls="main-nav" aria-expanded="false">☰</button></div></header>
