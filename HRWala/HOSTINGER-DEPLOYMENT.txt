@@ -1,0 +1,11 @@
+HRWala Hostinger Deployment
+
+The Vite configuration no longer imports .figma/make/site.json. This fixes the deployment error where Hostinger cannot resolve a Figma-only config file.
+
+Hostinger build settings:
+- Node.js: 22
+- Install command: pnpm install --frozen-lockfile
+- Build command: pnpm run build
+- Build output directory: dist
+
+Upload/import the contents of this project folder so package.json, pnpm-lock.yaml, vite.config.ts, index.html, src/, and public/ are at the project root. Use the generated dist folder as the build output.
