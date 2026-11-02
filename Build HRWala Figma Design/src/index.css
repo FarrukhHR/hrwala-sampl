@@ -1,0 +1,78 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'Noto Sans Arabic:Medium';
+  src: url('https://static.figma.com/font/NotoSansArabic-VF_2') format('woff2');
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'PoetsenOne:Regular';
+  src: url('https://static.figma.com/font/PoetsenOne-Regular_1') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Poppins:Bold';
+  src: url('https://static.figma.com/font/Poppins-Bold_6') format('woff2');
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Poppins:ExtraBold';
+  src: url('https://static.figma.com/font/Poppins-ExtraBold_4') format('woff2');
+  font-style: normal;
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: 'Poppins:Medium';
+  src: url('https://static.figma.com/font/Poppins-Medium_6') format('woff2');
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Poppins:Regular';
+  src: url('https://static.figma.com/font/Poppins-Regular_6') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Poppins:SemiBold';
+  src: url('https://static.figma.com/font/Poppins-SemiBold_6') format('woff2');
+  font-style: normal;
+  font-weight: 600;
+}
+
+@layer base {
+  html {
+    background: white;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-width: 320px;
+    min-height: 100dvh;
+    background: white;
+  }
+}
+
+.design-viewport {
+  --design-scale: min(1, calc(100vw / 1530));
+  width: 100%;
+  height: calc(7615px * var(--design-scale));
+  overflow: hidden;
+  background: white;
+}
+
+.design-canvas {
+  width: 1530px;
+  height: 7615px;
+  transform: scale(var(--design-scale));
+  transform-origin: top left;
+}
