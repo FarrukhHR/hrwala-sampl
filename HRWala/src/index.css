@@ -555,7 +555,7 @@
   color: #e7edf7;
 }
 
-@media (max-width: 1530px) {
+@media (max-width: 760px) {
   .responsive-site {
     display: block;
   }
@@ -760,8 +760,8 @@
 [data-node-id="81:13"], [data-node-id="239:241"], [data-node-id="239:243"] { animation-delay: -2.4s; }
 @keyframes floatingWords { 0%, 100% { translate: 0 0; } 50% { translate: 0 -12px; } }
 
-/* Subtle lift on the existing gray video slots and service, industry, and module cards. */
-.video-slot,
+/* Subtle lift on video and team-photo slots plus service, industry, and module cards. */
+.video-slot, .team-photo-slot,
 [data-node-id="88:27"], [data-node-id="101:110"], [data-node-id="101:126"], [data-node-id="101:134"],
 [data-node-id="159:38"], [data-node-id="159:278"], [data-node-id="159:302"],
 [data-node-id="159:46"], [data-node-id="159:284"], [data-node-id="159:308"],
@@ -773,7 +773,7 @@
   transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s cubic-bezier(.2,.7,.2,1);
   transform-origin: center;
 }
-.video-slot:hover,
+.video-slot:hover, .team-photo-slot:hover,
 [data-node-id="88:27"]:hover, [data-node-id="101:110"]:hover, [data-node-id="101:126"]:hover, [data-node-id="101:134"]:hover,
 [data-node-id="159:38"]:hover, [data-node-id="159:278"]:hover, [data-node-id="159:302"]:hover,
 [data-node-id="159:46"]:hover, [data-node-id="159:284"]:hover, [data-node-id="159:308"]:hover,
