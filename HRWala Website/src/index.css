@@ -1,0 +1,212 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'Noto Sans Arabic:Medium';
+  src: url('https://static.figma.com/font/NotoSansArabic-VF_2') format('woff2');
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'PoetsenOne:Regular';
+  src: url('https://static.figma.com/font/PoetsenOne-Regular_1') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Poppins:Bold';
+  src: url('https://static.figma.com/font/Poppins-Bold_6') format('woff2');
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Poppins:ExtraBold';
+  src: url('https://static.figma.com/font/Poppins-ExtraBold_4') format('woff2');
+  font-style: normal;
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: 'Poppins:Medium';
+  src: url('https://static.figma.com/font/Poppins-Medium_6') format('woff2');
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Poppins:Regular';
+  src: url('https://static.figma.com/font/Poppins-Regular_6') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Poppins:SemiBold';
+  src: url('https://static.figma.com/font/Poppins-SemiBold_6') format('woff2');
+  font-style: normal;
+  font-weight: 600;
+}
+
+@layer base {
+  html {
+    background: white;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-width: 320px;
+    min-height: 100dvh;
+    background: white;
+  }
+}
+
+.design-viewport {
+  --design-scale: min(1, calc(100vw / 1530));
+  width: 100%;
+  height: calc(7615px * var(--design-scale));
+  overflow: hidden;
+  background: white;
+}
+
+.design-canvas {
+  width: 1530px;
+  height: 7615px;
+  transform: scale(var(--design-scale));
+  transform-origin: top left;
+}
+
+
+/* Responsive scaling keeps the original Figma composition intact at every viewport width. */
+.design-viewport {
+  width: 100vw;
+  max-width: 100vw;
+  overflow: hidden;
+  --design-scale: min(1, calc(100vw / 1530));
+}
+.design-canvas { transform: scale(var(--design-scale)); }
+
+/* The original Figma buttons stay visually unchanged; these overlays only add click targets. */
+.design-hit-area { position: absolute; z-index: 50; display: block; background: transparent; }
+
+/* Exact-size native controls are layered over the existing form artwork. */
+.live-contact-form {
+  position: absolute; z-index: 40; left: 850px; top: 6869px; width: 473px; height: 368px;
+}
+.live-contact-form input,
+.live-contact-form select,
+.live-contact-form textarea,
+.live-contact-form button,
+.live-newsletter input,
+.live-newsletter button {
+  position: absolute; box-sizing: border-box; border: 0; font-family: 'Poppins:Regular', Poppins, sans-serif;
+}
+.live-contact-form input,
+.live-contact-form select,
+.live-contact-form textarea {
+  left: 0; width: 473px; padding: 0 20px; color: #fff; background: #4376c3;
+  border-radius: 18px; font-size: 13px; outline: none;
+}
+.live-contact-form input::placeholder,
+.live-contact-form textarea::placeholder,
+.live-newsletter input::placeholder { color: #fff; opacity: 1; }
+.live-contact-form input:focus,
+.live-contact-form select:focus,
+.live-contact-form textarea:focus,
+.live-newsletter input:focus { box-shadow: 0 0 0 2px #fff; }
+.live-contact-form input[name="name"] { top: 0; height: 39px; background: rgba(154,183,228,.43); }
+.live-contact-form input[name="email"] { top: 76px; height: 39px; }
+.live-contact-form select { top: 153px; height: 39px; appearance: none; }
+.live-contact-form textarea { top: 234px; height: 114px; padding-top: 12px; resize: none; }
+.live-contact-form button {
+  top: 364px; left: 0; width: 473px; height: 39px; border-radius: 18px;
+  color: white; background: #f6ac04; cursor: pointer; font-size: 13px; font-weight: 600;
+}
+.live-contact-form button:hover, .live-newsletter button:hover { filter: brightness(.96); }
+.live-newsletter { position: absolute; z-index: 40; left: 968px; top: 7468px; width: 439px; height: 40px; }
+.live-newsletter input { left: 0; top: 0; width: 296px; height: 36px; border-radius: 18px; padding: 0 20px; color: #fff; background: #4376c3; font-size: 13px; outline: none; }
+.live-newsletter button { left: 304px; top: 1px; width: 135px; height: 39px; border-radius: 18px; color: #fff; background: #f6ac04; cursor: pointer; font-size: 13px; font-weight: 600; }
+
+/* Same FAQ card styling with a smooth, single-open accordion. */
+.live-faq { position: absolute; z-index: 40; left: 72px; top: 7077px; width: 458px; height: 220px; }
+.live-faq-item {
+  position: absolute; left: 0; width: 458px; overflow: hidden; border-radius: 8px; background: #fff;
+  transition: top .3s ease, height .3s ease;
+}
+.live-faq-item > button {
+  width: 100%; height: 40px; padding: 0 17px; border: 0; background: transparent; display: flex;
+  justify-content: space-between; align-items: center; text-align: left; cursor: pointer;
+  color: #111; font-family: 'Poppins:SemiBold', Poppins, sans-serif; font-size: 14px;
+}
+.live-faq-item > button b { color: #0144ab; font-weight: 400; font-size: 20px; }
+.live-faq-answer { display: grid; grid-template-rows: 0fr; opacity: 0; transition: grid-template-rows .3s ease, opacity .25s ease; }
+.live-faq-answer p { overflow: hidden; margin: 0; padding: 0 17px; color: #757575; font-family: 'Poppins:Medium', Poppins, sans-serif; font-size: 11px; line-height: 17px; }
+.live-faq-item.is-open .live-faq-answer { grid-template-rows: 1fr; opacity: 1; }
+.live-faq-item.is-open .live-faq-answer p { padding-bottom: 8px; }
+
+/* Requested motion is limited to the existing hero copy, floating words and partner chain. */
+.hero-copy-cycle { animation: heroCopyCycle 5.2s ease both; }
+@keyframes heroCopyCycle {
+  0% { opacity: 0; transform: translateY(8px); }
+  12% { opacity: 1; transform: translateY(0); }
+  88% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-5px); }
+}
+[data-node-id="81:10"], [data-node-id="84:2"], [data-node-id="81:11"], [data-node-id="81:13"],
+[data-node-id="207:50"], [data-node-id="207:51"], [data-node-id="207:52"], [data-node-id="239:243"] {
+  animation: floatingWords 4.8s ease-in-out infinite;
+}
+[data-node-id="84:2"], [data-node-id="81:11"], [data-node-id="207:51"], [data-node-id="207:52"] { animation-delay: -1.4s; }
+[data-node-id="81:13"], [data-node-id="239:243"] { animation-delay: -2.6s; }
+@keyframes floatingWords { 0%, 100% { translate: 0 0; } 50% { translate: 0 -7px; } }
+
+/* Subtle lift on the existing gray video/team slots and service, industry, and module cards. */
+.video-slot, .team-photo-slot,
+[data-node-id="88:27"], [data-node-id="101:110"], [data-node-id="101:126"], [data-node-id="101:134"],
+[data-node-id="109:10"], [data-node-id="118:123"],
+[data-node-id="159:38"], [data-node-id="159:278"], [data-node-id="159:302"],
+[data-node-id="159:46"], [data-node-id="159:284"], [data-node-id="159:308"],
+[data-node-id="159:54"], [data-node-id="159:290"], [data-node-id="159:314"],
+[data-node-id="159:62"], [data-node-id="159:296"], [data-node-id="159:320"],
+[data-node-id="228:104"], [data-node-id="228:112"], [data-node-id="228:120"], [data-node-id="228:128"],
+[data-node-id="228:138"], [data-node-id="228:146"], [data-node-id="228:154"], [data-node-id="228:162"],
+[data-node-id="228:204"], [data-node-id="228:212"], [data-node-id="228:220"], [data-node-id="228:228"] {
+  transition: transform .25s ease, box-shadow .25s ease;
+  transform-origin: center;
+}
+.video-slot:hover, .team-photo-slot:hover,
+[data-node-id="88:27"]:hover, [data-node-id="101:110"]:hover, [data-node-id="101:126"]:hover, [data-node-id="101:134"]:hover,
+[data-node-id="109:10"]:hover, [data-node-id="118:123"]:hover,
+[data-node-id="159:38"]:hover, [data-node-id="159:278"]:hover, [data-node-id="159:302"]:hover,
+[data-node-id="159:46"]:hover, [data-node-id="159:284"]:hover, [data-node-id="159:308"]:hover,
+[data-node-id="159:54"]:hover, [data-node-id="159:290"]:hover, [data-node-id="159:314"]:hover,
+[data-node-id="159:62"]:hover, [data-node-id="159:296"]:hover, [data-node-id="159:320"]:hover,
+[data-node-id="228:104"]:hover, [data-node-id="228:112"]:hover, [data-node-id="228:120"]:hover, [data-node-id="228:128"]:hover,
+[data-node-id="228:138"]:hover, [data-node-id="228:146"]:hover, [data-node-id="228:154"]:hover, [data-node-id="228:162"]:hover,
+[data-node-id="228:204"]:hover, [data-node-id="228:212"]:hover, [data-node-id="228:220"]:hover, [data-node-id="228:228"]:hover {
+  transform: scale(1.025); z-index: 5; box-shadow: 0 7px 17px rgb(20 47 83 / 18%);
+}
+.video-slot { object-fit: cover; }
+.team-photo-slot { object-fit: cover; }
+
+/* The partner nodes remain aligned while the full chain glides gently side to side. */
+[data-node-id="274:158"], [data-node-id="274:161"], [data-node-id="274:177"],
+[data-node-id="274:181"], [data-node-id="274:185"], [data-node-id="274:189"],
+[data-node-id="274:166"], [data-node-id="274:178"], [data-node-id="274:182"],
+[data-node-id="274:186"], [data-node-id="274:190"], [data-node-id="274:167"],
+[data-node-id="274:179"], [data-node-id="274:183"], [data-node-id="274:187"], [data-node-id="274:191"],
+[data-node-id="274:165"], [data-node-id="274:180"], [data-node-id="274:184"], [data-node-id="274:188"],
+[data-node-id="274:192"], [data-node-id="274:198"], [data-node-id="274:199"], [data-node-id="274:200"] {
+  animation: partnerChainDrift 18s ease-in-out infinite alternate;
+}
+@keyframes partnerChainDrift { from { translate: 0 0; } to { translate: -32px 0; } }
+
+@media (max-width: 1530px) {
+  .design-viewport { width: 100vw; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-copy-cycle, [data-node-id], .video-slot, .team-photo-slot { animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+  * { scroll-behavior: auto !important; }
+}
+
