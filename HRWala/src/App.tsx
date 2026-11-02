@@ -1,4 +1,20 @@
+import { useEffect, useState, type FormEvent } from 'react'
+
 const assetPathPrefix = "/assets";
+// Add videos under public/videos, then set a path such as /videos/hr-consultants.mp4.
+const videoSources = ['', '', '', '']
+// Add portraits under public/assets and set the matching path here.
+const teamPhotos = ['', '', '', '', '', '', '', '']
+const heroSlides = [
+  { heading: 'HR Certifications', bullets: ['Get Certified', 'Get Noticed', 'Get Hired'] },
+  { heading: 'Career Opportunities', bullets: ['Explore Opportunities', 'Showcase Your Skills', 'Move Forward'] },
+  { heading: 'Talent Acquisition', bullets: ['Reach Qualified Talent', 'Build Stronger Teams', 'Hire With Confidence'] },
+  { heading: 'HR Consulting', bullets: ['People-First Advice', 'Practical HR Policies', 'Clear Direction'] },
+  { heading: 'Brand Standards', bullets: ['Set Clear Standards', 'Align Your People', 'Build Lasting Trust'] },
+  { heading: 'Professional Growth', bullets: ['Learn New Skills', 'Get Recognized', 'Advance Your Career'] },
+  { heading: 'HRWala Software', bullets: ['Organise HR Tasks', 'Connect Workflows', 'Support Your Team'] },
+  { heading: 'People @ Top', bullets: ['Put People First', 'Create Better Workplaces', 'Grow Together'] },
+]
 const imgGirlProfileIconRemovebgPreview1 = `${assetPathPrefix}/51fdd.png`;
 const imgHumanConnectionInTheInterviewRoom1 = `${assetPathPrefix}/58338.png`;
 const imgCorporateTeamDiscussingATablet1 = `${assetPathPrefix}/a1b62.png`;
@@ -61,22 +77,114 @@ const imgEllipse27 = `${assetPathPrefix}/61b3e.svg`;
 const imgEllipse28 = `${assetPathPrefix}/2a6b6.svg`;
 const imgLine44 = `${assetPathPrefix}/b235f.svg`;
 
-function Desktop1({ className }: { className?: string }) {
+function VideoSlot({ index, className, nodeId }: { index: number; className: string; nodeId: string }) {
+  const src = videoSources[index]
+  return src ? (
+    <video className={className + ' video-slot'} controls playsInline preload="metadata" aria-label={`Video ${index + 1}`} data-node-id={nodeId}>
+      <source src={src} />Your browser does not support video playback.
+    </video>
+  ) : (
+    <div className={className + ' video-slot'} aria-label={`Video placeholder ${index + 1}`} data-node-id={nodeId} />
+  )
+}
+
+function TeamPhoto({ index, className, nodeId }: { index: number; className: string; nodeId: string }) {
+  const src = teamPhotos[index]
+  return src ? (
+    <img className={className + ' team-photo-slot'} src={src} alt={`HRWala team member ${index + 1}`} data-node-id={nodeId} />
+  ) : (
+    <div className={className + ' team-photo-slot'} aria-label={`Team photo placeholder ${index + 1}`} data-node-id={nodeId} />
+  )
+}
+
+function LiveContactForm() {
+  const submit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    const data = new FormData(event.currentTarget)
+    const subject = 'HRWala enquiry — ' + String(data.get('topic'))
+    const body = `Name: ${data.get('name')}\nEmail: ${data.get('email')}\nTopic: ${data.get('topic')}\n\n${data.get('message')}`
+    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=hello%40hrwala.net&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, '_blank', 'noopener,noreferrer')
+    event.currentTarget.reset()
+  }
   return (
-    <div className={className || "border border-black border-solid h-[7615px] overflow-clip relative w-[1530px]"} data-node-id="3:6" data-name="Desktop - 1">
+    <form className="live-contact-form" onSubmit={submit} aria-label="Contact HRWala">
+      <input name="name" placeholder="Enter your name" aria-label="Full name" required />
+      <input name="email" type="email" placeholder="example@gmail.com" aria-label="Email" required />
+      <select name="topic" aria-label="How can we help?" defaultValue="General Inquiry">
+        <option>General Inquiry</option><option>Job Portal</option><option>HR Services</option><option>HRWala Software</option><option>Certifications</option>
+      </select>
+      <textarea name="message" placeholder="Tell us more about your inquiry..." aria-label="Your message" required />
+      <button type="submit" aria-label="Submit contact form">Submit</button>
+    </form>
+  )
+}
+
+function LiveNewsletter() {
+  const submit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    const email = new FormData(event.currentTarget).get('newsletter-email')
+    const subject = encodeURIComponent('HRWala newsletter subscription')
+    const body = encodeURIComponent('Please add this email address to the HRWala newsletter: ' + String(email))
+    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=hello%40hrwala.net&su=${subject}&body=${body}`, '_blank', 'noopener,noreferrer')
+    event.currentTarget.reset()
+  }
+  return <form className="live-newsletter" onSubmit={submit} aria-label="Subscribe to the HRWala newsletter">
+    <input type="email" name="newsletter-email" placeholder="Enter your email" aria-label="Email for newsletter" required />
+    <button type="submit" aria-label="Subscribe to newsletter">Subscribe</button>
+  </form>
+}
+
+const faqEntries = [
+  ['How can HRWala.net help me find a job?', 'Explore job opportunities and connect with potential employers through our job portal.'],
+  ['Can employers use HRWala.net for recruitment?', 'Employers can publish vacancies, review applicants and organise recruitment through HRWala.net.'],
+  ['What HR services does HRWala.net offer?', 'HRWala.net brings together HR consulting, brand standards, recruitment and HR software.'],
+  ['How can I get information about professional certifications?', 'Contact our team and select Certifications in the enquiry form for programme information.'],
+]
+
+function LiveFaq() {
+  const [open, setOpen] = useState<number | null>(0)
+  let offset = 0
+  return (
+    <div className="live-faq" aria-label="Frequently asked questions">
+      {faqEntries.map(([question, answer], index) => {
+        const expanded = open === index
+        const top = offset
+        offset += (expanded ? 82 : 40) + 5
+        return (
+          <div className={'live-faq-item' + (expanded ? ' is-open' : '')} key={question} style={{ top, height: expanded ? 82 : 40 }}>
+            <button type="button" aria-expanded={expanded} onClick={() => setOpen(expanded ? null : index)}>
+              <span>{question}</span><b aria-hidden="true">{expanded ? '−' : '+'}</b>
+            </button>
+            <div className="live-faq-answer"><p>{answer}</p></div>
+          </div>
+        )
+      })}
+    </div>
+  )
+}
+
+function Desktop1({ className }: { className?: string }) {
+  const [heroSlideIndex, setHeroSlideIndex] = useState(0)
+  useEffect(() => {
+    const timer = window.setInterval(() => setHeroSlideIndex((index) => (index + 1) % heroSlides.length), 5200)
+    return () => window.clearInterval(timer)
+  }, [])
+  const activeHeroSlide = heroSlides[heroSlideIndex]
+  return (
+    <div id="home" className={className || "border border-black border-solid h-[7615px] overflow-clip relative w-[1530px]"} data-node-id="3:6" data-name="Desktop - 1">
       <div aria-hidden className="absolute bg-white inset-0 pointer-events-none" />
       <div className="absolute bg-white border-0 border-black border-solid h-[92px] left-[-1px] top-[-1px] w-[1540px]" data-node-id="3:7" />
-      <p className="[word-break:break-word] absolute font-['Poppins:Medium'] leading-[normal] left-[665px] not-italic text-[#232323] text-[16px] top-[45px] whitespace-nowrap" data-node-id="5:5">
+      <a href="#home" className="[word-break:break-word] absolute font-['Poppins:Medium'] leading-[normal] left-[665px] not-italic text-[#232323] text-[16px] top-[45px] whitespace-nowrap no-underline" data-node-id="5:5">
         Discover
-      </p>
-      <p className="[word-break:break-word] absolute font-['Poppins:Medium'] leading-[normal] left-[781px] not-italic text-[#232323] text-[16px] top-[45px] whitespace-nowrap" data-node-id="5:17">
+      </a>
+      <a href="https://hrwala.net/job-portal" className="[word-break:break-word] absolute font-['Poppins:Medium'] leading-[normal] left-[781px] not-italic text-[#232323] text-[16px] top-[45px] whitespace-nowrap no-underline" data-node-id="5:17">
         Job Portal
-      </p>
-      <p className="[word-break:break-word] absolute font-['Poppins:Medium'] leading-[0] left-[1316px] not-italic text-[#505050] text-[0px] top-[44px] whitespace-nowrap" data-node-id="5:31">
+      </a>
+      <a href="https://hrwala.net/login" className="[word-break:break-word] absolute font-['Poppins:Medium'] leading-[0] left-[1316px] not-italic text-[#505050] text-[0px] top-[44px] whitespace-nowrap no-underline" data-node-id="5:31">
         <span className="leading-[normal] text-[#232323] text-[16px]">My</span>
         <span className="leading-[normal] text-[16px]">{` `}</span>
         <span className="leading-[normal] text-[#232323] text-[16px]">Portal</span>
-      </p>
+      </a>
       <div className="absolute contents left-[1401.83px] top-[31px]" data-node-id="9:3">
         <div className="absolute inset-[2.52%_4.48%_93.14%_91.69%]" data-node-id="8:13">
           <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgEllipse1} />
@@ -84,6 +192,7 @@ function Desktop1({ className }: { className?: string }) {
         <div className="absolute left-[1414px] size-[54px] top-[32px]" data-node-id="9:2" data-name="girl_profile_icon-removebg-preview 1">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgGirlProfileIconRemovebgPreview1} />
         </div>
+        <a href="https://hrwala.net/login" className="absolute left-[1414px] size-[54px] top-[32px] z-10" aria-label="Open My Portal" />
       </div>
       <div className="absolute h-[837px] left-[28px] top-[1331px] w-[1472px]" data-node-id="207:31">
         <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgRectangle12} />
@@ -100,10 +209,10 @@ function Desktop1({ className }: { className?: string }) {
         <span className="leading-[normal] text-[#0144ab] text-[40px]">We Offer</span>
       </p>
       <div className="absolute contents left-[104px] top-[264px]" data-node-id="88:4">
-        <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Regular'] justify-center leading-[0] left-[calc(50%-592.5px)] not-italic text-[14px] text-black text-center top-[275.5px] tracking-[-0.56px] whitespace-nowrap" data-node-id="33:85">
+        <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Regular'] justify-center leading-[0] left-[calc(50%-592.5px)] not-italic text-[14px] text-black text-center top-[282px] tracking-[-0.56px] whitespace-nowrap" data-node-id="33:85">
           <p className="leading-[normal]">People @ Top</p>
         </div>
-        <div className="absolute h-0 left-[105px] top-[275px] w-[18px]" data-node-id="33:87">
+        <div className="absolute h-0 left-[105px] top-[282px] w-[18px]" data-node-id="33:87">
           <div className="absolute inset-[-0.5px_-2.78%]">
             <img alt="" className="block max-w-none size-full" src={imgLine1} />
           </div>
@@ -326,10 +435,10 @@ function Desktop1({ className }: { className?: string }) {
           <p className="leading-[normal]">Explore Job Portal</p>
         </div>
       </div>
-      <div className="absolute bg-[#d9d9d9] h-[183px] left-[83px] rounded-[18px] top-[896px] w-[321px]" data-node-id="88:17" />
-      <div className="absolute bg-[#d9d9d9] h-[183px] left-[430px] rounded-[18px] top-[896px] w-[320px]" data-node-id="88:24" />
-      <div className="absolute bg-[#d9d9d9] h-[183px] left-[777px] rounded-[18px] top-[896px] w-[320px]" data-node-id="88:25" />
-      <div className="absolute bg-[#d9d9d9] h-[183px] left-[1123px] rounded-[18px] top-[896px] w-[321px]" data-node-id="88:26" />
+      <VideoSlot index={0} className="absolute bg-[#d9d9d9] h-[183px] left-[83px] rounded-[18px] top-[896px] w-[321px]" nodeId="88:17" />
+      <VideoSlot index={1} className="absolute bg-[#d9d9d9] h-[183px] left-[430px] rounded-[18px] top-[896px] w-[320px]" nodeId="88:24" />
+      <VideoSlot index={2} className="absolute bg-[#d9d9d9] h-[183px] left-[777px] rounded-[18px] top-[896px] w-[320px]" nodeId="88:25" />
+      <VideoSlot index={3} className="absolute bg-[#d9d9d9] h-[183px] left-[1123px] rounded-[18px] top-[896px] w-[321px]" nodeId="88:26" />
       <div className="absolute contents left-[83px] top-[1099px]" data-node-id="101:66">
         <div className="absolute bg-white h-[192px] left-[84px] rounded-[18px] shadow-[1px_2px_6px_2px_rgba(146,144,144,0.25)] top-[1100px] w-[321px]" data-node-id="88:27" />
         <p className="[word-break:break-word] absolute font-['Poppins:Medium'] leading-[normal] left-[105px] not-italic text-[13px] text-black text-justify top-[1135px] tracking-[-0.26px] whitespace-nowrap" data-node-id="92:19">
@@ -793,16 +902,14 @@ function Desktop1({ className }: { className?: string }) {
         <div className="absolute h-[641px] left-[34px] top-[123px] w-[1472px]" data-node-id="9:4">
           <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgRectangle2} />
         </div>
-        <p className="[word-break:break-word] absolute font-['Poppins:ExtraBold'] h-[65px] leading-[normal] left-[100px] not-italic text-[#0144ab] text-[56px] top-[291px] tracking-[-1.12px] w-[682px]" data-node-id="12:68">
-          HR Certifications
+        <p key={'hero-heading-' + heroSlideIndex} className="hero-copy-cycle [word-break:break-word] absolute font-['Poppins:ExtraBold'] h-[65px] leading-[normal] left-[100px] not-italic text-[#0144ab] text-[56px] top-[291px] tracking-[-1.12px] w-[682px]" data-node-id="12:68" aria-live="polite">
+          {activeHeroSlide.heading}
         </p>
         <div className="absolute contents left-[105px] top-[381px]" data-node-id="31:78">
-          <div className="[word-break:break-word] absolute font-['Poppins:Bold'] leading-[0] left-[128px] not-italic text-[#f6ac04] text-[33px] top-[381px] whitespace-nowrap" data-node-id="28:71">
-            <p className="leading-[normal] mb-0">Get Certified</p>
-            <p className="leading-[normal] mb-0">Get Noticed</p>
-            <p className="leading-[normal]">Get Hired</p>
+          <div key={'hero-bullets-' + heroSlideIndex} className="hero-copy-cycle [word-break:break-word] absolute font-['Poppins:Bold'] leading-[0] left-[128px] not-italic text-[#f6ac04] text-[33px] top-[381px] whitespace-nowrap" data-node-id="28:71" aria-live="polite">
+            {activeHeroSlide.bullets.map((bullet, index) => <p className={index < 2 ? 'leading-[normal] mb-0' : 'leading-[normal]'} key={bullet}>{bullet}</p>)}
           </div>
-          <div className="absolute h-[114px] left-[105px] top-[398px] w-[10.158px]" data-node-id="31:77">
+          <div key={'hero-markers-' + heroSlideIndex} className="hero-copy-cycle absolute h-[114px] left-[105px] top-[398px] w-[10.158px]" data-node-id="31:77">
             <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgGroup2} />
           </div>
         </div>
@@ -812,10 +919,10 @@ function Desktop1({ className }: { className?: string }) {
           Your next career step starts here.
         </p>
         <div className="absolute contents left-[105px] top-[265px]" data-node-id="118:38">
-          <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Regular'] justify-center leading-[0] left-[calc(50%-592.5px)] not-italic text-[14px] text-black text-center top-[275.5px] tracking-[-0.56px] whitespace-nowrap" data-node-id="118:39">
+        <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Regular'] justify-center leading-[0] left-[calc(50%-592.5px)] not-italic text-[14px] text-black text-center top-[282px] tracking-[-0.56px] whitespace-nowrap" data-node-id="118:39">
             <p className="leading-[normal]">People @ Top</p>
           </div>
-          <div className="absolute h-0 left-[105px] top-[275px] w-[18px]" data-node-id="118:40">
+          <div className="absolute h-0 left-[105px] top-[282px] w-[18px]" data-node-id="118:40">
             <div className="absolute inset-[-0.5px_-2.78%]">
               <img alt="" className="block max-w-none size-full" src={imgLine1} />
             </div>
@@ -847,7 +954,7 @@ function Desktop1({ className }: { className?: string }) {
         <div className="absolute h-[1106px] left-[29px] top-[3322px] w-[1472px]" data-node-id="207:35">
           <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgRectangle3} />
         </div>
-        <p className="[word-break:break-word] absolute font-['Poppins:ExtraBold'] h-[50.656px] leading-[0] left-[85px] not-italic text-[0px] text-black top-[calc(50%+7.5px)] tracking-[-2.4px] w-[246px]" data-node-id="228:236">
+        <p id="modules" className="[word-break:break-word] absolute font-['Poppins:ExtraBold'] h-[50.656px] leading-[0] left-[85px] not-italic text-[0px] text-black top-[calc(50%+7.5px)] tracking-[-2.4px] w-[246px]" data-node-id="228:236">
           <span className="leading-[normal] text-[#f6ac04] text-[40px]">Top</span>
           <span className="leading-[normal] text-[40px]">{` `}</span>
           <span className="leading-[normal] text-[#0144ab] text-[40px]">Modules</span>
@@ -1297,7 +1404,7 @@ function Desktop1({ className }: { className?: string }) {
           Put your HR skills and credentials to work when pursuing your next opportunity. Build the practical knowledge employers value, demonstrate your readiness, and take a confident step toward the role you want.
         </p>
       </div>
-      <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[45px] leading-[normal] left-[73px] not-italic text-[#f6ac04] text-[27px] top-[calc(50%+965.5px)] tracking-[-1.62px] w-[333px]" dir="auto" data-node-id="247:356">
+      <p id="certifications" className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[45px] leading-[normal] left-[73px] not-italic text-[#f6ac04] text-[27px] top-[calc(50%+965.5px)] tracking-[-1.62px] w-[333px]" dir="auto" data-node-id="247:356">
         Professional Certification
       </p>
       <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[45px] leading-[normal] left-[78px] not-italic text-[#f6ac04] text-[27px] top-[calc(50%+1352.5px)] tracking-[-1.62px] w-[333px]" dir="auto" data-node-id="256:2">
@@ -1357,7 +1464,7 @@ function Desktop1({ className }: { className?: string }) {
         <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Regular'] justify-center leading-[0] left-[230px] not-italic text-[#757575] text-[13px] text-center top-[5807px] tracking-[-0.78px] whitespace-nowrap" data-node-id="262:40">
           <p className="leading-[normal]">{`Founder & CEO`}</p>
         </div>
-        <div className="absolute bg-[#d9d9d9] h-[146px] left-[256px] rounded-[18px] top-[5604px] w-[194px]" data-node-id="262:38" />
+        <TeamPhoto index={0} className="absolute bg-[#d9d9d9] h-[146px] left-[256px] rounded-[18px] top-[5604px] w-[194px]" nodeId="262:38" />
       </div>
       <div className="absolute contents left-[153px] top-[6014px]" data-node-id="274:17">
         <div className="absolute bg-white h-[331px] left-[154px] rounded-[18px] top-[6015px] w-[211px]" data-node-id="274:18" />
@@ -1367,7 +1474,7 @@ function Desktop1({ className }: { className?: string }) {
         <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Regular'] justify-center leading-[0] left-[230px] not-italic text-[#757575] text-[13px] text-center top-[6238px] tracking-[-0.78px] whitespace-nowrap" data-node-id="274:20">
           <p className="leading-[normal]">{`Founder & CEO`}</p>
         </div>
-        <div className="absolute bg-[#d9d9d9] h-[146px] left-[256px] rounded-[18px] top-[6035px] w-[194px]" data-node-id="274:21" />
+        <TeamPhoto index={1} className="absolute bg-[#d9d9d9] h-[146px] left-[256px] rounded-[18px] top-[6035px] w-[194px]" nodeId="274:21" />
       </div>
       <div className="absolute contents left-[468px] top-[5583px]" data-node-id="274:2">
         <div className="absolute bg-white h-[331px] left-[469px] rounded-[18px] top-[5584px] w-[211px]" data-node-id="274:3" />
@@ -1377,7 +1484,7 @@ function Desktop1({ className }: { className?: string }) {
         <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Regular'] justify-center leading-[0] left-[545px] not-italic text-[#757575] text-[13px] text-center top-[5807px] tracking-[-0.78px] whitespace-nowrap" data-node-id="274:5">
           <p className="leading-[normal]">{`Founder & CEO`}</p>
         </div>
-        <div className="absolute bg-[#d9d9d9] h-[146px] left-[571px] rounded-[18px] top-[5604px] w-[194px]" data-node-id="274:6" />
+        <TeamPhoto index={2} className="absolute bg-[#d9d9d9] h-[146px] left-[571px] rounded-[18px] top-[5604px] w-[194px]" nodeId="274:6" />
       </div>
       <div className="absolute contents left-[468px] top-[6014px]" data-node-id="274:22">
         <div className="absolute bg-white h-[331px] left-[469px] rounded-[18px] top-[6015px] w-[211px]" data-node-id="274:23" />
@@ -1387,7 +1494,7 @@ function Desktop1({ className }: { className?: string }) {
         <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Regular'] justify-center leading-[0] left-[545px] not-italic text-[#757575] text-[13px] text-center top-[6238px] tracking-[-0.78px] whitespace-nowrap" data-node-id="274:25">
           <p className="leading-[normal]">{`Founder & CEO`}</p>
         </div>
-        <div className="absolute bg-[#d9d9d9] h-[146px] left-[571px] rounded-[18px] top-[6035px] w-[194px]" data-node-id="274:26" />
+        <TeamPhoto index={3} className="absolute bg-[#d9d9d9] h-[146px] left-[571px] rounded-[18px] top-[6035px] w-[194px]" nodeId="274:26" />
       </div>
       <div className="absolute contents left-[783px] top-[5583px]" data-node-id="274:7">
         <div className="absolute bg-white h-[331px] left-[784px] rounded-[18px] top-[5584px] w-[211px]" data-node-id="274:8" />
@@ -1397,7 +1504,7 @@ function Desktop1({ className }: { className?: string }) {
         <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Regular'] justify-center leading-[0] left-[860px] not-italic text-[#757575] text-[13px] text-center top-[5807px] tracking-[-0.78px] whitespace-nowrap" data-node-id="274:10">
           <p className="leading-[normal]">{`Founder & CEO`}</p>
         </div>
-        <div className="absolute bg-[#d9d9d9] h-[146px] left-[886px] rounded-[18px] top-[5604px] w-[194px]" data-node-id="274:11" />
+        <TeamPhoto index={4} className="absolute bg-[#d9d9d9] h-[146px] left-[886px] rounded-[18px] top-[5604px] w-[194px]" nodeId="274:11" />
       </div>
       <div className="absolute contents left-[783px] top-[6014px]" data-node-id="274:27">
         <div className="absolute bg-white h-[331px] left-[784px] rounded-[18px] top-[6015px] w-[211px]" data-node-id="274:28" />
@@ -1407,7 +1514,7 @@ function Desktop1({ className }: { className?: string }) {
         <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Regular'] justify-center leading-[0] left-[860px] not-italic text-[#757575] text-[13px] text-center top-[6238px] tracking-[-0.78px] whitespace-nowrap" data-node-id="274:30">
           <p className="leading-[normal]">{`Founder & CEO`}</p>
         </div>
-        <div className="absolute bg-[#d9d9d9] h-[146px] left-[886px] rounded-[18px] top-[6035px] w-[194px]" data-node-id="274:31" />
+        <TeamPhoto index={5} className="absolute bg-[#d9d9d9] h-[146px] left-[886px] rounded-[18px] top-[6035px] w-[194px]" nodeId="274:31" />
       </div>
       <div className="absolute contents left-[1098px] top-[5583px]" data-node-id="274:12">
         <div className="absolute bg-white h-[331px] left-[1099px] rounded-[18px] top-[5584px] w-[211px]" data-node-id="274:13" />
@@ -1417,7 +1524,7 @@ function Desktop1({ className }: { className?: string }) {
         <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Regular'] justify-center leading-[0] left-[1175px] not-italic text-[#757575] text-[13px] text-center top-[5807px] tracking-[-0.78px] whitespace-nowrap" data-node-id="274:15">
           <p className="leading-[normal]">{`Founder & CEO`}</p>
         </div>
-        <div className="absolute bg-[#d9d9d9] h-[146px] left-[1201px] rounded-[18px] top-[5604px] w-[194px]" data-node-id="274:16" />
+        <TeamPhoto index={6} className="absolute bg-[#d9d9d9] h-[146px] left-[1201px] rounded-[18px] top-[5604px] w-[194px]" nodeId="274:16" />
       </div>
       <div className="absolute contents left-[1098px] top-[6014px]" data-node-id="274:32">
         <div className="absolute bg-white h-[331px] left-[1099px] rounded-[18px] top-[6015px] w-[211px]" data-node-id="274:33" />
@@ -1427,7 +1534,7 @@ function Desktop1({ className }: { className?: string }) {
         <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Regular'] justify-center leading-[0] left-[1175px] not-italic text-[#757575] text-[13px] text-center top-[6238px] tracking-[-0.78px] whitespace-nowrap" data-node-id="274:35">
           <p className="leading-[normal]">{`Founder & CEO`}</p>
         </div>
-        <div className="absolute bg-[#d9d9d9] h-[146px] left-[1201px] rounded-[18px] top-[6035px] w-[194px]" data-node-id="274:36" />
+        <TeamPhoto index={7} className="absolute bg-[#d9d9d9] h-[146px] left-[1201px] rounded-[18px] top-[6035px] w-[194px]" nodeId="274:36" />
       </div>
       <div className="absolute h-0 left-[179px] top-[5643px] w-[60px]" data-node-id="274:37">
         <div className="absolute inset-[-1px_0_0_0]">
@@ -1903,6 +2010,26 @@ function Desktop1({ className }: { className?: string }) {
           </div>
         </div>
       </div>
+      {/* Invisible hit-areas make the existing Figma-designed controls clickable without changing their artwork. */}
+      <a className="design-hit-area left-[100px] top-[617px] h-[44px] w-[132px]" href="https://hrwala.net/job-portal" aria-label="Open Job Portal" />
+      <a className="design-hit-area left-[80px] top-[1706px] h-[43px] w-[167px]" href="https://hrwala.net/job-portal" aria-label="Explore Job Portal" />
+      <a className="design-hit-area left-[80px] top-[3720px] h-[48px] w-[206px]" href="#modules" aria-label="Explore the HRWala platform" />
+      <a className="design-hit-area left-[75px] top-[29px] h-[56px] w-[192px]" href="#home" aria-label="HRWala home" />
+      <a className="design-hit-area left-[78px] top-[7412px] h-[47px] w-[161px]" href="#home" aria-label="HRWala home" />
+      <a className="design-hit-area left-[570px] top-[7444px] h-[104px] w-[150px]" href="#home" aria-label="Discover" />
+      <a className="design-hit-area left-[570px] top-[7474px] h-[25px] w-[150px]" href="https://hrwala.net/job-portal" aria-label="Job Portal" />
+      <a className="design-hit-area left-[570px] top-[7503px] h-[25px] w-[170px]" href="#software" aria-label="HRWala Software" />
+      <a className="design-hit-area left-[570px] top-[7532px] h-[25px] w-[150px]" href="#certifications" aria-label="Certifications" />
+      <a className="design-hit-area left-[765px] top-[7449px] h-[25px] w-[180px]" href="https://wa.me/923008523878" target="_blank" rel="noreferrer" aria-label="WhatsApp HRWala" />
+      <a className="design-hit-area left-[765px] top-[7479px] h-[25px] w-[180px]" href="https://wa.me/923008523878" target="_blank" rel="noreferrer" aria-label="WhatsApp HRWala" />
+      <a className="design-hit-area left-[765px] top-[7508px] h-[25px] w-[180px]" href="https://mail.google.com/mail/?view=cm&fs=1&to=hello%40hrwala.net" target="_blank" rel="noreferrer" aria-label="Email HRWala" />
+      <a className="design-hit-area left-[972px] top-[7518px] h-[43px] w-[40px]" href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn" />
+      <a className="design-hit-area left-[1012px] top-[7518px] h-[43px] w-[40px]" href="https://www.facebook.com/" target="_blank" rel="noreferrer" aria-label="Facebook" />
+      <a className="design-hit-area left-[1052px] top-[7518px] h-[43px] w-[42px]" href="https://www.instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram" />
+      <a className="design-hit-area left-[1094px] top-[7520px] h-[38px] w-[46px]" href="https://www.youtube.com/" target="_blank" rel="noreferrer" aria-label="YouTube" />
+      <LiveContactForm />
+      <LiveFaq />
+      <LiveNewsletter />
       <div className="absolute inset-0 pointer-events-none rounded-[inherit] shadow-[inset_0px_4px_4px_0px_rgba(0,0,0,0.25)]" />
     </div>
   );

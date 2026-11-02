@@ -9,8 +9,9 @@ import path from 'node:path'
 // Importing .figma/make/site.json therefore makes the production build depend
 // on a development-only file being uploaded.
 const siteConfiguration = {
+  title: 'HRWala.net | HR Solutions, Careers & Certifications',
   description: 'An HR management platform that helps businesses streamline employee administration, organize workforce information, and manage essential HR tasks in one place.',
-  robots: { index: false },
+  robots: { index: true },
   accessibility: { addBypassLinks: false, ignoreReducedMotion: false },
 }
 
