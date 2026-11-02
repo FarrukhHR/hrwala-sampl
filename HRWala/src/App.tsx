@@ -2210,13 +2210,10 @@ function ResponsiveSite() {
 
 export default function Frame1() {
   return (
-    <>
-      <div className="responsive-site"><ResponsiveSite /></div>
-      <main className="design-viewport" data-node-id="326:2">
-        <div className="design-canvas">
-          <Desktop1 className="relative h-[7615px] w-[1530px] overflow-clip border border-black border-solid" />
-        </div>
-      </main>
-    </>
+    <main className="design-viewport" data-node-id="326:2">
+      <div className="design-canvas">
+        <Desktop1 className="relative h-[7615px] w-[1530px] overflow-clip border border-black border-solid" />
+      </div>
+    </main>
   );
 }
