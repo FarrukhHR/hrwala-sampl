@@ -1,0 +1,24 @@
+HRWala media and link updates
+
+Videos
+1. Add each MP4 file to public/videos/.
+2. In src/App.tsx, find the videos list near the top.
+3. Set the matching src value, for example: src: '/videos/hr-consultants.mp4'.
+The gray placeholder will be replaced by a playable video in the same responsive frame.
+
+Team photos
+1. Add the image to public/assets/.
+2. In the team list in src/App.tsx, set that person's image value, for example: image: '/assets/team-member-01.png'.
+The gray photo area will be replaced without changing the card layout.
+
+Links and contact details
+Edit the links object near the top of src/App.tsx to update the Job Portal, My Portal, email, WhatsApp number and social profile URLs.
+
+Forms
+Contact and newsletter forms open a pre-filled Gmail draft addressed to hello@hrwala.net. The visitor reviews and sends the message from Gmail. A backend or newsletter service is needed for automatic storage/subscription.
+
+Hostinger build settings
+Node.js 22
+Install: pnpm install --frozen-lockfile
+Build: pnpm run build
+Output directory: dist
