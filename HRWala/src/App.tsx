@@ -143,15 +143,12 @@ const faqEntries = [
 
 function LiveFaq() {
   const [open, setOpen] = useState<number | null>(0)
-  let offset = 0
   return (
     <div className="live-faq" aria-label="Frequently asked questions">
       {faqEntries.map(([question, answer], index) => {
         const expanded = open === index
-        const top = offset
-        offset += (expanded ? 82 : 40) + 5
         return (
-          <div className={'live-faq-item' + (expanded ? ' is-open' : '')} key={question} style={{ top, height: expanded ? 82 : 40 }}>
+          <div className={'live-faq-item' + (expanded ? ' is-open' : '')} key={question}>
             <button type="button" aria-expanded={expanded} onClick={() => setOpen(expanded ? null : index)}>
               <span>{question}</span><b aria-hidden="true">{expanded ? '−' : '+'}</b>
             </button>
@@ -1666,7 +1663,7 @@ function Desktop1({ className }: { className?: string }) {
       <div className="absolute bg-[#d9d9d9] h-[87px] left-[635px] rounded-[18px] top-[6557px] w-[186px]" data-node-id="274:177" />
       <div className="absolute bg-[#d9d9d9] h-[87px] left-[901px] rounded-[18px] top-[6557px] w-[186px]" data-node-id="274:181" />
       <div className="absolute bg-[#d9d9d9] h-[87px] left-[1167px] rounded-[18px] top-[6557px] w-[186px]" data-node-id="274:185" />
-      <div className="absolute bg-[#d9d9d9] h-[87px] left-[1433px] opacity-39 rounded-[18px] top-[6557px] w-[186px]" data-node-id="274:189" />
+      <div className="absolute bg-[#d9d9d9] h-[87px] left-[1433px] rounded-[18px] top-[6557px] w-[186px]" data-node-id="274:189" />
       <div className="absolute left-[271px] size-[15px] top-[6595px]" data-node-id="274:166">
         <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgEllipse17} />
       </div>
@@ -2035,12 +2032,191 @@ function Desktop1({ className }: { className?: string }) {
   );
 }
 
+function ResponsiveSite() {
+  const modules = [
+    'Budgeting',
+    'Talent Acquisition',
+    'Onboarding',
+    'Leaves & Attendance',
+    'Payroll',
+    'Employee Dashboard',
+    'Separation',
+    'Employee Benefits',
+    '360 Degree Performance',
+    'HR Dashboards',
+    'E-Learning',
+    'Discipline & Policies',
+  ];
+
+  return (
+    <>
+      <header className="responsive-header">
+        <a className="responsive-brand" href="#home" aria-label="HRWala home">
+          <img src={imgHrWalaFullBlueGold1} alt="HRWala" />
+        </a>
+        <nav aria-label="Main navigation">
+          <a href="#services">Discover</a>
+          <a href="#jobs">Job Portal</a>
+          <a href="#software">Software</a>
+          <a href="#academy">Certifications</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a className="responsive-button responsive-button-small" href="#contact">My Portal</a>
+      </header>
+
+      <main className="responsive-main" id="home">
+        <section className="responsive-hero">
+          <div className="responsive-hero-copy">
+            <p className="responsive-kicker">People, progress, possibility</p>
+            <h1>Get Certified.<br />Get Noticed.<br /><span>Get Hired.</span></h1>
+            <p>Recognized credentials, practical HR solutions and career opportunities, brought together by HRWala.</p>
+            <div className="responsive-actions">
+              <a className="responsive-button" href="#academy">Explore certifications</a>
+              <a className="responsive-text-link" href="#jobs">Explore job portal</a>
+            </div>
+          </div>
+          <img className="responsive-hero-image" src={imgLuminousPortraitWithAFadingBlueRing1} alt="HR professional" />
+        </section>
+
+        <section className="responsive-section" id="services">
+          <div className="responsive-section-heading">
+            <p className="responsive-kicker">People @ Top</p>
+            <h2>One place to move <span>forward.</span></h2>
+          </div>
+          <div className="responsive-card-grid responsive-service-grid">
+            <article className="responsive-card"><span>01 / People</span><h3>HR Consultants</h3><p>Build stronger teams with people-first advice, practical policies and a clear HR direction.</p></article>
+            <article className="responsive-card"><span>02 / Standards</span><h3>Brand Standards</h3><p>Turn your standards into everyday practices that protect your people and your brand.</p></article>
+            <article className="responsive-card"><span>03 / Opportunity</span><h3>Job Portal</h3><p>Find your next great connection, whether you are looking for a role or the right candidate.</p></article>
+            <article className="responsive-card"><span>04 / Systems</span><h3>HRWala Software</h3><p>Bring employee records and everyday HR processes together in one organised platform.</p></article>
+          </div>
+        </section>
+
+        <section className="responsive-section responsive-split-section" id="jobs">
+          <div>
+            <p className="responsive-kicker">Your next opportunity</p>
+            <h2>People and opportunities, <span>connected.</span></h2>
+            <p>Explore relevant roles, build a profile that reflects your skills, and keep applications and conversations organised.</p>
+            <a className="responsive-button" href="#contact">Explore Job Portal</a>
+          </div>
+          <div className="responsive-card-grid responsive-audience-grid">
+            <article className="responsive-card"><span>01</span><h3>Candidates</h3><p>Search jobs, build your CV, track applications and prepare for interviews.</p></article>
+            <article className="responsive-card"><span>02</span><h3>Employers</h3><p>Publish vacancies, review profiles, shortlist applicants and coordinate interviews.</p></article>
+          </div>
+        </section>
+
+        <section className="responsive-section responsive-brand-section">
+          <div className="responsive-section-heading">
+            <p className="responsive-kicker">Develop your brand</p>
+            <h2>Build trust in <span>every interaction.</span></h2>
+          </div>
+          <div className="responsive-split-section responsive-brand-content">
+            <ol className="responsive-steps">
+              <li><span>01</span><div><h3>Define the experience</h3><p>Set clear standards for service, communication and presentation.</p></div></li>
+              <li><span>02</span><div><h3>Align your people</h3><p>Give teams a shared way to deliver those standards every day.</p></div></li>
+              <li><span>03</span><div><h3>Build lasting trust</h3><p>Create a dependable experience across every customer touchpoint.</p></div></li>
+            </ol>
+            <img className="responsive-content-image" src={imgCorporateTeamDiscussingATablet1} alt="A team working together" />
+          </div>
+        </section>
+
+        <section className="responsive-section responsive-software-section" id="software">
+          <div className="responsive-section-heading">
+            <p className="responsive-kicker">The system behind a better-run workforce</p>
+            <h2>HRWala <span>Software</span></h2>
+            <p>Bring employee records, onboarding, attendance, payroll and performance into one organised platform.</p>
+          </div>
+          <div className="responsive-card-grid responsive-module-grid">
+            {modules.map((module, index) => (
+              <article className="responsive-module-card" key={module}>
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <h3>{module}</h3>
+              </article>
+            ))}
+          </div>
+          <a className="responsive-button" href="#contact">Explore the platform</a>
+        </section>
+
+        <section className="responsive-section" id="academy">
+          <div className="responsive-section-heading">
+            <p className="responsive-kicker">Future Academy</p>
+            <h2>Credentials that help your career <span>move.</span></h2>
+            <p>Learn practical, in-demand skills and make your achievements easy for employers to recognise.</p>
+          </div>
+          <div className="responsive-card-grid responsive-credential-grid">
+            <article className="responsive-credential-card"><img src={imgUpdatedCertificateWithHrWalaNetSeal1} alt="Certified HR Professional certificate" /><h3>Certified HR Professional</h3></article>
+            <article className="responsive-credential-card"><img src={imgCertifiedHrBusinessPartnerCertificate1} alt="Certified HR Business Partner certificate" /><h3>Certified HR Business Partner</h3></article>
+            <article className="responsive-credential-card"><img src={imgLearningDevelopmentProfessionalCertificate1} alt="Learning and Development Professional certificate" /><h3>Learning &amp; Development Professional</h3></article>
+          </div>
+          <h3 className="responsive-subheading">Professional badges</h3>
+          <div className="responsive-card-grid responsive-badge-grid">
+            <img src={imgHrWalaReadyToServeCredentialBadge11} alt="Ready to Serve badge" />
+            <img src={imgHrWalaSkilledProfessionalBadge1} alt="Skilled Professional badge" />
+            <img src={imgHrWalaNetFeaturedAssociateBadge1} alt="Featured Associate badge" />
+          </div>
+        </section>
+
+        <section className="responsive-section responsive-team-section">
+          <div className="responsive-section-heading">
+            <p className="responsive-kicker">HRWala Team</p>
+            <h2>People make <span>progress possible.</span></h2>
+          </div>
+          <div className="responsive-team-callout">
+            <img src={imgGirlProfileIconRemovebgPreview1} alt="HRWala team" />
+            <div><h3>Farrukh Sohail</h3><p>Founder &amp; CEO</p></div>
+          </div>
+        </section>
+
+        <section className="responsive-contact-section" id="contact">
+          <div className="responsive-contact-copy">
+            <p className="responsive-kicker">Got a question?</p>
+            <h2>Let’s connect and <span>move forward.</span></h2>
+            <p>Whether you are exploring career opportunities, looking for the right talent or interested in our HR solutions, our team is here to help.</p>
+            <p>hello@hrwala.net<br />+92 300 8523878</p>
+          </div>
+          <form className="responsive-contact-form" onSubmit={(event) => event.preventDefault()}>
+            <h3>Get in touch</h3>
+            <label>Full name<input name="name" autoComplete="name" placeholder="Enter your name" /></label>
+            <label>Email<input name="email" type="email" autoComplete="email" placeholder="example@gmail.com" /></label>
+            <label>How can we help?<select name="topic" defaultValue=""><option value="" disabled>Select an inquiry</option><option>Career opportunities</option><option>Recruitment</option><option>HR services</option><option>Certifications</option></select></label>
+            <label>Your message<textarea name="message" rows={4} placeholder="Tell us more about your inquiry" /></label>
+            <button className="responsive-button" type="submit">Submit</button>
+          </form>
+        </section>
+
+        <section className="responsive-section responsive-faq-section">
+          <div className="responsive-section-heading">
+            <p className="responsive-kicker">Need more information?</p>
+            <h2>Frequently asked <span>questions.</span></h2>
+          </div>
+          <div className="responsive-faq-list">
+            <details><summary>How can HRWala.net help me find a job?</summary><p>Explore job opportunities and connect with potential employers through our job portal.</p></details>
+            <details><summary>Can employers use HRWala.net for recruitment?</summary><p>Employers can publish vacancies, review candidate profiles and coordinate recruitment activities.</p></details>
+            <details><summary>What HR services does HRWala.net offer?</summary><p>HRWala offers consulting, software, recruitment and professional development services.</p></details>
+            <details><summary>How can I get information about professional certifications?</summary><p>Contact our team to learn about available HR certifications and professional badges.</p></details>
+          </div>
+        </section>
+      </main>
+
+      <footer className="responsive-footer">
+        <img src={imgHrWalaFullWhiteGold1} alt="HRWala" />
+        <p>Connecting talent, opportunities and practical HR solutions.</p>
+        <nav aria-label="Footer navigation"><a href="#services">Discover</a><a href="#jobs">Job Portal</a><a href="#software">Software</a><a href="#academy">Certifications</a></nav>
+        <form className="responsive-newsletter" onSubmit={(event) => event.preventDefault()}><label htmlFor="newsletter-email">Subscribe to our newsletter</label><div><input id="newsletter-email" type="email" placeholder="Enter your email" /><button className="responsive-button" type="submit">Subscribe</button></div></form>
+        <small>© 2015 HRWala.net. All rights reserved.</small>
+      </footer>
+    </>
+  );
+}
+
 export default function Frame1() {
   return (
-    <main className="design-viewport" data-node-id="326:2">
-      <div className="design-canvas">
-        <Desktop1 className="relative h-[7615px] w-[1530px] overflow-clip border border-black border-solid" />
-      </div>
-    </main>
+    <>
+      <div className="responsive-site"><ResponsiveSite /></div>
+      <main className="design-viewport" data-node-id="326:2">
+        <div className="design-canvas">
+          <Desktop1 className="relative h-[7615px] w-[1530px] overflow-clip border border-black border-solid" />
+        </div>
+      </main>
+    </>
   );
 }
