@@ -2201,7 +2201,7 @@ function ReflowOriginal({ design }: { design: ReactElement<DesignProps> }) {
           {image('172:6', 'reflow-cover')}
         </div>
         <div className="reflow-grid reflow-audiences">
-          {['118:121', '118:122'].map((id) => <OriginalCard node={get(id)!} key={id} />)}
+          {['118:121', '118:122'].map((id) => <OriginalCard node={get(id)!} key={id} accent />)}
         </div>
       </section>
       <section className="reflow-section" id="brand-standards">
