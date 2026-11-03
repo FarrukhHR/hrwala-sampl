@@ -548,3 +548,90 @@ body { margin: 0; min-width: 0; }
 }
 
 .reflow-site .live-contact-label { position: static; width: auto; height: auto; overflow: visible; clip-path: none; white-space: normal; }
+
+@media (max-width: 1100px) {
+  .reflow-site .reflow-software-orbit {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 740px;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 741 / 432;
+    margin: 12px auto 0;
+    padding: 0;
+    container-type: inline-size;
+  }
+
+  .reflow-site .reflow-software-orbit > img {
+    position: absolute;
+    inset: 0 auto auto 17.5%;
+    width: 77%;
+    max-width: none;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .reflow-site .reflow-software-orbit .reflow-floating {
+    position: absolute;
+    inset: auto;
+    max-width: none;
+    margin: 0;
+    transform: translateY(-50%);
+  }
+
+  .reflow-site .reflow-software-orbit .reflow-floating p {
+    font-size: clamp(10px, 2.6cqw, 16px) !important;
+    line-height: 1.2;
+    overflow-wrap: normal;
+    animation-name: softwareWordFloat;
+  }
+
+  /* Top left: Leaves & Attendance */
+  .reflow-site .reflow-software-orbit .reflow-floating-1 {
+    left: 13.5%;
+    top: 10%;
+    width: 29%;
+  }
+
+  /* Top right: On-boarding */
+  .reflow-site .reflow-software-orbit .reflow-floating-2 {
+    left: 73%;
+    top: 10%;
+    width: 27%;
+  }
+
+  /* Middle left: Employee Dashboard */
+  .reflow-site .reflow-software-orbit .reflow-floating-3 {
+    left: 0;
+    top: 48%;
+    width: 28%;
+  }
+
+  /* Middle right: Payroll */
+  .reflow-site .reflow-software-orbit .reflow-floating-4 {
+    left: 84%;
+    top: 48%;
+    width: 16%;
+  }
+
+  /* Bottom left: 360° Performance */
+  .reflow-site .reflow-software-orbit .reflow-floating-5 {
+    left: 11%;
+    top: 87%;
+    width: 30%;
+  }
+
+  /* Bottom right: Talent Acquisition */
+  .reflow-site .reflow-software-orbit .reflow-floating-6 {
+    left: 73%;
+    top: 87%;
+    width: 27%;
+  }
+}
+
+@keyframes softwareWordFloat {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -4px; }
+}
