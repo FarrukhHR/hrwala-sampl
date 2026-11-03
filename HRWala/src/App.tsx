@@ -897,7 +897,7 @@ function Desktop1({ className }: { className?: string }) {
         <div className="absolute h-[641px] left-[34px] top-[123px] w-[1472px]" data-node-id="9:4">
           <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgRectangle2} />
         </div>
-        <div className="pointer-events-none absolute inset-0 translate-y-[-55px]">
+        <div className="pointer-events-none absolute inset-0 translate-y-[-45px]">
         <p key={'hero-heading-' + heroSlideIndex} className="hero-left-adjust hero-copy-cycle [word-break:break-word] absolute font-['Poppins:ExtraBold'] h-[65px] leading-[normal] left-[100px] not-italic text-[#0144ab] text-[56px] top-[291px] tracking-[-1.12px] w-[682px]" data-node-id="12:68" aria-live="polite">
           {activeHeroSlide.heading}
         </p>
