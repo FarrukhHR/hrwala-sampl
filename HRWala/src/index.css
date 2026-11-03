@@ -169,13 +169,11 @@
 [data-node-id="289:77"], [data-node-id="289:90"] { visibility: hidden; }
 
 /* Requested motion is limited to the existing hero copy, floating words and partner chain. */
-.hero-copy-cycle { animation: heroCopyCycle 5.2s ease both; }
+.hero-copy-cycle { animation: heroCopyCycle 500ms ease both; }
 .design-canvas .hero-right-adjust { translate: 0 58px; }
 @keyframes heroCopyCycle {
   0% { opacity: 0; transform: translateY(8px); }
-  12% { opacity: 1; transform: translateY(0); }
-  88% { opacity: 1; transform: translateY(0); }
-  100% { opacity: 0; transform: translateY(-5px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 [data-node-id="81:10"], [data-node-id="84:2"], [data-node-id="81:11"], [data-node-id="81:13"],
 [data-node-id="207:50"], [data-node-id="207:51"], [data-node-id="207:52"], [data-node-id="207:53"],
