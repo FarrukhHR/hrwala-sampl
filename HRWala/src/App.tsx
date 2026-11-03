@@ -6,14 +6,14 @@ const videoSources = ['', '', '', '']
 // Add portraits under public/assets and set the matching path here.
 const teamPhotos = ['', '', '', '', '', '', '', '']
 const heroSlides = [
-  { heading: 'HR Certifications', bullets: ['Get Certified', 'Get Noticed', 'Get Hired'] },
-  { heading: 'Career Opportunities', bullets: ['Explore Opportunities', 'Showcase Your Skills', 'Move Forward'] },
-  { heading: 'Talent Acquisition', bullets: ['Reach Qualified Talent', 'Build Stronger Teams', 'Hire With Confidence'] },
-  { heading: 'HR Consulting', bullets: ['People-First Advice', 'Practical HR Policies', 'Clear Direction'] },
-  { heading: 'Brand Standards', bullets: ['Set Clear Standards', 'Align Your People', 'Build Lasting Trust'] },
-  { heading: 'Professional Growth', bullets: ['Learn New Skills', 'Get Recognized', 'Advance Your Career'] },
-  { heading: 'HRWala Software', bullets: ['Organise HR Tasks', 'Connect Workflows', 'Support Your Team'] },
-  { heading: 'People @ Top', bullets: ['Put People First', 'Create Better Workplaces', 'Grow Together'] },
+  { heading: 'Job Portal', bullets: ['Find Talent', 'Find Oppurtunity', 'Meet Here'] },
+  { heading: 'HRWala Software', bullets: ['Simplify HR', 'Automate Payroll', 'Empower People'] },
+  { heading: 'HR All-in-One', bullets: ['Hire Smarter', 'Manage Better', 'Grow Faster'] },
+  { heading: 'Brand Standards', bullets: ['Service Industry', 'Serving People', 'One Partner'] },
+  { heading: 'HR Certification', bullets: ['Get Certified', 'Get Noticed', 'Get Hired'] },
+  { heading: 'Your Advisor', bullets: ['Expert HR Advice', 'Complaint Workplaces', 'Confident Leaders'] },
+  { heading: 'Head Hunting', bullets: ['Right People', 'Right Roles', 'Real Growth'] },
+  { heading: 'Hospitality Talent', bullets: ['Hoteliers', 'Star Performers', 'Get Connected'] },
 ]
 const imgGirlProfileIconRemovebgPreview1 = `${assetPathPrefix}/51fdd.png`;
 const imgHumanConnectionInTheInterviewRoom1 = `${assetPathPrefix}/58338.png`;
