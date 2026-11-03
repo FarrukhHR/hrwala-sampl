@@ -18,6 +18,8 @@ const heroSlides = [
 const imgGirlProfileIconRemovebgPreview1 = `${assetPathPrefix}/51fdd.png`;
 const imgHumanConnectionInTheInterviewRoom1 = `${assetPathPrefix}/58338.png`;
 const imgCorporateTeamDiscussingATablet1 = `${assetPathPrefix}/a1b62.png`;
+const imgLuminousWomanWithinBlueRing2X1 = `${assetPathPrefix}/Woman portraits in cyan rings.png`;
+const imgSoftwareDashboardWoman = `${assetPathPrefix}/Woman presenting HR dashboard inside blue ring.png`;
 const imgLuminousWomanWithinBlueRing2X1 = `${assetPathPrefix}/10bd4.png`;
 const imgLearningDevelopmentProfessionalCertificate1 = `${assetPathPrefix}/8bc8e.png`;
 const imgUpdatedCertificateWithHrWalaNetSeal1 = `${assetPathPrefix}/67f31.png`;
@@ -1301,7 +1303,7 @@ function Desktop1({ className }: { className?: string }) {
           Payroll
         </p>
         <div className="absolute h-[432px] left-[889.24px] top-[3363px] w-[570.984px]" data-node-id="239:239" data-name="Luminous woman within blue ring-2x 1">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLuminousWomanWithinBlueRing2X1} />
+          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgSoftwareDashboardWoman} />
         </div>
       </div>
       <div className="absolute contents left-[76px] top-[3382px]" data-node-id="224:18">
