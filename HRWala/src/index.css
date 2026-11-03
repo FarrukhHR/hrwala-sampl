@@ -760,32 +760,30 @@
 [data-node-id="81:13"], [data-node-id="239:241"], [data-node-id="239:243"] { animation-delay: -2.4s; }
 @keyframes floatingWords { 0%, 100% { translate: 0 0; } 50% { translate: 0 -12px; } }
 
-/* Subtle lift on the white service, industry, module, and team cards. */
-[data-node-id="88:27"], [data-node-id="101:110"], [data-node-id="101:126"], [data-node-id="101:134"],
-[data-node-id="159:38"], [data-node-id="159:278"], [data-node-id="159:302"],
-[data-node-id="159:46"], [data-node-id="159:284"], [data-node-id="159:308"],
-[data-node-id="159:54"], [data-node-id="159:290"], [data-node-id="159:314"],
-[data-node-id="159:62"], [data-node-id="159:296"], [data-node-id="159:320"],
-[data-node-id="228:104"], [data-node-id="228:112"], [data-node-id="228:120"], [data-node-id="228:128"],
-[data-node-id="228:138"], [data-node-id="228:146"], [data-node-id="228:154"], [data-node-id="228:162"],
-[data-node-id="228:204"], [data-node-id="228:212"], [data-node-id="228:220"], [data-node-id="228:228"],
-[data-node-id="262:37"], [data-node-id="274:18"], [data-node-id="274:3"], [data-node-id="274:23"],
-[data-node-id="274:8"], [data-node-id="274:28"], [data-node-id="274:13"], [data-node-id="274:33"] {
-  cursor: pointer;
+.hover-card-group {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  display: block !important;
+  width: 1530px !important;
+  height: 7615px !important;
+  pointer-events: none;
   transition: transform 140ms ease-out;
   transition-delay: 0s;
-  transform-origin: center;
 }
-[data-node-id="88:27"]:hover, [data-node-id="101:110"]:hover, [data-node-id="101:126"]:hover, [data-node-id="101:134"]:hover,
-[data-node-id="159:38"]:hover, [data-node-id="159:278"]:hover, [data-node-id="159:302"]:hover,
-[data-node-id="159:46"]:hover, [data-node-id="159:284"]:hover, [data-node-id="159:308"]:hover,
-[data-node-id="159:54"]:hover, [data-node-id="159:290"]:hover, [data-node-id="159:314"]:hover,
-[data-node-id="159:62"]:hover, [data-node-id="159:296"]:hover, [data-node-id="159:320"]:hover,
-[data-node-id="228:104"]:hover, [data-node-id="228:112"]:hover, [data-node-id="228:120"]:hover, [data-node-id="228:128"]:hover,
-[data-node-id="228:138"]:hover, [data-node-id="228:146"]:hover, [data-node-id="228:154"]:hover, [data-node-id="228:162"]:hover,
-[data-node-id="228:204"]:hover, [data-node-id="228:212"]:hover, [data-node-id="228:220"]:hover, [data-node-id="228:228"]:hover,
-[data-node-id="262:37"]:hover, [data-node-id="274:18"]:hover, [data-node-id="274:3"]:hover, [data-node-id="274:23"]:hover,
-[data-node-id="274:8"]:hover, [data-node-id="274:28"]:hover, [data-node-id="274:13"]:hover, [data-node-id="274:33"]:hover {
+.hover-card-group > * {
+  pointer-events: auto;
+}
+.hover-card-group:not(.team-card-group):has(:hover),
+.team-card-group:has(> [data-node-id="262:37"]:hover, > [data-node-id="262:39"]:hover, > [data-node-id="262:40"]:hover),
+.team-card-group:has(> [data-node-id="274:18"]:hover, > [data-node-id="274:19"]:hover, > [data-node-id="274:20"]:hover),
+.team-card-group:has(> [data-node-id="274:3"]:hover, > [data-node-id="274:4"]:hover, > [data-node-id="274:5"]:hover),
+.team-card-group:has(> [data-node-id="274:23"]:hover, > [data-node-id="274:24"]:hover, > [data-node-id="274:25"]:hover),
+.team-card-group:has(> [data-node-id="274:8"]:hover, > [data-node-id="274:9"]:hover, > [data-node-id="274:10"]:hover),
+.team-card-group:has(> [data-node-id="274:28"]:hover, > [data-node-id="274:29"]:hover, > [data-node-id="274:30"]:hover),
+.team-card-group:has(> [data-node-id="274:13"]:hover, > [data-node-id="274:14"]:hover, > [data-node-id="274:15"]:hover),
+.team-card-group:has(> [data-node-id="274:33"]:hover, > [data-node-id="274:34"]:hover, > [data-node-id="274:35"]:hover) {
+  z-index: 20;
   transform: scale(1.05);
 }
 .video-slot { object-fit: cover; }

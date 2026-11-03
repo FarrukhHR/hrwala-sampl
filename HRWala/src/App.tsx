@@ -436,7 +436,7 @@ function Desktop1({ className }: { className?: string }) {
       <VideoSlot index={1} className="absolute bg-[#d9d9d9] h-[183px] left-[430px] rounded-[18px] top-[896px] w-[320px]" nodeId="88:24" />
       <VideoSlot index={2} className="absolute bg-[#d9d9d9] h-[183px] left-[777px] rounded-[18px] top-[896px] w-[320px]" nodeId="88:25" />
       <VideoSlot index={3} className="absolute bg-[#d9d9d9] h-[183px] left-[1123px] rounded-[18px] top-[896px] w-[321px]" nodeId="88:26" />
-      <div className="absolute contents left-[83px] top-[1099px]" data-node-id="101:66">
+      <div className="absolute contents hover-card-group left-[83px] top-[1099px]" style={{ transformOrigin: '244px 1196px' }} data-node-id="101:66">
         <div className="absolute bg-white h-[192px] left-[84px] rounded-[18px] shadow-[1px_2px_6px_2px_rgba(146,144,144,0.25)] top-[1100px] w-[321px]" data-node-id="88:27" />
         <p className="[word-break:break-word] absolute font-['Poppins:Medium'] leading-[normal] left-[105px] not-italic text-[13px] text-black text-justify top-[1135px] tracking-[-0.26px] whitespace-nowrap" data-node-id="92:19">
           01 / People
@@ -465,7 +465,7 @@ function Desktop1({ className }: { className?: string }) {
           </div>
         </div>
       </div>
-      <div className="absolute contents left-[426px] top-[1099px]" data-node-id="101:109">
+      <div className="absolute contents hover-card-group left-[426px] top-[1099px]" style={{ transformOrigin: '587px 1196px' }} data-node-id="101:109">
         <div className="absolute bg-white h-[192px] left-[427px] rounded-[18px] shadow-[1px_2px_6px_2px_rgba(146,144,144,0.25)] top-[1100px] w-[321px]" data-node-id="101:110" />
         <p className="[word-break:break-word] absolute font-['Poppins:Medium'] leading-[normal] left-[448px] not-italic text-[13px] text-black text-justify top-[1135px] tracking-[-0.26px] whitespace-nowrap" data-node-id="101:111">
           02 / Standards
@@ -523,7 +523,7 @@ function Desktop1({ className }: { className?: string }) {
           </div>
         </div>
       </div>
-      <div className="absolute contents left-[1123px] top-[1100px]" data-node-id="101:133">
+      <div className="absolute contents hover-card-group left-[1123px] top-[1100px]" style={{ transformOrigin: '1284px 1197px' }} data-node-id="101:133">
         <div className="absolute bg-white h-[192px] left-[1124px] rounded-[18px] shadow-[1px_2px_6px_2px_rgba(146,144,144,0.25)] top-[1101px] w-[321px]" data-node-id="101:134" />
         <p className="[word-break:break-word] absolute font-['Poppins:Medium'] leading-[normal] left-[1145px] not-italic text-[13px] text-black text-justify top-[1136px] tracking-[-0.26px] whitespace-nowrap" data-node-id="101:135">
           04 / Systems
@@ -553,7 +553,7 @@ function Desktop1({ className }: { className?: string }) {
         </div>
       </div>
       <div className="absolute contents left-[74px] top-[2232px]" data-node-id="169:4">
-        <div className="absolute contents left-[75px] top-[2753px]" data-node-id="159:37">
+        <div className="absolute contents hover-card-group left-[75px] top-[2753px]" style={{ transformOrigin: '235.5px 2826.5px' }} data-node-id="159:37">
           <div className="absolute bg-white h-[147px] left-[75px] rounded-[18px] shadow-[1px_2px_6px_2px_rgba(146,144,144,0.25)] top-[2753px] w-[321px]" data-node-id="159:38" />
           <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[30px] leading-[normal] left-[96px] not-italic text-[#0144ab] text-[22px] top-[2783px] tracking-[-0.44px] w-[190px]" data-node-id="159:40">{`Resorts & Hotels`}</p>
           <p className="[word-break:break-word] absolute font-['Poppins:Medium'] h-[55px] leading-[normal] left-[96px] not-italic text-[#757575] text-[13px] text-justify top-[2820px] tracking-[-0.26px] w-[263px]" data-node-id="159:41">
@@ -574,7 +574,7 @@ function Desktop1({ className }: { className?: string }) {
             </div>
           </div>
         </div>
-        <div className="absolute contents left-[75px] top-[2937px]" data-node-id="159:277">
+        <div className="absolute contents hover-card-group left-[75px] top-[2937px]" style={{ transformOrigin: '235.5px 3010.5px' }} data-node-id="159:277">
           <div className="absolute bg-white h-[147px] left-[75px] rounded-[18px] shadow-[1px_2px_6px_2px_rgba(146,144,144,0.25)] top-[2937px] w-[321px]" data-node-id="159:278" />
           <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[30px] leading-[normal] left-[96px] not-italic text-[#0144ab] text-[22px] top-[2967px] tracking-[-0.44px] w-[243px]" data-node-id="159:279">{`Aviation & Travelling`}</p>
           <p className="[word-break:break-word] absolute font-['Poppins:Medium'] h-[55px] leading-[normal] left-[96px] not-italic text-[#757575] text-[13px] text-justify top-[3004px] tracking-[-0.26px] w-[263px]" data-node-id="159:280">
@@ -595,7 +595,7 @@ function Desktop1({ className }: { className?: string }) {
             </div>
           </div>
         </div>
-        <div className="absolute contents left-[78px] top-[3121px]" data-node-id="159:301">
+        <div className="absolute contents hover-card-group left-[78px] top-[3121px]" style={{ transformOrigin: '238.5px 3194.5px' }} data-node-id="159:301">
           <div className="absolute bg-white h-[147px] left-[78px] rounded-[18px] shadow-[1px_2px_6px_2px_rgba(146,144,144,0.25)] top-[3121px] w-[321px]" data-node-id="159:302" />
           <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[30px] leading-[normal] left-[99px] not-italic text-[#0144ab] text-[22px] top-[3151px] tracking-[-0.44px] w-[228px]" data-node-id="159:303">{`Hospitals & Clinics`}</p>
           <p className="[word-break:break-word] absolute font-['Poppins:Medium'] h-[55px] leading-[normal] left-[99px] not-italic text-[#757575] text-[13px] text-justify top-[3188px] tracking-[-0.26px] w-[263px]" data-node-id="159:304">
@@ -616,7 +616,7 @@ function Desktop1({ className }: { className?: string }) {
             </div>
           </div>
         </div>
-        <div className="absolute contents left-[418px] top-[2753px]" data-node-id="159:45">
+        <div className="absolute contents hover-card-group left-[418px] top-[2753px]" style={{ transformOrigin: '578.5px 2826.1px' }} data-node-id="159:45">
           <div className="absolute bg-white h-[146.238px] left-[418px] rounded-[18px] shadow-[1px_2px_6px_2px_rgba(146,144,144,0.25)] top-[2753px] w-[321px]" data-node-id="159:46" />
           <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[25px] leading-[normal] left-[439px] not-italic text-[#0144ab] text-[22px] top-[2783px] tracking-[-0.44px] w-[236px]" data-node-id="159:48">{`Cafés & Restaurants`}</p>
           <p className="[word-break:break-word] absolute font-['Poppins:Medium'] h-[45.699px] leading-[normal] left-[439px] not-italic text-[#757575] text-[13px] text-justify top-[2820px] tracking-[-0.26px] w-[263px]" data-node-id="159:49">
@@ -637,7 +637,7 @@ function Desktop1({ className }: { className?: string }) {
             </div>
           </div>
         </div>
-        <div className="absolute contents left-[418px] top-[2937px]" data-node-id="159:283">
+        <div className="absolute contents hover-card-group left-[418px] top-[2937px]" style={{ transformOrigin: '578.5px 3010.1px' }} data-node-id="159:283">
           <div className="absolute bg-white h-[146.238px] left-[418px] rounded-[18px] shadow-[1px_2px_6px_2px_rgba(146,144,144,0.25)] top-[2937px] w-[321px]" data-node-id="159:284" />
           <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[25px] leading-[normal] left-[439px] not-italic text-[#0144ab] text-[22px] top-[2967px] tracking-[-0.44px] w-[300px]" data-node-id="159:285">{`Event & Wedding Venues`}</p>
           <p className="[word-break:break-word] absolute font-['Poppins:Medium'] h-[45.699px] leading-[normal] left-[439px] not-italic text-[#757575] text-[13px] text-justify top-[3004px] tracking-[-0.26px] w-[263px]" data-node-id="159:286">
@@ -658,7 +658,7 @@ function Desktop1({ className }: { className?: string }) {
             </div>
           </div>
         </div>
-        <div className="absolute contents left-[421px] top-[3121px]" data-node-id="159:307">
+        <div className="absolute contents hover-card-group left-[421px] top-[3121px]" style={{ transformOrigin: '581.5px 3194.1px' }} data-node-id="159:307">
           <div className="absolute bg-white h-[146.238px] left-[421px] rounded-[18px] shadow-[1px_2px_6px_2px_rgba(146,144,144,0.25)] top-[3121px] w-[321px]" data-node-id="159:308" />
           <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[25px] leading-[normal] left-[442px] not-italic text-[#0144ab] text-[20px] top-[3151px] tracking-[-0.4px] w-[293px]" data-node-id="159:309">{`Beauty & Aesthetic Clinics`}</p>
           <p className="[word-break:break-word] absolute font-['Poppins:Medium'] h-[45.699px] leading-[normal] left-[442px] not-italic text-[#757575] text-[13px] text-justify top-[3188px] tracking-[-0.26px] w-[263px]" data-node-id="159:310">
@@ -679,7 +679,7 @@ function Desktop1({ className }: { className?: string }) {
             </div>
           </div>
         </div>
-        <div className="absolute contents left-[768px] top-[2753.76px]" data-node-id="159:53">
+        <div className="absolute contents hover-card-group left-[768px] top-[2753.76px]" style={{ transformOrigin: '928.5px 2826.9px' }} data-node-id="159:53">
           <div className="absolute bg-white h-[146.238px] left-[768px] rounded-[18px] shadow-[1px_2px_6px_2px_rgba(146,144,144,0.25)] top-[2753.76px] w-[321px]" data-node-id="159:54" />
           <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[25px] leading-[normal] left-[789px] not-italic text-[#0144ab] text-[22px] top-[2785px] tracking-[-0.44px] w-[263px]" data-node-id="159:56">
             Serviced Apartments
@@ -702,7 +702,7 @@ function Desktop1({ className }: { className?: string }) {
             </div>
           </div>
         </div>
-        <div className="absolute contents left-[768px] top-[2937.76px]" data-node-id="159:289">
+        <div className="absolute contents hover-card-group left-[768px] top-[2937.76px]" style={{ transformOrigin: '928.5px 3010.9px' }} data-node-id="159:289">
           <div className="absolute bg-white h-[146.238px] left-[768px] rounded-[18px] shadow-[1px_2px_6px_2px_rgba(146,144,144,0.25)] top-[2937.76px] w-[321px]" data-node-id="159:290" />
           <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[25px] leading-[24px] left-[789px] not-italic text-[#0144ab] text-[19px] top-[2969px] tracking-[-0.38px] w-[293px]" data-node-id="159:291">{`Spa, Fitness Centers & Gyms`}</p>
           <p className="[word-break:break-word] absolute font-['Poppins:Medium'] h-[45.699px] leading-[normal] left-[789px] not-italic text-[#757575] text-[13px] text-justify top-[3004px] tracking-[-0.26px] w-[263px]" data-node-id="159:292">
@@ -723,7 +723,7 @@ function Desktop1({ className }: { className?: string }) {
             </div>
           </div>
         </div>
-        <div className="absolute contents left-[771px] top-[3121.76px]" data-node-id="159:313">
+        <div className="absolute contents hover-card-group left-[771px] top-[3121.76px]" style={{ transformOrigin: '931.5px 3194.9px' }} data-node-id="159:313">
           <div className="absolute bg-white h-[146.238px] left-[771px] rounded-[18px] shadow-[1px_2px_6px_2px_rgba(146,144,144,0.25)] top-[3121.76px] w-[321px]" data-node-id="159:314" />
           <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[25px] leading-[normal] left-[792px] not-italic text-[#0144ab] text-[22px] top-[3153px] tracking-[-0.44px] w-[283px]" data-node-id="159:315">
             Retail Flagship Stores
@@ -746,7 +746,7 @@ function Desktop1({ className }: { className?: string }) {
             </div>
           </div>
         </div>
-        <div className="absolute contents left-[1115px] top-[2753.76px]" data-node-id="159:61">
+        <div className="absolute contents hover-card-group left-[1115px] top-[2753.76px]" style={{ transformOrigin: '1275.5px 2826.9px' }} data-node-id="159:61">
           <div className="absolute bg-white h-[146.238px] left-[1115px] rounded-[18px] shadow-[1px_2px_6px_2px_rgba(146,144,144,0.25)] top-[2753.76px] w-[321px]" data-node-id="159:62" />
           <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[25px] leading-[normal] left-[1136px] not-italic text-[#0144ab] text-[18px] top-[2783px] tracking-[-0.36px] w-[300px]" data-node-id="159:64">{`Private Schools & Academies`}</p>
           <p className="[word-break:break-word] absolute font-['Poppins:Medium'] h-[45.699px] leading-[normal] left-[1136px] not-italic text-[#757575] text-[13px] text-justify top-[2820px] tracking-[-0.26px] w-[263px]" dir="auto" data-node-id="159:65">
@@ -767,7 +767,7 @@ function Desktop1({ className }: { className?: string }) {
             </div>
           </div>
         </div>
-        <div className="absolute contents left-[1115px] top-[2937.76px]" data-node-id="159:295">
+        <div className="absolute contents hover-card-group left-[1115px] top-[2937.76px]" style={{ transformOrigin: '1275.5px 3010.9px' }} data-node-id="159:295">
           <div className="absolute bg-white h-[146.238px] left-[1115px] rounded-[18px] shadow-[1px_2px_6px_2px_rgba(146,144,144,0.25)] top-[2937.76px] w-[321px]" data-node-id="159:296" />
           <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[25px] leading-[normal] left-[1136px] not-italic text-[#0144ab] text-[20px] top-[2967px] tracking-[-0.4px] w-[293px]" data-node-id="159:297">{`Banks & Financial Services`}</p>
           <p className="[word-break:break-word] absolute font-['Poppins:Medium'] h-[45.699px] leading-[normal] left-[1136px] not-italic text-[#757575] text-[13px] text-justify top-[3004px] tracking-[-0.26px] w-[263px]" dir="auto" data-node-id="159:298">
@@ -788,7 +788,7 @@ function Desktop1({ className }: { className?: string }) {
             </div>
           </div>
         </div>
-        <div className="absolute contents left-[1118px] top-[3121.76px]" data-node-id="159:319">
+        <div className="absolute contents hover-card-group left-[1118px] top-[3121.76px]" style={{ transformOrigin: '1278.5px 3194.9px' }} data-node-id="159:319">
           <div className="absolute bg-white h-[146.238px] left-[1118px] rounded-[18px] shadow-[1px_2px_6px_2px_rgba(146,144,144,0.25)] top-[3121.76px] w-[321px]" data-node-id="159:320" />
           <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[25px] leading-[normal] left-[1139px] not-italic text-[#0144ab] text-[22px] top-[3151px] tracking-[-0.44px] w-[266px]" data-node-id="159:321">
             Property Sales Galleries
@@ -970,7 +970,7 @@ function Desktop1({ className }: { className?: string }) {
       </div>
       <div className="absolute contents left-[70px] top-[3900px]" data-node-id="228:235">
         <div className="absolute contents left-[78px] top-[3901px]" data-node-id="228:135">
-          <div className="absolute contents left-[78px] top-[3901px]" data-node-id="228:103">
+          <div className="absolute contents hover-card-group left-[78px] top-[3901px]" style={{ transformOrigin: '238.5px 3972.6px' }} data-node-id="228:103">
             <div className="absolute bg-white h-[143.254px] left-[78px] rounded-[18px] shadow-[1px_2px_6px_2px_rgba(146,144,144,0.25)] top-[3901px] w-[321px]" data-node-id="228:104" />
             <p className="[word-break:break-word] absolute font-['Poppins:Medium'] h-[14.922px] leading-[normal] left-[99px] not-italic text-[13px] text-black text-justify top-[3927.11px] tracking-[-0.26px] w-[76px]" data-node-id="228:105">
               01 / Finance
@@ -996,7 +996,7 @@ function Desktop1({ className }: { className?: string }) {
               </div>
             </div>
           </div>
-          <div className="absolute contents left-[421px] top-[3901px]" data-node-id="228:111">
+          <div className="absolute contents hover-card-group left-[421px] top-[3901px]" style={{ transformOrigin: '581.5px 3972.6px' }} data-node-id="228:111">
             <div className="absolute bg-white h-[143.254px] left-[421px] rounded-[18px] shadow-[1px_2px_6px_2px_rgba(146,144,144,0.25)] top-[3901px] w-[321px]" data-node-id="228:112" />
             <p className="[word-break:break-word] absolute font-['Poppins:Medium'] h-[14.922px] leading-[normal] left-[442px] not-italic text-[13px] text-black text-justify top-[3927.11px] tracking-[-0.26px] w-[71px]" data-node-id="228:113">
               02 / People
@@ -1022,7 +1022,7 @@ function Desktop1({ className }: { className?: string }) {
               </div>
             </div>
           </div>
-          <div className="absolute contents left-[774px] top-[3901px]" data-node-id="228:119">
+          <div className="absolute contents hover-card-group left-[774px] top-[3901px]" style={{ transformOrigin: '934.5px 3972.6px' }} data-node-id="228:119">
             <div className="absolute bg-white h-[143.254px] left-[774px] rounded-[18px] shadow-[1px_2px_6px_2px_rgba(146,144,144,0.25)] top-[3901px] w-[321px]" data-node-id="228:120" />
             <p className="[word-break:break-word] absolute font-['Poppins:Medium'] h-[14.922px] leading-[normal] left-[795px] not-italic text-[13px] text-black text-justify top-[3927.11px] tracking-[-0.26px] w-[72px]" data-node-id="228:121">
               03 / People
@@ -1048,7 +1048,7 @@ function Desktop1({ className }: { className?: string }) {
               </div>
             </div>
           </div>
-          <div className="absolute contents left-[1118px] top-[3901.75px]" data-node-id="228:127">
+          <div className="absolute contents hover-card-group left-[1118px] top-[3901.75px]" style={{ transformOrigin: '1278.5px 3973.4px' }} data-node-id="228:127">
             <div className="absolute bg-white h-[143.254px] left-[1118px] rounded-[18px] shadow-[1px_2px_6px_2px_rgba(146,144,144,0.25)] top-[3901.75px] w-[321px]" data-node-id="228:128" />
             <p className="[word-break:break-word] absolute font-['Poppins:Medium'] h-[14.922px] leading-[normal] left-[1139px] not-italic text-[13px] text-black text-justify top-[3927.86px] tracking-[-0.26px] w-[100px]" data-node-id="228:129">
               04 / Operations
@@ -1074,7 +1074,7 @@ function Desktop1({ className }: { className?: string }) {
           </div>
         </div>
         <div className="absolute contents left-[78px] top-[4071.31px]" data-node-id="228:136">
-          <div className="absolute contents left-[78px] top-[4071.31px]" data-node-id="228:137">
+          <div className="absolute contents hover-card-group left-[78px] top-[4071.31px]" style={{ transformOrigin: '238.5px 4142.9px' }} data-node-id="228:137">
             <div className="absolute bg-white h-[143.254px] left-[78px] rounded-[18px] shadow-[1px_2px_6px_2px_rgba(146,144,144,0.25)] top-[4071.31px] w-[321px]" data-node-id="228:138" />
             <p className="[word-break:break-word] absolute font-['Poppins:Medium'] h-[14.538px] leading-[normal] left-[99px] not-italic text-[13px] text-black text-justify top-[4097.55px] tracking-[-0.26px] w-[84px]" data-node-id="228:139">
               05 / Finance
@@ -1100,7 +1100,7 @@ function Desktop1({ className }: { className?: string }) {
               </div>
             </div>
           </div>
-          <div className="absolute contents left-[421px] top-[4071.31px]" data-node-id="228:145">
+          <div className="absolute contents hover-card-group left-[421px] top-[4071.31px]" style={{ transformOrigin: '581.5px 4142.9px' }} data-node-id="228:145">
             <div className="absolute bg-white h-[143.254px] left-[421px] rounded-[18px] shadow-[1px_2px_6px_2px_rgba(146,144,144,0.25)] top-[4071.31px] w-[321px]" data-node-id="228:146" />
             <p className="[word-break:break-word] absolute font-['Poppins:Medium'] h-[14.538px] leading-[normal] left-[442px] not-italic text-[13px] text-black text-justify top-[4097.55px] tracking-[-0.26px] w-[80px]" data-node-id="228:147">
               06 / People
@@ -1126,7 +1126,7 @@ function Desktop1({ className }: { className?: string }) {
               </div>
             </div>
           </div>
-          <div className="absolute contents left-[771px] top-[4072.05px]" data-node-id="228:153">
+          <div className="absolute contents hover-card-group left-[771px] top-[4072.05px]" style={{ transformOrigin: '931.5px 4143.7px' }} data-node-id="228:153">
             <div className="absolute bg-white h-[143.254px] left-[771px] rounded-[18px] shadow-[1px_2px_6px_2px_rgba(146,144,144,0.25)] top-[4072.05px] w-[321px]" data-node-id="228:154" />
             <p className="[word-break:break-word] absolute font-['Poppins:Medium'] h-[14.922px] leading-[normal] left-[792px] not-italic text-[13px] text-black text-justify top-[4098.17px] tracking-[-0.26px] w-[99px]" data-node-id="228:155">
               07 / Operations
@@ -1152,7 +1152,7 @@ function Desktop1({ className }: { className?: string }) {
               </div>
             </div>
           </div>
-          <div className="absolute contents left-[1118px] top-[4072.05px]" data-node-id="228:161">
+          <div className="absolute contents hover-card-group left-[1118px] top-[4072.05px]" style={{ transformOrigin: '1278.5px 4143.7px' }} data-node-id="228:161">
             <div className="absolute bg-white h-[143.254px] left-[1118px] rounded-[18px] shadow-[1px_2px_6px_2px_rgba(146,144,144,0.25)] top-[4072.05px] w-[321px]" data-node-id="228:162" />
             <p className="[word-break:break-word] absolute font-['Poppins:Medium'] h-[14.922px] leading-[normal] left-[1139px] not-italic text-[13px] text-black text-justify top-[4098.17px] tracking-[-0.26px] w-[79px]" data-node-id="228:163">
               08 / Finance
@@ -1180,7 +1180,7 @@ function Desktop1({ className }: { className?: string }) {
           </div>
         </div>
         <div className="absolute contents left-[71px] top-[4242px]" data-node-id="228:202">
-          <div className="absolute contents left-[71px] top-[4242px]" data-node-id="228:203">
+          <div className="absolute contents hover-card-group left-[71px] top-[4242px]" style={{ transformOrigin: '231.5px 4314px' }} data-node-id="228:203">
             <div className="absolute bg-white h-[144px] left-[71px] rounded-[18px] shadow-[1px_2px_6px_2px_rgba(146,144,144,0.25)] top-[4242px] w-[321px]" data-node-id="228:204" />
             <p className="[word-break:break-word] absolute font-['Poppins:Medium'] h-[15.201px] leading-[normal] left-[92px] not-italic text-[13px] text-black text-justify top-[4267.66px] tracking-[-0.26px] w-[84px]" data-node-id="228:205">
               09 / Growth
@@ -1206,7 +1206,7 @@ function Desktop1({ className }: { className?: string }) {
               </div>
             </div>
           </div>
-          <div className="absolute contents left-[414px] top-[4242px]" data-node-id="228:211">
+          <div className="absolute contents hover-card-group left-[414px] top-[4242px]" style={{ transformOrigin: '574.5px 4312.7px' }} data-node-id="228:211">
             <div className="absolute bg-white h-[141.47px] left-[414px] rounded-[18px] shadow-[1px_2px_6px_2px_rgba(146,144,144,0.25)] top-[4242px] w-[321px]" data-node-id="228:212" />
             <p className="[word-break:break-word] absolute font-['Poppins:Medium'] h-[14.737px] leading-[normal] left-[435px] not-italic text-[13px] text-black text-justify top-[4267.79px] tracking-[-0.26px] w-[99px]" data-node-id="228:213">
               10 / Operations
@@ -1232,7 +1232,7 @@ function Desktop1({ className }: { className?: string }) {
               </div>
             </div>
           </div>
-          <div className="absolute contents left-[764px] top-[4242.74px]" data-node-id="228:219">
+          <div className="absolute contents hover-card-group left-[764px] top-[4242.74px]" style={{ transformOrigin: '924.5px 4313.5px' }} data-node-id="228:219">
             <div className="absolute bg-white h-[141.47px] left-[764px] rounded-[18px] shadow-[1px_2px_6px_2px_rgba(146,144,144,0.25)] top-[4242.74px] w-[321px]" data-node-id="228:220" />
             <p className="[word-break:break-word] absolute font-['Poppins:Medium'] h-[14.737px] leading-[normal] left-[785px] not-italic text-[13px] text-black text-justify top-[4268.53px] tracking-[-0.26px] w-[75px]" data-node-id="228:221">
               11 / Growth
@@ -1258,7 +1258,7 @@ function Desktop1({ className }: { className?: string }) {
               </div>
             </div>
           </div>
-          <div className="absolute contents left-[1111px] top-[4242.74px]" data-node-id="228:227">
+          <div className="absolute contents hover-card-group left-[1111px] top-[4242.74px]" style={{ transformOrigin: '1271.5px 4313.5px' }} data-node-id="228:227">
             <div className="absolute bg-white h-[141.47px] left-[1111px] rounded-[18px] shadow-[1px_2px_6px_2px_rgba(146,144,144,0.25)] top-[4242.74px] w-[321px]" data-node-id="228:228" />
             <p className="[word-break:break-word] absolute font-['Poppins:Medium'] h-[14.737px] leading-[normal] left-[1132px] not-italic text-[13px] text-black text-justify top-[4268.53px] tracking-[-0.26px] w-[100px]" data-node-id="228:229">
               12 / Operations
@@ -1453,7 +1453,7 @@ function Desktop1({ className }: { className?: string }) {
       <div className="absolute h-[168px] left-[1093px] top-[5209px] w-[336px]" data-node-id="258:8" data-name="HRWala.net Featured Associate Badge 1">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgHrWalaNetFeaturedAssociateBadge1} />
       </div>
-      <div className="absolute contents left-[153px] top-[5583px]" data-node-id="263:42">
+      <div className="absolute contents hover-card-group team-card-group left-[153px] top-[5583px]" style={{ transformOrigin: '259.5px 5749.5px' }} data-node-id="263:42">
         <div className="absolute bg-white h-[331px] left-[154px] rounded-[18px] top-[5584px] w-[211px]" data-node-id="262:37" />
         <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Bold'] justify-center leading-[0] left-[256.5px] not-italic text-[21px] text-black text-center top-[5781px] tracking-[-1.26px] whitespace-nowrap" data-node-id="262:39">
           <p className="leading-[normal]">Farrukh Sohail</p>
@@ -1463,7 +1463,7 @@ function Desktop1({ className }: { className?: string }) {
         </div>
         <TeamPhoto index={0} className="absolute bg-[#d9d9d9] h-[146px] left-[256px] rounded-[18px] top-[5604px] w-[194px]" nodeId="262:38" />
       </div>
-      <div className="absolute contents left-[153px] top-[6014px]" data-node-id="274:17">
+      <div className="absolute contents hover-card-group team-card-group left-[153px] top-[6014px]" style={{ transformOrigin: '259.5px 6180.5px' }} data-node-id="274:17">
         <div className="absolute bg-white h-[331px] left-[154px] rounded-[18px] top-[6015px] w-[211px]" data-node-id="274:18" />
         <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Bold'] justify-center leading-[0] left-[256.5px] not-italic text-[21px] text-black text-center top-[6212px] tracking-[-1.26px] whitespace-nowrap" data-node-id="274:19">
           <p className="leading-[normal]">Farrukh Sohail</p>
@@ -1473,7 +1473,7 @@ function Desktop1({ className }: { className?: string }) {
         </div>
         <TeamPhoto index={1} className="absolute bg-[#d9d9d9] h-[146px] left-[256px] rounded-[18px] top-[6035px] w-[194px]" nodeId="274:21" />
       </div>
-      <div className="absolute contents left-[468px] top-[5583px]" data-node-id="274:2">
+      <div className="absolute contents hover-card-group team-card-group left-[468px] top-[5583px]" style={{ transformOrigin: '574.5px 5749.5px' }} data-node-id="274:2">
         <div className="absolute bg-white h-[331px] left-[469px] rounded-[18px] top-[5584px] w-[211px]" data-node-id="274:3" />
         <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Bold'] justify-center leading-[0] left-[571.5px] not-italic text-[21px] text-black text-center top-[5781px] tracking-[-1.26px] whitespace-nowrap" data-node-id="274:4">
           <p className="leading-[normal]">Farrukh Sohail</p>
@@ -1483,7 +1483,7 @@ function Desktop1({ className }: { className?: string }) {
         </div>
         <TeamPhoto index={2} className="absolute bg-[#d9d9d9] h-[146px] left-[571px] rounded-[18px] top-[5604px] w-[194px]" nodeId="274:6" />
       </div>
-      <div className="absolute contents left-[468px] top-[6014px]" data-node-id="274:22">
+      <div className="absolute contents hover-card-group team-card-group left-[468px] top-[6014px]" style={{ transformOrigin: '574.5px 6180.5px' }} data-node-id="274:22">
         <div className="absolute bg-white h-[331px] left-[469px] rounded-[18px] top-[6015px] w-[211px]" data-node-id="274:23" />
         <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Bold'] justify-center leading-[0] left-[571.5px] not-italic text-[21px] text-black text-center top-[6212px] tracking-[-1.26px] whitespace-nowrap" data-node-id="274:24">
           <p className="leading-[normal]">Farrukh Sohail</p>
@@ -1493,7 +1493,7 @@ function Desktop1({ className }: { className?: string }) {
         </div>
         <TeamPhoto index={3} className="absolute bg-[#d9d9d9] h-[146px] left-[571px] rounded-[18px] top-[6035px] w-[194px]" nodeId="274:26" />
       </div>
-      <div className="absolute contents left-[783px] top-[5583px]" data-node-id="274:7">
+      <div className="absolute contents hover-card-group team-card-group left-[783px] top-[5583px]" style={{ transformOrigin: '889.5px 5749.5px' }} data-node-id="274:7">
         <div className="absolute bg-white h-[331px] left-[784px] rounded-[18px] top-[5584px] w-[211px]" data-node-id="274:8" />
         <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Bold'] justify-center leading-[0] left-[886.5px] not-italic text-[21px] text-black text-center top-[5781px] tracking-[-1.26px] whitespace-nowrap" data-node-id="274:9">
           <p className="leading-[normal]">Farrukh Sohail</p>
@@ -1503,7 +1503,7 @@ function Desktop1({ className }: { className?: string }) {
         </div>
         <TeamPhoto index={4} className="absolute bg-[#d9d9d9] h-[146px] left-[886px] rounded-[18px] top-[5604px] w-[194px]" nodeId="274:11" />
       </div>
-      <div className="absolute contents left-[783px] top-[6014px]" data-node-id="274:27">
+      <div className="absolute contents hover-card-group team-card-group left-[783px] top-[6014px]" style={{ transformOrigin: '889.5px 6180.5px' }} data-node-id="274:27">
         <div className="absolute bg-white h-[331px] left-[784px] rounded-[18px] top-[6015px] w-[211px]" data-node-id="274:28" />
         <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Bold'] justify-center leading-[0] left-[886.5px] not-italic text-[21px] text-black text-center top-[6212px] tracking-[-1.26px] whitespace-nowrap" data-node-id="274:29">
           <p className="leading-[normal]">Farrukh Sohail</p>
@@ -1513,7 +1513,7 @@ function Desktop1({ className }: { className?: string }) {
         </div>
         <TeamPhoto index={5} className="absolute bg-[#d9d9d9] h-[146px] left-[886px] rounded-[18px] top-[6035px] w-[194px]" nodeId="274:31" />
       </div>
-      <div className="absolute contents left-[1098px] top-[5583px]" data-node-id="274:12">
+      <div className="absolute contents hover-card-group team-card-group left-[1098px] top-[5583px]" style={{ transformOrigin: '1204.5px 5749.5px' }} data-node-id="274:12">
         <div className="absolute bg-white h-[331px] left-[1099px] rounded-[18px] top-[5584px] w-[211px]" data-node-id="274:13" />
         <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Bold'] justify-center leading-[0] left-[1201.5px] not-italic text-[21px] text-black text-center top-[5781px] tracking-[-1.26px] whitespace-nowrap" data-node-id="274:14">
           <p className="leading-[normal]">Farrukh Sohail</p>
@@ -1523,7 +1523,7 @@ function Desktop1({ className }: { className?: string }) {
         </div>
         <TeamPhoto index={6} className="absolute bg-[#d9d9d9] h-[146px] left-[1201px] rounded-[18px] top-[5604px] w-[194px]" nodeId="274:16" />
       </div>
-      <div className="absolute contents left-[1098px] top-[6014px]" data-node-id="274:32">
+      <div className="absolute contents hover-card-group team-card-group left-[1098px] top-[6014px]" style={{ transformOrigin: '1204.5px 6180.5px' }} data-node-id="274:32">
         <div className="absolute bg-white h-[331px] left-[1099px] rounded-[18px] top-[6015px] w-[211px]" data-node-id="274:33" />
         <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Bold'] justify-center leading-[0] left-[1201.5px] not-italic text-[21px] text-black text-center top-[6212px] tracking-[-1.26px] whitespace-nowrap" data-node-id="274:34">
           <p className="leading-[normal]">Farrukh Sohail</p>
