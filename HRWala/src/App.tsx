@@ -2233,7 +2233,7 @@ function ReflowOriginal({ design }: { design: ReactElement<DesignProps> }) {
           </div>
         </div>
         {text('228:236', 'reflow-heading')}
-        <div className="reflow-grid reflow-module-grid">{cards('228:').map((card) => <OriginalCard node={card} key={card.props['data-node-id']} />)}</div>
+        <div className="reflow-grid reflow-module-grid">{cards('228:').map((card) => <OriginalCard node={card} accent key={card.props['data-node-id']} />)}</div>
       </section>
       <section className="reflow-section" id="academy">
         {text('242:251', 'reflow-heading')}
