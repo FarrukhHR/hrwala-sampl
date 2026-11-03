@@ -275,7 +275,8 @@
 .responsive-badge-grid > img,
 .responsive-faq-list details {
   cursor: pointer;
-  transition: transform 180ms ease, box-shadow 180ms ease;
+  transition: transform 140ms ease-out;
+  transition-delay: 0s;
 }
 
 @media (hover: hover) {
@@ -286,8 +287,7 @@
   .responsive-faq-list details:hover {
     position: relative;
     z-index: 1;
-    transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 10px 24px rgb(25 39 61 / 16%);
+    transform: scale(1.04);
   }
 }
 
@@ -754,6 +754,7 @@
 .live-faq-answer { max-height: 0; overflow: hidden; opacity: 0; transition: max-height .3s ease, opacity .25s ease; }
 .live-faq-answer p { margin: 0; padding: 0 17px 10px; color: #757575; font-family: 'Poppins:Medium', Poppins, sans-serif; font-size: 11px; line-height: 17px; }
 .live-faq-item.is-open .live-faq-answer { max-height: 100px; opacity: 1; }
+[data-node-id^="289:"] { visibility: hidden; }
 
 /* Requested motion is limited to the existing hero copy, floating words and partner chain. */
 .hero-copy-cycle { animation: heroCopyCycle 5.2s ease both; }
@@ -784,7 +785,8 @@
 [data-node-id="262:37"], [data-node-id="274:18"], [data-node-id="274:3"], [data-node-id="274:23"],
 [data-node-id="274:8"], [data-node-id="274:28"], [data-node-id="274:13"], [data-node-id="274:33"] {
   cursor: pointer;
-  transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s cubic-bezier(.2,.7,.2,1);
+  transition: transform 140ms ease-out;
+  transition-delay: 0s;
   transform-origin: center;
 }
 [data-node-id="88:27"]:hover, [data-node-id="101:110"]:hover, [data-node-id="101:126"]:hover, [data-node-id="101:134"]:hover,
@@ -797,7 +799,7 @@
 [data-node-id="228:204"]:hover, [data-node-id="228:212"]:hover, [data-node-id="228:220"]:hover, [data-node-id="228:228"]:hover,
 [data-node-id="262:37"]:hover, [data-node-id="274:18"]:hover, [data-node-id="274:3"]:hover, [data-node-id="274:23"]:hover,
 [data-node-id="274:8"]:hover, [data-node-id="274:28"]:hover, [data-node-id="274:13"]:hover, [data-node-id="274:33"]:hover {
-  transform: scale(1.018); box-shadow: 0 7px 17px rgb(20 47 83 / 18%);
+  transform: scale(1.05);
 }
 .video-slot { object-fit: cover; }
 .team-photo-slot { object-fit: cover; }
