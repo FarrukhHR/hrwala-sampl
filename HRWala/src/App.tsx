@@ -929,12 +929,12 @@ function Desktop1({ className }: { className?: string }) {
         </div>
         </div>
         <div className="absolute contents left-[758px] top-[155px]">
-          <p className="hero-right-adjust [word-break:break-word] absolute font-['Poppins:Bold'] h-[38.874px] leading-[normal] left-[859.59px] not-italic text-[#1d59b5] text-[16px] top-[195.16px] tracking-[-0.96px] w-[180.388px]">Leaves &amp; Attendance</p>
-          <p className="hero-right-adjust [word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[1324.41px] not-italic text-[#9669d9] text-[16px] top-[195.18px] tracking-[-0.96px] w-[150.323px]">On-boarding</p>
-          <p className="hero-right-adjust [word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[839.47px] not-italic text-[#9669d9] text-[16px] top-[524.47px] tracking-[-0.96px] w-[163.685px]">360° Performance</p>
-          <p className="hero-right-adjust [word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[1337.12px] not-italic text-[#9669d9] text-[16px] top-[524.47px] tracking-[-0.96px] w-[163.685px]">Talent Acquisition</p>
-          <p className="hero-right-adjust [word-break:break-word] absolute font-['Poppins:Bold'] h-[38.874px] leading-[normal] left-[759px] not-italic text-[#5194d8] text-[16px] top-[352.94px] tracking-[-0.96px] w-[187.069px]">Employee Dashboard</p>
-          <p className="hero-right-adjust [word-break:break-word] absolute font-['Poppins:Bold'] h-[39.176px] leading-[normal] left-[1399.59px] not-italic text-[#5194d8] text-[16px] top-[352.94px] tracking-[-0.96px] w-[73.059px]">Payroll</p>
+          <p className="hero-right-adjust hero-floating-word [word-break:break-word] absolute font-['Poppins:Bold'] h-[38.874px] leading-[normal] left-[859.59px] not-italic text-[#1d59b5] text-[16px] top-[195.16px] tracking-[-0.96px] w-[180.388px]">Leaves &amp; Attendance</p>
+          <p className="hero-right-adjust hero-floating-word [word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[1324.41px] not-italic text-[#9669d9] text-[16px] top-[195.18px] tracking-[-0.96px] w-[150.323px]">On-boarding</p>
+          <p className="hero-right-adjust hero-floating-word [word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[839.47px] not-italic text-[#9669d9] text-[16px] top-[524.47px] tracking-[-0.96px] w-[163.685px]">360° Performance</p>
+          <p className="hero-right-adjust hero-floating-word [word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[1337.12px] not-italic text-[#9669d9] text-[16px] top-[524.47px] tracking-[-0.96px] w-[163.685px]">Talent Acquisition</p>
+          <p className="hero-right-adjust hero-floating-word [word-break:break-word] absolute font-['Poppins:Bold'] h-[38.874px] leading-[normal] left-[759px] not-italic text-[#5194d8] text-[16px] top-[352.94px] tracking-[-0.96px] w-[187.069px]">Employee Dashboard</p>
+          <p className="hero-right-adjust hero-floating-word [word-break:break-word] absolute font-['Poppins:Bold'] h-[39.176px] leading-[normal] left-[1399.59px] not-italic text-[#5194d8] text-[16px] top-[352.94px] tracking-[-0.96px] w-[73.059px]">Payroll</p>
           <div className="hero-right-adjust absolute h-[432px] left-[889.24px] top-[156px] w-[570.984px]">
             <img alt="HRWala employee dashboard" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLuminousWomanWithinBlueRing2X1} />
           </div>

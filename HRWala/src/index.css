@@ -171,11 +171,17 @@
 /* Requested motion is limited to the existing hero copy, floating words and partner chain. */
 .hero-copy-cycle { animation: heroCopyCycle 5.2s ease both; }
 .design-canvas .hero-right-adjust { translate: 0 58px; }
+.hero-floating-word { animation: heroFloatingWords 3.2s ease-in-out infinite; }
+.hero-floating-word:nth-of-type(2n) { animation-delay: -1.6s; }
 @keyframes heroCopyCycle {
   0% { opacity: 0; transform: translateY(8px); }
   12% { opacity: 1; transform: translateY(0); }
   88% { opacity: 1; transform: translateY(0); }
   100% { opacity: 0; transform: translateY(-5px); }
+}
+@keyframes heroFloatingWords {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
 }
 [data-node-id="81:10"], [data-node-id="84:2"], [data-node-id="81:11"], [data-node-id="81:13"],
 [data-node-id="207:50"], [data-node-id="207:51"], [data-node-id="207:52"], [data-node-id="207:53"],
