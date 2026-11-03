@@ -6,14 +6,14 @@ const videoSources = ['', '', '', '']
 // Add portraits under public/assets and set the matching path here.
 const teamPhotos = ['', '', '', '', '', '', '', '']
 const heroSlides = [
-  { heading: 'Job Portal', bullets: ['Find Talent', 'Find Oppurtunity', 'Meet Here'], description: ['Find the right people and opportunities.', 'Make every hiring move count.'] },
-  { heading: 'HRWala Software', bullets: ['Simplify HR', 'Automate Payroll', 'Empower People'], description: ['Bring everyday HR workflows together.', 'Keep your people processes connected.'] },
-  { heading: 'HR All-in-One', bullets: ['Hire Smarter', 'Manage Better', 'Grow Faster'], description: ['Recognized credentials for working professionals.', 'Your next career step starts here.'] },
-  { heading: 'Brand Standards', bullets: ['Service Industry', 'Serving People', 'One Partner'], description: ['Set clear expectations for every interaction.', 'Build trust through consistent service.'] },
-  { heading: 'HR Certification', bullets: ['Get Certified', 'Get Noticed', 'Get Hired'], description: ['Build your HR knowledge and earn recognition.', 'Turn new skills into career opportunities.'] },
-  { heading: 'Your Advisor', bullets: ['Expert HR Advice', 'Complaint Workplaces', 'Confident Leaders'], description: ['Get practical advice for people challenges.', 'Make confident decisions for your team.'] },
-  { heading: 'Head Hunting', bullets: ['Right People', 'Right Roles', 'Real Growth'], description: ['Connect with people who fit your next role.', 'Find talent that helps your business grow.'] },
-  { heading: 'Hospitality Talent', bullets: ['Hoteliers', 'Star Performers', 'Get Connected'], description: ['Discover skilled hospitality professionals.', 'Create better experiences for every guest.'] },
+  { heading: 'Job Portal', bullets: ['Find Talent', 'Find Oppurtunity', 'Meet Here'], description: ['Verified jobs and qualified candidates.', 'Where employers and careers connect.'] },
+  { heading: 'HRWala Software', bullets: ['Simplify HR', 'Automate Payroll', 'Empower People'], description: ['One system for every employee record.', 'Less paperwork, more progress.'] },
+  { heading: 'HR All-in-One', bullets: ['Hire Smarter', 'Manage Better', 'Grow Faster'], description: ['Recruitment, payroll and HR in one place.', 'Everything your people need.'] },
+  { heading: 'Brand Standards', bullets: ['Service Industry', 'Serving People', 'One Partner'], description: ['From hotels to hospitals to retail', 'HR built around your brand standards.'] },
+  { heading: 'HR Certification', bullets: ['Get Certified', 'Get Noticed', 'Get Hired'], description: ['Recognized credentials for working professionals.', 'Your next career step starts here.'] },
+  { heading: 'Your Advisor', bullets: ['Expert HR Advice', 'Complaint Workplaces', 'Confident Leaders'], description: ['Strategy, policies and labor law support.', 'Build an organization that lasts.'] },
+  { heading: 'Head Hunting', bullets: ['Right People', 'Right Roles', 'Real Growth'], description: ['Executive search and talent acquisition.', 'Your next great hire starts here.'] },
+  { heading: 'Hospitality Talent', bullets: ['Hoteliers', 'Star Performers', 'Get Connected'], description: ['First ever dedicated hospitality people', 'Job Portal connecting people with hoteliers'] },
 ]
 const imgGirlProfileIconRemovebgPreview1 = `${assetPathPrefix}/51fdd.png`;
 const imgHumanConnectionInTheInterviewRoom1 = `${assetPathPrefix}/58338.png`;
