@@ -927,14 +927,16 @@ function Desktop1({ className }: { className?: string }) {
             Job Portal
           </p>
         </div>
-        <div className="hero-software-orbit-static">
-          <p className="hero-software-orbit-label hero-software-orbit-label-1">Leaves &amp; Attendance</p>
-          <p className="hero-software-orbit-label hero-software-orbit-label-2">On-boarding</p>
-          <p className="hero-software-orbit-label hero-software-orbit-label-3">Employee Dashboard</p>
-          <p className="hero-software-orbit-label hero-software-orbit-label-4">Payroll</p>
-          <p className="hero-software-orbit-label hero-software-orbit-label-5">360° Performance</p>
-          <p className="hero-software-orbit-label hero-software-orbit-label-6">Talent Acquisition</p>
-          <img className="hero-software-orbit-static-image" alt="HRWala employee dashboard" src={imgLuminousWomanWithinBlueRing2X1} />
+        <div className="absolute contents left-[758px] top-[155px]">
+          <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[38.874px] leading-[normal] left-[859.59px] not-italic text-[#1d59b5] text-[16px] top-[195.16px] tracking-[-0.96px] w-[180.388px]">Leaves &amp; Attendance</p>
+          <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[1324.41px] not-italic text-[#9669d9] text-[16px] top-[195.18px] tracking-[-0.96px] w-[150.323px]">On-boarding</p>
+          <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[839.47px] not-italic text-[#9669d9] text-[16px] top-[524.47px] tracking-[-0.96px] w-[163.685px]">360° Performance</p>
+          <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[1337.12px] not-italic text-[#9669d9] text-[16px] top-[524.47px] tracking-[-0.96px] w-[163.685px]">Talent Acquisition</p>
+          <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[38.874px] leading-[normal] left-[759px] not-italic text-[#5194d8] text-[16px] top-[352.94px] tracking-[-0.96px] w-[187.069px]">Employee Dashboard</p>
+          <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[39.176px] leading-[normal] left-[1399.59px] not-italic text-[#5194d8] text-[16px] top-[352.94px] tracking-[-0.96px] w-[73.059px]">Payroll</p>
+          <div className="absolute h-[432px] left-[889.24px] top-[156px] w-[570.984px]">
+            <img alt="HRWala employee dashboard" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLuminousWomanWithinBlueRing2X1} />
+          </div>
         </div>
       </div>
       <div className="absolute contents left-[28px] top-[3321px]" data-node-id="207:34">
@@ -2172,14 +2174,14 @@ function ReflowOriginal({ design }: { design: ReactElement<DesignProps> }) {
           {text('28:71', 'reflow-bullets')}{text('31:83', 'hero-copy-cycle')}
           {button('35:94', 'https://hrwala.net/job-portal')}
         </div>
-        <div className="reflow-hero-orbit">
-          {image('239:239', 'reflow-hero-orbit-image')}
-          <div className="reflow-hero-orbit-label reflow-hero-orbit-label-1">{text('207:50')}</div>
-          <div className="reflow-hero-orbit-label reflow-hero-orbit-label-2">{text('207:51')}</div>
-          <div className="reflow-hero-orbit-label reflow-hero-orbit-label-3">{text('207:53')}</div>
-          <div className="reflow-hero-orbit-label reflow-hero-orbit-label-4">{text('239:241')}</div>
-          <div className="reflow-hero-orbit-label reflow-hero-orbit-label-5">{text('207:52')}</div>
-          <div className="reflow-hero-orbit-label reflow-hero-orbit-label-6">{text('239:243')}</div>
+        <div className="reflow-orbit reflow-software-orbit">
+          {image('239:239')}
+          <div className="reflow-floating reflow-floating-1">{text('207:50')}</div>
+          <div className="reflow-floating reflow-floating-2">{text('207:51')}</div>
+          <div className="reflow-floating reflow-floating-3">{text('207:53')}</div>
+          <div className="reflow-floating reflow-floating-4">{text('239:241')}</div>
+          <div className="reflow-floating reflow-floating-5">{text('207:52')}</div>
+          <div className="reflow-floating reflow-floating-6">{text('239:243')}</div>
         </div>
       </section>
       <section className="reflow-section" id="services">
