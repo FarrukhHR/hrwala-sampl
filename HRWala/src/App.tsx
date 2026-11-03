@@ -2103,7 +2103,7 @@ function OriginalImage({ node, className = '', alt }: { node?: ReactElement<Desi
   return <img src={image.props.src} alt={alt || node?.props['data-name'] || image.props.alt || ''} className={'reflow-image ' + className} style={width && height ? { aspectRatio: `${width} / ${height}` } : undefined} loading="lazy" />
 }
 
-function OriginalCard({ node, team = false }: { node: ReactElement<DesignProps>; team?: boolean }) {
+function OriginalCard({ node, team = false, accent = false }: { node: ReactElement<DesignProps>; team?: boolean; accent?: boolean }) {
   const elements = designElements(node.props.children)
   // Font wrappers carry inherited styles; stop at those rather than copying their inner p twice.
   const collect = (tree: ReactNode, inheritedFont = ''): ReactElement<DesignProps>[] => {
@@ -2121,7 +2121,8 @@ function OriginalCard({ node, team = false }: { node: ReactElement<DesignProps>;
     return result
   }
   const photo = elements.find((n) => n.type === TeamPhoto)
-  return <article className={'reflow-card' + (team ? ' reflow-team-card' : '')} data-original-card={node.props['data-node-id']}>
+  return <article className={'reflow-card' + (team ? ' reflow-team-card' : '') + (accent ? ' reflow-card-accented' : '')} data-original-card={node.props['data-node-id']}>
+    {accent && <div className="reflow-card-accent" aria-hidden="true"><img src={imgLine5} alt="" /><img src={imgLine4} alt="" /></div>}
     {photo && cloneElement(photo, { className: 'reflow-team-photo' })}
     {collect(node.props.children).map((text, index) => <Flow node={text} key={text.props['data-node-id'] || index} className={(text.props.className || '').includes('opacity-10') ? 'reflow-watermark' : ''} />)}
   </article>
@@ -2189,7 +2190,7 @@ function ReflowOriginal({ design }: { design: ReactElement<DesignProps> }) {
           {cards('101:').map((card, index) => {
             const video = elements.find((n) => n.type === VideoSlot && (n.props as DesignProps & { index: number }).index === index)
             return <div className="reflow-stack" key={card.props['data-node-id']}>
-              {video && cloneElement(video, { className: 'reflow-video' })}<OriginalCard node={card} />
+              {video && cloneElement(video, { className: 'reflow-video' })}<OriginalCard node={card} accent />
             </div>
           })}
         </div>
