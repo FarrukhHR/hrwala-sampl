@@ -269,6 +269,28 @@
   background: white;
 }
 
+.responsive-card,
+.responsive-module-card,
+.responsive-credential-card,
+.responsive-badge-grid > img,
+.responsive-faq-list details {
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+@media (hover: hover) {
+  .responsive-card:hover,
+  .responsive-module-card:hover,
+  .responsive-credential-card:hover,
+  .responsive-badge-grid > img:hover,
+  .responsive-faq-list details:hover {
+    position: relative;
+    z-index: 1;
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 10px 24px rgb(25 39 61 / 16%);
+  }
+}
+
 .responsive-card {
   padding: 24px;
 }
