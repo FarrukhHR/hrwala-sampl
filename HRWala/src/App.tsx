@@ -197,7 +197,7 @@ function Desktop1({ className }: { className?: string }) {
       <div className="absolute h-[987px] left-[28px] top-[5438px] w-[1472px]" data-node-id="260:36">
         <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgRectangle13} />
       </div>
-      <div className="absolute h-[652px] left-[28px] top-[6712px] w-[1472px]" data-node-id="274:202">
+      <div className="absolute h-[628px] left-[28px] top-[6712px] w-[1472px]" data-node-id="274:202">
         <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgRectangle26} />
       </div>
       <p className="[word-break:break-word] absolute font-['Poppins:ExtraBold'] h-[45px] leading-[0] left-[89px] not-italic text-[0px] text-black top-[calc(50%-2994.5px)] tracking-[-0.8px] w-[453px]" data-node-id="69:3">

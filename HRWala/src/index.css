@@ -741,7 +741,8 @@
 .live-faq-answer { max-height: 0; overflow: hidden; opacity: 0; transition: max-height .3s ease, opacity .25s ease; }
 .live-faq-answer p { margin: 0; padding: 0 17px 10px; color: #757575; font-family: 'Poppins:Medium', Poppins, sans-serif; font-size: 11px; line-height: 17px; }
 .live-faq-item.is-open .live-faq-answer { max-height: 100px; opacity: 1; }
-[data-node-id^="289:"]:not([data-node-id="289:47"]) { visibility: hidden; }
+[data-node-id="289:54"], [data-node-id="289:64"], [data-node-id="289:65"],
+[data-node-id="289:77"], [data-node-id="289:90"] { visibility: hidden; }
 
 /* Requested motion is limited to the existing hero copy, floating words and partner chain. */
 .hero-copy-cycle { animation: heroCopyCycle 5.2s ease both; }
