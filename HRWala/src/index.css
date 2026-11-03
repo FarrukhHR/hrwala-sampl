@@ -800,8 +800,8 @@
   will-change: transform;
 }
 @keyframes partnerMarquee {
-  from { transform: translateX(-266px); }
-  to { transform: translateX(0); }
+  from { transform: translateX(-324px); }
+  to { transform: translateX(-58px); }
 }
 
 @media (max-width: 1530px) {
