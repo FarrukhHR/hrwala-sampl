@@ -710,7 +710,7 @@
 .live-contact-form select:focus,
 .live-contact-form textarea:focus,
 .live-newsletter input:focus { box-shadow: 0 0 0 2px #fff; }
-.live-contact-form input[name="name"] { top: 0; height: 39px; background: #7197d4; }
+.live-contact-form input[name="name"] { top: 0; height: 39px; background: #4376c3; }
 .live-contact-form input[name="email"] { top: 76px; height: 39px; }
 .live-contact-form select {
   top: 153px; height: 39px; appearance: none; padding-right: 44px; cursor: pointer;
@@ -783,19 +783,25 @@
 .video-slot { object-fit: cover; }
 .team-photo-slot { object-fit: cover; }
 
-/* The partner nodes remain aligned while the full chain glides gently side to side. */
-[data-node-id="274:158"], [data-node-id="274:161"], [data-node-id="274:177"],
-[data-node-id="274:181"], [data-node-id="274:185"], [data-node-id="274:189"],
-[data-node-id="274:166"], [data-node-id="274:178"], [data-node-id="274:182"],
-[data-node-id="274:186"], [data-node-id="274:190"], [data-node-id="274:167"],
-[data-node-id="274:179"], [data-node-id="274:183"], [data-node-id="274:187"], [data-node-id="274:191"],
-[data-node-id="274:165"], [data-node-id="274:180"], [data-node-id="274:184"], [data-node-id="274:188"],
-[data-node-id="274:192"], [data-node-id="274:198"], [data-node-id="274:199"], [data-node-id="274:200"] {
-  animation: partnerChainDrift 6.5s linear infinite;
+.partner-marquee-window {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
 }
-@keyframes partnerChainDrift {
-  0%, 100% { translate: 0 0; }
-  50% { translate: -18px 0; }
+.partner-marquee-track {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 1530px;
+  height: 7615px;
+  animation: partnerMarquee 18s linear infinite;
+  will-change: transform;
+}
+@keyframes partnerMarquee {
+  from { transform: translateX(-266px); }
+  to { transform: translateX(0); }
 }
 
 @media (max-width: 1530px) {

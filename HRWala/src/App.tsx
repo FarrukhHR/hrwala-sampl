@@ -1658,6 +1658,36 @@ function Desktop1({ className }: { className?: string }) {
           <img alt="" className="block max-w-none size-full" src={imgLine17} />
         </div>
       </div>
+      <div className="partner-marquee-window">
+        <div className="partner-marquee-track">
+      <div className="absolute flex h-[87px] items-center justify-center left-[22px] top-[6557px] w-[22px]" data-node-id="274:197">
+        <div className="-scale-y-100 flex-none rotate-180">
+          <div className="bg-[#d9d9d9] h-[87px] opacity-39 relative rounded-[18px] w-[22px]" />
+        </div>
+      </div>
+      <div className="absolute flex items-center justify-center left-[127px] size-[15px] top-[6595px]" data-node-id="274:198">
+        <div className="-scale-y-100 flex-none rotate-180">
+          <div className="relative size-[15px]">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgEllipse27} />
+          </div>
+        </div>
+      </div>
+      <div className="absolute flex items-center justify-center left-[26px] size-[15px] top-[6595px]" data-node-id="274:199">
+        <div className="-scale-y-100 flex-none rotate-180">
+          <div className="relative size-[15px]">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgEllipse28} />
+          </div>
+        </div>
+      </div>
+      <div className="absolute flex h-0 items-center justify-center left-[34px] top-[6603px] w-[96px]" data-node-id="274:200">
+        <div className="-scale-y-100 flex-none rotate-180">
+          <div className="h-0 relative w-[96px]">
+            <div className="absolute inset-[-2px_0_0_0]">
+              <img alt="" className="block max-w-none size-full" src={imgLine44} />
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="absolute bg-[#d9d9d9] h-[87px] left-[103px] rounded-[18px] top-[6557px] w-[186px]" data-node-id="274:158" />
       <div className="absolute bg-[#d9d9d9] h-[87px] left-[369px] rounded-[18px] top-[6557px] w-[186px]" data-node-id="274:161" />
       <div className="absolute bg-[#d9d9d9] h-[87px] left-[635px] rounded-[18px] top-[6557px] w-[186px]" data-node-id="274:177" />
@@ -1717,6 +1747,12 @@ function Desktop1({ className }: { className?: string }) {
       <div className="absolute h-0 left-[1347px] top-[6603px] w-[96px]" data-node-id="274:192">
         <div className="absolute inset-[-2px_0_0_0]">
           <img alt="" className="block max-w-none size-full" src={imgLine43} />
+        </div>
+      </div>
+      <div className="absolute left-[1601px] size-[15px] top-[6595px]" aria-hidden="true"><img alt="" className="absolute block inset-0 max-w-none size-full" src={imgEllipse17} /></div>
+      <div className="absolute h-0 left-[1613px] top-[6603px] w-[96px]" aria-hidden="true"><div className="absolute inset-[-2px_0_0_0]"><img alt="" className="block max-w-none size-full" src={imgLine39} /></div></div>
+      <div className="absolute left-[1702px] size-[15px] top-[6595px]" aria-hidden="true"><img alt="" className="absolute block inset-0 max-w-none size-full" src={imgEllipse17} /></div>
+      <div className="absolute bg-[#d9d9d9] h-[87px] left-[1699px] rounded-[18px] top-[6557px] w-[186px]" aria-hidden="true" />
         </div>
       </div>
       <div className="[word-break:break-word] absolute font-['Poppins:Medium'] h-[118px] leading-[0] left-[78px] not-italic text-[#757575] text-[16px] text-justify top-[6877px] tracking-[-0.32px] w-[540px] whitespace-pre-wrap" data-node-id="278:3">
@@ -1976,34 +2012,6 @@ function Desktop1({ className }: { className?: string }) {
         <div className="absolute contents inset-[98.77%_31.81%_0.85%_66.29%]" data-node-id="299:60" data-name="Clip path group">
           <div className="absolute inset-[98.77%_31.81%_0.85%_66.29%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[29.084px_29.084px]" data-node-id="299:56" style={{ maskImage: `url("${imgGroup}")` }} data-name="Group">
             <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgGroup1} />
-          </div>
-        </div>
-      </div>
-      <div className="absolute flex h-[87px] items-center justify-center left-[22px] top-[6557px] w-[22px]" data-node-id="274:197">
-        <div className="-scale-y-100 flex-none rotate-180">
-          <div className="bg-[#d9d9d9] h-[87px] opacity-39 relative rounded-[18px] w-[22px]" />
-        </div>
-      </div>
-      <div className="absolute flex items-center justify-center left-[127px] size-[15px] top-[6595px]" data-node-id="274:198">
-        <div className="-scale-y-100 flex-none rotate-180">
-          <div className="relative size-[15px]">
-            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgEllipse27} />
-          </div>
-        </div>
-      </div>
-      <div className="absolute flex items-center justify-center left-[26px] size-[15px] top-[6595px]" data-node-id="274:199">
-        <div className="-scale-y-100 flex-none rotate-180">
-          <div className="relative size-[15px]">
-            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgEllipse28} />
-          </div>
-        </div>
-      </div>
-      <div className="absolute flex h-0 items-center justify-center left-[34px] top-[6603px] w-[96px]" data-node-id="274:200">
-        <div className="-scale-y-100 flex-none rotate-180">
-          <div className="h-0 relative w-[96px]">
-            <div className="absolute inset-[-2px_0_0_0]">
-              <img alt="" className="block max-w-none size-full" src={imgLine44} />
-            </div>
           </div>
         </div>
       </div>
