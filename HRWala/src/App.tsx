@@ -897,44 +897,44 @@ function Desktop1({ className }: { className?: string }) {
         <div className="absolute h-[641px] left-[34px] top-[123px] w-[1472px]" data-node-id="9:4">
           <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgRectangle2} />
         </div>
-        <p key={'hero-heading-' + heroSlideIndex} className="hero-copy-cycle [word-break:break-word] absolute font-['Poppins:ExtraBold'] h-[65px] leading-[normal] left-[100px] not-italic text-[#0144ab] text-[56px] top-[291px] tracking-[-1.12px] w-[682px]" data-node-id="12:68" aria-live="polite">
+        <p key={'hero-heading-' + heroSlideIndex} className="hero-left-adjust hero-copy-cycle [word-break:break-word] absolute font-['Poppins:ExtraBold'] h-[65px] leading-[normal] left-[100px] not-italic text-[#0144ab] text-[56px] top-[291px] tracking-[-1.12px] w-[682px]" data-node-id="12:68" aria-live="polite">
           {activeHeroSlide.heading}
         </p>
         <div className="absolute contents left-[105px] top-[381px]" data-node-id="31:78">
-          <div key={'hero-bullets-' + heroSlideIndex} className="hero-copy-cycle [word-break:break-word] absolute font-['Poppins:Bold'] leading-[0] left-[128px] not-italic text-[#f6ac04] text-[33px] top-[381px] whitespace-nowrap" data-node-id="28:71" aria-live="polite">
+          <div key={'hero-bullets-' + heroSlideIndex} className="hero-left-adjust hero-copy-cycle [word-break:break-word] absolute font-['Poppins:Bold'] leading-[0] left-[128px] not-italic text-[#f6ac04] text-[33px] top-[381px] whitespace-nowrap" data-node-id="28:71" aria-live="polite">
             {activeHeroSlide.bullets.map((bullet, index) => <p className={index < 2 ? 'leading-[normal] mb-0' : 'leading-[normal]'} key={bullet}>{bullet}</p>)}
           </div>
-          <div key={'hero-markers-' + heroSlideIndex} className="hero-copy-cycle absolute h-[114px] left-[105px] top-[398px] w-[10.158px]" data-node-id="31:77">
+          <div key={'hero-markers-' + heroSlideIndex} className="hero-left-adjust hero-copy-cycle absolute h-[114px] left-[105px] top-[398px] w-[10.158px]" data-node-id="31:77">
             <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgGroup2} />
           </div>
         </div>
-        <p key={'hero-description-' + heroSlideIndex} className="hero-copy-cycle [word-break:break-word] absolute font-['Poppins:Regular'] leading-[normal] left-[100px] not-italic text-[#757575] text-[16px] top-[544px] tracking-[-0.32px] whitespace-nowrap" data-node-id="31:83" aria-live="polite">
+        <p key={'hero-description-' + heroSlideIndex} className="hero-left-adjust hero-copy-cycle [word-break:break-word] absolute font-['Poppins:Regular'] leading-[normal] left-[100px] not-italic text-[#757575] text-[16px] top-[544px] tracking-[-0.32px] whitespace-nowrap" data-node-id="31:83" aria-live="polite">
           {activeHeroSlide.description.map((line, index) => <span key={line}>{line}{index < activeHeroSlide.description.length - 1 && <br aria-hidden />}</span>)}
         </p>
         <div className="absolute contents left-[105px] top-[265px]" data-node-id="118:38">
-        <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Regular'] justify-center leading-[0] left-[calc(50%-592.5px)] not-italic text-[14px] text-black text-center top-[282px] tracking-[-0.56px] whitespace-nowrap" data-node-id="118:39">
+          <div className="hero-left-adjust -translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Regular'] justify-center leading-[0] left-[calc(50%-592.5px)] not-italic text-[14px] text-black text-center top-[282px] tracking-[-0.56px] whitespace-nowrap" data-node-id="118:39">
             <p className="leading-[normal]">People @ Top</p>
           </div>
-          <div className="absolute h-0 left-[105px] top-[282px] w-[18px]" data-node-id="118:40">
+          <div className="hero-left-adjust absolute h-0 left-[105px] top-[282px] w-[18px]" data-node-id="118:40">
             <div className="absolute inset-[-0.5px_-2.78%]">
               <img alt="" className="block max-w-none size-full" src={imgLine1} />
             </div>
           </div>
         </div>
         <div className="absolute contents left-[100px] top-[617px]" data-node-id="35:95">
-          <div className="absolute bg-[#0144ab] h-[43.598px] left-[100px] rounded-[8px] top-[617px] w-[131.186px]" data-node-id="35:93" />
-          <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[26.829px] leading-[normal] left-[123px] not-italic text-[16px] text-white top-[626px] tracking-[-0.32px] w-[98.807px]" data-node-id="35:94">
+          <div className="hero-left-adjust absolute bg-[#0144ab] h-[43.598px] left-[100px] rounded-[8px] top-[617px] w-[131.186px]" data-node-id="35:93" />
+          <p className="hero-left-adjust [word-break:break-word] absolute font-['Poppins:Bold'] h-[26.829px] leading-[normal] left-[123px] not-italic text-[16px] text-white top-[626px] tracking-[-0.32px] w-[98.807px]" data-node-id="35:94">
             Job Portal
           </p>
         </div>
         <div className="absolute contents left-[758px] top-[155px]">
-          <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[38.874px] leading-[normal] left-[859.59px] not-italic text-[#1d59b5] text-[16px] top-[195.16px] tracking-[-0.96px] w-[180.388px]">Leaves &amp; Attendance</p>
-          <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[1324.41px] not-italic text-[#9669d9] text-[16px] top-[195.18px] tracking-[-0.96px] w-[150.323px]">On-boarding</p>
-          <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[839.47px] not-italic text-[#9669d9] text-[16px] top-[524.47px] tracking-[-0.96px] w-[163.685px]">360° Performance</p>
-          <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[1337.12px] not-italic text-[#9669d9] text-[16px] top-[524.47px] tracking-[-0.96px] w-[163.685px]">Talent Acquisition</p>
-          <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[38.874px] leading-[normal] left-[759px] not-italic text-[#5194d8] text-[16px] top-[352.94px] tracking-[-0.96px] w-[187.069px]">Employee Dashboard</p>
-          <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[39.176px] leading-[normal] left-[1399.59px] not-italic text-[#5194d8] text-[16px] top-[352.94px] tracking-[-0.96px] w-[73.059px]">Payroll</p>
-          <div className="absolute h-[432px] left-[889.24px] top-[156px] w-[570.984px]">
+          <p className="hero-right-adjust [word-break:break-word] absolute font-['Poppins:Bold'] h-[38.874px] leading-[normal] left-[859.59px] not-italic text-[#1d59b5] text-[16px] top-[195.16px] tracking-[-0.96px] w-[180.388px]">Leaves &amp; Attendance</p>
+          <p className="hero-right-adjust [word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[1324.41px] not-italic text-[#9669d9] text-[16px] top-[195.18px] tracking-[-0.96px] w-[150.323px]">On-boarding</p>
+          <p className="hero-right-adjust [word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[839.47px] not-italic text-[#9669d9] text-[16px] top-[524.47px] tracking-[-0.96px] w-[163.685px]">360° Performance</p>
+          <p className="hero-right-adjust [word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[1337.12px] not-italic text-[#9669d9] text-[16px] top-[524.47px] tracking-[-0.96px] w-[163.685px]">Talent Acquisition</p>
+          <p className="hero-right-adjust [word-break:break-word] absolute font-['Poppins:Bold'] h-[38.874px] leading-[normal] left-[759px] not-italic text-[#5194d8] text-[16px] top-[352.94px] tracking-[-0.96px] w-[187.069px]">Employee Dashboard</p>
+          <p className="hero-right-adjust [word-break:break-word] absolute font-['Poppins:Bold'] h-[39.176px] leading-[normal] left-[1399.59px] not-italic text-[#5194d8] text-[16px] top-[352.94px] tracking-[-0.96px] w-[73.059px]">Payroll</p>
+          <div className="hero-right-adjust absolute h-[432px] left-[889.24px] top-[156px] w-[570.984px]">
             <img alt="HRWala employee dashboard" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLuminousWomanWithinBlueRing2X1} />
           </div>
         </div>

@@ -170,6 +170,8 @@
 
 /* Requested motion is limited to the existing hero copy, floating words and partner chain. */
 .hero-copy-cycle { animation: heroCopyCycle 5.2s ease both; }
+.design-canvas .hero-left-adjust { translate: 0 -36px; }
+.design-canvas .hero-right-adjust { translate: 0 36px; }
 @keyframes heroCopyCycle {
   0% { opacity: 0; transform: translateY(8px); }
   12% { opacity: 1; transform: translateY(0); }
