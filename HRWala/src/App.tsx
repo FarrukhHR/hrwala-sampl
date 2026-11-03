@@ -2212,7 +2212,7 @@ function ReflowOriginal({ design }: { design: ReactElement<DesignProps> }) {
           </div>
           {image('151:214', 'reflow-cover')}
         </div>
-        <div className="reflow-grid reflow-industries">{cards('159:').sort((a, b) => originalPosition(a) - originalPosition(b)).map((card) => <OriginalCard node={card} key={card.props['data-node-id']} />)}</div>
+        <div className="reflow-grid reflow-industries">{cards('159:').sort((a, b) => originalPosition(a) - originalPosition(b)).map((card) => <OriginalCard node={card} accent key={card.props['data-node-id']} />)}</div>
       </section>
       <section className="reflow-section reflow-panel" id="software">
         <div className="reflow-split">
