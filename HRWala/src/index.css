@@ -265,7 +265,7 @@
 .responsive-badge-grid > img,
 .responsive-faq-list details {
   cursor: pointer;
-  transition: transform 140ms ease-out;
+  transition: transform 140ms ease-in-out;
   transition-delay: 0s;
 }
 
@@ -276,8 +276,7 @@
   .responsive-badge-grid > img:hover,
   .responsive-faq-list details:hover {
     position: relative;
-    z-index: 1;
-    transform: scale(1.04);
+    transform: scale(1.0);
   }
 }
 
