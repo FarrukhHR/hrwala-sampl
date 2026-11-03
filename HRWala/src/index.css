@@ -312,6 +312,42 @@ body { margin: 0; min-width: 0; }
   align-items: center;
   gap: 24px;
 }
+.hero-banner {
+  position: relative;
+  width: 100vw;
+  height: 633px;
+  margin-left: calc(50% - 50vw);
+  overflow: hidden;
+  background: #e7f0ff;
+}
+.hero-banner-art {
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  width: min(56vw, 530px);
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+}
+.hero-banner-label {
+  position: absolute;
+  z-index: 1;
+  width: 23%;
+  pointer-events: none;
+}
+.hero-banner-label p {
+  margin: 0;
+  font-size: 20px !important;
+  font-weight: 700;
+  line-height: 1.2 !important;
+  overflow-wrap: anywhere;
+}
+.hero-banner-label-1 { left: 19.2%; top: 13.2%; }
+.hero-banner-label-2 { left: 79.5%; top: 13.7%; }
+.hero-banner-label-3 { left: 6.2%; top: 44%; }
+.hero-banner-label-4 { left: 89.2%; top: 43.5%; width: 10%; }
+.hero-banner-label-5 { left: 16.7%; top: 78%; }
+.hero-banner-label-6 { left: 81.2%; top: 77%; width: 19%; }
 .reflow-hero-heading { min-height: 3.6em; }
 .reflow-hero-heading > p { font-size: clamp(30px, 4vw, 42px) !important; }
 .reflow-bullets > div { font-size: clamp(23px, 3vw, 30px) !important; }

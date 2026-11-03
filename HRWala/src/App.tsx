@@ -2173,12 +2173,14 @@ function ReflowOriginal({ design }: { design: ReactElement<DesignProps> }) {
       <nav id="main-navigation" className={mobileMenuOpen ? 'is-open' : ''} aria-label="Main navigation" onClick={() => setMobileMenuOpen(false)}>{text('5:5')}{text('5:17')}<div className="reflow-portal">{text('5:31')}<a href="https://hrwala.net/login" aria-label="Open My Portal">{image('9:2')}</a></div></nav>
     </header>
     <main className="reflow-main">
-      <section className="reflow-section reflow-panel reflow-hero" aria-label="HRWala">
-        <div className="reflow-stack">
-          {text('118:39', 'reflow-kicker')}{text('12:68', 'reflow-hero-heading')}
-          {text('28:71', 'reflow-bullets')}{text('31:83', 'hero-copy-cycle')}
-          {button('35:94', 'https://hrwala.net/job-portal')}
-        </div>
+      <section className="hero-banner" aria-label="HRWala employee management platform">
+        <img className="hero-banner-art" src={imgLuminousWomanWithinBlueRing2X1} alt="HRWala employee dashboard" />
+        {text('207:50', 'hero-banner-label hero-banner-label-1')}
+        {text('207:51', 'hero-banner-label hero-banner-label-2')}
+        {text('207:53', 'hero-banner-label hero-banner-label-3')}
+        {text('239:241', 'hero-banner-label hero-banner-label-4')}
+        {text('207:52', 'hero-banner-label hero-banner-label-5')}
+        {text('239:243', 'hero-banner-label hero-banner-label-6')}
       </section>
       <section className="reflow-section" id="services">
         {text('69:3', 'reflow-heading')}
