@@ -684,6 +684,14 @@
 
 /* The original Figma buttons stay visually unchanged; these overlays only add click targets. */
 .design-hit-area { position: absolute; z-index: 50; display: block; background: transparent; }
+.footer-link-text { transition: color 200ms ease; }
+.design-canvas:has(.footer-hit-discover:hover) .footer-link-discover,
+.design-canvas:has(.footer-hit-jobs:hover) .footer-link-jobs,
+.design-canvas:has(.footer-hit-software:hover) .footer-link-software,
+.design-canvas:has(.footer-hit-certifications:hover) .footer-link-certifications,
+.design-canvas:has(.footer-hit-phone-primary:hover) .footer-link-phone-primary,
+.design-canvas:has(.footer-hit-phone-secondary:hover) .footer-link-phone-secondary,
+.design-canvas:has(.footer-hit-email:hover) .footer-link-email { color: #f6ac04; }
 
 /* Exact-size native controls are layered over the existing form artwork. */
 .live-contact-form {

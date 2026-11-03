@@ -1945,16 +1945,16 @@ function Desktop1({ className }: { className?: string }) {
         </div>
       </div>
       <div className="[word-break:break-word] absolute contents leading-[21px] left-[569px] not-italic text-justify top-[7415px] whitespace-nowrap" data-node-id="299:25">
-        <p className="absolute font-['Poppins:Medium'] left-[570px] text-[12px] text-white top-[7446px] tracking-[-0.24px]" data-node-id="299:22">
+        <p className="footer-link-text footer-link-discover absolute font-['Poppins:Medium'] left-[570px] text-[12px] text-white top-[7446px] tracking-[-0.24px]" data-node-id="299:22">
           Discover
         </p>
-        <p className="absolute font-['Poppins:Medium'] left-[570px] text-[12px] text-white top-[7476px] tracking-[-0.24px]" data-node-id="299:23">
+        <p className="footer-link-text footer-link-jobs absolute font-['Poppins:Medium'] left-[570px] text-[12px] text-white top-[7476px] tracking-[-0.24px]" data-node-id="299:23">
           Job Portal
         </p>
-        <p className="absolute font-['Poppins:Medium'] left-[570px] text-[12px] text-white top-[7505px] tracking-[-0.24px]" data-node-id="299:24">
+        <p className="footer-link-text footer-link-software absolute font-['Poppins:Medium'] left-[570px] text-[12px] text-white top-[7505px] tracking-[-0.24px]" data-node-id="299:24">
           HRWala Software
         </p>
-        <p className="absolute font-['Poppins:Medium'] left-[570px] text-[12px] text-white top-[7534px] tracking-[-0.24px]" data-node-id="299:34">
+        <p className="footer-link-text footer-link-certifications absolute font-['Poppins:Medium'] left-[570px] text-[12px] text-white top-[7534px] tracking-[-0.24px]" data-node-id="299:34">
           Certifications
         </p>
         <p className="absolute font-['Poppins:Bold'] left-[570px] text-[#f6ac04] text-[19px] top-[7416px] tracking-[-0.38px]" data-node-id="299:21">
@@ -1962,13 +1962,13 @@ function Desktop1({ className }: { className?: string }) {
         </p>
       </div>
       <div className="[word-break:break-word] absolute contents leading-[21px] left-[764px] not-italic text-justify top-[7420px] whitespace-nowrap" data-node-id="299:27">
-        <p className="absolute font-['Poppins:Medium'] left-[765px] text-[12px] text-white top-[7451px] tracking-[-0.24px]" data-node-id="299:28">
+        <p className="footer-link-text footer-link-phone-primary absolute font-['Poppins:Medium'] left-[765px] text-[12px] text-white top-[7451px] tracking-[-0.24px]" data-node-id="299:28">
           +92 300 8523878
         </p>
-        <p className="absolute font-['Poppins:Medium'] left-[765px] text-[12px] text-white top-[7481px] tracking-[-0.24px]" data-node-id="299:29">
+        <p className="footer-link-text footer-link-phone-secondary absolute font-['Poppins:Medium'] left-[765px] text-[12px] text-white top-[7481px] tracking-[-0.24px]" data-node-id="299:29">
           +92 300 8523878
         </p>
-        <p className="absolute font-['Poppins:Medium'] left-[765px] text-[12px] text-white top-[7510px] tracking-[-0.24px]" data-node-id="299:30">
+        <p className="footer-link-text footer-link-email absolute font-['Poppins:Medium'] left-[765px] text-[12px] text-white top-[7510px] tracking-[-0.24px]" data-node-id="299:30">
           hello@hrwala.net
         </p>
         <p className="absolute font-['Poppins:Bold'] left-[765px] text-[#f6ac04] text-[19px] top-[7421px] tracking-[-0.38px]" data-node-id="299:31">
@@ -2021,13 +2021,13 @@ function Desktop1({ className }: { className?: string }) {
       <a className="design-hit-area left-[80px] top-[3720px] h-[48px] w-[206px]" href="#modules" aria-label="Explore the HRWala platform" />
       <a className="design-hit-area left-[75px] top-[29px] h-[56px] w-[192px]" href="#home" aria-label="HRWala home" />
       <a className="design-hit-area left-[78px] top-[7412px] h-[47px] w-[161px]" href="#home" aria-label="HRWala home" />
-      <a className="design-hit-area left-[570px] top-[7444px] h-[104px] w-[150px]" href="#home" aria-label="Discover" />
-      <a className="design-hit-area left-[570px] top-[7474px] h-[25px] w-[150px]" href="https://hrwala.net/job-portal" aria-label="Job Portal" />
-      <a className="design-hit-area left-[570px] top-[7503px] h-[25px] w-[170px]" href="#software" aria-label="HRWala Software" />
-      <a className="design-hit-area left-[570px] top-[7532px] h-[25px] w-[150px]" href="#certifications" aria-label="Certifications" />
-      <a className="design-hit-area left-[765px] top-[7449px] h-[25px] w-[180px]" href="https://wa.me/923008523878" target="_blank" rel="noreferrer" aria-label="WhatsApp HRWala" />
-      <a className="design-hit-area left-[765px] top-[7479px] h-[25px] w-[180px]" href="https://wa.me/923008523878" target="_blank" rel="noreferrer" aria-label="WhatsApp HRWala" />
-      <a className="design-hit-area left-[765px] top-[7508px] h-[25px] w-[180px]" href="https://mail.google.com/mail/?view=cm&fs=1&to=hello%40hrwala.net" target="_blank" rel="noreferrer" aria-label="Email HRWala" />
+      <a className="design-hit-area footer-hit-discover left-[570px] top-[7444px] h-[25px] w-[150px]" href="#home" aria-label="Discover" />
+      <a className="design-hit-area footer-hit-jobs left-[570px] top-[7474px] h-[25px] w-[150px]" href="https://hrwala.net/job-portal" aria-label="Job Portal" />
+      <a className="design-hit-area footer-hit-software left-[570px] top-[7503px] h-[25px] w-[170px]" href="#software" aria-label="HRWala Software" />
+      <a className="design-hit-area footer-hit-certifications left-[570px] top-[7532px] h-[25px] w-[150px]" href="#certifications" aria-label="Certifications" />
+      <a className="design-hit-area footer-hit-phone-primary left-[765px] top-[7449px] h-[25px] w-[180px]" href="https://wa.me/923008523878" target="_blank" rel="noreferrer" aria-label="WhatsApp HRWala" />
+      <a className="design-hit-area footer-hit-phone-secondary left-[765px] top-[7479px] h-[25px] w-[180px]" href="https://wa.me/923008523878" target="_blank" rel="noreferrer" aria-label="WhatsApp HRWala" />
+      <a className="design-hit-area footer-hit-email left-[765px] top-[7508px] h-[25px] w-[180px]" href="https://mail.google.com/mail/?view=cm&fs=1&to=hello%40hrwala.net" target="_blank" rel="noreferrer" aria-label="Email HRWala" />
       <a className="design-hit-area left-[972px] top-[7518px] h-[43px] w-[40px]" href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn" />
       <a className="design-hit-area left-[1012px] top-[7518px] h-[43px] w-[40px]" href="https://www.facebook.com/" target="_blank" rel="noreferrer" aria-label="Facebook" />
       <a className="design-hit-area left-[1052px] top-[7518px] h-[43px] w-[42px]" href="https://www.instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram" />
