@@ -894,7 +894,7 @@ function Desktop1({ className }: { className?: string }) {
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[18px] size-full" src={imgCorporateTeamDiscussingATablet1} />
         </div>
       </div>
-      <div className="absolute contents left-[33px] top-[122px]" data-node-id="207:33">
+      <div className="absolute contents left-[33px] top-[122px]" data-node-id="207:33" aria-hidden="true">
         <div className="absolute h-[641px] left-[34px] top-[123px] w-[1472px]" data-node-id="9:4">
           <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgRectangle2} />
         </div>
@@ -944,6 +944,15 @@ function Desktop1({ className }: { className?: string }) {
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLuminousPortraitWithAFadingBlueRing1} />
         </div>
       </div>
+      <section className="hero-desktop-banner" aria-label="HRWala employee management platform">
+        <img className="hero-desktop-art" src={imgLuminousWomanWithinBlueRing2X1} alt="HRWala employee dashboard" />
+        <p className="hero-desktop-label hero-desktop-label-1">Leaves &amp; Attendance</p>
+        <p className="hero-desktop-label hero-desktop-label-2">On-boarding</p>
+        <p className="hero-desktop-label hero-desktop-label-3">Employee Dashboard</p>
+        <p className="hero-desktop-label hero-desktop-label-4">Payroll</p>
+        <p className="hero-desktop-label hero-desktop-label-5">360° Performance</p>
+        <p className="hero-desktop-label hero-desktop-label-6">Talent Acquisition</p>
+      </section>
       <div className="absolute contents left-[28px] top-[3321px]" data-node-id="207:34">
         <div className="absolute h-[1106px] left-[29px] top-[3322px] w-[1472px]" data-node-id="207:35">
           <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgRectangle3} />
