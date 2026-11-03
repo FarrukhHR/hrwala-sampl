@@ -347,8 +347,8 @@ body { margin: 0; min-width: 0; }
   transition: transform 140ms ease-out;
 }
 .reflow-card::before {
-  content: ''; position: absolute; left: 0; top: 0; height: 4px; width: 100%;
-  background: linear-gradient(90deg, #f6ac04 0 30%, #0144ab 30% 100%); border-radius: 18px 18px 0 0;
+  content: ''; position: absolute; left: 8px; right: 8px; top: 0; height: 4px;
+  background: linear-gradient(90deg, #f6ac04 0 30%, #0144ab 30% 100%); border-radius: 999px;
 }
 .reflow-card > .reflow-text { position: relative; z-index: 1; }
 .reflow-card .reflow-watermark { position: absolute; inset: 8px 12px auto auto; z-index: 0; pointer-events: none; }
