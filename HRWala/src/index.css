@@ -357,7 +357,7 @@ body { margin: 0; min-width: 0; }
   display: flex; align-items: flex-start; pointer-events: none;
 }
 .reflow-card-accent img { display: block; flex: none; object-fit: fill; }
-.reflow-card-accent img:first-child { width: 29.2%; height: 10.9px; }
+.reflow-card-accent img:first-child { width: 29.2%; height: 10.9px; transform: scaleX(-1); }
 .reflow-card-accent img:last-child { width: 71.1%; height: 8px; margin-left: -1.5px; }
 .reflow-card > .reflow-text { position: relative; z-index: 1; }
 .reflow-card .reflow-watermark { position: absolute; inset: 8px 12px auto auto; z-index: 0; pointer-events: none; }
