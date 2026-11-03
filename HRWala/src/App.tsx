@@ -166,7 +166,7 @@ function Desktop1({ className }: { className?: string }) {
   }, [])
   const activeHeroSlide = heroSlides[heroSlideIndex]
   const design = (
-    <div id="home" className={className || "border border-black border-solid h-[7615px] overflow-clip relative w-[1530px]"} data-node-id="3:6" data-name="Desktop - 1">
+    <div id="home" className={className || "h-[7615px] overflow-clip relative w-[1530px]"} data-node-id="3:6" data-name="Desktop - 1">
       <div aria-hidden className="absolute bg-white inset-0 pointer-events-none" />
       <div className="absolute bg-white border-0 border-black border-solid h-[92px] left-[-1px] top-[-1px] w-[1540px]" data-node-id="3:7" />
       <a href="#home" className="[word-break:break-word] absolute font-['Poppins:Medium'] leading-[normal] left-[665px] not-italic text-[#232323] text-[16px] top-[45px] whitespace-nowrap no-underline" data-node-id="5:5">
