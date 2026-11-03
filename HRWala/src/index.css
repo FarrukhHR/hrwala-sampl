@@ -710,7 +710,7 @@
 .live-contact-form select:focus,
 .live-contact-form textarea:focus,
 .live-newsletter input:focus { box-shadow: 0 0 0 2px #fff; }
-.live-contact-form input[name="name"] { top: 0; height: 39px; background: #4376c3; }
+.live-contact-form input[name="name"] { top: 0; height: 39px; background: #7197d4; }
 .live-contact-form input[name="email"] { top: 76px; height: 39px; }
 .live-contact-form select {
   top: 153px; height: 39px; appearance: none; padding-right: 44px; cursor: pointer;
@@ -728,12 +728,12 @@
 .live-newsletter button { left: 304px; top: 1px; width: 135px; height: 39px; border-radius: 18px; color: #fff; background: #f6ac04; cursor: pointer; font-size: 13px; font-weight: 600; }
 
 /* Same FAQ card styling with a smooth, single-open accordion. */
-.live-faq { position: absolute; z-index: 40; left: 72px; top: 7077px; display: flex; flex-direction: column; gap: 5px; width: 458px; height: auto; }
+.live-faq { position: absolute; z-index: 40; left: 72px; top: 7077px; display: grid; gap: 5px; width: 458px; height: auto; }
 .live-faq-item {
-  position: relative; left: auto; flex: 0 0 auto; width: 100%; overflow: hidden; border-radius: 8px; background: #fff;
+  position: relative; left: auto; width: 100%; overflow: hidden; border-radius: 8px; background: #fff;
 }
 .live-faq-item > button {
-  box-sizing: border-box; width: 100%; min-height: 48px; height: auto; padding: 8px 17px; border: 0; background: transparent; display: flex;
+  width: 100%; min-height: 40px; height: auto; padding: 8px 17px; border: 0; background: transparent; display: flex;
   justify-content: space-between; align-items: center; gap: 12px; text-align: left; cursor: pointer;
   color: #111; font-family: 'Poppins:SemiBold', Poppins, sans-serif; font-size: 14px; line-height: 1.35;
 }
@@ -779,16 +779,6 @@
   z-index: 20;
   transform: scale(1.05);
 }
-.team-card-group > [data-node-id="262:37"], .team-card-group > [data-node-id="262:39"], .team-card-group > [data-node-id="262:40"],
-.team-card-group > [data-node-id="274:18"], .team-card-group > [data-node-id="274:19"], .team-card-group > [data-node-id="274:20"],
-.team-card-group > [data-node-id="274:3"], .team-card-group > [data-node-id="274:4"], .team-card-group > [data-node-id="274:5"],
-.team-card-group > [data-node-id="274:23"], .team-card-group > [data-node-id="274:24"], .team-card-group > [data-node-id="274:25"],
-.team-card-group > [data-node-id="274:8"], .team-card-group > [data-node-id="274:9"], .team-card-group > [data-node-id="274:10"],
-.team-card-group > [data-node-id="274:28"], .team-card-group > [data-node-id="274:29"], .team-card-group > [data-node-id="274:30"],
-.team-card-group > [data-node-id="274:13"], .team-card-group > [data-node-id="274:14"], .team-card-group > [data-node-id="274:15"],
-.team-card-group > [data-node-id="274:33"], .team-card-group > [data-node-id="274:34"], .team-card-group > [data-node-id="274:35"] {
-  cursor: pointer;
-}
 .video-slot { object-fit: cover; }
 .team-photo-slot { object-fit: cover; }
 
@@ -800,9 +790,12 @@
 [data-node-id="274:179"], [data-node-id="274:183"], [data-node-id="274:187"], [data-node-id="274:191"],
 [data-node-id="274:165"], [data-node-id="274:180"], [data-node-id="274:184"], [data-node-id="274:188"],
 [data-node-id="274:192"], [data-node-id="274:198"], [data-node-id="274:199"], [data-node-id="274:200"] {
-  animation: partnerChainDrift 15s ease-in-out infinite alternate;
+  animation: partnerChainDrift 6.5s linear infinite;
 }
-@keyframes partnerChainDrift { from { translate: 0 0; } to { translate: -12px 0; } }
+@keyframes partnerChainDrift {
+  0%, 100% { translate: 0 0; }
+  50% { translate: -18px 0; }
+}
 
 @media (max-width: 1530px) {
   .design-viewport { width: 100%; }
