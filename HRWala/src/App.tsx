@@ -1756,8 +1756,6 @@ function Desktop1({ className }: { className?: string }) {
       </div>
       <div className="[word-break:break-word] absolute font-['Poppins:Medium'] h-[118px] leading-[0] left-[78px] not-italic text-[#757575] text-[16px] text-justify top-[6877px] tracking-[-0.32px] w-[540px] whitespace-pre-wrap" data-node-id="278:3">
         <p className="leading-[21px] mb-0">{`Whether you're exploring career opportunities, looking for the right talent, or interested in our HR solutions, we're here to assist you.`}</p>
-        <p className="leading-[21px] mb-0">​</p>
-        <p className="leading-[21px]">Connect with HRWala.net and let our team guide you toward the right solution.</p>
       </div>
       <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[28px] leading-[21px] left-[78px] not-italic text-[#f6ac04] text-[16px] text-justify top-[7005px] tracking-[-0.32px] w-[229px]" data-node-id="289:46">
         NEED MORE INFORMATION?
@@ -2241,11 +2239,11 @@ function ReflowOriginal({ design }: { design: ReactElement<DesignProps> }) {
           {['247:337', '247:338', '247:344'].map((id) => get(id) && <OriginalCard node={get(id)!} key={id} />)}
         </div>
         {text('247:356', 'reflow-subheading')}
-        <div className="reflow-grid reflow-three">
+        <div className="reflow-grid reflow-three reflow-credential-grid">
           {[['253:361', '250:359'], ['254:365', '253:362'], ['254:368', '254:366']].map(([picture, title]) => <article className="reflow-credential" key={picture}>{image(picture)}{text(title)}</article>)}
         </div>
         {text('256:2', 'reflow-subheading')}
-        <div className="reflow-grid reflow-three">
+        <div className="reflow-grid reflow-three reflow-credential-grid">
           {[['257:3', '257:5'], ['258:6', '258:7'], ['258:8', '258:9']].map(([picture, title]) => <article className="reflow-credential" key={picture}>{image(picture)}{text(title)}</article>)}
         </div>
       </section>
