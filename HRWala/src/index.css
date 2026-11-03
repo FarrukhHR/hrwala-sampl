@@ -72,12 +72,8 @@
 }
 
 .design-viewport {
-<<<<<<< HEAD
-  --design-scale: min(1, calc(100vw / 1530px));
-=======
   container-type: inline-size;
   --design-scale: min(1, calc(100cqw / 1530));
->>>>>>> 1a8cc64810ac4e8f9da481e438cd355a435b87bd
   width: 100%;
   height: calc(7615px * var(--design-scale));
   max-width: 100%;
@@ -92,12 +88,6 @@
   transform-origin: top left;
 }
 
-<<<<<<< HEAD
-.responsive-site {
-  display: none;
-  color: #232323;
-  font-family: 'Poppins:Regular', sans-serif;
-}
 
 .responsive-site * {
   box-sizing: border-box;
@@ -684,8 +674,6 @@
   }
 }
 
-=======
-
 /* Responsive scaling keeps the original Figma composition intact at every viewport width. */
 .design-viewport {
   width: 100%;
@@ -825,4 +813,3 @@
 }
 
 
->>>>>>> 1a8cc64810ac4e8f9da481e438cd355a435b87bd
