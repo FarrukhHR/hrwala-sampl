@@ -1769,7 +1769,7 @@ function Desktop1({ className }: { className?: string }) {
           Tell us how we can assist you.
         </p>
         <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:ExtraBold'] h-[41px] justify-center leading-[0] left-[857px] not-italic text-[20px] text-white top-[calc(50%+2983px)] tracking-[-1.2px] w-[447px]" data-node-id="278:9">
-          <p className="leading-[normal]" dir="auto">
+          <p className="leading-[normal] [word-spacing:1px]" dir="auto">
             Get in Touch
           </p>
         </div>
