@@ -796,7 +796,7 @@
   inset: 0 auto auto 0;
   width: 1530px;
   height: 7615px;
-  animation: partnerMarquee 4s linear infinite;
+  animation: partnerMarquee 3s linear infinite;
   will-change: transform;
 }
 @keyframes partnerMarquee {
