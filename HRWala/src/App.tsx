@@ -1535,7 +1535,7 @@ function Desktop1({ className }: { className?: string }) {
       </div>
       <div className="absolute h-0 left-[179px] top-[5643px] w-[60px]" data-node-id="274:37">
         <div className="absolute inset-[-1px_0_0_0]">
-          <img alt="" className="block max-w-none size-full" src={imgLine16} />
+          <img alt="" className="block max-w-none size-full" src={imgLine17} />
         </div>
       </div>
       <div className="absolute h-0 left-[185px] top-[5664px] w-[60px]" data-node-id="274:38">
