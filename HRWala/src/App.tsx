@@ -18,7 +18,6 @@ const heroSlides = [
 const imgGirlProfileIconRemovebgPreview1 = `${assetPathPrefix}/51fdd.png`;
 const imgHumanConnectionInTheInterviewRoom1 = `${assetPathPrefix}/58338.png`;
 const imgCorporateTeamDiscussingATablet1 = `${assetPathPrefix}/a1b62.png`;
-const imgLuminousPortraitWithAFadingBlueRing1 = `${assetPathPrefix}/Woman portraits in cyan rings.png`;
 const imgLuminousWomanWithinBlueRing2X1 = `${assetPathPrefix}/10bd4.png`;
 const imgLearningDevelopmentProfessionalCertificate1 = `${assetPathPrefix}/8bc8e.png`;
 const imgUpdatedCertificateWithHrWalaNetSeal1 = `${assetPathPrefix}/67f31.png`;
@@ -894,7 +893,7 @@ function Desktop1({ className }: { className?: string }) {
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[18px] size-full" src={imgCorporateTeamDiscussingATablet1} />
         </div>
       </div>
-      <div className="absolute contents left-[33px] top-[122px]" data-node-id="207:33" aria-hidden="true">
+      <div className="absolute contents left-[33px] top-[122px]" data-node-id="207:33">
         <div className="absolute h-[641px] left-[34px] top-[123px] w-[1472px]" data-node-id="9:4">
           <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgRectangle2} />
         </div>
@@ -928,31 +927,18 @@ function Desktop1({ className }: { className?: string }) {
             Job Portal
           </p>
         </div>
-        <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[45px] leading-[normal] left-[782px] not-italic text-[#1d59b5] text-[22px] top-[208px] tracking-[-1.32px] w-[200px]" data-node-id="81:10">
-          HR Consulting
-        </p>
-        <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[45px] leading-[normal] left-[1241px] not-italic text-[#9669d9] text-[21px] top-[208px] tracking-[-1.26px] w-[227px]" data-node-id="84:2">
-          Career Opportunities
-        </p>
-        <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[45px] leading-[normal] left-[615px] not-italic text-[#9669d9] text-[22px] top-[662px] tracking-[-1.32px] w-[259px]" data-node-id="81:11">
-          Talent Acquisition
-        </p>
-        <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[36px] leading-[normal] left-[581px] not-italic text-[#5194d8] text-[21px] top-[420px] tracking-[-1.26px] w-[184px]" data-node-id="81:13">
-          Brand Standards
-        </p>
-        <div className="absolute h-[578px] left-[744px] top-[155px] w-[701px]" data-node-id="197:8" data-name="Luminous Portrait with a Fading Blue Ring 1">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLuminousPortraitWithAFadingBlueRing1} />
+        <div className="absolute contents left-[758px] top-[155px]">
+          <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[38.874px] leading-[normal] left-[859.59px] not-italic text-[#1d59b5] text-[16px] top-[195.16px] tracking-[-0.96px] w-[180.388px]">Leaves &amp; Attendance</p>
+          <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[1324.41px] not-italic text-[#9669d9] text-[16px] top-[195.18px] tracking-[-0.96px] w-[150.323px]">On-boarding</p>
+          <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[839.47px] not-italic text-[#9669d9] text-[16px] top-[524.47px] tracking-[-0.96px] w-[163.685px]">360° Performance</p>
+          <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[1337.12px] not-italic text-[#9669d9] text-[16px] top-[524.47px] tracking-[-0.96px] w-[163.685px]">Talent Acquisition</p>
+          <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[38.874px] leading-[normal] left-[759px] not-italic text-[#5194d8] text-[16px] top-[352.94px] tracking-[-0.96px] w-[187.069px]">Employee Dashboard</p>
+          <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[39.176px] leading-[normal] left-[1399.59px] not-italic text-[#5194d8] text-[16px] top-[352.94px] tracking-[-0.96px] w-[73.059px]">Payroll</p>
+          <div className="absolute h-[432px] left-[889.24px] top-[156px] w-[570.984px]">
+            <img alt="HRWala employee dashboard" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLuminousWomanWithinBlueRing2X1} />
+          </div>
         </div>
       </div>
-      <section className="hero-desktop-banner" aria-label="HRWala employee management platform">
-        <img className="hero-desktop-art" src={imgLuminousWomanWithinBlueRing2X1} alt="HRWala employee dashboard" />
-        <p className="hero-desktop-label hero-desktop-label-1">Leaves &amp; Attendance</p>
-        <p className="hero-desktop-label hero-desktop-label-2">On-boarding</p>
-        <p className="hero-desktop-label hero-desktop-label-3">Employee Dashboard</p>
-        <p className="hero-desktop-label hero-desktop-label-4">Payroll</p>
-        <p className="hero-desktop-label hero-desktop-label-5">360° Performance</p>
-        <p className="hero-desktop-label hero-desktop-label-6">Talent Acquisition</p>
-      </section>
       <div className="absolute contents left-[28px] top-[3321px]" data-node-id="207:34">
         <div className="absolute h-[1106px] left-[29px] top-[3322px] w-[1472px]" data-node-id="207:35">
           <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgRectangle3} />
@@ -2182,14 +2168,21 @@ function ReflowOriginal({ design }: { design: ReactElement<DesignProps> }) {
       <nav id="main-navigation" className={mobileMenuOpen ? 'is-open' : ''} aria-label="Main navigation" onClick={() => setMobileMenuOpen(false)}>{text('5:5')}{text('5:17')}<div className="reflow-portal">{text('5:31')}<a href="https://hrwala.net/login" aria-label="Open My Portal">{image('9:2')}</a></div></nav>
     </header>
     <main className="reflow-main">
-      <section className="hero-banner" aria-label="HRWala employee management platform">
-        <img className="hero-banner-art" src={imgLuminousWomanWithinBlueRing2X1} alt="HRWala employee dashboard" />
-        {text('207:50', 'hero-banner-label hero-banner-label-1')}
-        {text('207:51', 'hero-banner-label hero-banner-label-2')}
-        {text('207:53', 'hero-banner-label hero-banner-label-3')}
-        {text('239:241', 'hero-banner-label hero-banner-label-4')}
-        {text('207:52', 'hero-banner-label hero-banner-label-5')}
-        {text('239:243', 'hero-banner-label hero-banner-label-6')}
+      <section className="reflow-section reflow-panel reflow-hero" aria-label="HRWala">
+        <div className="reflow-stack">
+          {text('118:39', 'reflow-kicker')}{text('12:68', 'reflow-hero-heading')}
+          {text('28:71', 'reflow-bullets')}{text('31:83', 'hero-copy-cycle')}
+          {button('35:94', 'https://hrwala.net/job-portal')}
+        </div>
+        <div className="reflow-orbit reflow-software-orbit">
+          {image('239:239')}
+          <div className="reflow-floating reflow-floating-1">{text('207:50')}</div>
+          <div className="reflow-floating reflow-floating-2">{text('207:51')}</div>
+          <div className="reflow-floating reflow-floating-3">{text('207:53')}</div>
+          <div className="reflow-floating reflow-floating-4">{text('239:241')}</div>
+          <div className="reflow-floating reflow-floating-5">{text('207:52')}</div>
+          <div className="reflow-floating reflow-floating-6">{text('239:243')}</div>
+        </div>
       </section>
       <section className="reflow-section" id="services">
         {text('69:3', 'reflow-heading')}
