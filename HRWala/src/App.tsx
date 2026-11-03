@@ -197,7 +197,7 @@ function Desktop1({ className }: { className?: string }) {
       <div className="absolute h-[987px] left-[28px] top-[5438px] w-[1472px]" data-node-id="260:36">
         <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgRectangle13} />
       </div>
-      <div className="absolute h-[628px] left-[28px] top-[6712px] w-[1472px]" data-node-id="274:202">
+      <div className="absolute h-[652px] left-[28px] top-[6712px] w-[1472px]" data-node-id="274:202">
         <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgRectangle26} />
       </div>
       <p className="[word-break:break-word] absolute font-['Poppins:ExtraBold'] h-[45px] leading-[0] left-[89px] not-italic text-[0px] text-black top-[calc(50%-2994.5px)] tracking-[-0.8px] w-[453px]" data-node-id="69:3">
@@ -494,7 +494,7 @@ function Desktop1({ className }: { className?: string }) {
           </div>
         </div>
       </div>
-      <div className="absolute contents left-[776px] top-[1100px]" data-node-id="101:125">
+      <div className="absolute contents hover-card-group left-[776px] top-[1100px]" style={{ transformOrigin: '937px 1197px' }} data-node-id="101:125">
         <div className="absolute bg-white h-[192px] left-[777px] rounded-[18px] shadow-[1px_2px_6px_2px_rgba(146,144,144,0.25)] top-[1101px] w-[321px]" data-node-id="101:126" />
         <p className="[word-break:break-word] absolute font-['Poppins:Medium'] leading-[normal] left-[798px] not-italic text-[13px] text-black text-justify top-[1136px] tracking-[-0.26px] whitespace-nowrap" data-node-id="101:127">
           03 / Oppurtunity
@@ -1453,7 +1453,7 @@ function Desktop1({ className }: { className?: string }) {
       <div className="absolute h-[168px] left-[1093px] top-[5209px] w-[336px]" data-node-id="258:8" data-name="HRWala.net Featured Associate Badge 1">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgHrWalaNetFeaturedAssociateBadge1} />
       </div>
-      <div className="absolute contents hover-card-group team-card-group left-[153px] top-[5583px]" style={{ transformOrigin: '259.5px 5749.5px' }} data-node-id="263:42">
+      <div className="absolute contents team-card-group left-[153px] top-[5583px]" data-node-id="263:42">
         <div className="absolute bg-white h-[331px] left-[154px] rounded-[18px] top-[5584px] w-[211px]" data-node-id="262:37" />
         <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Bold'] justify-center leading-[0] left-[256.5px] not-italic text-[21px] text-black text-center top-[5781px] tracking-[-1.26px] whitespace-nowrap" data-node-id="262:39">
           <p className="leading-[normal]">Farrukh Sohail</p>
@@ -1463,7 +1463,7 @@ function Desktop1({ className }: { className?: string }) {
         </div>
         <TeamPhoto index={0} className="absolute bg-[#d9d9d9] h-[146px] left-[256px] rounded-[18px] top-[5604px] w-[194px]" nodeId="262:38" />
       </div>
-      <div className="absolute contents hover-card-group team-card-group left-[153px] top-[6014px]" style={{ transformOrigin: '259.5px 6180.5px' }} data-node-id="274:17">
+      <div className="absolute contents team-card-group left-[153px] top-[6014px]" data-node-id="274:17">
         <div className="absolute bg-white h-[331px] left-[154px] rounded-[18px] top-[6015px] w-[211px]" data-node-id="274:18" />
         <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Bold'] justify-center leading-[0] left-[256.5px] not-italic text-[21px] text-black text-center top-[6212px] tracking-[-1.26px] whitespace-nowrap" data-node-id="274:19">
           <p className="leading-[normal]">Farrukh Sohail</p>
@@ -1473,7 +1473,7 @@ function Desktop1({ className }: { className?: string }) {
         </div>
         <TeamPhoto index={1} className="absolute bg-[#d9d9d9] h-[146px] left-[256px] rounded-[18px] top-[6035px] w-[194px]" nodeId="274:21" />
       </div>
-      <div className="absolute contents hover-card-group team-card-group left-[468px] top-[5583px]" style={{ transformOrigin: '574.5px 5749.5px' }} data-node-id="274:2">
+      <div className="absolute contents team-card-group left-[468px] top-[5583px]" data-node-id="274:2">
         <div className="absolute bg-white h-[331px] left-[469px] rounded-[18px] top-[5584px] w-[211px]" data-node-id="274:3" />
         <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Bold'] justify-center leading-[0] left-[571.5px] not-italic text-[21px] text-black text-center top-[5781px] tracking-[-1.26px] whitespace-nowrap" data-node-id="274:4">
           <p className="leading-[normal]">Farrukh Sohail</p>
@@ -1483,7 +1483,7 @@ function Desktop1({ className }: { className?: string }) {
         </div>
         <TeamPhoto index={2} className="absolute bg-[#d9d9d9] h-[146px] left-[571px] rounded-[18px] top-[5604px] w-[194px]" nodeId="274:6" />
       </div>
-      <div className="absolute contents hover-card-group team-card-group left-[468px] top-[6014px]" style={{ transformOrigin: '574.5px 6180.5px' }} data-node-id="274:22">
+      <div className="absolute contents team-card-group left-[468px] top-[6014px]" data-node-id="274:22">
         <div className="absolute bg-white h-[331px] left-[469px] rounded-[18px] top-[6015px] w-[211px]" data-node-id="274:23" />
         <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Bold'] justify-center leading-[0] left-[571.5px] not-italic text-[21px] text-black text-center top-[6212px] tracking-[-1.26px] whitespace-nowrap" data-node-id="274:24">
           <p className="leading-[normal]">Farrukh Sohail</p>
@@ -1493,7 +1493,7 @@ function Desktop1({ className }: { className?: string }) {
         </div>
         <TeamPhoto index={3} className="absolute bg-[#d9d9d9] h-[146px] left-[571px] rounded-[18px] top-[6035px] w-[194px]" nodeId="274:26" />
       </div>
-      <div className="absolute contents hover-card-group team-card-group left-[783px] top-[5583px]" style={{ transformOrigin: '889.5px 5749.5px' }} data-node-id="274:7">
+      <div className="absolute contents team-card-group left-[783px] top-[5583px]" data-node-id="274:7">
         <div className="absolute bg-white h-[331px] left-[784px] rounded-[18px] top-[5584px] w-[211px]" data-node-id="274:8" />
         <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Bold'] justify-center leading-[0] left-[886.5px] not-italic text-[21px] text-black text-center top-[5781px] tracking-[-1.26px] whitespace-nowrap" data-node-id="274:9">
           <p className="leading-[normal]">Farrukh Sohail</p>
@@ -1503,7 +1503,7 @@ function Desktop1({ className }: { className?: string }) {
         </div>
         <TeamPhoto index={4} className="absolute bg-[#d9d9d9] h-[146px] left-[886px] rounded-[18px] top-[5604px] w-[194px]" nodeId="274:11" />
       </div>
-      <div className="absolute contents hover-card-group team-card-group left-[783px] top-[6014px]" style={{ transformOrigin: '889.5px 6180.5px' }} data-node-id="274:27">
+      <div className="absolute contents team-card-group left-[783px] top-[6014px]" data-node-id="274:27">
         <div className="absolute bg-white h-[331px] left-[784px] rounded-[18px] top-[6015px] w-[211px]" data-node-id="274:28" />
         <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Bold'] justify-center leading-[0] left-[886.5px] not-italic text-[21px] text-black text-center top-[6212px] tracking-[-1.26px] whitespace-nowrap" data-node-id="274:29">
           <p className="leading-[normal]">Farrukh Sohail</p>
@@ -1513,7 +1513,7 @@ function Desktop1({ className }: { className?: string }) {
         </div>
         <TeamPhoto index={5} className="absolute bg-[#d9d9d9] h-[146px] left-[886px] rounded-[18px] top-[6035px] w-[194px]" nodeId="274:31" />
       </div>
-      <div className="absolute contents hover-card-group team-card-group left-[1098px] top-[5583px]" style={{ transformOrigin: '1204.5px 5749.5px' }} data-node-id="274:12">
+      <div className="absolute contents team-card-group left-[1098px] top-[5583px]" data-node-id="274:12">
         <div className="absolute bg-white h-[331px] left-[1099px] rounded-[18px] top-[5584px] w-[211px]" data-node-id="274:13" />
         <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Bold'] justify-center leading-[0] left-[1201.5px] not-italic text-[21px] text-black text-center top-[5781px] tracking-[-1.26px] whitespace-nowrap" data-node-id="274:14">
           <p className="leading-[normal]">Farrukh Sohail</p>
@@ -1523,7 +1523,7 @@ function Desktop1({ className }: { className?: string }) {
         </div>
         <TeamPhoto index={6} className="absolute bg-[#d9d9d9] h-[146px] left-[1201px] rounded-[18px] top-[5604px] w-[194px]" nodeId="274:16" />
       </div>
-      <div className="absolute contents hover-card-group team-card-group left-[1098px] top-[6014px]" style={{ transformOrigin: '1204.5px 6180.5px' }} data-node-id="274:32">
+      <div className="absolute contents team-card-group left-[1098px] top-[6014px]" data-node-id="274:32">
         <div className="absolute bg-white h-[331px] left-[1099px] rounded-[18px] top-[6015px] w-[211px]" data-node-id="274:33" />
         <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Bold'] justify-center leading-[0] left-[1201.5px] not-italic text-[21px] text-black text-center top-[6212px] tracking-[-1.26px] whitespace-nowrap" data-node-id="274:34">
           <p className="leading-[normal]">Farrukh Sohail</p>

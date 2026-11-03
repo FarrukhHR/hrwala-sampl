@@ -741,7 +741,7 @@
 .live-faq-answer { max-height: 0; overflow: hidden; opacity: 0; transition: max-height .3s ease, opacity .25s ease; }
 .live-faq-answer p { margin: 0; padding: 0 17px 10px; color: #757575; font-family: 'Poppins:Medium', Poppins, sans-serif; font-size: 11px; line-height: 17px; }
 .live-faq-item.is-open .live-faq-answer { max-height: 100px; opacity: 1; }
-[data-node-id^="289:"] { visibility: hidden; }
+[data-node-id^="289:"]:not([data-node-id="289:47"]) { visibility: hidden; }
 
 /* Requested motion is limited to the existing hero copy, floating words and partner chain. */
 .hero-copy-cycle { animation: heroCopyCycle 5.2s ease both; }
@@ -773,18 +773,21 @@
 }
 .hover-card-group > * {
   pointer-events: auto;
+  cursor: pointer;
 }
-.hover-card-group:not(.team-card-group):has(:hover),
-.team-card-group:has(> [data-node-id="262:37"]:hover, > [data-node-id="262:39"]:hover, > [data-node-id="262:40"]:hover),
-.team-card-group:has(> [data-node-id="274:18"]:hover, > [data-node-id="274:19"]:hover, > [data-node-id="274:20"]:hover),
-.team-card-group:has(> [data-node-id="274:3"]:hover, > [data-node-id="274:4"]:hover, > [data-node-id="274:5"]:hover),
-.team-card-group:has(> [data-node-id="274:23"]:hover, > [data-node-id="274:24"]:hover, > [data-node-id="274:25"]:hover),
-.team-card-group:has(> [data-node-id="274:8"]:hover, > [data-node-id="274:9"]:hover, > [data-node-id="274:10"]:hover),
-.team-card-group:has(> [data-node-id="274:28"]:hover, > [data-node-id="274:29"]:hover, > [data-node-id="274:30"]:hover),
-.team-card-group:has(> [data-node-id="274:13"]:hover, > [data-node-id="274:14"]:hover, > [data-node-id="274:15"]:hover),
-.team-card-group:has(> [data-node-id="274:33"]:hover, > [data-node-id="274:34"]:hover, > [data-node-id="274:35"]:hover) {
+.hover-card-group:has(:hover) {
   z-index: 20;
   transform: scale(1.05);
+}
+.team-card-group > [data-node-id="262:37"], .team-card-group > [data-node-id="262:39"], .team-card-group > [data-node-id="262:40"],
+.team-card-group > [data-node-id="274:18"], .team-card-group > [data-node-id="274:19"], .team-card-group > [data-node-id="274:20"],
+.team-card-group > [data-node-id="274:3"], .team-card-group > [data-node-id="274:4"], .team-card-group > [data-node-id="274:5"],
+.team-card-group > [data-node-id="274:23"], .team-card-group > [data-node-id="274:24"], .team-card-group > [data-node-id="274:25"],
+.team-card-group > [data-node-id="274:8"], .team-card-group > [data-node-id="274:9"], .team-card-group > [data-node-id="274:10"],
+.team-card-group > [data-node-id="274:28"], .team-card-group > [data-node-id="274:29"], .team-card-group > [data-node-id="274:30"],
+.team-card-group > [data-node-id="274:13"], .team-card-group > [data-node-id="274:14"], .team-card-group > [data-node-id="274:15"],
+.team-card-group > [data-node-id="274:33"], .team-card-group > [data-node-id="274:34"], .team-card-group > [data-node-id="274:35"] {
+  cursor: pointer;
 }
 .video-slot { object-fit: cover; }
 .team-photo-slot { object-fit: cover; }
