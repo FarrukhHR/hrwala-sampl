@@ -500,20 +500,20 @@ body { margin: 0; min-width: 0; }
   .reflow-floating-3, .reflow-floating-4, .reflow-software-orbit .reflow-floating-4 { top: 45%; bottom: auto; }
   .reflow-floating-5, .reflow-floating-6 { bottom: 0; }
   .reflow-software-orbit {
-    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 10px;
-    width: 100%; min-height: 0; padding: 16px 0;
+    display: block; position: relative; width: 100%; min-height: 390px; padding: 0;
   }
   .reflow-software-orbit > img {
-    grid-column: 1 / -1; grid-row: 2; width: min(100%, 260px); justify-self: center;
+    position: absolute; top: 50%; left: 50%; width: min(52%, 250px);
+    margin: 0; transform: translate(-50%, -50%);
   }
-  .reflow-software-orbit .reflow-floating { position: static; width: auto; max-width: none; align-self: center; }
-  .reflow-software-orbit .reflow-floating-1 { grid-column: 1; grid-row: 1; }
-  .reflow-software-orbit .reflow-floating-2 { grid-column: 2; grid-row: 1; }
-  .reflow-software-orbit .reflow-floating-3 { grid-column: 1; grid-row: 3; }
-  .reflow-software-orbit .reflow-floating-4 { grid-column: 2; grid-row: 3; }
-  .reflow-software-orbit .reflow-floating-5 { grid-column: 1; grid-row: 4; }
-  .reflow-software-orbit .reflow-floating-6 { grid-column: 2; grid-row: 4; }
-  .reflow-software-orbit .reflow-floating p { font-size: 13px !important; line-height: 1.25; overflow-wrap: anywhere; }
+  .reflow-software-orbit .reflow-floating { position: absolute; max-width: none; z-index: 2; }
+  .reflow-software-orbit .reflow-floating p { font-size: 11px !important; line-height: 1.2; text-wrap: balance; }
+  .reflow-software-orbit .reflow-floating-1 { top: 4%; left: 0; width: 44%; text-align: left; }
+  .reflow-software-orbit .reflow-floating-2 { top: 4%; right: 0; width: 44%; text-align: right; }
+  .reflow-software-orbit .reflow-floating-3 { top: 47%; left: 0; width: 24%; text-align: left; }
+  .reflow-software-orbit .reflow-floating-4 { top: 47%; right: 0; width: 24%; text-align: right; }
+  .reflow-software-orbit .reflow-floating-5 { bottom: 3%; left: 0; width: 44%; text-align: left; }
+  .reflow-software-orbit .reflow-floating-6 { right: 0; bottom: 3%; width: 44%; text-align: right; }
   .reflow-grid, .reflow-three, .reflow-team-grid, .reflow-footer { grid-template-columns: minmax(0, 1fr); }
   .reflow-industries { grid-template-columns: minmax(0, 1fr); gap: 16px; }
   .reflow-industries .reflow-card {
