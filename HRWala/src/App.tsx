@@ -2217,19 +2217,6 @@ function ResponsiveSite() {
 }
 
 export default function Frame1() {
-  const [isMobile, setIsMobile] = useState(() => window.matchMedia('(max-width: 760px)').matches)
-
-  useEffect(() => {
-    const mobileViewport = window.matchMedia('(max-width: 760px)')
-    const updateViewport = () => setIsMobile(mobileViewport.matches)
-    mobileViewport.addEventListener('change', updateViewport)
-    return () => mobileViewport.removeEventListener('change', updateViewport)
-  }, [])
-
-  if (isMobile) {
-    return <div className="responsive-site"><ResponsiveSite /></div>
-  }
-
   return (
     <main className="design-viewport" data-node-id="326:2">
       <div className="design-canvas">
