@@ -6,14 +6,14 @@ const videoSources = ['', '', '', '']
 // Add portraits under public/assets and set the matching path here.
 const teamPhotos = ['', '', '', '', '', '', '', '']
 const heroSlides = [
-  { heading: 'Job Portal', bullets: ['Find Talent', 'Find Oppurtunity', 'Meet Here'] },
-  { heading: 'HRWala Software', bullets: ['Simplify HR', 'Automate Payroll', 'Empower People'] },
-  { heading: 'HR All-in-One', bullets: ['Hire Smarter', 'Manage Better', 'Grow Faster'] },
-  { heading: 'Brand Standards', bullets: ['Service Industry', 'Serving People', 'One Partner'] },
-  { heading: 'HR Certification', bullets: ['Get Certified', 'Get Noticed', 'Get Hired'] },
-  { heading: 'Your Advisor', bullets: ['Expert HR Advice', 'Complaint Workplaces', 'Confident Leaders'] },
-  { heading: 'Head Hunting', bullets: ['Right People', 'Right Roles', 'Real Growth'] },
-  { heading: 'Hospitality Talent', bullets: ['Hoteliers', 'Star Performers', 'Get Connected'] },
+  { heading: 'Job Portal', bullets: ['Find Talent', 'Find Oppurtunity', 'Meet Here'], description: ['Find the right people and opportunities.', 'Make every hiring move count.'] },
+  { heading: 'HRWala Software', bullets: ['Simplify HR', 'Automate Payroll', 'Empower People'], description: ['Bring everyday HR workflows together.', 'Keep your people processes connected.'] },
+  { heading: 'HR All-in-One', bullets: ['Hire Smarter', 'Manage Better', 'Grow Faster'], description: ['Recognized credentials for working professionals.', 'Your next career step starts here.'] },
+  { heading: 'Brand Standards', bullets: ['Service Industry', 'Serving People', 'One Partner'], description: ['Set clear expectations for every interaction.', 'Build trust through consistent service.'] },
+  { heading: 'HR Certification', bullets: ['Get Certified', 'Get Noticed', 'Get Hired'], description: ['Build your HR knowledge and earn recognition.', 'Turn new skills into career opportunities.'] },
+  { heading: 'Your Advisor', bullets: ['Expert HR Advice', 'Complaint Workplaces', 'Confident Leaders'], description: ['Get practical advice for people challenges.', 'Make confident decisions for your team.'] },
+  { heading: 'Head Hunting', bullets: ['Right People', 'Right Roles', 'Real Growth'], description: ['Connect with people who fit your next role.', 'Find talent that helps your business grow.'] },
+  { heading: 'Hospitality Talent', bullets: ['Hoteliers', 'Star Performers', 'Get Connected'], description: ['Discover skilled hospitality professionals.', 'Create better experiences for every guest.'] },
 ]
 const imgGirlProfileIconRemovebgPreview1 = `${assetPathPrefix}/51fdd.png`;
 const imgHumanConnectionInTheInterviewRoom1 = `${assetPathPrefix}/58338.png`;
@@ -909,10 +909,8 @@ function Desktop1({ className }: { className?: string }) {
             <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgGroup2} />
           </div>
         </div>
-        <p className="[word-break:break-word] absolute font-['Poppins:Regular'] leading-[normal] left-[100px] not-italic text-[#757575] text-[16px] top-[544px] tracking-[-0.32px] whitespace-nowrap" data-node-id="31:83">
-          Recognized credentials for working professionals.
-          <br aria-hidden />
-          Your next career step starts here.
+        <p key={'hero-description-' + heroSlideIndex} className="hero-copy-cycle [word-break:break-word] absolute font-['Poppins:Regular'] leading-[normal] left-[100px] not-italic text-[#757575] text-[16px] top-[544px] tracking-[-0.32px] whitespace-nowrap" data-node-id="31:83" aria-live="polite">
+          {activeHeroSlide.description.map((line, index) => <span key={line}>{line}{index < activeHeroSlide.description.length - 1 && <br aria-hidden />}</span>)}
         </p>
         <div className="absolute contents left-[105px] top-[265px]" data-node-id="118:38">
         <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Regular'] justify-center leading-[0] left-[calc(50%-592.5px)] not-italic text-[14px] text-black text-center top-[282px] tracking-[-0.56px] whitespace-nowrap" data-node-id="118:39">
@@ -2154,7 +2152,7 @@ function ReflowOriginal({ design }: { design: ReactElement<DesignProps> }) {
   const elements = designElements(design)
   const nodes = new Map(elements.filter((n) => n.props['data-node-id'] || n.props.nodeId).map((n) => [n.props['data-node-id'] || n.props.nodeId, n]))
   const get = (id: string) => nodes.get(id)
-  const text = (id: string, className = '') => <Flow node={get(id)} className={className} key={id} />
+  const text = (id: string, className = '') => <Flow node={get(id)} className={className} key={className === 'hero-copy-cycle' ? `${id}-${get(id)?.key}` : id} />
   const image = (id: string, className = '') => <OriginalImage node={get(id)} className={className} key={id} />
   const cards = (prefix: string) => elements.filter((n) => (n.props.className || '').includes('hover-card-group') && n.props['data-node-id']?.startsWith(prefix))
   const button = (labelId: string, href: string) => <a className="reflow-button" href={href}>{text(labelId)}</a>
@@ -2178,7 +2176,7 @@ function ReflowOriginal({ design }: { design: ReactElement<DesignProps> }) {
       <section className="reflow-section reflow-panel reflow-hero" aria-label="HRWala">
         <div className="reflow-stack">
           {text('118:39', 'reflow-kicker')}{text('12:68', 'reflow-hero-heading')}
-          {text('28:71', 'reflow-bullets')}{text('31:83')}
+          {text('28:71', 'reflow-bullets')}{text('31:83', 'hero-copy-cycle')}
           {button('35:94', 'https://hrwala.net/job-portal')}
         </div>
       </section>
