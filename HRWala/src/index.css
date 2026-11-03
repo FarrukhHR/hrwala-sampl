@@ -502,7 +502,8 @@ body { margin: 0; min-width: 0; }
   .reflow-grid, .reflow-three, .reflow-team-grid, .reflow-footer { grid-template-columns: minmax(0, 1fr); }
   .reflow-industries { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
   .reflow-industries .reflow-card { padding: 18px 14px; gap: 8px; }
-  .reflow-industries .reflow-card .reflow-text p { overflow-wrap: anywhere; }
+  .reflow-industries .reflow-card > .reflow-text ~ .reflow-text { display: none; }
+  .reflow-industries .reflow-card .reflow-text p { font-size: 18px !important; line-height: 1.3; overflow-wrap: anywhere; }
   .reflow-three > :last-child:nth-child(odd) { width: 100%; grid-column: auto; }
   .reflow-card { padding: 24px 20px; }
   .reflow-credential { max-width: 400px; justify-self: center; width: 100%; }
