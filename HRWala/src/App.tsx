@@ -937,7 +937,7 @@ function Desktop1({ className }: { className?: string }) {
           <p className="hero-right-adjust hero-floating-word [word-break:break-word] absolute font-['Poppins:Bold'] h-[38.874px] leading-[normal] left-[759px] not-italic text-[#5194d8] text-[16px] top-[352.94px] tracking-[-0.96px] w-[187.069px]">Employee Dashboard</p>
           <p className="hero-right-adjust hero-floating-word [word-break:break-word] absolute font-['Poppins:Bold'] h-[39.176px] leading-[normal] left-[1399.59px] not-italic text-[#5194d8] text-[16px] top-[352.94px] tracking-[-0.96px] w-[73.059px]">Payroll</p>
           <div className="hero-right-adjust absolute h-[432px] left-[889.24px] top-[156px] w-[570.984px]">
-            <img alt="HRWala employee dashboard" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLuminousWomanWithinBlueRing2X1} />
+            <img alt="HRWala employee dashboard" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={imgLuminousWomanWithinBlueRing2X1} />
           </div>
         </div>
       </div>
