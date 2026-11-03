@@ -269,7 +269,7 @@
   background: white;
 }
 
-.responsive-card,
+.responsive-service-grid .responsive-card,
 .responsive-module-card,
 .responsive-credential-card,
 .responsive-badge-grid > img,
@@ -279,7 +279,7 @@
 }
 
 @media (hover: hover) {
-  .responsive-card:hover,
+  .responsive-service-grid .responsive-card:hover,
   .responsive-module-card:hover,
   .responsive-credential-card:hover,
   .responsive-badge-grid > img:hover,
@@ -723,7 +723,7 @@
 .live-contact-form select:focus,
 .live-contact-form textarea:focus,
 .live-newsletter input:focus { box-shadow: 0 0 0 2px #fff; }
-.live-contact-form input[name="name"] { top: 0; height: 39px; background: #7197d4; }
+.live-contact-form input[name="name"] { top: 0; height: 39px; background: #4376c3; }
 .live-contact-form input[name="email"] { top: 76px; height: 39px; }
 .live-contact-form select {
   top: 153px; height: 39px; appearance: none; padding-right: 44px; cursor: pointer;
@@ -741,12 +741,12 @@
 .live-newsletter button { left: 304px; top: 1px; width: 135px; height: 39px; border-radius: 18px; color: #fff; background: #f6ac04; cursor: pointer; font-size: 13px; font-weight: 600; }
 
 /* Same FAQ card styling with a smooth, single-open accordion. */
-.live-faq { position: absolute; z-index: 40; left: 72px; top: 7077px; display: grid; gap: 5px; width: 458px; height: auto; }
+.live-faq { position: absolute; z-index: 40; left: 72px; top: 7077px; display: flex; flex-direction: column; gap: 5px; width: 458px; height: auto; }
 .live-faq-item {
-  position: relative; left: auto; width: 100%; overflow: hidden; border-radius: 8px; background: #fff;
+  position: relative; left: auto; flex: 0 0 auto; width: 100%; overflow: hidden; border-radius: 8px; background: #fff;
 }
 .live-faq-item > button {
-  width: 100%; min-height: 40px; height: auto; padding: 8px 17px; border: 0; background: transparent; display: flex;
+  box-sizing: border-box; width: 100%; min-height: 48px; height: auto; padding: 8px 17px; border: 0; background: transparent; display: flex;
   justify-content: space-between; align-items: center; gap: 12px; text-align: left; cursor: pointer;
   color: #111; font-family: 'Poppins:SemiBold', Poppins, sans-serif; font-size: 14px; line-height: 1.35;
 }
@@ -772,8 +772,7 @@
 [data-node-id="81:13"], [data-node-id="239:241"], [data-node-id="239:243"] { animation-delay: -2.4s; }
 @keyframes floatingWords { 0%, 100% { translate: 0 0; } 50% { translate: 0 -12px; } }
 
-/* Subtle lift on video and team-photo slots plus service, industry, and module cards. */
-.video-slot, .team-photo-slot,
+/* Subtle lift on the white service, industry, module, and team cards. */
 [data-node-id="88:27"], [data-node-id="101:110"], [data-node-id="101:126"], [data-node-id="101:134"],
 [data-node-id="159:38"], [data-node-id="159:278"], [data-node-id="159:302"],
 [data-node-id="159:46"], [data-node-id="159:284"], [data-node-id="159:308"],
@@ -781,11 +780,13 @@
 [data-node-id="159:62"], [data-node-id="159:296"], [data-node-id="159:320"],
 [data-node-id="228:104"], [data-node-id="228:112"], [data-node-id="228:120"], [data-node-id="228:128"],
 [data-node-id="228:138"], [data-node-id="228:146"], [data-node-id="228:154"], [data-node-id="228:162"],
-[data-node-id="228:204"], [data-node-id="228:212"], [data-node-id="228:220"], [data-node-id="228:228"] {
+[data-node-id="228:204"], [data-node-id="228:212"], [data-node-id="228:220"], [data-node-id="228:228"],
+[data-node-id="262:37"], [data-node-id="274:18"], [data-node-id="274:3"], [data-node-id="274:23"],
+[data-node-id="274:8"], [data-node-id="274:28"], [data-node-id="274:13"], [data-node-id="274:33"] {
+  cursor: pointer;
   transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s cubic-bezier(.2,.7,.2,1);
   transform-origin: center;
 }
-.video-slot:hover, .team-photo-slot:hover,
 [data-node-id="88:27"]:hover, [data-node-id="101:110"]:hover, [data-node-id="101:126"]:hover, [data-node-id="101:134"]:hover,
 [data-node-id="159:38"]:hover, [data-node-id="159:278"]:hover, [data-node-id="159:302"]:hover,
 [data-node-id="159:46"]:hover, [data-node-id="159:284"]:hover, [data-node-id="159:308"]:hover,
@@ -793,11 +794,12 @@
 [data-node-id="159:62"]:hover, [data-node-id="159:296"]:hover, [data-node-id="159:320"]:hover,
 [data-node-id="228:104"]:hover, [data-node-id="228:112"]:hover, [data-node-id="228:120"]:hover, [data-node-id="228:128"]:hover,
 [data-node-id="228:138"]:hover, [data-node-id="228:146"]:hover, [data-node-id="228:154"]:hover, [data-node-id="228:162"]:hover,
-[data-node-id="228:204"]:hover, [data-node-id="228:212"]:hover, [data-node-id="228:220"]:hover, [data-node-id="228:228"]:hover {
+[data-node-id="228:204"]:hover, [data-node-id="228:212"]:hover, [data-node-id="228:220"]:hover, [data-node-id="228:228"]:hover,
+[data-node-id="262:37"]:hover, [data-node-id="274:18"]:hover, [data-node-id="274:3"]:hover, [data-node-id="274:23"]:hover,
+[data-node-id="274:8"]:hover, [data-node-id="274:28"]:hover, [data-node-id="274:13"]:hover, [data-node-id="274:33"]:hover {
   transform: scale(1.018); box-shadow: 0 7px 17px rgb(20 47 83 / 18%);
 }
 .video-slot { object-fit: cover; }
-.video-slot:hover { background-color: #d9d9d9 !important; }
 .team-photo-slot { object-fit: cover; }
 
 /* The partner nodes remain aligned while the full chain glides gently side to side. */
