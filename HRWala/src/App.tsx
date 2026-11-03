@@ -912,7 +912,7 @@ function Desktop1({ className }: { className?: string }) {
           {activeHeroSlide.description.map((line, index) => <span key={line}>{line}{index < activeHeroSlide.description.length - 1 && <br aria-hidden />}</span>)}
         </p>
         <div className="absolute contents left-[105px] top-[265px]" data-node-id="118:38">
-          <div className="hero-left-adjust -translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Regular'] justify-center leading-[0] left-[calc(50%-592.5px)] not-italic text-[14px] text-black text-center top-[282px] tracking-[-0.56px] whitespace-nowrap" data-node-id="118:39">
+          <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Regular'] justify-center leading-[0] left-[calc(50%-592.5px)] not-italic text-[14px] text-black text-center top-[282px] tracking-[-0.56px] whitespace-nowrap" data-node-id="118:39">
             <p className="leading-[normal]">People @ Top</p>
           </div>
           <div className="hero-left-adjust absolute h-0 left-[105px] top-[282px] w-[18px]" data-node-id="118:40">
