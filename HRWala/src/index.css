@@ -281,11 +281,13 @@ body { margin: 0; min-width: 0; }
   flex-wrap: wrap;
   gap: 12px 24px;
   padding-block: 20px;
+  position: relative;
 }
 .reflow-logo { width: 168px !important; max-width: 100%; }
 .reflow-header nav { display: flex; flex-wrap: wrap; gap: 12px 28px; align-items: center; }
 .reflow-header nav a { display: inline-flex; align-items: center; min-height: 44px; color: #232323; }
 .reflow-header nav a:hover { color: #0144ab; }
+.reflow-menu-toggle { display: none; }
 .reflow-portal { display: flex; align-items: center; gap: 8px; }
 .reflow-portal img { width: 36px; height: 36px; border-radius: 50%; }
 .reflow-section { padding-block: clamp(32px, 5vw, 56px); }
@@ -450,10 +452,35 @@ body { margin: 0; min-width: 0; }
 @media (max-width: 600px) {
   .reflow-header, .reflow-main, .reflow-footer { width: calc(100% - 28px); }
   .reflow-header { padding-block: 16px; gap: 12px; }
-  .reflow-header nav { width: 100%; justify-content: space-between; gap: 8px 16px; }
-  .reflow-header nav a { font-size: 14px; }
+  .reflow-menu-toggle {
+    display: grid; place-content: center; gap: 5px; width: 44px; height: 44px; padding: 0;
+    border: 1px solid #dce5f2; border-radius: 8px; background: white; color: #0144ab; cursor: pointer;
+  }
+  .reflow-menu-toggle span { display: block; width: 20px; height: 2px; border-radius: 2px; background: currentColor; }
+  .reflow-header nav {
+    display: none; position: absolute; z-index: 30; top: calc(100% - 4px); left: 0; right: 0; width: 100%;
+    padding: 8px; border: 1px solid #e2e9f3; border-radius: 10px; background: white;
+    box-shadow: 0 8px 24px rgb(22 48 87 / 12%); flex-direction: column; align-items: stretch; gap: 2px;
+  }
+  .reflow-header nav.is-open { display: flex; }
+  .reflow-header nav a { width: 100%; min-height: 44px; padding: 0 10px; font-size: 14px; }
+  .reflow-header nav .reflow-portal { width: 100%; justify-content: space-between; padding-right: 10px; }
+  .reflow-header nav .reflow-portal > a { width: 44px; padding: 4px; }
   .reflow-logo { width: 150px !important; }
   .reflow-panel { padding: 24px 18px; }
+  .reflow-hero { gap: 12px; }
+  .reflow-hero .reflow-stack { gap: 12px; }
+  .reflow-hero-heading > p { font-size: clamp(28px, 8vw, 36px) !important; line-height: 1.15; }
+  .reflow-bullets p { font-size: clamp(21px, 6vw, 25px) !important; line-height: 1.25; }
+  .reflow-orbit { width: min(100%, 430px); min-height: 340px; padding: 42px 4px 24px; }
+  .reflow-orbit > img { display: block; width: min(100%, 350px); margin-inline: auto; }
+  .reflow-floating { width: 43%; max-width: none; z-index: 2; }
+  .reflow-floating p { font-size: clamp(11px, 3vw, 14px) !important; line-height: 1.25; text-wrap: balance; }
+  .reflow-floating-1, .reflow-floating-3, .reflow-floating-5 { left: 0; text-align: left; }
+  .reflow-floating-2, .reflow-floating-4, .reflow-floating-6 { right: 0; text-align: right; }
+  .reflow-floating-1, .reflow-floating-2 { top: 0; }
+  .reflow-floating-3, .reflow-floating-4, .reflow-software-orbit .reflow-floating-4 { top: 45%; bottom: auto; }
+  .reflow-floating-5, .reflow-floating-6 { bottom: 0; }
   .reflow-grid, .reflow-three, .reflow-team-grid, .reflow-footer { grid-template-columns: minmax(0, 1fr); }
   .reflow-three > :last-child:nth-child(odd) { width: 100%; grid-column: auto; }
   .reflow-card { padding: 24px 20px; }

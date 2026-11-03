@@ -2151,6 +2151,7 @@ function AdaptiveOriginal({ design }: { design: ReactElement<DesignProps> }) {
 }
 
 function ReflowOriginal({ design }: { design: ReactElement<DesignProps> }) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const elements = designElements(design)
   const nodes = new Map(elements.filter((n) => n.props['data-node-id'] || n.props.nodeId).map((n) => [n.props['data-node-id'] || n.props.nodeId, n]))
   const get = (id: string) => nodes.get(id)
@@ -2169,7 +2170,10 @@ function ReflowOriginal({ design }: { design: ReactElement<DesignProps> }) {
   return <div className="reflow-site" id="home">
     <header className="reflow-header">
       <a href="#home" aria-label="HRWala home">{image('297:3', 'reflow-logo')}</a>
-      <nav aria-label="Main navigation">{text('5:5')}{text('5:17')}<div className="reflow-portal">{text('5:31')}<a href="https://hrwala.net/login" aria-label="Open My Portal">{image('9:2')}</a></div></nav>
+      <button className="reflow-menu-toggle" type="button" aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'} aria-expanded={mobileMenuOpen} aria-controls="main-navigation" onClick={() => setMobileMenuOpen((open) => !open)}>
+        <span /><span /><span />
+      </button>
+      <nav id="main-navigation" className={mobileMenuOpen ? 'is-open' : ''} aria-label="Main navigation" onClick={() => setMobileMenuOpen(false)}>{text('5:5')}{text('5:17')}<div className="reflow-portal">{text('5:31')}<a href="https://hrwala.net/login" aria-label="Open My Portal">{image('9:2')}</a></div></nav>
     </header>
     <main className="reflow-main">
       <section className="reflow-section reflow-panel reflow-hero" aria-label="HRWala">
