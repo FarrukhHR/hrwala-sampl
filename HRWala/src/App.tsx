@@ -1,4 +1,4 @@
-import { useEffect, useState, type FormEvent } from 'react'
+import { Children, cloneElement, isValidElement, useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore, type CSSProperties, type FormEvent, type ReactElement, type ReactNode } from 'react'
 
 const assetPathPrefix = "/assets";
 // Add videos under public/videos, then set a path such as /videos/hr-consultants.mp4.
@@ -54,7 +54,6 @@ const imgLine13 = `${assetPathPrefix}/33581.svg`;
 const imgLine14 = `${assetPathPrefix}/02161.svg`;
 const imgLine15 = `${assetPathPrefix}/319b3.svg`;
 const imgGroup46 = `${assetPathPrefix}/b0239.svg`;
-const imgLine16 = `${assetPathPrefix}/0f278.svg`;
 const imgLine17 = `${assetPathPrefix}/66a8e.svg`;
 const imgLine21 = `${assetPathPrefix}/958ba.svg`;
 const imgEllipse17 = `${assetPathPrefix}/7eaa5.svg`;
@@ -108,12 +107,12 @@ function LiveContactForm() {
   }
   return (
     <form className="live-contact-form" onSubmit={submit} aria-label="Contact HRWala">
-      <input name="name" placeholder="Enter your name" aria-label="Full name" required />
-      <input name="email" type="email" placeholder="example@gmail.com" aria-label="Email" required />
-      <select name="topic" aria-label="How can we help?" defaultValue="General Inquiry">
+      <label><span className="live-contact-label">Full Name</span><input name="name" autoComplete="name" placeholder="Enter your name" aria-label="Full name" required /></label>
+      <label><span className="live-contact-label">Email</span><input name="email" type="email" autoComplete="email" placeholder="example@gmail.com" aria-label="Email" required /></label>
+      <label><span className="live-contact-label">How Can We Help?</span><select name="topic" aria-label="How can we help?" defaultValue="General Inquiry">
         <option>General Inquiry</option><option>Job Portal</option><option>HR Services</option><option>HRWala Software</option><option>Certifications</option>
-      </select>
-      <textarea name="message" placeholder="Tell us more about your inquiry..." aria-label="Your message" required />
+      </select></label>
+      <label><span className="live-contact-label">Your Message</span><textarea name="message" placeholder="Tell us more about your inquiry..." aria-label="Your message" required /></label>
       <button type="submit" aria-label="Submit contact form">Submit</button>
     </form>
   )
@@ -152,7 +151,7 @@ function LiveFaq() {
             <button type="button" aria-expanded={expanded} onClick={() => setOpen(expanded ? null : index)}>
               <span>{question}</span><b aria-hidden="true">{expanded ? '−' : '+'}</b>
             </button>
-            <div className="live-faq-answer"><p>{answer}</p></div>
+            <div className="live-faq-answer"><div><p>{answer}</p></div></div>
           </div>
         )
       })}
@@ -167,7 +166,7 @@ function Desktop1({ className }: { className?: string }) {
     return () => window.clearInterval(timer)
   }, [])
   const activeHeroSlide = heroSlides[heroSlideIndex]
-  return (
+  const design = (
     <div id="home" className={className || "border border-black border-solid h-[7615px] overflow-clip relative w-[1530px]"} data-node-id="3:6" data-name="Desktop - 1">
       <div aria-hidden className="absolute bg-white inset-0 pointer-events-none" />
       <div className="absolute bg-white border-0 border-black border-solid h-[92px] left-[-1px] top-[-1px] w-[1540px]" data-node-id="3:7" />
@@ -2038,190 +2037,253 @@ function Desktop1({ className }: { className?: string }) {
       <div className="absolute inset-0 pointer-events-none rounded-[inherit] shadow-[inset_0px_4px_4px_0px_rgba(0,0,0,0.25)]" />
     </div>
   );
+  return <AdaptiveOriginal design={design} />
 }
 
-function ResponsiveSite() {
-  const modules = [
-    'Budgeting',
-    'Talent Acquisition',
-    'Onboarding',
-    'Leaves & Attendance',
-    'Payroll',
-    'Employee Dashboard',
-    'Separation',
-    'Employee Benefits',
-    '360 Degree Performance',
-    'HR Dashboards',
-    'E-Learning',
-    'Discipline & Policies',
-  ];
 
-  return (
-    <>
-      <header className="responsive-header">
-        <a className="responsive-brand" href="#home" aria-label="HRWala home">
-          <img src={imgHrWalaFullBlueGold1} alt="HRWala" />
-        </a>
-        <nav aria-label="Main navigation">
-          <a href="#services">Discover</a>
-          <a href="#jobs">Job Portal</a>
-          <a href="#software">Software</a>
-          <a href="#academy">Certifications</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <a className="responsive-button responsive-button-small" href="#contact">My Portal</a>
-      </header>
+// The mobile layout reuses the original React elements, copy, images and widgets.
+// The desktop artwork is rendered unchanged above the reflow breakpoint.
+type DesignProps = {
+  children?: ReactNode
+  className?: string
+  style?: CSSProperties
+  id?: string
+  'data-node-id'?: string
+  nodeId?: string
+  src?: string
+  alt?: string
+  'data-name'?: string
+  href?: string
+  'aria-label'?: string
+}
 
-      <main className="responsive-main" id="home">
-        <section className="responsive-hero">
-          <div className="responsive-hero-copy">
-            <p className="responsive-kicker">People, progress, possibility</p>
-            <h1>Get Certified.<br />Get Noticed.<br /><span>Get Hired.</span></h1>
-            <p>Recognized credentials, practical HR solutions and career opportunities, brought together by HRWala.</p>
-            <div className="responsive-actions">
-              <a className="responsive-button" href="#academy">Explore certifications</a>
-              <a className="responsive-text-link" href="#jobs">Explore job portal</a>
+const reflowQuery = '(max-width: 1100px)'
+function subscribeReflow(callback: () => void) {
+  const query = window.matchMedia(reflowQuery)
+  query.addEventListener('change', callback)
+  return () => query.removeEventListener('change', callback)
+}
+
+function designElements(tree: ReactNode): ReactElement<DesignProps>[] {
+  const elements: ReactElement<DesignProps>[] = []
+  Children.forEach(tree, (child) => {
+    if (!isValidElement<DesignProps>(child)) return
+    elements.push(child)
+    elements.push(...designElements(child.props.children))
+  })
+  return elements
+}
+
+function flowElement(tree: ReactNode): ReactNode {
+  return Children.map(tree, (child) => {
+    if (!isValidElement<DesignProps>(child)) return child
+    const original = child.props.className || ''
+    const classes = original.split(/\s+/).filter((token) => !/^(?:absolute|relative|contents|flex|flex-col|justify-center|items-center|whitespace-\S+|text-justify|text-center|leading-\S+|tracking-\S+|(?:-?translate|inset|top|left|right|bottom|w|h|size|min-w|max-w|mb)-\S+)$/.test(token))
+    const size = Number(original.match(/text-\[([\d.]+)px\]/)?.[1] || 0)
+    const fontSize = size >= 40 ? 'clamp(28px, 4vw, 40px)' : size >= 27 ? 'clamp(23px, 3vw, 30px)' : size ? Math.max(14, size) : undefined
+    return cloneElement(child, {
+      className: classes.filter((c) => !/^text-\[[\d.]+px\]$/.test(c)).join(' '),
+      style: { ...child.props.style, ...(fontSize ? { fontSize } : {}) },
+      children: flowElement(child.props.children),
+    })
+  })
+}
+
+function Flow({ node, className = '' }: { node?: ReactElement<DesignProps>; className?: string }) {
+  if (!node) return null
+  return <div className={'reflow-text ' + className}>{flowElement(node)}</div>
+}
+
+function OriginalImage({ node, className = '', alt }: { node?: ReactElement<DesignProps>; className?: string; alt?: string }) {
+  const image = designElements(node).find((child) => child.type === 'img')
+  if (!image) return null
+  const classes = node?.props.className || ''
+  const width = Number(classes.match(/w-\[([\d.]+)px\]/)?.[1] || 0)
+  const height = Number(classes.match(/h-\[([\d.]+)px\]/)?.[1] || 0)
+  return <img src={image.props.src} alt={alt || node?.props['data-name'] || image.props.alt || ''} className={'reflow-image ' + className} style={width && height ? { aspectRatio: `${width} / ${height}` } : undefined} loading="lazy" />
+}
+
+function OriginalCard({ node, team = false }: { node: ReactElement<DesignProps>; team?: boolean }) {
+  const elements = designElements(node.props.children)
+  // Font wrappers carry inherited styles; stop at those rather than copying their inner p twice.
+  const collect = (tree: ReactNode, inheritedFont = ''): ReactElement<DesignProps>[] => {
+    const result: ReactElement<DesignProps>[] = []
+    Children.forEach(tree, (child) => {
+      if (!isValidElement<DesignProps>(child)) return
+      const descendants = designElements(child.props.children)
+      const hasDesignChild = descendants.some((n) => n.props['data-node-id'])
+      const classes = child.props.className || ''
+      const font = classes.split(/\s+/).filter((c) => c.startsWith('font-')).join(' ') || inheritedFont
+      const hasText = /font-|text-\[[\d.]+px\]/.test(classes) || child.type === 'p'
+      if (hasText && !hasDesignChild) result.push(cloneElement(child, { className: `${font} ${classes}` }))
+      else result.push(...collect(child.props.children, font))
+    })
+    return result
+  }
+  const photo = elements.find((n) => n.type === TeamPhoto)
+  return <article className={'reflow-card' + (team ? ' reflow-team-card' : '')} data-original-card={node.props['data-node-id']}>
+    {photo && cloneElement(photo, { className: 'reflow-team-photo' })}
+    {collect(node.props.children).map((text, index) => <Flow node={text} key={text.props['data-node-id'] || index} className={(text.props.className || '').includes('opacity-10') ? 'reflow-watermark' : ''} />)}
+  </article>
+}
+
+function ScaledOriginal({ design }: { design: ReactElement<DesignProps> }) {
+  const viewport = useRef<HTMLDivElement>(null)
+  const [scale, setScale] = useState(1)
+  useLayoutEffect(() => {
+    const element = viewport.current
+    if (!element) return
+    const update = () => setScale(Math.min(1, element.clientWidth / 1530))
+    update()
+    const observer = new ResizeObserver(update)
+    observer.observe(element)
+    return () => observer.disconnect()
+  }, [])
+  return <div ref={viewport} className="design-viewport" style={{ height: 7624 * scale }}>
+    <div className="design-canvas" style={{ transform: `scale(${scale})` }}>{design}</div>
+  </div>
+}
+
+function AdaptiveOriginal({ design }: { design: ReactElement<DesignProps> }) {
+  const reflow = useSyncExternalStore(subscribeReflow, () => window.matchMedia(reflowQuery).matches, () => false)
+  if (!reflow) return <ScaledOriginal design={design} />
+  return <ReflowOriginal design={design} />
+}
+
+function ReflowOriginal({ design }: { design: ReactElement<DesignProps> }) {
+  const elements = designElements(design)
+  const nodes = new Map(elements.filter((n) => n.props['data-node-id'] || n.props.nodeId).map((n) => [n.props['data-node-id'] || n.props.nodeId, n]))
+  const get = (id: string) => nodes.get(id)
+  const text = (id: string, className = '') => <Flow node={get(id)} className={className} key={id} />
+  const image = (id: string, className = '') => <OriginalImage node={get(id)} className={className} key={id} />
+  const cards = (prefix: string) => elements.filter((n) => (n.props.className || '').includes('hover-card-group') && n.props['data-node-id']?.startsWith(prefix))
+  const button = (labelId: string, href: string) => <a className="reflow-button" href={href}>{text(labelId)}</a>
+  const footerLinks = [
+    ['299:22', '#home'], ['299:23', 'https://hrwala.net/job-portal'],
+    ['299:24', '#software'], ['299:34', '#certifications'],
+  ]
+  const contacts = [
+    ['299:28', 'https://wa.me/923008523878'], ['299:29', 'https://wa.me/923008523878'],
+    ['299:30', 'https://mail.google.com/mail/?view=cm&fs=1&to=hello%40hrwala.net'],
+  ]
+  return <div className="reflow-site" id="home">
+    <header className="reflow-header">
+      <a href="#home" aria-label="HRWala home">{image('297:3', 'reflow-logo')}</a>
+      <nav aria-label="Main navigation">{text('5:5')}{text('5:17')}<div className="reflow-portal">{text('5:31')}<a href="https://hrwala.net/login" aria-label="Open My Portal">{image('9:2')}</a></div></nav>
+    </header>
+    <main className="reflow-main">
+      <section className="reflow-section reflow-panel reflow-hero" aria-label="HRWala">
+        <div className="reflow-stack">
+          {text('118:39', 'reflow-kicker')}{text('12:68', 'reflow-hero-heading')}
+          {text('28:71', 'reflow-bullets')}{text('31:83')}
+          {button('35:94', 'https://hrwala.net/job-portal')}
+        </div>
+        <div className="reflow-orbit">
+          {image('197:8')}
+          <div className="reflow-floating reflow-floating-1">{text('81:10')}</div>
+          <div className="reflow-floating reflow-floating-2">{text('84:2')}</div>
+          <div className="reflow-floating reflow-floating-3">{text('81:13')}</div>
+          <div className="reflow-floating reflow-floating-4">{text('81:11')}</div>
+        </div>
+      </section>
+      <section className="reflow-section" id="services">
+        {text('69:3', 'reflow-heading')}
+        <div className="reflow-grid reflow-service-grid">
+          {cards('101:').map((card, index) => {
+            const video = elements.find((n) => n.type === VideoSlot && (n.props as DesignProps & { index: number }).index === index)
+            return <div className="reflow-stack" key={card.props['data-node-id']}>
+              {video && cloneElement(video, { className: 'reflow-video' })}<OriginalCard node={card} />
             </div>
+          })}
+        </div>
+      </section>
+      <section className="reflow-section reflow-panel" id="jobs">
+        <div className="reflow-split">
+          <div className="reflow-stack">{text('109:6', 'reflow-heading')}{text('171:5')}{button('188:20', 'https://hrwala.net/job-portal')}</div>
+          {image('172:6', 'reflow-cover')}
+        </div>
+        <div className="reflow-grid reflow-audiences">
+          {['118:121', '118:122'].map((id) => <OriginalCard node={get(id)!} key={id} />)}
+        </div>
+      </section>
+      <section className="reflow-section" id="brand-standards">
+        {text('133:2', 'reflow-heading')}
+        <div className="reflow-split">
+          <div className="reflow-stack">
+            {[[194, 197, 198, 202], [195, 205, 206, 207], [196, 209, 210, 211]].map(([number, ...ids]) => <div className="reflow-step" key={number}>{text('145:' + number, 'reflow-step-number')}<div className="reflow-stack">{ids.map((id) => text('145:' + id))}</div></div>)}
           </div>
-          <img className="responsive-hero-image" src={imgLuminousPortraitWithAFadingBlueRing1} alt="HR professional" />
-        </section>
+          {image('151:214', 'reflow-cover')}
+        </div>
+        <div className="reflow-grid reflow-industries">{cards('159:').sort((a, b) => originalPosition(a) - originalPosition(b)).map((card) => <OriginalCard node={card} key={card.props['data-node-id']} />)}</div>
+      </section>
+      <section className="reflow-section reflow-panel" id="software">
+        <div className="reflow-split">
+          <div className="reflow-stack">
+            {text('207:36', 'reflow-heading')}{text('224:22')}{text('224:24')}
+            {image('224:21')}
+            <div className="reflow-lifecycle">{[246, 247, 248, 249, 250].map((id) => text('239:' + id))}</div>
+            {button('228:29', '#modules')}
+          </div>
+          <div className="reflow-orbit reflow-software-orbit">
+            {image('239:239')}
+            <div className="reflow-floating reflow-floating-1">{text('207:50')}</div>
+            <div className="reflow-floating reflow-floating-2">{text('207:51')}</div>
+            <div className="reflow-floating reflow-floating-3">{text('207:53')}</div>
+            <div className="reflow-floating reflow-floating-4">{text('239:241')}</div>
+            <div className="reflow-floating reflow-floating-5">{text('207:52')}</div>
+            <div className="reflow-floating reflow-floating-6">{text('239:243')}</div>
+          </div>
+        </div>
+        {text('228:236', 'reflow-heading')}
+        <div className="reflow-grid reflow-module-grid">{cards('228:').map((card) => <OriginalCard node={card} key={card.props['data-node-id']} />)}</div>
+      </section>
+      <section className="reflow-section" id="academy">
+        {text('242:251', 'reflow-heading')}
+        <div className="reflow-grid reflow-three">
+          {['247:337', '247:338', '247:344'].map((id) => get(id) && <OriginalCard node={get(id)!} key={id} />)}
+        </div>
+        {text('247:356', 'reflow-subheading')}
+        <div className="reflow-grid reflow-three">
+          {[['253:361', '250:359'], ['254:365', '253:362'], ['254:368', '254:366']].map(([picture, title]) => <article className="reflow-credential" key={picture}>{image(picture)}{text(title)}</article>)}
+        </div>
+        {text('256:2', 'reflow-subheading')}
+        <div className="reflow-grid reflow-three">
+          {[['257:3', '257:5'], ['258:6', '258:7'], ['258:8', '258:9']].map(([picture, title]) => <article className="reflow-credential" key={picture}>{image(picture)}{text(title)}</article>)}
+        </div>
+      </section>
+      <section className="reflow-section reflow-panel" id="team">
+        {text('260:32', 'reflow-heading')}
+        <div className="reflow-grid reflow-team-grid">{elements.filter((n) => (n.props.className || '').includes('team-card-group')).sort((a, b) => originalPosition(a) - originalPosition(b)).map((card) => <OriginalCard node={card} team key={card.props['data-node-id']} />)}</div>
+      </section>
+      <section className="reflow-section">
+        {text('274:62', 'reflow-heading')}
+        <div className="reflow-partner-window" aria-label="Featured partner placeholders">
+          <div className="reflow-partner-track" aria-hidden="true">{[0, 1].map((copy) => <div className="reflow-partner-set" key={copy}>{['274:158', '274:161', '274:177', '274:181', '274:185', '274:189'].map((id) => <div className="reflow-partner" key={id} />)}</div>)}</div>
+        </div>
+      </section>
+      <section className="reflow-section reflow-panel reflow-contact" id="contact">
+        <div className="reflow-stack">
+          {text('274:203', 'reflow-heading')}{text('274:206', 'reflow-heading')}{text('278:3')}
+          {text('289:46')}{text('289:47', 'reflow-subheading')}<LiveFaq />
+        </div>
+        <div className="reflow-form-panel reflow-stack">{text('278:9')}{text('285:23')}<LiveContactForm /></div>
+      </section>
+    </main>
+    <footer className="reflow-footer">
+      <div className="reflow-stack"><a href="#home" aria-label="HRWala home">{image('297:4', 'reflow-logo')}</a>{text('299:5')}</div>
+      <nav className="reflow-stack" aria-label="Footer navigation">{text('299:21')}{footerLinks.map(([id, href]) => <a href={href} key={id}>{text(id)}</a>)}</nav>
+      <div className="reflow-stack">{text('299:31')}{contacts.map(([id, href]) => <a href={href} key={id} target="_blank" rel="noreferrer">{text(id)}</a>)}</div>
+      <div className="reflow-stack">{text('299:35')}<LiveNewsletter /><div className="reflow-socials">{[['299:44', 'https://www.linkedin.com/', 'LinkedIn'], ['299:55', 'https://www.facebook.com/', 'Facebook'], ['299:49', 'https://www.instagram.com/', 'Instagram'], ['299:53', 'https://www.youtube.com/', 'YouTube']].map(([id, href, label]) => <a href={href} aria-label={label} key={id} target="_blank" rel="noreferrer">{image(id)}</a>)}</div></div>
+      <div className="reflow-copyright">{text('299:19')}</div>
+    </footer>
+  </div>
+}
 
-        <section className="responsive-section" id="services">
-          <div className="responsive-section-heading">
-            <p className="responsive-kicker">People @ Top</p>
-            <h2>One place to move <span>forward.</span></h2>
-          </div>
-          <div className="responsive-card-grid responsive-service-grid">
-            <article className="responsive-card"><span>01 / People</span><h3>HR Consultants</h3><p>Build stronger teams with people-first advice, practical policies and a clear HR direction.</p></article>
-            <article className="responsive-card"><span>02 / Standards</span><h3>Brand Standards</h3><p>Turn your standards into everyday practices that protect your people and your brand.</p></article>
-            <article className="responsive-card"><span>03 / Opportunity</span><h3>Job Portal</h3><p>Find your next great connection, whether you are looking for a role or the right candidate.</p></article>
-            <article className="responsive-card"><span>04 / Systems</span><h3>HRWala Software</h3><p>Bring employee records and everyday HR processes together in one organised platform.</p></article>
-          </div>
-        </section>
-
-        <section className="responsive-section responsive-split-section" id="jobs">
-          <div>
-            <p className="responsive-kicker">Your next opportunity</p>
-            <h2>People and opportunities, <span>connected.</span></h2>
-            <p>Explore relevant roles, build a profile that reflects your skills, and keep applications and conversations organised.</p>
-            <a className="responsive-button" href="#contact">Explore Job Portal</a>
-          </div>
-          <div className="responsive-card-grid responsive-audience-grid">
-            <article className="responsive-card"><span>01</span><h3>Candidates</h3><p>Search jobs, build your CV, track applications and prepare for interviews.</p></article>
-            <article className="responsive-card"><span>02</span><h3>Employers</h3><p>Publish vacancies, review profiles, shortlist applicants and coordinate interviews.</p></article>
-          </div>
-        </section>
-
-        <section className="responsive-section responsive-brand-section">
-          <div className="responsive-section-heading">
-            <p className="responsive-kicker">Develop your brand</p>
-            <h2>Build trust in <span>every interaction.</span></h2>
-          </div>
-          <div className="responsive-split-section responsive-brand-content">
-            <ol className="responsive-steps">
-              <li><span>01</span><div><h3>Define the experience</h3><p>Set clear standards for service, communication and presentation.</p></div></li>
-              <li><span>02</span><div><h3>Align your people</h3><p>Give teams a shared way to deliver those standards every day.</p></div></li>
-              <li><span>03</span><div><h3>Build lasting trust</h3><p>Create a dependable experience across every customer touchpoint.</p></div></li>
-            </ol>
-            <img className="responsive-content-image" src={imgCorporateTeamDiscussingATablet1} alt="A team working together" />
-          </div>
-        </section>
-
-        <section className="responsive-section responsive-software-section" id="software">
-          <div className="responsive-section-heading">
-            <p className="responsive-kicker">The system behind a better-run workforce</p>
-            <h2>HRWala <span>Software</span></h2>
-            <p>Bring employee records, onboarding, attendance, payroll and performance into one organised platform.</p>
-          </div>
-          <div className="responsive-card-grid responsive-module-grid">
-            {modules.map((module, index) => (
-              <article className="responsive-module-card" key={module}>
-                <span>{String(index + 1).padStart(2, '0')}</span>
-                <h3>{module}</h3>
-              </article>
-            ))}
-          </div>
-          <a className="responsive-button" href="#contact">Explore the platform</a>
-        </section>
-
-        <section className="responsive-section" id="academy">
-          <div className="responsive-section-heading">
-            <p className="responsive-kicker">Future Academy</p>
-            <h2>Credentials that help your career <span>move.</span></h2>
-            <p>Learn practical, in-demand skills and make your achievements easy for employers to recognise.</p>
-          </div>
-          <div className="responsive-card-grid responsive-credential-grid">
-            <article className="responsive-credential-card"><img src={imgUpdatedCertificateWithHrWalaNetSeal1} alt="Certified HR Professional certificate" /><h3>Certified HR Professional</h3></article>
-            <article className="responsive-credential-card"><img src={imgCertifiedHrBusinessPartnerCertificate1} alt="Certified HR Business Partner certificate" /><h3>Certified HR Business Partner</h3></article>
-            <article className="responsive-credential-card"><img src={imgLearningDevelopmentProfessionalCertificate1} alt="Learning and Development Professional certificate" /><h3>Learning &amp; Development Professional</h3></article>
-          </div>
-          <h3 className="responsive-subheading">Professional badges</h3>
-          <div className="responsive-card-grid responsive-badge-grid">
-            <img src={imgHrWalaReadyToServeCredentialBadge11} alt="Ready to Serve badge" />
-            <img src={imgHrWalaSkilledProfessionalBadge1} alt="Skilled Professional badge" />
-            <img src={imgHrWalaNetFeaturedAssociateBadge1} alt="Featured Associate badge" />
-          </div>
-        </section>
-
-        <section className="responsive-section responsive-team-section">
-          <div className="responsive-section-heading">
-            <p className="responsive-kicker">HRWala Team</p>
-            <h2>People make <span>progress possible.</span></h2>
-          </div>
-          <div className="responsive-team-callout">
-            <img src={imgGirlProfileIconRemovebgPreview1} alt="HRWala team" />
-            <div><h3>Farrukh Sohail</h3><p>Founder &amp; CEO</p></div>
-          </div>
-        </section>
-
-        <section className="responsive-contact-section" id="contact">
-          <div className="responsive-contact-copy">
-            <p className="responsive-kicker">Got a question?</p>
-            <h2>Let’s connect and <span>move forward.</span></h2>
-            <p>Whether you are exploring career opportunities, looking for the right talent or interested in our HR solutions, our team is here to help.</p>
-            <p>hello@hrwala.net<br />+92 300 8523878</p>
-          </div>
-          <form className="responsive-contact-form" onSubmit={(event) => event.preventDefault()}>
-            <h3>Get in touch</h3>
-            <label>Full name<input name="name" autoComplete="name" placeholder="Enter your name" /></label>
-            <label>Email<input name="email" type="email" autoComplete="email" placeholder="example@gmail.com" /></label>
-            <label>How can we help?<select name="topic" defaultValue=""><option value="" disabled>Select an inquiry</option><option>Career opportunities</option><option>Recruitment</option><option>HR services</option><option>Certifications</option></select></label>
-            <label>Your message<textarea name="message" rows={4} placeholder="Tell us more about your inquiry" /></label>
-            <button className="responsive-button" type="submit">Submit</button>
-          </form>
-        </section>
-
-        <section className="responsive-section responsive-faq-section">
-          <div className="responsive-section-heading">
-            <p className="responsive-kicker">Need more information?</p>
-            <h2>Frequently asked <span>questions.</span></h2>
-          </div>
-          <div className="responsive-faq-list">
-            <details><summary>How can HRWala.net help me find a job?</summary><p>Explore job opportunities and connect with potential employers through our job portal.</p></details>
-            <details><summary>Can employers use HRWala.net for recruitment?</summary><p>Employers can publish vacancies, review candidate profiles and coordinate recruitment activities.</p></details>
-            <details><summary>What HR services does HRWala.net offer?</summary><p>HRWala offers consulting, software, recruitment and professional development services.</p></details>
-            <details><summary>How can I get information about professional certifications?</summary><p>Contact our team to learn about available HR certifications and professional badges.</p></details>
-          </div>
-        </section>
-      </main>
-
-      <footer className="responsive-footer">
-        <img src={imgHrWalaFullWhiteGold1} alt="HRWala" />
-        <p>Connecting talent, opportunities and practical HR solutions.</p>
-        <nav aria-label="Footer navigation"><a href="#services">Discover</a><a href="#jobs">Job Portal</a><a href="#software">Software</a><a href="#academy">Certifications</a></nav>
-        <form className="responsive-newsletter" onSubmit={(event) => event.preventDefault()}><label htmlFor="newsletter-email">Subscribe to our newsletter</label><div><input id="newsletter-email" type="email" placeholder="Enter your email" /><button className="responsive-button" type="submit">Subscribe</button></div></form>
-        <small>© 2015 HRWala.net. All rights reserved.</small>
-      </footer>
-    </>
-  );
+function originalPosition(node: ReactElement<DesignProps>) {
+  const classes = node.props.className || ''
+  return Number(classes.match(/top-\[([\d.]+)px\]/)?.[1] || 0) * 2000 + Number(classes.match(/left-\[([\d.]+)px\]/)?.[1] || 0)
 }
 
 export default function Frame1() {
-  return (
-    <main className="design-viewport" data-node-id="326:2">
-      <div className="design-canvas">
-        <Desktop1 className="relative h-[7615px] w-[1530px] overflow-clip border border-black border-solid" />
-      </div>
-    </main>
-  );
+  return <Desktop1 className="relative h-[7615px] w-[1530px] overflow-clip border border-black border-solid" />
 }
