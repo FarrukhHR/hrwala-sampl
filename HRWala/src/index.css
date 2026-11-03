@@ -357,6 +357,9 @@ body { margin: 0; min-width: 0; }
 @media (hover: hover) and (pointer: fine) {
   .reflow-card:hover { transform: scale(1.02); z-index: 2; }
 }
+@media (hover: none) and (pointer: coarse) {
+  .reflow-card:active { transform: scale(.985); box-shadow: 0 5px 16px rgb(22 48 87 / 18%); }
+}
 .reflow-service-grid > .reflow-stack { gap: 18px; }
 .reflow-service-grid .reflow-card { flex: 1; }
 .reflow-video { display: block; width: 100%; aspect-ratio: 321 / 183; height: auto; background: #d9d9d9; border-radius: 18px; object-fit: cover; }
@@ -444,6 +447,13 @@ body { margin: 0; min-width: 0; }
 @media (max-width: 850px) {
   .reflow-hero, .reflow-split, .reflow-contact { grid-template-columns: minmax(0, 1fr); }
   .reflow-hero-heading { min-height: 0; }
+  .reflow-hero .reflow-orbit {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: center;
+    gap: 8px 16px; width: 100%; min-height: 0; padding: 8px 0 0;
+  }
+  .reflow-hero .reflow-floating { position: static; width: auto; max-width: none; }
+  .reflow-hero .reflow-floating p { font-size: clamp(12px, 2.4vw, 16px) !important; line-height: 1.3; }
+  .reflow-service-grid .reflow-video[aria-label^="Video placeholder"] { display: none; }
   .reflow-orbit { width: min(100%, 520px); margin-inline: auto; }
   .reflow-floating p { font-size: clamp(12px, 2.6vw, 18px) !important; }
   .reflow-team-grid, .reflow-three { grid-template-columns: repeat(2, minmax(0, 1fr)); }

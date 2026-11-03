@@ -18,7 +18,6 @@ const heroSlides = [
 const imgGirlProfileIconRemovebgPreview1 = `${assetPathPrefix}/51fdd.png`;
 const imgHumanConnectionInTheInterviewRoom1 = `${assetPathPrefix}/58338.png`;
 const imgCorporateTeamDiscussingATablet1 = `${assetPathPrefix}/a1b62.png`;
-const imgLuminousPortraitWithAFadingBlueRing1 = `${assetPathPrefix}/7da0d.png`;
 const imgLuminousWomanWithinBlueRing2X1 = `${assetPathPrefix}/10bd4.png`;
 const imgLearningDevelopmentProfessionalCertificate1 = `${assetPathPrefix}/8bc8e.png`;
 const imgUpdatedCertificateWithHrWalaNetSeal1 = `${assetPathPrefix}/67f31.png`;
@@ -942,9 +941,6 @@ function Desktop1({ className }: { className?: string }) {
         <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[36px] leading-[normal] left-[581px] not-italic text-[#5194d8] text-[21px] top-[420px] tracking-[-1.26px] w-[184px]" data-node-id="81:13">
           Brand Standards
         </p>
-        <div className="absolute h-[578px] left-[744px] top-[155px] w-[701px]" data-node-id="197:8" data-name="Luminous Portrait with a Fading Blue Ring 1">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLuminousPortraitWithAFadingBlueRing1} />
-        </div>
       </div>
       <div className="absolute contents left-[28px] top-[3321px]" data-node-id="207:34">
         <div className="absolute h-[1106px] left-[29px] top-[3322px] w-[1472px]" data-node-id="207:35">
@@ -2183,7 +2179,6 @@ function ReflowOriginal({ design }: { design: ReactElement<DesignProps> }) {
           {button('35:94', 'https://hrwala.net/job-portal')}
         </div>
         <div className="reflow-orbit">
-          {image('197:8')}
           <div className="reflow-floating reflow-floating-1">{text('81:10')}</div>
           <div className="reflow-floating reflow-floating-2">{text('84:2')}</div>
           <div className="reflow-floating reflow-floating-3">{text('81:13')}</div>
