@@ -293,15 +293,15 @@ function Desktop1({ className }: { className?: string }) {
             Dream Job
           </a>
         </div>
-        <div className="absolute left-0 top-0 h-[7615px] w-[1530px] pointer-events-none" style={{ transform: 'scaleX(0.97)', transformOrigin: '1445px 0' }} data-node-id="118:122">
-          <div className="absolute bg-white h-[299.746px] left-[798px] rounded-[18px] shadow-[1px_2px_6px_2px_rgba(146,144,144,0.25)] top-[1823.25px] w-[647px]" data-node-id="118:123" />
+        <div className="absolute contents left-[798px] top-[1823px] [&>*]:translate-x-[20px]" data-node-id="118:122">
+          <div className="absolute bg-white h-[299.746px] left-[798px] rounded-[18px] shadow-[1px_2px_6px_2px_rgba(146,144,144,0.25)] top-[1823.25px] w-[627px]" data-node-id="118:123" />
           <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[51.154px] leading-[normal] left-[944.3px] not-italic text-[#0144ab] text-[57px] top-[1836.72px] tracking-[-1.14px] w-[391.497px]" data-node-id="118:124">
             Hire People
           </p>
           <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[110.843px] leading-[normal] left-[829.94px] not-italic opacity-10 text-[#0144ab] text-[68px] text-justify top-[1830.43px] tracking-[-1.36px] w-[171.325px]" data-node-id="118:125">
             02
           </p>
-          <div className="absolute h-[10.959px] left-[800.06px] top-[1823px] w-[642.651px]" data-node-id="118:126">
+          <div className="absolute h-[10.959px] left-[800.06px] top-[1823px] w-[622.651px]" data-node-id="118:126">
             <div className="absolute inset-[-13.68%_-0.23%_-13.69%_-0.23%]">
               <img alt="" className="block max-w-none size-full" src={imgGroup21} />
             </div>
@@ -386,7 +386,7 @@ function Desktop1({ className }: { className?: string }) {
               </div>
             </div>
           </div>
-          <a href="https://hrwala.net/login" aria-label="Start Hiring" className="absolute z-[2] pointer-events-auto flex h-[42px] w-[167px] items-center justify-center rounded-[8px] bg-[#0144ab] left-[822.73px] top-[2059px] font-['Poppins:Bold'] text-[14px] leading-[normal] text-white tracking-[-0.28px] transition-colors hover:bg-[#f6ac04] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f6ac04]">
+          <a href="https://hrwala.net/login" aria-label="Start Hiring" className="absolute z-[2] flex h-[42px] w-[167px] items-center justify-center rounded-[8px] bg-[#0144ab] left-[822.73px] top-[2059px] font-['Poppins:Bold'] text-[14px] leading-[normal] text-white tracking-[-0.28px] transition-colors hover:bg-[#f6ac04] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f6ac04]">
             Start Hiring
           </a>
         </div>
