@@ -239,7 +239,7 @@ function Desktop1({ className }: { className?: string }) {
         <div className="absolute contents left-[80px] top-[1823px]" data-node-id="118:121">
           <div className="absolute bg-white h-[299.746px] left-[80px] rounded-[18px] shadow-[1px_2px_6px_2px_rgba(146,144,144,0.25)] top-[1823.25px] w-[628px]" data-node-id="109:10" />
           <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[51.154px] leading-[normal] left-[204px] not-italic text-[#0144ab] text-[57px] top-[1836.72px] tracking-[-1.14px] w-[380px]" data-node-id="109:12">
-            Candidates
+            Dream Job
           </p>
           <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[110.843px] leading-[normal] left-[111px] not-italic opacity-10 text-[#0144ab] text-[68px] text-justify top-[1830.43px] tracking-[-1.36px] w-[166.294px]" data-node-id="109:14">
             01
@@ -333,7 +333,7 @@ function Desktop1({ className }: { className?: string }) {
         <div className="absolute contents left-[798px] top-[1823px]" data-node-id="118:122">
           <div className="absolute bg-white h-[299.746px] left-[798px] rounded-[18px] shadow-[1px_2px_6px_2px_rgba(146,144,144,0.25)] top-[1823.25px] w-[647px]" data-node-id="118:123" />
           <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[51.154px] leading-[normal] left-[944.3px] not-italic text-[#0144ab] text-[57px] top-[1836.72px] tracking-[-1.14px] w-[391.497px]" data-node-id="118:124">
-            Employers
+            Hire People
           </p>
           <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[110.843px] leading-[normal] left-[829.94px] not-italic opacity-10 text-[#0144ab] text-[68px] text-justify top-[1830.43px] tracking-[-1.36px] w-[171.325px]" data-node-id="118:125">
             02
