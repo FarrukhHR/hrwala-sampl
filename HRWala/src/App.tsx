@@ -289,7 +289,7 @@ function Desktop1({ className }: { className?: string }) {
               </div>
             </div>
           </div>
-          <a href="https://hrwala.net/job-portal" aria-label="Dream Job" className="absolute z-[2] flex h-[42px] w-[167px] items-center justify-center rounded-[8px] bg-[#0144ab] left-[310px] top-[2059px] font-['Poppins:Bold'] text-[14px] leading-[normal] text-white tracking-[-0.28px] transition-colors hover:bg-[#f6ac04] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f6ac04]">
+          <a href="https://hrwala.net/job-portal" aria-label="Dream Job" className="absolute z-[2] flex h-[42px] w-[167px] items-center justify-center rounded-[8px] bg-[#0144ab] left-[80px] top-[2059px] font-['Poppins:Bold'] text-[14px] leading-[normal] text-white tracking-[-0.28px] transition-colors hover:bg-[#f6ac04] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f6ac04]">
             Dream Job
           </a>
         </div>
@@ -386,7 +386,7 @@ function Desktop1({ className }: { className?: string }) {
               </div>
             </div>
           </div>
-          <a href="https://hrwala.net/login" aria-label="Start Hiring" className="absolute z-[2] flex h-[42px] w-[167px] items-center justify-center rounded-[8px] bg-[#0144ab] left-[1038px] top-[2059px] font-['Poppins:Bold'] text-[14px] leading-[normal] text-white tracking-[-0.28px] transition-colors hover:bg-[#f6ac04] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f6ac04]">
+          <a href="https://hrwala.net/login" aria-label="Start Hiring" className="absolute z-[2] flex h-[42px] w-[167px] items-center justify-center rounded-[8px] bg-[#0144ab] left-[798px] top-[2059px] font-['Poppins:Bold'] text-[14px] leading-[normal] text-white tracking-[-0.28px] transition-colors hover:bg-[#f6ac04] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f6ac04]">
             Start Hiring
           </a>
         </div>
