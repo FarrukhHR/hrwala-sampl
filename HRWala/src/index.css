@@ -325,7 +325,7 @@ body { margin: 0; min-width: 0; }
   left: 758px;
   width: 742px;
   height: 432px;
-  transform: translateY(-20px); /* 20px upar */
+  transform: translateY(26px); /* 20px upar */
 }
 .hero-software-orbit-static-image {
   position: absolute;
