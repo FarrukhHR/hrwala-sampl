@@ -1226,6 +1226,7 @@ function Desktop1({ className }: { className?: string }) {
           <p className="leading-[normal]">Explore the Platform</p>
         </div>
       </div>
+      <div className="absolute left-[40px] top-[3335px] h-[520px] w-[1450px] rounded-[30px] bg-[#edf5ff]" data-node-id="239:238" aria-hidden="true" />
       <div className="absolute contents left-[758px] top-[3362px]" data-node-id="239:245">
         <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[38.874px] leading-[normal] left-[859.59px] not-italic text-[#1d59b5] text-[16px] top-[3402.16px] tracking-[-0.96px] w-[180.388px]" data-node-id="207:50">{`Leaves & Attendance`}</p>
         <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[1324.41px] not-italic text-[#9669d9] text-[16px] top-[3402.18px] tracking-[-0.96px] w-[150.323px]" data-node-id="207:51">
