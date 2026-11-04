@@ -864,9 +864,6 @@ function Desktop1({ className }: { className?: string }) {
         <div className="absolute h-[641px] left-[34px] top-[123px] w-[1472px]" data-node-id="9:4">
           <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgRectangle2} />
         </div>
-          <div className="hero-right-adjust pointer-events-none absolute left-[880px] top-[123px] size-[540px]" aria-hidden="true">
-            <img alt="" className="block size-full object-contain" src={imgLuminousWomanWithinBlueRing2X1} />
-          </div>
         <div className="pointer-events-none absolute inset-0 translate-y-[-45px]">
         <p key={'hero-heading-' + heroSlideIndex} className="hero-left-adjust hero-copy-cycle [word-break:break-word] absolute font-['Poppins:ExtraBold'] h-[65px] leading-[normal] left-[100px] not-italic text-[#0144ab] text-[56px] top-[291px] tracking-[-1.12px] w-[682px]" data-node-id="12:68" aria-live="polite">
           {activeHeroSlide.heading}
@@ -2096,8 +2093,14 @@ function ReflowOriginal({ design }: { design: ReactElement<DesignProps> }) {
           {text('28:71', 'reflow-bullets')}{text('31:83', 'hero-copy-cycle')}
           {button('35:94', 'https://hrwala.net/job-portal')}
         </div>
-        <div className="reflow-hero-portrait" aria-hidden="true">
-          <img src={imgLuminousWomanWithinBlueRing2X1} alt="" />
+        <div className="reflow-orbit reflow-software-orbit">
+          {image('239:239')}
+          <div className="reflow-floating reflow-floating-1">{text('207:50')}</div>
+          <div className="reflow-floating reflow-floating-2">{text('207:51')}</div>
+          <div className="reflow-floating reflow-floating-3">{text('207:53')}</div>
+          <div className="reflow-floating reflow-floating-4">{text('239:241')}</div>
+          <div className="reflow-floating reflow-floating-5">{text('207:52')}</div>
+          <div className="reflow-floating reflow-floating-6">{text('239:243')}</div>
         </div>
       </section>
       <section className="reflow-section" id="services">
