@@ -864,6 +864,9 @@ function Desktop1({ className }: { className?: string }) {
         <div className="absolute h-[641px] left-[34px] top-[123px] w-[1472px]" data-node-id="9:4">
           <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgRectangle2} />
         </div>
+          <div className="hero-right-adjust pointer-events-none absolute left-[880px] top-[123px] size-[540px]" aria-hidden="true">
+            <img alt="" className="block size-full object-contain" src={imgLuminousWomanWithinBlueRing2X1} />
+          </div>
         <div className="pointer-events-none absolute inset-0 translate-y-[-45px]">
         <p key={'hero-heading-' + heroSlideIndex} className="hero-left-adjust hero-copy-cycle [word-break:break-word] absolute font-['Poppins:ExtraBold'] h-[65px] leading-[normal] left-[100px] not-italic text-[#0144ab] text-[56px] top-[291px] tracking-[-1.12px] w-[682px]" data-node-id="12:68" aria-live="polite">
           {activeHeroSlide.heading}
@@ -879,32 +882,6 @@ function Desktop1({ className }: { className?: string }) {
         <p key={'hero-description-' + heroSlideIndex} className="hero-left-adjust hero-copy-cycle [word-break:break-word] absolute font-['Poppins:Regular'] leading-[normal] left-[100px] not-italic text-[#757575] text-[16px] top-[544px] tracking-[-0.32px] whitespace-nowrap" data-node-id="31:83" aria-live="polite">
           {activeHeroSlide.description.map((line, index) => <span key={line}>{line}{index < activeHeroSlide.description.length - 1 && <br aria-hidden />}</span>)}
         </p>
-        <div className="absolute contents left-[105px] top-[265px]" data-node-id="118:38">
-          <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Regular'] justify-center leading-[0] left-[calc(50%-592.5px)] not-italic text-[14px] text-black text-center top-[282px] tracking-[-0.56px] whitespace-nowrap" data-node-id="118:39">
-            <p className="leading-[normal]">People @ Top</p>
-          </div>
-          <div className="hero-left-adjust absolute h-0 left-[105px] top-[282px] w-[18px]" data-node-id="118:40">
-            <div className="absolute inset-[-0.5px_-2.78%]">
-              <img alt="" className="block max-w-none size-full" src={imgLine1} />
-            </div>
-          </div>
-        </div>
-        <a href="https://hrwala.net/job-portal" aria-label="Job Portal" className="hero-left-adjust pointer-events-auto absolute z-[1] flex h-[43.598px] w-[131.186px] items-center justify-center rounded-[8px] bg-[#0144ab] left-[100px] top-[617px]" data-node-id="35:93">
-          <p className="m-0 [word-break:break-word] font-['Poppins:Bold'] leading-[normal] text-[16px] text-white tracking-[-0.32px]" data-node-id="35:94">Job Portal</p>
-        </a>
-        </div>
-        <div className="absolute contents left-[758px] top-[155px]">
-          <p className="hero-right-adjust hero-floating-word [word-break:break-word] absolute font-['Poppins:Bold'] h-[38.874px] leading-[normal] left-[859.59px] not-italic text-[#1d59b5] text-[16px] top-[195.16px] tracking-[-0.96px] w-[180.388px]">Leaves &amp; Attendance</p>
-          <p className="hero-right-adjust hero-floating-word [word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[1324.41px] not-italic text-[#9669d9] text-[16px] top-[195.18px] tracking-[-0.96px] w-[150.323px]">On-boarding</p>
-          <p className="hero-right-adjust hero-floating-word [word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[839.47px] not-italic text-[#9669d9] text-[16px] top-[524.47px] tracking-[-0.96px] w-[163.685px]">360° Performance</p>
-          <p className="hero-right-adjust hero-floating-word [word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[1337.12px] not-italic text-[#9669d9] text-[16px] top-[524.47px] tracking-[-0.96px] w-[163.685px]">Talent Acquisition</p>
-          <p className="hero-right-adjust hero-floating-word [word-break:break-word] absolute font-['Poppins:Bold'] h-[38.874px] leading-[normal] left-[759px] not-italic text-[#5194d8] text-[16px] top-[352.94px] tracking-[-0.96px] w-[187.069px]">Employee Dashboard</p>
-          <p className="hero-right-adjust hero-floating-word [word-break:break-word] absolute font-['Poppins:Bold'] h-[39.176px] leading-[normal] left-[1399.59px] not-italic text-[#5194d8] text-[16px] top-[352.94px] tracking-[-0.96px] w-[73.059px]">Payroll</p>
-          <div className="hero-right-adjust absolute h-[432px] left-[889.24px] top-[156px] w-[570.984px]">
-            <img alt="HRWala team member inside blue ring" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full scale-[1.08]" src={imgLuminousWomanWithinBlueRing2X1} />
-          </div>
-        </div>
-      </div>
         <p className="[word-break:break-word] absolute font-['Poppins:ExtraBold'] h-[77.236px] leading-[0] left-[84px] not-italic text-[#0144ab] text-[56px] top-[3373.21px] tracking-[-1.12px] w-[498px]" data-node-id="207:36">
           <span className="leading-[normal] text-[#f6ac04]">HRWala</span>
           <span className="leading-[normal]">{` Software`}</span>
@@ -913,6 +890,7 @@ function Desktop1({ className }: { className?: string }) {
         <p className="[word-break:break-word] absolute font-['Poppins:Medium'] h-[73.856px] leading-[21px] left-[84px] not-italic text-[#757575] text-[16px] text-justify top-[3538.45px] tracking-[-0.32px] w-[617px]" data-node-id="224:24">
           HRwala brings employee records, onboarding, attendance, payroll and performance into one organised platform—so every HR process has a clear place and a smoother flow.
         </p>
+      </div>
       <div className="absolute contents left-[70px] top-[3900px]" data-node-id="228:235">
         <div className="absolute contents left-[78px] top-[3901px]" data-node-id="228:135">
           <div className="absolute contents hover-card-group left-[78px] top-[3901px]" style={{ transformOrigin: '238.5px 3972.6px' }} data-node-id="228:103">
@@ -2118,14 +2096,8 @@ function ReflowOriginal({ design }: { design: ReactElement<DesignProps> }) {
           {text('28:71', 'reflow-bullets')}{text('31:83', 'hero-copy-cycle')}
           {button('35:94', 'https://hrwala.net/job-portal')}
         </div>
-        <div className="reflow-orbit reflow-software-orbit">
-          <img className="reflow-image reflow-hero-image" src={imgLuminousWomanWithinBlueRing2X1} alt="HRWala team member" />
-          <div className="reflow-floating reflow-floating-1">{text('207:50')}</div>
-          <div className="reflow-floating reflow-floating-2">{text('207:51')}</div>
-          <div className="reflow-floating reflow-floating-3">{text('207:53')}</div>
-          <div className="reflow-floating reflow-floating-4">{text('239:241')}</div>
-          <div className="reflow-floating reflow-floating-5">{text('207:52')}</div>
-          <div className="reflow-floating reflow-floating-6">{text('239:243')}</div>
+        <div className="reflow-hero-portrait" aria-hidden="true">
+          <img src={imgLuminousWomanWithinBlueRing2X1} alt="" />
         </div>
       </section>
       <section className="reflow-section" id="services">
