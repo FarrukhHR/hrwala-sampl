@@ -852,13 +852,13 @@ body { margin: 0; min-width: 0; }
 /* HERO: circle, label spacing and slow floating motion */
 .hero-orbit-layout {
   --orbit-image-width: 400px;
-  --orbit-label-width: 140px;
-  --orbit-gap: 10px;
-  --orbit-font-size: 14px;
-  --orbit-speed: 7s;
+  --orbit-label-width: 160px;
+  --orbit-gap: 0px;
+  --orbit-font-size: 13px;
+  --orbit-speed: 8s;
 
   position: absolute;
-  left: 760px;
+  left: 740px;
   top: 255px;
 
   display: grid;
