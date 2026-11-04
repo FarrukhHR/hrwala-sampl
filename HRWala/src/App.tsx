@@ -879,6 +879,30 @@ function Desktop1({ className }: { className?: string }) {
         <p key={'hero-description-' + heroSlideIndex} className="hero-left-adjust hero-copy-cycle [word-break:break-word] absolute font-['Poppins:Regular'] leading-[normal] left-[100px] not-italic text-[#757575] text-[16px] top-[544px] tracking-[-0.32px] whitespace-nowrap" data-node-id="31:83" aria-live="polite">
           {activeHeroSlide.description.map((line, index) => <span key={line}>{line}{index < activeHeroSlide.description.length - 1 && <br aria-hidden />}</span>)}
         </p>
+        <div className="absolute contents left-[105px] top-[265px]" data-node-id="118:38">
+          <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Regular'] justify-center leading-[0] left-[calc(50%-592.5px)] not-italic text-[14px] text-black text-center top-[282px] tracking-[-0.56px] whitespace-nowrap" data-node-id="118:39">
+            <p className="leading-[normal]">People @ Top</p>
+          </div>
+          <div className="hero-left-adjust absolute h-0 left-[105px] top-[282px] w-[18px]" data-node-id="118:40">
+            <div className="absolute inset-[-0.5px_-2.78%]">
+              <img alt="" className="block max-w-none size-full" src={imgLine1} />
+            </div>
+          </div>
+        </div>
+        <a href="https://hrwala.net/job-portal" aria-label="Job Portal" className="hero-left-adjust pointer-events-auto absolute z-[1] flex h-[43.598px] w-[131.186px] items-center justify-center rounded-[8px] bg-[#0144ab] left-[100px] top-[617px]" data-node-id="35:93">
+          <p className="m-0 [word-break:break-word] font-['Poppins:Bold'] leading-[normal] text-[16px] text-white tracking-[-0.32px]" data-node-id="35:94">Job Portal</p>
+        </a>
+        <div className="absolute contents left-[758px] top-[155px]">
+          <p className="hero-right-adjust hero-floating-word [word-break:break-word] absolute font-['Poppins:Bold'] h-[38.874px] leading-[normal] left-[859.59px] not-italic text-[#1d59b5] text-[16px] top-[195.16px] tracking-[-0.96px] w-[180.388px]">Leaves &amp; Attendance</p>
+          <p className="hero-right-adjust hero-floating-word [word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[1324.41px] not-italic text-[#9669d9] text-[16px] top-[195.18px] tracking-[-0.96px] w-[150.323px]">On-boarding</p>
+          <p className="hero-right-adjust hero-floating-word [word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[839.47px] not-italic text-[#9669d9] text-[16px] top-[524.47px] tracking-[-0.96px] w-[163.685px]">360° Performance</p>
+          <p className="hero-right-adjust hero-floating-word [word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[1337.12px] not-italic text-[#9669d9] text-[16px] top-[524.47px] tracking-[-0.96px] w-[163.685px]">Talent Acquisition</p>
+          <p className="hero-right-adjust hero-floating-word [word-break:break-word] absolute font-['Poppins:Bold'] h-[38.874px] leading-[normal] left-[759px] not-italic text-[#5194d8] text-[16px] top-[352.94px] tracking-[-0.96px] w-[187.069px]">Employee Dashboard</p>
+          <p className="hero-right-adjust hero-floating-word [word-break:break-word] absolute font-['Poppins:Bold'] h-[39.176px] leading-[normal] left-[1399.59px] not-italic text-[#5194d8] text-[16px] top-[352.94px] tracking-[-0.96px] w-[73.059px]">Payroll</p>
+          <div className="hero-right-adjust absolute h-[432px] left-[889.24px] top-[156px] w-[570.984px]">
+            <img alt="HRWala employee dashboard" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgSoftwareDashboardWoman} />
+          </div>
+        </div>
         <p className="[word-break:break-word] absolute font-['Poppins:ExtraBold'] h-[77.236px] leading-[0] left-[84px] not-italic text-[#0144ab] text-[56px] top-[3373.21px] tracking-[-1.12px] w-[498px]" data-node-id="207:36">
           <span className="leading-[normal] text-[#f6ac04]">HRWala</span>
           <span className="leading-[normal]">{` Software`}</span>
