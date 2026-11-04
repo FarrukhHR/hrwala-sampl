@@ -319,6 +319,8 @@ body { margin: 0; min-width: 0; }
   align-items: center;
   gap: 24px;
 }
+.reflow-hero-portrait { display: grid; place-items: center; min-width: 0; }
+.reflow-hero-portrait img { display: block; width: min(100%, 500px); max-height: 500px; aspect-ratio: 1; object-fit: contain; }
 .hero-software-orbit-static {
   position: absolute;
   top: 155px;
