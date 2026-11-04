@@ -289,46 +289,9 @@ function Desktop1({ className }: { className?: string }) {
               </div>
             </div>
           </div>
-          <div className="absolute contents left-[104px] top-[2046.53px]" data-node-id="118:61">
-            <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:SemiBold'] h-[16.058px] justify-center leading-[0] left-[calc(50%-570px)] not-italic text-[#0144ab] text-[14px] text-center top-[2054.56px] tracking-[-0.56px] w-[138px]" data-node-id="118:62">
-              <p className="leading-[normal]">Application Tracking</p>
-            </div>
-            <div className="absolute h-0 left-[104px] top-[2054.18px] w-[15px]" data-node-id="118:63">
-              <div className="absolute inset-[-0.5px_-3.33%]">
-                <img alt="" className="block max-w-none size-full" src={imgLine2} />
-              </div>
-            </div>
-          </div>
-          <div className="absolute contents left-[491px] top-[2046.53px]" data-node-id="118:73">
-            <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:SemiBold'] h-[16.058px] justify-center leading-[0] left-[calc(50%-198.5px)] not-italic text-[#0144ab] text-[14px] text-center top-[2054.56px] tracking-[-0.56px] w-[99px]" data-node-id="118:74">
-              <p className="leading-[normal]">Profile Visibility</p>
-            </div>
-            <div className="absolute h-0 left-[491px] top-[2054.18px] w-[15px]" data-node-id="118:75">
-              <div className="absolute inset-[-0.5px_-3.33%]">
-                <img alt="" className="block max-w-none size-full" src={imgLine2} />
-              </div>
-            </div>
-          </div>
-          <div className="absolute contents left-[104px] top-[2083.24px]" data-node-id="118:64">
-            <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:SemiBold'] h-[16.058px] justify-center leading-[0] left-[calc(50%-561.5px)] not-italic text-[#0144ab] text-[14px] text-center top-[2091.27px] tracking-[-0.56px] w-[155px]" data-node-id="118:65">
-              <p className="leading-[normal]">Mobile-Friendly Access</p>
-            </div>
-            <div className="absolute h-0 left-[104px] top-[2090.88px] w-[15px]" data-node-id="118:66">
-              <div className="absolute inset-[-0.5px_-3.33%]">
-                <img alt="" className="block max-w-none size-full" src={imgLine2} />
-              </div>
-            </div>
-          </div>
-          <div className="absolute contents left-[491px] top-[2083.24px]" data-node-id="118:76">
-            <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:SemiBold'] h-[16.058px] justify-center leading-[0] left-[calc(50%-176.5px)] not-italic text-[#0144ab] text-[14px] text-center top-[2091.27px] tracking-[-0.56px] w-[147px]" data-node-id="118:77">
-              <p className="leading-[normal]">Interview Notifications</p>
-            </div>
-            <div className="absolute h-0 left-[491px] top-[2090.88px] w-[15px]" data-node-id="118:78">
-              <div className="absolute inset-[-0.5px_-3.33%]">
-                <img alt="" className="block max-w-none size-full" src={imgLine2} />
-              </div>
-            </div>
-          </div>
+          <a href="https://hrwala.net/job-portal" aria-label="Dream Job" className="absolute z-[2] flex h-[42px] w-[167px] items-center justify-center rounded-[8px] bg-[#0144ab] left-[310px] top-[2059px] font-['Poppins:Bold'] text-[14px] leading-[normal] text-white tracking-[-0.28px] transition-colors hover:bg-[#f6ac04] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f6ac04]">
+            Dream Job
+          </a>
         </div>
         <div className="absolute contents left-[798px] top-[1823px]" data-node-id="118:122">
           <div className="absolute bg-white h-[299.746px] left-[798px] rounded-[18px] shadow-[1px_2px_6px_2px_rgba(146,144,144,0.25)] top-[1823.25px] w-[647px]" data-node-id="118:123" />
@@ -383,7 +346,7 @@ function Desktop1({ className }: { className?: string }) {
               </div>
             </div>
           </div>
-          <div className="absolute contents left-[822.73px] top-[2046.53px]" data-node-id="118:141">
+          <div className="absolute contents hidden left-[822.73px] top-[2046.53px]" data-node-id="118:141">
             <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:SemiBold'] h-[16.058px] justify-center leading-[0] left-[calc(50%+151.99px)] not-italic text-[#0144ab] text-[14px] text-center top-[2054.56px] tracking-[-0.56px] w-[143.205px]" data-node-id="118:142">
               <p className="leading-[normal]">Interview Scheduling</p>
             </div>
@@ -393,7 +356,7 @@ function Desktop1({ className }: { className?: string }) {
               </div>
             </div>
           </div>
-          <div className="absolute contents left-[1221.43px] top-[2046.53px]" data-node-id="118:144">
+          <div className="absolute contents hidden left-[1221.43px] top-[2046.53px]" data-node-id="118:144">
             <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:SemiBold'] h-[16.058px] justify-center leading-[0] left-[calc(50%+542.98px)] not-italic text-[#0144ab] text-[14px] text-center top-[2054.56px] tracking-[-0.56px] w-[131.873px]" data-node-id="118:145">
               <p className="leading-[normal]">Employer Branding</p>
             </div>
@@ -403,7 +366,7 @@ function Desktop1({ className }: { className?: string }) {
               </div>
             </div>
           </div>
-          <div className="absolute contents left-[822.73px] top-[2083.24px]" data-node-id="118:147">
+          <div className="absolute contents hidden left-[822.73px] top-[2083.24px]" data-node-id="118:147">
             <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:SemiBold'] h-[16.058px] justify-center leading-[0] left-[calc(50%+156.12px)] not-italic text-[#0144ab] text-[14px] text-center top-[2091.27px] tracking-[-0.56px] w-[151.447px]" data-node-id="118:148">
               <p className="leading-[normal]">Recruitment Analytics</p>
             </div>
@@ -413,7 +376,7 @@ function Desktop1({ className }: { className?: string }) {
               </div>
             </div>
           </div>
-          <div className="absolute contents left-[1221.43px] top-[2083.24px]" data-node-id="118:150">
+          <div className="absolute contents hidden left-[1221.43px] top-[2083.24px]" data-node-id="118:150">
             <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:SemiBold'] h-[16.058px] justify-center leading-[0] left-[calc(50%+537.82px)] not-italic text-[#0144ab] text-[14px] text-center top-[2091.27px] tracking-[-0.56px] w-[119.51px]" data-node-id="118:151">
               <p className="leading-[normal]">Direct Messaging</p>
             </div>
@@ -423,6 +386,9 @@ function Desktop1({ className }: { className?: string }) {
               </div>
             </div>
           </div>
+          <a href="https://hrwala.net/login" aria-label="Start Hiring" className="absolute z-[2] flex h-[42px] w-[167px] items-center justify-center rounded-[8px] bg-[#0144ab] left-[1038px] top-[2059px] font-['Poppins:Bold'] text-[14px] leading-[normal] text-white tracking-[-0.28px] transition-colors hover:bg-[#f6ac04] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f6ac04]">
+            Start Hiring
+          </a>
         </div>
       </div>
       <div className="absolute contents left-[79px] top-[1705px]" data-node-id="188:18">
@@ -913,46 +879,6 @@ function Desktop1({ className }: { className?: string }) {
         <p key={'hero-description-' + heroSlideIndex} className="hero-left-adjust hero-copy-cycle [word-break:break-word] absolute font-['Poppins:Regular'] leading-[normal] left-[100px] not-italic text-[#757575] text-[16px] top-[544px] tracking-[-0.32px] whitespace-nowrap" data-node-id="31:83" aria-live="polite">
           {activeHeroSlide.description.map((line, index) => <span key={line}>{line}{index < activeHeroSlide.description.length - 1 && <br aria-hidden />}</span>)}
         </p>
-        <div className="absolute contents left-[105px] top-[265px]" data-node-id="118:38">
-          <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Regular'] justify-center leading-[0] left-[calc(50%-592.5px)] not-italic text-[14px] text-black text-center top-[282px] tracking-[-0.56px] whitespace-nowrap" data-node-id="118:39">
-            <p className="leading-[normal]">People @ Top</p>
-          </div>
-          <div className="hero-left-adjust absolute h-0 left-[105px] top-[282px] w-[18px]" data-node-id="118:40">
-            <div className="absolute inset-[-0.5px_-2.78%]">
-              <img alt="" className="block max-w-none size-full" src={imgLine1} />
-            </div>
-          </div>
-        </div>
-        <div className="absolute contents left-[100px] top-[617px]" data-node-id="35:95">
-          <a href="https://hrwala.net/job-portal" aria-label="Job Portal" className="hero-left-adjust pointer-events-auto absolute z-[1] flex h-[43.598px] w-[131.186px] items-center justify-center rounded-[8px] bg-[#0144ab] left-[100px] top-[617px]" data-node-id="35:93">
-            <p className="m-0 [word-break:break-word] font-['Poppins:Bold'] leading-[normal] text-[16px] text-white tracking-[-0.32px]" data-node-id="35:94">Job Portal</p>
-          </a>
-        </div>
-        </div>
-        <div className="absolute contents left-[758px] top-[155px]">
-          <p className="hero-right-adjust hero-floating-word [word-break:break-word] absolute font-['Poppins:Bold'] h-[38.874px] leading-[normal] left-[859.59px] not-italic text-[#1d59b5] text-[16px] top-[195.16px] tracking-[-0.96px] w-[180.388px]">Leaves &amp; Attendance</p>
-          <p className="hero-right-adjust hero-floating-word [word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[1324.41px] not-italic text-[#9669d9] text-[16px] top-[195.18px] tracking-[-0.96px] w-[150.323px]">On-boarding</p>
-          <p className="hero-right-adjust hero-floating-word [word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[839.47px] not-italic text-[#9669d9] text-[16px] top-[524.47px] tracking-[-0.96px] w-[163.685px]">360° Performance</p>
-          <p className="hero-right-adjust hero-floating-word [word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[1337.12px] not-italic text-[#9669d9] text-[16px] top-[524.47px] tracking-[-0.96px] w-[163.685px]">Talent Acquisition</p>
-          <p className="hero-right-adjust hero-floating-word [word-break:break-word] absolute font-['Poppins:Bold'] h-[38.874px] leading-[normal] left-[759px] not-italic text-[#5194d8] text-[16px] top-[352.94px] tracking-[-0.96px] w-[187.069px]">Employee Dashboard</p>
-          <p className="hero-right-adjust hero-floating-word [word-break:break-word] absolute font-['Poppins:Bold'] h-[39.176px] leading-[normal] left-[1399.59px] not-italic text-[#5194d8] text-[16px] top-[352.94px] tracking-[-0.96px] w-[73.059px]">Payroll</p>
-          <div className="hero-right-adjust absolute h-[432px] left-[889.24px] top-[156px] w-[570.984px]">
-            <img alt="HRWala employee dashboard" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full scale-[1.08]" src={imgLuminousWomanWithinBlueRing2X1} />
-          </div>
-        </div>
-      </div>
-      <div className="absolute contents left-[28px] top-[3321px]" data-node-id="207:34">
-        <div className="absolute h-[1106px] left-[29px] top-[3322px] w-[1472px]" data-node-id="207:35">
-          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgRectangle3} />
-        </div>
-        <p id="modules" className="[word-break:break-word] absolute font-['Poppins:ExtraBold'] h-[50.656px] leading-[0] left-[85px] not-italic text-[0px] text-black top-[calc(50%+7.5px)] tracking-[-2.4px] w-[246px]" data-node-id="228:236">
-          <span className="leading-[normal] text-[#f6ac04] text-[40px]">Top</span>
-          <span className="leading-[normal] text-[40px]">{` `}</span>
-          <span className="leading-[normal] text-[#0144ab] text-[40px]">Modules</span>
-        </p>
-        <p className="[word-break:break-word] absolute font-['PoetsenOne:Regular'] h-[41.929px] leading-[normal] left-[80px] not-italic text-[#0144ab] text-[32px] top-[3490px] tracking-[-0.64px] w-[774px]" data-node-id="224:22">
-          The system behind a better-run workforce.
-        </p>
         <p className="[word-break:break-word] absolute font-['Poppins:ExtraBold'] h-[77.236px] leading-[0] left-[84px] not-italic text-[#0144ab] text-[56px] top-[3373.21px] tracking-[-1.12px] w-[498px]" data-node-id="207:36">
           <span className="leading-[normal] text-[#f6ac04]">HRWala</span>
           <span className="leading-[normal]">{` Software`}</span>
@@ -1006,16 +932,8 @@ function Desktop1({ className }: { className?: string }) {
                 <img alt="" className="block max-w-none size-full" src={imgLine12} />
               </div>
             </div>
-            <div className="absolute flex h-[5.896px] items-center justify-center left-[424px] top-[3901.75px] w-[89px]" data-node-id="228:118">
-              <div className="-scale-y-100 flex-none rotate-180">
-                <div className="h-[5.896px] relative w-[89px]">
-                  <div className="absolute inset-[-25.44%_-1.69%]">
-                    <img alt="" className="block max-w-none size-full" src={imgLine13} />
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
+        </div>
           <div className="absolute contents hover-card-group left-[774px] top-[3901px]" style={{ transformOrigin: '934.5px 3972.6px' }} data-node-id="228:119">
             <div className="absolute bg-white h-[143.254px] left-[774px] rounded-[18px] shadow-[1px_2px_6px_2px_rgba(146,144,144,0.25)] top-[3901px] w-[321px]" data-node-id="228:120" />
             <p className="[word-break:break-word] absolute font-['Poppins:Medium'] h-[14.922px] leading-[normal] left-[795px] not-italic text-[13px] text-black text-justify top-[3927.11px] tracking-[-0.26px] w-[72px]" data-node-id="228:121">
