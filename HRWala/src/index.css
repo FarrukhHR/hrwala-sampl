@@ -319,8 +319,24 @@ body { margin: 0; min-width: 0; }
   align-items: center;
   gap: 24px;
 }
+.hero-portrait-words { position: relative; width: 640px; height: 540px; }
+.hero-portrait-words img { position: absolute; inset: 0; display: block; width: 540px; height: 540px; object-fit: contain; }
+.hero-floating-word { position: absolute; z-index: 1; max-width: 170px; padding: 5px 8px; border-radius: 6px; background: #e7f0ff; color: #0144ab; font: 600 12px/1.2 'Poppins:SemiBold', Poppins, sans-serif; text-align: center; animation: heroFloatingWords 3.2s ease-in-out infinite; }
+.hero-word-1 { left: 0; top: 54px; }
+.hero-word-2 { right: 12px; top: 54px; animation-delay: -1.6s; }
+.hero-word-3 { left: 0; top: 248px; }
+.hero-word-4 { right: 12px; top: 248px; animation-delay: -1.6s; }
+.hero-word-5 { left: 8px; bottom: 42px; }
+.hero-word-6 { right: 0; bottom: 42px; animation-delay: -1.6s; }
 .reflow-hero-portrait { display: grid; place-items: center; min-width: 0; }
-.reflow-hero-portrait img { display: block; width: min(100%, 500px); max-height: 500px; aspect-ratio: 1; object-fit: contain; }
+.reflow-hero-portrait { width: min(100%, 500px); height: auto; aspect-ratio: 1; justify-self: center; }
+.reflow-hero-portrait img { width: 100%; height: 100%; max-height: none; }
+.reflow-hero-portrait .hero-floating-word { font-size: 11px; }
+.reflow-hero-portrait .hero-word-1, .reflow-hero-portrait .hero-word-5 { left: 0; }
+.reflow-hero-portrait .hero-word-2, .reflow-hero-portrait .hero-word-6 { right: 0; }
+.reflow-hero-portrait .hero-word-1, .reflow-hero-portrait .hero-word-2 { top: 10%; }
+.reflow-hero-portrait .hero-word-3, .reflow-hero-portrait .hero-word-4 { top: 46%; }
+.reflow-hero-portrait .hero-word-5, .reflow-hero-portrait .hero-word-6 { bottom: 8%; }
 .hero-software-orbit-static {
   position: absolute;
   top: 155px;

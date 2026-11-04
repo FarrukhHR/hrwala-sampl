@@ -864,8 +864,14 @@ function Desktop1({ className }: { className?: string }) {
         <div className="absolute h-[641px] left-[34px] top-[123px] w-[1472px]" data-node-id="9:4">
           <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgRectangle2} />
         </div>
-          <div className="hero-right-adjust pointer-events-none absolute left-[880px] top-[123px] size-[540px]" aria-hidden="true">
-            <img alt="" className="block size-full object-contain" src={imgLuminousWomanWithinBlueRing2X1} />
+          <div className="hero-right-adjust hero-portrait-words pointer-events-none absolute left-[830px] top-[123px]" aria-hidden="true">
+            <img alt="" src={imgLuminousWomanWithinBlueRing2X1} />
+            <span className="hero-floating-word hero-word-1">Leaves &amp; Attendance</span>
+            <span className="hero-floating-word hero-word-2">On-boarding</span>
+            <span className="hero-floating-word hero-word-3">Employee Dashboard</span>
+            <span className="hero-floating-word hero-word-4">Payroll</span>
+            <span className="hero-floating-word hero-word-5">360° Performance</span>
+            <span className="hero-floating-word hero-word-6">Talent Acquisition</span>
           </div>
         <div className="pointer-events-none absolute inset-0 translate-y-[-45px]">
         <p key={'hero-heading-' + heroSlideIndex} className="hero-left-adjust hero-copy-cycle [word-break:break-word] absolute font-['Poppins:ExtraBold'] h-[65px] leading-[normal] left-[100px] not-italic text-[#0144ab] text-[56px] top-[291px] tracking-[-1.12px] w-[682px]" data-node-id="12:68" aria-live="polite">
@@ -2096,8 +2102,14 @@ function ReflowOriginal({ design }: { design: ReactElement<DesignProps> }) {
           {text('28:71', 'reflow-bullets')}{text('31:83', 'hero-copy-cycle')}
           {button('35:94', 'https://hrwala.net/job-portal')}
         </div>
-        <div className="reflow-hero-portrait" aria-hidden="true">
+        <div className="reflow-hero-portrait hero-portrait-words" aria-hidden="true">
           <img src={imgLuminousWomanWithinBlueRing2X1} alt="" />
+          <span className="hero-floating-word hero-word-1">Leaves &amp; Attendance</span>
+          <span className="hero-floating-word hero-word-2">On-boarding</span>
+          <span className="hero-floating-word hero-word-3">Employee Dashboard</span>
+          <span className="hero-floating-word hero-word-4">Payroll</span>
+          <span className="hero-floating-word hero-word-5">360° Performance</span>
+          <span className="hero-floating-word hero-word-6">Talent Acquisition</span>
         </div>
       </section>
       <section className="reflow-section" id="services">
