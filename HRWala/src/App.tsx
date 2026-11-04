@@ -2094,7 +2094,7 @@ function ReflowOriginal({ design }: { design: ReactElement<DesignProps> }) {
           {button('35:94', 'https://hrwala.net/job-portal')}
         </div>
         <div className="reflow-orbit reflow-software-orbit">
-          {image('239:239')}
+          <img className="reflow-image reflow-hero-image" src={imgLuminousWomanWithinBlueRing2X1} alt="HRWala team member" />
           <div className="reflow-floating reflow-floating-1">{text('207:50')}</div>
           <div className="reflow-floating reflow-floating-2">{text('207:51')}</div>
           <div className="reflow-floating reflow-floating-3">{text('207:53')}</div>
