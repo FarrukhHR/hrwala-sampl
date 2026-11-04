@@ -6,6 +6,7 @@ const videoSources = ['', '', '', '']
 // Add portraits under public/assets and set the matching path here.
 const teamPhotos = ['', '', '', '', '', '', '', '']
 const heroSlides = [
+  { heading: 'HR Consulting', bullets: ['People-First Advice', 'Practical HR Policies', 'Clear Direction'], description: ['Recognized credentials for working professionals.', 'Your next career step starts here.'] },
   { heading: 'Job Portal', bullets: ['Find Talent', 'Find Oppurtunity', 'Meet Here'], description: ['Verified jobs and qualified candidates.', 'Where employers and careers connect.'] },
   { heading: 'HRWala Software', bullets: ['Simplify HR', 'Automate Payroll', 'Empower People'], description: ['One system for every employee record.', 'Less paperwork, more progress.'] },
   { heading: 'HR All-in-One', bullets: ['Hire Smarter', 'Manage Better', 'Grow Faster'], description: ['Recruitment, payroll and HR in one place.', 'Everything your people need.'] },
