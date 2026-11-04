@@ -899,8 +899,8 @@ function Desktop1({ className }: { className?: string }) {
           <p className="hero-right-adjust hero-floating-word [word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[1337.12px] not-italic text-[#9669d9] text-[16px] top-[524.47px] tracking-[-0.96px] w-[163.685px]">Talent Acquisition</p>
           <p className="hero-right-adjust hero-floating-word [word-break:break-word] absolute font-['Poppins:Bold'] h-[38.874px] leading-[normal] left-[759px] not-italic text-[#5194d8] text-[16px] top-[352.94px] tracking-[-0.96px] w-[187.069px]">Employee Dashboard</p>
           <p className="hero-right-adjust hero-floating-word [word-break:break-word] absolute font-['Poppins:Bold'] h-[39.176px] leading-[normal] left-[1399.59px] not-italic text-[#5194d8] text-[16px] top-[352.94px] tracking-[-0.96px] w-[73.059px]">Payroll</p>
-          <div className="hero-right-adjust absolute h-[432px] left-[889.24px] top-[156px] w-[570.984px]">
-            <img alt="HRWala employee dashboard" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgSoftwareDashboardWoman} />
+          <div className="hero-right-adjust absolute h-[432px] left-[889.24px] top-[176px] w-[570.984px]">
+            <img alt="HRWala team member inside blue ring" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={imgLuminousWomanWithinBlueRing2X1} />
           </div>
         </div>
         <p className="[word-break:break-word] absolute font-['Poppins:ExtraBold'] h-[77.236px] leading-[0] left-[84px] not-italic text-[#0144ab] text-[56px] top-[3373.21px] tracking-[-1.12px] w-[498px]" data-node-id="207:36">
@@ -2117,8 +2117,8 @@ function ReflowOriginal({ design }: { design: ReactElement<DesignProps> }) {
           {text('28:71', 'reflow-bullets')}{text('31:83', 'hero-copy-cycle')}
           {button('35:94', 'https://hrwala.net/job-portal')}
         </div>
-        <div className="reflow-orbit reflow-software-orbit">
-          {image('239:239')}
+        <div className="reflow-orbit reflow-software-orbit reflow-hero-orbit">
+          <img className="reflow-image" src={imgLuminousWomanWithinBlueRing2X1} alt="HRWala team member inside blue ring" />
           <div className="reflow-floating reflow-floating-1">{text('207:50')}</div>
           <div className="reflow-floating reflow-floating-2">{text('207:51')}</div>
           <div className="reflow-floating reflow-floating-3">{text('207:53')}</div>

@@ -432,6 +432,7 @@ body { margin: 0; min-width: 0; }
 }
 .reflow-step-number > p { font-size: 36px !important; }
 .reflow-orbit { position: relative; min-width: 0; padding: 30px 20px 48px; }
+.reflow-hero-orbit { margin-top: 20px; }
 .reflow-orbit > img { width: 100%; }
 .reflow-floating { position: absolute; max-width: 48%; pointer-events: none; }
 .reflow-floating p { font-size: clamp(12px, 1.8vw, 17px) !important; line-height: 1.2; }
