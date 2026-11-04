@@ -6,7 +6,6 @@ const videoSources = ['', '', '', '']
 // Add portraits under public/assets and set the matching path here.
 const teamPhotos = ['', '', '', '', '', '', '', '']
 const heroSlides = [
-  { heading: 'HR Consulting', bullets: ['People-First Advice', 'Practical HR Policies', 'Clear Direction'], description: ['Recognized credentials for working professionals.', 'Your next career step starts here.'] },
   { heading: 'Job Portal', bullets: ['Find Talent', 'Find Oppurtunity', 'Meet Here'], description: ['Verified jobs and qualified candidates.', 'Where employers and careers connect.'] },
   { heading: 'HRWala Software', bullets: ['Simplify HR', 'Automate Payroll', 'Empower People'], description: ['One system for every employee record.', 'Less paperwork, more progress.'] },
   { heading: 'HR All-in-One', bullets: ['Hire Smarter', 'Manage Better', 'Grow Faster'], description: ['Recruitment, payroll and HR in one place.', 'Everything your people need.'] },
@@ -893,31 +892,16 @@ function Desktop1({ className }: { className?: string }) {
         <a href="https://hrwala.net/job-portal" aria-label="Job Portal" className="hero-left-adjust pointer-events-auto absolute z-[1] flex h-[43.598px] w-[131.186px] items-center justify-center rounded-[8px] bg-[#0144ab] left-[100px] top-[617px]" data-node-id="35:93">
           <p className="m-0 [word-break:break-word] font-['Poppins:Bold'] leading-[normal] text-[16px] text-white tracking-[-0.32px]" data-node-id="35:94">Job Portal</p>
         </a>
-                <div className="hero-orbit-layout">
-          <img
-            className="hero-orbit-image"
-            src={imgLuminousWomanWithinBlueRing2X1}
-            alt="HRWala team member inside blue ring"
-          />
-
-          <p className="hero-orbit-word orbit-word-1">
-            Workforce Planning
-          </p>
-          <p className="hero-orbit-word orbit-word-2">
-            Employee Development
-          </p>
-          <p className="hero-orbit-word orbit-word-3">
-            Performance Management
-          </p>
-          <p className="hero-orbit-word orbit-word-4">
-            HR Compliance
-          </p>
-          <p className="hero-orbit-word orbit-word-5">
-            Talent Acquisition
-          </p>
-          <p className="hero-orbit-word orbit-word-6">
-            Employer Branding
-          </p>
+        <div className="absolute contents left-[758px] top-[155px]">
+          <p className="hero-right-adjust hero-floating-word hero-orbit-label-left [word-break:break-word] absolute font-['Poppins:Bold'] h-[38.874px] leading-[normal] left-[859.59px] not-italic text-[#1d59b5] text-[16px] top-[195.16px] tracking-[-0.96px] w-[180.388px]">Workforce Planning</p>
+          <p className="hero-right-adjust hero-floating-word hero-orbit-label-right [word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[1324.41px] not-italic text-[#9669d9] text-[16px] top-[195.18px] tracking-[-0.96px] w-[150.323px]">Employee Development</p>
+          <p className="hero-right-adjust hero-floating-word hero-orbit-label-left [word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[839.47px] not-italic text-[#9669d9] text-[16px] top-[524.47px] tracking-[-0.96px] w-[163.685px]">Talent Acquisition</p>
+          <p className="hero-right-adjust hero-floating-word hero-orbit-label-right [word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[1337.12px] not-italic text-[#9669d9] text-[16px] top-[524.47px] tracking-[-0.96px] w-[163.685px]">Employer Branding</p>
+          <p className="hero-right-adjust hero-floating-word hero-orbit-label-left [word-break:break-word] absolute font-['Poppins:Bold'] h-[38.874px] leading-[normal] left-[759px] not-italic text-[#5194d8] text-[16px] top-[352.94px] tracking-[-0.96px] w-[187.069px]">Performance Management</p>
+          <p className="hero-right-adjust hero-floating-word hero-orbit-label-right [word-break:break-word] absolute font-['Poppins:Bold'] h-[39.176px] leading-[normal] left-[1399.59px] not-italic text-[#5194d8] text-[16px] top-[352.94px] tracking-[-0.96px] w-[73.059px]">HR Compliance</p>
+          <div className="hero-right-adjust absolute h-[432px] left-[889.24px] top-[176px] w-[570.984px]">
+            <img alt="HRWala team member inside blue ring" className="hero-orbit-portrait absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={imgLuminousWomanWithinBlueRing2X1} />
+          </div>
         </div>
         <p className="[word-break:break-word] absolute font-['Poppins:ExtraBold'] h-[77.236px] leading-[0] left-[84px] not-italic text-[#0144ab] text-[56px] top-[3373.21px] tracking-[-1.12px] w-[498px]" data-node-id="207:36">
           <span className="leading-[normal] text-[#f6ac04]">HRWala</span>
@@ -2133,31 +2117,14 @@ function ReflowOriginal({ design }: { design: ReactElement<DesignProps> }) {
           {text('28:71', 'reflow-bullets')}{text('31:83', 'hero-copy-cycle')}
           {button('35:94', 'https://hrwala.net/job-portal')}
         </div>
-                <div className="hero-orbit-layout hero-orbit-responsive">
-          <img
-            className="hero-orbit-image"
-            src={imgLuminousWomanWithinBlueRing2X1}
-            alt="HRWala team member inside blue ring"
-          />
-
-          <p className="hero-orbit-word orbit-word-1">
-            Workforce Planning
-          </p>
-          <p className="hero-orbit-word orbit-word-2">
-            Employee Development
-          </p>
-          <p className="hero-orbit-word orbit-word-3">
-            Performance Management
-          </p>
-          <p className="hero-orbit-word orbit-word-4">
-            HR Compliance
-          </p>
-          <p className="hero-orbit-word orbit-word-5">
-            Talent Acquisition
-          </p>
-          <p className="hero-orbit-word orbit-word-6">
-            Employer Branding
-          </p>
+        <div className="reflow-orbit reflow-software-orbit reflow-hero-orbit">
+          <img className="reflow-image" src={imgLuminousWomanWithinBlueRing2X1} alt="HRWala team member inside blue ring" />
+          <div className="reflow-floating reflow-floating-1">{text('207:50')}</div>
+          <div className="reflow-floating reflow-floating-2">{text('207:51')}</div>
+          <div className="reflow-floating reflow-floating-3">{text('207:53')}</div>
+          <div className="reflow-floating reflow-floating-4">{text('239:241')}</div>
+          <div className="reflow-floating reflow-floating-5">{text('207:52')}</div>
+          <div className="reflow-floating reflow-floating-6">{text('239:243')}</div>
         </div>
       </section>
       <section className="reflow-section" id="services">
