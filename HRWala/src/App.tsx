@@ -293,54 +293,54 @@ function Desktop1({ className }: { className?: string }) {
             Dream Job
           </a>
         </div>
-        <div className="absolute contents left-[798px] top-[1823px] [&>*]:translate-x-[20px]" data-node-id="118:122">
-          <div className="absolute bg-white h-[299.746px] left-[798px] rounded-[18px] shadow-[1px_2px_6px_2px_rgba(146,144,144,0.25)] top-[1823.25px] w-[627px]" data-node-id="118:123" />
-          <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[51.154px] leading-[normal] left-[944.3px] not-italic text-[#0144ab] text-[57px] top-[1836.72px] tracking-[-1.14px] w-[391.497px]" data-node-id="118:124">
+        <div className="absolute contents left-[798px] top-[1823px]" data-node-id="118:122">
+          <div className="absolute translate-x-[20px] bg-white h-[299.746px] left-[798px] rounded-[18px] shadow-[1px_2px_6px_2px_rgba(146,144,144,0.25)] top-[1823.25px] w-[627px]" data-node-id="118:123" />
+          <p className="[word-break:break-word] absolute translate-x-[20px] font-['Poppins:Bold'] h-[51.154px] leading-[normal] left-[944.3px] not-italic text-[#0144ab] text-[57px] top-[1836.72px] tracking-[-1.14px] w-[391.497px]" data-node-id="118:124">
             Hire People
           </p>
-          <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[110.843px] leading-[normal] left-[829.94px] not-italic opacity-10 text-[#0144ab] text-[68px] text-justify top-[1830.43px] tracking-[-1.36px] w-[171.325px]" data-node-id="118:125">
+          <p className="[word-break:break-word] absolute translate-x-[20px] font-['Poppins:Bold'] h-[110.843px] leading-[normal] left-[829.94px] not-italic opacity-10 text-[#0144ab] text-[68px] text-justify top-[1830.43px] tracking-[-1.36px] w-[171.325px]" data-node-id="118:125">
             02
           </p>
-          <div className="absolute h-[10.959px] left-[800.06px] top-[1823px] w-[622.651px]" data-node-id="118:126">
+          <div className="absolute translate-x-[20px] h-[10.959px] left-[800.06px] top-[1823px] w-[622.651px]" data-node-id="118:126">
             <div className="absolute inset-[-13.68%_-0.23%_-13.69%_-0.23%]">
               <img alt="" className="block max-w-none size-full" src={imgGroup21} />
             </div>
           </div>
           <div className="absolute contents left-[822.73px] top-[1973.13px]" data-node-id="118:129">
-            <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:SemiBold'] h-[16.058px] justify-center leading-[0] left-[calc(50%+141.69px)] not-italic text-[#0144ab] text-[14px] text-center top-[1981.16px] tracking-[-0.56px] w-[122.6px]" data-node-id="118:130">
+            <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:SemiBold'] h-[16.058px] justify-center leading-[0] left-[calc(50%+141.69px)] not-italic text-[#0144ab] text-[14px] text-center top-[1981.16px] tracking-[-0.56px] w-[122.6px]" data-node-id="118:130" style={{ transform: 'translateX(20px)' }}>
               <p className="leading-[normal]">Quick Job Posting</p>
             </div>
-            <div className="absolute h-0 left-[822.73px] top-[1980.77px] w-[15.454px]" data-node-id="118:131">
+            <div className="absolute translate-x-[20px] h-0 left-[822.73px] top-[1980.77px] w-[15.454px]" data-node-id="118:131">
               <div className="absolute inset-[-0.5px_-3.24%]">
                 <img alt="" className="block max-w-none size-full" src={imgLine3} />
               </div>
             </div>
           </div>
           <div className="absolute contents left-[1221.43px] top-[1973.13px]" data-node-id="118:132">
-            <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:SemiBold'] h-[16.058px] justify-center leading-[0] left-[calc(50%+537.31px)] not-italic text-[#0144ab] text-[14px] text-center top-[1981.16px] tracking-[-0.56px] w-[120.54px]" data-node-id="118:133">
+            <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:SemiBold'] h-[16.058px] justify-center leading-[0] left-[calc(50%+537.31px)] not-italic text-[#0144ab] text-[14px] text-center top-[1981.16px] tracking-[-0.56px] w-[120.54px]" data-node-id="118:133" style={{ transform: 'translateX(20px)' }}>
               <p className="leading-[normal]">Hiring Dashboard</p>
             </div>
-            <div className="absolute h-0 left-[1221.43px] top-[1980.77px] w-[15.454px]" data-node-id="118:134">
+            <div className="absolute translate-x-[20px] h-0 left-[1221.43px] top-[1980.77px] w-[15.454px]" data-node-id="118:134">
               <div className="absolute inset-[-0.5px_-3.24%]">
                 <img alt="" className="block max-w-none size-full" src={imgLine3} />
               </div>
             </div>
           </div>
           <div className="absolute contents left-[822.73px] top-[2009.83px]" data-node-id="118:135">
-            <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:SemiBold'] h-[16.058px] justify-center leading-[0] left-[calc(50%+151.48px)] not-italic text-[#0144ab] text-[14px] text-center top-[2017.86px] tracking-[-0.56px] w-[144.236px]" data-node-id="118:136">
+            <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:SemiBold'] h-[16.058px] justify-center leading-[0] left-[calc(50%+151.48px)] not-italic text-[#0144ab] text-[14px] text-center top-[2017.86px] tracking-[-0.56px] w-[144.236px]" data-node-id="118:136" style={{ transform: 'translateX(20px)' }}>
               <p className="leading-[normal]">Candidate Database</p>
             </div>
-            <div className="absolute h-0 left-[822.73px] top-[2017.48px] w-[15.454px]" data-node-id="118:137">
+            <div className="absolute translate-x-[20px] h-0 left-[822.73px] top-[2017.48px] w-[15.454px]" data-node-id="118:137">
               <div className="absolute inset-[-0.5px_-3.24%]">
                 <img alt="" className="block max-w-none size-full" src={imgLine3} />
               </div>
             </div>
           </div>
           <div className="absolute contents left-[1221.43px] top-[2009.83px]" data-node-id="118:138">
-            <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:SemiBold'] h-[16.058px] justify-center leading-[0] left-[calc(50%+548.13px)] not-italic text-[#0144ab] text-[14px] text-center top-[2017.86px] tracking-[-0.56px] w-[142.175px]" data-node-id="118:139">
+            <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:SemiBold'] h-[16.058px] justify-center leading-[0] left-[calc(50%+548.13px)] not-italic text-[#0144ab] text-[14px] text-center top-[2017.86px] tracking-[-0.56px] w-[142.175px]" data-node-id="118:139" style={{ transform: 'translateX(20px)' }}>
               <p className="leading-[normal]">Application Tracking</p>
             </div>
-            <div className="absolute h-0 left-[1221.43px] top-[2017.48px] w-[15.454px]" data-node-id="118:140">
+            <div className="absolute translate-x-[20px] h-0 left-[1221.43px] top-[2017.48px] w-[15.454px]" data-node-id="118:140">
               <div className="absolute inset-[-0.5px_-3.24%]">
                 <img alt="" className="block max-w-none size-full" src={imgLine3} />
               </div>
@@ -386,7 +386,7 @@ function Desktop1({ className }: { className?: string }) {
               </div>
             </div>
           </div>
-          <a href="https://hrwala.net/login" aria-label="Start Hiring" className="absolute z-[2] flex h-[42px] w-[167px] items-center justify-center rounded-[8px] bg-[#0144ab] left-[822.73px] top-[2059px] font-['Poppins:Bold'] text-[14px] leading-[normal] text-white tracking-[-0.28px] transition-colors hover:bg-[#f6ac04] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f6ac04]">
+          <a href="https://hrwala.net/login" aria-label="Start Hiring" className="absolute z-[2] translate-x-[20px] flex h-[42px] w-[167px] items-center justify-center rounded-[8px] bg-[#0144ab] left-[822.73px] top-[2059px] font-['Poppins:Bold'] text-[14px] leading-[normal] text-white tracking-[-0.28px] transition-colors hover:bg-[#f6ac04] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f6ac04]">
             Start Hiring
           </a>
         </div>
@@ -2023,6 +2023,7 @@ function OriginalCard({ node, team = false, accent = false }: { node: ReactEleme
       const descendants = designElements(child.props.children)
       const hasDesignChild = descendants.some((n) => n.props['data-node-id'])
       const classes = child.props.className || ''
+        if (classes.split(/\s+/).includes('hidden')) return
       const font = classes.split(/\s+/).filter((c) => c.startsWith('font-')).join(' ') || inheritedFont
       const hasText = /font-|text-\[[\d.]+px\]/.test(classes) || child.type === 'p'
       if (hasText && !hasDesignChild) result.push(cloneElement(child, { className: `${font} ${classes}` }))
