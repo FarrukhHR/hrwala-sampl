@@ -170,7 +170,8 @@
 
 /* Requested motion is limited to the existing hero copy, floating words and partner chain. */
 .hero-copy-cycle { animation: heroCopyCycle 5.2s ease both; }
-.design-canvas .hero-right-adjust { translate: 0 58px; }
+.design-canvas .hero-right-adjust { translate: 0 78px; }
+.design-canvas .hero-orbit-portrait { scale: 1.1; }
 .hero-floating-word { animation: heroFloatingWords 3.2s ease-in-out infinite; }
 .hero-floating-word:nth-of-type(2n) { animation-delay: -1.6s; }
 @keyframes heroCopyCycle {
@@ -325,7 +326,7 @@ body { margin: 0; min-width: 0; }
   left: 758px;
   width: 742px;
   height: 432px;
-  transform: translateY(26px); /* 20px upar */
+  transform: translateY(26px);
 }
 .hero-software-orbit-static-image {
   position: absolute;
