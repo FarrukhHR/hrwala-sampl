@@ -170,7 +170,7 @@
 
 /* Requested motion is limited to the existing hero copy, floating words and partner chain. */
 .hero-copy-cycle { animation: heroCopyCycle 5.2s ease both; }
-.design-canvas .hero-right-adjust { translate: -38px 78px; }
+.design-canvas .hero-right-adjust { translate: -38px 62.5px; }
 .design-canvas .hero-orbit-portrait { scale: 1.18; }
 .design-canvas .hero-floating-word { scale: 1.08; z-index: 1; font-size: 14px; white-space: nowrap; }
 .design-canvas .hero-orbit-label-left { margin-left: -24px; }
