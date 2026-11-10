@@ -1,0 +1,10 @@
+{
+  "description": "A human resources platform that helps businesses manage employee information and streamline everyday HR tasks.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
