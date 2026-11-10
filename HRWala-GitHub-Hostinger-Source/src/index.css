@@ -67,10 +67,10 @@
 .design-canvas {
   position: absolute;
   top: 0;
-  left: max(0px, calc((100% - 1440px) / 2));
+  left: 50%;
   width: 1440px;
   height: 7330px;
-  transform-origin: top left;
+  transform-origin: top center;
 }
 
 .design-page {

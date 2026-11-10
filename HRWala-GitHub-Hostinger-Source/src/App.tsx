@@ -6,7 +6,7 @@ const DESIGN_HEIGHT = 7330;
 
 function getScale() {
   if (typeof window === "undefined") return 1;
-  return Math.min(document.documentElement.clientWidth / DESIGN_WIDTH, 1);
+  return document.documentElement.clientWidth / DESIGN_WIDTH;
 }
 
 export default function App() {
