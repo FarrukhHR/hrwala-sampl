@@ -46,10 +46,12 @@
   html,
   body,
   #root {
+    width: 100%;
     min-height: 100%;
   }
 
   body {
+    margin: 0;
     background: white;
   }
 }
@@ -69,4 +71,11 @@
   width: 1440px;
   height: 7330px;
   transform-origin: top left;
+}
+
+.design-page {
+  position: relative;
+  width: 1440px;
+  height: 7330px;
+  overflow: clip;
 }

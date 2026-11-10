@@ -6,7 +6,7 @@ const DESIGN_HEIGHT = 7330;
 
 function getScale() {
   if (typeof window === "undefined") return 1;
-  return Math.min(window.innerWidth / DESIGN_WIDTH, 1);
+  return Math.min(document.documentElement.clientWidth / DESIGN_WIDTH, 1);
 }
 
 export default function App() {
@@ -25,7 +25,7 @@ export default function App() {
       aria-label="HRwala landing page"
     >
       <div className="design-canvas" style={{ transform: `scale(${scale})` }}>
-        <DesignPage />
+        <DesignPage className="design-page" />
       </div>
     </main>
   );

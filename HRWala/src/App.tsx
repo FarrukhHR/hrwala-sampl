@@ -893,12 +893,12 @@ function Desktop1({ className }: { className?: string }) {
           <p className="m-0 [word-break:break-word] font-['Poppins:Bold'] leading-[normal] text-[16px] text-white tracking-[-0.32px]" data-node-id="35:94">Job Portal</p>
         </a>
         <div className="absolute contents left-[758px] top-[155px]">
-          <p className="hero-right-adjust hero-floating-word hero-orbit-label-left [word-break:break-word] absolute font-['Poppins:Bold'] h-[38.874px] leading-[normal] left-[859.59px] not-italic text-[#1d59b5] text-[16px] top-[195.16px] tracking-[-0.96px] w-[180.388px]">Leaves &amp; Attendance</p>
-          <p className="hero-right-adjust hero-floating-word hero-orbit-label-right [word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[1324.41px] not-italic text-[#9669d9] text-[16px] top-[195.18px] tracking-[-0.96px] w-[150.323px]">Talent Acquisition</p>
-          <p className="hero-right-adjust hero-floating-word hero-orbit-label-left [word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[839.47px] not-italic text-[#9669d9] text-[16px] top-[524.47px] tracking-[-0.96px] w-[163.685px]">Employee Dashboard</p>
-          <p className="hero-right-adjust hero-floating-word hero-orbit-label-right [word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[1337.12px] not-italic text-[#9669d9] text-[16px] top-[524.47px] tracking-[-0.96px] w-[163.685px]">Payroll</p>
-          <p className="hero-right-adjust hero-floating-word hero-orbit-label-left [word-break:break-word] absolute font-['Poppins:Bold'] h-[38.874px] leading-[normal] left-[759px] not-italic text-[#5194d8] text-[16px] top-[352.94px] tracking-[-0.96px] w-[187.069px]">360° Performance</p>
-          <p className="hero-right-adjust hero-floating-word hero-orbit-label-right [word-break:break-word] absolute font-['Poppins:Bold'] h-[39.176px] leading-[normal] left-[1399.59px] not-italic text-[#5194d8] text-[16px] top-[352.94px] tracking-[-0.96px] w-[73.059px]">On-boarding</p>
+          <p className="hero-right-adjust hero-floating-word hero-orbit-label-left [word-break:break-word] absolute font-['Poppins:Bold'] h-[38.874px] leading-[normal] left-[859.59px] not-italic text-[#1d59b5] text-[16px] top-[195.16px] tracking-[-0.96px] w-[180.388px]">Workforce Planning</p>
+          <p className="hero-right-adjust hero-floating-word hero-orbit-label-right [word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[1324.41px] not-italic text-[#9669d9] text-[16px] top-[195.18px] tracking-[-0.96px] w-[150.323px]">Employee Development</p>
+          <p className="hero-right-adjust hero-floating-word hero-orbit-label-left [word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[839.47px] not-italic text-[#9669d9] text-[16px] top-[524.47px] tracking-[-0.96px] w-[163.685px]">Talent Acquisition</p>
+          <p className="hero-right-adjust hero-floating-word hero-orbit-label-right [word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[1337.12px] not-italic text-[#9669d9] text-[16px] top-[524.47px] tracking-[-0.96px] w-[163.685px]">Employer Branding</p>
+          <p className="hero-right-adjust hero-floating-word hero-orbit-label-left [word-break:break-word] absolute font-['Poppins:Bold'] h-[38.874px] leading-[normal] left-[759px] not-italic text-[#5194d8] text-[16px] top-[352.94px] tracking-[-0.96px] w-[187.069px]">Performance Management</p>
+          <p className="hero-right-adjust hero-floating-word hero-orbit-label-right [word-break:break-word] absolute font-['Poppins:Bold'] h-[39.176px] leading-[normal] left-[1399.59px] not-italic text-[#5194d8] text-[16px] top-[352.94px] tracking-[-0.96px] w-[73.059px]">HR Compliance</p>
           <div className="hero-right-adjust absolute h-[432px] left-[889.24px] top-[176px] w-[570.984px]">
             <img alt="HRWala team member inside blue ring" className="hero-orbit-portrait absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={imgLuminousWomanWithinBlueRing2X1} />
           </div>
@@ -1226,7 +1226,6 @@ function Desktop1({ className }: { className?: string }) {
           <p className="leading-[normal]">Explore the Platform</p>
         </div>
       </div>
-      <div className="absolute left-[40px] top-[3335px] h-[520px] w-[1450px] rounded-[30px] bg-[#edf5ff]" data-node-id="239:238" aria-hidden="true" />
       <div className="absolute contents left-[758px] top-[3362px]" data-node-id="239:245">
         <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[38.874px] leading-[normal] left-[859.59px] not-italic text-[#1d59b5] text-[16px] top-[3402.16px] tracking-[-0.96px] w-[180.388px]" data-node-id="207:50">{`Leaves & Attendance`}</p>
         <p className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[43.193px] leading-[normal] left-[1324.41px] not-italic text-[#9669d9] text-[16px] top-[3402.18px] tracking-[-0.96px] w-[150.323px]" data-node-id="207:51">
