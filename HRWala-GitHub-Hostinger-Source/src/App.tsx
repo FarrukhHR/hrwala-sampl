@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import DesignPage from "./DesignPage";
 
-const DESIGN_WIDTH = 1440;
+const DESIGN_WIDTH = 1500;
 const DESIGN_HEIGHT = 7330;
 
 function getScale() {

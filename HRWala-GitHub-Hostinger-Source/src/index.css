@@ -67,15 +67,15 @@
 .design-canvas {
   position: absolute;
   top: 0;
-  left: 50%;
-  width: 1440px;
+  left: max(0px, calc((100% - 1440px) / 2));
+  width: 1500px;
   height: 7330px;
-  transform-origin: top center;
+  transform-origin: top left;
 }
 
 .design-page {
   position: relative;
-  width: 1440px;
+  width: 1500px;
   height: 7330px;
   overflow: clip;
 }
