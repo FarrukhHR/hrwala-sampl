@@ -1,6 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
 const assetPathPrefix = "/assets";
+const videoProject5 = `${assetPathPrefix}/Video Project 5.mp4`;
 const imgConferenceTableMeetingByCityWindows21 = `${assetPathPrefix}/22ce9.png`;
 const imgWomanInPeachOnGrayBackdrop1 = `${assetPathPrefix}/4a8ae.png`;
 const imgWomanPortraitsInCyanRings1 = `${assetPathPrefix}/442a2.png`;
@@ -156,6 +158,117 @@ function HeroCarousel() {
         Job Portal
       </button>
     </div>
+  );
+}
+
+function VideoProject5() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const closePlayer = () => {
+    videoRef.current?.pause();
+    setIsPlaying(false);
+    setIsOpen(false);
+  };
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") closePlayer();
+    };
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOpen]);
+
+  const togglePlayback = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (video.paused) {
+      void video.play().catch(() => setIsPlaying(false));
+    } else {
+      video.pause();
+    }
+  };
+
+  return (
+    <>
+      <div className="absolute h-[172.057px] left-[1060.71px] rounded-[16.94px] top-[844px] w-[301.6px]">
+        <div className="absolute inset-0 overflow-hidden rounded-[16.94px] bg-[#d7dbe2]">
+          <video
+            aria-hidden="true"
+            className="absolute inset-0 size-full object-cover"
+            muted
+            playsInline
+            preload="metadata"
+            src={videoProject5}
+            tabIndex={-1}
+          />
+          <button
+            aria-label="Open Video Project 5"
+            className="absolute inset-0 flex items-center justify-center bg-black/20 text-white transition-colors hover:bg-black/35 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-white"
+            onClick={() => setIsOpen(true)}
+            type="button"
+          >
+            <span className="rounded-full bg-[#0144ab] px-5 py-2 text-sm font-semibold shadow-lg">
+              Play video
+            </span>
+          </button>
+        </div>
+      </div>
+      {isOpen && createPortal(
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/75 p-4"
+          onMouseDown={(event) => {
+            if (event.target === event.currentTarget) closePlayer();
+          }}
+        >
+          <section
+            aria-label="Video Project 5 player"
+            aria-modal="true"
+            className="relative w-full max-w-[960px] rounded-[16px] bg-white p-3 shadow-2xl sm:p-5"
+            role="dialog"
+          >
+            <button
+              aria-label="Close video"
+              className="mb-3 ml-auto flex h-10 items-center rounded-md bg-[#0144ab] px-4 text-sm font-semibold text-white hover:bg-[#003889] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0144ab]"
+              onClick={closePlayer}
+              type="button"
+            >
+              Close
+            </button>
+            <video
+              className="max-h-[72vh] w-full rounded-[10px] bg-black object-contain"
+              controls
+              playsInline
+              preload="metadata"
+              ref={videoRef}
+              src={videoProject5}
+              onEnded={() => setIsPlaying(false)}
+              onPause={() => setIsPlaying(false)}
+              onPlay={() => setIsPlaying(true)}
+            />
+            <div className="mt-3 flex items-center justify-between gap-4">
+              <p className="m-0 text-sm font-semibold text-[#0144ab]">Video Project 5</p>
+              <button
+                className="rounded-md bg-[#f6ac04] px-4 py-2 text-sm font-semibold text-black hover:bg-[#e99d00] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0144ab]"
+                onClick={togglePlayback}
+                type="button"
+              >
+                {isPlaying ? "Pause" : "Play"}
+              </button>
+            </div>
+          </section>
+        </div>,
+        document.body,
+      )}
+    </>
   );
 }
 
@@ -704,6 +817,7 @@ export default function Desktop1({ className }: { className?: string }) {
           </div>
         </div>
       </div>
+      <VideoProject5 />
       <div className="absolute contents left-[31.06px] top-[114.82px]" data-node-id="207:33">
         <div
           className="absolute h-[603.294px] left-[32px] top-[115.76px] w-[1385.412px]"
