@@ -164,12 +164,23 @@ function HeroCarousel() {
 function VideoProject5() {
   const [isOpen, setIsOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
+  const previewRef = useRef<HTMLVideoElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  const openPlayer = () => {
+    previewRef.current?.pause();
+    setIsOpen(true);
+  };
 
   const closePlayer = () => {
     videoRef.current?.pause();
     setIsPlaying(false);
     setIsOpen(false);
+    const preview = previewRef.current;
+    if (preview) {
+      preview.currentTime = 0;
+      void preview.play().catch(() => undefined);
+    }
   };
 
   useEffect(() => {
@@ -199,24 +210,27 @@ function VideoProject5() {
 
   return (
     <>
-      <div className="absolute h-[172.057px] left-[1060.71px] rounded-[16.94px] top-[844px] w-[301.6px]">
+      <div className="group absolute h-[172.057px] left-[1060.71px] rounded-[16.94px] top-[844px] w-[301.6px]">
         <div className="absolute inset-0 overflow-hidden rounded-[16.94px] bg-[#d7dbe2]">
           <video
             aria-hidden="true"
             className="absolute inset-0 size-full object-cover"
+            autoPlay
+            loop
             muted
             playsInline
-            preload="metadata"
+            preload="auto"
+            ref={previewRef}
             src={videoProject5}
             tabIndex={-1}
           />
           <button
             aria-label="Open Video Project 5"
-            className="absolute inset-0 flex items-center justify-center bg-black/20 text-white transition-colors hover:bg-black/35 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-white"
-            onClick={() => setIsOpen(true)}
+            className="absolute inset-0 flex items-center justify-center bg-transparent text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-white"
+            onClick={openPlayer}
             type="button"
           >
-            <span className="rounded-full bg-[#0144ab] px-5 py-2 text-sm font-semibold shadow-lg">
+            <span className="rounded-full bg-[#0144ab] px-5 py-2 text-sm font-semibold opacity-0 shadow-lg transition-opacity group-hover:opacity-100 group-focus-within:opacity-100">
               Play video
             </span>
           </button>
@@ -245,6 +259,7 @@ function VideoProject5() {
             </button>
             <video
               className="max-h-[72vh] w-full rounded-[10px] bg-black object-contain"
+              autoPlay
               controls
               playsInline
               preload="metadata"
