@@ -163,130 +163,155 @@ function HeroCarousel() {
 
 function VideoProject5() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [previewError, setPreviewError] = useState(false);
   const previewRef = useRef<HTMLVideoElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
 
-  const openPlayer = () => {
-    previewRef.current?.pause();
-    setIsOpen(true);
-  };
-
-  const closePlayer = () => {
-    videoRef.current?.pause();
-    setIsPlaying(false);
-    setIsOpen(false);
+  const playPreview = () => {
     const preview = previewRef.current;
-    if (preview) {
-      preview.currentTime = 0;
-      void preview.play().catch(() => undefined);
-    }
+    if (!preview) return;
+
+    preview.muted = true;
+    preview.defaultMuted = true;
+
+    void preview.play().catch(() => {
+      // Retry when media becomes ready or the user interacts.
+    });
   };
+
+  useEffect(() => {
+    playPreview();
+
+    const resume = () => {
+      if (!document.hidden && !isOpen) playPreview();
+    };
+
+    document.addEventListener("visibilitychange", resume);
+    return () => {
+      document.removeEventListener("visibilitychange", resume);
+    };
+  }, [isOpen]);
 
   useEffect(() => {
     if (!isOpen) return;
 
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") closePlayer();
-    };
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+    closeRef.current?.focus();
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsOpen(false);
+
+      if (event.key === "Tab") {
+        const first = closeRef.current;
+        const last = videoRef.current;
+
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last?.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first?.focus();
+        }
+      }
+    };
+
     window.addEventListener("keydown", handleKeyDown);
+
     return () => {
       document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", handleKeyDown);
+      triggerRef.current?.focus();
     };
   }, [isOpen]);
 
-  const togglePlayback = () => {
-    const video = videoRef.current;
-    if (!video) return;
-    if (video.paused) {
-      void video.play().catch(() => setIsPlaying(false));
-    } else {
-      video.pause();
-    }
-  };
-
   return (
     <>
-      <div className="group absolute h-[172.057px] left-[1060.71px] rounded-[16.94px] top-[844px] w-[301.6px]">
-        <div className="absolute inset-0 overflow-hidden rounded-[16.94px] bg-[#d7dbe2]">
-          <video
-            aria-hidden="true"
-            className="absolute inset-0 size-full object-cover"
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            ref={previewRef}
-            src={videoProject5}
-            tabIndex={-1}
-          />
-          <button
-            aria-label="Open Video Project 5"
-            className="absolute inset-0 flex items-center justify-center bg-transparent text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-white"
-            onClick={openPlayer}
-            type="button"
-          >
-            <span className="rounded-full bg-[#0144ab] px-5 py-2 text-sm font-semibold opacity-0 shadow-lg transition-opacity group-hover:opacity-100 group-focus-within:opacity-100">
-              Play video
-            </span>
-          </button>
-        </div>
-      </div>
-      {isOpen && createPortal(
-        <div
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/75 p-4"
-          onMouseDown={(event) => {
-            if (event.target === event.currentTarget) closePlayer();
+      <div
+        className="hr-video-preview absolute h-[172.057px] left-[1060.71px] rounded-[16.94px] top-[844px] w-[301.6px]"
+        onMouseEnter={() => {
+          if (!isOpen) playPreview();
+        }}
+      >
+        <video
+          ref={previewRef}
+          src={videoProject5}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+          tabIndex={-1}
+          onLoadedData={playPreview}
+          onCanPlay={() => {
+            if (!isOpen) playPreview();
+          }}
+          onError={() => setPreviewError(true)}
+        />
+
+        <button
+          ref={triggerRef}
+          type="button"
+          className="hr-video-trigger"
+          aria-label="Play video in larger player"
+          aria-haspopup="dialog"
+          onClick={() => {
+            previewRef.current?.pause();
+            setIsOpen(true);
           }}
         >
-          <section
-            aria-label="Video Project 5 player"
-            aria-modal="true"
-            className="relative w-full max-w-[960px] rounded-[16px] bg-white p-3 shadow-2xl sm:p-5"
-            role="dialog"
+          <span className="hr-video-play">Play video</span>
+        </button>
+
+        {previewError && (
+          <span className="hr-video-error">
+            Video load nahi hui — MP4 file ka path check karein.
+          </span>
+        )}
+      </div>
+
+      {isOpen &&
+        createPortal(
+          <div
+            className="hr-video-backdrop"
+            onClick={(event) => {
+              if (event.target === event.currentTarget) setIsOpen(false);
+            }}
           >
-            <button
-              aria-label="Close video"
-              className="mb-3 ml-auto flex h-10 items-center rounded-md bg-[#0144ab] px-4 text-sm font-semibold text-white hover:bg-[#003889] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0144ab]"
-              onClick={closePlayer}
-              type="button"
+            <section
+              className="hr-video-dialog"
+              role="dialog"
+              aria-modal="true"
+              aria-label="30 second HR video"
             >
-              Close
-            </button>
-            <video
-              className="max-h-[72vh] w-full rounded-[10px] bg-black object-contain"
-              autoPlay
-              controls
-              playsInline
-              preload="metadata"
-              ref={videoRef}
-              src={videoProject5}
-              onEnded={() => setIsPlaying(false)}
-              onPause={() => setIsPlaying(false)}
-              onPlay={() => setIsPlaying(true)}
-            />
-            <div className="mt-3 flex items-center justify-between gap-4">
-              <p className="m-0 text-sm font-semibold text-[#0144ab]">Video Project 5</p>
               <button
-                className="rounded-md bg-[#f6ac04] px-4 py-2 text-sm font-semibold text-black hover:bg-[#e99d00] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0144ab]"
-                onClick={togglePlayback}
+                ref={closeRef}
                 type="button"
+                className="hr-video-close"
+                onClick={() => setIsOpen(false)}
               >
-                {isPlaying ? "Pause" : "Play"}
+                Close ✕
               </button>
-            </div>
-          </section>
-        </div>,
-        document.body,
-      )}
+
+              <video
+                ref={videoRef}
+                src={videoProject5}
+                autoPlay
+                controls
+                playsInline
+                preload="auto"
+                tabIndex={0}
+              />
+            </section>
+          </div>,
+          document.body,
+        )}
     </>
   );
 }
-
 export default function Desktop1({ className }: { className?: string }) {
   return (
     <div
