@@ -160,10 +160,12 @@
   transition: color 180ms ease;
 }
 .design-header-link:focus-visible,
-.design-footer-link:focus-visible {
+.design-footer-link:focus-visible,
+.design-header-logo:focus-visible {
   outline: 2px solid #f6ac04;
   outline-offset: 3px;
 }
+.design-header-logo { display: block; }
 .design-header-link { color: #232323; }
 .design-header-link:hover { color: #0144ab; }
 .design-footer-link { color: #fff; }

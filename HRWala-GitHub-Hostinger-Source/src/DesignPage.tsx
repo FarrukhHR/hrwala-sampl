@@ -3458,8 +3458,10 @@ export default function Desktop1({ className }: { className?: string }) {
           src={imgFormalPortraitOnGray1}
         />
       </div>
-      <div
-        className="absolute h-[56px] left-[72.06px] top-[20.06px] w-[190px]"
+      <a
+        href="#home"
+        aria-label="HRWala home"
+        className="absolute h-[56px] left-[72.06px] top-[20.06px] w-[190px] design-header-logo"
         data-node-id="469:14184"
         data-name="HRwala-full-blue-gold 1"
       >
@@ -3468,7 +3470,7 @@ export default function Desktop1({ className }: { className?: string }) {
           className="absolute inset-0 max-w-none object-cover pointer-events-none size-full"
           src={imgHRwalaFullBlueGold1}
         />
-      </div>
+      </a>
       <div
         className="absolute left-[1292.56px] size-[60px] top-[28.56px]"
         data-node-id="474:14188"
