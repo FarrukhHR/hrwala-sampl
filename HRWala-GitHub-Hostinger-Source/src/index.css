@@ -238,6 +238,7 @@
 }
 
 .hr-video-preview {
+  z-index: 50;
   overflow: hidden;
   isolation: isolate;
   background: #d7dbe2;

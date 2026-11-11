@@ -300,6 +300,7 @@ function VideoProject5() {
                 ref={videoRef}
                 src={videoProject5}
                 autoPlay
+                loop
                 controls
                 playsInline
                 preload="auto"
