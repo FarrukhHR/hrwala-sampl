@@ -37,7 +37,12 @@ const imgBestWesternLogoOnBlueGradient3 = `${assetPathPrefix}/f6e60.png`;
 const imgBestWesternLogoOnBlueGradient4 = `${assetPathPrefix}/9a51f.png`;
 const imgBestWesternLogoOnBlueGradient5 = `${assetPathPrefix}/d4915.png`;
 const featuredPartnerLogos = [
-  imgBestWesternLogoOnBlueGradient10,
+  imgArchVillasGoldLogoOnCrimsonBackground2,
+  imgBestWesternLogoOnBlueGradient1,
+  imgBestWesternLogoOnBlueGradient2,
+  imgBestWesternLogoOnBlueGradient3,
+  imgBestWesternLogoOnBlueGradient4,
+  imgBestWesternLogoOnBlueGradient5,
   imgBestWesternLogoOnBlueGradient6,
   imgBestWesternLogoOnBlueGradient7,
   imgBestWesternLogoOnBlueGradient8,
@@ -45,6 +50,10 @@ const featuredPartnerLogos = [
   imgBestWesternLogoOnBlueGradient10,
   imgBestWesternLogoOnBlueGradient17,
   imgBestWesternLogoOnBlueGradient18,
+  imgBestWesternLogoOnBlueGradient19,
+  imgBestWesternLogoOnBlueGradient20,
+  imgBestWesternLogoOnBlueGradient21,
+  imgBestWesternLogoOnBlueGradient22,
 ] as const;
 const imgFormalPortraitOnGray1 = `${assetPathPrefix}/58341.png`;
 const imgStraightOnPortraitInCharcoalSuit = `${assetPathPrefix}/Straight-on portrait in charcoal suit.png`;

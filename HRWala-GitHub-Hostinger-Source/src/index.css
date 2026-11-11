@@ -549,12 +549,12 @@
   display: flex;
   width: max-content;
   margin-left: -86px;
-  animation: featured-partners-scroll 36s linear infinite;
+  animation: featured-partners-scroll 76s linear infinite;
 }
 
 .featured-partners-set {
   display: flex;
-  flex: 0 0 1640px;
+  flex: 0 0 auto;
 }
 
 .featured-partners-item {
@@ -606,7 +606,7 @@
   height: 14px;
   border: 1px solid #cecece;
   border-radius: 50%;
-  background: #fff;
+  background: transparent;
   transform: translateY(-50%);
 }
 
