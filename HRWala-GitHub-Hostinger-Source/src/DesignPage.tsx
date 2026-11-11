@@ -228,8 +228,12 @@ function FAQAccordion() {
                 </span>
               </button>
             </h3>
-            <div className="faq-accordion-answer" id={answerId} hidden={!isOpen}>
-              {item.answer}
+            <div
+              className={`faq-accordion-answer-wrap${isOpen ? " is-open" : ""}`}
+              id={answerId}
+              aria-hidden={!isOpen}
+            >
+              <div className="faq-accordion-answer">{item.answer}</div>
             </div>
           </article>
         );
@@ -285,6 +289,33 @@ function ContactForm() {
         <p className="contact-form-status" role="status">{status}</p>
       </form>
     </section>
+  );
+}
+
+function NewsletterForm() {
+  return (
+    <form
+      className="newsletter-form"
+      onSubmit={(event) => {
+        event.preventDefault();
+        const formData = new FormData(event.currentTarget);
+        const email = String(formData.get("email"));
+        const subject = encodeURIComponent("Newsletter subscription");
+        const body = encodeURIComponent(`Please subscribe this email address: ${email}`);
+
+        window.location.href = `mailto:hello@hrwala.net?subject=${subject}&body=${body}`;
+      }}
+    >
+      <input
+        autoComplete="email"
+        aria-label="Email address for newsletter"
+        name="email"
+        placeholder="Enter your email"
+        required
+        type="email"
+      />
+      <button type="submit">Subscribe</button>
+    </form>
   );
 }
 
@@ -456,7 +487,6 @@ export default function Desktop1({ className }: { className?: string }) {
       <button className="design-action-button" style={{ left: 105, top: 1902, width: 157.176, height: 39.529 }} type="button" aria-label="Find Your Dream Job" onClick={() => window.location.assign("https://hrwala.net/job-portal")} />
       <button className="design-action-button" style={{ left: 824, top: 1902, width: 138, height: 39.529 }} type="button" aria-label="Start Hiring" onClick={() => window.location.assign("https://hrwala.net/login")} />
       <button className="design-action-button" style={{ left: 89.76, top: 3273.59, width: 193.613, height: 45.176 }} type="button" aria-label="Explore the Platform" onClick={() => window.location.assign("https://hrwala.net/login")} />
-      <button className="design-action-button" style={{ left: 1187.47, top: 7194.94, width: 127.059, height: 36.706 }} type="button" aria-label="Subscribe to the newsletter" onClick={() => window.location.assign("mailto:hello@hrwala.net?subject=Newsletter%20subscription")} />
       <div
         className="absolute h-[756px] left-[26.06px] top-[1252.71px] w-[1386px]"
         data-node-id="207:31"
@@ -1421,6 +1451,7 @@ export default function Desktop1({ className }: { className?: string }) {
         <span className="leading-[normal] text-[#f6ac04] text-[30.118px]">{`Subscribe to our  Newsletter`}</span>
         <span className="leading-[normal] text-[30.118px]">{` `}</span>
       </p>
+      <NewsletterForm />
       <p
         className="[word-break:break-word] absolute font-['Poppins:Medium'] h-[98.824px] leading-[19.765px] left-[63.71px] not-italic text-[#eaeaea] text-[11.294px] text-justify top-[7194px] tracking-[-0.2259px] w-[322.824px]"
         data-node-id="299:5"
@@ -1446,8 +1477,10 @@ export default function Desktop1({ className }: { className?: string }) {
           <span className="leading-[normal] text-[#232323] text-[15.059px]">Portal</span>
         </a>
       </div>
-      <div
-        className="absolute h-[44.235px] left-[63.71px] top-[7141.29px] w-[152.975px]"
+      <a
+        href="#home"
+        aria-label="HRWala home"
+        className="absolute h-[44.235px] left-[63.71px] top-[7141.29px] w-[152.975px] design-footer-logo"
         data-node-id="297:4"
         data-name="HRWala-full-white-gold 1"
       >
@@ -1456,7 +1489,7 @@ export default function Desktop1({ className }: { className?: string }) {
           className="absolute inset-0 max-w-none object-cover pointer-events-none size-full"
           src={imgHrWalaFullWhiteGold1}
         />
-      </div>
+      </a>
       <div className="absolute contents left-[63.71px] top-[7292.82px]" data-node-id="299:20">
         <div
           className="absolute h-0 left-[64.65px] top-[7293.76px] w-[1286.588px]"
@@ -1548,6 +1581,7 @@ export default function Desktop1({ className }: { className?: string }) {
           <p className="leading-[normal]">Subscribe</p>
         </div>
       </div>
+      <NewsletterForm />
       <div id="software" className="absolute contents left-[25.65px] top-[2898.06px]" data-node-id="524:746">
         <div className="absolute contents left-[26.59px] top-[2899px]" data-node-id="207:34">
           <div
