@@ -190,7 +190,7 @@
 }
 @keyframes heroFloatingWords {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
+  50% { transform: translateY(-5px); }
 }
 [data-node-id="81:10"], [data-node-id="84:2"], [data-node-id="81:11"], [data-node-id="81:13"],
 [data-node-id="207:50"], [data-node-id="207:51"], [data-node-id="207:52"], [data-node-id="207:53"],
@@ -199,7 +199,7 @@
 }
 [data-node-id="84:2"], [data-node-id="81:11"], [data-node-id="207:51"], [data-node-id="207:52"] { animation-delay: -1.8s; }
 [data-node-id="81:13"], [data-node-id="239:241"], [data-node-id="239:243"] { animation-delay: -2.4s; }
-@keyframes floatingWords { 0%, 100% { translate: 0 0; } 50% { translate: 0 -12px; } }
+@keyframes floatingWords { 0%, 100% { translate: 0 0; } 50% { translate: 0 -5px; } }
 
 .hover-card-group {
   position: absolute !important;
