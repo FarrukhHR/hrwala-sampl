@@ -740,19 +740,6 @@ export default function Desktop1({ className }: { className?: string }) {
             </div>
           </div>
         </div>
-        <div
-          className="absolute h-[172.057px] left-[405px] rounded-[16.94px] top-[844px] w-[301.6px]"
-          data-node-id="440:14068"
-          data-name="Woman in peach on gray backdrop 1"
-        >
-          <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[16.94px]">
-            <img
-              alt=""
-              className="absolute left-[-13.99%] max-w-none size-[128%] top-[0.05%]"
-              src={imgWomanInPeachOnGrayBackdrop1}
-            />
-          </div>
-        </div>
       </div>
       <div className="service-card-group service-card-group--opportunity" data-node-id="101:125">
         <div
@@ -801,18 +788,6 @@ export default function Desktop1({ className }: { className?: string }) {
                 <img alt="" className="block max-w-none size-full" src={imgLine5} />
               </div>
             </div>
-          </div>
-        </div>
-        <div
-          className="absolute h-[172.057px] left-[734.12px] rounded-[16.94px] top-[844px] w-[301.6px]"
-          data-name="Straight-on portrait in charcoal suit"
-        >
-          <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[16.94px]">
-            <img
-              alt=""
-              className="absolute inset-0 size-full object-cover"
-              src={imgStraightOnPortraitInCharcoalSuit}
-            />
           </div>
         </div>
       </div>
@@ -866,6 +841,31 @@ export default function Desktop1({ className }: { className?: string }) {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div
+        className="absolute h-[172.057px] left-[405px] rounded-[16.94px] top-[844px] w-[301.6px]"
+        data-node-id="440:14068"
+        data-name="Woman in peach on gray backdrop 1"
+      >
+        <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[16.94px]">
+          <img
+            alt=""
+            className="absolute left-[-13.99%] max-w-none size-[128%] top-[0.05%]"
+            src={imgWomanInPeachOnGrayBackdrop1}
+          />
+        </div>
+      </div>
+      <div
+        className="absolute h-[172.057px] left-[734.12px] rounded-[16.94px] top-[844px] w-[301.6px]"
+        data-name="Straight-on portrait in charcoal suit"
+      >
+        <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[16.94px]">
+          <img
+            alt=""
+            className="absolute inset-0 size-full object-cover"
+            src={imgStraightOnPortraitInCharcoalSuit}
+          />
         </div>
       </div>
       <VideoProject5 />
