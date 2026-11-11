@@ -246,6 +246,40 @@
   transition: transform 180ms ease;
 }
 
+.industry-card-group {
+  position: absolute;
+  inset: 0;
+  z-index: auto;
+  pointer-events: none;
+  cursor: pointer;
+  transition: transform 180ms ease;
+}
+
+.industry-card-group > div:first-child {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+[data-node-id="159:37"] { transform-origin: 213.5px 4549px; }
+[data-node-id="159:277"] { transform-origin: 213.8px 4701px; }
+[data-node-id="159:301"] { transform-origin: 213.8px 4853px; }
+[data-node-id="159:45"] { transform-origin: 545.5px 4548.35px; }
+[data-node-id="159:283"] { transform-origin: 545.5px 4702px; }
+[data-node-id="159:307"] { transform-origin: 545.57px 4856px; }
+[data-node-id="159:53"] { transform-origin: 876.5px 4550px; }
+[data-node-id="159:289"] { transform-origin: 877.21px 4701px; }
+[data-node-id="159:313"] { transform-origin: 877.5px 4858px; }
+[data-node-id="159:61"] { transform-origin: 1202.5px 4548px; }
+[data-node-id="159:295"] { transform-origin: 1202.21px 4701px; }
+[data-node-id="159:319"] { transform-origin: 1202.5px 4853px; }
+
+@media (hover: hover) and (pointer: fine) {
+  .industry-card-group:hover {
+    z-index: 51;
+    transform: scale(1.025);
+  }
+}
+
 .service-card-group > div:first-child {
   pointer-events: auto;
   cursor: pointer;
@@ -278,6 +312,14 @@
   }
 
   .service-card-group:hover {
+    transform: none;
+  }
+
+  .industry-card-group {
+    transition: none;
+  }
+
+  .industry-card-group:hover {
     transform: none;
   }
 }

@@ -3997,7 +3997,7 @@ export default function Desktop1({ className }: { className?: string }) {
         data-name="WhatsApp Video 2026-11-05 at 7.59.33 PM 2"
       />
       <div className="absolute contents left-[69.06px] top-[3988.06px]" data-node-id="169:4">
-        <div className="absolute contents left-[70px] top-[4487px]" data-node-id="159:37">
+        <div className="industry-card-group" data-node-id="159:37">
           <div
             className="absolute bg-white h-[124px] left-[70px] rounded-[16.941px] shadow-[0.941px_1.882px_5.647px_1.882px_rgba(146,144,144,0.25)] top-[4487px] w-[287px]"
             data-node-id="159:38"
@@ -4034,7 +4034,7 @@ export default function Desktop1({ className }: { className?: string }) {
             </div>
           </div>
         </div>
-        <div className="absolute contents left-[70.29px] top-[4639px]" data-node-id="159:277">
+        <div className="industry-card-group" data-node-id="159:277">
           <div
             className="absolute bg-white h-[124px] left-[70.29px] rounded-[16.941px] shadow-[0.941px_1.882px_5.647px_1.882px_rgba(146,144,144,0.25)] top-[4639px] w-[287px]"
             data-node-id="159:278"
@@ -4071,7 +4071,7 @@ export default function Desktop1({ className }: { className?: string }) {
             </div>
           </div>
         </div>
-        <div className="absolute contents left-[70.29px] top-[4791px]" data-node-id="159:301">
+        <div className="industry-card-group" data-node-id="159:301">
           <div
             className="absolute bg-white h-[124px] left-[70.29px] rounded-[16.941px] shadow-[0.941px_1.882px_5.647px_1.882px_rgba(146,144,144,0.25)] top-[4791px] w-[287px]"
             data-node-id="159:302"
@@ -4108,7 +4108,7 @@ export default function Desktop1({ className }: { className?: string }) {
             </div>
           </div>
         </div>
-        <div className="absolute contents left-[402px] top-[4486.35px]" data-node-id="159:45">
+        <div className="industry-card-group" data-node-id="159:45">
           <div
             className="absolute bg-white h-[124px] left-[402px] rounded-[16.941px] shadow-[0.941px_1.882px_5.647px_1.882px_rgba(146,144,144,0.25)] top-[4486.35px] w-[287px]"
             data-node-id="159:46"
@@ -4145,7 +4145,7 @@ export default function Desktop1({ className }: { className?: string }) {
             </div>
           </div>
         </div>
-        <div className="absolute contents left-[402px] top-[4640px]" data-node-id="159:283">
+        <div className="industry-card-group" data-node-id="159:283">
           <div
             className="absolute bg-white h-[124px] left-[402px] rounded-[16.941px] shadow-[0.941px_1.882px_5.647px_1.882px_rgba(146,144,144,0.25)] top-[4640px] w-[287px]"
             data-node-id="159:284"
@@ -4181,7 +4181,7 @@ export default function Desktop1({ className }: { className?: string }) {
             </div>
           </div>
         </div>
-        <div className="absolute contents left-[402.07px] top-[4794px]" data-node-id="159:307">
+        <div className="industry-card-group" data-node-id="159:307">
           <div
             className="absolute bg-white h-[124px] left-[402.07px] rounded-[16.941px] shadow-[0.941px_1.882px_5.647px_1.882px_rgba(146,144,144,0.25)] top-[4794px] w-[287px]"
             data-node-id="159:308"
@@ -4218,7 +4218,7 @@ export default function Desktop1({ className }: { className?: string }) {
             </div>
           </div>
         </div>
-        <div className="absolute contents left-[733px] top-[4488px]" data-node-id="159:53">
+        <div className="industry-card-group" data-node-id="159:53">
           <div
             className="absolute bg-white h-[124px] left-[733px] rounded-[16.941px] shadow-[0.941px_1.882px_5.647px_1.882px_rgba(146,144,144,0.25)] top-[4488px] w-[287px]"
             data-node-id="159:54"
@@ -4256,7 +4256,7 @@ export default function Desktop1({ className }: { className?: string }) {
             </div>
           </div>
         </div>
-        <div className="absolute contents left-[733.71px] top-[4639px]" data-node-id="159:289">
+        <div className="industry-card-group" data-node-id="159:289">
           <div
             className="absolute bg-white h-[124px] left-[733.71px] rounded-[16.941px] shadow-[0.941px_1.882px_5.647px_1.882px_rgba(146,144,144,0.25)] top-[4639px] w-[287px]"
             data-node-id="159:290"
@@ -4292,7 +4292,7 @@ export default function Desktop1({ className }: { className?: string }) {
             </div>
           </div>
         </div>
-        <div className="absolute contents left-[734px] top-[4796px]" data-node-id="159:313">
+        <div className="industry-card-group" data-node-id="159:313">
           <div
             className="absolute bg-white h-[124px] left-[734px] rounded-[16.941px] shadow-[0.941px_1.882px_5.647px_1.882px_rgba(146,144,144,0.25)] top-[4796px] w-[287px]"
             data-node-id="159:314"
@@ -4331,7 +4331,7 @@ export default function Desktop1({ className }: { className?: string }) {
             </div>
           </div>
         </div>
-        <div className="absolute contents left-[1059px] top-[4486px]" data-node-id="159:61">
+        <div className="industry-card-group" data-node-id="159:61">
           <div
             className="absolute bg-white h-[124px] left-[1059px] rounded-[16.941px] shadow-[0.941px_1.882px_5.647px_1.882px_rgba(146,144,144,0.25)] top-[4486px] w-[287px]"
             data-node-id="159:62"
@@ -4369,7 +4369,7 @@ export default function Desktop1({ className }: { className?: string }) {
             </div>
           </div>
         </div>
-        <div className="absolute contents left-[1058.71px] top-[4639px]" data-node-id="159:295">
+        <div className="industry-card-group" data-node-id="159:295">
           <div
             className="absolute bg-white h-[124px] left-[1058.71px] rounded-[16.941px] shadow-[0.941px_1.882px_5.647px_1.882px_rgba(146,144,144,0.25)] top-[4639px] w-[287px]"
             data-node-id="159:296"
@@ -4407,7 +4407,7 @@ export default function Desktop1({ className }: { className?: string }) {
             </div>
           </div>
         </div>
-        <div className="absolute contents left-[1059px] top-[4791px]" data-node-id="159:319">
+        <div className="industry-card-group" data-node-id="159:319">
           <div
             className="absolute bg-white h-[124px] left-[1059px] rounded-[16.941px] shadow-[0.941px_1.882px_5.647px_1.882px_rgba(146,144,144,0.25)] top-[4791px] w-[287px]"
             data-node-id="159:320"
