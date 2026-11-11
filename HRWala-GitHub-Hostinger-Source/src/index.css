@@ -289,7 +289,210 @@
   background: #d7dbe2;
 }
 
-.featured-partners-marquee {
+  .contact-form-panel {
+    position: absolute;
+    top: 6510.71px;
+    left: 771.47px;
+    z-index: 2;
+    box-sizing: border-box;
+    width: 482.824px;
+    min-height: 527.059px;
+    padding: 30px 19px 20px;
+    border-radius: 17px;
+    background: #0144ab;
+    box-shadow: 1px 2px 6px 2px rgb(146 144 144 / 25%);
+    color: #fff;
+    font-family: "Poppins:Regular", sans-serif;
+    letter-spacing: normal;
+    word-spacing: normal;
+  }
+
+  .contact-form-title {
+    margin: 0 6px 2px;
+    font-family: "Poppins:ExtraBold", sans-serif;
+    font-size: 18.824px;
+    line-height: 1.3;
+    letter-spacing: normal;
+    word-spacing: normal;
+  }
+
+  .contact-form-intro {
+    margin: 0 6px 20px;
+    color: #eaeaea;
+    font-size: 15.059px;
+    line-height: 1.4;
+    letter-spacing: normal;
+    word-spacing: normal;
+  }
+
+  .contact-form {
+    display: grid;
+    gap: 14px;
+  }
+
+  .contact-form-field {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0 0 0 6px;
+    color: #fff;
+    font-family: "Poppins:SemiBold", sans-serif;
+    font-size: 12.235px;
+    line-height: 1.2;
+    letter-spacing: normal;
+    word-spacing: normal;
+  }
+
+  .contact-form-field input,
+  .contact-form-field select,
+  .contact-form-field textarea {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    border: 0;
+    border-radius: 17px;
+    outline: 0;
+    background: #4376c3;
+    color: #fff;
+    font-family: "Poppins:Regular", sans-serif;
+    font-size: 12.235px;
+    line-height: 1.45;
+    letter-spacing: normal;
+    word-spacing: normal;
+  }
+
+  .contact-form-field input,
+  .contact-form-field select {
+    height: 38px;
+    padding: 0 19px;
+  }
+
+  .contact-form-field select {
+    appearance: auto;
+  }
+
+  .contact-form-field textarea {
+    height: 107px;
+    padding: 12px 19px;
+    resize: vertical;
+  }
+
+  .contact-form-field input::placeholder,
+  .contact-form-field textarea::placeholder {
+    color: #fff;
+    opacity: 1;
+  }
+
+  .contact-form-field input:focus-visible,
+  .contact-form-field select:focus-visible,
+  .contact-form-field textarea:focus-visible {
+    outline: 2px solid #f6ac04;
+    outline-offset: 2px;
+  }
+
+  .contact-form-submit {
+    min-height: 38px;
+    margin-top: 3px;
+    border: 0;
+    border-radius: 19px;
+    background: #f6ac04;
+    color: #fff;
+    font-family: "Poppins:SemiBold", sans-serif;
+    font-size: 12.235px;
+    letter-spacing: normal;
+    word-spacing: normal;
+    cursor: pointer;
+  }
+
+  .contact-form-submit:hover {
+    background: #e89f00;
+  }
+
+  .contact-form-status {
+    min-height: 14px;
+    margin: -8px 6px 0;
+    font-size: 10px;
+    line-height: 1.4;
+    letter-spacing: normal;
+    word-spacing: normal;
+  }
+
+  .faq-accordion {
+    position: absolute;
+    top: 6812px;
+    left: 58.06px;
+    z-index: 2;
+    display: flex;
+    width: 479.235px;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .faq-accordion-item {
+    overflow: hidden;
+    border-radius: 8px;
+    background: #fff;
+  }
+
+  .faq-accordion-heading {
+    margin: 0;
+  }
+
+  .faq-accordion-trigger {
+    display: flex;
+    width: 100%;
+    min-height: 42px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 8px 18px;
+    border: 0;
+    background: transparent;
+    color: #111;
+    font-family: "Poppins:SemiBold", sans-serif;
+    font-size: 15.059px;
+    line-height: 1.35;
+    letter-spacing: normal;
+    text-align: left;
+    word-spacing: normal;
+    cursor: pointer;
+  }
+
+  .faq-accordion-trigger:focus-visible {
+    outline: 2px solid #0144ab;
+    outline-offset: -3px;
+  }
+
+  .faq-accordion-icon {
+    flex: 0 0 auto;
+    color: #0144ab;
+    font-family: "Poppins:Regular", sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  .faq-accordion-answer {
+    padding: 0 18px 12px;
+    color: #757575;
+    font-family: "Poppins:Medium", sans-serif;
+    font-size: 10.353px;
+    line-height: 1.55;
+    letter-spacing: normal;
+    word-spacing: normal;
+  }
+
+  [data-node-id="289:45"],
+  [data-node-id="289:54"],
+  [data-node-id="289:64"],
+  [data-node-id="289:65"],
+  [data-node-id="289:77"],
+  [data-node-id="289:90"] {
+    display: none;
+  }
+
+  .featured-partners-marquee {
   position: absolute;
   top: 6322px;
   left: 0;

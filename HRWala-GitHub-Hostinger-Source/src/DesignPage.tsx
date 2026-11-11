@@ -171,6 +171,114 @@ function HeroCarousel() {
   );
 }
 
+const faqItems = [
+  {
+    question: "How can HRWala.net help me find a job?",
+    answer:
+      "Explore current opportunities through our job portal, build your profile and connect with employers looking for your skills.",
+  },
+  {
+    question: "Can employers use HRWala.net for recruitment?",
+    answer:
+      "Yes. Employers can share vacancies and connect with candidates through the HRWala job portal.",
+  },
+  {
+    question: "What HR services does HRWala.net offer?",
+    answer:
+      "We provide HR consulting, practical workplace guidance, HR systems support and services tailored to your organization.",
+  },
+  {
+    question: "How can I get information about professional certifications?",
+    answer:
+      "Contact our team using the form and select Certifications. We can share current program and enrollment information.",
+  },
+];
+
+function FAQAccordion() {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  return (
+    <section className="faq-accordion" aria-label="Frequently asked questions">
+      {faqItems.map((item, index) => {
+        const isOpen = openIndex === index;
+        const answerId = `faq-answer-${index}`;
+
+        return (
+          <article className="faq-accordion-item" key={item.question}>
+            <h3 className="faq-accordion-heading">
+              <button
+                className="faq-accordion-trigger"
+                type="button"
+                aria-expanded={isOpen}
+                aria-controls={answerId}
+                onClick={() => setOpenIndex(isOpen ? null : index)}
+              >
+                <span>{item.question}</span>
+                <span className="faq-accordion-icon" aria-hidden="true">
+                  {isOpen ? "−" : "+"}
+                </span>
+              </button>
+            </h3>
+            <div className="faq-accordion-answer" id={answerId} hidden={!isOpen}>
+              {item.answer}
+            </div>
+          </article>
+        );
+      })}
+    </section>
+  );
+}
+
+function ContactForm() {
+  const [status, setStatus] = useState("");
+
+  return (
+    <section className="contact-form-panel" aria-labelledby="contact-form-title">
+      <h2 className="contact-form-title" id="contact-form-title">Get in Touch</h2>
+      <p className="contact-form-intro">Tell us how we can assist you.</p>
+      <form
+        className="contact-form"
+        onSubmit={(event) => {
+          event.preventDefault();
+          const formData = new FormData(event.currentTarget);
+          const subject = encodeURIComponent(`Website inquiry from ${formData.get("name")}`);
+          const body = encodeURIComponent(
+            `Name: ${formData.get("name")}\nEmail: ${formData.get("email")}\nInquiry: ${formData.get("inquiry")}\n\n${formData.get("message")}`,
+          );
+
+          setStatus("Your email app will open with your message ready to send.");
+          window.location.href = `mailto:hello@hrwala.net?subject=${subject}&body=${body}`;
+        }}
+      >
+        <label className="contact-form-field">
+          <span>Full Name</span>
+          <input autoComplete="name" name="name" placeholder="Enter your name" required />
+        </label>
+        <label className="contact-form-field">
+          <span>Email</span>
+          <input autoComplete="email" name="email" placeholder="example@gmail.com" required type="email" />
+        </label>
+        <label className="contact-form-field">
+          <span>How Can We Help?</span>
+          <select defaultValue="General Inquiry" name="inquiry">
+            <option>General Inquiry</option>
+            <option>Job Seeker Support</option>
+            <option>Employer Recruitment</option>
+            <option>HR Services</option>
+            <option>Certifications</option>
+          </select>
+        </label>
+        <label className="contact-form-field contact-form-message">
+          <span>Your Message</span>
+          <textarea name="message" placeholder="Tell us more about your inquiry..." required />
+        </label>
+        <button className="contact-form-submit" type="submit">Submit</button>
+        <p className="contact-form-status" role="status">{status}</p>
+      </form>
+    </section>
+  );
+}
+
 function VideoProject5() {
   const [isOpen, setIsOpen] = useState(false);
   const [previewError, setPreviewError] = useState(false);
@@ -1015,6 +1123,7 @@ export default function Desktop1({ className }: { className?: string }) {
       >
         NEED MORE INFORMATION?
       </p>
+      <ContactForm />
       <div className="absolute contents left-[770.53px] top-[6509.76px]" data-node-id="289:45">
         <div
           className="absolute bg-[#0144ab] h-[527.059px] left-[771.47px] rounded-[16.941px] shadow-[0.941px_1.882px_5.647px_1.882px_rgba(146,144,144,0.25)] top-[6510.71px] w-[482.824px]"
@@ -1123,6 +1232,7 @@ export default function Desktop1({ className }: { className?: string }) {
           </div>
         </div>
       </div>
+      <FAQAccordion />
       <div className="absolute contents left-[57.12px] top-[6810.48px]" data-node-id="289:54">
         <div
           className="absolute bg-white h-[77.431px] left-[58.06px] rounded-[7.529px] top-[6812.47px] w-[479.235px]"
