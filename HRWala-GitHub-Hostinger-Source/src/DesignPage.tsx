@@ -630,7 +630,7 @@ export default function Desktop1({ className }: { className?: string }) {
           <p className="leading-[normal]">Explore Job Portal</p>
         </div>
       </div>
-      <div className="absolute contents left-[78.12px] top-[1034.35px]" data-node-id="101:66">
+      <div className="service-card-group service-card-group--people" data-node-id="101:66">
         <div
           className="absolute bg-white h-[180.706px] left-[79.06px] rounded-[16.941px] shadow-[0.941px_1.882px_5.647px_1.882px_rgba(146,144,144,0.25)] top-[1035.29px] w-[302.118px]"
           data-node-id="88:27"
@@ -681,7 +681,7 @@ export default function Desktop1({ className }: { className?: string }) {
           </div>
         </div>
       </div>
-      <div className="absolute contents left-[400.94px] top-[843.06px]" data-node-id="101:109">
+      <div className="service-card-group service-card-group--standards" data-node-id="101:109">
         <div
           className="absolute bg-white h-[180.706px] left-[401.88px] rounded-[16.941px] shadow-[0.941px_1.882px_5.647px_1.882px_rgba(146,144,144,0.25)] top-[1035.29px] w-[302.118px]"
           data-node-id="101:110"
@@ -744,7 +744,7 @@ export default function Desktop1({ className }: { className?: string }) {
           </div>
         </div>
       </div>
-      <div className="absolute contents left-[730.35px] top-[1035.29px]" data-node-id="101:125">
+      <div className="service-card-group service-card-group--opportunity" data-node-id="101:125">
         <div
           className="absolute bg-white h-[180.706px] left-[731.29px] rounded-[16.941px] shadow-[0.941px_1.882px_5.647px_1.882px_rgba(146,144,144,0.25)] top-[1036.24px] w-[302.118px]"
           data-node-id="101:126"
@@ -806,7 +806,7 @@ export default function Desktop1({ className }: { className?: string }) {
           </div>
         </div>
       </div>
-      <div className="absolute contents left-[1056.94px] top-[1035.29px]" data-node-id="101:133">
+      <div className="service-card-group service-card-group--systems" data-node-id="101:133">
         <div
           className="absolute bg-white h-[180.706px] left-[1057.88px] rounded-[16.941px] shadow-[0.941px_1.882px_5.647px_1.882px_rgba(146,144,144,0.25)] top-[1036.24px] w-[302.118px]"
           data-node-id="101:134"

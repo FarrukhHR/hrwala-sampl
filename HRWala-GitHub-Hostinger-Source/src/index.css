@@ -237,6 +237,51 @@
   }
 }
 
+.service-card-group {
+  position: absolute;
+  inset: 0;
+  z-index: auto;
+  pointer-events: none;
+  cursor: pointer;
+  transition: transform 180ms ease;
+}
+
+.service-card-group > div:first-child {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.service-card-group--people {
+  transform-origin: 230px 1126px;
+}
+
+.service-card-group--standards {
+  transform-origin: 553px 1126px;
+}
+
+.service-card-group--opportunity {
+  transform-origin: 882px 1127px;
+}
+
+.service-card-group--systems {
+  transform-origin: 1209px 1127px;
+}
+
+.service-card-group:hover {
+  z-index: 51;
+  transform: scale(1.025);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-card-group {
+    transition: none;
+  }
+
+  .service-card-group:hover {
+    transform: none;
+  }
+}
+
 .hr-video-preview {
   z-index: 50;
   overflow: hidden;
