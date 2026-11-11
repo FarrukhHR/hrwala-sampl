@@ -549,7 +549,7 @@
   display: flex;
   width: max-content;
   margin-left: -86px;
-  animation: featured-partners-scroll 76s linear infinite;
+  animation: featured-partners-scroll 52s linear infinite;
 }
 
 .featured-partners-set {
@@ -590,8 +590,9 @@
 .featured-partners-connector::before {
   position: absolute;
   top: 50%;
-  right: 0;
-  left: 0;
+  z-index: 2;
+  right: -7px;
+  left: -7px;
   height: 2px;
   background: #111;
   content: "";
@@ -606,16 +607,16 @@
   height: 14px;
   border: 1px solid #cecece;
   border-radius: 50%;
-  background: transparent;
+  background: #fff;
   transform: translateY(-50%);
 }
 
 .featured-partners-connector span:first-child {
-  left: -7px;
+  left: -14px;
 }
 
 .featured-partners-connector span:last-child {
-  right: -7px;
+  right: -14px;
 }
 
 @keyframes featured-partners-scroll {
