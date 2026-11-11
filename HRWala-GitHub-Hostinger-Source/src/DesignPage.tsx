@@ -455,6 +455,7 @@ export default function Desktop1({ className }: { className?: string }) {
       <button className="design-action-button" style={{ left: 82.29, top: 1605.65, width: 157.176, height: 39.529 }} type="button" aria-label="Explore Job Portal" onClick={() => window.location.assign("https://hrwala.net/job-portal")} />
       <button className="design-action-button" style={{ left: 105, top: 1902, width: 157.176, height: 39.529 }} type="button" aria-label="Find Your Dream Job" onClick={() => window.location.assign("https://hrwala.net/job-portal")} />
       <button className="design-action-button" style={{ left: 824, top: 1902, width: 138, height: 39.529 }} type="button" aria-label="Start Hiring" onClick={() => window.location.assign("https://hrwala.net/login")} />
+      <button className="design-action-button" style={{ left: 89.76, top: 3273.59, width: 193.613, height: 45.176 }} type="button" aria-label="Explore the Platform" onClick={() => window.location.assign("https://hrwala.net/login")} />
       <button className="design-action-button" style={{ left: 1187.47, top: 7194.94, width: 127.059, height: 36.706 }} type="button" aria-label="Subscribe to the newsletter" onClick={() => window.location.assign("mailto:hello@hrwala.net?subject=Newsletter%20subscription")} />
       <div
         className="absolute h-[756px] left-[26.06px] top-[1252.71px] w-[1386px]"
