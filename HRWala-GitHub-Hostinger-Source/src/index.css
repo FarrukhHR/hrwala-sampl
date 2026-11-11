@@ -80,6 +80,100 @@
   overflow: clip;
 }
 
+.hero-carousel-copy {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  opacity: 1;
+  transition: opacity 450ms ease;
+  pointer-events: none;
+}
+
+.hero-carousel-copy.is-hidden { opacity: 0; }
+.hero-carousel-heading {
+  position: absolute;
+  left: 94.12px;
+  top: 249.47px;
+  width: 641.882px;
+  margin: 0;
+  color: #0144ab;
+  font: 800 52.706px/1.16 'Poppins:ExtraBold', sans-serif;
+}
+.hero-carousel-bullets {
+  position: absolute;
+  left: 120.47px;
+  top: 334.18px;
+  margin: 0;
+  padding: 0;
+  color: #f6ac04;
+  font: 700 31.059px/1.53 'Poppins:Bold', sans-serif;
+  list-style: none;
+}
+.hero-carousel-bullets li { position: relative; white-space: nowrap; }
+.hero-carousel-bullets li::before {
+  content: '•';
+  position: absolute;
+  left: -22px;
+}
+.hero-carousel-description {
+  position: absolute;
+  left: 94.12px;
+  top: 487.59px;
+  margin: 0;
+  color: #757575;
+  font: 400 15.059px/1.4 'Poppins:Regular', sans-serif;
+  white-space: nowrap;
+}
+.hero-carousel-cta {
+  position: absolute;
+  left: 94.12px;
+  top: 556.29px;
+  width: 123.469px;
+  height: 41.033px;
+  border: 0;
+  border-radius: 7.529px;
+  background: #0144ab;
+  color: #fff;
+  font: 700 15.059px 'Poppins:Bold', sans-serif;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: background-color 180ms ease;
+}
+.hero-carousel-copy.is-hidden .hero-carousel-cta { pointer-events: none; }
+.hero-carousel-cta:hover { background: #f6ac04; }
+.design-action-button {
+  position: absolute;
+  z-index: 40;
+  box-sizing: border-box;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.design-action-button:focus-visible,
+.hero-carousel-cta:focus-visible {
+  outline: 3px solid #f6ac04;
+  outline-offset: 3px;
+}
+.design-header-link,
+.design-footer-link {
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+.design-header-link:focus-visible,
+.design-footer-link:focus-visible {
+  outline: 2px solid #f6ac04;
+  outline-offset: 3px;
+}
+.design-header-link { color: #232323; }
+.design-header-link:hover { color: #0144ab; }
+.design-footer-link { color: #fff; }
+.design-footer-link:hover { color: #f6ac04 !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-carousel-copy { transition: none; }
+}
+
 /* Circle ke around sirf 6 labels */
 [data-node-id="412:1206"],
 [data-node-id="412:1207"],

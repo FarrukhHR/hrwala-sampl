@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 const assetPathPrefix = "/assets";
 const imgConferenceTableMeetingByCityWindows21 = `${assetPathPrefix}/22ce9.png`;
 const imgWomanInPeachOnGrayBackdrop1 = `${assetPathPrefix}/4a8ae.png`;
@@ -98,6 +100,64 @@ const imgEllipse5 = `${assetPathPrefix}/c8df2.svg`;
 const imgLine26 = `${assetPathPrefix}/83a1b.svg`;
 const imgLine27 = `${assetPathPrefix}/05c93.svg`;
 
+const heroSlides = [
+  { heading: "Job Portal", bullets: ["Find Talent", "Find Opportunity", "Meet Here"], description: ["Verified jobs and qualified candidates.", "Where employers and careers connect."] },
+  { heading: "HRWala Software", bullets: ["Simplify HR", "Automate Payroll", "Empower People"], description: ["One system for every employee record.", "Less paperwork, more progress."] },
+  { heading: "HR All-in-One", bullets: ["Hire Smarter", "Manage Better", "Grow Faster"], description: ["Recruitment, payroll and HR in one place.", "Everything your people need."] },
+  { heading: "Brand Standards", bullets: ["Service Industry", "Serving People", "One Partner"], description: ["From hotels to hospitals to retail.", "HR built around your brand standards."] },
+  { heading: "HR Certification", bullets: ["Get Certified", "Get Noticed", "Get Hired"], description: ["Recognized credentials for working professionals.", "Your next career step starts here."] },
+  { heading: "Your Advisor", bullets: ["Expert HR Advice", "Compliant Workplaces", "Confident Leaders"], description: ["Strategy, policies and labor law support.", "Build an organization that lasts."] },
+  { heading: "Head Hunting", bullets: ["Right People", "Right Roles", "Real Growth"], description: ["Executive search and talent acquisition.", "Your next great hire starts here."] },
+  { heading: "Hospitality Talent", bullets: ["Hoteliers", "Star Performers", "Get Connected"], description: ["A dedicated people platform for hospitality.", "Connecting people with hoteliers."] },
+];
+
+function HeroCarousel() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    let holdTimer: number;
+    let fadeTimer: number;
+    const scheduleNext = () => {
+      holdTimer = window.setTimeout(() => {
+        setVisible(false);
+        fadeTimer = window.setTimeout(() => {
+          setActiveIndex((index) => (index + 1) % heroSlides.length);
+          setVisible(true);
+          scheduleNext();
+        }, 450);
+      }, 3550);
+    };
+    scheduleNext();
+    return () => {
+      window.clearTimeout(holdTimer);
+      window.clearTimeout(fadeTimer);
+    };
+  }, []);
+
+  const slide = heroSlides[activeIndex];
+  return (
+    <div className={`hero-carousel-copy${visible ? "" : " is-hidden"}`} aria-hidden={!visible}>
+      <h1 className="hero-carousel-heading">{slide.heading}</h1>
+      <ul className="hero-carousel-bullets">
+        {slide.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
+      </ul>
+      <p className="hero-carousel-description">
+        {slide.description[0]}<br />{slide.description[1]}
+      </p>
+      <button
+        className="hero-carousel-cta"
+        type="button"
+        onClick={() => window.location.assign("https://hrwala.net/job-portal")}
+      >
+        Job Portal
+      </button>
+    </div>
+  );
+}
+
 export default function Desktop1({ className }: { className?: string }) {
   return (
     <div
@@ -105,10 +165,15 @@ export default function Desktop1({ className }: { className?: string }) {
         className ||
         "border-[0.941px] border-black border-solid h-[7330px] overflow-clip relative w-[1440px]"
       }
+      id="home"
       data-node-id="3:6"
       data-name="Desktop - 1"
     >
       <div aria-hidden className="absolute bg-white inset-0 pointer-events-none" />
+      <button className="design-action-button" style={{ left: 82.29, top: 1605.65, width: 157.176, height: 39.529 }} type="button" aria-label="Explore Job Portal" onClick={() => window.location.assign("https://hrwala.net/job-portal")} />
+      <button className="design-action-button" style={{ left: 105, top: 1902, width: 157.176, height: 39.529 }} type="button" aria-label="Find Your Dream Job" onClick={() => window.location.assign("https://hrwala.net/job-portal")} />
+      <button className="design-action-button" style={{ left: 824, top: 1902, width: 138, height: 39.529 }} type="button" aria-label="Start Hiring" onClick={() => window.location.assign("https://hrwala.net/login")} />
+      <button className="design-action-button" style={{ left: 1187.47, top: 7194.94, width: 127.059, height: 36.706 }} type="button" aria-label="Subscribe to the newsletter" onClick={() => window.location.assign("mailto:hello@hrwala.net?subject=Newsletter%20subscription")} />
       <div
         className="absolute h-[756px] left-[26.06px] top-[1252.71px] w-[1386px]"
         data-node-id="207:31"
@@ -634,36 +699,7 @@ export default function Desktop1({ className }: { className?: string }) {
           <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgRectangle2} />
         </div>
         <div className="absolute contents left-[94.12px] top-[225px]" data-node-id="412:1222">
-          <p
-            className="[word-break:break-word] absolute font-['Poppins:ExtraBold'] h-[61.176px] leading-[normal] left-[94.12px] not-italic text-[#0144ab] text-[52.706px] top-[249.47px] tracking-[-1.0541px] w-[641.882px]"
-            data-node-id="12:68"
-          >
-            HR Certifications
-          </p>
-          <div className="absolute contents left-[98.82px] top-[334.18px]" data-node-id="31:78">
-            <div
-              className="[word-break:break-word] absolute font-['Poppins:Bold'] leading-[0] left-[120.47px] not-italic text-[#f6ac04] text-[31.059px] top-[334.18px] whitespace-nowrap"
-              data-node-id="28:71"
-            >
-              <p className="leading-[normal] mb-0">Get Certified</p>
-              <p className="leading-[normal] mb-0">Get Noticed</p>
-              <p className="leading-[normal]">Get Hired</p>
-            </div>
-            <div
-              className="absolute h-[107.294px] left-[98.82px] top-[350.18px] w-[9.561px]"
-              data-node-id="31:77"
-            >
-              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgGroup2} />
-            </div>
-          </div>
-          <p
-            className="[word-break:break-word] absolute font-['Poppins:Regular'] leading-[normal] left-[94.12px] not-italic text-[#757575] text-[15.059px] top-[487.59px] tracking-[-0.3012px] whitespace-nowrap"
-            data-node-id="31:83"
-          >
-            Recognized credentials for working professionals.
-            <br aria-hidden />
-            Your next career step starts here.
-          </p>
+          <HeroCarousel />
           <div className="absolute contents left-[98.82px] top-[225px]" data-node-id="118:38">
             <div
               className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Regular'] justify-center leading-[0] left-[calc(50%-557.53px)] not-italic text-[13.176px] text-black text-center top-[235px] tracking-[-0.5271px] whitespace-nowrap"
@@ -1077,26 +1113,17 @@ export default function Desktop1({ className }: { className?: string }) {
           className="absolute bg-white border-0 border-black border-solid h-[87px] left-0 top-[-1px] w-[1440px]"
           data-node-id="3:7"
         />
-        <p
-          className="[word-break:break-word] absolute font-['Poppins:Medium'] leading-[normal] left-[575px] not-italic text-[#232323] text-[15.059px] top-[43.29px] whitespace-nowrap"
-          data-node-id="5:5"
-        >
+        <a href="#home" className="[word-break:break-word] absolute font-['Poppins:Medium'] leading-[normal] left-[575px] not-italic text-[#232323] text-[15.059px] top-[43.29px] whitespace-nowrap design-header-link" data-node-id="5:5">
           Discover
-        </p>
-        <p
-          className="[word-break:break-word] absolute font-['Poppins:Medium'] leading-[normal] left-[684.18px] not-italic text-[#232323] text-[15.059px] top-[43.29px] whitespace-nowrap"
-          data-node-id="5:17"
-        >
+        </a>
+        <a href="https://hrwala.net/job-portal" className="[word-break:break-word] absolute font-['Poppins:Medium'] leading-[normal] left-[684.18px] not-italic text-[#232323] text-[15.059px] top-[43.29px] whitespace-nowrap design-header-link" data-node-id="5:17">
           Job Portal
-        </p>
-        <p
-          className="[word-break:break-word] absolute font-['Poppins:Medium'] leading-[0] left-[793.18px] not-italic text-[#505050] text-[0px] top-[42.35px] whitespace-nowrap"
-          data-node-id="5:31"
-        >
+        </a>
+        <a href="https://hrwala.net/login" className="[word-break:break-word] absolute font-['Poppins:Medium'] leading-[0] left-[793.18px] not-italic text-[#505050] text-[0px] top-[42.35px] whitespace-nowrap design-header-link" data-node-id="5:31">
           <span className="leading-[normal] text-[#232323] text-[15.059px]">My</span>
           <span className="leading-[normal] text-[15.059px]">{` `}</span>
           <span className="leading-[normal] text-[#232323] text-[15.059px]">Portal</span>
-        </p>
+        </a>
       </div>
       <div
         className="absolute h-[44.235px] left-[63.71px] top-[7141.29px] w-[152.975px]"
@@ -1129,30 +1156,18 @@ export default function Desktop1({ className }: { className?: string }) {
         className="[word-break:break-word] absolute contents leading-[19.765px] left-[525.82px] not-italic text-justify top-[7144.12px] whitespace-nowrap"
         data-node-id="299:25"
       >
-        <p
-          className="absolute font-['Poppins:Medium'] left-[526.76px] text-[11.294px] text-white top-[7173.29px] tracking-[-0.2259px]"
-          data-node-id="299:22"
-        >
+        <a href="#home" className="absolute font-['Poppins:Medium'] left-[526.76px] text-[11.294px] text-white top-[7173.29px] tracking-[-0.2259px] design-footer-link" data-node-id="299:22">
           Discover
-        </p>
-        <p
-          className="absolute font-['Poppins:Medium'] left-[526.76px] text-[11.294px] text-white top-[7201.53px] tracking-[-0.2259px]"
-          data-node-id="299:23"
-        >
+        </a>
+        <a href="https://hrwala.net/job-portal" className="absolute font-['Poppins:Medium'] left-[526.76px] text-[11.294px] text-white top-[7201.53px] tracking-[-0.2259px] design-footer-link" data-node-id="299:23">
           Job Portal
-        </p>
-        <p
-          className="absolute font-['Poppins:Medium'] left-[526.76px] text-[11.294px] text-white top-[7228.82px] tracking-[-0.2259px]"
-          data-node-id="299:24"
-        >
+        </a>
+        <a href="#software" className="absolute font-['Poppins:Medium'] left-[526.76px] text-[11.294px] text-white top-[7228.82px] tracking-[-0.2259px] design-footer-link" data-node-id="299:24">
           HRWala Software
-        </p>
-        <p
-          className="absolute font-['Poppins:Medium'] left-[526.76px] text-[11.294px] text-white top-[7256.12px] tracking-[-0.2259px]"
-          data-node-id="299:34"
-        >
+        </a>
+        <a href="https://hrwala.net/certifications" className="absolute font-['Poppins:Medium'] left-[526.76px] text-[11.294px] text-white top-[7256.12px] tracking-[-0.2259px] design-footer-link" data-node-id="299:34">
           Certifications
-        </p>
+        </a>
         <p
           className="absolute font-['Poppins:Bold'] left-[526.76px] text-[#f6ac04] text-[17.882px] top-[7145.06px] tracking-[-0.3576px]"
           data-node-id="299:21"
@@ -1164,24 +1179,15 @@ export default function Desktop1({ className }: { className?: string }) {
         className="[word-break:break-word] absolute contents leading-[19.765px] left-[709.35px] not-italic text-justify top-[7148.82px] whitespace-nowrap"
         data-node-id="299:27"
       >
-        <p
-          className="absolute font-['Poppins:Medium'] left-[710.29px] text-[11.294px] text-white top-[7178px] tracking-[-0.2259px]"
-          data-node-id="299:28"
-        >
+        <a href="tel:+923008523878" className="absolute font-['Poppins:Medium'] left-[710.29px] text-[11.294px] text-white top-[7178px] tracking-[-0.2259px] design-footer-link" data-node-id="299:28">
           +92 300 8523878
-        </p>
-        <p
-          className="absolute font-['Poppins:Medium'] left-[710.29px] text-[11.294px] text-white top-[7206.24px] tracking-[-0.2259px]"
-          data-node-id="299:29"
-        >
+        </a>
+        <a href="tel:+923055243737" className="absolute font-['Poppins:Medium'] left-[710.29px] text-[11.294px] text-white top-[7206.24px] tracking-[-0.2259px] design-footer-link" data-node-id="299:29">
           +92 305 5243737
-        </p>
-        <p
-          className="absolute font-['Poppins:Medium'] left-[710.29px] text-[11.294px] text-white top-[7233.53px] tracking-[-0.2259px]"
-          data-node-id="299:30"
-        >
+        </a>
+        <a href="mailto:hello@hrwala.net" className="absolute font-['Poppins:Medium'] left-[710.29px] text-[11.294px] text-white top-[7233.53px] tracking-[-0.2259px] design-footer-link" data-node-id="299:30">
           hello@hrwala.net
-        </p>
+        </a>
         <p
           className="absolute font-['Poppins:Bold'] left-[710.29px] text-[#f6ac04] text-[17.882px] top-[7149.76px] tracking-[-0.3576px]"
           data-node-id="299:31"
@@ -1221,7 +1227,7 @@ export default function Desktop1({ className }: { className?: string }) {
           <p className="leading-[normal]">Subscribe</p>
         </div>
       </div>
-      <div className="absolute contents left-[25.65px] top-[2898.06px]" data-node-id="524:746">
+      <div id="software" className="absolute contents left-[25.65px] top-[2898.06px]" data-node-id="524:746">
         <div className="absolute contents left-[26.59px] top-[2899px]" data-node-id="207:34">
           <div
             className="absolute h-[1040.941px] left-[26.59px] top-[2899px] w-[1385.412px]"
