@@ -289,6 +289,102 @@
   background: #d7dbe2;
 }
 
+.featured-partners-marquee {
+  position: absolute;
+  top: 6322px;
+  left: 0;
+  z-index: 60;
+  width: 1440px;
+  height: 130px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.featured-partners-track {
+  display: flex;
+  width: max-content;
+  margin-left: -86px;
+  animation: featured-partners-scroll 36s linear infinite;
+}
+
+.featured-partners-set {
+  display: flex;
+  flex: 0 0 1640px;
+}
+
+.featured-partners-item {
+  display: flex;
+  flex: 0 0 205px;
+  align-items: center;
+  height: 130px;
+}
+
+.featured-partners-card {
+  width: 175px;
+  height: 98px;
+  overflow: hidden;
+  border: 1px solid #cecece;
+  border-radius: 17px;
+  background: #fff;
+  box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+}
+
+.featured-partners-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featured-partners-connector {
+  position: relative;
+  flex: 0 0 30px;
+  height: 98px;
+}
+
+.featured-partners-connector::before {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  height: 2px;
+  background: #111;
+  content: "";
+  transform: translateY(-50%);
+}
+
+.featured-partners-connector span {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  width: 14px;
+  height: 14px;
+  border: 1px solid #cecece;
+  border-radius: 50%;
+  background: #fff;
+  transform: translateY(-50%);
+}
+
+.featured-partners-connector span:first-child {
+  left: -7px;
+}
+
+.featured-partners-connector span:last-child {
+  right: -7px;
+}
+
+@keyframes featured-partners-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .featured-partners-track {
+    animation: none;
+  }
+}
+
 .hr-video-preview > video {
   display: block;
   width: 100%;
@@ -400,5 +496,134 @@
 @media (hover: none) {
   .hr-video-play {
     opacity: 1;
+  }
+}
+
+/* Top Modules: complete card hover */
+:is(
+  [data-node-id="228:103"],
+  [data-node-id="228:111"],
+  [data-node-id="228:119"],
+  [data-node-id="228:127"],
+  [data-node-id="228:137"],
+  [data-node-id="228:145"],
+  [data-node-id="228:153"],
+  [data-node-id="228:161"],
+  [data-node-id="228:203"],
+  [data-node-id="228:211"],
+  [data-node-id="228:219"],
+  [data-node-id="228:227"]
+) {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: auto;
+  height: auto;
+  pointer-events: none;
+  cursor: pointer;
+  transform-origin: var(--module-origin);
+  transition: transform 180ms ease;
+}
+
+/* Each card scales from its own centre */
+[data-node-id="228:103"] {
+  --module-origin: 238.939px 3511.354px;
+}
+
+[data-node-id="228:111"] {
+  --module-origin: 561.769px 3511.354px;
+}
+
+[data-node-id="228:119"] {
+  --module-origin: 893.999px 3511.354px;
+}
+
+[data-node-id="228:127"] {
+  --module-origin: 1217.769px 3512.054px;
+}
+
+[data-node-id="228:137"] {
+  --module-origin: 238.939px 3671.644px;
+}
+
+[data-node-id="228:145"] {
+  --module-origin: 561.769px 3671.644px;
+}
+
+[data-node-id="228:153"] {
+  --module-origin: 891.179px 3672.344px;
+}
+
+[data-node-id="228:161"] {
+  --module-origin: 1217.769px 3672.344px;
+}
+
+[data-node-id="228:203"] {
+  --module-origin: 239.349px 3832.645px;
+}
+
+[data-node-id="228:211"] {
+  --module-origin: 561.349px 3831.455px;
+}
+
+[data-node-id="228:219"] {
+  --module-origin: 891.349px 3832.155px;
+}
+
+[data-node-id="228:227"] {
+  --module-origin: 1218.349px 3832.155px;
+}
+
+/* Background captures hover across the complete box */
+[data-node-id="228:235"] [style],
+[data-node-id="228:235"] p {
+  /* Existing text styling stays in its original classes. */
+}
+
+:is(
+  [data-node-id="228:103"],
+  [data-node-id="228:111"],
+  [data-node-id="228:119"],
+  [data-node-id="228:127"],
+  [data-node-id="228:137"],
+  [data-node-id="228:145"],
+  [data-node-id="228:153"],
+  [data-node-id="228:161"],
+  [data-node-id="228:203"],
+  [data-node-id="228:211"],
+  [data-node-id="228:219"],
+  [data-node-id="228:227"]
+) > div:first-child {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  :is(
+    [data-node-id="228:103"],
+    [data-node-id="228:111"],
+    [data-node-id="228:119"],
+    [data-node-id="228:127"],
+    [data-node-id="228:137"],
+    [data-node-id="228:145"],
+    [data-node-id="228:153"],
+    [data-node-id="228:161"],
+    [data-node-id="228:203"],
+    [data-node-id="228:211"],
+    [data-node-id="228:219"],
+    [data-node-id="228:227"]
+  ):hover {
+    z-index: 51;
+    transform: scale(1.025);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-node-id="228:235"] [data-node-id] {
+    transition: none;
+  }
+
+  [data-node-id="228:235"] [data-node-id]:hover {
+    transform: none;
   }
 }

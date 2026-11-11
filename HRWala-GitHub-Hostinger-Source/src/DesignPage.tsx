@@ -36,6 +36,16 @@ const imgBestWesternLogoOnBlueGradient2 = `${assetPathPrefix}/b640a.png`;
 const imgBestWesternLogoOnBlueGradient3 = `${assetPathPrefix}/f6e60.png`;
 const imgBestWesternLogoOnBlueGradient4 = `${assetPathPrefix}/9a51f.png`;
 const imgBestWesternLogoOnBlueGradient5 = `${assetPathPrefix}/d4915.png`;
+const featuredPartnerLogos = [
+  imgBestWesternLogoOnBlueGradient10,
+  imgBestWesternLogoOnBlueGradient6,
+  imgBestWesternLogoOnBlueGradient7,
+  imgBestWesternLogoOnBlueGradient8,
+  imgBestWesternLogoOnBlueGradient9,
+  imgBestWesternLogoOnBlueGradient10,
+  imgBestWesternLogoOnBlueGradient17,
+  imgBestWesternLogoOnBlueGradient18,
+] as const;
 const imgFormalPortraitOnGray1 = `${assetPathPrefix}/58341.png`;
 const imgStraightOnPortraitInCharcoalSuit = `${assetPathPrefix}/Straight-on portrait in charcoal suit.png`;
 const imgHRwalaFullBlueGold1 = `${assetPathPrefix}/b7c26.png`;
@@ -955,6 +965,29 @@ export default function Desktop1({ className }: { className?: string }) {
         <span className="leading-[normal] text-[37.647px]">{` `}</span>
         <span className="leading-[normal] text-[#0144ab] text-[37.647px]">Partners</span>
       </p>
+      <div className="featured-partners-marquee" role="region" aria-label="Featured partners">
+        <div className="featured-partners-track">
+          {[0, 1].map((setIndex) => (
+            <div
+              className="featured-partners-set"
+              aria-hidden={setIndex === 1}
+              key={setIndex}
+            >
+              {featuredPartnerLogos.map((logo, logoIndex) => (
+                <div className="featured-partners-item" key={`${setIndex}-${logoIndex}`}>
+                  <div className="featured-partners-card">
+                    <img src={logo} alt="" draggable="false" />
+                  </div>
+                  <div className="featured-partners-connector" aria-hidden="true">
+                    <span />
+                    <span />
+                  </div>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
       <p
         className="[word-break:break-word] absolute font-['Poppins:ExtraBold'] h-[50.824px] leading-[0] left-[63.71px] not-italic text-[0px] text-black top-[calc(50%+2852.53px)] tracking-[-2.2588px] w-[349.176px]"
         dir="auto"
