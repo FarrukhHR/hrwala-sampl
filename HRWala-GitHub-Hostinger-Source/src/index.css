@@ -102,7 +102,7 @@
 .hero-carousel-bullets {
   position: absolute;
   left: 120.47px;
-  top: 334.18px;
+  top: 322.18px;
   margin: 0;
   padding: 0;
   color: #f6ac04;
@@ -140,7 +140,6 @@
   transition: background-color 180ms ease;
 }
 .hero-carousel-copy.is-hidden .hero-carousel-cta { pointer-events: none; }
-.hero-carousel-cta:hover { background: #f6ac04; }
 .design-action-button {
   position: absolute;
   z-index: 40;
