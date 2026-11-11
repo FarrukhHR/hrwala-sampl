@@ -3459,7 +3459,7 @@ export default function Desktop1({ className }: { className?: string }) {
         />
       </div>
       <div
-        className="absolute h-[50px] left-[72.06px] top-[23.06px] w-[169px]"
+        className="absolute h-[56px] left-[72.06px] top-[20.06px] w-[190px]"
         data-node-id="469:14184"
         data-name="HRwala-full-blue-gold 1"
       >
@@ -3470,7 +3470,7 @@ export default function Desktop1({ className }: { className?: string }) {
         />
       </div>
       <div
-        className="absolute left-[1287.06px] size-[71px] top-[23.06px]"
+        className="absolute left-[1292.56px] size-[60px] top-[28.56px]"
         data-node-id="474:14188"
         data-name="Maroon blazer portrait on pale blue 1"
       >
