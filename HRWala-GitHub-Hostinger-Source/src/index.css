@@ -79,3 +79,65 @@
   height: 7330px;
   overflow: clip;
 }
+
+/* Circle ke around sirf 6 labels */
+[data-node-id="412:1206"],
+[data-node-id="412:1207"],
+[data-node-id="412:1208"],
+[data-node-id="412:1209"],
+[data-node-id="412:1210"],
+[data-node-id="412:1211"] {
+  animation: hrLabelFloat var(--float-speed, 4s)
+    ease-in-out var(--float-delay, 0s) infinite;
+}
+
+[data-node-id="412:1206"] {
+  --float-speed: 4.2s;
+  --float-delay: -0.8s;
+  --float-distance: -5px;
+}
+
+[data-node-id="412:1207"] {
+  --float-speed: 5.1s;
+  --float-delay: -2.1s;
+  --float-distance: -7px;
+}
+
+[data-node-id="412:1208"] {
+  --float-speed: 4.7s;
+  --float-delay: -1.4s;
+  --float-distance: -6px;
+}
+
+[data-node-id="412:1209"] {
+  --float-speed: 5.5s;
+  --float-delay: -3.2s;
+  --float-distance: -5px;
+}
+
+[data-node-id="412:1210"] {
+  --float-speed: 4.9s;
+  --float-delay: -2.6s;
+  --float-distance: -7px;
+}
+
+[data-node-id="412:1211"] {
+  --float-speed: 4.4s;
+  --float-delay: -1.9s;
+  --float-distance: -6px;
+}
+
+@keyframes hrLabelFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(var(--float-distance, -6px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-node-id="412:1205"] > p {
+    animation: none;
+  }
+}
