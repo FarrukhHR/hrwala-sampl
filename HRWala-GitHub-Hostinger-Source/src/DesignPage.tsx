@@ -35,6 +35,7 @@ const imgBestWesternLogoOnBlueGradient3 = `${assetPathPrefix}/f6e60.png`;
 const imgBestWesternLogoOnBlueGradient4 = `${assetPathPrefix}/9a51f.png`;
 const imgBestWesternLogoOnBlueGradient5 = `${assetPathPrefix}/d4915.png`;
 const imgFormalPortraitOnGray1 = `${assetPathPrefix}/58341.png`;
+const imgStraightOnPortraitInCharcoalSuit = `${assetPathPrefix}/Straight-on portrait in charcoal suit.png`;
 const imgHRwalaFullBlueGold1 = `${assetPathPrefix}/b7c26.png`;
 const imgMaroonBlazerPortraitOnPaleBlue1 = `${assetPathPrefix}/5bdd7.png`;
 const imgCompleteHrCertificateWithBlueGoldBorders1 = `${assetPathPrefix}/362ad.png`;
@@ -102,7 +103,7 @@ const imgLine27 = `${assetPathPrefix}/05c93.svg`;
 
 const heroSlides = [
   { heading: "Job Portal", bullets: ["Find Talent", "Find Opportunity", "Meet Here"], description: ["Verified jobs and qualified candidates.", "Where employers and careers connect."] },
-  { heading: "HRWala Software", bullets: ["Simplify HR", "Automate Payroll", "Empower People"], description: ["One system for every employee record.", "Less paperwork, more progress."] },
+  { heading: "HRwala Software", bullets: ["Simplify HR", "Automate Payroll", "Empower People"], description: ["One system for every employee record.", "Less paperwork, more progress."] },
   { heading: "HR All-in-One", bullets: ["Hire Smarter", "Manage Better", "Grow Faster"], description: ["Recruitment, payroll and HR in one place.", "Everything your people need."] },
   { heading: "Brand Standards", bullets: ["Service Industry", "Serving People", "One Partner"], description: ["From hotels to hospitals to retail.", "HR built around your brand standards."] },
   { heading: "HR Certification", bullets: ["Get Certified", "Get Noticed", "Get Hired"], description: ["Recognized credentials for working professionals.", "Your next career step starts here."] },
@@ -636,6 +637,18 @@ export default function Desktop1({ className }: { className?: string }) {
                 <img alt="" className="block max-w-none size-full" src={imgLine5} />
               </div>
             </div>
+          </div>
+        </div>
+        <div
+          className="absolute h-[172.057px] left-[734.12px] rounded-[16.94px] top-[844px] w-[301.6px]"
+          data-name="Straight-on portrait in charcoal suit"
+        >
+          <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[16.94px]">
+            <img
+              alt=""
+              className="absolute inset-0 size-full object-cover"
+              src={imgStraightOnPortraitInCharcoalSuit}
+            />
           </div>
         </div>
       </div>
