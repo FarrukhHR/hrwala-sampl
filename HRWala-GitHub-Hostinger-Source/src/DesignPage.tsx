@@ -76,7 +76,6 @@ const imgLine3 = `${assetPathPrefix}/6f7e3.svg`;
 const imgLine4 = `${assetPathPrefix}/73ca4.svg`;
 const imgLine5 = `${assetPathPrefix}/02010.svg`;
 const imgRectangle2 = `${assetPathPrefix}/1c206.svg`;
-const imgGroup2 = `${assetPathPrefix}/63245.svg`;
 const imgLine45 = `${assetPathPrefix}/4c823.svg`;
 const imgLine46 = `${assetPathPrefix}/9c1d3.svg`;
 const imgLine47 = `${assetPathPrefix}/c4ac2.svg`;
@@ -93,7 +92,6 @@ const imgGroup46 = `${assetPathPrefix}/0df5e.svg`;
 const imgVector = `${assetPathPrefix}/b2689.svg`;
 const imgVector1 = `${assetPathPrefix}/52db4.svg`;
 const imgVector2 = `${assetPathPrefix}/c1819.svg`;
-const imgGroup = `${assetPathPrefix}/713ee.svg`;
 const imgGroup1 = `${assetPathPrefix}/596bb.svg`;
 const imgRectangle13 = `${assetPathPrefix}/fa697.svg`;
 const imgGroup86 = `${assetPathPrefix}/2ae3d.svg`;
@@ -2327,7 +2325,41 @@ export default function Desktop1({ className }: { className?: string }) {
           className="absolute h-[1245px] left-[28px] top-[4971px] w-[1385px]"
           data-node-id="260:36"
         >
-          <img
+                    <img
+            alt=""
+            className="absolute block inset-0 max-w-none size-full"
+            src={imgRectangle13}
+          />
+        </div>
+
+        <p
+          className="[word-break:break-word] absolute font-['Poppins:ExtraBold'] h-[50.824px] leading-[0] left-[70px] not-italic text-[0px] text-black top-[calc(50%+1347.06px)] tracking-[-2.499px] w-[349.176px]"
+          data-node-id="260:32"
+        >
+          <span className="leading-[normal] text-[#f6ac04] text-[41.65px]">
+            HRwala
+          </span>
+          <span className="leading-[normal] text-[41.65px]">{` `}</span>
+          <span className="leading-[normal] text-[#0144ab] text-[41.65px]">
+            Team
+          </span>
+        </p>
+
+        <div
+          className="absolute contents left-[119px] top-[5108px]"
+          data-node-id="437:13757"
+        >
+          <div
+            className="absolute contents left-[119px] top-[5108px]"
+            data-node-id="437:13747"
+          >
+            <div
+              className="absolute contents left-[119px] top-[5108px]"
+              data-node-id="263:42"
+            >
+              <div
+                className="absolute bg-white h-[328px] left-[119px] rounded-[16.941px] top-[5108px] w-[247px]"
+                data-node-id="262:37"
               />
               <div
                 className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Bold'] justify-center leading-[0] left-[206.41px] not-italic text-[19.765px] text-black text-center top-[5293.18px] tracking-[-1.1859px] whitespace-nowrap"
