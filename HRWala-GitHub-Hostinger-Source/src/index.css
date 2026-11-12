@@ -1020,3 +1020,12 @@
     transform: none;
   }
 }
+
+/* Second image: poori image original proportion mein */
+[data-node-id="440:14068"] img {
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;
+  object-position: center;
+}
