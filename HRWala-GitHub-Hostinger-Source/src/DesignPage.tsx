@@ -4568,13 +4568,13 @@ export default function Desktop1({ className }: { className?: string }) {
                 className="absolute font-['Poppins:SemiBold'] left-[155px] text-[#f6ac04] text-[16px] top-[4084.76px] tracking-[-0.32px]"
                 data-node-id="145:198"
               >
-                Define the experience
+                Assess the Guest Experience
               </p>
               <p
                 className="absolute font-['Poppins:Medium'] left-[155px] text-[#757575] text-[11.294px] top-[4109.24px] tracking-[-0.2259px]"
                 data-node-id="145:202"
               >
-                Set clear standards for service, communication and presentation.
+                Map each guest touchpoint and identify gaps in service.
               </p>
             </div>
             <div
@@ -4591,13 +4591,13 @@ export default function Desktop1({ className }: { className?: string }) {
                 className="absolute font-['Poppins:SemiBold'] left-[155px] text-[#f6ac04] text-[16px] top-[4222.18px] tracking-[-0.32px]"
                 data-node-id="145:206"
               >
-                Align your people
+                Define the Brand Standards
               </p>
               <p
                 className="absolute font-['Poppins:Medium'] left-[155px] text-[#757575] text-[11.294px] top-[4246.65px] tracking-[-0.2259px]"
                 data-node-id="145:207"
               >
-                Give teams a shared way to deliver those standards every day.
+                Create a hospitality blueprint that defines how guests should experience your brand at every touchpoint.
               </p>
             </div>
             <div
@@ -4614,13 +4614,13 @@ export default function Desktop1({ className }: { className?: string }) {
                 className="absolute font-['Poppins:SemiBold'] left-[155px] text-[#f6ac04] text-[16px] top-[4359.59px] tracking-[-0.32px]"
                 data-node-id="145:210"
               >
-                Build lasting trust
+                Implement and Sustain the Standards
               </p>
               <p
                 className="absolute font-['Poppins:Medium'] left-[155px] text-[#757575] text-[11.294px] top-[4384.06px] tracking-[-0.2259px]"
                 data-node-id="145:211"
               >
-                Create a dependable experience across every customer touchpoint.
+                Train your team, redesign the guest journey, and audit service regularly to refine standards and keep service consistent.
               </p>
             </div>
           </div>
