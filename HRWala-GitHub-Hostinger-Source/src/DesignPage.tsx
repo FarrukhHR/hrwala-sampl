@@ -896,19 +896,19 @@ export default function Desktop1({ className }: { className?: string }) {
           className="[word-break:break-word] absolute font-['Poppins:Medium'] leading-[normal] left-[751.06px] not-italic text-[12.235px] text-black text-justify top-[1069.18px] tracking-[-0.2447px] whitespace-nowrap"
           data-node-id="101:127"
         >
-          03 / Oppurtunity
+          03 / Software
         </p>
         <p
           className="[word-break:break-word] absolute font-['Poppins:Bold'] leading-[normal] left-[751.06px] not-italic text-[#0144ab] text-[20.706px] top-[1088.94px] tracking-[-0.4141px] whitespace-nowrap"
           data-node-id="101:128"
         >
-          Job Portal
+          HRwala Software
         </p>
         <p
           className="[word-break:break-word] absolute font-['Poppins:Medium'] leading-[normal] left-[751.06px] not-italic text-[#757575] text-[12.235px] text-justify top-[1127.53px] tracking-[-0.2447px] w-[247.529px]"
           data-node-id="101:129"
         >
-          A considered space for candidates and employers to find their next great connection.
+          Future HR will be shaped by technology
         </p>
         <p
           className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[66.824px] leading-[normal] left-[944.94px] not-italic opacity-10 text-[#0144ab] text-[64px] text-justify top-[1044.71px] tracking-[-1.28px] w-[80px]"
