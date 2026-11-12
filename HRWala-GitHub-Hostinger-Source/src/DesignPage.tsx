@@ -4597,7 +4597,7 @@ export default function Desktop1({ className }: { className?: string }) {
                 className="absolute font-['Poppins:Medium'] left-[155px] text-[#757575] text-[11.294px] top-[4246.65px] tracking-[-0.2259px]"
                 data-node-id="145:207"
               >
-                Create a hospitality blueprint to guide the guest experience at every brand touchpoint.
+                Create a hospitality blueprint for every guest touchpoint.
               </p>
             </div>
             <div
@@ -4620,7 +4620,7 @@ export default function Desktop1({ className }: { className?: string }) {
                 className="absolute font-['Poppins:Medium'] left-[155px] text-[#757575] text-[11.294px] top-[4384.06px] tracking-[-0.2259px]"
                 data-node-id="145:211"
               >
-                Train your team, redesign the guest journey, and audit service regularly to maintain consistent standards.
+                Train staff, redesign the guest journey, and audit service for consistency.
               </p>
             </div>
           </div>
