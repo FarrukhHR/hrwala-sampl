@@ -846,19 +846,19 @@ export default function Desktop1({ className }: { className?: string }) {
           className="[word-break:break-word] absolute font-['Poppins:Medium'] leading-[normal] left-[421.65px] not-italic text-[12.235px] text-black text-justify top-[1068.24px] tracking-[-0.2447px] whitespace-nowrap"
           data-node-id="101:111"
         >
-          02 / Standards
+          02 / Oppurtunity
         </p>
         <p
           className="[word-break:break-word] absolute font-['Poppins:Bold'] leading-[normal] left-[421.65px] not-italic text-[#0144ab] text-[20.706px] top-[1088px] tracking-[-0.4141px] whitespace-nowrap"
           data-node-id="101:112"
         >
-          Brand Standards
+          Job Portal
         </p>
         <p
           className="[word-break:break-word] absolute font-['Poppins:Medium'] leading-[normal] left-[421.65px] not-italic text-[#757575] text-[12.235px] text-justify top-[1126.59px] tracking-[-0.2447px] w-[247.529px]"
           data-node-id="101:113"
         >
-          Turn your standards into everyday practices that protect your people and your brand.
+           A considered space for candidates and employers to find their next great connection.
         </p>
         <p
           className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[66.824px] leading-[normal] left-[617.41px] not-italic opacity-10 text-[#0144ab] text-[64px] text-justify top-[1043.76px] tracking-[-1.28px] w-[80px]"
