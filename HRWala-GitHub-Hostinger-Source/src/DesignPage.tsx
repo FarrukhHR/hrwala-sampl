@@ -474,162 +474,25 @@ function VideoProject5() {
 export default function Desktop1({ className }: { className?: string }) {
   return (
     <div
-      className={
+     className={
         className ||
-        "relative min-h-screen w-full overflow-hidden bg-white text-slate-900"
+        "border-[0.941px] border-black border-solid h-[7330px] overflow-clip relative w-[1440px]"
       }
       id="home"
       data-node-id="3:6"
       data-name="Desktop - 1"
     >
-      <header className="mx-auto flex w-full max-w-[1440px] items-center justify-between bg-[#0b1f4b] px-6 py-5 text-white shadow-sm md:px-10">
-        <div className="flex items-center gap-3">
-          <img
-            alt="HRWala logo"
-            className="h-12 w-auto"
-            src={imgHrWalaFullWhiteGold1}
-          />
-        </div>
-        <nav className="hidden items-center gap-8 text-sm font-medium md:flex">
-          <a href="#home">Home</a>
-          <a href="#services">Services</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <button
-          type="button"
-          className="rounded-full bg-[#f6ac04] px-5 py-2.5 text-sm font-semibold text-[#0b1f4b] transition hover:bg-[#ffbf3f]"
-          onClick={() => window.location.assign("https://hrwala.net/job-portal")}
-        >
-          Job Portal
-        </button>
-      </header>
-
-      <main className="mx-auto max-w-[1440px] px-4 pb-16 pt-8 md:px-8">
-        <section className="grid items-center gap-10 rounded-[28px] bg-[#f7f9fc] p-6 md:grid-cols-[1.1fr_0.9fr] md:p-10">
-          <div className="space-y-6">
-            <div className="inline-flex items-center rounded-full border border-[#dfe9ff] bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#1d4ed8]">
-              HR & recruitment solutions
-            </div>
-            <HeroCarousel />
-          </div>
-
-          <div className="rounded-[28px] bg-white p-3 shadow-[0_18px_50px_rgba(15,23,42,0.12)]">
-            <img
-              alt="HR professionals collaborating"
-              className="h-[420px] w-full rounded-[22px] object-cover"
-              src={imgWomanPresentingHrDashboardInsideBlueRing1}
-            />
-          </div>
-        </section>
-
-        <section id="services" className="mt-14 space-y-6">
-          <div className="text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#f6ac04]">A' La Carte</p>
-            <h2 className="mt-2 text-3xl font-bold text-[#0b1f4b]">We Offer</h2>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-3">
-            {[
-              {
-                title: "People @ Top",
-                text: "Talent experiences designed around the people who drive your brand.",
-                image: imgWomanInPeachOnGrayBackdrop1,
-              },
-              {
-                title: "Standards",
-                text: "Operational frameworks that keep quality, experience, and service consistent.",
-                image: imgConferenceTableMeetingByCityWindows21,
-              },
-              {
-                title: "Opportunity",
-                text: "Connect candidates, employers, and leaders through a smarter hiring ecosystem.",
-                image: imgWomanPortraitsInCyanRings1,
-              },
-            ].map((card) => (
-              <article key={card.title} className="overflow-hidden rounded-[24px] border border-slate-200 bg-white shadow-sm">
-                <img alt={card.title} className="h-52 w-full object-cover" src={card.image} />
-                <div className="space-y-3 p-5">
-                  <h3 className="text-xl font-bold text-[#0b1f4b]">{card.title}</h3>
-                  <p className="text-sm leading-6 text-slate-600">{card.text}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="mt-14 grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
-          <div className="rounded-[28px] bg-[#ebf3ff] p-7">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#1d4ed8]">Why HRWala</p>
-            <h3 className="mt-3 text-3xl font-bold text-[#0b1f4b]">People, process, and performance in one place.</h3>
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
-              {[
-                "Hiring support for hospitality and service sectors",
-                "HR guidance aligned to business goals",
-                "Professional certification pathways",
-                "Workforce systems that scale with your team",
-              ].map((point) => (
-                <div key={point} className="rounded-2xl bg-white p-4 text-sm font-medium text-slate-700 shadow-sm">
-                  {point}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="rounded-[28px] bg-[#0b1f4b] p-7 text-white">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#f6ac04]">Get started</p>
-            <h3 className="mt-3 text-3xl font-bold">Let’s build your next right hire.</h3>
-            <button
-              type="button"
-              className="mt-6 rounded-full bg-[#f6ac04] px-5 py-3 font-semibold text-[#0b1f4b]"
-              onClick={() => window.location.assign("https://hrwala.net/login")}
-            >
-              Start Hiring
-            </button>
-          </div>
-        </section>
-
-        <section id="faq" className="mt-16">
-          <div className="mb-6 text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#f6ac04]">FAQ</p>
-            <h2 className="mt-2 text-3xl font-bold text-[#0b1f4b]">Questions people ask</h2>
-          </div>
-          <FAQAccordion />
-        </section>
-
-        <section id="contact" className="mt-16 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="rounded-[28px] bg-[#f7f9fc] p-7">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#1d4ed8]">Contact</p>
-            <h3 className="mt-3 text-3xl font-bold text-[#0b1f4b]">We’re here to help.</h3>
-            <p className="mt-4 text-base leading-7 text-slate-600">
-              Whether you’re seeking a role, looking for talent, or exploring HR consulting, our team is ready to support your next step.
-            </p>
-            <div className="mt-6 space-y-3 text-sm text-slate-700">
-              <p>Email: hello@hrwala.net</p>
-              <p>Website: hrwala.net</p>
-            </div>
-          </div>
-          <ContactForm />
-        </section>
-
-        <section className="mt-16 rounded-[28px] bg-[#0b1f4b] p-7 text-white">
-          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#f6ac04]">Stay informed</p>
-              <h3 className="mt-2 text-3xl font-bold">Join our newsletter</h3>
-            </div>
-            <NewsletterForm />
-          </div>
-        </section>
-      </main>
-
-      <div className="px-4 pb-10 md:px-8">
-        <VideoProject5 />
+      <div aria-hidden className="absolute bg-white inset-0 pointer-events-none" />
+      <button className="design-action-button" style={{ left: 82.29, top: 1605.65, width: 157.176, height: 39.529 }} type="button" aria-label="Explore Job Portal" onClick={() => window.location.assign("https://hrwala.net/job-portal")} />
+      <button className="design-action-button" style={{ left: 105, top: 1902, width: 157.176, height: 39.529 }} type="button" aria-label="Find Your Dream Job" onClick={() => window.location.assign("https://hrwala.net/job-portal")} />
+      <button className="design-action-button" style={{ left: 824, top: 1902, width: 138, height: 39.529 }} type="button" aria-label="Start Hiring" onClick={() => window.location.assign("https://hrwala.net/login")} />
+      <button className="design-action-button" style={{ left: 89.76, top: 3273.59, width: 193.613, height: 45.176 }} type="button" aria-label="Explore the Platform" onClick={() => window.location.assign("https://hrwala.net/login")} />
+      <div
+        className="absolute h-[756px] left-[26.06px] top-[1252.71px] w-[1386px]"
+        data-node-id="207:31"
+      >
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgRectangle12} />
       </div>
-    </div>
-  );
-}
-/*
       <div
         className="absolute h-[591px] left-[17.06px] top-[6488.06px] w-[1385px]"
         data-node-id="432:13544"
@@ -4746,4 +4609,3 @@ export default function Desktop1({ className }: { className?: string }) {
     </div>
   );
 }
-*/
