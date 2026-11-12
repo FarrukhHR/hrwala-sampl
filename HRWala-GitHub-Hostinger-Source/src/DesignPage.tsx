@@ -476,23 +476,160 @@ export default function Desktop1({ className }: { className?: string }) {
     <div
       className={
         className ||
-        "border-[0.941px] border-black border-solid h-[7330px] overflow-clip relative w-[1440px]"
+        "relative min-h-screen w-full overflow-hidden bg-white text-slate-900"
       }
       id="home"
       data-node-id="3:6"
       data-name="Desktop - 1"
     >
-      <div aria-hidden className="absolute bg-white inset-0 pointer-events-none" />
-      <button className="design-action-button" style={{ left: 82.29, top: 1605.65, width: 157.176, height: 39.529 }} type="button" aria-label="Explore Job Portal" onClick={() => window.location.assign("https://hrwala.net/job-portal")} />
-      <button className="design-action-button" style={{ left: 105, top: 1902, width: 157.176, height: 39.529 }} type="button" aria-label="Find Your Dream Job" onClick={() => window.location.assign("https://hrwala.net/job-portal")} />
-      <button className="design-action-button" style={{ left: 824, top: 1902, width: 138, height: 39.529 }} type="button" aria-label="Start Hiring" onClick={() => window.location.assign("https://hrwala.net/login")} />
-      <button className="design-action-button" style={{ left: 89.76, top: 3273.59, width: 193.613, height: 45.176 }} type="button" aria-label="Explore the Platform" onClick={() => window.location.assign("https://hrwala.net/login")} />
-      <div
-        className="absolute h-[756px] left-[26.06px] top-[1252.71px] w-[1386px]"
-        data-node-id="207:31"
-      >
-        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgRectangle12} />
+      <header className="mx-auto flex w-full max-w-[1440px] items-center justify-between bg-[#0b1f4b] px-6 py-5 text-white shadow-sm md:px-10">
+        <div className="flex items-center gap-3">
+          <img
+            alt="HRWala logo"
+            className="h-12 w-auto"
+            src={imgHrWalaFullWhiteGold1}
+          />
+        </div>
+        <nav className="hidden items-center gap-8 text-sm font-medium md:flex">
+          <a href="#home">Home</a>
+          <a href="#services">Services</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button
+          type="button"
+          className="rounded-full bg-[#f6ac04] px-5 py-2.5 text-sm font-semibold text-[#0b1f4b] transition hover:bg-[#ffbf3f]"
+          onClick={() => window.location.assign("https://hrwala.net/job-portal")}
+        >
+          Job Portal
+        </button>
+      </header>
+
+      <main className="mx-auto max-w-[1440px] px-4 pb-16 pt-8 md:px-8">
+        <section className="grid items-center gap-10 rounded-[28px] bg-[#f7f9fc] p-6 md:grid-cols-[1.1fr_0.9fr] md:p-10">
+          <div className="space-y-6">
+            <div className="inline-flex items-center rounded-full border border-[#dfe9ff] bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#1d4ed8]">
+              HR & recruitment solutions
+            </div>
+            <HeroCarousel />
+          </div>
+
+          <div className="rounded-[28px] bg-white p-3 shadow-[0_18px_50px_rgba(15,23,42,0.12)]">
+            <img
+              alt="HR professionals collaborating"
+              className="h-[420px] w-full rounded-[22px] object-cover"
+              src={imgWomanPresentingHrDashboardInsideBlueRing1}
+            />
+          </div>
+        </section>
+
+        <section id="services" className="mt-14 space-y-6">
+          <div className="text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#f6ac04]">A' La Carte</p>
+            <h2 className="mt-2 text-3xl font-bold text-[#0b1f4b]">We Offer</h2>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              {
+                title: "People @ Top",
+                text: "Talent experiences designed around the people who drive your brand.",
+                image: imgWomanInPeachOnGrayBackdrop1,
+              },
+              {
+                title: "Standards",
+                text: "Operational frameworks that keep quality, experience, and service consistent.",
+                image: imgConferenceTableMeetingByCityWindows21,
+              },
+              {
+                title: "Opportunity",
+                text: "Connect candidates, employers, and leaders through a smarter hiring ecosystem.",
+                image: imgWomanPortraitsInCyanRings1,
+              },
+            ].map((card) => (
+              <article key={card.title} className="overflow-hidden rounded-[24px] border border-slate-200 bg-white shadow-sm">
+                <img alt={card.title} className="h-52 w-full object-cover" src={card.image} />
+                <div className="space-y-3 p-5">
+                  <h3 className="text-xl font-bold text-[#0b1f4b]">{card.title}</h3>
+                  <p className="text-sm leading-6 text-slate-600">{card.text}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-14 grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
+          <div className="rounded-[28px] bg-[#ebf3ff] p-7">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#1d4ed8]">Why HRWala</p>
+            <h3 className="mt-3 text-3xl font-bold text-[#0b1f4b]">People, process, and performance in one place.</h3>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              {[
+                "Hiring support for hospitality and service sectors",
+                "HR guidance aligned to business goals",
+                "Professional certification pathways",
+                "Workforce systems that scale with your team",
+              ].map((point) => (
+                <div key={point} className="rounded-2xl bg-white p-4 text-sm font-medium text-slate-700 shadow-sm">
+                  {point}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-[28px] bg-[#0b1f4b] p-7 text-white">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#f6ac04]">Get started</p>
+            <h3 className="mt-3 text-3xl font-bold">Let’s build your next right hire.</h3>
+            <button
+              type="button"
+              className="mt-6 rounded-full bg-[#f6ac04] px-5 py-3 font-semibold text-[#0b1f4b]"
+              onClick={() => window.location.assign("https://hrwala.net/login")}
+            >
+              Start Hiring
+            </button>
+          </div>
+        </section>
+
+        <section id="faq" className="mt-16">
+          <div className="mb-6 text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#f6ac04]">FAQ</p>
+            <h2 className="mt-2 text-3xl font-bold text-[#0b1f4b]">Questions people ask</h2>
+          </div>
+          <FAQAccordion />
+        </section>
+
+        <section id="contact" className="mt-16 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="rounded-[28px] bg-[#f7f9fc] p-7">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#1d4ed8]">Contact</p>
+            <h3 className="mt-3 text-3xl font-bold text-[#0b1f4b]">We’re here to help.</h3>
+            <p className="mt-4 text-base leading-7 text-slate-600">
+              Whether you’re seeking a role, looking for talent, or exploring HR consulting, our team is ready to support your next step.
+            </p>
+            <div className="mt-6 space-y-3 text-sm text-slate-700">
+              <p>Email: hello@hrwala.net</p>
+              <p>Website: hrwala.net</p>
+            </div>
+          </div>
+          <ContactForm />
+        </section>
+
+        <section className="mt-16 rounded-[28px] bg-[#0b1f4b] p-7 text-white">
+          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#f6ac04]">Stay informed</p>
+              <h3 className="mt-2 text-3xl font-bold">Join our newsletter</h3>
+            </div>
+            <NewsletterForm />
+          </div>
+        </section>
+      </main>
+
+      <div className="px-4 pb-10 md:px-8">
+        <VideoProject5 />
       </div>
+    </div>
+  );
+}
+/*
       <div
         className="absolute h-[591px] left-[17.06px] top-[6488.06px] w-[1385px]"
         data-node-id="432:13544"
@@ -2308,82 +2445,26 @@ export default function Desktop1({ className }: { className?: string }) {
           data-name="entypo-social:linkedin-with-circle"
         />
       </div>
-      <div
-        className="absolute inset-[calc(98.93%+0.92px)_calc(35.05%-0.28px)_calc(0.67%-0.93px)_calc(62.99%+0.24px)]"
-        data-node-id="299:44"
-        data-name="Vector"
-      >
-        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector} />
-      </div>
-      <div
-        className="absolute left-[1024.65px] size-[37.647px] top-[7243.88px]"
-        data-node-id="299:48"
-        data-name="akar-icons:instagram-fill"
-      />
-      <div
-        className="absolute inset-[calc(98.96%+0.92px)_calc(29.96%-0.38px)_calc(0.68%-0.93px)_calc(68.28%+0.34px)]"
-        data-node-id="299:49"
-        data-name="Vector"
-      >
-        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector1} />
-      </div>
-      <div
-        className="absolute inset-[calc(98.98%+0.92px)_calc(26.88%-0.44px)_calc(0.72%-0.93px)_calc(70.96%+0.39px)]"
-        data-node-id="299:53"
-        data-name="Vector"
-      >
-        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector2} />
-      </div>
-      <div
-        className="absolute left-[974.76px] size-[36.706px] top-[7242.94px]"
-        data-node-id="299:54"
-        data-name="akar-icons:facebook-fill"
-      />
-      <div
-        className="absolute contents inset-[calc(98.93%+0.92px)_calc(32.48%-0.33px)_calc(0.69%-0.93px)_calc(65.62%+0.29px)]"
-        data-node-id="299:55"
-        data-name="Group"
-      >
-        <div
-          className="absolute contents inset-[98.93%_32.48%_0.69%_65.62%]"
-          data-node-id="299:60"
-          data-name="Clip path group"
-        >
-          <div
-            className="absolute inset-[98.93%_32.48%_0.69%_65.62%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[27.373px_27.403px]"
-            data-node-id="299:56"
-            style={{ maskImage: `url("${imgGroup}")` }}
-            data-name="Group"
-          >
-            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgGroup1} />
-          </div>
-        </div>
-      </div>
+      <nav className="footer-social-links" aria-label="Social media">
+        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+          <img src={imgVector} alt="" />
+        </a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noreferrer" aria-label="Facebook">
+          <img src={imgGroup1} alt="" />
+        </a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram">
+          <img src={imgVector1} alt="" />
+        </a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noreferrer" aria-label="YouTube">
+          <img src={imgVector2} alt="" />
+        </a>
+      </nav>
       <div className="absolute contents left-[27.06px] top-[4970.06px]" data-node-id="531:1062">
         <div
           className="absolute h-[1245px] left-[28px] top-[4971px] w-[1385px]"
           data-node-id="260:36"
         >
           <img
-            alt=""
-            className="absolute block inset-0 max-w-none size-full"
-            src={imgRectangle13}
-          />
-        </div>
-        <p
-          className="[word-break:break-word] absolute font-['Poppins:ExtraBold'] h-[50.824px] leading-[0] left-[70px] not-italic text-[0px] text-black top-[calc(50%+1347.06px)] tracking-[-2.499px] w-[349.176px]"
-          data-node-id="260:32"
-        >
-          <span className="leading-[normal] text-[#f6ac04] text-[41.65px]">HRwala</span>
-          <span className="leading-[normal] text-[41.65px]">{` `}</span>
-          <span className="leading-[normal] text-[#0144ab] text-[41.65px]">Team</span>
-        </p>
-        <div className="absolute contents left-[119px] top-[5108px]" data-node-id="437:13757">
-          <div className="absolute contents left-[119px] top-[5108px]" data-node-id="437:13747">
-            <div className="absolute contents left-[119px] top-[5108px]" data-node-id="263:42">
-              <div
-                className="absolute bg-white h-[328px] left-[119px] rounded-[16.941px] top-[5108px] w-[247px]"
-                data-node-id="262:37"
               />
               <div
                 className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Bold'] justify-center leading-[0] left-[206.41px] not-italic text-[19.765px] text-black text-center top-[5293.18px] tracking-[-1.1859px] whitespace-nowrap"
@@ -4665,3 +4746,4 @@ export default function Desktop1({ className }: { className?: string }) {
     </div>
   );
 }
+*/
