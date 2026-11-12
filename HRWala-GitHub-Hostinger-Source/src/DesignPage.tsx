@@ -474,7 +474,7 @@ function VideoProject5() {
 export default function Desktop1({ className }: { className?: string }) {
   return (
     <div
-     className={
+      className={
         className ||
         "border-[0.941px] border-black border-solid h-[7330px] overflow-clip relative w-[1440px]"
       }
