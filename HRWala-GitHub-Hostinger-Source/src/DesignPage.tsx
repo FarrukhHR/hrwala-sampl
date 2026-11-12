@@ -908,7 +908,7 @@ export default function Desktop1({ className }: { className?: string }) {
           className="[word-break:break-word] absolute font-['Poppins:Medium'] leading-[normal] left-[751.06px] not-italic text-[#757575] text-[12.235px] text-justify top-[1127.53px] tracking-[-0.2447px] w-[247.529px]"
           data-node-id="101:129"
         >
-          Future HR will be shaped by technology
+          Future HR will be shaped by technology. HRwala Software is a cloud-based HRIS platform that simplifies HR processes and empowers employees to manage their own data.
         </p>
         <p
           className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[66.824px] leading-[normal] left-[944.94px] not-italic opacity-10 text-[#0144ab] text-[64px] text-justify top-[1044.71px] tracking-[-1.28px] w-[80px]"
