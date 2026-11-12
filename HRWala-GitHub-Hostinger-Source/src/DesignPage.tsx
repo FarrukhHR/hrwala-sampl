@@ -1026,7 +1026,7 @@ export default function Desktop1({ className }: { className?: string }) {
           <HeroCarousel />
           <div className="absolute contents left-[98.82px] top-[225px]" data-node-id="118:38">
             <div
-              className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Regular'] justify-center leading-[0] left-[calc(50%-557.53px)] not-italic text-[13.176px] text-black text-center top-[235px] tracking-[-0.5271px] whitespace-nowrap"
+              className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Regular'] justify-center leading-[0] left-[calc(50%-557.53px)] not-italic text-[16px] text-black text-center top-[235px] tracking-[-0.5271px] whitespace-nowrap"
               data-node-id="118:39"
             >
               <p className="leading-[normal]">People @ Top</p>
