@@ -4,7 +4,7 @@ import { createPortal } from "react-dom";
 const assetPathPrefix = "/assets";
 const videoProject5 = `${assetPathPrefix}/Video Project 5.mp4`;
 const imgConferenceTableMeetingByCityWindows21 = `${assetPathPrefix}/22ce9.png`;
-const imgWomanInPeachOnGrayBackdrop1 = `${assetPathPrefix}/4a8ae.png`;
+const imgWomanInPeachOnGrayBackdrop1 = `${assetPathPrefix}/Smiling bearded man in black suit.png`;
 const imgWomanPortraitsInCyanRings1 = `${assetPathPrefix}/Professional portrait with blue gradient ring.png`;
 const imgHrWalaFullWhiteGold1 = `${assetPathPrefix}/0b611.png`;
 const imgWomanPresentingHrDashboardInsideBlueRing1 = `${assetPathPrefix}/Professional HR Dashboard Presentation.png`;
