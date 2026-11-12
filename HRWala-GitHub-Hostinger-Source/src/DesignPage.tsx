@@ -2721,7 +2721,7 @@ export default function Desktop1({ className }: { className?: string }) {
                 className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Bold'] justify-center leading-[0] left-[759px] not-italic text-[19.765px] text-black top-[5664px] tracking-[-0.7906px] whitespace-nowrap"
                 data-node-id="437:13949"
               >
-                <p className="leading-[normal]">Azeem Chef</p>
+                <p className="leading-[normal]">Rana Azeem</p>
               </div>
               <div
                 className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Regular'] justify-center leading-[0] left-[757px] not-italic text-[#757575] text-[10.24px] top-[5692.5px] tracking-[-0.6144px] w-[197px]"
