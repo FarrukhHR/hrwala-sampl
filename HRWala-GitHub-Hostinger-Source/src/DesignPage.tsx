@@ -1082,7 +1082,7 @@ export default function Desktop1({ className }: { className?: string }) {
             className="-translate-x-1/2 [word-break:break-word] absolute font-['Poppins:Bold'] h-[41px] leading-[normal] left-[699px] not-italic text-[#5194d8] text-[18.06px] text-center top-[402px] tracking-[-1.0836px] w-[220px]"
             data-node-id="412:1210"
           >
-            Employee Development
+            Future Academy
           </p>
           <p
             className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[41.189px] leading-[normal] left-[1260.3px] not-italic text-[#5194d8] text-[18.06px] top-[401.83px] tracking-[-1.0836px] w-[134.7px]"
