@@ -896,7 +896,7 @@ export default function Desktop1({ className }: { className?: string }) {
           className="[word-break:break-word] absolute font-['Poppins:Medium'] leading-[normal] left-[751.06px] not-italic text-[12.235px] text-black text-justify top-[1069.18px] tracking-[-0.2447px] whitespace-nowrap"
           data-node-id="101:127"
         >
-          03 / Software
+          03 / Technology
         </p>
         <p
           className="[word-break:break-word] absolute font-['Poppins:Bold'] leading-[normal] left-[751.06px] not-italic text-[#0144ab] text-[20.706px] top-[1088.94px] tracking-[-0.4141px] whitespace-nowrap"
@@ -946,13 +946,13 @@ export default function Desktop1({ className }: { className?: string }) {
           className="[word-break:break-word] absolute font-['Poppins:Medium'] leading-[normal] left-[1077.65px] not-italic text-[12.235px] text-black text-justify top-[1069.18px] tracking-[-0.2447px] whitespace-nowrap"
           data-node-id="101:135"
         >
-          04 / Systems
+          04 / Trends
         </p>
         <p
           className="[word-break:break-word] absolute font-['Poppins:Bold'] leading-[normal] left-[1077.65px] not-italic text-[#0144ab] text-[20.706px] top-[1088.94px] tracking-[-0.4141px] whitespace-nowrap"
           data-node-id="101:136"
         >
-          30 second HR
+          30 Second HR
         </p>
         <p
           className="[word-break:break-word] absolute font-['Poppins:Medium'] leading-[normal] left-[1077.65px] not-italic text-[#757575] text-[12.235px] text-justify top-[1127.53px] tracking-[-0.2447px] w-[247.529px]"
