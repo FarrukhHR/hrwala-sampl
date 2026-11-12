@@ -4621,6 +4621,7 @@ export default function Desktop1({ className }: { className?: string }) {
                 data-node-id="145:211"
               >
                 Train your team, redesign the guest journey, and audit service regularly to maintain consistent standards.
+              </p>
             </div>
           </div>
         </div>
