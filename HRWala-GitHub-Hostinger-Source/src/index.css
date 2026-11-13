@@ -1169,6 +1169,11 @@
 [data-node-id="509:721"] {
   left: 81.76px;
   top: 2708px;
-  bottom: 10px;
   text-align: left;
+}
+
+[data-node-id="501:711"],
+[data-node-id="502:713"],
+[data-node-id="502:715"] {
+  top: 2745.53px;
 }
