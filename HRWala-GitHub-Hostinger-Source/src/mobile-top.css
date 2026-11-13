@@ -77,3 +77,10 @@
   .design-page .service-card-group > p:nth-of-type(3) { margin-top: 20px; font-size: 29px; line-height: 1.55; color: #757575; }
   .design-page .service-card-group > p:nth-of-type(4) { position: absolute; top: 30px; right: 26px; font-size: 96px; line-height: 1; pointer-events: none; }
 }
+
+@media (max-width: 767px) {
+  .design-page .service-card-group--people::before,
+  .design-page .service-card-group--standards::before {
+    clip-path: inset(0 0 2px 0);
+  }
+}
