@@ -54,6 +54,7 @@ const featuredPartnerLogos = [
   imgBestWesternLogoOnBlueGradient20,
   imgBestWesternLogoOnBlueGradient21,
   imgBestWesternLogoOnBlueGradient22,
+    `${assetPathPrefix}/Hoverizon Tech Solutions Logo.png`,
 ] as const;
 const imgFormalPortraitOnGray1 = `${assetPathPrefix}/58341.png`;
 const imgStraightOnPortraitInCharcoalSuit = `${assetPathPrefix}/Straight-on portrait in charcoal suit.png`;

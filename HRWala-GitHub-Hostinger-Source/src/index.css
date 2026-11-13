@@ -696,7 +696,7 @@
   display: flex;
   width: max-content;
   margin-left: -86px;
-  animation: featured-partners-scroll 52s linear infinite;
+  animation: featured-partners-scroll 30s linear infinite;
 }
 
 .featured-partners-set {
