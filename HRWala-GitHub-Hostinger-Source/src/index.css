@@ -1279,56 +1279,68 @@
   }
 }
 
-/* We Offer: fade ki jagah slide-up */
+/* We Offer: faster slide-up, without fade */
 #home .offer-reveal {
   opacity: 1;
-  translate: 0 28px;
+  translate: 0 36px;
 }
 
 #home .offer-reveal.offer-visible {
-  animation: offerSlideUp 800ms ease-out
+  animation: offerQuickSlide 450ms cubic-bezier(0.22, 1, 0.36, 1)
     var(--offer-delay, 0ms) both;
 }
 
-@keyframes offerSlideUp {
-  from {
-    translate: 0 28px;
-  }
-  to {
-    translate: 0 0;
-  }
+@keyframes offerQuickSlide {
+  from { translate: 0 36px; }
+  to   { translate: 0 0; }
 }
 
-/* Certificates aur badges: right se slide-in */
-#home .academy-zoom {
-  opacity: 1;
+/* Academy: original opacity, no fade */
+#home .academy-reveal {
+  opacity: var(--academy-opacity, 1);
+  margin-top: 0;
+  scale: 1;
 }
 
-#home .academy-zoom.academy-visible {
-  animation: academySlideFromRight 1000ms ease-out
+/* Headings, descriptions aur text columns: left se */
+#home .academy-up {
+  margin-left: -24px;
+}
+
+#home .academy-up.academy-visible {
+  animation: academyTextSlide 550ms ease-out
     var(--academy-delay, 0ms) both;
 }
 
-@keyframes academySlideFromRight {
-  from {
-    opacity: 1;
-    margin-left: 45px;
-    scale: 1;
-  }
-  to {
-    opacity: 1;
-    margin-left: 0;
-    scale: 1;
-  }
+/* Certificates aur badges: right se */
+#home .academy-zoom {
+  margin-left: 32px;
+}
+
+#home .academy-zoom.academy-visible {
+  animation: academyImageSlide 600ms ease-out
+    var(--academy-delay, 0ms) both;
+}
+
+@keyframes academyTextSlide {
+  from { margin-left: -24px; }
+  to   { margin-left: 0; }
+}
+
+@keyframes academyImageSlide {
+  from { margin-left: 32px; }
+  to   { margin-left: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   #home .offer-reveal,
-  #home .academy-zoom {
+  #home .offer-reveal.offer-visible,
+  #home .academy-reveal,
+  #home .academy-reveal.academy-visible {
     animation: none;
     translate: none;
+    margin-top: 0;
     margin-left: 0;
-    opacity: 1;
     scale: 1;
   }
 }
