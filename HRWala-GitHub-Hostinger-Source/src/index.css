@@ -1056,23 +1056,3 @@
   translate: 0 -25px;
 }
 
-/* Neeche ke cards aur tamam aglay sections upar karein */
-#home :is(
-  [class*="top-[44"],
-  [class*="top-[45"],
-  [class*="top-[46"],
-  [class*="top-[47"],
-  [class*="top-[48"],
-  [class*="top-[49"],
-  [class*="top-[5"],
-  [class*="top-[6"],
-  [class*="top-[7"]
-):not([class~="contents"]),
-#home [data-node-id="260:32"],
-#home [data-node-id="274:203"],
-#home .contact-form-panel,
-#home .newsletter-form,
-#home .faq-accordion,
-#home .featured-partners-marquee {
-  margin-top: -110px;
-}

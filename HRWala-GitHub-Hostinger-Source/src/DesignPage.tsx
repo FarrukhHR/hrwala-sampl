@@ -470,7 +470,51 @@ function VideoProject5() {
   );
 }
 export default function Desktop1({ className }: { className?: string }) {
-  
+    useEffect(() => {
+    const page = document.getElementById("home");
+    if (!page) return;
+
+    const elements = Array.from(
+      page.querySelectorAll<HTMLElement>("*")
+    );
+
+    const changes = elements.flatMap((element) => {
+      const css = getComputedStyle(element);
+      const top = Number.parseFloat(css.top);
+
+      // Sirf neeche ke sections ke main positioned elements.
+      if (
+        css.position !== "absolute" ||
+        css.display === "contents" ||
+        element.offsetParent !== page ||
+        !Number.isFinite(top) ||
+        top < 4450
+      ) {
+        return [];
+      }
+
+      return [{
+        element,
+        originalTop: element.style.getPropertyValue("top"),
+        priority: element.style.getPropertyPriority("top"),
+        newTop: top - 110,
+      }];
+    });
+
+    changes.forEach(({ element, newTop }) => {
+      element.style.setProperty("top", `${newTop}px`);
+    });
+
+    return () => {
+      changes.forEach(({ element, originalTop, priority }) => {
+        if (originalTop) {
+          element.style.setProperty("top", originalTop, priority);
+        } else {
+          element.style.removeProperty("top");
+        }
+      });
+    };
+  }, []);
   return (
     <div
       className={
