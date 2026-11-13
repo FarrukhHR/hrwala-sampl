@@ -1157,3 +1157,17 @@
   text-align: justify;
   color: #757575;
 }
+
+/* Professional Certification ki description */
+[data-node-id="509:723"] {
+  left: 77.06px;
+  top: 2378px;
+  text-align: left;
+}
+
+/* Professional Badges ki description */
+[data-node-id="509:721"] {
+  left: 81.76px;
+  top: 2708px;
+  text-align: left;
+}
