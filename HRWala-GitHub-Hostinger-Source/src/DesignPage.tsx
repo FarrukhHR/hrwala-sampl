@@ -786,7 +786,7 @@ useEffect(() => {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (!entry.isIntersecting || entry.intersectionRatio < 0.5) return;
+        if (!entry.isIntersecting) return;
 
         targets.get(entry.target)?.classList.add("card-zoom-visible");
         observer.unobserve(entry.target);
