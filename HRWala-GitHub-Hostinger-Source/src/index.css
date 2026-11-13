@@ -1206,7 +1206,7 @@
 }
 
 #home .offer-reveal.offer-visible {
-  animation: offerFadeUp 600ms ease-out
+  animation: offerFadeUp 1000ms ease-out
     var(--offer-delay, 0ms) both;
 }
 
