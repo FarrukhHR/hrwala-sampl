@@ -844,67 +844,62 @@ useEffect(() => {
   const find = (id: string) =>
     page.querySelector<HTMLElement>(`[data-node-id="${id}"]`);
 
-  // Har complete team card aur uska white background.
-  const cardIds = [
+  const ids = [
     ["437:13757", "262:37"],
     ["437:13857", "437:13860"],
     ["437:13879", "437:13882"],
     ["437:13901", "437:13904"],
-
     ["437:13923", "437:13926"],
     ["437:13934", "437:13937"],
     ["437:13945", "437:13948"],
     ["437:13956", "437:13959"],
-
     ["442:14070", "442:14073"],
     ["437:14011", "437:14014"],
     ["437:14022", "437:14025"],
   ];
 
   const cards: {
+    wrapper: HTMLElement;
     trigger: HTMLElement;
-    elements: HTMLElement[];
-    delay: number;
+    shell: boolean;
   }[] = [];
 
-  cardIds.forEach(([wrapperId, backgroundId], index) => {
+  ids.forEach(([wrapperId, backgroundId]) => {
     const wrapper = find(wrapperId);
-    const background = find(backgroundId);
-    if (!wrapper || !background) return;
+    const trigger = find(backgroundId);
 
-    const elements = Array.from(
-      wrapper.querySelectorAll<HTMLElement>("*")
-    ).filter((element) => {
-      const css = getComputedStyle(element);
-
-      return (
-        css.position === "absolute" &&
-        css.display !== "contents" &&
-        element.offsetParent === page
-      );
-    });
-
-    cards.push({
-      trigger: background,
-      elements,
-      delay: (index % 4) * 70,
-    });
+    if (wrapper && trigger) {
+      cards.push({ wrapper, trigger, shell: true });
+    }
   });
 
-  // Hussain Raza ka complete card.
   const hussain = page.querySelector<HTMLElement>(
     ".hussain-team-card"
   );
 
   if (hussain) {
     cards.push({
+      wrapper: hussain,
       trigger: hussain,
-      elements: [hussain],
-      delay: 210,
+      shell: false,
     });
   }
 
-  const animations: Animation[] = [];
+  // Pehle wrappers prepare karein.
+  cards.forEach(({ wrapper, shell }) => {
+    if (shell) wrapper.classList.add("team-zoom-shell");
+  });
+
+  // Poore card ka common zoom center.
+  cards.forEach(({ wrapper, trigger, shell }) => {
+    const origin = shell
+      ? `${trigger.offsetLeft + trigger.offsetWidth / 2}px ` +
+        `${trigger.offsetTop + trigger.offsetHeight / 2}px`
+      : "50% 50%";
+
+    wrapper.style.setProperty("--team-zoom-origin", origin);
+    wrapper.classList.add("team-scroll-zoom");
+  });
 
   const observer = new IntersectionObserver(
     (entries) => {
@@ -914,74 +909,32 @@ useEffect(() => {
         const card = cards.find(
           ({ trigger }) => trigger === entry.target
         );
-        if (!card) return;
 
-        const centerX =
-          card.trigger.offsetLeft + card.trigger.offsetWidth / 2;
-        const centerY =
-          card.trigger.offsetTop + card.trigger.offsetHeight / 2;
-
-        card.elements.forEach((element) => {
-          element.classList.remove("team-zoom-waiting");
-          const currentScale = Number.parseFloat(
-            getComputedStyle(element).scale
-          );
-          const restScale = Number.isFinite(currentScale)
-            ? currentScale
-            : 1;
-
-          const origin =
-            `${centerX - element.offsetLeft}px ` +
-            `${centerY - element.offsetTop}px`;
-
-          animations.push(
-            element.animate(
-              [
-                {
-                  scale: String(restScale * 0.96),
-                  transformOrigin: origin,
-                },
-                {
-                  scale: String(restScale),
-                  transformOrigin: origin,
-                },
-              ],
-              {
-                duration: 1000,
-                delay: 0,
-                easing: "cubic-bezier(0.25, 0.1, 0.25, 1)",
-                fill: "backwards",
-              }
-            )
-          );
-        });
-
+        card?.wrapper.classList.add("team-scroll-visible");
         observer.unobserve(entry.target);
       });
     },
-    { threshold: 0.55, rootMargin: "0px" }
+    {
+      threshold: 0.1,
+      rootMargin: "0px",
+    }
   );
 
-  cards.forEach(({ trigger, elements }) => {
-  elements.forEach((element) => {
-    element.classList.add("team-zoom-waiting");
-  });
+  cards.forEach(({ trigger }) => observer.observe(trigger));
 
-  observer.observe(trigger);
-});
+  return () => {
+    observer.disconnect();
 
-return () => {
-  observer.disconnect();
-  animations.forEach((animation) => animation.cancel());
-
-  cards.forEach(({ elements }) => {
-    elements.forEach((element) => {
-      element.classList.remove("team-zoom-waiting");
+    cards.forEach(({ wrapper }) => {
+      wrapper.classList.remove(
+        "team-zoom-shell",
+        "team-scroll-zoom",
+        "team-scroll-visible"
+      );
+      wrapper.style.removeProperty("--team-zoom-origin");
     });
-  });
-};
+  };
 }, []);
-
   return (
     <div
       className={
