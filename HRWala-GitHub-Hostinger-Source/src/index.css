@@ -1029,3 +1029,22 @@
   object-fit: contain;
   object-position: center;
 }
+
+/* Develop Your Brand image */
+[data-node-id="413:613"] {
+  left: 746.06px;
+  width: 620.435px;
+  height: 349.18px;
+}
+
+/* Steps, text, circles aur connecting lines */
+[data-node-id="244:253"] {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(0.868);
+  transform-origin: 76.88px 4062.18px;
+  pointer-events: none;
+}
