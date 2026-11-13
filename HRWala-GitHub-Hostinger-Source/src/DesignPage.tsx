@@ -587,8 +587,8 @@ export default function Desktop1({ className }: { className?: string }) {
       });
     },
     {
-      threshold: 0.12,
-      rootMargin: "0px 0px -24px 0px",
+      threshold: 0.5,
+      rootMargin: "0px",
     }
   );
 
