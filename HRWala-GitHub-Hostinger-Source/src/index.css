@@ -1411,3 +1411,9 @@
     animation: none;
   }
 }
+
+/* Reveal hone se pehle content hide rahe */
+#home .team-zoom-waiting,
+#home .brand-step-waiting {
+  visibility: hidden;
+}

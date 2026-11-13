@@ -922,6 +922,7 @@ useEffect(() => {
           card.trigger.offsetTop + card.trigger.offsetHeight / 2;
 
         card.elements.forEach((element) => {
+          element.classList.remove("team-zoom-waiting");
           const currentScale = Number.parseFloat(
             getComputedStyle(element).scale
           );
@@ -961,12 +962,24 @@ useEffect(() => {
     { threshold: 0.95, rootMargin: "0px" }
   );
 
-  cards.forEach(({ trigger }) => observer.observe(trigger));
+  cards.forEach(({ trigger, elements }) => {
+  elements.forEach((element) => {
+    element.classList.add("team-zoom-waiting");
+  });
 
-  return () => {
-    observer.disconnect();
-    animations.forEach((animation) => animation.cancel());
-  };
+  observer.observe(trigger);
+});
+
+return () => {
+  observer.disconnect();
+  animations.forEach((animation) => animation.cancel());
+
+  cards.forEach(({ elements }) => {
+    elements.forEach((element) => {
+      element.classList.remove("team-zoom-waiting");
+    });
+  });
+};
 }, []);
 
   return (
