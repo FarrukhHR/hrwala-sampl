@@ -1056,3 +1056,7 @@
   translate: 0 -25px;
 }
 
+#home .industry-card-group {
+  scale: 0.94;
+  translate: 0 -110px;
+}

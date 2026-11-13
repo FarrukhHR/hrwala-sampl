@@ -505,6 +505,45 @@ export default function Desktop1({ className }: { className?: string }) {
       element.style.setProperty("top", `${newTop}px`);
     });
 
+      useEffect(() => {
+    const page = document.getElementById("home");
+    const viewport = page?.closest<HTMLElement>(".design-viewport");
+    const footer = page?.querySelector<HTMLElement>(
+      '[data-node-id="296:2"]'
+    );
+
+    if (!viewport || !footer) return;
+
+    const oldHeight = viewport.style.height;
+    const oldMinHeight = viewport.style.minHeight;
+    let frame = 0;
+
+    const fitFooter = () => {
+      cancelAnimationFrame(frame);
+
+      frame = requestAnimationFrame(() => {
+        const viewportTop = viewport.getBoundingClientRect().top;
+        const footerBottom = footer.getBoundingClientRect().bottom;
+
+        viewport.style.minHeight = "0";
+        viewport.style.height =
+          `${Math.ceil(footerBottom - viewportTop)}px`;
+      });
+    };
+
+    fitFooter();
+    window.addEventListener("resize", fitFooter);
+    window.addEventListener("load", fitFooter);
+
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("resize", fitFooter);
+      window.removeEventListener("load", fitFooter);
+      viewport.style.height = oldHeight;
+      viewport.style.minHeight = oldMinHeight;
+    };
+  }, []);
+  
     return () => {
       changes.forEach(({ element, originalTop, priority }) => {
         if (originalTop) {
