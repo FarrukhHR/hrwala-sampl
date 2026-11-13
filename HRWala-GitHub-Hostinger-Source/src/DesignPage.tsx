@@ -532,7 +532,18 @@ export default function Desktop1({ className }: { className?: string }) {
   aria-label="Hussain Raza"
 >
   <div className="hussain-card-lines" aria-hidden="true">
-  <img src={imgGroup86} alt="" />
+  <svg
+    width="56.471"
+    height="34"
+    viewBox="0 0 56.471 34"
+    fill="none"
+  >
+    <path
+      d="M0 1H56.471 M0 17H56.471 M0 33H56.471"
+      stroke="black"
+      strokeWidth="1.8"
+    />
+  </svg>
 </div>
 
   <img

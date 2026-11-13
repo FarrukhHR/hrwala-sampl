@@ -1106,12 +1106,6 @@
   object-fit: cover;
 }
 
-.hussain-card-lines span {
-  display: block;
-  height: 1.8px;
-  background: #000;
-}
-
 .hussain-team-card h3 {
   position: absolute;
   top: 171px;
@@ -1163,6 +1157,26 @@
   width: 100%;
   height: calc(100% + 1.882px);
   max-width: none;
+}
+
+#home .hussain-team-card .hussain-card-lines {
+  position: absolute;
+  top: 75px;
+  left: 30px;
+  width: 56.471px;
+  height: 34px;
+  display: block;
+  background: none;
+  border: 0;
+}
+
+#home .hussain-card-lines > svg {
+  position: static;
+  display: block;
+  width: 56.471px;
+  height: 34px;
+  max-width: none;
+  background: none;
 }
 
 /* Professional Certification ki description */
