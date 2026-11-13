@@ -713,7 +713,7 @@ useEffect(() => {
         observer.unobserve(entry.target);
       });
     },
-    { threshold: 0.5, rootMargin: "0px" }
+    { threshold: 0.15, rootMargin: "0px" }
   );
 
   prepared.forEach(({ target, elements, zoom, delay = 0 }) => {
@@ -792,7 +792,7 @@ useEffect(() => {
         observer.unobserve(entry.target);
       });
     },
-    { threshold: 0.15, rootMargin: "0px" }
+    { threshold: 0.5, rootMargin: "0px" }
   );
 
   cards.forEach((card, index) => {
@@ -904,7 +904,7 @@ useEffect(() => {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
+        if (!entry.isIntersecting || entry.intersectionRatio < 0.5) return;
 
         const card = cards.find(
           ({ trigger }) => trigger === entry.target
@@ -915,7 +915,7 @@ useEffect(() => {
       });
     },
     {
-      threshold: 0.1,
+      threshold: 0.5,
       rootMargin: "0px",
     }
   );
@@ -935,6 +935,7 @@ useEffect(() => {
     });
   };
 }, []);
+
   return (
     <div
       className={
