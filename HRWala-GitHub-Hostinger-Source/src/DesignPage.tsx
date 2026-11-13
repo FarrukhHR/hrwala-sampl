@@ -5172,13 +5172,3 @@ useEffect(() => {
     </div>
   );
 }
-
-return <ResponsiveLayout
-  design={design}
-  hero={<HeroCarousel />}
-  video={<VideoProject5 />}
-  steps={<BrandSteps />}
-  faq={<FAQAccordion />}
-  contact={<ContactForm />}
-  newsletter={<NewsletterForm />}
-/>;
