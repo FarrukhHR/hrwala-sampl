@@ -1278,3 +1278,57 @@
     scale: 1;
   }
 }
+
+/* We Offer: fade ki jagah slide-up */
+#home .offer-reveal {
+  opacity: 1;
+  translate: 0 28px;
+}
+
+#home .offer-reveal.offer-visible {
+  animation: offerSlideUp 800ms ease-out
+    var(--offer-delay, 0ms) both;
+}
+
+@keyframes offerSlideUp {
+  from {
+    translate: 0 28px;
+  }
+  to {
+    translate: 0 0;
+  }
+}
+
+/* Certificates aur badges: right se slide-in */
+#home .academy-zoom {
+  opacity: 1;
+}
+
+#home .academy-zoom.academy-visible {
+  animation: academySlideFromRight 1000ms ease-out
+    var(--academy-delay, 0ms) both;
+}
+
+@keyframes academySlideFromRight {
+  from {
+    opacity: 1;
+    margin-left: 45px;
+    scale: 1;
+  }
+  to {
+    opacity: 1;
+    margin-left: 0;
+    scale: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #home .offer-reveal,
+  #home .academy-zoom {
+    animation: none;
+    translate: none;
+    margin-left: 0;
+    opacity: 1;
+    scale: 1;
+  }
+}
