@@ -532,10 +532,8 @@ export default function Desktop1({ className }: { className?: string }) {
   aria-label="Hussain Raza"
 >
   <div className="hussain-card-lines" aria-hidden="true">
-    <span />
-    <span />
-    <span />
-  </div>
+  <img src={imgGroup86} alt="" />
+</div>
 
   <img
     className="hussain-card-photo"

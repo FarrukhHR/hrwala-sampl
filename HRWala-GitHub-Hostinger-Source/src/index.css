@@ -1106,15 +1106,6 @@
   object-fit: cover;
 }
 
-.hussain-card-lines {
-  position: absolute;
-  top: 75px;
-  left: 30px;
-  width: 50px;
-  display: grid;
-  gap: 14px;
-}
-
 .hussain-card-lines span {
   display: block;
   height: 1.8px;
@@ -1158,6 +1149,22 @@
   color: #757575;
 }
 
+.hussain-card-lines {
+  top: 76.24px;
+  width: 56.471px;
+  height: 32px;
+  display: block;
+}
+
+.hussain-card-lines img {
+  position: absolute;
+  top: -1.882px;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 1.882px);
+  max-width: none;
+}
+
 /* Professional Certification ki description */
 [data-node-id="509:723"] {
   left: 77.06px;
@@ -1175,5 +1182,5 @@
 [data-node-id="501:711"],
 [data-node-id="502:713"],
 [data-node-id="502:715"] {
-  top: 2745.53px;
+  top: 2750.53px;
 }
