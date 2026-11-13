@@ -158,24 +158,39 @@ function HeroCarousel() {
     };
   }, []);
 
-  const slide = heroSlides[activeIndex];
+    const slide = heroSlides[activeIndex];
+
   return (
-    <div className={`hero-carousel-copy${visible ? "" : " is-hidden"}`} aria-hidden={!visible}>
-      <h1 className="hero-carousel-heading">{slide.heading}</h1>
-      <ul className="hero-carousel-bullets">
-        {slide.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
-      </ul>
-      <p className="hero-carousel-description">
-        {slide.description[0]}<br />{slide.description[1]}
-      </p>
+    <>
+      <div
+        className={`hero-carousel-copy${visible ? "" : " is-hidden"}`}
+        aria-hidden={!visible}
+      >
+        <h1 className="hero-carousel-heading">{slide.heading}</h1>
+
+        <ul className="hero-carousel-bullets">
+          {slide.bullets.map((bullet) => (
+            <li key={bullet}>{bullet}</li>
+          ))}
+        </ul>
+
+        <p className="hero-carousel-description">
+          {slide.description[0]}
+          <br />
+          {slide.description[1]}
+        </p>
+      </div>
+
       <button
         className="hero-carousel-cta"
         type="button"
-        onClick={() => window.location.assign("https://hrwala.net/job-portal")}
+        onClick={() =>
+          window.location.assign("https://hrwala.net/job-portal")
+        }
       >
         Job Portal
       </button>
-    </div>
+    </>
   );
 }
 

@@ -1623,3 +1623,7 @@
     transition: none;
   }
 }
+
+.hero-carousel-cta {
+  z-index: 21;
+}
