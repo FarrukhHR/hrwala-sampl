@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import ResponsiveLayout from "./ResponsiveLayout";
 
 const assetPathPrefix = "/assets";
 const videoProject5 = `${assetPathPrefix}/Video Project 5.mp4`;
@@ -5171,3 +5172,13 @@ useEffect(() => {
     </div>
   );
 }
+
+return <ResponsiveLayout
+  design={design}
+  hero={<HeroCarousel />}
+  video={<VideoProject5 />}
+  steps={<BrandSteps />}
+  faq={<FAQAccordion />}
+  contact={<ContactForm />}
+  newsletter={<NewsletterForm />}
+/>;

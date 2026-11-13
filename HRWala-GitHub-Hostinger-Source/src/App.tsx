@@ -1,35 +1,21 @@
-import { useEffect, useState } from "react";
-import DesignPage from "./DesignPage";
-
-const DESIGN_WIDTH = 1440;
-const DESIGN_HEIGHT = 7330;
-
-function getScale() {
-  if (typeof window === "undefined") return 1;
-  return document.documentElement.clientWidth / DESIGN_WIDTH;
-}
+import { useEffect, useRef, useState } from 'react'
+import DesignPage from './DesignPage'
 
 export default function App() {
-  const [scale, setScale] = useState(getScale);
-
+  const viewport = useRef<HTMLDivElement>(null)
+  const [width, setWidth] = useState(() => typeof window === 'undefined' ? 1440 : window.innerWidth)
   useEffect(() => {
-    const updateScale = () => setScale(getScale());
-    window.addEventListener("resize", updateScale);
-    return () => window.removeEventListener("resize", updateScale);
-  }, []);
-
-  return (
-    <main
-      className="design-viewport"
-      style={{ height: 7215 * scale }}
-      aria-label="HRwala landing page"
-    >
-      <div
-        className="design-canvas"
-        style={{ transform: `scale(${scale}) translateX(-50%)` }}
-      >
-        <DesignPage className="design-page" />
-      </div>
-    </main>
-  );
+    const element = viewport.current
+    if (!element) return
+    const observer = new ResizeObserver(([entry]) => setWidth(entry.contentRect.width))
+    observer.observe(element)
+    return () => observer.disconnect()
+  }, [])
+  const mobile = width < 1024
+  const scale = Math.min(1, width / 1440)
+  return <div ref={viewport} className="design-viewport" style={{ height: mobile ? 'auto' : 7330 * scale }}>
+    <div className="design-canvas" style={{ position: mobile ? 'static' : 'absolute', width: mobile ? '100%' : 1440, height: mobile ? 'auto' : 7330, left: mobile ? 'auto' : '50%', transform: mobile ? 'none' : `translateX(-50%) scale(${scale})`, transformOrigin: 'top center' }}>
+      <DesignPage />
+    </div>
+  </div>
 }
