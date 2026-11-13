@@ -1049,9 +1049,30 @@
   pointer-events: none;
 }
 
-/* Develop Your Brand: balance top/bottom spacing */
+/* Develop Your Brand ko thora upar karein */
 [data-node-id="133:2"],
 [data-node-id="244:253"],
 [data-node-id="413:613"] {
-  translate: 0 35px;
+  translate: 0 -25px;
+}
+
+/* Neeche ke cards aur tamam aglay sections upar karein */
+#home :is(
+  [class*="top-[44"],
+  [class*="top-[45"],
+  [class*="top-[46"],
+  [class*="top-[47"],
+  [class*="top-[48"],
+  [class*="top-[49"],
+  [class*="top-[5"],
+  [class*="top-[6"],
+  [class*="top-[7"]
+):not([class~="contents"]),
+#home [data-node-id="260:32"],
+#home [data-node-id="274:203"],
+#home .contact-form-panel,
+#home .newsletter-form,
+#home .faq-accordion,
+#home .featured-partners-marquee {
+  margin-top: -110px;
 }
