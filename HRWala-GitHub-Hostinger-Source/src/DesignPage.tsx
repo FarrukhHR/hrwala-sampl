@@ -526,6 +526,35 @@ export default function Desktop1({ className }: { className?: string }) {
       data-name="Desktop - 1"
     >
       <div aria-hidden className="absolute bg-white inset-0 pointer-events-none" />
+      <article
+  className="hussain-team-card absolute left-[1043px] top-[5841px]"
+  aria-label="Hussain Raza"
+>
+  <div className="hussain-card-lines" aria-hidden="true">
+    <span />
+    <span />
+    <span />
+  </div>
+
+  <img
+    className="hussain-card-photo"
+    src={`${assetPathPrefix}/Young executive in charcoal navy.png`}
+    alt="Hussain Raza"
+  />
+
+  <h3>Hussain Raza</h3>
+
+  <p className="hussain-card-role">
+    Web &amp; Application Developer
+  </p>
+
+  <p className="hussain-card-description">
+    Developer and technology entrepreneur with 3 years of experience,
+    specializing in digital solutions, technology strategy, and
+    business-focused innovation. Founder of Hoverizon Tech Solutions,
+    driving ideas into impactful digital experiences.
+  </p>
+</article>
       <button className="design-action-button" style={{ left: 82.29, top: 1605.65, width: 157.176, height: 39.529 }} type="button" aria-label="Explore Job Portal" onClick={() => window.location.assign("https://hrwala.net/job-portal")} />
       <button className="design-action-button" style={{ left: 105, top: 1902, width: 157.176, height: 39.529 }} type="button" aria-label="Find Your Dream Job" onClick={() => window.location.assign("https://hrwala.net/job-portal")} />
       <button className="design-action-button" style={{ left: 824, top: 1902, width: 138, height: 39.529 }} type="button" aria-label="Start Hiring" onClick={() => window.location.assign("https://hrwala.net/login")} />

@@ -1081,3 +1081,74 @@
 [data-node-id="145:211"] {
   font-size: 13px;
 }
+
+.hussain-team-card {
+  width: 247px;
+  height: 328px;
+  border-radius: 16.941px;
+  background: #fff;
+  color: #000;
+}
+
+.hussain-card-photo {
+  position: absolute;
+  top: 19.18px;
+  left: 95.71px;
+  width: 182.624px;
+  height: 137.41px;
+  max-width: none;
+  border-radius: 16.94px;
+  object-fit: cover;
+}
+
+.hussain-card-lines {
+  position: absolute;
+  top: 75px;
+  left: 30px;
+  width: 56.471px;
+  display: grid;
+  gap: 14px;
+}
+
+.hussain-card-lines span {
+  display: block;
+  height: 1.8px;
+  background: #000;
+}
+
+.hussain-team-card h3 {
+  position: absolute;
+  top: 171px;
+  left: 20px;
+  margin: 0;
+  font-family: "Poppins:Bold", sans-serif;
+  font-size: 19.765px;
+  line-height: 30px;
+  letter-spacing: -1.1859px;
+}
+
+.hussain-card-role {
+  position: absolute;
+  top: 204px;
+  left: 20px;
+  margin: 0;
+  font-family: "Poppins:Regular", sans-serif;
+  font-size: 11.5px;
+  line-height: 18px;
+  letter-spacing: -0.4px;
+  color: #757575;
+}
+
+.hussain-card-description {
+  position: absolute;
+  top: 230px;
+  left: 20px;
+  width: 207px;
+  margin: 0;
+  font-family: "Poppins:Regular", sans-serif;
+  font-size: 10.5px;
+  line-height: 13px;
+  letter-spacing: -0.21px;
+  text-align: justify;
+  color: #757575;
+}
