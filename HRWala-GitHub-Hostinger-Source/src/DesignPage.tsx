@@ -473,7 +473,7 @@ function VideoProject5() {
 
 function BrandSteps() {
   const ref = useRef<HTMLDivElement>(null);
-  const [playing, setPlaying] = useState(false);
+  const [phase, setPhase] = useState(0);
 
   useEffect(() => {
     const element = ref.current;
@@ -483,9 +483,11 @@ function BrandSteps() {
       !("IntersectionObserver" in window) ||
       window.matchMedia("(prefers-reduced-motion: reduce)").matches
     ) {
-      setPlaying(true);
+      setPhase(8);
       return;
     }
+
+    const timers: number[] = [];
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -493,14 +495,32 @@ function BrandSteps() {
           return;
         }
 
-        setPlaying(true);
         observer.disconnect();
+        setPhase(1);
+
+        [
+          [450, 2],   // Step 1 number aur text
+          [750, 3],   // Line 1
+          [1300, 4],  // Circle 2
+          [1750, 5],  // Step 2 number aur text
+          [2050, 6],  // Line 2
+          [2600, 7],  // Circle 3
+          [3050, 8],  // Step 3 number aur text
+        ].forEach(([delay, nextPhase]) => {
+          timers.push(
+            window.setTimeout(() => setPhase(nextPhase), delay)
+          );
+        });
       },
       { threshold: 0.3 }
     );
 
     observer.observe(element);
-    return () => observer.disconnect();
+
+    return () => {
+      observer.disconnect();
+      timers.forEach((timer) => window.clearTimeout(timer));
+    };
   }, []);
 
   const steps = [
@@ -522,61 +542,64 @@ function BrandSteps() {
   ];
 
   return (
-    <div
-      ref={ref}
-      className={`brand-timeline ${playing ? "is-playing" : ""}`}
-    >
-      {steps.map((step, index) => (
-        <div
-          className="brand-timeline-row"
-          style={{ top: index * 134.59 }}
-          key={step.title}
-        >
-          <svg
-            className="brand-timeline-ring"
-            viewBox="0 0 70 70"
-            aria-hidden="true"
-          >
-            <circle
-              cx="35"
-              cy="35"
-              r="34"
-              pathLength="1"
-              style={{ animationDelay: `${index * 1200}ms` }}
-            />
-          </svg>
+    <div ref={ref} className="brand-timeline">
+      {steps.map((step, index) => {
+        const circleReady = phase >= index * 3 + 1;
+        const textReady = phase >= index * 3 + 2;
+        const lineReady = phase >= index * 3 + 3;
 
-          <span
-            className="brand-timeline-number"
-            style={{ animationDelay: `${index * 1200 + 350}ms` }}
-          >
-            {String(index + 1).padStart(2, "0")}
-          </span>
-
+        return (
           <div
-            className="brand-timeline-text"
-            style={{ animationDelay: `${index * 1200 + 450}ms` }}
+            className="brand-timeline-row"
+            style={{ top: index * 134.59 }}
+            key={step.title}
           >
-            <p className="brand-timeline-label">Step {index + 1}</p>
-            <h3>{step.title}</h3>
-            <p className="brand-timeline-description">
-              {step.description}
-            </p>
-          </div>
-
-          {index < 2 && (
-            <div
-              className="brand-timeline-line"
-              style={{ animationDelay: `${index * 1200 + 650}ms` }}
+            <svg
+              className={`brand-timeline-ring ${
+                circleReady ? "is-drawn" : ""
+              }`}
+              viewBox="0 0 70 70"
               aria-hidden="true"
-            />
-          )}
-        </div>
-      ))}
+            >
+              <circle cx="35" cy="35" r="34" pathLength="1" />
+            </svg>
+
+            <span
+              className={`brand-timeline-number ${
+                textReady ? "is-shown" : ""
+              }`}
+            >
+              {String(index + 1).padStart(2, "0")}
+            </span>
+
+            <div
+              className={`brand-timeline-text ${
+                textReady ? "is-shown" : ""
+              }`}
+            >
+              <p className="brand-timeline-label">
+                Step {index + 1}
+              </p>
+              <h3>{step.title}</h3>
+              <p className="brand-timeline-description">
+                {step.description}
+              </p>
+            </div>
+
+            {index < 2 && (
+              <div
+                className={`brand-timeline-line ${
+                  lineReady ? "is-drawn" : ""
+                }`}
+                aria-hidden="true"
+              />
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 }
-
 export default function Desktop1({ className }: { className?: string }) {
     useEffect(() => {
     const page = document.getElementById("home");

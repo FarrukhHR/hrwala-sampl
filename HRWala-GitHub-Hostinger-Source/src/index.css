@@ -1585,3 +1585,46 @@
     transform: translateX(-50%) scaleY(1);
   }
 }
+
+/* State-controlled step sequence */
+.brand-timeline .brand-timeline-ring circle {
+  animation: none;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+
+.brand-timeline .brand-timeline-ring.is-drawn circle {
+  animation: brandDrawCircle 450ms ease-out forwards;
+}
+
+.brand-timeline .brand-timeline-number,
+.brand-timeline .brand-timeline-text {
+  animation: none;
+  visibility: hidden;
+}
+
+.brand-timeline .brand-timeline-number.is-shown,
+.brand-timeline .brand-timeline-text.is-shown {
+  visibility: visible;
+}
+
+.brand-timeline .brand-timeline-line {
+  animation: none;
+  transform: translateX(-50%) scaleY(0);
+}
+
+.brand-timeline .brand-timeline-line.is-drawn {
+  animation: brandDrawLine 550ms ease-in-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-timeline .brand-timeline-ring.is-drawn circle {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+
+  .brand-timeline .brand-timeline-line.is-drawn {
+    animation: none;
+    transform: translateX(-50%) scaleY(1);
+  }
+}
