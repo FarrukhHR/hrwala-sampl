@@ -792,7 +792,7 @@ useEffect(() => {
         observer.unobserve(entry.target);
       });
     },
-    { threshold: 0.5, rootMargin: "0px" }
+    { threshold: 0.15, rootMargin: "0px" }
   );
 
   cards.forEach((card, index) => {
@@ -938,7 +938,7 @@ useEffect(() => {
             element.animate(
               [
                 {
-                  scale: String(restScale * 0.9),
+                  scale: String(restScale * 0.96),
                   transformOrigin: origin,
                 },
                 {
@@ -947,9 +947,9 @@ useEffect(() => {
                 },
               ],
               {
-                duration: 850,
-                delay: card.delay,
-                easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+                duration: 1000,
+                delay: 0,
+                easing: "cubic-bezier(0.25, 0.1, 0.25, 1)",
                 fill: "backwards",
               }
             )
@@ -959,7 +959,7 @@ useEffect(() => {
         observer.unobserve(entry.target);
       });
     },
-    { threshold: 0.95, rootMargin: "0px" }
+    { threshold: 0.55, rootMargin: "0px" }
   );
 
   cards.forEach(({ trigger, elements }) => {
