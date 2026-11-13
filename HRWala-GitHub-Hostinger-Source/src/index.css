@@ -1381,3 +1381,33 @@
     transition: none;
   }
 }
+
+/* Trigger ka intezar karte waqt original alignment rakhein */
+#home .offer-reveal {
+  opacity: 1;
+  translate: 0 0;
+}
+
+/* Scroll trigger hone par hi slide karein */
+#home .offer-reveal.offer-visible {
+  animation: offerAlignedSlide 850ms
+    cubic-bezier(0.25, 0.1, 0.25, 1)
+    var(--offer-delay, 0ms) backwards;
+}
+
+@keyframes offerAlignedSlide {
+  from { translate: 0 24px; }
+  to   { translate: 0 0; }
+}
+
+/* Boxes ka separate zoom same rahe */
+#home .service-card-group.site-card-zoom {
+  animation: none !important;
+  translate: 0 0 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #home .offer-reveal.offer-visible {
+    animation: none;
+  }
+}
