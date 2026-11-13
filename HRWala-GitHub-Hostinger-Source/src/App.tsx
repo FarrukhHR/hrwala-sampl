@@ -21,7 +21,7 @@ export default function App() {
   return (
     <main
       className="design-viewport"
-      style={{ height: DESIGN_HEIGHT * scale }}
+      style={{ height: 7245 * scale }}
       aria-label="HRwala landing page"
     >
       <div
