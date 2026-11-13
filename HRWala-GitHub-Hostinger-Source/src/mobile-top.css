@@ -108,3 +108,87 @@
     top: 710px;
   }
 }
+
+/* Coordinates use the existing 1440px canvas; App scales them to the viewport. */
+@media (max-width: 767px) {
+  .design-page .design-header-logo { left: 58px; top: 30px; width: 290px; height: 86px; }
+  .design-page .design-header-logo img { object-fit: contain; }
+  .design-page .design-header-link { top: 76px; font-size: 25px; line-height: 1.3; }
+  .design-page .design-header-link span { font-size: inherit; line-height: inherit; }
+  .design-page [data-node-id="5:5"] { left: 500px; }
+  .design-page [data-node-id="5:17"] { left: 665px; }
+  .design-page [data-node-id="5:31"] { left: 830px; }
+  .design-page [data-node-id="474:14188"] { left: 1250px; top: 44px; width: 100px; height: 100px; border-radius: 50%; overflow: hidden; }
+  .design-page [data-node-id="3:7"] { height: 150px; }
+  .design-canvas, .design-page { height: 8780px !important; }
+  .design-page .mobile-later-section { top: calc(var(--mobile-original-top) + 1450px) !important; }
+  .design-page [data-node-id="9:4"] { left: 24px; top: 192px; width: 1392px; height: 698px; border-radius: 42px; overflow: hidden; background: #e3f3ff; }
+  .design-page [data-node-id="9:4"] > img { object-fit: fill; }
+  .design-page [data-node-id="88:4"],
+  .design-page [data-node-id="35:95"] { display: none; }
+  .design-page [data-node-id="118:39"] { left: 125px; top: 265px; font-size: 22px; letter-spacing: -.5271px; }
+  .design-page [data-node-id="118:40"] { left: 78px; top: 265px; width: 34px; }
+  .design-page .hero-carousel-heading { left: 76px; top: 300px; width: 640px; font-size: 60px; line-height: 1.16; }
+  .design-page .hero-carousel-bullets { left: 120px; top: 390px; font-size: 48px; line-height: 1.34; }
+  .design-page .hero-carousel-bullets li::before { content: '\2022'; left: -40px; }
+  .design-page .hero-carousel-description { left: 82px; top: 610px; width: 560px; font-size: 22px; line-height: 1.5; white-space: nowrap; }
+  .design-page .hero-carousel-description br { display: initial; }
+  .design-page .hero-carousel-cta { left: 82px; top: 708px; width: 235px; height: 68px; border-radius: 12px; font-size: 29px; }
+  .design-page [data-node-id="412:1238"] { left: 770px; top: 285px; width: 440px; height: 465px; }
+  .design-page [data-node-id="412:1238"] img { object-fit: contain; }
+  .design-page :is([data-node-id="412:1206"], [data-node-id="412:1207"], [data-node-id="412:1208"], [data-node-id="412:1209"], [data-node-id="412:1210"], [data-node-id="412:1211"]) {
+    width: max-content; height: auto; font-size: 23px; line-height: 1.2; letter-spacing: -.6px; text-align: center; word-break: normal; overflow-wrap: normal; white-space: nowrap;
+  }
+  .design-page [data-node-id="412:1206"] { left: 880px; top: 330px; }
+  .design-page [data-node-id="412:1207"] { left: 1110px; top: 330px; }
+  .design-page [data-node-id="412:1208"] { left: 880px; top: 690px; }
+  .design-page [data-node-id="412:1209"] { left: 1110px; top: 690px; }
+  .design-page [data-node-id="412:1210"] { left: 685px; top: 515px; }
+  .design-page [data-node-id="412:1211"] { left: 1215px; top: 495px; }
+  .design-page [data-node-id="69:3"] { left: 60px; top: 945px; width: 1300px; height: auto; letter-spacing: -2px; }
+  .design-page [data-node-id="69:3"] > span { font-size: 74px; line-height: 1.2; }
+  .design-page :is([data-node-id="440:14062"], [data-node-id="440:14068"], [data-name="Straight-on portrait in charcoal suit"], .hr-video-preview) {
+    width: 656px; height: 360px; border-radius: 30px; overflow: hidden;
+  }
+  .design-page [data-node-id="440:14062"] { left: 42px; top: 1085px; }
+  .design-page [data-node-id="440:14068"] { left: 738px; top: 1085px; }
+  .design-page [data-name="Straight-on portrait in charcoal suit"] { left: 42px; top: 1855px; }
+  .design-page .hr-video-preview { left: 738px; top: 1855px; }
+  .design-page [data-node-id="440:14068"] > div { border-radius: inherit; }
+  .design-page [data-node-id="440:14068"] img { inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; border-radius: inherit; }
+  .design-page .hr-video-trigger { align-items: flex-end; justify-content: flex-end; padding: 22px; box-sizing: border-box; }
+  .design-page .hr-video-play { opacity: 1; font-size: 24px; line-height: 1.3; padding: 16px 26px; }
+  .design-page .service-card-group {
+    inset: auto; width: 656px; height: 360px; box-sizing: border-box; padding: 32px 36px;
+    border-radius: 30px; pointer-events: auto; transform-origin: center;
+    --card-rest-scale: 1 !important;
+  }
+  .design-page .service-card-group::before {
+    content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 22px;
+    box-sizing: border-box; padding: 5px 5px 0; border-radius: 30px 30px 0 0;
+    z-index: 1; pointer-events: none;
+    background: linear-gradient(to right, #f6ac04 0 29%, #0144ab 29% 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+  }
+  .design-page .service-card-group--people { left: 42px; top: 1475px; }
+  .design-page .service-card-group--standards { left: 738px; top: 1475px; }
+  .design-page .service-card-group--opportunity { left: 42px; top: 2245px; height: 360px; }
+  .design-page .service-card-group--systems { left: 738px; top: 2245px; height: 360px; }
+  .design-page .service-card-group > div:first-of-type { display: block; inset: 0; width: 100%; height: 100%; border-radius: inherit; }
+  .design-page .service-card-group > div:nth-of-type(2),
+  .design-page .service-card-group > div:nth-of-type(3) { display: none; }
+  .design-page .service-card-group > div:nth-of-type(3) > div,
+  .design-page .service-card-group > div:nth-of-type(3) > div > div { width: 100%; }
+  .design-page .service-card-group > p { position: relative; inset: auto; width: auto; height: auto; margin: 0; white-space: normal; text-align: left; letter-spacing: -.5px; }
+  .design-page .service-card-group > p:nth-of-type(1) { font-size: 28px; line-height: 1.25; }
+  .design-page .service-card-group > p:nth-of-type(2) { margin-top: 12px; font-size: 44px; line-height: 1.12; }
+  .design-page .service-card-group > p:nth-of-type(3) { margin-top: 20px; font-size: 29px; line-height: 1.55; color: #757575; }
+  .design-page .service-card-group > p:nth-of-type(4) { position: absolute; top: 30px; right: 26px; font-size: 96px; line-height: 1; pointer-events: none; }
+  .design-page .service-card-group--people::before,
+  .design-page .service-card-group--standards::before {
+    clip-path: inset(0 0 2px 0);
+  }
+}
