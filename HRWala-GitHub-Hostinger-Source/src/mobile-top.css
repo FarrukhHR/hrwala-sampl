@@ -1,0 +1,54 @@
+/* Coordinates use the existing 1440px canvas; App scales them to the viewport. */
+@media (max-width: 767px) {
+  .design-canvas, .design-page { height: 8780px !important; }
+  .design-page .mobile-later-section { top: calc(var(--mobile-original-top) + 1450px) !important; }
+  .design-page [data-node-id="9:4"] { left: 24px; top: 192px; width: 1392px; height: 698px; border-radius: 42px; overflow: hidden; background: #e3f3ff; }
+  .design-page [data-node-id="9:4"] > img { object-fit: fill; }
+  .design-page [data-node-id="88:4"],
+  .design-page [data-node-id="35:95"] { display: none; }
+  .design-page [data-node-id="118:39"] { left: 148px; top: 254px; font-size: 36px; letter-spacing: -1px; }
+  .design-page [data-node-id="118:40"] { left: 78px; top: 254px; width: 52px; }
+  .design-page .hero-carousel-heading { left: 76px; top: 300px; width: 640px; font-size: 60px; line-height: 1.16; }
+  .design-page .hero-carousel-bullets { left: 120px; top: 390px; font-size: 48px; line-height: 1.34; }
+  .design-page .hero-carousel-bullets li::before { content: '\2022'; left: -40px; }
+  .design-page .hero-carousel-description { left: 82px; top: 610px; width: 490px; font-size: 33px; line-height: 1.3; white-space: normal; }
+  .design-page .hero-carousel-description br { display: none; }
+  .design-page .hero-carousel-cta { left: 82px; top: 766px; width: 302px; height: 82px; border-radius: 16px; font-size: 38px; }
+  .design-page [data-node-id="412:1238"] { left: 770px; top: 285px; width: 440px; height: 465px; }
+  .design-page [data-node-id="412:1238"] img { object-fit: contain; }
+  .design-page :is([data-node-id="412:1206"], [data-node-id="412:1207"], [data-node-id="412:1208"], [data-node-id="412:1209"], [data-node-id="412:1210"], [data-node-id="412:1211"]) {
+    width: 225px; height: auto; font-size: 32px; line-height: 1.14; letter-spacing: -1px; text-align: center; color: #0144ab;
+  }
+  .design-page [data-node-id="412:1206"] { left: 878px; top: 290px; }
+  .design-page [data-node-id="412:1207"] { left: 1110px; top: 275px; }
+  .design-page [data-node-id="412:1208"] { left: 880px; top: 700px; }
+  .design-page [data-node-id="412:1209"] { left: 1115px; top: 700px; }
+  .design-page [data-node-id="412:1210"] { left: 685px; top: 480px; width: 170px; }
+  .design-page [data-node-id="412:1211"] { left: 1215px; top: 480px; width: 185px; }
+  .design-page [data-node-id="69:3"] { left: 60px; top: 945px; width: 1300px; height: auto; letter-spacing: -2px; }
+  .design-page [data-node-id="69:3"] > span { font-size: 74px; line-height: 1.2; }
+  .design-page :is([data-node-id="440:14062"], [data-node-id="440:14068"], [data-name="Straight-on portrait in charcoal suit"], .hr-video-preview) {
+    width: 656px; height: 360px; border-radius: 30px; overflow: hidden;
+  }
+  .design-page [data-node-id="440:14062"] { left: 42px; top: 1085px; }
+  .design-page [data-node-id="440:14068"] { left: 738px; top: 1085px; }
+  .design-page [data-name="Straight-on portrait in charcoal suit"] { left: 42px; top: 1855px; }
+  .design-page .hr-video-preview { left: 738px; top: 1855px; }
+  .design-page [data-node-id="440:14068"] img { inset: 0; width: 100%; height: 100%; object-fit: contain; }
+  .design-page .service-card-group {
+    inset: auto; width: 656px; height: 334px; box-sizing: border-box; padding: 32px 44px;
+    border-radius: 30px; background: white; box-shadow: 0 5px 15px #0002;
+    border-top: 7px solid #0144ab; pointer-events: auto; transform-origin: center;
+  }
+  .design-page .service-card-group::before { content: ''; position: absolute; top: -7px; left: 22px; width: 165px; height: 7px; background: #f6ac04; }
+  .design-page .service-card-group--people { left: 42px; top: 1475px; }
+  .design-page .service-card-group--standards { left: 738px; top: 1475px; }
+  .design-page .service-card-group--opportunity { left: 42px; top: 2245px; height: 412px; }
+  .design-page .service-card-group--systems { left: 738px; top: 2245px; height: 412px; }
+  .design-page .service-card-group > div { display: none; }
+  .design-page .service-card-group > p { position: relative; inset: auto; width: auto; height: auto; margin: 0; white-space: normal; text-align: left; letter-spacing: -.5px; }
+  .design-page .service-card-group > p:nth-of-type(1) { font-size: 32px; line-height: 1.25; }
+  .design-page .service-card-group > p:nth-of-type(2) { margin-top: 12px; font-size: 44px; line-height: 1.12; }
+  .design-page .service-card-group > p:nth-of-type(3) { margin-top: 20px; font-size: 33px; line-height: 1.32; }
+  .design-page .service-card-group > p:nth-of-type(4) { position: absolute; top: 10px; right: 22px; font-size: 120px; line-height: 1; pointer-events: none; }
+}
