@@ -1289,10 +1289,11 @@
   animation: offerQuickSlide 450ms cubic-bezier(0.22, 1, 0.36, 1)
     var(--offer-delay, 0ms) both;
     animation-duration: 700ms;
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 @keyframes offerQuickSlide {
-  from { translate: 0 36px; }
+  from { translate: 0 24px; }
   to   { translate: 0 0; }
 }
 
@@ -1305,7 +1306,7 @@
 
 /* Headings, descriptions aur text columns: left se */
 #home .academy-up {
-  margin-left: -24px;
+  margin-left: 0px;
 }
 
 #home .academy-up.academy-visible {
@@ -1316,23 +1317,24 @@
 
 /* Certificates aur badges: right se */
 #home .academy-zoom {
-  margin-left: 32px;
+  margin-left: 0px;
 }
 
 #home .academy-zoom.academy-visible {
   animation: academyImageSlide 600ms ease-out
     var(--academy-delay, 0ms) both;
-    animation-duration: 850ms;
+     animation-duration: 900ms;
+  animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 @keyframes academyTextSlide {
-  from { margin-left: -24px; }
-  to   { margin-left: 0; }
+  from { transform: translate3d(-20px, 0, 0); }
+  to   { transform: translate3d(0, 0, 0); }
 }
 
 @keyframes academyImageSlide {
-  from { margin-left: 32px; }
-  to   { margin-left: 0; }
+  from { transform: translate3d(26px, 0, 0); }
+  to   { transform: translate3d(0, 0, 0); }
 }
 
 @media (prefers-reduced-motion: reduce) {
