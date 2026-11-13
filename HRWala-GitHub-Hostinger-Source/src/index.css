@@ -1110,7 +1110,7 @@
   position: absolute;
   top: 75px;
   left: 30px;
-  width: 56.471px;
+  width: 50px;
   display: grid;
   gap: 14px;
 }
@@ -1152,7 +1152,7 @@
   margin: 0;
   font-family: "Poppins:Regular", sans-serif;
   font-size: 10.5px;
-  line-height: 13px;
+  line-height: 15px;
   letter-spacing: -0.21px;
   text-align: justify;
   color: #757575;
