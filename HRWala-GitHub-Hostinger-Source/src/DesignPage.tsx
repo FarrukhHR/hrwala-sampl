@@ -830,6 +830,145 @@ useEffect(() => {
   };
 }, []);
 
+useEffect(() => {
+  const page = document.getElementById("home");
+
+  if (
+    !page ||
+    !("IntersectionObserver" in window) ||
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  ) {
+    return;
+  }
+
+  const find = (id: string) =>
+    page.querySelector<HTMLElement>(`[data-node-id="${id}"]`);
+
+  // Har complete team card aur uska white background.
+  const cardIds = [
+    ["437:13757", "262:37"],
+    ["437:13857", "437:13860"],
+    ["437:13879", "437:13882"],
+    ["437:13901", "437:13904"],
+
+    ["437:13923", "437:13926"],
+    ["437:13934", "437:13937"],
+    ["437:13945", "437:13948"],
+    ["437:13956", "437:13959"],
+
+    ["442:14070", "442:14073"],
+    ["437:14011", "437:14014"],
+    ["437:14022", "437:14025"],
+  ];
+
+  const cards: {
+    trigger: HTMLElement;
+    elements: HTMLElement[];
+    delay: number;
+  }[] = [];
+
+  cardIds.forEach(([wrapperId, backgroundId], index) => {
+    const wrapper = find(wrapperId);
+    const background = find(backgroundId);
+    if (!wrapper || !background) return;
+
+    const elements = Array.from(
+      wrapper.querySelectorAll<HTMLElement>("*")
+    ).filter((element) => {
+      const css = getComputedStyle(element);
+
+      return (
+        css.position === "absolute" &&
+        css.display !== "contents" &&
+        element.offsetParent === page
+      );
+    });
+
+    cards.push({
+      trigger: background,
+      elements,
+      delay: (index % 4) * 70,
+    });
+  });
+
+  // Hussain Raza ka complete card.
+  const hussain = page.querySelector<HTMLElement>(
+    ".hussain-team-card"
+  );
+
+  if (hussain) {
+    cards.push({
+      trigger: hussain,
+      elements: [hussain],
+      delay: 210,
+    });
+  }
+
+  const animations: Animation[] = [];
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        const card = cards.find(
+          ({ trigger }) => trigger === entry.target
+        );
+        if (!card) return;
+
+        const centerX =
+          card.trigger.offsetLeft + card.trigger.offsetWidth / 2;
+        const centerY =
+          card.trigger.offsetTop + card.trigger.offsetHeight / 2;
+
+        card.elements.forEach((element) => {
+          const currentScale = Number.parseFloat(
+            getComputedStyle(element).scale
+          );
+          const restScale = Number.isFinite(currentScale)
+            ? currentScale
+            : 1;
+
+          const origin =
+            `${centerX - element.offsetLeft}px ` +
+            `${centerY - element.offsetTop}px`;
+
+          animations.push(
+            element.animate(
+              [
+                {
+                  scale: String(restScale * 0.9),
+                  transformOrigin: origin,
+                },
+                {
+                  scale: String(restScale),
+                  transformOrigin: origin,
+                },
+              ],
+              {
+                duration: 850,
+                delay: card.delay,
+                easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+                fill: "backwards",
+              }
+            )
+          );
+        });
+
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.95, rootMargin: "0px" }
+  );
+
+  cards.forEach(({ trigger }) => observer.observe(trigger));
+
+  return () => {
+    observer.disconnect();
+    animations.forEach((animation) => animation.cancel());
+  };
+}, []);
+
   return (
     <div
       className={
