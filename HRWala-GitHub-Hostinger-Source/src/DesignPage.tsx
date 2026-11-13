@@ -476,52 +476,78 @@ function BrandSteps() {
   const [phase, setPhase] = useState(0);
 
   useEffect(() => {
-    const element = ref.current;
-    if (!element) return;
+  const element = ref.current;
+  if (!element) return;
 
-    if (
-      !("IntersectionObserver" in window) ||
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
-      setPhase(8);
-      return;
-    }
+  const rings = Array.from(
+    element.querySelectorAll<SVGSVGElement>(".brand-timeline-ring")
+  );
+  const lines = Array.from(
+    element.querySelectorAll<HTMLElement>(".brand-timeline-line")
+  );
 
-    const timers: number[] = [];
+  const clamp = (value: number) =>
+    Math.max(0, Math.min(1, value));
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting || entry.intersectionRatio < 0.3) {
-          return;
-        }
+  const reducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  );
 
-        observer.disconnect();
-        setPhase(1);
+  let frame = 0;
 
-        [
-          [450, 2],   // Step 1 number aur text
-          [750, 3],   // Line 1
-          [1300, 4],  // Circle 2
-          [1750, 5],  // Step 2 number aur text
-          [2050, 6],  // Line 2
-          [2600, 7],  // Circle 3
-          [3050, 8],  // Step 3 number aur text
-        ].forEach(([delay, nextPhase]) => {
-          timers.push(
-            window.setTimeout(() => setPhase(nextPhase), delay)
-          );
-        });
-      },
-      { threshold: 0.3 }
+  const update = () => {
+    frame = 0;
+
+    const rect = element.getBoundingClientRect();
+
+    // Steps ka bottom screen ke 85% tak aaye to sequence complete.
+    const progress = reducedMotion.matches
+      ? 1
+      : clamp(
+          (window.innerHeight * 0.85 - rect.top) /
+          Math.max(rect.height, 1)
+        );
+
+    [0, 0.36, 0.72].forEach((start, index) => {
+      rings[index]?.style.setProperty(
+        "--ring-progress",
+        String(clamp((progress - start) / 0.16))
+      );
+    });
+
+    [0.2, 0.56].forEach((start, index) => {
+      lines[index]?.style.setProperty(
+        "--line-progress",
+        String(clamp((progress - start) / 0.16))
+      );
+    });
+
+    setPhase(
+      progress >= 0.88 ? 8 :
+      progress >= 0.72 ? 7 :
+      progress >= 0.56 ? 6 :
+      progress >= 0.52 ? 5 :
+      progress >= 0.36 ? 4 :
+      progress >= 0.20 ? 3 :
+      progress >= 0.16 ? 2 :
+      progress > 0 ? 1 : 0
     );
+  };
 
-    observer.observe(element);
+  const schedule = () => {
+    if (!frame) frame = requestAnimationFrame(update);
+  };
 
-    return () => {
-      observer.disconnect();
-      timers.forEach((timer) => window.clearTimeout(timer));
-    };
-  }, []);
+  update();
+  window.addEventListener("scroll", schedule, { passive: true });
+  window.addEventListener("resize", schedule);
+
+  return () => {
+    cancelAnimationFrame(frame);
+    window.removeEventListener("scroll", schedule);
+    window.removeEventListener("resize", schedule);
+  };
+}, []);
 
   const steps = [
     {

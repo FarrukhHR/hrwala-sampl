@@ -1586,45 +1586,40 @@
   }
 }
 
-/* State-controlled step sequence */
-.brand-timeline .brand-timeline-ring circle {
-  animation: none;
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-}
-
+/* Circles: scroll-controlled drawing */
+.brand-timeline .brand-timeline-ring circle,
 .brand-timeline .brand-timeline-ring.is-drawn circle {
-  animation: brandDrawCircle 450ms ease-out forwards;
+  animation: none;
+  stroke-dashoffset: calc(1 - var(--ring-progress, 0));
 }
 
+/* Connecting lines: scroll-controlled drawing */
+.brand-timeline .brand-timeline-line,
+.brand-timeline .brand-timeline-line.is-drawn {
+  animation: none;
+  transform:
+    translateX(-50%)
+    scaleY(var(--line-progress, 0));
+}
+
+/* Step numbers aur text: soft fade */
 .brand-timeline .brand-timeline-number,
 .brand-timeline .brand-timeline-text {
   animation: none;
-  visibility: hidden;
+  visibility: visible;
+  opacity: 0;
+  transition: opacity 300ms ease-out;
 }
 
 .brand-timeline .brand-timeline-number.is-shown,
 .brand-timeline .brand-timeline-text.is-shown {
   visibility: visible;
-}
-
-.brand-timeline .brand-timeline-line {
-  animation: none;
-  transform: translateX(-50%) scaleY(0);
-}
-
-.brand-timeline .brand-timeline-line.is-drawn {
-  animation: brandDrawLine 550ms ease-in-out forwards;
+  opacity: 1;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .brand-timeline .brand-timeline-ring.is-drawn circle {
-    animation: none;
-    stroke-dashoffset: 0;
-  }
-
-  .brand-timeline .brand-timeline-line.is-drawn {
-    animation: none;
-    transform: translateX(-50%) scaleY(1);
+  .brand-timeline .brand-timeline-number,
+  .brand-timeline .brand-timeline-text {
+    transition: none;
   }
 }
