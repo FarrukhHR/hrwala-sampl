@@ -516,6 +516,98 @@ export default function Desktop1({ className }: { className?: string }) {
       });
     };
   }, []);
+
+  useEffect(() => {
+  const page = document.getElementById("home");
+
+  if (
+    !page ||
+    !("IntersectionObserver" in window) ||
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  ) {
+    return;
+  }
+
+  const items: {
+    element: HTMLElement;
+    trigger: Element;
+    delay: number;
+  }[] = [];
+
+  const addItem = (
+    selector: string,
+    delay: number,
+    isBox = false
+  ) => {
+    const element = page.querySelector<HTMLElement>(selector);
+    if (!element) return;
+
+    items.push({
+      element,
+      // Boxes ke wrappers poore canvas jitne hain:
+      // actual box ko dekh kar animation trigger karein.
+      trigger: isBox
+        ? element.firstElementChild ?? element
+        : element,
+      delay,
+    });
+  };
+
+  addItem('[data-node-id="69:3"]', 0);
+
+  [
+    '[data-node-id="440:14062"]',
+    '[data-node-id="440:14068"]',
+    '[data-name="Straight-on portrait in charcoal suit"]',
+    ".hr-video-preview",
+  ].forEach((selector, index) => {
+    addItem(selector, index * 70);
+  });
+
+  [
+    ".service-card-group--people",
+    ".service-card-group--standards",
+    ".service-card-group--opportunity",
+    ".service-card-group--systems",
+  ].forEach((selector, index) => {
+    addItem(selector, 80 + index * 70, true);
+  });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        const item = items.find(
+          ({ trigger }) => trigger === entry.target
+        );
+
+        item?.element.classList.add("offer-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.12,
+      rootMargin: "0px 0px -24px 0px",
+    }
+  );
+
+  items.forEach(({ element, trigger, delay }) => {
+    element.style.setProperty("--offer-delay", `${delay}ms`);
+    element.classList.add("offer-reveal");
+    observer.observe(trigger);
+  });
+
+  return () => {
+    observer.disconnect();
+
+    items.forEach(({ element }) => {
+      element.classList.remove("offer-reveal", "offer-visible");
+      element.style.removeProperty("--offer-delay");
+    });
+  };
+}, []);
+
   return (
     <div
       className={

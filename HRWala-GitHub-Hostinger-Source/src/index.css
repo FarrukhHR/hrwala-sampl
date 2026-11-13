@@ -1198,3 +1198,35 @@
 [data-node-id="502:715"] {
   top: 2747.53px;
 }
+
+/* We Offer: light scroll fade-up */
+#home .offer-reveal {
+  opacity: 0;
+  translate: 0 16px;
+}
+
+#home .offer-reveal.offer-visible {
+  animation: offerFadeUp 600ms ease-out
+    var(--offer-delay, 0ms) both;
+}
+
+@keyframes offerFadeUp {
+  from {
+    opacity: 0;
+    translate: 0 16px;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #home .offer-reveal,
+  #home .offer-reveal.offer-visible {
+    opacity: 1;
+    translate: none;
+    animation: none;
+  }
+}
