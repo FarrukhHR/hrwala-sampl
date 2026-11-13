@@ -640,7 +640,7 @@ export default function Desktop1({ className }: { className?: string }) {
 
   <img
     className="hussain-card-photo"
-    src={`${assetPathPrefix}/Close-up portrait of a young executive.png`}
+    src={`${assetPathPrefix}/Young executive in silver glasses.png`}
     alt="Hussain Raza"
   />
 
