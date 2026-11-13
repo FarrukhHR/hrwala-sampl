@@ -1048,3 +1048,10 @@
   transform-origin: 76.88px 4062.18px;
   pointer-events: none;
 }
+
+/* Develop Your Brand: balance top/bottom spacing */
+[data-node-id="133:2"],
+[data-node-id="244:253"],
+[data-node-id="413:613"] {
+  translate: 0 35px;
+}
