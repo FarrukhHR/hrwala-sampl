@@ -1060,3 +1060,24 @@
   scale: 0.94;
   translate: 0 -110px;
 }
+
+/* Step 1, Step 2, Step 3 */
+[data-node-id="145:197"],
+[data-node-id="145:205"],
+[data-node-id="145:209"] {
+  font-size: 17px;
+}
+
+/* Yellow headings */
+[data-node-id="145:198"],
+[data-node-id="145:206"],
+[data-node-id="145:210"] {
+  font-size: 18px;
+}
+
+/* Grey description */
+[data-node-id="145:202"],
+[data-node-id="145:207"],
+[data-node-id="145:211"] {
+  font-size: 13px;
+}
