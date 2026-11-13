@@ -1082,12 +1082,17 @@
   font-size: 13px;
 }
 
-.hussain-team-card {
+#home .hussain-team-card {
+  position: absolute;
+  left: 1043px;
+  top: 5841px;
+  z-index: 10;
   width: 247px;
   height: 328px;
   border-radius: 16.941px;
   background: #fff;
   color: #000;
+  overflow: visible;
 }
 
 .hussain-card-photo {
