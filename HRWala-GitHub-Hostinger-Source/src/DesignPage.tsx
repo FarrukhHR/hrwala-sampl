@@ -598,7 +598,17 @@ export default function Desktop1({ className }: { className?: string }) {
     observer.observe(trigger);
   });
 
-  useEffect(() => {
+  return () => {
+    observer.disconnect();
+
+    items.forEach(({ element }) => {
+      element.classList.remove("offer-reveal", "offer-visible");
+      element.style.removeProperty("--offer-delay");
+    });
+  };
+}, []);
+
+useEffect(() => {
   const page = document.getElementById("home");
 
   if (
@@ -739,16 +749,6 @@ export default function Desktop1({ className }: { className?: string }) {
         element.style.removeProperty("--academy-opacity");
         element.style.removeProperty("--academy-delay");
       });
-    });
-  };
-}, []);
-
-  return () => {
-    observer.disconnect();
-
-    items.forEach(({ element }) => {
-      element.classList.remove("offer-reveal", "offer-visible");
-      element.style.removeProperty("--offer-delay");
     });
   };
 }, []);
