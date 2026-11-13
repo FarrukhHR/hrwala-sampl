@@ -538,7 +538,7 @@ export default function Desktop1({ className }: { className?: string }) {
 
   <img
     className="hussain-card-photo"
-    src={`${assetPathPrefix}/Young executive in charcoal navy.png`}
+    src={`${assetPathPrefix}/Close-up portrait of a young executive.png`}
     alt="Hussain Raza"
   />
 
@@ -549,10 +549,7 @@ export default function Desktop1({ className }: { className?: string }) {
   </p>
 
   <p className="hussain-card-description">
-    Developer and technology entrepreneur with 3 years of experience,
-    specializing in digital solutions, technology strategy, and
-    business-focused innovation. Founder of Hoverizon Tech Solutions,
-    driving ideas into impactful digital experiences.
+    Web & Application Developer with 3 years of experience in digital solutions. Founder of Hoverizon Tech Solutions, helping businesses strengthen their digital presence.
   </p>
 </article>
       <button className="design-action-button" style={{ left: 82.29, top: 1605.65, width: 157.176, height: 39.529 }} type="button" aria-label="Explore Job Portal" onClick={() => window.location.assign("https://hrwala.net/job-portal")} />
