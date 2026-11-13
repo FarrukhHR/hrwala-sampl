@@ -85,3 +85,48 @@
     font-size: 23px;
   }
 }
+
+@media (max-width: 767px) {
+  .design-page .service-card-group {
+    width: 656px;
+    height: 360px;
+  }
+
+  .design-page .service-card-group::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 8px;
+    border-radius: 30px 30px 0 0;
+    background: linear-gradient(
+      to right,
+      #f6ac04 0 29%,
+      #0144ab 29% 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .design-page .service-card-group > div:nth-of-type(2),
+  .design-page .service-card-group > div:nth-of-type(3) {
+    display: none;
+  }
+
+  .design-page .service-card-group > p:nth-of-type(3) {
+    line-height: 1.55;
+  }
+
+  .design-page .service-card-group > p:nth-of-type(4) {
+    position: absolute;
+    inset: auto;
+    top: 20px;
+    right: 26px;
+    width: auto;
+    height: auto;
+    margin: 0;
+    font-size: 88px;
+    line-height: 1;
+  }
+}
