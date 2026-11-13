@@ -1,6 +1,6 @@
+import ResponsiveLayout from "./ResponsiveLayout";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import ResponsiveLayout from "./ResponsiveLayout";
 
 const assetPathPrefix = "/assets";
 const videoProject5 = `${assetPathPrefix}/Video Project 5.mp4`;
@@ -118,9 +118,6 @@ const imgLine22 = `${assetPathPrefix}/e2133.svg`;
 const imgLine23 = `${assetPathPrefix}/bce2b.svg`;
 const imgLine24 = `${assetPathPrefix}/53c78.svg`;
 const imgLine25 = `${assetPathPrefix}/64bf8.svg`;
-const imgEllipse5 = `${assetPathPrefix}/c8df2.svg`;
-const imgLine26 = `${assetPathPrefix}/83a1b.svg`;
-const imgLine27 = `${assetPathPrefix}/05c93.svg`;
 
 const heroSlides = [
   { heading: "Job Portal", bullets: ["Find Talent", "Find Opportunity", "Meet Here"], description: ["Verified jobs and qualified candidates.", "Where employers and careers connect."] },
@@ -1108,7 +1105,7 @@ useEffect(() => {
   };
 }, []);
 
-  return (
+  const design = (
     <div
       className={
         className ||
@@ -5171,4 +5168,5 @@ useEffect(() => {
       <div className="absolute inset-0 pointer-events-none rounded-[inherit] shadow-[inset_0px_3.765px_3.765px_0px_rgba(0,0,0,0.25)]" />
     </div>
   );
+  return <ResponsiveLayout design={design} hero={<HeroCarousel />} video={<VideoProject5 />} steps={<BrandSteps />} faq={<FAQAccordion />} contact={<ContactForm />} newsletter={<NewsletterForm />} />;
 }
