@@ -1289,11 +1289,10 @@
   animation: offerQuickSlide 450ms cubic-bezier(0.22, 1, 0.36, 1)
     var(--offer-delay, 0ms) both;
     animation-duration: 700ms;
-    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 @keyframes offerQuickSlide {
-  from { translate: 0 24px; }
+  from { translate: 0 36px; }
   to   { translate: 0 0; }
 }
 
@@ -1306,7 +1305,7 @@
 
 /* Headings, descriptions aur text columns: left se */
 #home .academy-up {
-  margin-left: 0px;
+  margin-left: -24px;
 }
 
 #home .academy-up.academy-visible {
@@ -1317,24 +1316,23 @@
 
 /* Certificates aur badges: right se */
 #home .academy-zoom {
-  margin-left: 0px;
+  margin-left: 32px;
 }
 
 #home .academy-zoom.academy-visible {
   animation: academyImageSlide 600ms ease-out
     var(--academy-delay, 0ms) both;
-     animation-duration: 900ms;
-  animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+    animation-duration: 850ms;
 }
 
 @keyframes academyTextSlide {
-  from { transform: translate3d(-20px, 0, 0); }
-  to   { transform: translate3d(0, 0, 0); }
+  from { margin-left: -24px; }
+  to   { margin-left: 0; }
 }
 
 @keyframes academyImageSlide {
-  from { transform: translate3d(26px, 0, 0); }
-  to   { transform: translate3d(0, 0, 0); }
+  from { margin-left: 32px; }
+  to   { margin-left: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1347,5 +1345,39 @@
     margin-top: 0;
     margin-left: 0;
     scale: 1;
+  }
+}
+
+/* Similar cards: smooth zoom-in, without fade */
+#home .site-card-zoom {
+  animation: none !important;
+  opacity: 1 !important;
+
+  scale: calc(var(--card-rest-scale, 1) * 0.9);
+
+  transition:
+    scale 850ms cubic-bezier(0.22, 1, 0.36, 1)
+      var(--card-zoom-delay, 0ms),
+    transform 180ms ease;
+}
+
+#home .site-card-zoom.card-zoom-visible {
+  scale: var(--card-rest-scale, 1);
+}
+
+/* We Offer boxes par purana slide band */
+#home .service-card-group.site-card-zoom {
+  translate: 0 0 !important;
+}
+
+/* Job Portal boxes par purana zoom replace */
+#home .portal-zoom.site-card-zoom {
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #home .site-card-zoom {
+    scale: var(--card-rest-scale, 1);
+    transition: none;
   }
 }

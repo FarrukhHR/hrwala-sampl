@@ -753,6 +753,83 @@ useEffect(() => {
   };
 }, []);
 
+useEffect(() => {
+  const page = document.getElementById("home");
+
+  if (
+    !page ||
+    !("IntersectionObserver" in window) ||
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  ) {
+    return;
+  }
+
+  const moduleIds = [
+    "228:103", "228:111", "228:119", "228:127",
+    "228:137", "228:145", "228:153", "228:161",
+    "228:203", "228:211", "228:219", "228:227",
+  ];
+
+  const selector = [
+    ".service-card-group",
+    ".industry-card-group",
+    ".portal-zoom",
+    ...moduleIds.map((id) => `[data-node-id="${id}"]`),
+  ].join(",");
+
+  const cards = Array.from(
+    page.querySelectorAll<HTMLElement>(selector)
+  );
+
+  const targets = new Map<Element, HTMLElement>();
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        targets.get(entry.target)?.classList.add("card-zoom-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.5, rootMargin: "0px" }
+  );
+
+  cards.forEach((card, index) => {
+    // Industry cards ka existing chhota size preserve karein.
+    const currentScale = Number.parseFloat(
+      getComputedStyle(card).scale
+    );
+
+    card.style.setProperty(
+      "--card-rest-scale",
+      String(Number.isFinite(currentScale) ? currentScale : 1)
+    );
+
+    card.style.setProperty(
+      "--card-zoom-delay",
+      `${(index % 4) * 70}ms`
+    );
+
+    card.classList.add("site-card-zoom");
+
+    // Full-canvas wrapper ki jagah actual box observe karein.
+    const target = card.firstElementChild ?? card;
+    targets.set(target, card);
+    observer.observe(target);
+  });
+
+  return () => {
+    observer.disconnect();
+
+    cards.forEach((card) => {
+      card.classList.remove("site-card-zoom", "card-zoom-visible");
+      card.style.removeProperty("--card-rest-scale");
+      card.style.removeProperty("--card-zoom-delay");
+    });
+  };
+}, []);
+
   return (
     <div
       className={
