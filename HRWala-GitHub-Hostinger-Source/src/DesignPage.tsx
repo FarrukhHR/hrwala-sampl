@@ -598,6 +598,151 @@ export default function Desktop1({ className }: { className?: string }) {
     observer.observe(trigger);
   });
 
+  useEffect(() => {
+  const page = document.getElementById("home");
+
+  if (
+    !page ||
+    !("IntersectionObserver" in window) ||
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  ) {
+    return;
+  }
+
+  const find = (id: string) =>
+    page.querySelector<HTMLElement>(`[data-node-id="${id}"]`);
+
+  const groups: {
+    ids: string[];
+    trigger: string;
+    zoom?: boolean;
+    delay?: number;
+  }[] = [
+    // Main heading.
+    { ids: ["242:251"], trigger: "242:251" },
+
+    // Teen text columns: number, heading aur paragraph saath.
+    {
+      ids: ["245:284", "245:286", "247:335"],
+      trigger: "247:335",
+      delay: 0,
+    },
+    {
+      ids: ["247:341", "247:342", "247:343"],
+      trigger: "247:343",
+      delay: 100,
+    },
+    {
+      ids: ["247:347", "247:348", "247:349"],
+      trigger: "247:349",
+      delay: 200,
+    },
+
+    // Certification heading aur description.
+    {
+      ids: ["247:356", "509:723"],
+      trigger: "247:356",
+    },
+
+    // Certificate images.
+    { ids: ["509:726"], trigger: "509:726", zoom: true },
+    {
+      ids: ["509:730"],
+      trigger: "509:730",
+      zoom: true,
+      delay: 100,
+    },
+    {
+      ids: ["509:732"],
+      trigger: "509:732",
+      zoom: true,
+      delay: 200,
+    },
+
+    // Badges heading aur description.
+    {
+      ids: ["256:2", "509:721"],
+      trigger: "256:2",
+    },
+
+    // Badge images.
+    { ids: ["501:711"], trigger: "501:711", zoom: true },
+    {
+      ids: ["502:713"],
+      trigger: "502:713",
+      zoom: true,
+      delay: 100,
+    },
+    {
+      ids: ["502:715"],
+      trigger: "502:715",
+      zoom: true,
+      delay: 200,
+    },
+  ];
+
+  const prepared = groups.map((group) => ({
+    ...group,
+    target: find(group.trigger),
+    elements: group.ids
+      .map(find)
+      .filter((element): element is HTMLElement => !!element),
+  }));
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        prepared
+          .find(({ target }) => target === entry.target)
+          ?.elements.forEach((element) => {
+            element.classList.add("academy-visible");
+          });
+
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.5, rootMargin: "0px" }
+  );
+
+  prepared.forEach(({ target, elements, zoom, delay = 0 }) => {
+    if (!target) return;
+
+    elements.forEach((element) => {
+      // Numbers ki original halki opacity preserve karein.
+      element.style.setProperty(
+        "--academy-opacity",
+        getComputedStyle(element).opacity
+      );
+      element.style.setProperty("--academy-delay", `${delay}ms`);
+      element.classList.add(
+        "academy-reveal",
+        zoom ? "academy-zoom" : "academy-up"
+      );
+    });
+
+    observer.observe(target);
+  });
+
+  return () => {
+    observer.disconnect();
+
+    prepared.forEach(({ elements }) => {
+      elements.forEach((element) => {
+        element.classList.remove(
+          "academy-reveal",
+          "academy-up",
+          "academy-zoom",
+          "academy-visible"
+        );
+        element.style.removeProperty("--academy-opacity");
+        element.style.removeProperty("--academy-delay");
+      });
+    });
+  };
+}, []);
+
   return () => {
     observer.disconnect();
 

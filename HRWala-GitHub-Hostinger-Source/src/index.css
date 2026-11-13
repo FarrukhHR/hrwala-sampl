@@ -1230,3 +1230,51 @@
     animation: none;
   }
 }
+
+/* Future Academy scroll animations */
+#home .academy-reveal {
+  opacity: 0;
+}
+
+#home .academy-up.academy-visible {
+  animation: academyFadeUp 900ms ease-out
+    var(--academy-delay, 0ms) both;
+}
+
+#home .academy-zoom.academy-visible {
+  animation: academyZoomIn 1000ms ease-out
+    var(--academy-delay, 0ms) both;
+}
+
+@keyframes academyFadeUp {
+  from {
+    opacity: 0;
+    margin-top: 16px;
+  }
+
+  to {
+    opacity: var(--academy-opacity, 1);
+    margin-top: 0;
+  }
+}
+
+@keyframes academyZoomIn {
+  from {
+    opacity: 0;
+    scale: 0.96;
+  }
+
+  to {
+    opacity: var(--academy-opacity, 1);
+    scale: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #home .academy-reveal {
+    opacity: var(--academy-opacity, 1);
+    animation: none;
+    margin-top: 0;
+    scale: 1;
+  }
+}
