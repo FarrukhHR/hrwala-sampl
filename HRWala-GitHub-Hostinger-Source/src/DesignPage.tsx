@@ -470,6 +470,113 @@ function VideoProject5() {
     </>
   );
 }
+
+function BrandSteps() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [playing, setPlaying] = useState(false);
+
+  useEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+
+    if (
+      !("IntersectionObserver" in window) ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      setPlaying(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting || entry.intersectionRatio < 0.3) {
+          return;
+        }
+
+        setPlaying(true);
+        observer.disconnect();
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
+
+  const steps = [
+    {
+      title: "Assess the Guest Experience",
+      description:
+        "Map each guest touchpoint and identify gaps in service.",
+    },
+    {
+      title: "Define the Brand Standards",
+      description:
+        "Create a hospitality blueprint for every guest touchpoint.",
+    },
+    {
+      title: "Implement and Sustain the Standards",
+      description:
+        "Train staff, redesign the guest journey, and audit service for consistency.",
+    },
+  ];
+
+  return (
+    <div
+      ref={ref}
+      className={`brand-timeline ${playing ? "is-playing" : ""}`}
+    >
+      {steps.map((step, index) => (
+        <div
+          className="brand-timeline-row"
+          style={{ top: index * 134.59 }}
+          key={step.title}
+        >
+          <svg
+            className="brand-timeline-ring"
+            viewBox="0 0 70 70"
+            aria-hidden="true"
+          >
+            <circle
+              cx="35"
+              cy="35"
+              r="34"
+              pathLength="1"
+              style={{ animationDelay: `${index * 1200}ms` }}
+            />
+          </svg>
+
+          <span
+            className="brand-timeline-number"
+            style={{ animationDelay: `${index * 1200 + 350}ms` }}
+          >
+            {String(index + 1).padStart(2, "0")}
+          </span>
+
+          <div
+            className="brand-timeline-text"
+            style={{ animationDelay: `${index * 1200 + 450}ms` }}
+          >
+            <p className="brand-timeline-label">Step {index + 1}</p>
+            <h3>{step.title}</h3>
+            <p className="brand-timeline-description">
+              {step.description}
+            </p>
+          </div>
+
+          {index < 2 && (
+            <div
+              className="brand-timeline-line"
+              style={{ animationDelay: `${index * 1200 + 650}ms` }}
+              aria-hidden="true"
+            />
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export default function Desktop1({ className }: { className?: string }) {
     useEffect(() => {
     const page = document.getElementById("home");
@@ -4977,153 +5084,11 @@ useEffect(() => {
             <span className="leading-[normal] text-[37.647px]">{` `}</span>
             <span className="leading-[normal] text-[#0144ab] text-[37.647px]">Your Brand</span>
           </p>
-          <div className="absolute contents left-[76.88px] top-[4062.18px]" data-node-id="244:253">
-            <div
-              className="absolute contents left-[76.88px] top-[4062.18px]"
-              data-node-id="145:193"
-            >
-              <div
-                className="absolute left-[76.88px] size-[69.647px] top-[4062.18px]"
-                data-node-id="145:187"
-              >
-                <img
-                  alt=""
-                  className="absolute block inset-0 max-w-none size-full"
-                  src={imgEllipse5}
-                />
-              </div>
-              <div
-                className="absolute left-[76.88px] size-[69.647px] top-[4196.76px]"
-                data-node-id="145:189"
-              >
-                <img
-                  alt=""
-                  className="absolute block inset-0 max-w-none size-full"
-                  src={imgEllipse5}
-                />
-              </div>
-              <div
-                className="absolute left-[76.88px] size-[69.647px] top-[4331.35px]"
-                data-node-id="145:191"
-              >
-                <img
-                  alt=""
-                  className="absolute block inset-0 max-w-none size-full"
-                  src={imgEllipse5}
-                />
-              </div>
-              <div
-                className="absolute flex h-[64.941px] items-center justify-center left-[111.71px] top-[4131.82px] w-0"
-                data-node-id="145:188"
-              >
-                <div className="flex-none rotate-90">
-                  <div className="h-0 relative w-[64.941px]">
-                    <div className="absolute inset-[-1.88px_0_0_0]">
-                      <img alt="" className="block max-w-none size-full" src={imgLine26} />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                className="absolute flex h-[64.941px] items-center justify-center left-[111.71px] top-[4266.41px] w-0"
-                data-node-id="145:190"
-              >
-                <div className="flex-none rotate-90">
-                  <div className="h-0 relative w-[64.941px]">
-                    <div className="absolute inset-[-1.88px_0_0_0]">
-                      <img alt="" className="block max-w-none size-full" src={imgLine27} />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <p
-                className="[word-break:break-word] absolute font-['Poppins:SemiBold'] leading-[normal] left-[96.65px] not-italic text-[#f6ac04] text-[30.118px] text-justify top-[4074.41px] tracking-[-0.6024px] whitespace-nowrap"
-                data-node-id="145:194"
-              >
-                01
-              </p>
-              <p
-                className="[word-break:break-word] absolute font-['Poppins:SemiBold'] leading-[normal] left-[93.82px] not-italic text-[#f6ac04] text-[30.118px] text-justify top-[4209px] tracking-[-0.6024px] whitespace-nowrap"
-                data-node-id="145:195"
-              >
-                02
-              </p>
-              <p
-                className="[word-break:break-word] absolute font-['Poppins:SemiBold'] leading-[normal] left-[93.82px] not-italic text-[#f6ac04] text-[30.118px] text-justify top-[4343.59px] tracking-[-0.6024px] whitespace-nowrap"
-                data-node-id="145:196"
-              >
-                03
-              </p>
-            </div>
-            <div
-              className="[word-break:break-word] absolute contents leading-[normal] left-[155px] not-italic text-justify top-[4062.18px] whitespace-nowrap"
-              data-node-id="145:203"
-            >
-              <p
-                className="absolute font-['Poppins:Medium'] left-[155px] text-[15.059px] text-black top-[4062.18px] tracking-[-0.3012px]"
-                data-node-id="145:197"
-              >
-                Step 1
-              </p>
-              <p
-                className="absolute font-['Poppins:SemiBold'] left-[155px] text-[#f6ac04] text-[16px] top-[4084.76px] tracking-[-0.32px]"
-                data-node-id="145:198"
-              >
-                Assess the Guest Experience
-              </p>
-              <p
-                className="absolute font-['Poppins:Medium'] left-[155px] text-[#757575] text-[11.294px] top-[4109.24px] tracking-[-0.2259px]"
-                data-node-id="145:202"
-              >
-                Map each guest touchpoint and identify gaps in service.
-              </p>
-            </div>
-            <div
-              className="[word-break:break-word] absolute contents leading-[normal] left-[155px] not-italic text-justify top-[4199.59px] whitespace-nowrap"
-              data-node-id="145:204"
-            >
-              <p
-                className="absolute font-['Poppins:Medium'] left-[155px] text-[15.059px] text-black top-[4199.59px] tracking-[-0.3012px]"
-                data-node-id="145:205"
-              >
-                Step 2
-              </p>
-              <p
-                className="absolute font-['Poppins:SemiBold'] left-[155px] text-[#f6ac04] text-[16px] top-[4222.18px] tracking-[-0.32px]"
-                data-node-id="145:206"
-              >
-                Define the Brand Standards
-              </p>
-              <p
-                className="absolute font-['Poppins:Medium'] left-[155px] text-[#757575] text-[11.294px] top-[4246.65px] tracking-[-0.2259px]"
-                data-node-id="145:207"
-              >
-                Create a hospitality blueprint for every guest touchpoint.
-              </p>
-            </div>
-            <div
-              className="[word-break:break-word] absolute contents leading-[normal] left-[155px] not-italic text-justify top-[4337px] whitespace-nowrap"
-              data-node-id="145:208"
-            >
-              <p
-                className="absolute font-['Poppins:Medium'] left-[155px] text-[15.059px] text-black top-[4337px] tracking-[-0.3012px]"
-                data-node-id="145:209"
-              >
-                Step 3
-              </p>
-              <p
-                className="absolute font-['Poppins:SemiBold'] left-[155px] text-[#f6ac04] text-[16px] top-[4359.59px] tracking-[-0.32px]"
-                data-node-id="145:210"
-              >
-                Implement and Sustain the Standards
-              </p>
-              <p
-                className="absolute font-['Poppins:Medium'] left-[155px] text-[#757575] text-[11.294px] top-[4384.06px] tracking-[-0.2259px]"
-                data-node-id="145:211"
-              >
-                Train staff, redesign the guest journey, and audit service for consistency.
-              </p>
-            </div>
+                    <div
+            className="absolute contents left-[76.88px] top-[4062.18px]"
+            data-node-id="244:253"
+          >
+            <BrandSteps />
           </div>
         </div>
         <div

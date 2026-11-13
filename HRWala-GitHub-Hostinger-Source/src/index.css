@@ -1445,3 +1445,143 @@
     transition: none;
   }
 }
+
+.brand-timeline {
+  position: absolute;
+  left: 76.88px;
+  top: 4062.18px;
+  width: 640px;
+  height: 339px;
+}
+
+.brand-timeline-row {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 69.647px;
+}
+
+.brand-timeline-ring {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 69.647px;
+  height: 69.647px;
+  overflow: visible;
+}
+
+.brand-timeline-ring circle {
+  fill: none;
+  stroke: #f6ac04;
+  stroke-width: 1.8;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transform: rotate(-90deg);
+  transform-origin: 35px 35px;
+}
+
+.brand-timeline-number {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 69.647px;
+  height: 69.647px;
+  display: grid;
+  place-items: center;
+  visibility: hidden;
+  font-family: "Poppins:SemiBold", sans-serif;
+  font-size: 30.118px;
+  color: #f6ac04;
+}
+
+.brand-timeline-text {
+  position: absolute;
+  left: 78.12px;
+  top: 0;
+  width: 560px;
+  visibility: hidden;
+}
+
+.brand-timeline-text p,
+.brand-timeline-text h3 {
+  margin: 0;
+}
+
+.brand-timeline-label {
+  font-family: "Poppins:Medium", sans-serif;
+  font-size: 17px;
+  line-height: 23px;
+  color: #000;
+}
+
+.brand-timeline-text h3 {
+  font-family: "Poppins:SemiBold", sans-serif;
+  font-size: 20px;
+  line-height: 27px;
+  letter-spacing: -0.4px;
+  color: #f6ac04;
+}
+
+.brand-timeline-description {
+  font-family: "Poppins:Medium", sans-serif;
+  font-size: 15px;
+  line-height: 22px;
+  letter-spacing: -0.3px;
+  color: #757575;
+}
+
+.brand-timeline-line {
+  position: absolute;
+  left: 34.8235px;
+  top: 69.647px;
+  width: 1.8px;
+  height: 64.943px;
+  background: #f6ac04;
+  transform: translateX(-50%) scaleY(0);
+  transform-origin: top center;
+}
+
+/* Circle draw */
+.brand-timeline.is-playing circle {
+  animation: brandDrawCircle 450ms ease-out forwards;
+}
+
+/* Number aur text apni jagah appear hon */
+.brand-timeline.is-playing .brand-timeline-number,
+.brand-timeline.is-playing .brand-timeline-text {
+  animation: brandShowStep 1ms step-end forwards;
+}
+
+/* Connecting line neeche draw ho */
+.brand-timeline.is-playing .brand-timeline-line {
+  animation: brandDrawLine 550ms ease-in-out forwards;
+}
+
+@keyframes brandDrawCircle {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes brandShowStep {
+  to { visibility: visible; }
+}
+
+@keyframes brandDrawLine {
+  to { transform: translateX(-50%) scaleY(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-timeline.is-playing circle {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+
+  .brand-timeline.is-playing .brand-timeline-number,
+  .brand-timeline.is-playing .brand-timeline-text {
+    animation: none;
+    visibility: visible;
+  }
+
+  .brand-timeline.is-playing .brand-timeline-line {
+    animation: none;
+    transform: translateX(-50%) scaleY(1);
+  }
+}
