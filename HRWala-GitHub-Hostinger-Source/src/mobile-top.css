@@ -888,3 +888,52 @@
     box-sizing: border-box !important;
   }
 }
+
+@media (max-width: 767px) {
+  #home.design-page .hr-module-grid,
+  #home.design-page [data-node-id="169:4"] {
+    left: 90px !important;
+    width: 1260px !important;
+    column-gap: 12px !important;
+    row-gap: 26px !important;
+    box-sizing: border-box !important;
+  }
+
+  #home.design-page .hr-module-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    grid-auto-rows: minmax(228px, 1fr) !important;
+  }
+
+  #home.design-page [data-node-id="169:4"] {
+    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+  }
+
+  #home.design-page [data-node-id="169:4"] .industry-card-group {
+    grid-column: span 2 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 228px !important;
+    height: 100% !important;
+    padding: 42px 18px 22px !important;
+    border-radius: 24px !important;
+    box-sizing: border-box !important;
+  }
+
+  #home.design-page [data-node-id="169:4"] .industry-card-group > p:first-of-type {
+    margin: 0;
+    color: #0144ab;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.18;
+    text-align: left;
+  }
+
+  #home.design-page [data-node-id="169:4"] .industry-card-group > p:nth-of-type(2) {
+    margin-top: 7px;
+    color: #757575;
+    font-size: 21px;
+    line-height: 1.4;
+    text-align: justify;
+    text-align-last: left;
+  }
+}
