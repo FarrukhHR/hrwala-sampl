@@ -420,3 +420,78 @@
   .design-page :is([data-node-id="413:603"], [aria-label="Start Hiring"]) { top: 4920px !important; }
   .design-page [data-node-id="413:604"] { top: 4959px !important; }
 }
+
+@media (max-width: 767px) {
+  /* Add room after Academy while keeping the approved upper sections fixed. */
+  .design-page .mobile-later-section {
+    margin-top: clamp(0px, calc((var(--mobile-original-top) - 2900px) * 10000), 1200px);
+  }
+  .design-page [data-node-id="167:3"] .mobile-later-section,
+  .design-page :is([data-node-id="207:31"], [data-node-id="171:5"], [data-node-id="413:611"], [data-node-id="188:19"], [data-node-id="188:20"], [aria-label="Explore Job Portal"], [aria-label="Find Your Dream Job"], [aria-label="Start Hiring"]) { margin-top: 0 !important; }
+  .design-viewport { min-height: calc(100vw * 8.14); }
+
+  /* Use the existing Academy wrapper as a flowing three-column grid. */
+  #home.design-page [data-node-id="524:715"] {
+    display: grid; position: absolute; left: 80px; top: 5300px !important;
+    width: 1280px; height: auto; margin: 0 !important; padding: 0;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 24px; row-gap: 24px; align-items: start;
+    transform: none; translate: none; scale: 1;
+  }
+  #home.design-page [data-node-id="524:715"] :is(p, [data-node-id="245:284"], [data-node-id="247:341"], [data-node-id="247:347"]) {
+    position: static !important; inset: auto !important; width: auto; height: auto;
+    margin: 0; transform: none; translate: none; scale: 1;
+    white-space: normal; text-align: left; letter-spacing: -.4px;
+  }
+  #home.design-page [data-node-id="242:251"] {
+    grid-column: 1 / -1; order: 0; margin-bottom: 16px;
+    font-size: 86px; line-height: 1.15;
+  }
+  #home.design-page [data-node-id="242:251"] > span { font-size: inherit; line-height: inherit; }
+
+  /* Keep desktop colours and number/title styling; stack all three blocks. */
+  #home.design-page :is([data-node-id="247:337"], [data-node-id="247:338"], [data-node-id="247:344"]) {
+    display: grid; position: relative; inset: auto; width: 100%; height: auto;
+    grid-column: 1 / -1; grid-template-columns: 110px minmax(0, 1fr);
+    column-gap: 16px; row-gap: 10px; align-items: center;
+    margin: 0 0 18px; transform: none; translate: none; scale: 1;
+  }
+  #home.design-page [data-node-id="247:337"] { order: 1; }
+  #home.design-page [data-node-id="247:338"] { order: 2; }
+  #home.design-page [data-node-id="247:344"] { order: 3; }
+  #home.design-page :is([data-node-id="245:284"], [data-node-id="247:341"], [data-node-id="247:347"]) {
+    grid-column: 1; grid-row: 1; font-size: 92px; line-height: 1;
+  }
+  #home.design-page :is([data-node-id="245:284"], [data-node-id="247:341"], [data-node-id="247:347"]) > p { font-size: inherit; line-height: inherit; }
+  #home.design-page :is([data-node-id="245:286"], [data-node-id="247:342"], [data-node-id="247:348"]) {
+    grid-column: 2; grid-row: 1; font-size: 58px; line-height: 1.2;
+  }
+  #home.design-page :is([data-node-id="247:335"], [data-node-id="247:343"], [data-node-id="247:349"]) {
+    grid-column: 1 / -1; font-size: 34px; line-height: 1.5; color: #757575;
+  }
+
+  /* Certification heading, description, then three certificates in one row. */
+  #home.design-page [data-node-id="247:356"] { order: 4; grid-column: 1 / -1; margin-top: 24px; font-size: 56px; line-height: 1.25; }
+  #home.design-page [data-node-id="509:723"] { order: 5; grid-column: 1 / -1; margin-top: -14px; font-size: 32px; line-height: 1.4; }
+  #home.design-page :is([data-node-id="509:726"], [data-node-id="509:730"], [data-node-id="509:732"]) {
+    position: relative; inset: auto; width: 100%; height: auto; aspect-ratio: 309 / 201;
+    margin: 0; transform: none; translate: none; scale: 1;
+  }
+  #home.design-page [data-node-id="509:726"] { order: 6; grid-column: 1; }
+  #home.design-page [data-node-id="509:730"] { order: 7; grid-column: 2; }
+  #home.design-page [data-node-id="509:732"] { order: 8; grid-column: 3; }
+
+  /* Badges follow the same compact three-per-row arrangement. */
+  #home.design-page [data-node-id="256:2"] { order: 9; grid-column: 1 / -1; margin-top: 36px; font-size: 56px; line-height: 1.25; }
+  #home.design-page [data-node-id="509:721"] { order: 10; grid-column: 1 / -1; margin-top: -14px; font-size: 32px; line-height: 1.4; }
+  #home.design-page :is([data-node-id="501:711"], [data-node-id="502:713"], [data-node-id="502:715"]) {
+    position: relative; inset: auto; width: 100%; height: auto; aspect-ratio: 310 / 119;
+    margin: 0; transform: none; translate: none; scale: 1;
+  }
+  #home.design-page [data-node-id="501:711"] { order: 11; grid-column: 1; }
+  #home.design-page [data-node-id="502:713"] { order: 12; grid-column: 2; }
+  #home.design-page [data-node-id="502:715"] { order: 13; grid-column: 3; }
+  #home.design-page :is([data-node-id="509:726"], [data-node-id="509:730"], [data-node-id="509:732"], [data-node-id="501:711"], [data-node-id="502:713"], [data-node-id="502:715"]) > img {
+    position: absolute; inset: 0; width: 100%; height: 100%; max-width: 100%; object-fit: contain;
+  }
+}
