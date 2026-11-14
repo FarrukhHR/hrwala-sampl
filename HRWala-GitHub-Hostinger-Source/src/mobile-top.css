@@ -1838,3 +1838,12 @@
     justify-self: start !important;
   }
 }
+
+@media (max-width: 767px) {
+  #home.design-page .newsletter-form {
+    left: 778px !important;
+    width: 550px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
