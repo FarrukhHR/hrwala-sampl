@@ -1,4 +1,3 @@
-/* Coordinates use the existing 1440px canvas; App scales them to the viewport. */
 @media (max-width: 767px) {
   .design-page .design-header-logo { left: 58px; top: 30px; width: 290px; height: 86px; }
   .design-page .design-header-logo img { object-fit: contain; }
@@ -10,7 +9,6 @@
   .design-page [data-node-id="474:14188"] { left: 1250px; top: 44px; width: 100px; height: 100px; border-radius: 50%; overflow: hidden; }
   .design-page [data-node-id="3:7"] { height: 150px; }
   .design-canvas, .design-page { height: 8780px !important; }
-  .design-page .mobile-later-section { top: calc(var(--mobile-original-top) + 1450px) !important; }
   .design-page [data-node-id="9:4"] { left: 24px; top: 192px; width: 1392px; height: 698px; border-radius: 42px; overflow: hidden; background: #e3f3ff; }
   .design-page [data-node-id="9:4"] > img { object-fit: fill; }
   .design-page [data-node-id="88:4"],
@@ -28,10 +26,6 @@
   .design-page :is([data-node-id="412:1206"], [data-node-id="412:1207"], [data-node-id="412:1208"], [data-node-id="412:1209"], [data-node-id="412:1210"], [data-node-id="412:1211"]) {
     width: max-content; height: auto; font-size: 23px; line-height: 1.2; letter-spacing: -.6px; text-align: center; word-break: normal; overflow-wrap: normal; white-space: nowrap;
   }
-  .design-page [data-node-id="412:1206"] { left: 878px; top: 290px; }
-  .design-page [data-node-id="412:1207"] { left: 1110px; top: 275px; }
-  .design-page [data-node-id="412:1208"] { left: 880px; top: 725px; }
-  .design-page [data-node-id="412:1209"] { left: 1105px; top: 725px; }
   .design-page [data-node-id="412:1210"] { left: 685px; top: 515px; }
   .design-page [data-node-id="412:1211"] { left: 1215px; top: 495px; }
   .design-page [data-node-id="69:3"] { left: 60px; top: 945px; width: 1300px; height: auto; letter-spacing: -2px; }
@@ -86,7 +80,6 @@
 }
 
 @media (max-width: 767px) {
-  /* Upar wale */
   .design-page [data-node-id="412:1206"] {
     left: 880px;
     top: 300px;
@@ -96,8 +89,6 @@
     left: 1110px;
     top: 300px;
   }
-
-  /* Neeche wale */
   .design-page [data-node-id="412:1208"] {
     left: 880px;
     top: 710px;
@@ -117,17 +108,8 @@
 }
 
 @media (max-width: 767px) {
-  /* Mobile: intro 3 lines, candidates/employers 2-2 lines */
   .design-page [data-node-id="171:5"] {
     container-type: inline-size;
-    height: auto;
-    white-space: normal;
-  }
-
-  .design-page [data-node-id="171:5"] > p {
-    font-size: 0 !important;
-    line-height: 0 !important;
-    margin: 0 0 20px !important;
   }
 
   .design-page [data-node-id="171:5"] > p > span,
@@ -170,8 +152,6 @@
   .design-page [data-node-id="171:5"] > p:nth-child(5)::after {
     content: "Post jobs, find the right talent\A and manage applications in one place.";
   }
-
-  /* Dream Job / Hire People headings */
   .design-page :is(
     [data-node-id="109:12"],
     [data-node-id="118:124"]
@@ -179,8 +159,6 @@
     font-size: 42px !important;
     line-height: 1.2 !important;
   }
-
-  /* 01 / 02 */
   .design-page :is(
     [data-node-id="109:14"],
     [data-node-id="118:125"]
@@ -188,8 +166,6 @@
     font-size: 64px !important;
     line-height: 1 !important;
   }
-
-  /* Points: same 2-column positions, smaller text */
   .design-page :is(
     [data-node-id="118:36"],
     [data-node-id="118:68"],
@@ -203,8 +179,6 @@
     font-size: 0.85em !important;
     line-height: 1.35 !important;
   }
-
-  /* Find Your Dream Job button */
   .design-page :is(
     [data-node-id="413:596"],
     [aria-label="Find Your Dream Job"]
@@ -212,13 +186,6 @@
     width: 150px !important;
     height: 34px !important;
   }
-
-  .design-page [data-node-id="413:597"] {
-    width: 150px !important;
-    font-size: 12px !important;
-  }
-
-  /* Start Hiring button */
   .design-page :is(
     [data-node-id="413:603"],
     [aria-label="Start Hiring"]
@@ -226,46 +193,9 @@
     width: 125px !important;
     height: 34px !important;
   }
-
-  .design-page [data-node-id="413:604"] {
-    width: 125px !important;
-    font-size: 12px !important;
-  }
 }
 
 @media (max-width: 767px) {
-  /* Job Portal background */
-  .design-page [data-node-id="207:31"] {
-    left: 26px;
-    top: 2702.71px !important;
-    width: 1386px;
-    height: 756px;
-    border-radius: 42px;
-    overflow: hidden;
-  }
-
-  /* Heading on the left */
-  .design-page [data-node-id="109:6"] {
-    left: 86px;
-    top: 2740px !important;
-    width: 600px;
-    height: auto;
-  }
-
-  .design-page [data-node-id="109:6"] > span {
-    font-size: 52px;
-    line-height: 1.15;
-  }
-
-  /* Full original desktop content on the left */
-  .design-page [data-node-id="171:5"] {
-    left: 87px;
-    top: 2810px !important;
-    width: 598px;
-    height: auto;
-    white-space: normal;
-    text-align: left;
-  }
 
   .design-page [data-node-id="171:5"] > p {
     display: block !important;
@@ -280,38 +210,15 @@
     font-size: inherit !important;
     line-height: inherit !important;
   }
-
-  /* Remove previously added short mobile copy */
   .design-page [data-node-id="171:5"] > p::before,
   .design-page [data-node-id="171:5"] > p::after {
     content: none !important;
     display: none !important;
   }
-
-  /* Remove only empty spacer paragraphs */
   .design-page [data-node-id="171:5"] > p:nth-child(2),
   .design-page [data-node-id="171:5"] > p:nth-child(4) {
     display: none !important;
   }
-
-  /* Image on the right */
-  .design-page [data-node-id="413:611"] {
-    left: 746px;
-    top: 2745px !important;
-    width: 620px;
-    height: 349px;
-    border-radius: 26px;
-    overflow: hidden;
-  }
-
-  .design-page [data-node-id="413:611"] img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: inherit;
-  }
-
-  /* Explore button below the left text */
   .design-page [data-node-id="188:19"],
   .design-page [aria-label="Explore Job Portal"] {
     left: 87px !important;
@@ -330,12 +237,10 @@
 }
 
 @media (max-width: 767px) {
-  /* Reserve space for this section's two full-width cards. */
   .design-page .mobile-later-section { top: calc(var(--mobile-original-top) + 3190px) !important; }
   .design-page { overflow: visible !important; }
-  .design-viewport { min-height: calc(100vw * 7.139); }
 
-  .design-page [data-node-id="207:31"] { left: 26px; top: 2700px !important; width: 1386px; height: 2200px; border-radius: 54px; overflow: hidden; background: #e7f1ff; }
+  .design-page [data-node-id="207:31"] { left: 26px; top: 2700px !important; width: 1386px; border-radius: 54px; overflow: hidden; background: #e7f1ff; }
   .design-page [data-node-id="207:31"] > img { width: 100%; height: 100%; object-fit: fill; }
   .design-page [data-node-id="109:6"] { left: 80px; top: 2750px !important; width: 1280px; height: auto; }
   .design-page [data-node-id="109:6"] > span { font-size: 86px; line-height: 1.15; }
@@ -343,15 +248,11 @@
   .design-page [data-node-id="171:5"] > * { display: none !important; }
   .design-page [data-node-id="171:5"]::before { content: 'HRwala.net connects professionals with opportunities and employers with talent. Build your CV, explore jobs and manage hiring in one connected platform.'; display: block; color: #5b5e65; font: 400 40px/1.45 'Poppins:Regular', sans-serif; letter-spacing: -.3px; }
   .design-page :is([data-node-id="188:19"], [data-node-id="188:20"], [aria-label="Explore Job Portal"]) { display: none !important; }
-  .design-page [data-node-id="413:611"] { left: 80px; top: 3090px !important; width: 1280px; height: 480px; border-radius: 38px; overflow: hidden; }
-  .design-page [data-node-id="413:611"] img { width: 100%; height: 100%; object-fit: cover; object-position: center; border-radius: inherit; }
+  .design-page [data-node-id="413:611"] { left: 80px; top: 3090px !important; width: 1280px; border-radius: 38px; overflow: hidden; }
+  .design-page [data-node-id="413:611"] img { width: 100%; height: 100%; object-position: center; border-radius: inherit; }
 
   .design-page :is([data-node-id="118:121"], [data-node-id="118:122"]) { scale: 1 !important; transform: none !important; }
   .design-page :is([data-node-id="109:10"], [data-node-id="118:123"]) { left: 80px; width: 1280px; height: 560px; border-radius: 36px; background: #fff; }
-  .design-page [data-node-id="109:10"] { top: 3630px !important; }
-  .design-page [data-node-id="118:123"] { top: 4240px !important; }
-
-  /* Smooth curved orange/blue stroke without the old SVG seam. */
   .design-page :is([data-node-id="118:120"], [data-node-id="118:126"]) { display: none !important; }
   .design-page :is([data-node-id="109:10"], [data-node-id="118:123"])::before { content: ''; position: absolute; inset: 0; height: 30px; padding: 7px 7px 0; box-sizing: border-box; border-radius: inherit; background: linear-gradient(90deg, #f6ac04 0 38%, #0144ab 38% 100%); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask-composite: exclude; clip-path: inset(0 0 2px); }
   .design-page :is([data-node-id="109:10"], [data-node-id="118:123"])::after { position: absolute; left: 50px; right: 50px; top: 150px; color: #5b5e65; font: 400 36px/1.45 'Poppins:Regular', sans-serif; }
@@ -359,40 +260,26 @@
   .design-page [data-node-id="118:123"]::after { content: 'Publish vacancies, discover suitable talent and manage your hiring in one place.'; }
 
   .design-page :is([data-node-id="109:14"], [data-node-id="118:125"]) { left: 124px; width: 120px; height: auto; font-size: 84px !important; line-height: 1; z-index: 2; }
-  .design-page [data-node-id="109:14"] { top: 3670px !important; }
-  .design-page [data-node-id="118:125"] { top: 4280px !important; }
   .design-page :is([data-node-id="109:12"], [data-node-id="118:124"]) { left: 270px; width: 1000px; height: auto; font-size: 68px !important; line-height: 1.2 !important; white-space: nowrap; z-index: 2; }
-  .design-page [data-node-id="109:12"] { top: 3674px !important; }
-  .design-page [data-node-id="118:124"] { top: 4284px !important; }
-
-  /* Two feature columns inside each card. */
   .design-page :is([data-node-id="118:36"], [data-node-id="118:68"], [data-node-id="118:59"], [data-node-id="118:71"], [data-node-id="118:130"], [data-node-id="118:133"], [data-node-id="118:136"], [data-node-id="118:139"]) { width: 540px; height: auto; font-size: 32px !important; line-height: 1.35; text-align: left; white-space: nowrap; translate: 0 -50%; }
   .design-page :is([data-node-id="118:36"], [data-node-id="118:68"], [data-node-id="118:59"], [data-node-id="118:71"], [data-node-id="118:130"], [data-node-id="118:133"], [data-node-id="118:136"], [data-node-id="118:139"]) > p { font-size: inherit !important; line-height: inherit !important; }
   .design-page :is([data-node-id="118:36"], [data-node-id="118:59"], [data-node-id="118:130"], [data-node-id="118:136"]) { left: 180px; }
   .design-page :is([data-node-id="118:68"], [data-node-id="118:71"], [data-node-id="118:133"], [data-node-id="118:139"]) { left: 825px; }
   .design-page :is([data-node-id="118:37"], [data-node-id="118:60"], [data-node-id="118:131"], [data-node-id="118:137"]) { left: 130px; width: 30px; }
   .design-page :is([data-node-id="118:69"], [data-node-id="118:72"], [data-node-id="118:134"], [data-node-id="118:140"]) { left: 775px; width: 30px; }
-  .design-page :is([data-node-id="118:36"], [data-node-id="118:68"], [data-node-id="118:37"], [data-node-id="118:69"]) { top: 3940px !important; }
-  .design-page :is([data-node-id="118:59"], [data-node-id="118:71"], [data-node-id="118:60"], [data-node-id="118:72"]) { top: 4010px !important; }
-  .design-page :is([data-node-id="118:130"], [data-node-id="118:133"], [data-node-id="118:131"], [data-node-id="118:134"]) { top: 4550px !important; }
-  .design-page :is([data-node-id="118:136"], [data-node-id="118:139"], [data-node-id="118:137"], [data-node-id="118:140"]) { top: 4620px !important; }
 
-  .design-page :is([data-node-id="413:596"], [aria-label="Find Your Dream Job"]) { left: 130px !important; top: 4070px !important; width: 490px !important; height: 78px !important; border-radius: 18px; }
-  .design-page :is([data-node-id="413:603"], [aria-label="Start Hiring"]) { left: 130px !important; top: 4680px !important; width: 330px !important; height: 78px !important; border-radius: 18px; }
-  .design-page [data-node-id="413:597"] { left: 375px; top: 4109px !important; width: 490px !important; height: auto !important; font-size: 34px !important; }
-  .design-page [data-node-id="413:604"] { left: 295px; top: 4719px !important; width: 330px !important; height: auto !important; font-size: 34px !important; }
+  .design-page :is([data-node-id="413:596"], [aria-label="Find Your Dream Job"]) { left: 130px !important; width: 490px !important; height: 78px !important; border-radius: 18px; }
+  .design-page :is([data-node-id="413:603"], [aria-label="Start Hiring"]) { left: 130px !important; width: 330px !important; height: 78px !important; border-radius: 18px; }
+  .design-page [data-node-id="413:597"] { left: 375px; width: 490px !important; height: auto !important; font-size: 34px !important; }
+  .design-page [data-node-id="413:604"] { left: 295px; width: 330px !important; height: auto !important; font-size: 34px !important; }
 }
 
 @media (max-width: 767px) {
-  /* Keep the large short intro; remove the old paragraphs underneath it. */
   #home.design-page [data-node-id="171:5"] > * { display: none !important; }
   #home.design-page [data-node-id="171:5"]::after { content: none !important; }
-
-  /* Original conference-image proportions: 1280 / 720. */
   .design-page [data-node-id="413:611"] { height: 720px !important; }
   .design-page [data-node-id="413:611"] img { object-fit: contain !important; }
   .design-page [data-node-id="207:31"] { height: 2440px !important; }
-  .design-viewport { min-height: calc(100vw * 7.306); }
 
   .design-page [data-node-id="109:10"] { top: 3870px !important; }
   .design-page [data-node-id="118:123"] { top: 4480px !important; }
@@ -400,8 +287,6 @@
   .design-page [data-node-id="118:125"] { top: 4520px !important; }
   .design-page [data-node-id="109:12"] { top: 3914px !important; }
   .design-page [data-node-id="118:124"] { top: 4524px !important; }
-
-  /* One clean curved stroke, without mask edges or doubled SVG lines. */
   #home.design-page :is([data-node-id="109:10"], [data-node-id="118:123"])::before {
     height: 30px; padding: 0; border: 0; border-radius: 0;
     -webkit-mask: none; mask: none; clip-path: none;
@@ -422,19 +307,12 @@
 }
 
 @media (max-width: 767px) {
-  /* Add room after Academy while keeping the approved upper sections fixed. */
-  .design-page .mobile-later-section {
-    margin-top: clamp(0px, calc((var(--mobile-original-top) - 2800px) * 10000), 1200px);
-  }
   .design-page [data-node-id="167:3"] .mobile-later-section,
   .design-page :is([data-node-id="207:31"], [data-node-id="171:5"], [data-node-id="413:611"], [data-node-id="188:19"], [data-node-id="188:20"], [aria-label="Explore Job Portal"], [aria-label="Find Your Dream Job"], [aria-label="Start Hiring"]) { margin-top: 0 !important; }
-  /* Override App's shorter inline viewport height, without moving calc-based nodes. */
-  .design-viewport { height: calc(100vw * 9) !important; min-height: 100dvh; overflow: visible !important; }
+  .design-viewport { height: calc(100vw * 9) !important; overflow: visible !important; }
   .design-canvas, #home.design-page { overflow: visible !important; }
-
-  /* Use the existing Academy wrapper as a flowing three-column grid. */
   #home.design-page [data-node-id="524:715"] {
-    display: grid; position: absolute; left: 80px; top: 5300px !important;
+    display: grid; position: absolute; left: 80px;
     width: 1280px; height: auto; margin: 0 !important; padding: 0;
     grid-template-columns: repeat(6, minmax(0, 1fr));
     column-gap: 24px; row-gap: 24px; align-items: start;
@@ -450,8 +328,6 @@
     font-size: 86px; line-height: 1.15;
   }
   #home.design-page [data-node-id="242:251"] > span { font-size: inherit; line-height: inherit; }
-
-  /* Keep desktop colours and number/title styling; stack all three blocks. */
   #home.design-page :is([data-node-id="247:337"], [data-node-id="247:338"], [data-node-id="247:344"]) {
     display: grid; position: relative; inset: auto; width: 100%; height: auto;
     grid-column: 1 / -1; grid-template-columns: 110px minmax(0, 1fr);
@@ -471,8 +347,6 @@
   #home.design-page :is([data-node-id="247:335"], [data-node-id="247:343"], [data-node-id="247:349"]) {
     grid-column: 1 / -1; font-size: 34px; line-height: 1.5; color: #757575;
   }
-
-  /* Certification heading, description, then three certificates in one row. */
   #home.design-page [data-node-id="247:356"] { order: 4; grid-column: 1 / -1; margin-top: 24px; font-size: 56px; line-height: 1.25; }
   #home.design-page [data-node-id="509:723"] { order: 5; grid-column: 1 / -1; margin-top: -14px; font-size: 32px; line-height: 1.4; }
   #home.design-page :is([data-node-id="509:726"], [data-node-id="509:730"], [data-node-id="509:732"]) {
@@ -482,8 +356,6 @@
   #home.design-page [data-node-id="509:726"] { order: 6; grid-column: 1 / span 2; }
   #home.design-page [data-node-id="509:730"] { order: 7; grid-column: 3 / span 2; }
   #home.design-page [data-node-id="509:732"] { order: 8; grid-column: 5 / span 2; }
-
-  /* Badges follow the same compact three-per-row arrangement. */
   #home.design-page [data-node-id="256:2"] { order: 9; grid-column: 1 / -1; margin-top: 36px; font-size: 56px; line-height: 1.25; }
   #home.design-page [data-node-id="509:721"] { order: 10; grid-column: 1 / -1; margin-top: -14px; font-size: 32px; line-height: 1.4; }
   #home.design-page :is([data-node-id="501:711"], [data-node-id="502:713"], [data-node-id="502:715"]) {
@@ -496,56 +368,32 @@
   #home.design-page :is([data-node-id="509:726"], [data-node-id="509:730"], [data-node-id="509:732"], [data-node-id="501:711"], [data-node-id="502:713"], [data-node-id="502:715"]) > img {
     position: absolute; inset: 0; width: 100%; height: 100%; max-width: 100%; object-fit: contain;
   }
-
-  /* Match the desktop number behind the title; never wrap 02 or 03. */
   #home.design-page [data-node-id="524:715"] :is([data-node-id="247:337"], [data-node-id="247:338"], [data-node-id="247:344"]) {
     display: block; padding: 118px 0 0; margin: 0 0 18px;
   }
   #home.design-page [data-node-id="524:715"] :is([data-node-id="245:284"], [data-node-id="247:341"], [data-node-id="247:347"]) {
     display: block; position: absolute !important; left: 0 !important; top: 0 !important;
-    width: 160px !important; height: 110px !important; white-space: nowrap !important;
-    font-size: 92px; line-height: 1; transform: none !important; translate: none !important;
+    width: 160px !important; height: 110px !important; white-space: nowrap !important; line-height: 1; transform: none !important; translate: none !important;
   }
   #home.design-page [data-node-id="524:715"] :is([data-node-id="245:284"], [data-node-id="247:341"], [data-node-id="247:347"]) > p {
     width: 160px !important; white-space: nowrap !important; word-break: normal !important;
     font-size: inherit; line-height: 1;
   }
   #home.design-page [data-node-id="524:715"] :is([data-node-id="245:286"], [data-node-id="247:342"], [data-node-id="247:348"]) {
-    position: absolute !important; left: 34px !important; top: 34px !important;
-    width: calc(100% - 34px); font-size: 48px; line-height: 1.2; white-space: nowrap;
+    position: absolute !important; top: 34px !important;
+    width: calc(100% - 34px); line-height: 1.2; white-space: nowrap;
   }
-  #home.design-page [data-node-id="524:715"] :is([data-node-id="247:335"], [data-node-id="247:343"], [data-node-id="247:349"]) {
-    font-size: 30px; line-height: 1.5; width: 100%; height: auto;
+  #home.design-page [data-node-id="524:715"] :is([data-node-id="247:335"], [data-node-id="247:343"], [data-node-id="247:349"]) { width: 100%; height: auto;
   }
 }
 
 @media (max-width: 767px) {
-  /* Academy thora upar */
   #home.design-page [data-node-id="524:715"] {
     top: 5180px !important;
   }
-
-  /* Heading aur blocks ke beech space */
-  #home.design-page [data-node-id="524:715"]
-  [data-node-id="242:251"] {
-    margin-bottom: 36px !important;
-  }
-
-  /* Get Hired ki width bhi pehle dono jitni */
   #home.design-page [data-node-id="247:344"] {
     grid-column: 1 / span 3;
   }
-
-  /* Numbers headings ke saath align */
-  #home.design-page [data-node-id="524:715"] :is(
-    [data-node-id="245:284"],
-    [data-node-id="247:341"],
-    [data-node-id="247:347"]
-  ) {
-    top: 24px !important;
-  }
-
-  /* Teenon paragraphs justify */
   #home.design-page [data-node-id="524:715"] :is(
     [data-node-id="247:335"],
     [data-node-id="247:343"],
@@ -554,8 +402,6 @@
     text-align: justify !important;
     text-align-last: left;
   }
-
-  /* Certificates ke baad Badges heading ka gap */
   #home.design-page [data-node-id="524:715"]
   [data-node-id="256:2"] {
     margin-top: 40px !important;
@@ -563,7 +409,6 @@
 }
 
 @media (max-width: 767px) {
-  /* Numbers aur titles ek level par */
   #home.design-page [data-node-id="524:715"] :is(
     [data-node-id="245:284"],
     [data-node-id="247:341"],
@@ -594,82 +439,31 @@
     align-items: center;
     height: 66px !important;
   }
-
-  /* Badges aur agle section ke beech kam gap */
-  .design-page .mobile-later-section {
-    margin-top: clamp(
-      0px,
-      calc((var(--mobile-original-top) - 2800px) * 10000),
-      1000px
-    );
-  }
 }
 
 @media (max-width: 767px) {
-  /* Keep the scaled canvas, but stop off-canvas Figma objects widening the page. */
   html, body, #root { overflow-x: clip !important; }
-  .design-viewport { width: 100%; max-width: 100vw; overflow-x: clip !important; overflow-y: visible !important; min-height: calc(100vw * 9.5); }
-
-  /* Reserve the fourth module row before the subsequent sections. */
-  .design-page .mobile-later-section {
-    margin-top: calc(clamp(0px, (var(--mobile-original-top) - 2800px) * 10000, 1000px) + clamp(0px, (var(--mobile-original-top) - 3940px) * 10000, 800px));
-  }
-
-  /* Software's right-side image and labels retain their existing coordinates. */
-  #home.design-page [data-node-id="207:35"] { height: 1860px; }
+  .design-viewport { width: 100%; max-width: 100vw; overflow-x: clip !important; overflow-y: visible !important; }
   #home.design-page :is([data-node-id="207:36"], [data-node-id="224:22"], [data-node-id="224:24"], [data-node-id="224:21"], [data-node-id="239:246"], [data-node-id="239:247"], [data-node-id="239:248"], [data-node-id="239:249"], [data-node-id="239:250"], [data-node-id="228:28"], [data-node-id="228:29"], [data-node-id="228:236"], [data-node-id="228:235"], [aria-label="Explore the Platform"]) { margin-top: 0 !important; }
 
-  #home.design-page [data-node-id="207:36"] { left: 90px; top: 7137px !important; width: 680px; height: auto; font-size: 60px; line-height: 1.15; }
+  #home.design-page [data-node-id="207:36"] { left: 90px; height: auto; line-height: 1.15; }
   #home.design-page [data-node-id="207:36"] > span { font-size: inherit; line-height: inherit; }
-  #home.design-page [data-node-id="224:22"] { left: 90px; top: 7244px !important; width: 700px; height: auto; font-size: 32px; line-height: 1.25; }
-  #home.design-page [data-node-id="224:24"] { left: 90px; top: 7295px !important; width: 640px; height: auto; font-size: 20px; line-height: 1.4; text-align: justify; }
+  #home.design-page [data-node-id="224:22"] { left: 90px; height: auto; font-size: 32px; line-height: 1.25; }
+  #home.design-page [data-node-id="224:24"] { left: 90px; height: auto; font-size: 20px; line-height: 1.4; text-align: justify; }
 
-  #home.design-page [data-node-id="224:21"] { left: 88px; top: 7409px !important; width: 520px; height: 74.64px; }
-  #home.design-page :is([data-node-id="239:246"], [data-node-id="239:247"], [data-node-id="239:248"], [data-node-id="239:249"], [data-node-id="239:250"]) { top: 7490px !important; font-size: 20px; line-height: 1.2; }
+  #home.design-page [data-node-id="224:21"] { left: 88px; width: 520px; height: 74.64px; }
+  #home.design-page :is([data-node-id="239:246"], [data-node-id="239:247"], [data-node-id="239:248"], [data-node-id="239:249"], [data-node-id="239:250"]) { font-size: 20px; line-height: 1.2; }
   #home.design-page [data-node-id="239:246"] { left: 102px; }
   #home.design-page [data-node-id="239:247"] { left: 188px; }
   #home.design-page [data-node-id="239:248"] { left: 310px; }
   #home.design-page [data-node-id="239:249"] { left: 425px; }
   #home.design-page [data-node-id="239:250"] { left: 540px; }
 
-  #home.design-page :is([data-node-id="228:28"], [aria-label="Explore the Platform"]) { left: 90px !important; top: 7540px !important; width: 300px !important; height: 64px !important; border-radius: 12px; }
-  #home.design-page [data-node-id="228:29"] { left: 240px; top: 7572px !important; width: 300px; height: auto; font-size: 24px; line-height: 1.2; z-index: 41; pointer-events: none; }
-
-  /* Same heading size as Job Portal and Future Academy. */
-  #home.design-page [data-node-id="228:236"] { left: 80px; top: 7660px !important; width: 1280px; height: auto; font-size: 86px; line-height: 1.15; }
-  #home.design-page [data-node-id="228:236"] > span { font-size: inherit; line-height: inherit; }
-
-  /* Existing twelve module cards, now three columns by four rows. */
-  #home.design-page [data-node-id="228:235"] {
-    display: grid !important; position: absolute; left: 80px; top: 7800px !important;
-    width: 1280px; height: auto; grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 30px 24px; transform: none; translate: none; scale: 1;
-  }
-  #home.design-page [data-node-id="228:235"] > div { display: contents !important; }
-  #home.design-page [data-node-id="228:235"] :is([data-node-id="228:103"], [data-node-id="228:111"], [data-node-id="228:119"], [data-node-id="228:127"], [data-node-id="228:137"], [data-node-id="228:145"], [data-node-id="228:153"], [data-node-id="228:161"], [data-node-id="228:203"], [data-node-id="228:211"], [data-node-id="228:219"], [data-node-id="228:227"]) {
-    display: block !important; position: relative !important; inset: auto !important;
-    width: 100%; height: 250px; margin: 0 !important; padding: 24px;
-    background: white; border-radius: 24px; box-shadow: 0 4px 12px #0002;
-    transform: none !important; translate: none !important; scale: 1 !important;
-    pointer-events: auto; transform-origin: center;
-  }
-  #home.design-page [data-node-id="228:235"] :is([data-node-id="228:103"], [data-node-id="228:111"], [data-node-id="228:119"], [data-node-id="228:127"], [data-node-id="228:137"], [data-node-id="228:145"], [data-node-id="228:153"], [data-node-id="228:161"], [data-node-id="228:203"], [data-node-id="228:211"], [data-node-id="228:219"], [data-node-id="228:227"]) > div { display: none !important; }
-  #home.design-page [data-node-id="228:235"] :is([data-node-id="228:103"], [data-node-id="228:111"], [data-node-id="228:119"], [data-node-id="228:127"], [data-node-id="228:137"], [data-node-id="228:145"], [data-node-id="228:153"], [data-node-id="228:161"], [data-node-id="228:203"], [data-node-id="228:211"], [data-node-id="228:219"], [data-node-id="228:227"])::before {
-    content: ''; position: absolute; inset: 0; height: 22px; pointer-events: none;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 410 22' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='m'%3E%3Cstop offset='29%25' stop-color='%23f6ac04'/%3E%3Cstop offset='29%25' stop-color='%230144ab'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M2 20Q2 2 24 2H386Q408 2 408 20' fill='none' stroke='url(%23m)' stroke-width='4'/%3E%3C/svg%3E") center top / 100% 22px no-repeat;
-  }
-  #home.design-page [data-node-id="228:235"] p {
-    position: static !important; inset: auto !important; width: auto; height: auto;
-    margin: 0; transform: none; translate: none; white-space: normal;
-    text-align: left; letter-spacing: -.25px; font-size: 21px; line-height: 1.4;
-  }
-  #home.design-page [data-node-id="228:235"] p:nth-of-type(1) { font-size: 18px; line-height: 1.2; }
-  #home.design-page [data-node-id="228:235"] p:nth-of-type(2) { margin-top: 10px; font-size: 27px; line-height: 1.2; }
-  #home.design-page [data-node-id="228:235"] p:nth-of-type(3) { margin-top: 12px; }
+  #home.design-page :is([data-node-id="228:28"], [aria-label="Explore the Platform"]) { left: 90px !important; width: 300px !important; height: 64px !important; border-radius: 12px; }
+  #home.design-page [data-node-id="228:29"] { left: 240px; width: 300px; height: auto; font-size: 24px; line-height: 1.2; z-index: 41; pointer-events: none; }
 }
 
 @media (max-width: 767px) {
-  /* Academy: title overlays its pale number, with more room between paragraphs. */
   #home.design-page [data-node-id="524:715"] :is([data-node-id="247:337"], [data-node-id="247:338"], [data-node-id="247:344"]) {
     box-sizing: border-box; padding-right: 24px;
   }
@@ -677,28 +471,12 @@
     font-size: 72px !important; z-index: 0;
   }
   #home.design-page [data-node-id="524:715"] :is([data-node-id="245:286"], [data-node-id="247:342"], [data-node-id="247:348"]) {
-    left: 30px !important; font-size: 42px !important; z-index: 1;
+    left: 30px !important; font-size: 42px !important;
   }
   #home.design-page [data-node-id="524:715"] :is([data-node-id="247:335"], [data-node-id="247:343"], [data-node-id="247:349"]) {
     font-size: 29px; line-height: 1.5;
   }
-
-  /* Software title and the one requested orbit label. */
   #home.design-page [data-node-id="207:36"] { font-size: 68px; width: 720px; }
-  #home.design-page [data-node-id="207:53"] { left: 756px; top: 7350px !important; margin-top: 0 !important; }
-
-  /* Smaller heading, then wider cards with narrower gutters. */
-  #home.design-page [data-node-id="228:236"] { font-size: 68px; }
-  #home.design-page [data-node-id="228:235"] {
-    left: 60px; top: 7770px !important; width: 1320px;
-    gap: 24px 16px; grid-auto-rows: 1fr; align-items: stretch;
-  }
-  #home.design-page [data-node-id="228:235"] :is([data-node-id="228:103"], [data-node-id="228:111"], [data-node-id="228:119"], [data-node-id="228:127"], [data-node-id="228:137"], [data-node-id="228:145"], [data-node-id="228:153"], [data-node-id="228:161"], [data-node-id="228:203"], [data-node-id="228:211"], [data-node-id="228:219"], [data-node-id="228:227"]) {
-    height: auto !important; min-height: 0; padding: 22px;
-  }
-  #home.design-page [data-node-id="207:35"] { height: 1740px; }
-
-  /* Keep Develop Your Brand's heading/steps in their own section. */
   #home.design-page [data-node-id="133:2"] { top: 8979px !important; margin-top: 0 !important; }
   #home.design-page .brand-timeline { top: 9052.18px !important; margin-top: 0 !important; }
 }
@@ -708,12 +486,8 @@
   .design-page .mobile-later-section {
     margin-top: calc(clamp(0px, (var(--mobile-original-top) - 2800px) * 10000, 1000px) + clamp(0px, (var(--mobile-original-top) - 3940px) * 10000, 800px) + clamp(0px, (var(--mobile-original-top) - 4970px) * 10000, 800px));
   }
-
-  /* One consistent heading size. */
   #home.design-page :is([data-node-id="109:6"], [data-node-id="242:251"], [data-node-id="133:2"]) { font-size: 74px; line-height: 1.15; }
   #home.design-page :is([data-node-id="109:6"], [data-node-id="242:251"], [data-node-id="133:2"]) > span { font-size: inherit; line-height: inherit; }
-
-  /* Put each Academy title over its own pale number, in the same text box. */
   #home.design-page [data-node-id="524:715"] [data-node-id="242:251"] { font-size: 74px; }
   #home.design-page [data-node-id="524:715"] :is([data-node-id="245:284"], [data-node-id="247:341"], [data-node-id="247:347"]) { visibility: hidden !important; }
   #home.design-page [data-node-id="524:715"] :is([data-node-id="245:286"], [data-node-id="247:342"], [data-node-id="247:348"]) { isolation: isolate; z-index: 1; }
@@ -725,26 +499,8 @@
   #home.design-page [data-node-id="245:286"]::before { content: '01'; }
   #home.design-page [data-node-id="247:342"]::before { content: '02'; }
   #home.design-page [data-node-id="247:348"]::before { content: '03'; }
-
-  /* Move the complete software orbit down to the button's bottom edge. */
   #home.design-page :is([data-node-id="413:615"], [data-node-id="207:50"], [data-node-id="207:51"], [data-node-id="207:52"], [data-node-id="239:243"], [data-node-id="207:53"], [data-node-id="239:241"]) { margin-top: 0 !important; }
-  #home.design-page [data-node-id="413:615"] { top: 7175px !important; }
-  #home.design-page [data-node-id="207:50"] { top: 7217.44px !important; }
-  #home.design-page [data-node-id="207:51"] { top: 7217.46px !important; }
-  #home.design-page [data-node-id="207:52"] { top: 7527.38px !important; }
-  #home.design-page [data-node-id="239:243"] { top: 7527.38px !important; }
-  #home.design-page [data-node-id="207:53"] { top: 7403px !important; }
-  #home.design-page [data-node-id="239:241"] { top: 7365.94px !important; }
-
-  /* Bigger, legible software cards: three columns and tight gutters. */
-  #home.design-page [data-node-id="228:235"] { left: 44px; width: 1352px; gap: 20px 10px; }
-  #home.design-page [data-node-id="228:235"] p { font-size: 24px; line-height: 1.45; }
-  #home.design-page [data-node-id="228:235"] p:nth-of-type(1) { font-size: 20px; }
-  #home.design-page [data-node-id="228:235"] p:nth-of-type(2) { font-size: 30px; }
-  #home.design-page [data-node-id="228:235"] p:nth-of-type(3) { text-align: justify; text-align-last: left; }
   #home.design-page [data-node-id="207:35"] { height: 1840px; }
-
-  /* Develop Your Brand gets its own real layout container. */
   #home.design-page [data-node-id="169:4"] {
     display: grid; position: absolute; left: 44px; top: 9000px !important;
     width: 1352px; height: auto; margin: 0 !important; padding: 0;
@@ -782,11 +538,9 @@
     grid-column: 4 / span 3; order: 2; margin: 0 !important; border-radius: 28px; overflow: hidden;
   }
   #home.design-page [data-node-id="169:4"] [data-node-id="413:613"] > img { width: 100%; height: 100%; object-fit: cover; border-radius: inherit; }
-
-  /* Twelve industry cards: three per row, four rows, equal heights. */
   #home.design-page [data-node-id="169:4"] .industry-card-group {
     position: relative; inset: auto; display: block; width: 100%; height: 100%;
-    box-sizing: border-box; grid-column: span 2; padding: 24px; margin: 0 !important;
+    box-sizing: border-box; grid-column: span 2; margin: 0 !important;
     background: #fff; border-radius: 24px; box-shadow: 0 4px 12px #0002;
     transform: none !important; translate: none !important; scale: 1 !important;
     pointer-events: auto;
@@ -801,7 +555,7 @@
     margin: 0; transform: none; translate: none; white-space: normal;
     font-size: 24px; line-height: 1.45; letter-spacing: -.25px; text-align: justify;
   }
-  #home.design-page [data-node-id="169:4"] .industry-card-group > p:first-of-type { font-size: 30px; line-height: 1.2; margin-bottom: 14px; text-align: left; }
+  #home.design-page [data-node-id="169:4"] .industry-card-group > p:first-of-type { text-align: left; }
   #home.design-page [data-node-id="159:37"] { order: 3; }
   #home.design-page [data-node-id="159:45"] { order: 4; }
   #home.design-page [data-node-id="159:53"] { order: 5; }
@@ -817,58 +571,16 @@
 }
 
 @media (max-width: 767px) {
-  /* Tighten the heading gap: the complete flowing Academy content moves up. */
   #home.design-page [data-node-id="524:715"] [data-node-id="242:251"] {
     margin-bottom: 8px !important;
     word-spacing: -6px;
   }
-
-  /* Match the opposite Payroll label's vertical position. */
   #home.design-page [data-node-id="207:53"] {
-    top: 7365.94px !important;
     margin-top: 0 !important;
-  }
-
-  #home.design-page [data-node-id="228:236"] {
-    font-size: 62px;
-  }
-
-  /* Keep three columns; use more available width and smaller gutters. */
-  #home.design-page [data-node-id="228:235"] {
-    left: 26px;
-    width: 1388px;
-    gap: 16px 6px;
-    grid-auto-rows: 1fr;
-    align-items: stretch;
-  }
-  #home.design-page [data-node-id="228:235"] > div > div {
-    padding: 18px !important;
-  }
-
-  /* We Offer colours/type hierarchy, fitted to the three-column card width. */
-  #home.design-page [data-node-id="228:235"] p:nth-of-type(1) {
-    font-size: 24px;
-    line-height: 1.2;
-    color: #232323;
-  }
-  #home.design-page [data-node-id="228:235"] p:nth-of-type(2) {
-    margin-top: 6px;
-    font-size: 34px;
-    line-height: 1.15;
-    color: #0144ab;
-  }
-  #home.design-page [data-node-id="228:235"] p:nth-of-type(3) {
-    margin-top: 8px;
-    font-size: 25px;
-    line-height: 1.35;
-    color: #757575;
-    text-align: justify;
-    text-align-last: left;
   }
 }
 
 @media (max-width: 767px) {
-  /* Bring Software closer to the Professional Badges row. */
   #home.design-page [data-node-id="207:35"] { top: 7009px !important; margin-top: 0 !important; }
   #home.design-page [data-node-id="207:36"] { top: 7057px !important; }
   #home.design-page [data-node-id="224:22"] { top: 7164px !important; }
@@ -877,33 +589,21 @@
   #home.design-page :is([data-node-id="239:246"], [data-node-id="239:247"], [data-node-id="239:248"], [data-node-id="239:249"], [data-node-id="239:250"]) { top: 7410px !important; }
   #home.design-page :is([data-node-id="228:28"], [aria-label="Explore the Platform"]) { top: 7460px !important; }
   #home.design-page [data-node-id="228:29"] { top: 7492px !important; }
-  #home.design-page [data-node-id="228:236"] { top: 7580px !important; }
-  #home.design-page [data-node-id="228:235"] { top: 7690px !important; }
-
-  /* Slightly larger portrait, preserving its aspect ratio. */
-  #home.design-page [data-node-id="413:615"] { left: 895px; top: 7095px !important; width: 460px; height: 460px; }
+  #home.design-page [data-node-id="413:615"] { top: 7095px !important; width: 460px; height: 460px; }
   #home.design-page [data-node-id="413:615"] > img { object-fit: contain; }
-  #home.design-page :is([data-node-id="207:50"], [data-node-id="207:51"], [data-node-id="207:52"], [data-node-id="239:243"], [data-node-id="207:53"], [data-node-id="239:241"]) { font-size: 17px; line-height: 1.2; white-space: nowrap; letter-spacing: -.7px; }
-  #home.design-page [data-node-id="207:50"] { left: 803px; top: 7137.44px !important; width: 190px; }
+  #home.design-page :is([data-node-id="207:50"], [data-node-id="207:51"], [data-node-id="207:52"], [data-node-id="239:243"], [data-node-id="207:53"], [data-node-id="239:241"]) { letter-spacing: -.7px; }
+  #home.design-page [data-node-id="207:50"] { top: 7137.44px !important; width: 190px; }
   #home.design-page [data-node-id="207:51"] { top: 7137.46px !important; width: 160px; }
-  #home.design-page [data-node-id="207:53"] { left: 746px; top: 7285.94px !important; width: 164px; }
-  #home.design-page [data-node-id="239:241"] { left: 1360px; top: 7285.94px !important; width: 78px; }
+  #home.design-page [data-node-id="207:53"] { width: 164px; }
+  #home.design-page [data-node-id="239:241"] { width: 78px; }
   #home.design-page [data-node-id="207:52"] { top: 7500px !important; width: 180px; }
-  #home.design-page [data-node-id="239:243"] { left: 1245px; top: 7500px !important; width: 180px; }
-
-  /* Smaller category, title -1px, paragraph -3px. */
-  #home.design-page [data-node-id="228:235"] p:nth-of-type(1) { font-size: 21px; line-height: 1.2; }
-  #home.design-page [data-node-id="228:235"] p:nth-of-type(2) { font-size: 33px; line-height: 1.15; }
-  #home.design-page [data-node-id="228:235"] p:nth-of-type(3) { font-size: 22px; line-height: 1.4; }
-
-  /* Match the industry cards to the compact module cards, without changing Brand's header/steps/image. */
+  #home.design-page [data-node-id="239:243"] { top: 7500px !important; width: 180px; }
   #home.design-page [data-node-id="169:4"] .industry-card-group { padding: 18px; }
   #home.design-page [data-node-id="169:4"] .industry-card-group > p:first-of-type { font-size: 33px; line-height: 1.15; margin-bottom: 8px; }
   #home.design-page [data-node-id="169:4"] .industry-card-group > p:nth-of-type(2) { font-size: 22px; line-height: 1.4; text-align: justify; text-align-last: left; }
 }
 
 @media (max-width: 767px) {
-  /* Shift the complete orbit left while keeping room beside the copy. */
   #home.design-page [data-node-id="224:22"] { width: 675px; }
   #home.design-page [data-node-id="224:24"] { width: 610px; }
   #home.design-page [data-node-id="413:615"] { left: 871px; }
@@ -912,41 +612,11 @@
   }
   #home.design-page [data-node-id="207:50"] { left: 779px; }
   #home.design-page [data-node-id="207:51"] { left: 1236.98px; }
-  #home.design-page [data-node-id="207:53"] { left: 722px; }
-  #home.design-page [data-node-id="239:241"] { left: 1336px; }
   #home.design-page [data-node-id="207:52"] { left: 780.56px; }
-  #home.design-page [data-node-id="239:243"] { left: 1221px; }
-
-  /* Use the full available width, with consistent narrow gutters. */
-  #home.design-page [data-node-id="228:235"] {
-    left: 18px; top: 7670px !important; width: 1404px;
-    display: grid !important;
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-    column-gap: 8px !important; row-gap: 20px !important;
-    grid-auto-rows: 1fr; align-items: stretch; padding: 0 !important;
-  }
-  #home.design-page [data-node-id="228:235"] :is([data-node-id="228:103"], [data-node-id="228:111"], [data-node-id="228:119"], [data-node-id="228:127"], [data-node-id="228:137"], [data-node-id="228:145"], [data-node-id="228:153"], [data-node-id="228:161"], [data-node-id="228:203"], [data-node-id="228:211"], [data-node-id="228:219"], [data-node-id="228:227"]) {
-    box-sizing: border-box !important; width: auto !important;
-    min-width: 0; max-width: none; height: auto !important; min-height: 228px;
-    justify-self: stretch; align-self: stretch;
-    margin: 0 !important; padding: 16px 18px 20px !important;
-    scale: 1 !important; transform: none !important; translate: none !important;
-  }
-  #home.design-page [data-node-id="228:235"] p:nth-of-type(1) {
-    margin-top: 0 !important; line-height: 1.15;
-  }
-  #home.design-page [data-node-id="228:235"] p:nth-of-type(2) {
-    margin-top: 5px;
-  }
-  #home.design-page [data-node-id="228:235"] p:nth-of-type(3) {
-    margin-top: 7px; font-size: 21px; line-height: 1.4;
-  }
 }
 
 @media (max-width: 767px) {
-  /* Dono labels thore left aur neeche */
   #home.design-page [data-node-id="207:53"] {
-    left: 710px;
     top: 7303.94px !important;
   }
 
@@ -954,124 +624,60 @@
     left: 1324px;
     top: 7303.94px !important;
   }
-
-  /* Boxes: Top Modules ke T se start,
-     Professional Badges ke right edge par end */
-  #home.design-page [data-node-id="228:236"],
-  #home.design-page [data-node-id="228:235"] {
-    left: 80px;
-    width: 1280px;
-  }
-
-  /* Card ke andar category, heading aur paragraph
-     thore neeche; total padding same */
-  #home.design-page [data-node-id="228:235"]
-  > div > div[data-node-id] {
-    padding: 24px 18px 12px !important;
-  }
 }
 
 @media (max-width: 767px) {
-  /* Employee Dashboard: thora left */
   #home.design-page [data-node-id="207:53"] {
     left: 698px !important;
   }
-
-  /* Circle ka Talent Acquisition: thora right */
   #home.design-page [data-node-id="239:243"] {
     left: 1245px !important;
   }
-
-  /* Heading aur boxes ka left edge bilkul same */
-  #home.design-page [data-node-id="228:236"] {
-    left: 80px !important;
-    width: 1280px !important;
-  }
-
-  #home.design-page [data-node-id="228:235"] {
-    left: 80px !important;
-    width: 1280px !important;
-    padding: 0 !important;
-    box-sizing: border-box;
-  }
-
-  /* Boxes ke andar content thora neeche */
-  #home.design-page
-  [data-node-id="228:235"][data-node-id="228:235"]
-  > div > div {
-    padding: 32px 18px 24px !important;
-    min-height: 244px !important;
-    height: auto !important;
-  }
-
-  /* Upar wali yellow/blue strips zyada moti */
-  #home.design-page
-  [data-node-id="228:235"][data-node-id="228:235"]
-  > div > div::before {
-    content: "";
-    position: absolute;
-    inset: 0 0 auto;
-    width: 100%;
-    height: 22px;
-    pointer-events: none;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 410 22' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='m'%3E%3Cstop offset='29%25' stop-color='%23f6ac04'/%3E%3Cstop offset='29%25' stop-color='%230144ab'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M4 20Q4 4 24 4H386Q406 4 406 20' fill='none' stroke='url(%23m)' stroke-width='8'/%3E%3C/svg%3E") center top / 100% 22px no-repeat !important;
-  }
 }
 
+/* Top Modules: one definitive mobile layout. */
 @media (max-width: 767px) {
-  /* Top Modules aur boxes ek hi left/right line par */
-  #home.design-page [data-node-id="228:236"],
-  #home.design-page [data-node-id="228:235"] {
-    left: 80px !important;
-    width: 1280px !important;
-    margin-inline: 0 !important;
+  #home.design-page [data-node-id="228:236"] {
+    left: 80px !important; top: 7580px !important;
+    width: 1280px !important; height: auto;
+    margin: 0 !important; padding: 0 !important;
+    font-size: 62px; line-height: 1.15;
+    transform: none !important; translate: none !important; scale: 1 !important;
   }
-
+  #home.design-page [data-node-id="228:236"] > span { font-size: inherit; line-height: inherit; }
   #home.design-page [data-node-id="228:235"] {
-    display: grid !important;
+    display: grid !important; position: absolute !important;
+    left: 80px !important; top: 7670px !important;
+    width: 1280px !important; height: auto !important;
+    margin: 0 !important; padding: 0 !important;
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-    gap: 24px 18px !important;
-    padding: 0 !important;
+    gap: 20px 12px !important; grid-auto-rows: 1fr; align-items: stretch;
     box-sizing: border-box;
-    justify-items: stretch;
+    transform: none !important; translate: none !important; scale: 1 !important;
   }
-
-  #home.design-page [data-node-id="228:235"] > div {
-    display: contents !important;
+  #home.design-page [data-node-id="228:235"] > div { display: contents !important; }
+  #home.design-page [data-node-id="228:235"] :is([data-node-id="228:103"], [data-node-id="228:111"], [data-node-id="228:119"], [data-node-id="228:127"], [data-node-id="228:137"], [data-node-id="228:145"], [data-node-id="228:153"], [data-node-id="228:161"], [data-node-id="228:203"], [data-node-id="228:211"], [data-node-id="228:219"], [data-node-id="228:227"]) {
+    display: block !important; position: relative !important; inset: auto !important;
+    box-sizing: border-box !important; width: 100% !important; min-width: 0; max-width: none;
+    height: auto !important; min-height: 228px;
+    margin: 0 !important; padding: 42px 18px 22px !important;
+    background: white; border-radius: 24px; box-shadow: 0 4px 12px #0002;
+    justify-self: stretch; align-self: stretch;
+    transform: none !important; translate: none !important; scale: 1 !important;
   }
-
-  /* Boxes poori column width lein */
-  #home.design-page
-  [data-node-id="228:235"][data-node-id="228:235"]
-  > div > div[data-node-id] {
-    display: block !important;
-    position: relative !important;
-    inset: auto !important;
-    box-sizing: border-box !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: none !important;
-    height: auto !important;
-    min-height: 228px !important;
-    margin: 0 !important;
-    padding: 28px 18px 22px !important;
-    transform: none !important;
-    translate: none !important;
-    scale: 1 !important;
+  #home.design-page [data-node-id="228:235"] :is([data-node-id="228:103"], [data-node-id="228:111"], [data-node-id="228:119"], [data-node-id="228:127"], [data-node-id="228:137"], [data-node-id="228:145"], [data-node-id="228:153"], [data-node-id="228:161"], [data-node-id="228:203"], [data-node-id="228:211"], [data-node-id="228:219"], [data-node-id="228:227"]) > div { display: none !important; }
+  #home.design-page [data-node-id="228:235"] :is([data-node-id="228:103"], [data-node-id="228:111"], [data-node-id="228:119"], [data-node-id="228:127"], [data-node-id="228:137"], [data-node-id="228:145"], [data-node-id="228:153"], [data-node-id="228:161"], [data-node-id="228:203"], [data-node-id="228:211"], [data-node-id="228:219"], [data-node-id="228:227"]) > p {
+    position: static !important; inset: auto !important;
+    width: auto !important; height: auto !important; margin: 0;
+    transform: none !important; translate: none !important;
+    white-space: normal; letter-spacing: -.25px;
+    text-align: justify; text-align-last: left; font-size: 21px; line-height: 1.4;
   }
-
-  /* Sirf card ki heading chhoti */
-  #home.design-page
-  [data-node-id="228:235"][data-node-id="228:235"]
-  p:nth-of-type(2) {
-    font-size: 30px !important;
-    line-height: 1.18 !important;
-  }
-
-  /* Yellow/blue strips ka halka stroke */
-  #home.design-page
-  [data-node-id="228:235"][data-node-id="228:235"]
-  > div > div[data-node-id]::before {
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 410 22' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='m'%3E%3Cstop offset='29%25' stop-color='%23f6ac04'/%3E%3Cstop offset='29%25' stop-color='%230144ab'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M3 20Q3 3 24 3H386Q407 3 407 20' fill='none' stroke='url(%23m)' stroke-width='5'/%3E%3C/svg%3E") center top / 100% 22px no-repeat !important;
+  #home.design-page [data-node-id="228:235"] :is([data-node-id="228:103"], [data-node-id="228:111"], [data-node-id="228:119"], [data-node-id="228:127"], [data-node-id="228:137"], [data-node-id="228:145"], [data-node-id="228:153"], [data-node-id="228:161"], [data-node-id="228:203"], [data-node-id="228:211"], [data-node-id="228:219"], [data-node-id="228:227"]) > p:nth-of-type(1) { font-size: 21px; line-height: 1.2; color: #232323; }
+  #home.design-page [data-node-id="228:235"] :is([data-node-id="228:103"], [data-node-id="228:111"], [data-node-id="228:119"], [data-node-id="228:127"], [data-node-id="228:137"], [data-node-id="228:145"], [data-node-id="228:153"], [data-node-id="228:161"], [data-node-id="228:203"], [data-node-id="228:211"], [data-node-id="228:219"], [data-node-id="228:227"]) > p:nth-of-type(2) { margin-top: 5px; font-size: 30px; line-height: 1.18; color: #0144ab; text-align: left; }
+  #home.design-page [data-node-id="228:235"] :is([data-node-id="228:103"], [data-node-id="228:111"], [data-node-id="228:119"], [data-node-id="228:127"], [data-node-id="228:137"], [data-node-id="228:145"], [data-node-id="228:153"], [data-node-id="228:161"], [data-node-id="228:203"], [data-node-id="228:211"], [data-node-id="228:219"], [data-node-id="228:227"]) > p:nth-of-type(3) { margin-top: 7px; color: #757575; }
+  #home.design-page [data-node-id="228:235"] :is([data-node-id="228:103"], [data-node-id="228:111"], [data-node-id="228:119"], [data-node-id="228:127"], [data-node-id="228:137"], [data-node-id="228:145"], [data-node-id="228:153"], [data-node-id="228:161"], [data-node-id="228:203"], [data-node-id="228:211"], [data-node-id="228:219"], [data-node-id="228:227"])::before {
+    content: ""; position: absolute; inset: 0 0 auto; height: 22px; pointer-events: none;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 410 22' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='m'%3E%3Cstop offset='29%25' stop-color='%23f6ac04'/%3E%3Cstop offset='29%25' stop-color='%230144ab'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M3 20Q3 3 24 3H386Q407 3 407 20' fill='none' stroke='url(%23m)' stroke-width='5'/%3E%3C/svg%3E") center top / 100% 22px no-repeat;
   }
 }
