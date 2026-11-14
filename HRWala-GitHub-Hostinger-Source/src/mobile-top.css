@@ -693,8 +693,8 @@
   .design-page [data-node-id="169:4"] > .industry-card-group {
     position: relative !important;
     inset: auto !important;
-    width: 300px !important;
-    min-width: 300 !important;
+    width: 460px !important;
+    min-width: 460 !important;
     box-sizing: border-box !important;
     transform-origin: left !important;
   }
@@ -742,7 +742,6 @@
 
   #home.design-page [data-node-id="169:4"] .brand-timeline {
     grid-column: 1 / span 3;
-    gap: 14px;
     padding-right: 20px;
   }
 
@@ -776,7 +775,7 @@
   #home.design-page [data-node-id="169:4"] [data-node-id="413:613"] {
     grid-column: 4 / span 3;
     height: 370px !important;
-    min-height: 0;
+    min-height: 370;
   }
 
   #home.design-page [data-node-id="169:4"] [data-node-id="413:613"] > img {
@@ -787,8 +786,8 @@
   #home.design-page [data-node-id="169:4"] .industry-card-group {
     grid-column: span 2;
     width: 460px !important;
-    height: auto !important;
-    min-height: 228px;
+    height: 220 !important;
+    min-height: 220px;
     padding: 42px 18px 22px !important;
   }
 }
