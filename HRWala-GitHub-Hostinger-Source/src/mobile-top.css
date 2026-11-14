@@ -827,3 +827,33 @@
     transition: none !important;
   }
 }
+
+@media (max-width: 767px) {
+  #home.design-page [data-node-id="169:4"] {
+    left: 90px !important;
+    width: 1260px !important;
+    height: auto !important;
+    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+    grid-auto-rows: minmax(228px, 1fr) !important;
+    gap: 10px 24px !important;
+  }
+
+  #home.design-page [data-node-id="169:4"] .brand-timeline {
+    margin-bottom: 75px !important;
+  }
+
+  #home.design-page [data-node-id="169:4"] .industry-card-group {
+    grid-column: span 2;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 228px;
+    height: 100% !important;
+    box-sizing: border-box;
+    --card-rest-scale: 1 !important;
+    transform: none !important;
+    translate: none !important;
+    scale: 1 !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
