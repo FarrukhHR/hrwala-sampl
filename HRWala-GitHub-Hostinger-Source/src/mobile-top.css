@@ -1491,3 +1491,55 @@
   }
   #home.design-page .footer-social-links a {width:60px !important;height:60px !important;flex:0 0 60px;}
 }
+
+@media (max-width: 767px) {
+  /* Side gaps aur rounded top corners; bottom square */
+  #home.design-page [data-node-id="296:2"] {
+    left: 17px !important;
+    width: 1385px !important;
+    border-radius: 40px 40px 0 0 !important;
+  }
+
+  /* Background ki position badalne par divider same jagah */
+  #home.design-page [data-node-id="296:2"]::after {
+    left: 613px !important;
+  }
+
+  #home.design-page .design-footer-logo {
+    top: 125px !important;
+  }
+
+  #home.design-page [data-node-id="299:5"] {
+    font-size: 27px !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Dono columns apne areas mein, content left-aligned */
+  #home.design-page :is(
+    [data-node-id="299:21"],
+    [data-node-id="299:22"],
+    [data-node-id="299:23"],
+    [data-node-id="299:24"],
+    [data-node-id="299:34"]
+  ) {
+    left: 240px !important;
+    width: 440px !important;
+    text-align: left !important;
+  }
+
+  #home.design-page :is(
+    [data-node-id="299:31"],
+    [data-node-id="299:28"],
+    [data-node-id="299:29"],
+    [data-node-id="299:30"]
+  ) {
+    left: 930px !important;
+    width: 420px !important;
+    text-align: left !important;
+  }
+
+  /* Copyright thorra bara */
+  #home.design-page [data-node-id="299:19"] {
+    font-size: 28px !important;
+  }
+}
