@@ -988,3 +988,9 @@
     margin-bottom: 140px !important;
   }
 }
+
+@media (max-width: 767px) {
+  #home.design-page [data-node-id="169:4"] {
+    row-gap: 16px !important;
+  }
+}
