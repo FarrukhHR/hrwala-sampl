@@ -710,11 +710,11 @@
   }
 
   #home.design-page .hr-module-grid > .hr-module-card {
-    width: 300px !important;
+    width: 700px !important;
     transform: none !important;
     translate: none !important;
     scale: 1 !important;
-    transform-origin: center !important;
+    transform-origin: left !important;
     transition: none !important;
   }
 }
