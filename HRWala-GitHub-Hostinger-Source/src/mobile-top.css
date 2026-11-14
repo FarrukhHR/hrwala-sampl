@@ -731,7 +731,7 @@
 
   #home.design-page [data-node-id="169:4"] {
     left: 90px !important;
-    top: 8790px !important;
+    top: 8800px !important;
     width: 1260px !important;
     grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
     grid-template-rows: auto auto !important;
@@ -769,7 +769,7 @@
 
   #home.design-page [data-node-id="169:4"] .brand-timeline-line {
     left: 32px;
-    top: 64px;
+    top: 70px;
     height: calc(100% - 50px);
   }
 
@@ -786,7 +786,7 @@
 
   #home.design-page [data-node-id="169:4"] .industry-card-group {
     grid-column: span 2;
-    width: 100% !important;
+    width: 450px !important;
     height: auto !important;
     min-height: 228px;
     padding: 42px 18px 22px !important;
