@@ -678,15 +678,3 @@
  }
 }
 
-@media (max-width: 767px) {
-  #home.design-page .hr-module-grid {
-    /* Heading se thora aur neeche */
-    top: 7686px !important;
-
-    /* Scaled mobile view mein taqreeban 2px column gap */
-    column-gap: 8px !important;
-
-    /* Rows ke darmiyan thora zyada gap */
-    row-gap: 26px !important;
-  }
-}
