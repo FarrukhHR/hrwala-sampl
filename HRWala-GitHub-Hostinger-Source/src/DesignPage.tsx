@@ -287,6 +287,7 @@ function ContactForm() {
             const { error } = await supabase.from("inquiries").insert({
               name: String(formData.get("name") ?? "").trim(),
               email: String(formData.get("email") ?? "").trim(),
+              phone: String(formData.get("phone") ?? "").trim() || null,
               inquiry: String(formData.get("inquiry") ?? ""),
               message: String(formData.get("message") ?? "").trim(),
             });
@@ -323,6 +324,16 @@ function ContactForm() {
             maxLength={254}
             required
             type="email"
+          />
+        </label>
+
+        <label className="contact-form-field">
+          <span>Phone Number</span>
+          <input
+            type="tel"
+            name="phone"
+            autoComplete="tel"
+            placeholder="+92 300 1234567"
           />
         </label>
 
