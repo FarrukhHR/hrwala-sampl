@@ -667,3 +667,38 @@
   #home.design-page [data-node-id="228:235"] p:nth-of-type(2) { margin-top: 10px; font-size: 27px; line-height: 1.2; }
   #home.design-page [data-node-id="228:235"] p:nth-of-type(3) { margin-top: 12px; }
 }
+
+@media (max-width: 767px) {
+  /* Academy: title overlays its pale number, with more room between paragraphs. */
+  #home.design-page [data-node-id="524:715"] :is([data-node-id="247:337"], [data-node-id="247:338"], [data-node-id="247:344"]) {
+    box-sizing: border-box; padding-right: 24px;
+  }
+  #home.design-page [data-node-id="524:715"] :is([data-node-id="245:284"], [data-node-id="247:341"], [data-node-id="247:347"]) {
+    font-size: 72px !important; z-index: 0;
+  }
+  #home.design-page [data-node-id="524:715"] :is([data-node-id="245:286"], [data-node-id="247:342"], [data-node-id="247:348"]) {
+    left: 30px !important; font-size: 42px !important; z-index: 1;
+  }
+  #home.design-page [data-node-id="524:715"] :is([data-node-id="247:335"], [data-node-id="247:343"], [data-node-id="247:349"]) {
+    font-size: 29px; line-height: 1.5;
+  }
+
+  /* Software title and the one requested orbit label. */
+  #home.design-page [data-node-id="207:36"] { font-size: 68px; width: 720px; }
+  #home.design-page [data-node-id="207:53"] { left: 756px; top: 7350px !important; margin-top: 0 !important; }
+
+  /* Smaller heading, then wider cards with narrower gutters. */
+  #home.design-page [data-node-id="228:236"] { font-size: 68px; }
+  #home.design-page [data-node-id="228:235"] {
+    left: 60px; top: 7770px !important; width: 1320px;
+    gap: 24px 16px; grid-auto-rows: 1fr; align-items: stretch;
+  }
+  #home.design-page [data-node-id="228:235"] :is([data-node-id="228:103"], [data-node-id="228:111"], [data-node-id="228:119"], [data-node-id="228:127"], [data-node-id="228:137"], [data-node-id="228:145"], [data-node-id="228:153"], [data-node-id="228:161"], [data-node-id="228:203"], [data-node-id="228:211"], [data-node-id="228:219"], [data-node-id="228:227"]) {
+    height: auto !important; min-height: 0; padding: 22px;
+  }
+  #home.design-page [data-node-id="207:35"] { height: 1740px; }
+
+  /* Keep Develop Your Brand's heading/steps in their own section. */
+  #home.design-page [data-node-id="133:2"] { top: 8979px !important; margin-top: 0 !important; }
+  #home.design-page .brand-timeline { top: 9052.18px !important; margin-top: 0 !important; }
+}
