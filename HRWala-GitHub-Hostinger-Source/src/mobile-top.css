@@ -420,11 +420,3 @@
   .design-page :is([data-node-id="413:603"], [aria-label="Start Hiring"]) { top: 4920px !important; }
   .design-page [data-node-id="413:604"] { top: 4959px !important; }
 }
-
-@media (max-width: 767px) {
-  .design-page [data-node-id="109:10"]::after,
-  .design-page [data-node-id="118:123"]::after {
-    font-size: 30px;
-    line-height: 1.5;
-  }
-}
