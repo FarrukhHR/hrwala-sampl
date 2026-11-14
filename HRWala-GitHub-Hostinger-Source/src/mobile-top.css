@@ -694,9 +694,9 @@
   .design-page [data-node-id="169:4"] > .industry-card-group {
     position: relative !important;
     inset: auto !important;
-    width: 100% !important;
+    width: 200px !important;
     min-width: 0 !important;
     box-sizing: border-box !important;
-    transform-origin: center !important;
+    transform-origin: left !important;
   }
 }
