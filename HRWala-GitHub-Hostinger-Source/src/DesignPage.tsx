@@ -1,40 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { useState, type FormEvent } from "react";
 import { supabase } from "./supabase";
-
-const [sending, setSending] = useState(false);
-const [status, setStatus] = useState("");
-
-async function handleSubmit(event: FormEvent<HTMLFormElement>) {
-  event.preventDefault();
-  if (sending) return;
-
-  const form = event.currentTarget;
-  const fields = new FormData(form);
-
-  setSending(true);
-  setStatus("");
-
-  try {
-    const { error } = await supabase.from("inquiries").insert({
-      name: String(fields.get("name") ?? "").trim(),
-      email: String(fields.get("email") ?? "").trim(),
-      phone: String(fields.get("phone") ?? "").trim() || null,
-      message: String(fields.get("message") ?? "").trim(),
-    });
-
-    if (error) throw error;
-
-    form.reset();
-    setStatus("Your inquiry has been submitted successfully.");
-  } catch (error) {
-    console.error("Inquiry submission failed:", error);
-    setStatus("Submission failed. Please try again.");
-  } finally {
-    setSending(false);
-  }
-}
 
 const assetPathPrefix = "/assets";
 const videoProject5 = `${assetPathPrefix}/Video Project 5.mp4`;
