@@ -706,11 +706,11 @@
     right: auto !important;
     width: 1260px !important;
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-    gap: 26px 8px !important;
+    gap: 6px 8px !important;
   }
 
   #home.design-page .hr-module-grid > .hr-module-card {
-    width: 100% !important;
+    width: 300px !important;
     transform: none !important;
     translate: none !important;
     scale: 1 !important;
