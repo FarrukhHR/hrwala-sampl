@@ -232,3 +232,321 @@
     font-size: 12px !important;
   }
 }
+
+@media (max-width: 767px) {
+  /* Extra space for the stacked Job Portal section */
+  .design-page .mobile-later-section {
+    top: calc(var(--mobile-original-top) + 2250px) !important;
+  }
+
+  .design-page {
+    overflow: visible !important;
+  }
+
+  .design-viewport {
+    min-height: calc(100vw * 6.653);
+  }
+
+  /* Section background */
+  .design-page [data-node-id="207:31"] {
+    left: 26px;
+    top: 2700px !important;
+    width: 1386px;
+    height: 1560px;
+    border-radius: 54px;
+    overflow: hidden;
+    background: #e7f1ff;
+  }
+
+  .design-page [data-node-id="207:31"] > img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  /* JOB Portal heading */
+  .design-page [data-node-id="109:6"] {
+    left: 76px;
+    top: 2740px !important;
+    width: 1280px;
+    height: auto;
+  }
+
+  .design-page [data-node-id="109:6"] > span {
+    font-size: 74px;
+    line-height: 1.15;
+  }
+
+  /* Mobile-only short content */
+  .design-page [data-node-id="171:5"] {
+    left: 76px;
+    top: 2840px !important;
+    width: 1280px;
+    height: auto;
+    white-space: normal;
+    text-align: left;
+  }
+
+  .design-page [data-node-id="171:5"] > p {
+    margin: 0 0 26px !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
+  }
+
+  .design-page [data-node-id="171:5"] > p > span,
+  .design-page [data-node-id="171:5"] > p:nth-child(2),
+  .design-page [data-node-id="171:5"] > p:nth-child(4) {
+    display: none !important;
+  }
+
+  .design-page [data-node-id="171:5"] > p::before,
+  .design-page [data-node-id="171:5"] > p::after {
+    color: #222;
+    font: 400 34px/1.4 "Poppins:Regular", sans-serif;
+    letter-spacing: normal;
+    white-space: normal;
+  }
+
+  .design-page [data-node-id="171:5"] > p:first-child::before {
+    content: "HRwala.net connects professionals with opportunities and employers with talent. Showcase your skills, explore relevant roles and manage your next career move or hiring decision in one place.";
+  }
+
+  .design-page [data-node-id="171:5"] > p:nth-child(3)::before {
+    content: "For candidates: ";
+    color: #000;
+    font-family: "Poppins:Bold", sans-serif;
+    font-weight: 700;
+  }
+
+  .design-page [data-node-id="171:5"] > p:nth-child(3)::after {
+    content: "Build a profile, create your CV and apply for relevant jobs. Keep your applications and interview schedules organised in one place.";
+  }
+
+  .design-page [data-node-id="171:5"] > p:nth-child(5)::before {
+    content: "For employers: ";
+    color: #000;
+    font-family: "Poppins:Bold", sans-serif;
+    font-weight: 700;
+  }
+
+  .design-page [data-node-id="171:5"] > p:nth-child(5)::after {
+    content: "Publish vacancies, discover suitable talent and shortlist applicants. Coordinate interviews and manage applications through one hiring dashboard.";
+  }
+
+  /* Explore button */
+  .design-page [data-node-id="188:19"],
+  .design-page [aria-label="Explore Job Portal"] {
+    left: 76px !important;
+    top: 3300px !important;
+    width: 400px !important;
+    height: 64px !important;
+    border-radius: 15px;
+  }
+
+  .design-page [data-node-id="188:20"] {
+    left: 276px;
+    top: 3332px !important;
+    width: 400px;
+    height: auto;
+    font-size: 32px;
+  }
+
+  /* Full-width image below the text */
+  .design-page [data-node-id="413:611"] {
+    left: 76px;
+    top: 3410px !important;
+    width: 1280px;
+    height: 390px;
+    border-radius: 34px;
+    overflow: hidden;
+  }
+
+  .design-page [data-node-id="413:611"] img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: inherit;
+  }
+
+  /* Two cards side by side */
+  .design-page [data-node-id="109:10"],
+  .design-page [data-node-id="118:123"] {
+    top: 3850px !important;
+    width: 620px;
+    height: 350px;
+    border-radius: 30px;
+  }
+
+  .design-page [data-node-id="109:10"] {
+    left: 76px;
+  }
+
+  .design-page [data-node-id="118:123"] {
+    left: 736px;
+  }
+
+  /* Rounded orange / blue top strokes */
+  .design-page [data-node-id="118:120"],
+  .design-page [data-node-id="118:126"] {
+    top: 3850px !important;
+    width: 614px;
+    height: 9px;
+  }
+
+  .design-page [data-node-id="118:120"] {
+    left: 79px;
+  }
+
+  .design-page [data-node-id="118:126"] {
+    left: 739px;
+  }
+
+  /* 01 / 02 */
+  .design-page [data-node-id="109:14"],
+  .design-page [data-node-id="118:125"] {
+    top: 3874px !important;
+    width: 100px;
+    height: auto;
+    font-size: 72px !important;
+    line-height: 1;
+  }
+
+  .design-page [data-node-id="109:14"] {
+    left: 106px;
+  }
+
+  .design-page [data-node-id="118:125"] {
+    left: 766px;
+  }
+
+  /* Smaller card headings */
+  .design-page [data-node-id="109:12"],
+  .design-page [data-node-id="118:124"] {
+    top: 3884px !important;
+    width: 440px;
+    height: auto;
+    font-size: 44px !important;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  .design-page [data-node-id="109:12"] {
+    left: 216px;
+  }
+
+  .design-page [data-node-id="118:124"] {
+    left: 876px;
+  }
+
+  /* Features: retain the two-column arrangement */
+  .design-page :is(
+    [data-node-id="118:36"],
+    [data-node-id="118:68"],
+    [data-node-id="118:59"],
+    [data-node-id="118:71"],
+    [data-node-id="118:130"],
+    [data-node-id="118:133"],
+    [data-node-id="118:136"],
+    [data-node-id="118:139"]
+  ) {
+    width: 260px;
+    height: auto;
+    font-size: 20px !important;
+    line-height: 1.3;
+    text-align: left;
+    white-space: nowrap;
+    translate: 0 -50%;
+  }
+
+  .design-page :is(
+    [data-node-id="118:36"],
+    [data-node-id="118:59"]
+  ) {
+    left: 126px;
+  }
+
+  .design-page :is(
+    [data-node-id="118:68"],
+    [data-node-id="118:71"]
+  ) {
+    left: 426px;
+  }
+
+  .design-page :is(
+    [data-node-id="118:130"],
+    [data-node-id="118:136"]
+  ) {
+    left: 786px;
+  }
+
+  .design-page :is(
+    [data-node-id="118:133"],
+    [data-node-id="118:139"]
+  ) {
+    left: 1086px;
+  }
+
+  /* First feature row */
+  .design-page :is(
+    [data-node-id="118:36"],
+    [data-node-id="118:68"],
+    [data-node-id="118:130"],
+    [data-node-id="118:133"],
+    [data-node-id="118:37"],
+    [data-node-id="118:69"],
+    [data-node-id="118:131"],
+    [data-node-id="118:134"]
+  ) {
+    top: 3990px !important;
+  }
+
+  /* Second feature row */
+  .design-page :is(
+    [data-node-id="118:59"],
+    [data-node-id="118:71"],
+    [data-node-id="118:136"],
+    [data-node-id="118:139"],
+    [data-node-id="118:60"],
+    [data-node-id="118:72"],
+    [data-node-id="118:137"],
+    [data-node-id="118:140"]
+  ) {
+    top: 4045px !important;
+  }
+
+  /* Smaller card buttons */
+  .design-page [data-node-id="413:596"],
+  .design-page [aria-label="Find Your Dream Job"] {
+    left: 110px !important;
+    top: 4100px !important;
+    width: 350px !important;
+    height: 58px !important;
+    border-radius: 12px;
+  }
+
+  .design-page [data-node-id="413:603"],
+  .design-page [aria-label="Start Hiring"] {
+    left: 770px !important;
+    top: 4100px !important;
+    width: 270px !important;
+    height: 58px !important;
+    border-radius: 12px;
+  }
+
+  .design-page [data-node-id="413:597"] {
+    left: 285px;
+    top: 4129px !important;
+    width: 350px;
+    height: auto;
+    font-size: 26px !important;
+  }
+
+  .design-page [data-node-id="413:604"] {
+    left: 905px;
+    top: 4129px !important;
+    width: 270px;
+    height: auto;
+    font-size: 26px !important;
+  }
+}
