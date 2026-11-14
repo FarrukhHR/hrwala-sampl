@@ -1180,48 +1180,26 @@ useEffect(() => {
     wrapper.classList.add("team-scroll-zoom");
   });
 
-const teamTrigger = find("260:36") ?? cards[0]?.trigger;
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting || entry.intersectionRatio < 0.5) return;
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    const visibleRows = new Set<number>();
-    const viewportWidth = document.documentElement.clientWidth;
-    const tolerance = Math.max(8, viewportWidth * 0.015);
+        const card = cards.find(
+          ({ trigger }) => trigger === entry.target
+        );
 
-    const positions = cards.map(card => ({
-      ...card,
-      top: card.trigger.getBoundingClientRect().top,
-    }));
-
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-
-      const current = positions.find(
-        card => card.trigger === entry.target
-      );
-
-      if (!current) return;
-
-      positions.forEach((card, index) => {
-        if (Math.abs(card.top - current.top) <= tolerance) {
-          visibleRows.add(index);
-        }
+        card?.wrapper.classList.add("team-scroll-visible");
+        observer.unobserve(entry.target);
       });
-    });
+    },
+    {
+      threshold: 0.5,
+      rootMargin: "0px",
+    }
+  );
 
-    visibleRows.forEach(index => {
-      const card = positions[index];
-      card.wrapper.classList.add("team-scroll-visible");
-      observer.unobserve(card.trigger);
-    });
-  },
-  {
-    threshold: 0.15,
-    rootMargin: "0px",
-  }
-);
-
-cards.forEach(({ trigger }) => observer.observe(trigger));
+  cards.forEach(({ trigger }) => observer.observe(trigger));
 
   return () => {
     observer.disconnect();
