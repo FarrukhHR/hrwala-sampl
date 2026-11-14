@@ -1180,26 +1180,22 @@ useEffect(() => {
     wrapper.classList.add("team-scroll-zoom");
   });
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting || entry.intersectionRatio < 0.5) return;
+const teamTrigger = find("260:36") ?? cards[0]?.trigger;
 
-        const card = cards.find(
-          ({ trigger }) => trigger === entry.target
-        );
+const observer = new IntersectionObserver(
+  (entries) => {
+    if (!entries.some(entry => entry.isIntersecting)) return;
 
-        card?.wrapper.classList.add("team-scroll-visible");
-        observer.unobserve(entry.target);
-      });
-    },
-    {
-      threshold: 0.5,
-      rootMargin: "0px",
-    }
-  );
+    cards.forEach(({ wrapper }) => {
+      wrapper.classList.add("team-scroll-visible");
+    });
 
-  cards.forEach(({ trigger }) => observer.observe(trigger));
+    observer.disconnect();
+  },
+  { threshold: 0.01, rootMargin: "0px" }
+);
+
+if (teamTrigger) observer.observe(teamTrigger);
 
   return () => {
     observer.disconnect();
