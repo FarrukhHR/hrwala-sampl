@@ -2300,10 +2300,9 @@ useEffect(() => {
             organised platform—so every HR process has a clear place and a smoother flow.
           </p>
         </div>
-        <div className="absolute contents left-[87.88px] top-[3443.94px]" data-node-id="228:235">
-          <div className="absolute contents left-[87.88px] top-[3443.94px]" data-node-id="228:135">
-            <div
-              className="absolute contents left-[87.88px] top-[3443.94px]"
+        <div className="hr-module-grid absolute contents" data-node-id="228:235">
+<div
+              className="hr-module-card absolute contents left-[87.88px] top-[3443.94px]"
               data-node-id="228:103"
             >
               <div
@@ -2349,8 +2348,8 @@ useEffect(() => {
                 </div>
               </div>
             </div>
-            <div
-              className="absolute contents left-[410.71px] top-[3443.94px]"
+<div
+              className="hr-module-card absolute contents left-[410.71px] top-[3443.94px]"
               data-node-id="228:111"
             >
               <div
@@ -2396,8 +2395,8 @@ useEffect(() => {
                 </div>
               </div>
             </div>
-            <div
-              className="absolute contents left-[742.94px] top-[3443.94px]"
+<div
+              className="hr-module-card absolute contents left-[742.94px] top-[3443.94px]"
               data-node-id="228:119"
             >
               <div
@@ -2443,8 +2442,8 @@ useEffect(() => {
                 </div>
               </div>
             </div>
-            <div
-              className="absolute contents left-[1066.71px] top-[3444.64px]"
+<div
+              className="hr-module-card absolute contents left-[1066.71px] top-[3444.64px]"
               data-node-id="228:127"
             >
               <div
@@ -2489,10 +2488,8 @@ useEffect(() => {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="absolute contents left-[87.88px] top-[3604.23px]" data-node-id="228:136">
-            <div
-              className="absolute contents left-[87.88px] top-[3604.23px]"
+<div
+              className="hr-module-card absolute contents left-[87.88px] top-[3604.23px]"
               data-node-id="228:137"
             >
               <div
@@ -2538,8 +2535,8 @@ useEffect(() => {
                 </div>
               </div>
             </div>
-            <div
-              className="absolute contents left-[410.71px] top-[3604.23px]"
+<div
+              className="hr-module-card absolute contents left-[410.71px] top-[3604.23px]"
               data-node-id="228:145"
             >
               <div
@@ -2585,8 +2582,8 @@ useEffect(() => {
                 </div>
               </div>
             </div>
-            <div
-              className="absolute contents left-[740.12px] top-[3604.93px]"
+<div
+              className="hr-module-card absolute contents left-[740.12px] top-[3604.93px]"
               data-node-id="228:153"
             >
               <div
@@ -2632,8 +2629,8 @@ useEffect(() => {
                 </div>
               </div>
             </div>
-            <div
-              className="absolute contents left-[1066.71px] top-[3604.93px]"
+<div
+              className="hr-module-card absolute contents left-[1066.71px] top-[3604.93px]"
               data-node-id="228:161"
             >
               <div
@@ -2680,10 +2677,8 @@ useEffect(() => {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="absolute contents left-[88.29px] top-[3764.88px]" data-node-id="228:202">
-            <div
-              className="absolute contents left-[88.29px] top-[3764.88px]"
+<div
+              className="hr-module-card absolute contents left-[88.29px] top-[3764.88px]"
               data-node-id="228:203"
             >
               <div
@@ -2729,8 +2724,8 @@ useEffect(() => {
                 </div>
               </div>
             </div>
-            <div
-              className="absolute contents left-[410.29px] top-[3764.88px]"
+<div
+              className="hr-module-card absolute contents left-[410.29px] top-[3764.88px]"
               data-node-id="228:211"
             >
               <div
@@ -2776,8 +2771,8 @@ useEffect(() => {
                 </div>
               </div>
             </div>
-            <div
-              className="absolute contents left-[740.29px] top-[3765.58px]"
+<div
+              className="hr-module-card absolute contents left-[740.29px] top-[3765.58px]"
               data-node-id="228:219"
             >
               <div
@@ -2823,8 +2818,8 @@ useEffect(() => {
                 </div>
               </div>
             </div>
-            <div
-              className="absolute contents left-[1067.29px] top-[3765.58px]"
+<div
+              className="hr-module-card absolute contents left-[1067.29px] top-[3765.58px]"
               data-node-id="228:227"
             >
               <div
@@ -2869,8 +2864,7 @@ useEffect(() => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+</div>
         <div className="absolute contents left-[89.76px] top-[3273.59px]" data-node-id="228:27">
           <div
             className="absolute bg-[#0144ab] h-[45.176px] left-[89.76px] rounded-[7.529px] top-[3273.59px] w-[193.613px]"
