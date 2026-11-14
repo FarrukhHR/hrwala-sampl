@@ -731,12 +731,12 @@
 
   #home.design-page [data-node-id="169:4"] {
     left: 90px !important;
-    top: 7790px !important;
+    top: 8800px !important;
     width: 1260px !important;
     grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
     grid-template-rows: auto auto !important;
     grid-auto-rows: auto !important;
-    gap: 10px 8px !important;
+    gap: 20px 8px !important;
     align-items: stretch !important;
   }
 
