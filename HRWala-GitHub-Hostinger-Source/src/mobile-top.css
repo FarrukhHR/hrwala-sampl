@@ -1847,3 +1847,15 @@
     padding: 0 !important;
   }
 }
+
+@media (max-width: 767px) {
+  #home.design-page p[data-node-id="299:35"] {
+    top: 414px !important;
+    margin-top: 0 !important;
+  }
+
+  #home.design-page .newsletter-form {
+    top: 505px !important;
+    margin-top: 0 !important;
+  }
+}
