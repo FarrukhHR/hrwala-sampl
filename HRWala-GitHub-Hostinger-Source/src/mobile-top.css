@@ -937,3 +937,27 @@
     text-align-last: left;
   }
 }
+
+@media (max-width: 767px) {
+  #home.design-page [data-node-id="169:4"] {
+    left: 90px !important;
+    width: 1260px !important;
+    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+    grid-auto-rows: minmax(228px, 1fr) !important;
+    column-gap: 12px !important;
+    row-gap: 26px !important;
+    align-items: stretch !important;
+  }
+
+  #home.design-page [data-node-id="169:4"] .industry-card-group,
+  #home.design-page [data-node-id="169:4"] .industry-card-group.site-card-zoom {
+    grid-column: span 2 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 228px !important;
+    height: 100% !important;
+    transform-origin: center !important;
+    scale: 1 !important;
+    transition: none !important;
+  }
+}
