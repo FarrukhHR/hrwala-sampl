@@ -364,29 +364,69 @@ function ContactForm() {
 }
 
 function NewsletterForm() {
-  return (
-    <form
-      className="newsletter-form"
-      onSubmit={(event) => {
-        event.preventDefault();
-        const formData = new FormData(event.currentTarget);
-        const email = String(formData.get("email"));
-        const subject = encodeURIComponent("Newsletter subscription");
-        const body = encodeURIComponent(`Please subscribe this email address: ${email}`);
+  const [sending, setSending] = useState(false);
+  const [status, setStatus] = useState("");
 
-        window.location.href = `mailto:hello@hrwala.net?subject=${subject}&body=${body}`;
-      }}
-    >
-      <input
-        autoComplete="email"
-        aria-label="Email address for newsletter"
-        name="email"
-        placeholder="Enter your email"
-        required
-        type="email"
-      />
-      <button type="submit">Subscribe</button>
-    </form>
+  return (
+    <>
+      <form
+        className="newsletter-form"
+        onSubmit={async (event) => {
+          event.preventDefault();
+          if (sending) return;
+
+          const form = event.currentTarget;
+          const formData = new FormData(form);
+          const email = String(formData.get("email") ?? "")
+            .trim()
+            .toLowerCase();
+
+          setSending(true);
+          setStatus("");
+
+          try {
+            const { error } = await supabase
+              .from("newsletter_subscribers")
+              .insert({ email });
+
+            if (error) {
+              if (error.code === "23505") {
+                setStatus("This email is already subscribed.");
+                return;
+              }
+
+              throw error;
+            }
+
+            form.reset();
+            setStatus("Thank you for subscribing!");
+          } catch (error) {
+            console.error("Newsletter subscription failed:", error);
+            setStatus("Unable to subscribe. Please try again.");
+          } finally {
+            setSending(false);
+          }
+        }}
+      >
+        <input
+          autoComplete="email"
+          aria-label="Email address for newsletter"
+          name="email"
+          placeholder="Enter your email"
+          maxLength={254}
+          required
+          type="email"
+        />
+
+        <button type="submit" disabled={sending}>
+          {sending ? "Subscribing..." : "Subscribe"}
+        </button>
+      </form>
+
+      <p className="newsletter-status" role="status">
+        {status}
+      </p>
+    </>
   );
 }
 
