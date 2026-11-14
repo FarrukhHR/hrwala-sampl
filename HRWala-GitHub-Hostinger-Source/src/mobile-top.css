@@ -761,3 +761,41 @@
     translate: none !important;
   }
 }
+
+@media (max-width: 767px) {
+  #home#home.design-page [data-node-id="228:236"],
+  #home#home.design-page [data-node-id="228:235"] {
+    left: 80px !important;
+    right: auto !important;
+    width: 1320px !important;
+    margin: 0 !important;
+    transform: none !important;
+    translate: none !important;
+    scale: 1 !important;
+  }
+
+  #home#home.design-page [data-node-id="228:235"] {
+    top: 7670px !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    grid-auto-rows: minmax(228px, auto) !important;
+    gap: 20px 12px !important;
+  }
+
+  #home#home.design-page [data-node-id="228:235"] > div {
+    display: contents !important;
+  }
+
+  #home#home.design-page [data-node-id="228:235"] > div > div[data-node-id] {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 228px !important;
+    margin: 0 !important;
+    transform: none !important;
+    translate: none !important;
+    scale: 1 !important;
+    transition: none !important;
+  }
+}
