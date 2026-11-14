@@ -1,14 +1,12 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import DesignPage from "./DesignPage";
 import "./mobile-top.css";
-import useMobileAlignmentFix from "./useMobileAlignmentFix";
 
 const DESIGN_WIDTH = 1440;
 const MOBILE_EXTRA = 1450;
 const getWidth = () => typeof window === "undefined" ? DESIGN_WIDTH : document.documentElement.clientWidth;
 
 export default function App() {
-  useMobileAlignmentFix();
   const [width, setWidth] = useState(getWidth);
   const canvas = useRef<HTMLDivElement>(null);
   const mobile = width <= 767;
