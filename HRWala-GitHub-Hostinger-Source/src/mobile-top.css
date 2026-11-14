@@ -561,3 +561,46 @@
     margin-top: 40px !important;
   }
 }
+
+@media (max-width: 767px) {
+  /* Numbers aur titles ek level par */
+  #home.design-page [data-node-id="524:715"] :is(
+    [data-node-id="245:284"],
+    [data-node-id="247:341"],
+    [data-node-id="247:347"]
+  ) {
+    display: flex !important;
+    align-items: center;
+    top: 34px !important;
+    height: 66px !important;
+    font-size: 76px !important;
+  }
+
+  #home.design-page [data-node-id="524:715"] :is(
+    [data-node-id="245:284"],
+    [data-node-id="247:341"],
+    [data-node-id="247:347"]
+  ) > p {
+    height: auto !important;
+    line-height: 1 !important;
+  }
+
+  #home.design-page [data-node-id="524:715"] :is(
+    [data-node-id="245:286"],
+    [data-node-id="247:342"],
+    [data-node-id="247:348"]
+  ) {
+    display: flex;
+    align-items: center;
+    height: 66px !important;
+  }
+
+  /* Badges aur agle section ke beech kam gap */
+  .design-page .mobile-later-section {
+    margin-top: clamp(
+      0px,
+      calc((var(--mobile-original-top) - 2800px) * 10000),
+      1000px
+    );
+  }
+}
