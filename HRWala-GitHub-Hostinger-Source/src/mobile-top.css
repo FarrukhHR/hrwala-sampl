@@ -981,7 +981,7 @@
 @media (max-width: 767px) {
   #home.design-page .hr-module-grid,
   #home.design-page [data-node-id="169:4"] {
-    row-gap: 36px !important;
+    row-gap: 16px !important;
   }
 
   #home.design-page [data-node-id="169:4"] .brand-timeline {
