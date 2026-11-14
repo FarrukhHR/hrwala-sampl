@@ -792,3 +792,38 @@
   }
 }
 
+@media (max-width: 767px) {
+  #home.design-page .hr-module-grid {
+    column-gap: 24px !important;
+  }
+
+  #home.design-page .hr-module-grid > .hr-module-card {
+    width: 100% !important;
+  }
+
+  #home.design-page [data-node-id="169:4"] {
+    height: auto !important;
+    grid-auto-rows: minmax(220px, 1fr) !important;
+    gap: 20px 24px !important;
+  }
+
+  #home.design-page [data-node-id="169:4"] .brand-timeline {
+    margin-bottom: 44px !important;
+  }
+
+  #home.design-page [data-node-id="169:4"] [data-node-id="413:613"] {
+    min-height: 0;
+    translate: none;
+  }
+
+  #home.design-page [data-node-id="169:4"] .industry-card-group {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 220px;
+    transform: none !important;
+    translate: none !important;
+    scale: 1 !important;
+    transition: none !important;
+  }
+}
