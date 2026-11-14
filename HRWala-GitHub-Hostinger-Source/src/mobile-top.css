@@ -518,3 +518,46 @@
     font-size: 30px; line-height: 1.5; width: 100%; height: auto;
   }
 }
+
+@media (max-width: 767px) {
+  /* Academy thora upar */
+  #home.design-page [data-node-id="524:715"] {
+    top: 5180px !important;
+  }
+
+  /* Heading aur blocks ke beech space */
+  #home.design-page [data-node-id="524:715"]
+  [data-node-id="242:251"] {
+    margin-bottom: 36px !important;
+  }
+
+  /* Get Hired ki width bhi pehle dono jitni */
+  #home.design-page [data-node-id="247:344"] {
+    grid-column: 1 / span 3;
+  }
+
+  /* Numbers headings ke saath align */
+  #home.design-page [data-node-id="524:715"] :is(
+    [data-node-id="245:284"],
+    [data-node-id="247:341"],
+    [data-node-id="247:347"]
+  ) {
+    top: 24px !important;
+  }
+
+  /* Teenon paragraphs justify */
+  #home.design-page [data-node-id="524:715"] :is(
+    [data-node-id="247:335"],
+    [data-node-id="247:343"],
+    [data-node-id="247:349"]
+  ) {
+    text-align: justify !important;
+    text-align-last: left;
+  }
+
+  /* Certificates ke baad Badges heading ka gap */
+  #home.design-page [data-node-id="524:715"]
+  [data-node-id="256:2"] {
+    margin-top: 40px !important;
+  }
+}
