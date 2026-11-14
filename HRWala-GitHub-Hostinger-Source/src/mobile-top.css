@@ -699,3 +699,22 @@
     transform-origin: left !important;
   }
 }
+
+@media (max-width: 767px) {
+  #home.design-page .hr-module-grid {
+    left: 90px !important;
+    right: auto !important;
+    width: 1260px !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 26px 8px !important;
+  }
+
+  #home.design-page .hr-module-grid > .hr-module-card {
+    width: 100% !important;
+    transform: none !important;
+    translate: none !important;
+    scale: 1 !important;
+    transform-origin: center !important;
+    transition: none !important;
+  }
+}
