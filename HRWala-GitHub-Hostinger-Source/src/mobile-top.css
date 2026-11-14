@@ -684,9 +684,9 @@
   .design-page [data-node-id="169:4"] {
     display: grid !important;
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-    gap: 30px !important;
+    gap: 10px !important;
     height: auto !important;
-    align-items: stretch !important;
+    align-items: space-evenly !important;
   }
 
   /* Har box ko apni grid position par rakhein */
