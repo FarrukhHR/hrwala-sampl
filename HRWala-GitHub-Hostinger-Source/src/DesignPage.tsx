@@ -1212,11 +1212,13 @@ useEffect(() => {
         className="[word-break:break-word] absolute font-['Poppins:Medium'] h-[237.176px] leading-[0] left-[87px] not-italic text-[#757575] text-[0px] text-justify top-[1351.53px] tracking-[-0.2635px] w-[580.706px] whitespace-pre-wrap"
         data-node-id="171:5"
       >
-        <p className="leading-[19.765px] mb-0 text-[13.176px]">
-          Every career move shapes a future. Every hiring decision shapes a business. HRwala.net
-          connects professionals with opportunities and employers with talent—making it easier to
-          showcase skills, explore roles and manage hiring in one place.
-        </p>
+       <p className="leading-[19.765px] mb-0 text-[13.176px]">
+        Every career move shapes a future. Every hiring decision shapes a business.
+        Whether you are taking your next career step or building your team, find
+        support for every stage. HRwala.net connects professionals with opportunities
+        and employers with talent—making it easier to showcase skills, explore roles
+        and manage hiring in one place.
+      </p>
         <p className="leading-[19.765px] mb-0 text-[13.176px]">​</p>
         <p className="mb-0 text-[13.176px]">
           <span className="[word-break:break-word] font-['Poppins:Bold'] leading-[19.765px] not-italic text-black">

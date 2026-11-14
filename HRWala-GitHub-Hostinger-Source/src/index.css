@@ -1627,3 +1627,14 @@
 .hero-carousel-cta {
   z-index: 21;
 }
+
+@media (min-width: 768px) {
+  .design-page [data-node-id="109:6"],
+  .design-page [data-node-id="171:5"] {
+    margin-top: -20px;
+  }
+
+  .design-page [data-node-id="171:5"] {
+    height: auto;
+  }
+}
