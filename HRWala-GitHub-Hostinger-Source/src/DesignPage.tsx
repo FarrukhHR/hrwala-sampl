@@ -1,5 +1,40 @@
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { useState, type FormEvent } from "react";
+import { supabase } from "./supabase";
+
+const [sending, setSending] = useState(false);
+const [status, setStatus] = useState("");
+
+async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  event.preventDefault();
+  if (sending) return;
+
+  const form = event.currentTarget;
+  const fields = new FormData(form);
+
+  setSending(true);
+  setStatus("");
+
+  try {
+    const { error } = await supabase.from("inquiries").insert({
+      name: String(fields.get("name") ?? "").trim(),
+      email: String(fields.get("email") ?? "").trim(),
+      phone: String(fields.get("phone") ?? "").trim() || null,
+      message: String(fields.get("message") ?? "").trim(),
+    });
+
+    if (error) throw error;
+
+    form.reset();
+    setStatus("Your inquiry has been submitted successfully.");
+  } catch (error) {
+    console.error("Inquiry submission failed:", error);
+    setStatus("Submission failed. Please try again.");
+  } finally {
+    setSending(false);
+  }
+}
 
 const assetPathPrefix = "/assets";
 const videoProject5 = `${assetPathPrefix}/Video Project 5.mp4`;
@@ -258,33 +293,73 @@ function FAQAccordion() {
 
 function ContactForm() {
   const [status, setStatus] = useState("");
+  const [sending, setSending] = useState(false);
 
   return (
     <section className="contact-form-panel" aria-labelledby="contact-form-title">
-      <h2 className="contact-form-title" id="contact-form-title">Get in Touch</h2>
-      <p className="contact-form-intro">Tell us how we can assist you.</p>
+      <h2 className="contact-form-title" id="contact-form-title">
+        Get in Touch
+      </h2>
+
+      <p className="contact-form-intro">
+        Tell us how we can assist you.
+      </p>
+
       <form
         className="contact-form"
-        onSubmit={(event) => {
+        onSubmit={async (event) => {
           event.preventDefault();
-          const formData = new FormData(event.currentTarget);
-          const subject = encodeURIComponent(`Website inquiry from ${formData.get("name")}`);
-          const body = encodeURIComponent(
-            `Name: ${formData.get("name")}\nEmail: ${formData.get("email")}\nInquiry: ${formData.get("inquiry")}\n\n${formData.get("message")}`,
-          );
+          if (sending) return;
 
-          setStatus("Your email app will open with your message ready to send.");
-          window.location.href = `mailto:hello@hrwala.net?subject=${subject}&body=${body}`;
+          const form = event.currentTarget;
+          const formData = new FormData(form);
+
+          setSending(true);
+          setStatus("");
+
+          try {
+            const { error } = await supabase.from("inquiries").insert({
+              name: String(formData.get("name") ?? "").trim(),
+              email: String(formData.get("email") ?? "").trim(),
+              inquiry: String(formData.get("inquiry") ?? ""),
+              message: String(formData.get("message") ?? "").trim(),
+            });
+
+            if (error) throw error;
+
+            form.reset();
+            setStatus("Thank you! Your inquiry has been submitted successfully.");
+          } catch (error) {
+            console.error("Contact form submission failed:", error);
+            setStatus("Unable to submit your inquiry. Please try again.");
+          } finally {
+            setSending(false);
+          }
         }}
       >
         <label className="contact-form-field">
           <span>Full Name</span>
-          <input autoComplete="name" name="name" placeholder="Enter your name" required />
+          <input
+            autoComplete="name"
+            name="name"
+            placeholder="Enter your name"
+            maxLength={150}
+            required
+          />
         </label>
+
         <label className="contact-form-field">
           <span>Email</span>
-          <input autoComplete="email" name="email" placeholder="example@gmail.com" required type="email" />
+          <input
+            autoComplete="email"
+            name="email"
+            placeholder="example@gmail.com"
+            maxLength={254}
+            required
+            type="email"
+          />
         </label>
+
         <label className="contact-form-field">
           <span>How Can We Help?</span>
           <select defaultValue="General Inquiry" name="inquiry">
@@ -295,12 +370,28 @@ function ContactForm() {
             <option>Certifications</option>
           </select>
         </label>
+
         <label className="contact-form-field contact-form-message">
           <span>Your Message</span>
-          <textarea name="message" placeholder="Tell us more about your inquiry..." required />
+          <textarea
+            name="message"
+            placeholder="Tell us more about your inquiry..."
+            maxLength={5000}
+            required
+          />
         </label>
-        <button className="contact-form-submit" type="submit">Submit</button>
-        <p className="contact-form-status" role="status">{status}</p>
+
+        <button
+          className="contact-form-submit"
+          type="submit"
+          disabled={sending}
+        >
+          {sending ? "Submitting..." : "Submit"}
+        </button>
+
+        <p className="contact-form-status" role="status">
+          {status}
+        </p>
       </form>
     </section>
   );
