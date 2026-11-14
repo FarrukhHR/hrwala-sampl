@@ -684,7 +684,7 @@
   .design-page [data-node-id="169:4"] {
     display: grid !important;
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-    height: auto !important;
+    height: 100px !important;
     align-items: space-evenly !important;
   }
 
