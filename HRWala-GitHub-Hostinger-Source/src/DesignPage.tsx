@@ -333,7 +333,7 @@ function ContactForm() {
             type="tel"
             name="phone"
             autoComplete="tel"
-            placeholder="+92 300 1234567"
+            placeholder="Phone number with country code"
           />
         </label>
 

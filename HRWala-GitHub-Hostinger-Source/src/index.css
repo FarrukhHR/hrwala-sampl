@@ -1652,3 +1652,54 @@
     background-size: 18px 18px !important;
   }
 }
+
+/* Desktop / tablet */
+@media (min-width: 768px) {
+  #home.design-page .contact-form-panel {
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 22px 19px 16px !important;
+    box-sizing: border-box;
+  }
+
+  #home.design-page .contact-form-intro {
+    margin-bottom: 12px !important;
+  }
+
+  #home.design-page .contact-form {
+    gap: 10px !important;
+  }
+
+  #home.design-page .contact-form-field {
+    gap: 6px !important;
+  }
+
+  #home.design-page .contact-form-field textarea {
+    height: 80px !important;
+    min-height: 80px !important;
+    resize: none;
+  }
+
+  #home.design-page .contact-form-status {
+    margin: 0 6px !important;
+  }
+}
+
+/* Mobile: extra field ke saath form aur footer flow mein rahen */
+@media (max-width: 767px) {
+  #home.design-page .contact-form-panel {
+    height: auto !important;
+    min-height: 0 !important;
+    grid-row: 7;
+    align-self: start;
+  }
+
+  #home.design-page .contact-form {
+    height: auto !important;
+  }
+
+  #home.design-page .contact-form-field input[type="tel"] {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
