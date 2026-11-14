@@ -942,3 +942,31 @@
     margin-top: 7px; font-size: 21px; line-height: 1.4;
   }
 }
+
+@media (max-width: 767px) {
+  /* Dono labels thore left aur neeche */
+  #home.design-page [data-node-id="207:53"] {
+    left: 710px;
+    top: 7303.94px !important;
+  }
+
+  #home.design-page [data-node-id="239:241"] {
+    left: 1324px;
+    top: 7303.94px !important;
+  }
+
+  /* Boxes: Top Modules ke T se start,
+     Professional Badges ke right edge par end */
+  #home.design-page [data-node-id="228:236"],
+  #home.design-page [data-node-id="228:235"] {
+    left: 80px;
+    width: 1280px;
+  }
+
+  /* Card ke andar category, heading aur paragraph
+     thore neeche; total padding same */
+  #home.design-page [data-node-id="228:235"]
+  > div > div[data-node-id] {
+    padding: 24px 18px 12px !important;
+  }
+}
