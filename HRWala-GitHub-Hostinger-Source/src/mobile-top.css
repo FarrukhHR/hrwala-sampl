@@ -684,7 +684,7 @@
   .design-page [data-node-id="169:4"] {
     display: grid !important;
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-    gap: 10px !important;
+    gap: 3px !important;
     height: auto !important;
     align-items: space-evenly !important;
   }
@@ -694,7 +694,7 @@
   .design-page [data-node-id="169:4"] > .industry-card-group {
     position: relative !important;
     inset: auto !important;
-    width: 200px !important;
+    width: 250px !important;
     min-width: 0 !important;
     box-sizing: border-box !important;
     transform-origin: left !important;
