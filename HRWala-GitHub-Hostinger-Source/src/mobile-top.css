@@ -604,3 +604,66 @@
     );
   }
 }
+
+@media (max-width: 767px) {
+  /* Keep the scaled canvas, but stop off-canvas Figma objects widening the page. */
+  html, body, #root { overflow-x: clip !important; }
+  .design-viewport { width: 100%; max-width: 100vw; overflow-x: clip !important; overflow-y: visible !important; min-height: calc(100vw * 9.5); }
+
+  /* Reserve the fourth module row before the subsequent sections. */
+  .design-page .mobile-later-section {
+    margin-top: calc(clamp(0px, (var(--mobile-original-top) - 2800px) * 10000, 1000px) + clamp(0px, (var(--mobile-original-top) - 3940px) * 10000, 800px));
+  }
+
+  /* Software's right-side image and labels retain their existing coordinates. */
+  #home.design-page [data-node-id="207:35"] { height: 1860px; }
+  #home.design-page :is([data-node-id="207:36"], [data-node-id="224:22"], [data-node-id="224:24"], [data-node-id="224:21"], [data-node-id="239:246"], [data-node-id="239:247"], [data-node-id="239:248"], [data-node-id="239:249"], [data-node-id="239:250"], [data-node-id="228:28"], [data-node-id="228:29"], [data-node-id="228:236"], [data-node-id="228:235"], [aria-label="Explore the Platform"]) { margin-top: 0 !important; }
+
+  #home.design-page [data-node-id="207:36"] { left: 90px; top: 7137px !important; width: 680px; height: auto; font-size: 60px; line-height: 1.15; }
+  #home.design-page [data-node-id="207:36"] > span { font-size: inherit; line-height: inherit; }
+  #home.design-page [data-node-id="224:22"] { left: 90px; top: 7244px !important; width: 700px; height: auto; font-size: 32px; line-height: 1.25; }
+  #home.design-page [data-node-id="224:24"] { left: 90px; top: 7295px !important; width: 640px; height: auto; font-size: 20px; line-height: 1.4; text-align: justify; }
+
+  #home.design-page [data-node-id="224:21"] { left: 88px; top: 7409px !important; width: 520px; height: 74.64px; }
+  #home.design-page :is([data-node-id="239:246"], [data-node-id="239:247"], [data-node-id="239:248"], [data-node-id="239:249"], [data-node-id="239:250"]) { top: 7490px !important; font-size: 20px; line-height: 1.2; }
+  #home.design-page [data-node-id="239:246"] { left: 102px; }
+  #home.design-page [data-node-id="239:247"] { left: 188px; }
+  #home.design-page [data-node-id="239:248"] { left: 310px; }
+  #home.design-page [data-node-id="239:249"] { left: 425px; }
+  #home.design-page [data-node-id="239:250"] { left: 540px; }
+
+  #home.design-page :is([data-node-id="228:28"], [aria-label="Explore the Platform"]) { left: 90px !important; top: 7540px !important; width: 300px !important; height: 64px !important; border-radius: 12px; }
+  #home.design-page [data-node-id="228:29"] { left: 240px; top: 7572px !important; width: 300px; height: auto; font-size: 24px; line-height: 1.2; z-index: 41; pointer-events: none; }
+
+  /* Same heading size as Job Portal and Future Academy. */
+  #home.design-page [data-node-id="228:236"] { left: 80px; top: 7660px !important; width: 1280px; height: auto; font-size: 86px; line-height: 1.15; }
+  #home.design-page [data-node-id="228:236"] > span { font-size: inherit; line-height: inherit; }
+
+  /* Existing twelve module cards, now three columns by four rows. */
+  #home.design-page [data-node-id="228:235"] {
+    display: grid !important; position: absolute; left: 80px; top: 7800px !important;
+    width: 1280px; height: auto; grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px 24px; transform: none; translate: none; scale: 1;
+  }
+  #home.design-page [data-node-id="228:235"] > div { display: contents !important; }
+  #home.design-page [data-node-id="228:235"] :is([data-node-id="228:103"], [data-node-id="228:111"], [data-node-id="228:119"], [data-node-id="228:127"], [data-node-id="228:137"], [data-node-id="228:145"], [data-node-id="228:153"], [data-node-id="228:161"], [data-node-id="228:203"], [data-node-id="228:211"], [data-node-id="228:219"], [data-node-id="228:227"]) {
+    display: block !important; position: relative !important; inset: auto !important;
+    width: 100%; height: 250px; margin: 0 !important; padding: 24px;
+    background: white; border-radius: 24px; box-shadow: 0 4px 12px #0002;
+    transform: none !important; translate: none !important; scale: 1 !important;
+    pointer-events: auto; transform-origin: center;
+  }
+  #home.design-page [data-node-id="228:235"] :is([data-node-id="228:103"], [data-node-id="228:111"], [data-node-id="228:119"], [data-node-id="228:127"], [data-node-id="228:137"], [data-node-id="228:145"], [data-node-id="228:153"], [data-node-id="228:161"], [data-node-id="228:203"], [data-node-id="228:211"], [data-node-id="228:219"], [data-node-id="228:227"]) > div { display: none !important; }
+  #home.design-page [data-node-id="228:235"] :is([data-node-id="228:103"], [data-node-id="228:111"], [data-node-id="228:119"], [data-node-id="228:127"], [data-node-id="228:137"], [data-node-id="228:145"], [data-node-id="228:153"], [data-node-id="228:161"], [data-node-id="228:203"], [data-node-id="228:211"], [data-node-id="228:219"], [data-node-id="228:227"])::before {
+    content: ''; position: absolute; inset: 0; height: 22px; pointer-events: none;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 410 22' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='m'%3E%3Cstop offset='29%25' stop-color='%23f6ac04'/%3E%3Cstop offset='29%25' stop-color='%230144ab'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M2 20Q2 2 24 2H386Q408 2 408 20' fill='none' stroke='url(%23m)' stroke-width='4'/%3E%3C/svg%3E") center top / 100% 22px no-repeat;
+  }
+  #home.design-page [data-node-id="228:235"] p {
+    position: static !important; inset: auto !important; width: auto; height: auto;
+    margin: 0; transform: none; translate: none; white-space: normal;
+    text-align: left; letter-spacing: -.25px; font-size: 21px; line-height: 1.4;
+  }
+  #home.design-page [data-node-id="228:235"] p:nth-of-type(1) { font-size: 18px; line-height: 1.2; }
+  #home.design-page [data-node-id="228:235"] p:nth-of-type(2) { margin-top: 10px; font-size: 27px; line-height: 1.2; }
+  #home.design-page [data-node-id="228:235"] p:nth-of-type(3) { margin-top: 12px; }
+}
