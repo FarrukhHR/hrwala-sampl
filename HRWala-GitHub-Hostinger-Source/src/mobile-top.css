@@ -815,3 +815,54 @@
   #home.design-page [data-node-id="159:313"] { order: 13; }
   #home.design-page [data-node-id="159:319"] { order: 14; }
 }
+
+@media (max-width: 767px) {
+  /* Tighten the heading gap: the complete flowing Academy content moves up. */
+  #home.design-page [data-node-id="524:715"] [data-node-id="242:251"] {
+    margin-bottom: 8px !important;
+    word-spacing: -6px;
+  }
+
+  /* Match the opposite Payroll label's vertical position. */
+  #home.design-page [data-node-id="207:53"] {
+    top: 7365.94px !important;
+    margin-top: 0 !important;
+  }
+
+  #home.design-page [data-node-id="228:236"] {
+    font-size: 62px;
+  }
+
+  /* Keep three columns; use more available width and smaller gutters. */
+  #home.design-page [data-node-id="228:235"] {
+    left: 26px;
+    width: 1388px;
+    gap: 16px 6px;
+    grid-auto-rows: 1fr;
+    align-items: stretch;
+  }
+  #home.design-page [data-node-id="228:235"] > div > div {
+    padding: 18px !important;
+  }
+
+  /* We Offer colours/type hierarchy, fitted to the three-column card width. */
+  #home.design-page [data-node-id="228:235"] p:nth-of-type(1) {
+    font-size: 24px;
+    line-height: 1.2;
+    color: #232323;
+  }
+  #home.design-page [data-node-id="228:235"] p:nth-of-type(2) {
+    margin-top: 6px;
+    font-size: 34px;
+    line-height: 1.15;
+    color: #0144ab;
+  }
+  #home.design-page [data-node-id="228:235"] p:nth-of-type(3) {
+    margin-top: 8px;
+    font-size: 25px;
+    line-height: 1.35;
+    color: #757575;
+    text-align: justify;
+    text-align-last: left;
+  }
+}
