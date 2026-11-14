@@ -990,7 +990,15 @@
 }
 
 @media (max-width: 767px) {
+  #home.design-page .hr-module-grid {
+    row-gap: 36px !important;
+  }
+
   #home.design-page [data-node-id="169:4"] {
-    row-gap: 16px !important;
+    row-gap: 40px !important;
+  }
+
+  #home.design-page [data-node-id="169:4"] .brand-timeline {
+    margin-bottom: 150px !important;
   }
 }
