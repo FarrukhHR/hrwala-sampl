@@ -857,3 +857,34 @@
     transition: none !important;
   }
 }
+
+@media (max-width: 767px) {
+  /* Upper aur lower boxes ki same outer alignment */
+  #home.design-page .hr-module-grid,
+  #home.design-page [data-node-id="169:4"] {
+    left: 90px !important;
+    width: 1260px !important;
+    margin-inline: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    column-gap: 12px !important;
+    row-gap: 26px !important;
+  }
+
+  /* Timeline aur image ke liye existing six-column grid */
+  #home.design-page [data-node-id="169:4"] {
+    grid-template-columns:
+      repeat(6, minmax(0, 1fr)) !important;
+  }
+
+  /* Lower cards ki width upper cards ke barabar */
+  #home.design-page
+  [data-node-id="169:4"] .industry-card-group {
+    grid-column: span 2 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+}
