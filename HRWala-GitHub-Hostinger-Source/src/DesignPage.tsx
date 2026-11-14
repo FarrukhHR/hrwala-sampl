@@ -2700,7 +2700,7 @@ useEffect(() => {
                 className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[23.051px] leading-[normal] left-[108.06px] not-italic text-[#0144ab] text-[20.706px] top-[3809.12px] tracking-[-0.4141px] w-[247.529px]"
                 data-node-id="228:206"
               >
-                360 degre Performance
+                360° Performance
               </p>
               <p
                 className="[word-break:break-word] absolute font-['Poppins:Medium'] h-[24.965px] leading-[normal] left-[108.06px] not-italic text-[#757575] text-[11.294px] text-justify top-[3844.88px] tracking-[-0.2259px] w-[247.529px]"
