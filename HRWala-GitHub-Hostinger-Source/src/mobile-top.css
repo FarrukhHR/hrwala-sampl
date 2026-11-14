@@ -681,3 +681,83 @@
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 410 22' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='m'%3E%3Cstop offset='29%25' stop-color='%23f6ac04'/%3E%3Cstop offset='29%25' stop-color='%230144ab'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M3 20Q3 3 24 3H386Q407 3 407 20' fill='none' stroke='url(%23m)' stroke-width='5'/%3E%3C/svg%3E") center top / 100% 22px no-repeat;
   }
 }
+
+@media (max-width: 767px) {
+  /* Heading aur grid: same left/right alignment */
+  #home#home.design-page [data-node-id="228:236"],
+  #home#home.design-page [data-node-id="228:235"] {
+    left: 80px !important;
+    right: auto !important;
+    width: 1280px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+    translate: none !important;
+    scale: 1 !important;
+  }
+
+  #home#home.design-page [data-node-id="228:236"] {
+    top: 7580px !important;
+    height: auto !important;
+  }
+
+  /* Heading ke neeche extra khaali jagah khatam */
+  #home#home.design-page [data-node-id="228:235"] {
+    position: absolute !important;
+    display: grid !important;
+    top: 7670px !important;
+    bottom: auto !important;
+    height: auto !important;
+    box-sizing: border-box !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    grid-auto-rows: 1fr !important;
+    gap: 18px 8px !important;
+    align-items: stretch !important;
+    justify-items: stretch !important;
+  }
+
+  /* Purane row wrappers positioning na lagayein */
+  #home#home.design-page [data-node-id="228:235"] > div {
+    display: contents !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+    translate: none !important;
+    scale: 1 !important;
+  }
+
+  /* Har card apni grid cell mein, equal breadth */
+  #home#home.design-page
+  [data-node-id="228:235"] > div > div[data-node-id] {
+    display: block !important;
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    grid-column: auto !important;
+    grid-row: auto !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    height: auto !important;
+    min-height: 228px !important;
+    margin: 0 !important;
+    padding: 42px 18px 22px !important;
+    transform: none !important;
+    translate: none !important;
+    scale: 1 !important;
+  }
+
+  /* Content card ke andar normal flow mein rahe */
+  #home#home.design-page
+  [data-node-id="228:235"] > div > div[data-node-id] > p {
+    position: static !important;
+    inset: auto !important;
+    width: auto !important;
+    height: auto !important;
+    transform: none !important;
+    translate: none !important;
+  }
+}
