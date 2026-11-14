@@ -718,3 +718,77 @@
     transition: none !important;
   }
 }
+
+@media (max-width: 767px) {
+  #home.design-page [data-node-id="207:35"] {
+    height: 1700px !important;
+  }
+
+  /* Top Modules cards apne columns se bahar na niklein */
+  #home.design-page .hr-module-grid > .hr-module-card {
+    width: 100% !important;
+  }
+
+  #home.design-page [data-node-id="169:4"] {
+    left: 90px !important;
+    top: 8790px !important;
+    width: 1260px !important;
+    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+    grid-template-rows: auto auto !important;
+    grid-auto-rows: auto !important;
+    gap: 20px 8px !important;
+    align-items: stretch !important;
+  }
+
+  #home.design-page [data-node-id="169:4"] .brand-timeline {
+    grid-column: 1 / span 3;
+    gap: 14px;
+    padding-right: 20px;
+  }
+
+  #home.design-page [data-node-id="169:4"] .brand-timeline-row {
+    min-height: 112px;
+    padding-left: 78px;
+  }
+
+  #home.design-page [data-node-id="169:4"] .brand-timeline-text h3 {
+    font-size: 26px;
+  }
+
+  #home.design-page [data-node-id="169:4"] .brand-timeline-description {
+    font-size: 21px;
+  }
+
+  #home.design-page [data-node-id="169:4"] :is(
+    .brand-timeline-ring,
+    .brand-timeline-number
+  ) {
+    width: 64px;
+    height: 64px;
+  }
+
+  #home.design-page [data-node-id="169:4"] .brand-timeline-line {
+    left: 32px;
+    top: 64px;
+    height: calc(100% - 50px);
+  }
+
+  #home.design-page [data-node-id="169:4"] [data-node-id="413:613"] {
+    grid-column: 4 / span 3;
+    height: 370px !important;
+    min-height: 0;
+  }
+
+  #home.design-page [data-node-id="169:4"] [data-node-id="413:613"] > img {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  #home.design-page [data-node-id="169:4"] .industry-card-group {
+    grid-column: span 2;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 228px;
+    padding: 42px 18px 22px !important;
+  }
+}
