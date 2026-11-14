@@ -1817,3 +1817,24 @@
     width: 240px !important;
   }
 }
+
+@media (max-width: 767px) {
+  #home.design-page .newsletter-form {
+    left: 800px !important;
+    width: 550px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    justify-items: start !important;
+  }
+
+  #home.design-page .newsletter-form input {
+    width: 100% !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  #home.design-page .newsletter-form button {
+    margin: 0 !important;
+    justify-self: start !important;
+  }
+}
