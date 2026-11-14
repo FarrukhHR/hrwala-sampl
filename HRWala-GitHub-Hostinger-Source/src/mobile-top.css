@@ -702,3 +702,116 @@
   #home.design-page [data-node-id="133:2"] { top: 8979px !important; margin-top: 0 !important; }
   #home.design-page .brand-timeline { top: 9052.18px !important; margin-top: 0 !important; }
 }
+
+@media (max-width: 767px) {
+  .design-viewport { min-height: calc(100vw * 10.2); }
+  .design-page .mobile-later-section {
+    margin-top: calc(clamp(0px, (var(--mobile-original-top) - 2800px) * 10000, 1000px) + clamp(0px, (var(--mobile-original-top) - 3940px) * 10000, 800px) + clamp(0px, (var(--mobile-original-top) - 4970px) * 10000, 800px));
+  }
+
+  /* One consistent heading size. */
+  #home.design-page :is([data-node-id="109:6"], [data-node-id="242:251"], [data-node-id="133:2"]) { font-size: 74px; line-height: 1.15; }
+  #home.design-page :is([data-node-id="109:6"], [data-node-id="242:251"], [data-node-id="133:2"]) > span { font-size: inherit; line-height: inherit; }
+
+  /* Put each Academy title over its own pale number, in the same text box. */
+  #home.design-page [data-node-id="524:715"] [data-node-id="242:251"] { font-size: 74px; }
+  #home.design-page [data-node-id="524:715"] :is([data-node-id="245:284"], [data-node-id="247:341"], [data-node-id="247:347"]) { visibility: hidden !important; }
+  #home.design-page [data-node-id="524:715"] :is([data-node-id="245:286"], [data-node-id="247:342"], [data-node-id="247:348"]) { isolation: isolate; z-index: 1; }
+  #home.design-page [data-node-id="524:715"] :is([data-node-id="245:286"], [data-node-id="247:342"], [data-node-id="247:348"])::before {
+    position: absolute; left: -30px; top: 50%; transform: translateY(-50%);
+    color: #0144ab; opacity: .1; font: 700 72px/1 'Poppins:Bold', sans-serif;
+    z-index: -1; pointer-events: none;
+  }
+  #home.design-page [data-node-id="245:286"]::before { content: '01'; }
+  #home.design-page [data-node-id="247:342"]::before { content: '02'; }
+  #home.design-page [data-node-id="247:348"]::before { content: '03'; }
+
+  /* Move the complete software orbit down to the button's bottom edge. */
+  #home.design-page :is([data-node-id="413:615"], [data-node-id="207:50"], [data-node-id="207:51"], [data-node-id="207:52"], [data-node-id="239:243"], [data-node-id="207:53"], [data-node-id="239:241"]) { margin-top: 0 !important; }
+  #home.design-page [data-node-id="413:615"] { top: 7175px !important; }
+  #home.design-page [data-node-id="207:50"] { top: 7217.44px !important; }
+  #home.design-page [data-node-id="207:51"] { top: 7217.46px !important; }
+  #home.design-page [data-node-id="207:52"] { top: 7527.38px !important; }
+  #home.design-page [data-node-id="239:243"] { top: 7527.38px !important; }
+  #home.design-page [data-node-id="207:53"] { top: 7403px !important; }
+  #home.design-page [data-node-id="239:241"] { top: 7365.94px !important; }
+
+  /* Bigger, legible software cards: three columns and tight gutters. */
+  #home.design-page [data-node-id="228:235"] { left: 44px; width: 1352px; gap: 20px 10px; }
+  #home.design-page [data-node-id="228:235"] p { font-size: 24px; line-height: 1.45; }
+  #home.design-page [data-node-id="228:235"] p:nth-of-type(1) { font-size: 20px; }
+  #home.design-page [data-node-id="228:235"] p:nth-of-type(2) { font-size: 30px; }
+  #home.design-page [data-node-id="228:235"] p:nth-of-type(3) { text-align: justify; text-align-last: left; }
+  #home.design-page [data-node-id="207:35"] { height: 1840px; }
+
+  /* Develop Your Brand gets its own real layout container. */
+  #home.design-page [data-node-id="169:4"] {
+    display: grid; position: absolute; left: 44px; top: 9000px !important;
+    width: 1352px; height: auto; margin: 0 !important; padding: 0;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-rows: auto auto repeat(4, 1fr);
+    gap: 26px 10px; align-items: stretch;
+    transform: none; translate: none; scale: 1;
+  }
+  #home.design-page [data-node-id="169:4"] .mobile-later-section { margin-top: 0 !important; }
+  #home.design-page [data-node-id="205:14"],
+  #home.design-page [data-node-id="244:253"] { display: contents !important; }
+  #home.design-page [data-node-id="169:4"] [data-node-id="133:2"] {
+    position: static !important; inset: auto !important; width: 100%; height: auto;
+    grid-column: 1 / -1; order: 0; margin: 0 0 12px !important;
+    font-size: 74px; line-height: 1.15; transform: none; translate: none;
+  }
+  #home.design-page [data-node-id="169:4"] .brand-timeline {
+    position: relative !important; inset: auto !important; top: auto !important;
+    grid-column: 1 / span 3; order: 1; display: grid; gap: 24px;
+    width: 100%; height: auto; margin: 0 !important; padding-right: 26px;
+  }
+  #home.design-page [data-node-id="169:4"] .brand-timeline-row {
+    position: relative; inset: auto; top: auto !important; width: 100%; height: auto;
+    min-height: 128px; box-sizing: border-box; padding-left: 90px;
+  }
+  #home.design-page [data-node-id="169:4"] .brand-timeline-text { position: static; width: auto; }
+  #home.design-page [data-node-id="169:4"] .brand-timeline-label { font-size: 22px; line-height: 1.25; }
+  #home.design-page [data-node-id="169:4"] .brand-timeline-text h3 { font-size: 28px; line-height: 1.25; margin: 5px 0; }
+  #home.design-page [data-node-id="169:4"] .brand-timeline-description { font-size: 23px; line-height: 1.45; }
+  #home.design-page [data-node-id="169:4"] :is(.brand-timeline-ring, .brand-timeline-number) { width: 76px; height: 76px; }
+  #home.design-page [data-node-id="169:4"] .brand-timeline-number { font-size: 32px; }
+  #home.design-page [data-node-id="169:4"] .brand-timeline-line { left: 38px; top: 76px; height: calc(100% - 52px); }
+  #home.design-page [data-node-id="169:4"] [data-node-id="413:613"] {
+    position: relative; inset: auto; width: 100%; height: auto; min-height: 430px;
+    grid-column: 4 / span 3; order: 2; margin: 0 !important; border-radius: 28px; overflow: hidden;
+  }
+  #home.design-page [data-node-id="169:4"] [data-node-id="413:613"] > img { width: 100%; height: 100%; object-fit: cover; border-radius: inherit; }
+
+  /* Twelve industry cards: three per row, four rows, equal heights. */
+  #home.design-page [data-node-id="169:4"] .industry-card-group {
+    position: relative; inset: auto; display: block; width: 100%; height: 100%;
+    box-sizing: border-box; grid-column: span 2; padding: 24px; margin: 0 !important;
+    background: #fff; border-radius: 24px; box-shadow: 0 4px 12px #0002;
+    transform: none !important; translate: none !important; scale: 1 !important;
+    pointer-events: auto;
+  }
+  #home.design-page [data-node-id="169:4"] .industry-card-group > div { display: none !important; }
+  #home.design-page [data-node-id="169:4"] .industry-card-group::before {
+    content: ''; position: absolute; inset: 0; height: 22px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 410 22' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='b'%3E%3Cstop offset='29%25' stop-color='%23f6ac04'/%3E%3Cstop offset='29%25' stop-color='%230144ab'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M2 20Q2 2 24 2H386Q408 2 408 20' fill='none' stroke='url(%23b)' stroke-width='4'/%3E%3C/svg%3E") center top / 100% 22px no-repeat;
+  }
+  #home.design-page [data-node-id="169:4"] .industry-card-group > p {
+    position: static !important; inset: auto !important; width: auto; height: auto;
+    margin: 0; transform: none; translate: none; white-space: normal;
+    font-size: 24px; line-height: 1.45; letter-spacing: -.25px; text-align: justify;
+  }
+  #home.design-page [data-node-id="169:4"] .industry-card-group > p:first-of-type { font-size: 30px; line-height: 1.2; margin-bottom: 14px; text-align: left; }
+  #home.design-page [data-node-id="159:37"] { order: 3; }
+  #home.design-page [data-node-id="159:45"] { order: 4; }
+  #home.design-page [data-node-id="159:53"] { order: 5; }
+  #home.design-page [data-node-id="159:61"] { order: 6; }
+  #home.design-page [data-node-id="159:277"] { order: 7; }
+  #home.design-page [data-node-id="159:283"] { order: 8; }
+  #home.design-page [data-node-id="159:289"] { order: 9; }
+  #home.design-page [data-node-id="159:295"] { order: 10; }
+  #home.design-page [data-node-id="159:301"] { order: 11; }
+  #home.design-page [data-node-id="159:307"] { order: 12; }
+  #home.design-page [data-node-id="159:313"] { order: 13; }
+  #home.design-page [data-node-id="159:319"] { order: 14; }
+}
