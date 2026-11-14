@@ -331,7 +331,7 @@
 
 @media (max-width: 767px) {
   /* Reserve space for this section's two full-width cards. */
-  .design-page .mobile-later-section { top: calc(var(--mobile-original-top) + 2950px) !important; }
+  .design-page .mobile-later-section { top: calc(var(--mobile-original-top) + 3190px) !important; }
   .design-page { overflow: visible !important; }
   .design-viewport { min-height: calc(100vw * 7.139); }
 
@@ -381,4 +381,42 @@
   .design-page :is([data-node-id="413:603"], [aria-label="Start Hiring"]) { left: 130px !important; top: 4680px !important; width: 330px !important; height: 78px !important; border-radius: 18px; }
   .design-page [data-node-id="413:597"] { left: 375px; top: 4109px !important; width: 490px !important; height: auto !important; font-size: 34px !important; }
   .design-page [data-node-id="413:604"] { left: 295px; top: 4719px !important; width: 330px !important; height: auto !important; font-size: 34px !important; }
+}
+
+@media (max-width: 767px) {
+  /* Keep the large short intro; remove the old paragraphs underneath it. */
+  #home.design-page [data-node-id="171:5"] > * { display: none !important; }
+  #home.design-page [data-node-id="171:5"]::after { content: none !important; }
+
+  /* Original conference-image proportions: 1280 / 720. */
+  .design-page [data-node-id="413:611"] { height: 720px !important; }
+  .design-page [data-node-id="413:611"] img { object-fit: contain !important; }
+  .design-page [data-node-id="207:31"] { height: 2440px !important; }
+  .design-viewport { min-height: calc(100vw * 7.306); }
+
+  .design-page [data-node-id="109:10"] { top: 3870px !important; }
+  .design-page [data-node-id="118:123"] { top: 4480px !important; }
+  .design-page [data-node-id="109:14"] { top: 3910px !important; }
+  .design-page [data-node-id="118:125"] { top: 4520px !important; }
+  .design-page [data-node-id="109:12"] { top: 3914px !important; }
+  .design-page [data-node-id="118:124"] { top: 4524px !important; }
+
+  /* One clean curved stroke, without mask edges or doubled SVG lines. */
+  #home.design-page :is([data-node-id="109:10"], [data-node-id="118:123"])::before {
+    height: 30px; padding: 0; border: 0; border-radius: 0;
+    -webkit-mask: none; mask: none; clip-path: none;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1280 30' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='a'%3E%3Cstop offset='29%25' stop-color='%23f6ac04'/%3E%3Cstop offset='29%25' stop-color='%230144ab'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M3 27Q3 3 30 3H1250Q1277 3 1277 27' fill='none' stroke='url(%23a)' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E") center top / 100% 30px no-repeat;
+  }
+
+  .design-page :is([data-node-id="118:36"], [data-node-id="118:68"], [data-node-id="118:37"], [data-node-id="118:69"]) { top: 4180px !important; }
+  .design-page :is([data-node-id="118:59"], [data-node-id="118:71"], [data-node-id="118:60"], [data-node-id="118:72"]) { top: 4250px !important; }
+  .design-page :is([data-node-id="118:130"], [data-node-id="118:133"], [data-node-id="118:131"], [data-node-id="118:134"]) { top: 4790px !important; }
+  .design-page :is([data-node-id="118:136"], [data-node-id="118:139"], [data-node-id="118:137"], [data-node-id="118:140"]) { top: 4860px !important; }
+  #home.design-page :is([data-node-id="118:37"], [data-node-id="118:69"], [data-node-id="118:60"], [data-node-id="118:72"], [data-node-id="118:131"], [data-node-id="118:134"], [data-node-id="118:137"], [data-node-id="118:140"]) { display: block !important; width: 30px; height: 2px; background: #0144ab; }
+  #home.design-page :is([data-node-id="118:37"], [data-node-id="118:69"], [data-node-id="118:60"], [data-node-id="118:72"], [data-node-id="118:131"], [data-node-id="118:134"], [data-node-id="118:137"], [data-node-id="118:140"]) > * { display: none !important; }
+
+  .design-page :is([data-node-id="413:596"], [aria-label="Find Your Dream Job"]) { top: 4310px !important; }
+  .design-page [data-node-id="413:597"] { top: 4349px !important; }
+  .design-page :is([data-node-id="413:603"], [aria-label="Start Hiring"]) { top: 4920px !important; }
+  .design-page [data-node-id="413:604"] { top: 4959px !important; }
 }
