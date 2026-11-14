@@ -110,6 +110,13 @@
 }
 
 @media (max-width: 767px) {
+  .design-page .service-card-group--opportunity::before,
+  .design-page .service-card-group--systems::before {
+    clip-path: inset(0 0 2px 0);
+  }
+}
+
+@media (max-width: 767px) {
   /* Mobile: intro 3 lines, candidates/employers 2-2 lines */
   .design-page [data-node-id="171:5"] {
     container-type: inline-size;
