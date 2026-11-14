@@ -901,3 +901,44 @@
   #home.design-page [data-node-id="169:4"] .industry-card-group > p:first-of-type { font-size: 33px; line-height: 1.15; margin-bottom: 8px; }
   #home.design-page [data-node-id="169:4"] .industry-card-group > p:nth-of-type(2) { font-size: 22px; line-height: 1.4; text-align: justify; text-align-last: left; }
 }
+
+@media (max-width: 767px) {
+  /* Shift the complete orbit left while keeping room beside the copy. */
+  #home.design-page [data-node-id="224:22"] { width: 675px; }
+  #home.design-page [data-node-id="224:24"] { width: 610px; }
+  #home.design-page [data-node-id="413:615"] { left: 871px; }
+  #home.design-page :is([data-node-id="207:50"], [data-node-id="207:51"], [data-node-id="207:52"], [data-node-id="239:243"], [data-node-id="207:53"], [data-node-id="239:241"]) {
+    font-size: 18px; line-height: 1.2; white-space: nowrap;
+  }
+  #home.design-page [data-node-id="207:50"] { left: 779px; }
+  #home.design-page [data-node-id="207:51"] { left: 1236.98px; }
+  #home.design-page [data-node-id="207:53"] { left: 722px; }
+  #home.design-page [data-node-id="239:241"] { left: 1336px; }
+  #home.design-page [data-node-id="207:52"] { left: 780.56px; }
+  #home.design-page [data-node-id="239:243"] { left: 1221px; }
+
+  /* Use the full available width, with consistent narrow gutters. */
+  #home.design-page [data-node-id="228:235"] {
+    left: 18px; top: 7670px !important; width: 1404px;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    column-gap: 8px !important; row-gap: 20px !important;
+    grid-auto-rows: 1fr; align-items: stretch; padding: 0 !important;
+  }
+  #home.design-page [data-node-id="228:235"] :is([data-node-id="228:103"], [data-node-id="228:111"], [data-node-id="228:119"], [data-node-id="228:127"], [data-node-id="228:137"], [data-node-id="228:145"], [data-node-id="228:153"], [data-node-id="228:161"], [data-node-id="228:203"], [data-node-id="228:211"], [data-node-id="228:219"], [data-node-id="228:227"]) {
+    box-sizing: border-box !important; width: auto !important;
+    min-width: 0; max-width: none; height: auto !important; min-height: 228px;
+    justify-self: stretch; align-self: stretch;
+    margin: 0 !important; padding: 16px 18px 20px !important;
+    scale: 1 !important; transform: none !important; translate: none !important;
+  }
+  #home.design-page [data-node-id="228:235"] p:nth-of-type(1) {
+    margin-top: 0 !important; line-height: 1.15;
+  }
+  #home.design-page [data-node-id="228:235"] p:nth-of-type(2) {
+    margin-top: 5px;
+  }
+  #home.design-page [data-node-id="228:235"] p:nth-of-type(3) {
+    margin-top: 7px; font-size: 21px; line-height: 1.4;
+  }
+}
