@@ -11,8 +11,30 @@ const base='/hrwala-job-portal/assets/';
 const asset=(name:string)=>base+name;
 const areaCities=['Lahore','Karachi','Islamabad','Rawalpindi','Faisalabad','Multan','Gujranwala','Peshawar','Quetta','Hyderabad'];
 const sectors=['Business Development','Information Technology','Manufacturing','Recruitment','Services','Education','Banking','Real Estate','Healthcare','Insurance','N.G.O.','Retail','Accounting','Travel','Call Center','Construction','BPO','Consultants','Electronics'];
-const employerFiles=[3,4,5,6,7,8,9,10,11];
-const employerNames=['Hoverizon Tech Solutions','Best Western','PakNova Enterprise','Premium employer','Destinations Connect','Escape','Four Points by Sheraton','Arch Villas','SB'];
+const employerGroups = [
+  [
+    { name: 'Hoverizon Tech Solutions', image: asset('imgArchVillasGoldLogoOnCrimsonBackground3.png') },
+    { name: 'Best Western', image: asset('imgArchVillasGoldLogoOnCrimsonBackground4.png') },
+    { name: 'PakNova Enterprise', image: asset('imgArchVillasGoldLogoOnCrimsonBackground5.png') },
+    { name: 'COTHM Pakistan', image: asset('imgArchVillasGoldLogoOnCrimsonBackground6.png') },
+    { name: 'Destinations Connect', image: asset('imgArchVillasGoldLogoOnCrimsonBackground7.png') },
+    { name: 'Escape Hotel', image: asset('imgArchVillasGoldLogoOnCrimsonBackground8.png') },
+    { name: 'Four Points by Sheraton', image: asset('imgArchVillasGoldLogoOnCrimsonBackground9.png') },
+    { name: 'Arch Villas', image: asset('imgArchVillasGoldLogoOnCrimsonBackground10.png') },
+    { name: 'Smart Branding', image: asset('imgArchVillasGoldLogoOnCrimsonBackground11.png') },
+  ],
+  [
+    { name: 'Khoj Resorts', image: '/assets/d1f1e.png' },
+    { name: 'Mushrooms', image: '/assets/f6a67.png' },
+    { name: 'Pakistan Society of Hospitality Professionals', image: '/assets/991c8.png' },
+    { name: 'Radisson Blu', image: '/assets/e3016.png' },
+    { name: 'Ramada', image: '/assets/90d1a.png' },
+    { name: "Sariya's", image: '/assets/3bdd7.png' },
+    { name: 'Regal Immigration', image: '/assets/46890.png' },
+    { name: 'Resorts Holding', image: '/assets/d6b72.png' },
+    { name: 'Riphah International University', image: '/assets/1ab0e.png' },
+  ],
+];
 type ModalState={kind:'job';job:Job}|{kind:'contact';subject:string}|{kind:'info';title:string;message:string}|null;
 function Modal({title,onClose,children}:{title:string;onClose:()=>void;children:ReactNode}){
   const ref=useRef<HTMLDialogElement>(null);

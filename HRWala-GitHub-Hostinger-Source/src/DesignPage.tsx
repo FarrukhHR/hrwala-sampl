@@ -53,7 +53,6 @@ const featuredPartnerLogos = [
   imgBestWesternLogoOnBlueGradient17,
   imgBestWesternLogoOnBlueGradient18,
   imgBestWesternLogoOnBlueGradient19,
-  imgBestWesternLogoOnBlueGradient20,
   imgBestWesternLogoOnBlueGradient21,
   imgBestWesternLogoOnBlueGradient22,
     `${assetPathPrefix}/Hoverizon Tech Solutions logo.png`,
