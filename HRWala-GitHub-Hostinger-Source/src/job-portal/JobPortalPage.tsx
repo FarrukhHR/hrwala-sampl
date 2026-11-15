@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState, type FormEvent, type ReactNode } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState, type FormEvent, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import CitySelect from './CitySelect';
 import { demoJobs, filterJobs, type Job } from './jobs';
@@ -40,6 +40,19 @@ function JobCard({job,onOpen}:{job:Job;onOpen:(job:Job)=>void}){
 export default function JobPortalPage(){
     const [heroIndex, setHeroIndex] = useState(0);
   const [heroLeaving, setHeroLeaving] = useState(false);
+  const wordMeasure = useRef<HTMLSpanElement>(null);
+const [wordWidth, setWordWidth] = useState<number>();
+
+useLayoutEffect(() => {
+  const element = wordMeasure.current;
+  if (!element) return;
+
+  const measure = () => setWordWidth(element.offsetWidth);
+  measure();
+
+  document.fonts.addEventListener('loadingdone', measure);
+  return () => document.fonts.removeEventListener('loadingdone', measure);
+}, [heroIndex]);
 
   useEffect(() => {
     const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -130,14 +143,17 @@ export default function JobPortalPage(){
 
 <p className="jp-hero-subtitle">
   The Right{' '}
-  <span className="jp-word-window">
-    <span
-      key={heroIndex}
-      className={`jp-slide-text${heroLeaving ? ' is-leaving' : ''}`}
-    >
-      {heroIndex % 2 === 0 ? 'JOB' : 'MAN'}
-    </span>
-  </span>{' '}
+  <span className="jp-word-window" style={{ width: wordWidth }}>
+  <span ref={wordMeasure} className="jp-word-measure" aria-hidden="true">
+    {heroIndex % 2 === 0 ? 'JOB' : 'MAN'}
+  </span>
+  <span
+    key={heroIndex}
+    className={`jp-slide-text${heroLeaving ? ' is-leaving' : ''}`}
+  >
+    {heroIndex % 2 === 0 ? 'JOB' : 'MAN'}
+  </span>
+</span>
   Changes Everything.
 </p><p className="jp-hero-description">Connect with leading employers and employees across Pakistan.</p>
         <form className="jp-search" onSubmit={runSearch}><input ref={queryInput} type="search" value={query} onChange={e=>setQuery(e.target.value)} placeholder="Job title, skill or company" aria-label="Job title, skill or company"/><CitySelect value={city} onChange={setCity}/><button className="jp-primary" type="submit">Search jobs</button></form>

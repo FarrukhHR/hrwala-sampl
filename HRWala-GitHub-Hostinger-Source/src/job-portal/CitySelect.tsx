@@ -133,7 +133,7 @@ export default function CitySelect({
         onMouseDown={event => event.preventDefault()}
         onClick={() => {
           input.current?.focus();
-          setOpen(current => !current);
+          setOpen(!open);
           setActive(-1);
         }}
       >

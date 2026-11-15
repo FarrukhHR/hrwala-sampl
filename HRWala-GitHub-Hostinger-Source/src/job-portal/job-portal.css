@@ -274,3 +274,64 @@
 .jp-city-listbox.jp-city-scroll {
   padding-top: 0;
 }
+
+/* Animated heading hamesha blue */
+.jp-hero h1 .jp-heading-window .jp-slide-text {
+  color: var(--jp-blue);
+}
+
+/* JOB / MAN ki width smoothly change ho */
+.jp-word-window {
+  position: relative;
+  transition: width 350ms ease;
+}
+
+.jp-word-measure {
+  position: absolute;
+  left: 0;
+  top: 0;
+  visibility: hidden;
+  white-space: nowrap;
+}
+
+/* City field alignment aur focus */
+.jp-city {
+  gap: 8px;
+  padding-left: 12px;
+}
+
+.jp-page .jp-city-input {
+  flex: 1;
+  width: 0;
+  min-width: 0;
+  padding: 8px 0;
+}
+
+.jp-page .jp-city-input:focus-visible {
+  outline: none;
+}
+
+.jp-city:has(.jp-city-input:focus-visible) {
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 2px var(--jp-blue);
+}
+
+.jp-page .jp-city-arrow {
+  padding: 8px 4px;
+}
+
+.jp-city-menu {
+  top: calc(100% + 10px);
+  width: 100%;
+  min-width: 220px;
+}
+
+@media (max-width: 767px) {
+  .jp-city {
+    padding-left: 8px;
+  }
+
+  .jp-city-menu {
+    min-width: 0;
+  }
+}
