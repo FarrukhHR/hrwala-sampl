@@ -214,11 +214,11 @@
 
 .jp-slide-text {
   display: block;
-  animation: jp-slide-in 350ms ease both;
+  animation: jp-slide-in 700ms ease both;
 }
 
 .jp-slide-text.is-leaving {
-  animation: jp-slide-out 350ms ease both;
+  animation: jp-slide-out 700ms ease both;
 }
 
 @keyframes jp-slide-in {
@@ -283,7 +283,7 @@
 /* JOB / MAN ki width smoothly change ho */
 .jp-word-window {
   position: relative;
-  transition: width 350ms ease;
+  transition: width 700ms ease;
 }
 
 .jp-word-measure {
