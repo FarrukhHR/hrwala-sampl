@@ -54,7 +54,6 @@ export default function JobPortalPage(){
     window.addEventListener('resize', updateWidth);
     return () => window.removeEventListener('resize', updateWidth);
   }, []);
-  useEffect(()=>{const original=document.title;document.title='Job Portal | HRwala.net';return()=>{document.title=original}},[]);
   useEffect(()=>{const controller=new AbortController();setLoading(true);loadPublishedJobs(controller.signal).then(rows=>{if(rows!==null){setJobs(rows);setLive(true)}}).catch(error=>{if(!controller.signal.aborted){setJobs([]);setLoadError(error instanceof Error?error.message:'Unable to load jobs.')}}).finally(()=>{if(!controller.signal.aborted)setLoading(false)});return()=>controller.abort()},[]);
   const filtered=useMemo(()=>filterJobs(jobs,search.query,search.city,browse),[jobs,search,browse]);
   const top=filtered.filter(j=>!j.featured),featured=filtered.filter(j=>j.featured);

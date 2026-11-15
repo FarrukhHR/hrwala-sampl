@@ -9,21 +9,61 @@ export default function JobPortalGate({children}:{children:ReactNode}){
   useEffect(()=>{
     const cleanupPwa=registerPortalPwa();
     const update=()=>setPath(window.location.pathname);
-    function onClick(e:MouseEvent){
-      if(e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
-      const target=e.target instanceof Element?e.target:null;
-      const anchor=target?.closest<HTMLAnchorElement>('a[href]');
-      if(anchor&&(anchor.target==='_blank'||anchor.hasAttribute('download')))return;
-      const button=target?.closest<HTMLElement>('button,[role="button"],[data-job-portal]');
-      const label=(button?.getAttribute('aria-label')||button?.textContent||'').trim();
-      let match=!!button&&(button.hasAttribute('data-job-portal')||/^(?:explore\s+)?job\s+portal$/i.test(label));
-      if(anchor){try{const url=new URL(anchor.href,window.location.href);match=url.origin===window.location.origin&&portalPath(url.pathname)}catch{}}
-      if(!match)return;
-      if(portalPath(window.location.pathname)){e.preventDefault();return;}
-      e.preventDefault();e.stopPropagation();
-      if(!portalPath(window.location.pathname))history.pushState({},'','/job-portal');
-      update();window.scrollTo({top:0,behavior:'auto'});
+    function onClick(e: MouseEvent) {
+    if (
+      e.defaultPrevented ||
+      e.button !== 0 ||
+      e.metaKey || e.ctrlKey || e.shiftKey || e.altKey
+    ) return;
+
+    const target = e.target instanceof Element ? e.target : null;
+    const anchor = target?.closest<HTMLAnchorElement>('a[href]');
+
+    if (
+      anchor &&
+      ((anchor.target && anchor.target !== '_self') || anchor.hasAttribute('download'))
+    ) return;
+
+    if (anchor) {
+      const url = new URL(anchor.href, window.location.href);
+      if (url.origin !== window.location.origin) return;
+
+      if (
+        portalPath(window.location.pathname) &&
+        url.pathname === '/' &&
+        !url.search &&
+        !url.hash
+      ) {
+        e.preventDefault();
+        history.pushState({}, '', '/');
+        update();
+        window.scrollTo({ top: 0, behavior: 'auto' });
+        return;
+      }
+
+      if (!portalPath(url.pathname)) return;
+    } else {
+      const button = target?.closest<HTMLElement>(
+        'button,[role="button"],[data-job-portal]'
+      );
+      const label = (button?.getAttribute('aria-label') || button?.textContent || '').trim();
+      const match = !!button && (
+        button.hasAttribute('data-job-portal') ||
+        /^(?:explore\s+)?job\s+portal$/i.test(label)
+      );
+
+      if (!match) return;
     }
+
+    e.preventDefault();
+
+    if (portalPath(window.location.pathname)) return;
+
+    e.stopPropagation();
+    history.pushState({}, '', '/job-portal');
+    update();
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }
     window.addEventListener('popstate',update);document.addEventListener('click',onClick,true);
     return()=>{cleanupPwa();window.removeEventListener('popstate',update);document.removeEventListener('click',onClick,true)};
   },[]);
