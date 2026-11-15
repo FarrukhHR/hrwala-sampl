@@ -38,6 +38,43 @@ function JobCard({job,onOpen}:{job:Job;onOpen:(job:Job)=>void}){
   </article>;
 }
 export default function JobPortalPage(){
+    const [heroIndex, setHeroIndex] = useState(0);
+  const [heroLeaving, setHeroLeaving] = useState(false);
+
+  useEffect(() => {
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let holdTimer: number;
+    let swapTimer: number;
+
+    const schedule = () => {
+      holdTimer = window.setTimeout(() => {
+        setHeroLeaving(true);
+
+        swapTimer = window.setTimeout(() => {
+          setHeroIndex(index => (index + 1) % 6);
+          setHeroLeaving(false);
+          schedule();
+        }, 350);
+      }, 2000);
+    };
+
+    const updateMotion = () => {
+      window.clearTimeout(holdTimer);
+      window.clearTimeout(swapTimer);
+      setHeroLeaving(false);
+
+      if (!motion.matches) schedule();
+    };
+
+    updateMotion();
+    motion.addEventListener('change', updateMotion);
+
+    return () => {
+      window.clearTimeout(holdTimer);
+      window.clearTimeout(swapTimer);
+      motion.removeEventListener('change', updateMotion);
+    };
+  }, []);
   const [jobs,setJobs]=useState(demoJobs),[live,setLive]=useState(false),[loadError,setLoadError]=useState(''),[loading,setLoading]=useState(false);
   const [query,setQuery]=useState(''),[city,setCity]=useState(''),[search,setSearch]=useState({query:'',city:''});
   const [tab,setTab]=useState('Role'),[browse,setBrowse]=useState<{tab:string;value:string}|null>(null),[searched,setSearched]=useState(false);
@@ -78,7 +115,31 @@ export default function JobPortalPage(){
   <SiteHeader />
 </div>
     <main>
-      <section className="jp-hero" aria-labelledby="jp-hero-title"><div className="jp-hero-copy"><h1 id="jp-hero-title">Discover Jobs<br/><span>That Open New Doors</span></h1><p className="jp-hero-subtitle">The Right Job Changes Everything.</p><p className="jp-hero-description">Connect with leading employers and employees across Pakistan.</p>
+      <section className="jp-hero" aria-labelledby="jp-hero-title"><div className="jp-hero-copy"><h1 id="jp-hero-title">
+  <span className="jp-heading-window">
+    <span
+      key={heroIndex}
+      className={`jp-slide-text${heroLeaving ? ' is-leaving' : ''}`}
+    >
+      {['Discover Jobs', 'Find a Job', 'Post a Job'][heroIndex % 3]}
+    </span>
+  </span>
+  <br />
+  <span>That Open New Doors</span>
+</h1>
+
+<p className="jp-hero-subtitle">
+  The Right{' '}
+  <span className="jp-word-window">
+    <span
+      key={heroIndex}
+      className={`jp-slide-text${heroLeaving ? ' is-leaving' : ''}`}
+    >
+      {heroIndex % 2 === 0 ? 'JOB' : 'MAN'}
+    </span>
+  </span>{' '}
+  Changes Everything.
+</p><p className="jp-hero-description">Connect with leading employers and employees across Pakistan.</p>
         <form className="jp-search" onSubmit={runSearch}><input ref={queryInput} type="search" value={query} onChange={e=>setQuery(e.target.value)} placeholder="Job title, skill or company" aria-label="Job title, skill or company"/><CitySelect value={city} onChange={setCity}/><button className="jp-primary" type="submit">Search jobs</button></form>
         <p className="jp-popular">Popular: {['IT & Software','Banking','Sales','Remote'].map((value,i)=><span key={value}>{i>0&&<span aria-hidden="true"> · </span>}<button type="button" onClick={()=>value==='Remote'?(setCity('Remote'),setQuery(''),setSearch({query:'',city:'Remote'}),setBrowse(null),setSearched(true),scrollResults()):quickSearch(value==='IT & Software'?'Information Technology':value)}>{value}</button></span>)}</p>
         <div className="jp-hero-actions"><button type="button" className="jp-primary" onClick={()=>{queryInput.current?.focus();queryInput.current?.scrollIntoView({block:'center',behavior:'smooth'})}}>Find a Job</button><button type="button" className="jp-primary" onClick={()=>setModal({kind:'contact',subject:'Post a Job — Employer inquiry'})}>Post a Job</button><button type="button" className="jp-primary" onClick={()=>{setQuery('Freelance');setSearch({query:'Freelance',city:''});setCity('');setBrowse(null);setSearched(true);scrollResults()}}>Freelancers</button><button type="button" className="jp-app-button" onClick={installApp} aria-disabled={!mobile} title={mobile?'Install HRwala on your phone':'Available on mobile'}>Mobile App</button></div>

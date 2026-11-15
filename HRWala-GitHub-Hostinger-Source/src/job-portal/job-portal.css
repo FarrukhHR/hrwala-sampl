@@ -195,3 +195,82 @@
     height: 150px !important;
   }
 }
+
+/* Hero text animation */
+.jp-hero h1 .jp-heading-window {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  color: var(--jp-blue);
+}
+
+.jp-word-window {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  color: var(--jp-gold);
+  font-weight: 800;
+}
+
+.jp-slide-text {
+  display: block;
+  animation: jp-slide-in 350ms ease both;
+}
+
+.jp-slide-text.is-leaving {
+  animation: jp-slide-out 350ms ease both;
+}
+
+@keyframes jp-slide-in {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes jp-slide-out {
+  from { transform: translateY(0); }
+  to { transform: translateY(100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jp-slide-text,
+  .jp-slide-text.is-leaving {
+    animation: none;
+  }
+}
+
+/* City search directly in the search bar */
+.jp-city {
+  align-items: center;
+}
+
+.jp-city-icon {
+  flex: none;
+  width: 18px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.jp-page .jp-city-input {
+  width: 100%;
+  min-width: 0;
+  padding: 8px;
+  border: 0;
+  background: transparent;
+  color: #38465a;
+  font-size: 15px;
+}
+
+.jp-city-input::placeholder {
+  color: var(--jp-gray);
+  opacity: 1;
+}
+
+.jp-page .jp-city-arrow {
+  flex: none;
+  padding: 8px;
+  color: var(--jp-gray);
+}
+
+.jp-city-listbox.jp-city-scroll {
+  padding-top: 0;
+}
