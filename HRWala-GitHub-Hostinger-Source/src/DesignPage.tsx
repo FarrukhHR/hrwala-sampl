@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { supabase } from "./supabase";
+import SiteHeader from "./SiteHeader";
 
 const assetPathPrefix = "/assets";
 const videoProject5 = `${assetPathPrefix}/Video Project 5.mp4`;
@@ -59,8 +60,6 @@ const featuredPartnerLogos = [
 ] as const;
 const imgFormalPortraitOnGray1 = `${assetPathPrefix}/58341.png`;
 const imgStraightOnPortraitInCharcoalSuit = `${assetPathPrefix}/Straight-on portrait in charcoal suit.png`;
-const imgHRwalaFullBlueGold1 = `${assetPathPrefix}/b7c26.png`;
-const imgMaroonBlazerPortraitOnPaleBlue1 = `${assetPathPrefix}/5bdd7.png`;
 const imgCompleteHrCertificateWithBlueGoldBorders1 = `${assetPathPrefix}/362ad.png`;
 const imgCertifiedHrBusinessPartnerCertificate2 = `${assetPathPrefix}/02481.png`;
 const imgReadyToServeHrCredentialBadge11 = `${assetPathPrefix}/7cf1c.png`;
@@ -2240,23 +2239,7 @@ useEffect(() => {
         platform. We empower professionals to advance their careers and support organizations in
         building stronger, more capable teams.
       </p>
-      <div className="absolute contents left-[-0.94px] top-[-1.94px]" data-node-id="413:617">
-        <div
-          className="absolute bg-white border-0 border-black border-solid h-[87px] left-0 top-[-1px] w-[1440px]"
-          data-node-id="3:7"
-        />
-        <a href="#home" className="[word-break:break-word] absolute font-['Poppins:Medium'] leading-[normal] left-[575px] not-italic text-[#232323] text-[15.059px] top-[43.29px] whitespace-nowrap design-header-link" data-node-id="5:5">
-          Discover
-        </a>
-        <a href="https://hrwala.net/job-portal" className="[word-break:break-word] absolute font-['Poppins:Medium'] leading-[normal] left-[684.18px] not-italic text-[#232323] text-[15.059px] top-[43.29px] whitespace-nowrap design-header-link" data-node-id="5:17">
-          Job Portal
-        </a>
-        <a href="https://hrwala.net/login" className="[word-break:break-word] absolute font-['Poppins:Medium'] leading-[0] left-[793.18px] not-italic text-[#505050] text-[0px] top-[42.35px] whitespace-nowrap design-header-link" data-node-id="5:31">
-          <span className="leading-[normal] text-[#232323] text-[15.059px]">My</span>
-          <span className="leading-[normal] text-[15.059px]">{` `}</span>
-          <span className="leading-[normal] text-[#232323] text-[15.059px]">Portal</span>
-        </a>
-      </div>
+      <SiteHeader />
       <a
         href="#home"
         aria-label="HRWala home"
@@ -4565,30 +4548,7 @@ useEffect(() => {
           src={imgFormalPortraitOnGray1}
         />
       </div>
-      <a
-        href="#home"
-        aria-label="HRWala home"
-        className="absolute h-[56px] left-[72.06px] top-[20.06px] w-[190px] design-header-logo"
-        data-node-id="469:14184"
-        data-name="HRwala-full-blue-gold 1"
-      >
-        <img
-          alt=""
-          className="absolute inset-0 max-w-none object-cover pointer-events-none size-full"
-          src={imgHRwalaFullBlueGold1}
-        />
-      </a>
-      <div
-        className="absolute left-[1292.56px] size-[60px] top-[28.56px]"
-        data-node-id="474:14188"
-        data-name="Maroon blazer portrait on pale blue 1"
-      >
-        <img
-          alt=""
-          className="absolute inset-0 max-w-none object-cover pointer-events-none size-full"
-          src={imgMaroonBlazerPortraitOnPaleBlue1}
-        />
-      </div>
+      
       <div className="absolute contents left-[72.06px] top-[2052.06px]" data-node-id="524:715">
         <p
           className="[word-break:break-word] absolute font-['Poppins:ExtraBold'] h-[50.824px] leading-[0] left-[82.71px] not-italic text-[0px] text-black top-[calc(50%-1612px)] tracking-[-2.2588px] w-[302.118px]"

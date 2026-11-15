@@ -6,6 +6,7 @@ import { loadPublishedJobs, sendInquiry, subscribe } from './backend';
 import { pakistanCities } from './pakistanCities';
 import { useInstallApp } from './pwa';
 import './job-portal.css';
+import SiteHeader from '../SiteHeader';
 const base='/hrwala-job-portal/assets/';
 const asset=(name:string)=>base+name;
 const areaCities=['Lahore','Karachi','Islamabad','Rawalpindi','Faisalabad','Multan','Gujranwala','Peshawar','Quetta','Hyderabad'];
@@ -40,10 +41,19 @@ export default function JobPortalPage(){
   const [jobs,setJobs]=useState(demoJobs),[live,setLive]=useState(false),[loadError,setLoadError]=useState(''),[loading,setLoading]=useState(false);
   const [query,setQuery]=useState(''),[city,setCity]=useState(''),[search,setSearch]=useState({query:'',city:''});
   const [tab,setTab]=useState('Role'),[browse,setBrowse]=useState<{tab:string;value:string}|null>(null),[searched,setSearched]=useState(false);
-  const [menu,setMenu]=useState(false),[modal,setModal]=useState<ModalState>(null);
+  const [modal,setModal]=useState<ModalState>(null);
   const [email,setEmail]=useState(''),[newsletterBusy,setNewsletterBusy]=useState(false),[newsletterStatus,setNewsletterStatus]=useState('');
   const results=useRef<HTMLElement>(null),queryInput=useRef<HTMLInputElement>(null);
   const {mobile,install}=useInstallApp();
+  const [pageWidth, setPageWidth] = useState(
+    () => document.documentElement.clientWidth
+  );
+
+  useEffect(() => {
+    const updateWidth = () => setPageWidth(document.documentElement.clientWidth);
+    window.addEventListener('resize', updateWidth);
+    return () => window.removeEventListener('resize', updateWidth);
+  }, []);
   useEffect(()=>{const original=document.title;document.title='Job Portal | HRwala.net';return()=>{document.title=original}},[]);
   useEffect(()=>{const controller=new AbortController();setLoading(true);loadPublishedJobs(controller.signal).then(rows=>{if(rows!==null){setJobs(rows);setLive(true)}}).catch(error=>{if(!controller.signal.aborted){setJobs([]);setLoadError(error instanceof Error?error.message:'Unable to load jobs.')}}).finally(()=>{if(!controller.signal.aborted)setLoading(false)});return()=>controller.abort()},[]);
   const filtered=useMemo(()=>filterJobs(jobs,search.query,search.city,browse),[jobs,search,browse]);
@@ -57,12 +67,17 @@ export default function JobPortalPage(){
   async function newsletter(e:FormEvent){e.preventDefault();if(newsletterBusy)return;setNewsletterBusy(true);setNewsletterStatus('');try{await subscribe(email);setNewsletterStatus('Thank you for subscribing!');setEmail('')}catch(error){setNewsletterStatus(error instanceof Error?error.message:'Unable to subscribe. Please try again.')}finally{setNewsletterBusy(false)}}
   async function installApp(){const message=await install();if(message)setModal({kind:'info',title:'Install HRwala',message})}
   function showAll(){reset();scrollResults()}
-  return <div className="jp-page">
+  return <div
+    className="jp-page"
+    style={{ zoom: pageWidth >= 768 ? pageWidth / 1440 : undefined }}
+  >
     <a className="jp-skip" href="#jp-job-results">Skip to jobs</a>
-    <header className="jp-header"><a href="/" aria-label="HRwala Discover"><img className="jp-logo" src={asset('imgHRwalaFullBlueGold1.png')} alt="HRwala.net" width="169" height="50"/></a>
-      <nav aria-label="Main navigation" className={menu?'jp-nav open':'jp-nav'}><a href="/">Discover</a><a href="/job-portal" aria-current="page" onClick={()=>setMenu(false)}>Job Portal</a><a href="/login">My Portal</a></nav>
-      <div className="jp-header-actions"><a href="/login" aria-label="My account"><img className="jp-avatar" src={asset('imgMaroonBlazerPortraitOnPaleBlue1.png')} alt="" width="71" height="71"/></a><button type="button" className="jp-menu-toggle" aria-label={menu?'Close navigation':'Open navigation'} aria-expanded={menu} onClick={()=>setMenu(!menu)}>{menu?'×':'☰'}</button></div>
-    </header>
+    <div
+  className="design-page jp-shared-header"
+  style={{ zoom: pageWidth < 768 ? pageWidth / 1440 : undefined }}
+>
+  <SiteHeader />
+</div>
     <main>
       <section className="jp-hero" aria-labelledby="jp-hero-title"><div className="jp-hero-copy"><h1 id="jp-hero-title">Discover Jobs<br/><span>That Open New Doors</span></h1><p className="jp-hero-subtitle">The Right Job Changes Everything.</p><p className="jp-hero-description">Connect with leading employers and employees across Pakistan.</p>
         <form className="jp-search" onSubmit={runSearch}><input ref={queryInput} type="search" value={query} onChange={e=>setQuery(e.target.value)} placeholder="Job title, skill or company" aria-label="Job title, skill or company"/><CitySelect value={city} onChange={setCity}/><button className="jp-primary" type="submit">Search jobs</button></form>
