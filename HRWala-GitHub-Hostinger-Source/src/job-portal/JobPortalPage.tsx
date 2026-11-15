@@ -1,0 +1,89 @@
+import { useEffect, useMemo, useRef, useState, type FormEvent, type ReactNode } from 'react';
+import { createPortal } from 'react-dom';
+import CitySelect from './CitySelect';
+import { demoJobs, filterJobs, type Job } from './jobs';
+import { loadPublishedJobs, sendInquiry, subscribe } from './backend';
+import { pakistanCities } from './pakistanCities';
+import { useInstallApp } from './pwa';
+import './job-portal.css';
+const base='/hrwala-job-portal/assets/';
+const asset=(name:string)=>base+name;
+const areaCities=['Lahore','Karachi','Islamabad','Rawalpindi','Faisalabad','Multan','Gujranwala','Peshawar','Quetta','Hyderabad'];
+const sectors=['Business Development','Information Technology','Manufacturing','Recruitment','Services','Education','Banking','Real Estate','Healthcare','Insurance','N.G.O.','Retail','Accounting','Travel','Call Center','Construction','BPO','Consultants','Electronics'];
+const employerFiles=[3,4,5,6,7,8,9,10,11];
+const employerNames=['Hoverizon Tech Solutions','Best Western','PakNova Enterprise','Premium employer','Destinations Connect','Escape','Four Points by Sheraton','Arch Villas','SB'];
+type ModalState={kind:'job';job:Job}|{kind:'contact';subject:string}|{kind:'info';title:string;message:string}|null;
+function Modal({title,onClose,children}:{title:string;onClose:()=>void;children:ReactNode}){
+  const ref=useRef<HTMLDialogElement>(null);
+  useEffect(()=>{const before=document.activeElement as HTMLElement|null;ref.current?.showModal();const old=document.body.style.overflow;document.body.style.overflow='hidden';return()=>{document.body.style.overflow=old;before?.focus()}},[]);
+  return createPortal(<dialog ref={ref} className="jp-modal" aria-labelledby="jp-modal-title" onCancel={e=>{e.preventDefault();onClose()}} onClick={e=>{if(e.target===e.currentTarget)onClose()}}><button type="button" className="jp-close" aria-label="Close dialog" onClick={onClose}>×</button><h2 id="jp-modal-title">{title}</h2>{children}</dialog>,document.body);
+}
+function InquiryForm({subject}:{subject:string}){
+  const [busy,setBusy]=useState(false),[status,setStatus]=useState(''),[success,setSuccess]=useState(false);
+  async function submit(e:FormEvent<HTMLFormElement>){e.preventDefault();if(busy)return;const form=e.currentTarget,data=new FormData(form);setBusy(true);setStatus('');try{await sendInquiry({name:String(data.get('name')||''),email:String(data.get('email')||''),phone:String(data.get('phone')||''),message:`${subject}\n\n${String(data.get('message')||'')}`});setSuccess(true);setStatus('Thank you. Your inquiry has been submitted to HRwala.');form.reset()}catch(error){setStatus(error instanceof Error?error.message:'Unable to submit your inquiry. Please try again.')}finally{setBusy(false)}}
+  return <><p className="jp-form-intro">Share your details with the HRwala team.</p><form className="jp-inquiry" onSubmit={submit}>
+    <label>Full name<input name="name" autoComplete="name" required maxLength={120}/></label>
+    <label>Email address<input name="email" type="email" autoComplete="email" required maxLength={254}/></label>
+    <label>Phone number<input name="phone" type="tel" autoComplete="tel" maxLength={40}/></label>
+    <label>Message<textarea name="message" required maxLength={5000} rows={4}/></label>
+    <button className="jp-primary" disabled={busy||success}>{busy?'Submitting…':success?'Submitted':'Send inquiry'}</button><p role="status" className="jp-status">{status}</p>
+  </form></>;
+}
+function JobCard({job,onOpen}:{job:Job;onOpen:(job:Job)=>void}){
+  return <article className={`jp-job-card ${job.featured?'jp-featured-card':''}`}>
+    <div className="jp-card-lines" aria-hidden="true"><img className="jp-card-line top-left" src={asset(job.featured?'imgGroup118.svg':'imgLine80.svg')} alt=""/><img className="jp-card-line top-right" src={asset(job.featured?'imgGroup115.svg':'imgLine78.svg')} alt=""/><img className="jp-card-line bottom-left" src={asset(job.featured?'imgGroup117.svg':'imgLine79.svg')} alt=""/><img className="jp-card-line bottom-right" src={asset(job.featured?'imgGroup116.svg':'imgLine77.svg')} alt=""/></div>
+    {job.featured&&<div className="jp-ribbon" aria-label="Featured job"><img src={asset('imgGroup129.svg')} alt=""/><span>Featured</span></div>}
+    <h3><button type="button" onClick={()=>onOpen(job)}>{job.title}</button></h3><p>{job.company}</p><div className="jp-card-bottom"><span>{job.remote?'Remote':job.city}</span><button type="button" onClick={()=>onOpen(job)}>View Job</button></div>
+  </article>;
+}
+export default function JobPortalPage(){
+  const [jobs,setJobs]=useState(demoJobs),[live,setLive]=useState(false),[loadError,setLoadError]=useState(''),[loading,setLoading]=useState(false);
+  const [query,setQuery]=useState(''),[city,setCity]=useState(''),[search,setSearch]=useState({query:'',city:''});
+  const [tab,setTab]=useState('Role'),[browse,setBrowse]=useState<{tab:string;value:string}|null>(null),[searched,setSearched]=useState(false);
+  const [menu,setMenu]=useState(false),[modal,setModal]=useState<ModalState>(null);
+  const [email,setEmail]=useState(''),[newsletterBusy,setNewsletterBusy]=useState(false),[newsletterStatus,setNewsletterStatus]=useState('');
+  const results=useRef<HTMLElement>(null),queryInput=useRef<HTMLInputElement>(null);
+  const {mobile,install}=useInstallApp();
+  useEffect(()=>{const original=document.title;document.title='Job Portal | HRwala.net';return()=>{document.title=original}},[]);
+  useEffect(()=>{const controller=new AbortController();setLoading(true);loadPublishedJobs(controller.signal).then(rows=>{if(rows!==null){setJobs(rows);setLive(true)}}).catch(error=>{if(!controller.signal.aborted){setJobs([]);setLoadError(error instanceof Error?error.message:'Unable to load jobs.')}}).finally(()=>{if(!controller.signal.aborted)setLoading(false)});return()=>controller.abort()},[]);
+  const filtered=useMemo(()=>filterJobs(jobs,search.query,search.city,browse),[jobs,search,browse]);
+  const top=filtered.filter(j=>!j.featured),featured=filtered.filter(j=>j.featured);
+  const browseItems=useMemo(()=>tab==='City'?pakistanCities:tab==='Company'?[...new Set(jobs.map(j=>j.company))]:tab==='Role'||tab==='Sector'?sectors:tab==='Job Type'?['Full-time','Part-time','Contract','Freelance','Internship','Remote']:['Fresh Graduate','Entry Level','Mid Level','Senior Level','Management'],[tab,jobs]);
+  function scrollResults(){requestAnimationFrame(()=>results.current?.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'}))}
+  function runSearch(e?:FormEvent){e?.preventDefault();setSearch({query,city});setBrowse(null);setSearched(true);scrollResults()}
+  function quickSearch(value:string){setQuery(value);setSearch({query:value,city:''});setCity('');setBrowse(null);setSearched(true);scrollResults()}
+  function browseSearch(value:string){setQuery('');setCity('');setSearch({query:'',city:''});if(value==='Remote'){setSearch({query:'',city:'Remote'}) ;setBrowse(null)}else setBrowse({tab,value});setSearched(true);scrollResults()}
+  function reset(){setQuery('');setCity('');setSearch({query:'',city:''});setBrowse(null);setSearched(false)}
+  async function newsletter(e:FormEvent){e.preventDefault();if(newsletterBusy)return;setNewsletterBusy(true);setNewsletterStatus('');try{await subscribe(email);setNewsletterStatus('Thank you for subscribing!');setEmail('')}catch(error){setNewsletterStatus(error instanceof Error?error.message:'Unable to subscribe. Please try again.')}finally{setNewsletterBusy(false)}}
+  async function installApp(){const message=await install();if(message)setModal({kind:'info',title:'Install HRwala',message})}
+  function showAll(){reset();scrollResults()}
+  return <div className="jp-page">
+    <a className="jp-skip" href="#jp-job-results">Skip to jobs</a>
+    <header className="jp-header"><a href="/" aria-label="HRwala Discover"><img className="jp-logo" src={asset('imgHRwalaFullBlueGold1.png')} alt="HRwala.net" width="169" height="50"/></a>
+      <nav aria-label="Main navigation" className={menu?'jp-nav open':'jp-nav'}><a href="/">Discover</a><a href="/job-portal" aria-current="page" onClick={()=>setMenu(false)}>Job Portal</a><a href="/login">My Portal</a></nav>
+      <div className="jp-header-actions"><a href="/login" aria-label="My account"><img className="jp-avatar" src={asset('imgMaroonBlazerPortraitOnPaleBlue1.png')} alt="" width="71" height="71"/></a><button type="button" className="jp-menu-toggle" aria-label={menu?'Close navigation':'Open navigation'} aria-expanded={menu} onClick={()=>setMenu(!menu)}>{menu?'×':'☰'}</button></div>
+    </header>
+    <main>
+      <section className="jp-hero" aria-labelledby="jp-hero-title"><div className="jp-hero-copy"><h1 id="jp-hero-title">Discover Jobs<br/><span>That Open New Doors</span></h1><p className="jp-hero-subtitle">The Right Job Changes Everything.</p><p className="jp-hero-description">Connect with leading employers and employees across Pakistan.</p>
+        <form className="jp-search" onSubmit={runSearch}><input ref={queryInput} type="search" value={query} onChange={e=>setQuery(e.target.value)} placeholder="Job title, skill or company" aria-label="Job title, skill or company"/><CitySelect value={city} onChange={setCity}/><button className="jp-primary" type="submit">Search jobs</button></form>
+        <p className="jp-popular">Popular: {['IT & Software','Banking','Sales','Remote'].map((value,i)=><span key={value}>{i>0&&<span aria-hidden="true"> · </span>}<button type="button" onClick={()=>value==='Remote'?(setCity('Remote'),setQuery(''),setSearch({query:'',city:'Remote'}),setBrowse(null),setSearched(true),scrollResults()):quickSearch(value==='IT & Software'?'Information Technology':value)}>{value}</button></span>)}</p>
+        <div className="jp-hero-actions"><button type="button" className="jp-primary" onClick={()=>{queryInput.current?.focus();queryInput.current?.scrollIntoView({block:'center',behavior:'smooth'})}}>Find a Job</button><button type="button" className="jp-primary" onClick={()=>setModal({kind:'contact',subject:'Post a Job — Employer inquiry'})}>Post a Job</button><button type="button" className="jp-primary" onClick={()=>{setQuery('Freelance');setSearch({query:'Freelance',city:''});setCity('');setBrowse(null);setSearched(true);scrollResults()}}>Freelancers</button><button type="button" className="jp-app-button" onClick={installApp} aria-disabled={!mobile} title={mobile?'Install HRwala on your phone':'Available on mobile'}>Mobile App</button></div>
+      </div><div className="jp-hero-portrait"><img src={asset('imgDiscoverAdvisorPortrait.png')} alt="HRwala career advisor holding a laptop" width="559" height="540" fetchPriority="high"/></div></section>
+      <section className="jp-browse" aria-labelledby="jp-browse-title"><h2 id="jp-browse-title"><span>Browse</span> Jobs</h2><div className="jp-browse-layout"><div className="jp-tabs" role="tablist" aria-label="Browse jobs by">{['Role','City','Company','Sector','Job Type','Experience'].map(t=><button key={t} id={`jp-tab-${t.replace(' ','-')}`} type="button" role="tab" aria-selected={tab===t} aria-controls="jp-browse-panel" onClick={()=>setTab(t)} onKeyDown={e=>{if(e.key==='ArrowDown'||e.key==='ArrowRight'||e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();const buttons=Array.from(e.currentTarget.parentElement!.querySelectorAll('button'));const step=e.key==='ArrowDown'||e.key==='ArrowRight'?1:-1;const next=buttons[(buttons.indexOf(e.currentTarget)+step+buttons.length)%buttons.length];next.focus();next.click()}}}>{t}</button>)}</div>
+        <div className="jp-browse-panel" id="jp-browse-panel" role="tabpanel" aria-labelledby={`jp-tab-${tab.replace(' ','-')}`}><h3>Select {tab}</h3><div className="jp-browse-options">{browseItems.map(item=><button type="button" key={item} onClick={()=>browseSearch(item)}>{item}</button>)}</div></div>
+        <aside className="jp-employers"><h3>Top Employers</h3><div className="jp-employer-grid"><div className="jp-employer-dividers" aria-hidden="true"><img className="jp-employer-v" src={asset('imgLine73.svg')} alt=""/><img className="jp-employer-v second" src={asset('imgLine73.svg')} alt=""/><img className="jp-employer-h" src={asset('imgLine75.svg')} alt=""/><img className="jp-employer-h second" src={asset('imgLine75.svg')} alt=""/></div>{employerFiles.map((n,i)=><button type="button" key={n} aria-label={`Browse ${employerNames[i]} jobs`} onClick={()=>{setQuery(employerNames[i]);setSearch({query:employerNames[i],city:''});setCity('');setBrowse(null);setSearched(true);scrollResults()}}><img src={asset(`imgArchVillasGoldLogoOnCrimsonBackground${n}.png`)} alt={employerNames[i]} width="97" height="55" loading="lazy"/></button>)}</div></aside>
+      </div></section>
+      <section className="jp-results" id="jp-job-results" ref={results} aria-label="Job opportunities" tabIndex={-1}>
+        <div className="jp-result-status" role="status">{loading?'Loading jobs…':loadError|| (searched?`${filtered.length} matching ${filtered.length===1?'job':'jobs'}${search.city?` · ${search.city}`:''}${browse?` · ${browse.value}`:''}`:'')}{searched&&<button type="button" onClick={reset}>Clear filters</button>}{!live&&!loading&&!loadError&&<span className="jp-sample-label">Example opportunities</span>}</div>
+        {filtered.length===0&&!loading&&<div className="jp-empty"><h2>{loadError?'Jobs unavailable':'No matching jobs'}</h2><p>{loadError?'Please try again later.':'Try another title, city or category. The current design listings have limited locations.'}</p><button type="button" className="jp-primary" onClick={reset}>Show all jobs</button></div>}
+        <div className="jp-job-panels">{[{title:'Top',jobs:top},{title:'Featured',jobs:featured}].map(group=><section className="jp-job-panel" key={group.title} aria-label={`${group.title} jobs`}><h2><span>{group.title}</span> Jobs</h2><div className="jp-job-grid">{group.jobs.map(job=><JobCard key={job.id} job={job} onOpen={j=>setModal({kind:'job',job:j})}/>)}</div>{!group.jobs.length&&filtered.length>0&&<p className="jp-panel-empty">No {group.title.toLowerCase()} jobs match these filters.</p>}<button type="button" className="jp-view-all" onClick={showAll}>View all →</button></section>)}</div>
+      </section>
+    </main>
+    <footer className="jp-footer"><div className="jp-footer-grid"><div className="jp-footer-brand"><a href="/" aria-label="HRwala Discover"><img src={asset('imgHrWalaFullWhiteGold2.png')} alt="HRwala.net" width="153" height="44" loading="lazy"/></a><p>HRWala.net brings together talent, opportunities, and innovative HR solutions on one platform. We empower professionals to advance their careers and support organizations in building stronger, more capable teams.</p></div>
+      <div className="jp-footer-links"><h3>Jobs by Area</h3>{areaCities.map(c=><button type="button" key={c} onClick={()=>{setCity(c);setQuery('');setSearch({query:'',city:c});setBrowse(null);setSearched(true);scrollResults()}}>Jobs in {c}</button>)}</div>
+      <div className="jp-footer-links"><h3>Industry Jobs</h3>{sectors.slice(0,14).map(s=><button type="button" key={s} onClick={()=>quickSearch(s)}>{s==='Information Technology'?'IT':s} Jobs</button>)}</div>
+      <div className="jp-newsletter"><h2>Subscribe to our Newsletter</h2><form onSubmit={newsletter}><input type="email" name="email" aria-label="Email for newsletter" placeholder="Enter your email" autoComplete="email" value={email} onChange={e=>setEmail(e.target.value)} maxLength={254} required/><button disabled={newsletterBusy}>{newsletterBusy?'Sending…':'Subscribe'}</button></form><p className="jp-newsletter-status" role="status">{newsletterStatus}</p><div className="jp-socials">{[['imgVector.svg','LinkedIn'],['imgVector4.svg','Facebook'],['imgVector1.svg','Instagram'],['imgVector2.svg','YouTube']].map(([file,name])=><button type="button" key={name} aria-label={`${name} — contact HRwala`} onClick={()=>setModal({kind:'contact',subject:`${name} — Social media inquiry`})}><img src={asset(file)} alt={name} width={name==='YouTube'?36:27} height="27" loading="lazy"/></button>)}</div></div>
+    </div><p className="jp-copyright">© {new Date().getFullYear()} HRWala.net. All rights reserved.</p></footer>
+    {modal&&<Modal title={modal.kind==='job'?modal.job.title:modal.kind==='contact'?modal.subject:modal.title} onClose={()=>setModal(null)}>{modal.kind==='job'?<><p className="jp-modal-company">{modal.job.company}</p><p>{modal.job.remote?'Remote':modal.job.city} · {modal.job.type} · {modal.job.experience}</p><p className="jp-job-description">{modal.job.description||`Explore this ${modal.job.title} opportunity with ${modal.job.company}. Contact HRwala for further information about this role.`}</p>{!live&&<p className="jp-demo-note">Example listing from the page design. Vacancy availability has not been verified.</p>}{modal.job.apply_url&&/^https:\/\//i.test(modal.job.apply_url)?<a className="jp-primary jp-apply-link" href={modal.job.apply_url} target="_blank" rel="noopener noreferrer">Apply at source ↗</a>:<button type="button" className="jp-primary" onClick={()=>setModal({kind:'contact',subject:`Job inquiry: ${modal.job.title} — ${modal.job.company}`})}>Enquire about this job</button>}</>:modal.kind==='contact'?<InquiryForm subject={modal.subject}/>:<p>{modal.message}</p>}</Modal>}
+  </div>;
+}

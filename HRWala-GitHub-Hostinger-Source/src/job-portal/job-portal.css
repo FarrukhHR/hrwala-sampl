@@ -1,0 +1,162 @@
+@font-face{font-family:HRwalaPoppins;src:url('/hrwala-job-portal/assets/Poppins-400.woff2');font-weight:400;font-display:swap}
+@font-face{font-family:HRwalaPoppins;src:url('/hrwala-job-portal/assets/Poppins-500.ttf');font-weight:500;font-display:swap}
+@font-face{font-family:HRwalaPoppins;src:url('/hrwala-job-portal/assets/Poppins-600.ttf');font-weight:600;font-display:swap}
+@font-face{font-family:HRwalaPoppins;src:url('/hrwala-job-portal/assets/Poppins-700.ttf');font-weight:700;font-display:swap}
+@font-face{font-family:HRwalaPoppins;src:url('/hrwala-job-portal/assets/Poppins-800.woff2');font-weight:800;font-display:swap}
+.jp-page,.jp-modal{--jp-blue:#0144ab;--jp-gold:#f6ac04;--jp-pale:#e6f0ff;--jp-gray:#757575;font-family:HRwalaPoppins,Poppins,sans-serif;font-size:15px;font-weight:400;line-height:1.45;color:var(--jp-blue);text-align:left}
+.jp-page{width:100%;max-width:1440px;margin:0 auto;background:#fff;isolation:isolate}
+.jp-page *,.jp-modal *,.jp-modal{box-sizing:border-box}
+.jp-page h1,.jp-page h2,.jp-page h3,.jp-page p,.jp-modal p{margin:0}
+.jp-page button,.jp-page input,.jp-modal button,.jp-modal input,.jp-modal textarea{font:inherit;letter-spacing:inherit}
+.jp-page button,.jp-modal button{cursor:pointer;border:0;background:none;color:inherit;padding:0;text-transform:none}
+.jp-page a{color:inherit;text-decoration:none}
+.jp-page button:disabled,.jp-modal button:disabled{cursor:wait;opacity:.65}
+.jp-page button:focus-visible,.jp-page a:focus-visible,.jp-page input:focus-visible,.jp-modal :focus-visible{outline:3px solid var(--jp-gold);outline-offset:4px}
+.jp-page input,.jp-modal input,.jp-modal textarea{min-width:0;color:var(--jp-blue)}
+.jp-page img{max-width:100%;display:block}
+.jp-page .jp-primary,.jp-modal .jp-primary{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:8px;padding:12px 20px;background:var(--jp-blue);color:#fff;font-size:14px;font-weight:700;min-height:46px;text-decoration:none;transition:background .15s}
+.jp-page .jp-primary:hover,.jp-modal .jp-primary:hover{background:#003989}
+.jp-skip{position:fixed;left:16px;top:-100px;z-index:100;padding:12px;background:#fff;border:2px solid var(--jp-blue);border-radius:8px}
+.jp-skip:focus{top:12px}
+.jp-header{min-height:96px;display:flex;align-items:center;justify-content:space-between;padding:16px 81px 0 73px;gap:24px;position:relative}
+.jp-logo{width:169px;height:50px;object-fit:contain}
+.jp-nav{display:flex;gap:34px;align-items:center;color:#232323;font-size:15px;font-weight:500}
+.jp-nav a{padding:14px 0;white-space:nowrap}
+.jp-nav a:hover{text-decoration:underline;text-underline-offset:7px}
+.jp-header-actions{display:flex;align-items:center;gap:12px}
+.jp-avatar{width:71px;height:71px;object-fit:cover;border-radius:50%}
+.jp-menu-toggle{display:none}
+.jp-hero{margin:16px 28px 0;min-height:586px;border-radius:38px;background:var(--jp-pale);display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);position:relative;padding:96px 30px 82px 46px;gap:20px}
+.jp-hero-copy{position:relative;z-index:3;min-width:0}
+.jp-hero h1{font-size:53px;font-weight:800;letter-spacing:-1.59px;line-height:1.25;white-space:nowrap;margin:0 0 30px}
+.jp-hero h1 span{color:var(--jp-gold)}
+.jp-hero-subtitle{font-size:19px;font-weight:600}
+.jp-hero-description{color:var(--jp-gray);font-size:15px;margin:3px 0 17px!important;white-space:nowrap}
+.jp-search{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1.1fr) 150px;background:#fff;border-radius:12px;padding:10px;min-height:66px;width:710px;max-width:calc(100vw - 150px);position:relative;z-index:10;gap:10px}
+.jp-search>input{border:0;background:transparent;padding:0 12px;font-size:15px;width:100%;border-radius:6px;color:#38465a;outline-offset:0}
+.jp-search>input::placeholder{color:var(--jp-gray);opacity:1}
+.jp-search>.jp-primary{font-size:14px;font-weight:600}
+.jp-city{position:relative;display:flex;min-width:0;border-left:1px solid #ddd;padding-left:8px}
+.jp-page .jp-city-trigger{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;padding:4px;color:var(--jp-gray);font-size:15px;text-align:left}
+.jp-city-trigger>span:first-of-type{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.jp-city-trigger img{flex:none;width:18px;height:22px;object-fit:contain}
+.jp-city-menu{position:absolute;left:0;top:calc(100% + 18px);width:280px;max-width:calc(100vw - 40px);background:white;border:1px solid #c4d9f9;box-shadow:0 12px 36px #0144ab22;border-radius:14px;padding:10px;z-index:30;color:var(--jp-blue)}
+.jp-city-menu>input{border:1px solid #c4d9f9;border-radius:8px;background:#f7faff;padding:10px;width:100%;font-size:14px;min-height:44px}
+.jp-city-scroll{height:220px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#7da8e6 #e6f0ff;padding-top:5px}
+.jp-city-listbox [role=option]{display:flex;align-items:center;justify-content:space-between;font-size:14px;min-height:38px;padding:8px 10px;cursor:pointer;border-radius:7px;color:var(--jp-blue)}
+.jp-city-listbox [role=option]:hover,.jp-city-listbox [role=option].active{background:var(--jp-pale)}
+.jp-city-listbox [role=option][aria-selected=true]{font-weight:700}
+.jp-city-listbox .jp-remote{border-top:1px solid #c4d9f9;background:#edf4ff;border-radius:0 0 8px 8px;margin-top:5px;font-weight:700;min-height:44px;flex:none}
+.jp-city-empty{padding:12px;color:var(--jp-gray);font-size:13px}
+.jp-popular{font-size:13px;font-weight:500;margin:13px 0 22px!important;white-space:nowrap}
+.jp-popular button:hover{text-decoration:underline}
+.jp-hero-actions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px;width:702px;max-width:calc(100vw - 150px)}
+.jp-hero-actions .jp-primary{white-space:nowrap;padding:12px 8px}
+.jp-page .jp-app-button{background:#fff;color:var(--jp-blue);font-size:14px;font-weight:700;border-radius:8px;min-height:46px;padding:12px 8px}
+.jp-app-button[aria-disabled=true]{cursor:default}
+.jp-hero-portrait{position:relative;min-width:0;align-self:stretch;pointer-events:none}
+.jp-hero-portrait img{position:absolute;width:559px;max-width:none;height:540px;object-fit:cover;right:0;bottom:-88px}
+.jp-browse{margin:46px 30px 40px 72px}
+.jp-page h2{font-size:37px;font-weight:800;line-height:1.45;letter-spacing:-1.11px}
+.jp-page h2>span{color:var(--jp-gold)}
+.jp-browse>h2{margin-bottom:20px}
+.jp-browse-layout{display:grid;grid-template-columns:135px minmax(0,1.3fr) minmax(0,1fr);gap:32px;min-width:0}
+.jp-tabs{display:flex;flex-direction:column;justify-content:space-between;padding-top:9px;gap:16px}
+.jp-tabs button{height:43px;min-height:43px;border:1px solid #ddd;border-radius:8px;font-size:15px;font-weight:700;background:#fff}
+.jp-tabs button[aria-selected=true]{color:#fff;background:var(--jp-blue);border-color:var(--jp-blue);box-shadow:1px 1px 1px #0004}
+.jp-browse-panel{background:var(--jp-pale);border-radius:17px;padding:17px 27px 22px;min-width:0;height:374px;display:flex;flex-direction:column}
+.jp-browse-panel h3{font-size:18px;font-weight:700;letter-spacing:-.54px;margin-bottom:16px}
+.jp-browse-options{display:grid;grid-auto-flow:column;grid-template-rows:repeat(7,1fr);grid-template-columns:1.25fr 1fr .85fr;gap:18px 14px;overflow-y:auto;min-height:0;scrollbar-width:thin;scrollbar-color:#7da8e6 transparent;padding-right:5px;padding-bottom:5px}
+.jp-browse-options:has(>button:nth-child(22)){display:grid;grid-auto-flow:row;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:none;gap:12px}
+.jp-browse-options button{text-align:left;color:#38465a;font-size:14.5px;line-height:1.45;overflow-wrap:anywhere;min-height:25px}
+.jp-browse-options button:hover{text-decoration:underline;text-underline-offset:4px;color:var(--jp-blue)}
+.jp-employers{background:var(--jp-pale);border-radius:20px;padding:10px 28px 30px;min-width:0}
+.jp-employers h3{font-size:28px;font-weight:800;letter-spacing:-.84px;text-align:center;line-height:1.45;margin-bottom:24px}
+.jp-employer-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(3,55px);gap:45px 20px;align-items:center;justify-items:center}
+.jp-employer-grid button{width:97px;max-width:100%;border-radius:10px;box-shadow:0 1px 5px #0004;transition:transform .15s}
+.jp-employer-grid button:hover{transform:translateY(-3px)}
+.jp-employer-grid img{width:97px;height:auto;aspect-ratio:97/55;object-fit:cover;border-radius:10px}
+.jp-results{margin:0 28px 38px;scroll-margin-top:24px;outline:none}
+.jp-result-status{display:flex;align-items:center;gap:16px;flex-wrap:wrap;min-height:20px;margin:0 12px 8px;font-size:13px}
+.jp-result-status button{font-size:13px;text-decoration:underline}
+.jp-sample-label{margin-left:auto;color:#6d7890;font-size:11px}
+.jp-job-panels{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);gap:36px;align-items:start}
+.jp-job-panel{min-width:0;background:var(--jp-pale);border-radius:46px;padding:30px 38px 30px;min-height:599px;display:flex;flex-direction:column}
+.jp-job-panel>h2{margin:0 8px 25px}
+.jp-job-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 18px}
+.jp-job-card{position:relative;min-width:0;min-height:96px;background:#fff;border-radius:11px;border:1px solid #72aaff;padding:11px 15px 10px;overflow:hidden;isolation:isolate;box-shadow:0 0 2px #0002}
+.jp-job-card h3{font-size:16px;font-weight:700;line-height:1.45;letter-spacing:-.3px;position:relative;z-index:1}
+.jp-job-card h3 button{display:block;text-align:left;line-height:1.45}
+.jp-job-card h3 button:hover{text-decoration:underline;text-underline-offset:3px}
+.jp-job-card>p{font-size:11px;font-weight:400;line-height:1.45;color:var(--jp-gray);margin-top:6px}
+.jp-card-bottom{display:flex;align-items:end;justify-content:space-between;gap:10px;margin-top:10px;font-size:11px;line-height:1.45;font-weight:500}
+.jp-card-bottom>button{font-weight:600;font-size:11px;white-space:nowrap;position:relative;z-index:2}
+.jp-card-bottom>button:hover{text-decoration:underline}
+.jp-card-lines{position:absolute;inset:0;pointer-events:none;z-index:-1;overflow:hidden;border-radius:10px}
+.jp-card-line{position:absolute;max-width:none!important}
+.jp-card-line.top-left{left:-1px;top:-1px}
+.jp-card-line.top-right{right:-1px;top:-1px;scale:1 -1;rotate:180deg}
+.jp-card-line.bottom-left{left:-1px;bottom:-1px;scale:1 -1}
+.jp-card-line.bottom-right{right:-1px;bottom:-1px;rotate:180deg}
+.jp-ribbon{position:absolute;right:0;top:0;width:40px;height:47px;pointer-events:none;z-index:2}
+.jp-ribbon>img{max-width:none;width:40px;height:47px}
+.jp-ribbon>img{transform:scaleX(-1)}
+.jp-ribbon>span{position:absolute;font-size:8px;line-height:12px;font-weight:700;right:-7px;top:17px;color:#fff;width:45px;text-align:center;transform:rotate(49.51deg) skewX(-2.46deg)}
+.jp-featured-card .jp-card-line.top-left{scale:1 -1;rotate:180deg}
+.jp-featured-card .jp-card-line.top-right{scale:none;rotate:none}
+.jp-job-card{border-top-color:var(--jp-blue);border-bottom-color:var(--jp-gold)}
+.jp-featured-card{padding-right:13px}
+.jp-featured-card h3{font-size:15px;padding-right:12px}
+.jp-view-all{align-self:flex-end;font-size:13px!important;font-weight:600!important;margin-top:auto;padding-top:22px!important}
+.jp-panel-empty{font-size:14px;color:var(--jp-gray);padding:20px 8px}
+.jp-empty{padding:30px;text-align:center;border:1px solid #d3e3fc;border-radius:18px;margin:15px 0 24px;background:#f7faff}
+.jp-empty p{color:var(--jp-gray);margin:10px 0 20px}
+.jp-footer{background:var(--jp-blue);border-radius:16px;margin:0 32px 24px;padding:36px 55px 25px;color:#fff;min-height:553px}
+.jp-footer-grid{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(0,.68fr) minmax(0,.95fr) minmax(0,1.65fr);gap:40px;min-height:425px}
+.jp-footer-brand{padding-right:52px;border-right:2px solid #fff9}
+.jp-footer-brand>p{font-size:13.29px;font-weight:500;line-height:19.765px;letter-spacing:-.2658px;margin-top:12px;text-align:justify;max-width:323px}
+.jp-footer-brand img{width:153px;height:44px;object-fit:contain}
+.jp-footer-links{min-width:0}
+.jp-footer h3{color:var(--jp-gold);font-size:17.88px;font-weight:700;letter-spacing:-.3576px;margin:0 0 8px;white-space:nowrap}
+.jp-footer-links button{display:block;text-align:left;font-size:13.29px;line-height:19.765px;letter-spacing:-.2658px;color:white;margin-bottom:8px;white-space:nowrap;font-weight:500}
+.jp-footer-links button:hover{text-decoration:underline}
+.jp-newsletter{min-width:0}
+.jp-newsletter>h2{color:var(--jp-gold);font-size:30.118px;letter-spacing:-1.2047px;font-weight:800;line-height:1.2;white-space:nowrap;margin-bottom:12px}
+.jp-newsletter>form{display:flex;gap:7px;align-items:center}
+.jp-newsletter input{border:0;border-radius:18px;min-width:0;width:100%;height:34px;background:#4376c3;color:white;padding:8px 20px;font-size:12.235px;letter-spacing:-.45px}
+.jp-newsletter input::placeholder{color:white;opacity:1}
+.jp-newsletter form button{border-radius:18px;background:var(--jp-gold);color:#fff;font-size:13.24px;font-weight:700;height:34px;min-width:118px;padding:6px 14px;letter-spacing:-.7px}
+.jp-newsletter-status{font-size:12px;margin:7px 0!important;min-height:14px}
+.jp-socials{display:flex;align-items:center;gap:9px;margin-top:8px;min-height:30px}
+.jp-socials button{display:block}
+.jp-socials img{object-fit:contain}
+.jp-copyright{font-size:13.24px;text-align:center;border-top:1px solid #fff8;padding-top:12px;line-height:20px;letter-spacing:-.2648px;margin-top:30px!important}
+.jp-modal{border:1px solid #c4d9f9;border-radius:20px;padding:32px;width:540px;max-width:calc(100vw - 32px);max-height:90dvh;overflow:auto;background:#fff;margin:auto;color:var(--jp-blue);box-shadow:0 20px 80px #001b4b55}
+.jp-modal::backdrop{background:#001b4b88}
+.jp-modal>h2{font-size:25px;font-weight:700;line-height:1.3;margin:0 24px 18px 0}
+.jp-modal .jp-close{position:absolute;top:14px;right:18px;font-size:30px;line-height:1;padding:3px}
+.jp-modal-company{font-size:17px;font-weight:600;margin-bottom:7px!important}
+.jp-job-description{margin:22px 0!important;color:#38465a}
+.jp-demo-note{font-size:12px;background:#fff7df;padding:12px;border-radius:8px;color:#6c5315;margin-bottom:20px!important}
+.jp-form-intro{font-size:14px;color:var(--jp-gray);margin:0 0 20px!important}
+.jp-inquiry{display:grid;gap:14px}
+.jp-inquiry label{font-size:13px;font-weight:600;display:grid;gap:6px}
+.jp-inquiry input,.jp-inquiry textarea{border:1px solid #c4d9f9;border-radius:8px;background:#f8fbff;padding:10px 12px;width:100%;font-size:15px;resize:vertical}
+.jp-inquiry button{justify-self:start}
+.jp-status{font-size:13px;min-height:20px}
+@media(min-width:1441px){.jp-hero-portrait img{right:0}}
+@media(max-width:1250px){
+ .jp-header{padding:14px 40px 0}.jp-hero{padding:75px 30px 70px;min-height:535px}.jp-hero h1{font-size:43px}.jp-hero-description{font-size:13px}.jp-hero-portrait img{width:480px;height:auto;bottom:-75px;right:-5px}.jp-search{width:650px;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) 130px}.jp-hero-actions{width:650px;gap:18px}.jp-browse{margin:40px 30px}.jp-browse-layout{grid-template-columns:115px minmax(0,1.3fr) minmax(0,1fr);gap:20px}.jp-browse-panel{padding:17px 20px}.jp-browse-options{gap:16px 12px}.jp-employers{padding:10px 18px 24px}.jp-employer-grid{gap:45px 16px}.jp-employers h3{font-size:24px}.jp-job-panel{padding:25px 25px;min-height:600px}.jp-job-panels{gap:24px}.jp-page h2{font-size:32px}.jp-job-grid{gap:16px 14px}.jp-job-card{padding:10px}.jp-job-card h3{font-size:14px}.jp-featured-card h3{font-size:13px}.jp-footer{padding:30px}.jp-footer-grid{gap:26px;grid-template-columns:1.25fr .8fr 1fr 1.35fr}.jp-footer-brand{padding-right:25px}.jp-newsletter>h2{font-size:24px;white-space:normal}.jp-footer-links button{font-size:11.5px}.jp-newsletter form button{min-width:88px}.jp-footer-brand>p{font-size:12px}
+}
+@media(max-width:1024px){
+ .jp-hero{display:flex;flex-direction:column;padding:48px 36px 0;gap:22px}.jp-hero-copy{width:100%}.jp-hero-portrait{width:360px;height:auto;align-self:flex-end}.jp-hero-portrait img{position:relative;width:100%;height:auto;right:auto;bottom:auto}.jp-search,.jp-hero-actions{width:100%;max-width:none}
+ .jp-header{padding:12px 30px 0}.jp-hero{grid-template-columns:1fr .65fr;min-height:530px;padding-top:65px}.jp-hero h1{font-size:38px}.jp-hero-portrait img{width:390px;right:-8px;bottom:-70px}.jp-hero-subtitle{font-size:17px}.jp-search,.jp-hero-actions{width:570px}.jp-search{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) 110px}.jp-search>input,.jp-page .jp-city-trigger{font-size:13px}.jp-search>.jp-primary{font-size:12px;padding:10px}.jp-hero-actions{gap:14px}.jp-hero-actions .jp-primary,.jp-page .jp-app-button{font-size:12px}.jp-popular{font-size:12px}.jp-browse-layout{grid-template-columns:115px minmax(0,1fr)}.jp-employers{grid-column:1/-1}.jp-employer-grid{grid-template-columns:repeat(9,minmax(0,1fr));grid-template-rows:auto;gap:15px}.jp-employers h3{margin-bottom:16px}.jp-browse-options{gap:20px 18px}.jp-job-panels{grid-template-columns:1fr;gap:24px}.jp-job-panel{min-height:0;padding:28px 36px}.jp-job-card h3,.jp-featured-card h3{font-size:16px}.jp-job-card{padding:12px 16px}.jp-job-grid{gap:18px}.jp-footer-grid{grid-template-columns:1.25fr 1fr 1fr;gap:24px}.jp-newsletter{grid-column:1/-1;max-width:540px}.jp-newsletter>h2{font-size:28px}.jp-newsletter input{height:40px}.jp-newsletter form button{height:40px;min-width:118px}.jp-footer-links button{font-size:12px}.jp-footer-brand{padding-right:18px}.jp-copyright{margin-top:24px!important}
+}
+@media(max-width:767px){
+ .jp-page{font-size:14px}.jp-header{min-height:83px;padding:12px 20px;gap:15px}.jp-logo{width:137px;height:auto}.jp-avatar{width:43px;height:43px}.jp-page .jp-menu-toggle{display:block;font-size:25px;min-width:32px;min-height:44px}.jp-header-actions{gap:10px}.jp-nav{position:absolute;display:none;right:18px;left:18px;top:76px;border:1px solid #c4d9f9;background:white;border-radius:12px;z-index:40;padding:12px 18px;box-shadow:0 10px 30px #0144ab22;gap:8px}.jp-nav.open{display:flex;flex-direction:column;align-items:stretch}.jp-nav a{padding:10px}.jp-hero{margin:8px 14px 0;padding:30px 20px 0;min-height:0;border-radius:26px;display:flex;flex-direction:column;gap:20px}.jp-hero-copy{width:100%}.jp-hero h1{font-size:clamp(26px,6.8vw,43px);letter-spacing:-.9px;line-height:1.3;white-space:normal;margin-bottom:20px}.jp-hero h1>span{white-space:normal}.jp-hero-subtitle{font-size:15px;line-height:1.5}.jp-hero-description{font-size:12.5px;line-height:1.6;white-space:normal;margin-top:4px!important;margin-bottom:18px!important;max-width:370px}.jp-search{width:100%;max-width:none;display:grid;grid-template-columns:minmax(0,1fr);gap:0;padding:10px 12px;border-radius:12px}.jp-search>input{min-height:45px;padding:8px 9px;font-size:14px}.jp-city{border-left:0;border-top:1px solid #e3eaf4;padding:4px 0}.jp-page .jp-city-trigger{min-height:45px;font-size:14px;padding:8px 9px}.jp-search>.jp-primary{font-size:14px;min-height:44px;margin-top:5px}.jp-city-menu{left:0;right:0;width:100%;max-width:none;top:calc(100% + 5px)}.jp-city-scroll{height:200px}.jp-popular{font-size:11px;white-space:normal;line-height:1.9;margin:12px 0 16px!important}.jp-hero-actions{width:100%;max-width:none;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.jp-hero-actions .jp-primary,.jp-page .jp-app-button{font-size:12.5px;min-height:44px;padding:10px 6px}.jp-hero-portrait{align-self:center;width:100%;height:auto;max-width:390px;margin-top:0}.jp-hero-portrait img{position:relative;right:auto;bottom:auto;max-width:100%;width:100%;height:auto;margin-bottom:-3px}.jp-browse{margin:30px 20px}.jp-page h2{font-size:29px;letter-spacing:-.85px}.jp-browse>h2{margin-bottom:16px}.jp-browse-layout{grid-template-columns:minmax(0,1fr);gap:16px}.jp-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;padding:0}.jp-tabs button{font-size:11.5px;min-height:40px;height:40px}.jp-browse-panel{height:350px;padding:20px;border-radius:16px}.jp-browse-panel h3{font-size:17px}.jp-browse-options{grid-template-columns:1.2fr 1fr;grid-template-rows:repeat(10,1fr);gap:15px 16px;overflow-y:auto}.jp-browse-options:has(>button:nth-child(22)){grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-flow:row;grid-template-rows:none}.jp-browse-options button{font-size:12px}.jp-employers{padding:20px;grid-column:auto;border-radius:20px}.jp-employers h3{font-size:24px;margin-bottom:22px}.jp-employer-grid{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(3,auto);gap:25px 18px}.jp-employer-grid button,.jp-employer-grid img{width:97px;max-width:100%}.jp-results{margin:0 14px 24px;scroll-margin-top:16px}.jp-result-status{font-size:12px;gap:8px;margin:0 6px 12px}.jp-sample-label{font-size:10px}.jp-job-panels{gap:22px}.jp-job-panel{border-radius:26px;padding:22px 16px 20px;min-height:0}.jp-job-panel>h2{margin:0 4px 17px}.jp-job-grid{grid-template-columns:minmax(0,1fr);gap:14px}.jp-job-card{min-height:111px;padding:15px 16px;border-radius:11px}.jp-job-card h3,.jp-featured-card h3{font-size:16px}.jp-job-card>p{font-size:12px;margin-top:7px}.jp-card-bottom{font-size:12px;margin-top:12px}.jp-card-bottom>button{font-size:12px;min-height:24px}.jp-view-all{padding-top:18px!important;min-height:44px}.jp-footer{margin:0 14px 16px;padding:27px 22px 20px;border-radius:17px;min-height:0}.jp-footer-grid{grid-template-columns:1fr 1.2fr;gap:26px 18px;min-height:0}.jp-footer-brand{grid-column:1/-1;border-right:0;border-bottom:1px solid #fff6;padding:0 0 24px}.jp-footer-brand>p{font-size:12.5px;line-height:1.65;max-width:none;text-align:left}.jp-footer-brand img{width:153px}.jp-footer h3{font-size:15px;white-space:normal;margin-bottom:12px}.jp-footer-links button{font-size:10.5px;line-height:1.65;white-space:normal;margin-bottom:9px;min-height:20px;overflow-wrap:anywhere}.jp-newsletter{grid-column:1/-1;max-width:none}.jp-newsletter>h2{font-size:25px;white-space:normal;letter-spacing:-.8px;margin-bottom:15px}.jp-newsletter>form{gap:8px}.jp-newsletter input{font-size:12px;padding:9px 12px;height:40px}.jp-newsletter form button{font-size:12px;min-width:91px;height:40px;letter-spacing:0}.jp-socials{gap:13px;margin-top:12px}.jp-copyright{font-size:10px;letter-spacing:0;margin-top:24px!important;padding-top:16px}.jp-modal{padding:26px 22px}.jp-modal>h2{font-size:22px}.jp-empty{padding:22px 16px}.jp-empty h2{font-size:24px}
+}
+@media(max-width:359px){.jp-hero{padding:24px 16px 0}.jp-hero h1{font-size:24px}.jp-hero-subtitle{font-size:13px}.jp-logo{width:120px}.jp-header{padding:12px 16px}.jp-browse{margin:26px 16px}.jp-browse-panel{padding:16px}.jp-browse-options{gap:14px 10px}.jp-browse-options button{font-size:11px}.jp-employer-grid{gap:22px 12px}.jp-footer{padding:25px 18px}.jp-newsletter>form{flex-wrap:wrap}.jp-newsletter input{flex:1 1 160px}.jp-newsletter form button{flex:1 0 90px}}
+@media(min-width:768px) and (max-width:1024px){.jp-hero{display:flex;flex-direction:column;padding:48px 36px 0;gap:22px}.jp-hero-copy{width:100%}.jp-hero-portrait{width:360px;height:auto;align-self:flex-end}.jp-hero-portrait img{position:relative;width:100%;height:auto;right:auto;bottom:auto}.jp-search,.jp-hero-actions{width:100%;max-width:none}}
+@media(prefers-reduced-motion:reduce){.jp-page *,.jp-modal *{scroll-behavior:auto!important;transition:none!important}}
+
+.jp-employer-grid{position:relative}.jp-employer-grid>button{position:relative;z-index:1}.jp-employer-dividers{position:absolute;inset:0;pointer-events:none;overflow:hidden}.jp-employer-dividers img{position:absolute;max-width:none}.jp-employer-v{left:33.333%;top:5px;transform:rotate(90deg);transform-origin:left center}.jp-employer-v.second{left:66.666%}.jp-employer-h{left:0;top:78px}.jp-employer-h.second{top:178px}.jp-job-panel:first-child{background-image:url('/hrwala-job-portal/assets/imgRectangle12.svg');background-size:100% 100%;background-repeat:no-repeat}.jp-footer{background-image:url('/hrwala-job-portal/assets/imgRectangle34.svg');background-size:100% 100%;background-repeat:no-repeat}.jp-copyright{border-top:0;background:url('/hrwala-job-portal/assets/imgLine48.svg') no-repeat top center;background-size:100% 1px}@media(min-width:768px) and (max-width:1024px){.jp-employer-dividers{display:none}}@media(max-width:767px){.jp-employer-h{top:67px}.jp-employer-h.second{top:147px}}
