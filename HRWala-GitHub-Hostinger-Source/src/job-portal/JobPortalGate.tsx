@@ -1,7 +1,7 @@
-import { lazy, Suspense, useEffect, useState, type ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import { registerPortalPwa } from './pwa';
 import './site-overflow.css';
-const JobPortalPage=lazy(()=>import('./JobPortalPage'));
+import JobPortalPage from './JobPortalPage';
 const portalPath=(path:string)=>/^\/job-portal\/?$/.test(path);
 /** Wrap the existing <App /> once in main.tsx. Other routes keep the existing app. */
 export default function JobPortalGate({children}:{children:ReactNode}){
@@ -28,5 +28,5 @@ export default function JobPortalGate({children}:{children:ReactNode}){
     return()=>{cleanupPwa();window.removeEventListener('popstate',update);document.removeEventListener('click',onClick,true)};
   },[]);
   useEffect(()=>{document.documentElement.classList.toggle('hrwala-portal-active',portalPath(path));return()=>document.documentElement.classList.remove('hrwala-portal-active')},[path]);
-  return portalPath(path)?<Suspense fallback={<p style={{padding:'3rem',color:'#0144ab',fontFamily:'sans-serif'}}>Loading Job Portal…</p>}><JobPortalPage/></Suspense>:<>{children}</>;
+ return portalPath(path) ? <JobPortalPage /> : <>{children}</>;
 }
