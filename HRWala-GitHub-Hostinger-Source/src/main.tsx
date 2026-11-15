@@ -6,8 +6,8 @@ import JobPortalGate from'./job-portal/JobPortalGate';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <JobPortalgate>
+    <JobPortalGate>
       <App />
-    </JobPortalgate>
+    </JobPortalGate>
   </React.StrictMode>,
 )
