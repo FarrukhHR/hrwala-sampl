@@ -3,7 +3,7 @@
   "name": "HRwala",
   "short_name": "HRwala",
   "description": "Jobs, careers and HR solutions from HRwala.net.",
-  "start_url": "/job-portal",
+  "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "background_color": "#ffffff",
