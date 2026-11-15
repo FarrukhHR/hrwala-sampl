@@ -335,3 +335,13 @@
     min-width: 0;
   }
 }
+
+.jp-city-listbox .jp-remote {
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+}
+
+.jp-city-listbox.jp-city-scroll {
+  scroll-padding-bottom: 50px;
+}
