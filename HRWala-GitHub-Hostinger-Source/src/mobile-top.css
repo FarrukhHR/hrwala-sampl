@@ -2142,3 +2142,15 @@
     height: 190px !important;
   }
 }
+
+@media (max-width: 767px) {
+  #home.design-page .footer-social-links {
+    gap: 8px !important;
+  }
+
+  #home.design-page .footer-social-links a {
+    width: 50px !important;
+    height: 50px !important;
+    flex: 0 0 50px;
+  }
+}
