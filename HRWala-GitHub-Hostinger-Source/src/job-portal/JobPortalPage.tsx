@@ -355,7 +355,7 @@ useLayoutEffect(() => {
     </aside>
   </div>
 </section>
-      <section className="jp-results" id="jp-job-results" ref={results} aria-label="Job opportunities" tabIndex={-1}>
+      <section className="jp-results" id="jp-job-results" ref={results} aria-label="Job opportunities" tabIndex={-1} data-filtered={searched}>
         <div className="jp-result-status" role="status">{loading?'Loading jobs…':loadError|| (searched?`${filtered.length} matching ${filtered.length===1?'job':'jobs'}${search.city?` · ${search.city}`:''}${browse?` · ${browse.value}`:''}`:'')}{searched&&<button type="button" onClick={reset}>Clear filters</button>}</div>
         {filtered.length===0&&!loading&&<div className="jp-empty"><h2>{loadError?'Jobs unavailable':'No matching jobs'}</h2><p>{loadError?'Please try again later.':'Try another title, city or category. The current design listings have limited locations.'}</p><button type="button" className="jp-primary" onClick={reset}>Show all jobs</button></div>}
         <div className="jp-job-panels">{[{title:'Top',jobs:top},{title:'Featured',jobs:featured}].map(group=><section className="jp-job-panel" key={group.title} aria-label={`${group.title} jobs`}><h2><span>{group.title}</span> Jobs</h2><div className="jp-job-grid">{group.jobs.map(job=><JobCard key={job.id} job={job} onOpen={j=>setModal({kind:'job',job:j})}/>)}</div>{!group.jobs.length&&filtered.length>0&&<p className="jp-panel-empty">No {group.title.toLowerCase()} jobs match these filters.</p>}<button type="button" className="jp-view-all" onClick={showAll}>View all →</button></section>)}</div>

@@ -1228,6 +1228,15 @@ useEffect(() => {
   className="hussain-team-card absolute left-[1043px] top-[5841px]"
   aria-label="Hussain Raza"
 >
+
+  <a
+  className="hussain-card-link"
+  href="https://www.linkedin.com/in/hussain-raza-508611336"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Hussain Raza ki LinkedIn profile"
+/>
+
   <div className="hussain-card-lines" aria-hidden="true">
   <svg
     width="56.471"
@@ -1901,9 +1910,21 @@ useEffect(() => {
             >
               {featuredPartnerLogos.map((logo, logoIndex) => (
                 <div className="featured-partners-item" key={`${setIndex}-${logoIndex}`}>
-                  <div className="featured-partners-card">
+                 <div className="featured-partners-card">
+                  {logo === `${assetPathPrefix}/Hoverizon Tech Solutions logo.png` ? (
+                    <a
+                      href="https://hoverizontechsolutions.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Visit Hoverizon Tech Solutions"
+                      tabIndex={setIndex === 1 ? -1 : undefined}
+                    >
+                      <img src={logo} alt="" draggable="false" />
+                    </a>
+                  ) : (
                     <img src={logo} alt="" draggable="false" />
-                  </div>
+                  )}
+                </div>
                   <div className="featured-partners-connector" aria-hidden="true">
                     <span />
                     <span />
