@@ -485,12 +485,156 @@ function NewsletterForm() {
 }
 
 function VideoProject5() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [previewError, setPreviewError] = useState(false);
+  const previewRef = useRef<HTMLVideoElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
+
+  const playPreview = () => {
+    const preview = previewRef.current;
+    if (!preview) return;
+
+    preview.muted = true;
+    preview.defaultMuted = true;
+
+    void preview.play().catch(() => {
+      // Retry when media becomes ready or the user interacts.
+    });
+  };
+
+  useEffect(() => {
+    playPreview();
+
+    const resume = () => {
+      if (!document.hidden && !isOpen) playPreview();
+    };
+
+    document.addEventListener("visibilitychange", resume);
+    return () => {
+      document.removeEventListener("visibilitychange", resume);
+    };
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    closeRef.current?.focus();
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsOpen(false);
+
+      if (event.key === "Tab") {
+        const first = closeRef.current;
+        const last = videoRef.current;
+
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last?.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first?.focus();
+        }
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+      triggerRef.current?.focus();
+    };
+  }, [isOpen]);
+
   return (
-    <VideoPopup
-      src={videoProject5}
-      title="HRwala video"
-      previewClassName="hr-video-preview absolute h-[172.057px] left-[1060.71px] rounded-[16.94px] top-[844px] w-[301.6px]"
-    />
+    <>
+      <div
+        className="hr-video-preview absolute h-[172.057px] left-[1060.71px] rounded-[16.94px] top-[844px] w-[301.6px]"
+        onMouseEnter={() => {
+          if (!isOpen) playPreview();
+        }}
+      >
+        <video
+          ref={previewRef}
+          src={videoProject5}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+          tabIndex={-1}
+          onLoadedData={playPreview}
+          onCanPlay={() => {
+            if (!isOpen) playPreview();
+          }}
+          onError={() => setPreviewError(true)}
+        />
+
+        <button
+          ref={triggerRef}
+          type="button"
+          className="hr-video-trigger"
+          aria-label="Play video in larger player"
+          aria-haspopup="dialog"
+          onClick={() => {
+            previewRef.current?.pause();
+            setIsOpen(true);
+          }}
+        >
+          <span className="hr-video-play">Play video</span>
+        </button>
+
+        {previewError && (
+          <span className="hr-video-error">
+            Video load nahi hui — MP4 file ka path check karein.
+          </span>
+        )}
+      </div>
+
+      {isOpen &&
+        createPortal(
+          <div
+            className="hr-video-backdrop"
+            onClick={(event) => {
+              if (event.target === event.currentTarget) setIsOpen(false);
+            }}
+          >
+            <section
+              className="hr-video-dialog"
+              role="dialog"
+              aria-modal="true"
+              aria-label="30 second HR video"
+            >
+              <button
+                ref={closeRef}
+                type="button"
+                className="hr-video-close"
+                onClick={() => setIsOpen(false)}
+              >
+                Close ✕
+              </button>
+
+              <video
+                ref={videoRef}
+                src={videoProject5}
+                autoPlay
+                loop
+                controls
+                controlsList="nodownload"
+                playsInline
+                preload="auto"
+                tabIndex={0}
+              />
+            </section>
+          </div>,
+          document.body,
+        )}
+    </>
   );
 }
 
