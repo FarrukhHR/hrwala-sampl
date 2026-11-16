@@ -552,17 +552,15 @@
   display: none;
 }
 
+/* Featured ribbon theme yellow */
 .jp-ribbon > span {
-  top: 21px;
-  right: -34px;
-  width: 125px;
-  padding: 3px 0;
-  font-size: 9px;
-  line-height: 14px;
-  color: white;
-  background: linear-gradient(180deg, #3375cf, #0144ab 55%, #003580);
-  box-shadow: 0 2px 4px #001c4b66;
-  transform: rotate(45deg);
+  color: #003580;
+  background: linear-gradient(180deg, #ffd45e, #f6ac04 55%, #c78300);
+}
+
+/* Job title ke neeche line nahi aayegi */
+.jp-job-card h3 button:hover {
+  text-decoration: none;
 }
 
 .jp-featured-card h3 {
