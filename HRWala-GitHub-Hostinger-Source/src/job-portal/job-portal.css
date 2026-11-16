@@ -704,3 +704,18 @@
     padding-top: 10px;
   }
 }
+
+.jp-page main {
+  animation: jp-page-enter 350ms ease-out;
+}
+
+@keyframes jp-page-enter {
+  from { opacity: 0.65; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jp-page main {
+    animation: none;
+  }
+}
