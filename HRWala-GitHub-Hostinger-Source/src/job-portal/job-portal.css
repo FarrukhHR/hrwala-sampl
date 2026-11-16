@@ -345,3 +345,110 @@
 .jp-city-listbox.jp-city-scroll {
   scroll-padding-bottom: 50px;
 }
+
+/* Browse tabs */
+.jp-tabs {
+  position: relative;
+  isolation: isolate;
+}
+
+.jp-tabs-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  visibility: hidden;
+  border-radius: 8px;
+  background: var(--jp-blue);
+  box-shadow: 0 4px 10px #0144ab30;
+  transition: transform 450ms ease, width 450ms ease, height 450ms ease;
+  pointer-events: none;
+}
+
+.jp-page .jp-tabs button {
+  position: relative;
+  z-index: 1;
+  border: 0;
+  background: transparent;
+  box-shadow: 0 3px 12px #163c7020;
+  color: var(--jp-blue);
+  transition: color 450ms ease, box-shadow 450ms ease;
+}
+
+.jp-page .jp-tabs button[aria-selected="true"] {
+  background: transparent;
+  color: white;
+  box-shadow: none;
+}
+
+/* Sirf content slide hoga, box apni jagah rahega */
+.jp-browse-enter {
+  animation: jp-browse-slide-up 400ms ease both;
+}
+
+@keyframes jp-browse-slide-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Employer grid aur divider lines */
+.jp-employer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto;
+  gap: 0;
+  background-image:
+    linear-gradient(to right,
+      transparent calc(33.333% - .5px), #c8c8c8 calc(33.333% - .5px),
+      #c8c8c8 calc(33.333% + .5px), transparent calc(33.333% + .5px),
+      transparent calc(66.666% - .5px), #c8c8c8 calc(66.666% - .5px),
+      #c8c8c8 calc(66.666% + .5px), transparent calc(66.666% + .5px)),
+    linear-gradient(to bottom,
+      transparent calc(33.333% - .5px), #c8c8c8 calc(33.333% - .5px),
+      #c8c8c8 calc(33.333% + .5px), transparent calc(33.333% + .5px),
+      transparent calc(66.666% - .5px), #c8c8c8 calc(66.666% - .5px),
+      #c8c8c8 calc(66.666% + .5px), transparent calc(66.666% + .5px));
+}
+
+.jp-employer-set {
+  grid-area: 1 / 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(3, 55px);
+  gap: 45px 20px;
+  align-items: center;
+  justify-items: center;
+  animation: jp-employer-cycle 12s ease-in-out infinite;
+}
+
+.jp-employer-set-second {
+  animation-delay: -6s;
+}
+
+.jp-employer-grid:hover .jp-employer-set,
+.jp-employer-grid:focus-within .jp-employer-set {
+  animation-play-state: paused;
+}
+
+@keyframes jp-employer-cycle {
+  0% { opacity: 0; visibility: hidden; transform: translateY(8px); }
+  4%, 46% { opacity: 1; visibility: visible; transform: translateY(0); }
+  50%, 100% { opacity: 0; visibility: hidden; transform: translateY(-8px); }
+}
+
+@media (max-width: 767px) {
+  .jp-employer-set {
+    gap: 25px 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jp-tabs-indicator { transition: none; }
+  .jp-browse-enter { animation: none; }
+  .jp-employer-set-first {
+    animation: none;
+    opacity: 1;
+    visibility: visible;
+  }
+  .jp-employer-set-second { display: none; }
+}

@@ -22,7 +22,20 @@ const employerNames = [
   'Four Points by Sheraton',
   'Arch Villas',
   'SB',
-];type ModalState={kind:'job';job:Job}|{kind:'contact';subject:string}|{kind:'info';title:string;message:string}|null;
+];
+const otherEmployers = [
+  { name: 'Khoj Resorts', image: '/assets/ff0a1.png' },
+  { name: 'Mushrooms', image: '/assets/d1f1e.png' },
+  { name: 'Pakistan Society of Hospitality Professionals', image: '/assets/f6a67.png' },
+  { name: 'Radisson Blu', image: '/assets/991c8.png' },
+  { name: 'Ramada', image: '/assets/e3016.png' },
+  { name: "Sariya's", image: '/assets/90d1a.png' },
+  { name: 'Regal Immigration', image: '/assets/3bdd7.png' },
+  { name: 'Resorts Holding', image: '/assets/d6b72.png' },
+  { name: 'Riphah International University', image: '/assets/1ab0e.png' },
+];
+
+type ModalState={kind:'job';job:Job}|{kind:'contact';subject:string}|{kind:'info';title:string;message:string}|null;
 function Modal({title,onClose,children}:{title:string;onClose:()=>void;children:ReactNode}){
   const ref=useRef<HTMLDialogElement>(null);
   useEffect(()=>{const before=document.activeElement as HTMLElement|null;ref.current?.showModal();const old=document.body.style.overflow;document.body.style.overflow='hidden';return()=>{document.body.style.overflow=old;before?.focus()}},[]);
@@ -100,6 +113,37 @@ useLayoutEffect(() => {
   const [jobs,setJobs]=useState(demoJobs),[live,setLive]=useState(false),[loadError,setLoadError]=useState(''),[loading,setLoading]=useState(false);
   const [query,setQuery]=useState(''),[city,setCity]=useState(''),[search,setSearch]=useState({query:'',city:''});
   const [tab,setTab]=useState('Role'),[browse,setBrowse]=useState<{tab:string;value:string}|null>(null),[searched,setSearched]=useState(false);
+  const tabsRef = useRef<HTMLDivElement>(null);
+const tabIndicatorRef = useRef<HTMLSpanElement>(null);
+
+useLayoutEffect(() => {
+  const tabs = tabsRef.current;
+  const indicator = tabIndicatorRef.current;
+  if (!tabs || !indicator) return;
+
+  const updateIndicator = () => {
+    const selected = tabs.querySelector<HTMLButtonElement>(
+      'button[aria-selected="true"]'
+    );
+    if (!selected) return;
+
+    indicator.style.width = `${selected.offsetWidth}px`;
+    indicator.style.height = `${selected.offsetHeight}px`;
+    indicator.style.transform =
+      `translate(${selected.offsetLeft}px, ${selected.offsetTop}px)`;
+    indicator.style.visibility = 'visible';
+  };
+
+  updateIndicator();
+  const observer = new ResizeObserver(updateIndicator);
+  observer.observe(tabs);
+  window.addEventListener('resize', updateIndicator);
+
+  return () => {
+    observer.disconnect();
+    window.removeEventListener('resize', updateIndicator);
+  };
+}, [tab]);
   const [modal,setModal]=useState<ModalState>(null);
   const [email,setEmail]=useState(''),[newsletterBusy,setNewsletterBusy]=useState(false),[newsletterStatus,setNewsletterStatus]=useState('');
   const results=useRef<HTMLElement>(null),queryInput=useRef<HTMLInputElement>(null);
@@ -169,10 +213,131 @@ useLayoutEffect(() => {
         <p className="jp-popular">Popular: {['IT & Software','Banking','Sales','Remote'].map((value,i)=><span key={value}>{i>0&&<span aria-hidden="true"> · </span>}<button type="button" onClick={()=>value==='Remote'?(setCity('Remote'),setQuery(''),setSearch({query:'',city:'Remote'}),setBrowse(null),setSearched(true),scrollResults()):quickSearch(value==='IT & Software'?'Information Technology':value)}>{value}</button></span>)}</p>
         <div className="jp-hero-actions"><button type="button" className="jp-primary" onClick={()=>{queryInput.current?.focus();queryInput.current?.scrollIntoView({block:'center',behavior:'smooth'})}}>Find a Job</button><button type="button" className="jp-primary" onClick={()=>setModal({kind:'contact',subject:'Post a Job — Employer inquiry'})}>Post a Job</button><button type="button" className="jp-primary" onClick={()=>{setQuery('Freelance');setSearch({query:'Freelance',city:''});setCity('');setBrowse(null);setSearched(true);scrollResults()}}>Freelancers</button><button type="button" className="jp-app-button" onClick={installApp} aria-disabled={!mobile} title={mobile?'Install HRwala on your phone':'Available on mobile'}>Mobile App</button></div>
       </div><div className="jp-hero-portrait"><img src={asset('Businesswoman with laptop on transparent background.png')} alt="Career advisor with a laptop" width="559" height="540" fetchPriority="high"/></div></section>
-      <section className="jp-browse" aria-labelledby="jp-browse-title"><h2 id="jp-browse-title"><span>Browse</span> Jobs</h2><div className="jp-browse-layout"><div className="jp-tabs" role="tablist" aria-label="Browse jobs by">{['Role','City','Company','Sector','Job Type','Experience'].map(t=><button key={t} id={`jp-tab-${t.replace(' ','-')}`} type="button" role="tab" aria-selected={tab===t} aria-controls="jp-browse-panel" onClick={()=>setTab(t)} onKeyDown={e=>{if(e.key==='ArrowDown'||e.key==='ArrowRight'||e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();const buttons=Array.from(e.currentTarget.parentElement!.querySelectorAll('button'));const step=e.key==='ArrowDown'||e.key==='ArrowRight'?1:-1;const next=buttons[(buttons.indexOf(e.currentTarget)+step+buttons.length)%buttons.length];next.focus();next.click()}}}>{t}</button>)}</div>
-        <div className="jp-browse-panel" id="jp-browse-panel" role="tabpanel" aria-labelledby={`jp-tab-${tab.replace(' ','-')}`}><h3>Select {tab}</h3><div className="jp-browse-options">{browseItems.map(item=><button type="button" key={item} onClick={()=>browseSearch(item)}>{item}</button>)}</div></div>
-        <aside className="jp-employers"><h3>Top Employers</h3><div className="jp-employer-grid"><div className="jp-employer-dividers" aria-hidden="true"><img className="jp-employer-v" src={asset('imgLine73.svg')} alt=""/><img className="jp-employer-v second" src={asset('imgLine73.svg')} alt=""/><img className="jp-employer-h" src={asset('imgLine75.svg')} alt=""/><img className="jp-employer-h second" src={asset('imgLine75.svg')} alt=""/></div>{employerFiles.map((n,i)=><button type="button" key={n} aria-label={`Browse ${employerNames[i]} jobs`} onClick={()=>{setQuery(employerNames[i]);setSearch({query:employerNames[i],city:''});setCity('');setBrowse(null);setSearched(true);scrollResults()}}><img src={asset(`imgArchVillasGoldLogoOnCrimsonBackground${n}.png`)} alt={employerNames[i]} width="97" height="55" loading="lazy"/></button>)}</div></aside>
-      </div></section>
+      <section className="jp-browse" aria-labelledby="jp-browse-title">
+  <h2 id="jp-browse-title"><span>Browse</span> Jobs</h2>
+
+  <div className="jp-browse-layout">
+    <div
+      className="jp-tabs"
+      role="tablist"
+      aria-label="Browse jobs by"
+      ref={tabsRef}
+    >
+      <span
+        ref={tabIndicatorRef}
+        className="jp-tabs-indicator"
+        aria-hidden="true"
+      />
+
+      {['Role', 'City', 'Company', 'Sector', 'Job Type', 'Experience'].map(t => (
+        <button
+          key={t}
+          id={`jp-tab-${t.replace(' ', '-')}`}
+          type="button"
+          role="tab"
+          aria-selected={tab === t}
+          aria-controls="jp-browse-panel"
+          onClick={() => setTab(t)}
+          onKeyDown={e => {
+            if (
+              e.key === 'ArrowDown' || e.key === 'ArrowRight' ||
+              e.key === 'ArrowLeft' || e.key === 'ArrowUp'
+            ) {
+              e.preventDefault();
+              const buttons = Array.from(
+                e.currentTarget.parentElement!.querySelectorAll('button')
+              );
+              const step =
+                e.key === 'ArrowDown' || e.key === 'ArrowRight' ? 1 : -1;
+              const next =
+                buttons[(buttons.indexOf(e.currentTarget) + step + buttons.length) % buttons.length];
+              next.focus();
+              next.click();
+            }
+          }}
+        >
+          {t}
+        </button>
+      ))}
+    </div>
+
+    <div
+      className="jp-browse-panel"
+      id="jp-browse-panel"
+      role="tabpanel"
+      aria-labelledby={`jp-tab-${tab.replace(' ', '-')}`}
+    >
+      <h3 key={`title-${tab}`} className="jp-browse-enter">
+        Select {tab}
+      </h3>
+      <div key={tab} className="jp-browse-options jp-browse-enter">
+        {browseItems.map(item => (
+          <button type="button" key={item} onClick={() => browseSearch(item)}>
+            {item}
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <aside className="jp-employers">
+      <h3>Top Employers</h3>
+
+      <div className="jp-employer-grid">
+        <div className="jp-employer-set jp-employer-set-first">
+          {employerFiles.map((n, i) => (
+            <button
+              type="button"
+              key={n}
+              aria-label={`Browse ${employerNames[i]} jobs`}
+              onClick={() => {
+                setQuery(employerNames[i]);
+                setSearch({ query: employerNames[i], city: '' });
+                setCity('');
+                setBrowse(null);
+                setSearched(true);
+                scrollResults();
+              }}
+            >
+              <img
+                src={asset(`imgArchVillasGoldLogoOnCrimsonBackground${n}.png`)}
+                alt={employerNames[i]}
+                width="97"
+                height="55"
+                loading="lazy"
+              />
+            </button>
+          ))}
+        </div>
+
+        <div className="jp-employer-set jp-employer-set-second">
+          {otherEmployers.map(employer => (
+            <button
+              type="button"
+              key={employer.name}
+              aria-label={`Browse ${employer.name} jobs`}
+              onClick={() => {
+                setQuery(employer.name);
+                setSearch({ query: employer.name, city: '' });
+                setCity('');
+                setBrowse(null);
+                setSearched(true);
+                scrollResults();
+              }}
+            >
+              <img
+                src={employer.image}
+                alt={employer.name}
+                width="97"
+                height="55"
+                loading="lazy"
+              />
+            </button>
+          ))}
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
       <section className="jp-results" id="jp-job-results" ref={results} aria-label="Job opportunities" tabIndex={-1}>
         <div className="jp-result-status" role="status">{loading?'Loading jobs…':loadError|| (searched?`${filtered.length} matching ${filtered.length===1?'job':'jobs'}${search.city?` · ${search.city}`:''}${browse?` · ${browse.value}`:''}`:'')}{searched&&<button type="button" onClick={reset}>Clear filters</button>}{!live&&!loading&&!loadError&&<span className="jp-sample-label">Example opportunities</span>}</div>
         {filtered.length===0&&!loading&&<div className="jp-empty"><h2>{loadError?'Jobs unavailable':'No matching jobs'}</h2><p>{loadError?'Please try again later.':'Try another title, city or category. The current design listings have limited locations.'}</p><button type="button" className="jp-primary" onClick={reset}>Show all jobs</button></div>}
