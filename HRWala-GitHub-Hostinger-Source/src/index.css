@@ -818,6 +818,9 @@
   font-size: 14px;
   font-weight: 600;
   line-height: 1.4;
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
   opacity: 0;
   transition: opacity 180ms ease;
 }

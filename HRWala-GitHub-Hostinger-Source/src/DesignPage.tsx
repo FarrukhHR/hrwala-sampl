@@ -586,7 +586,7 @@ function VideoProject5() {
             setIsOpen(true);
           }}
         >
-          <span className="video-popup-play" aria-hidden="true">▶</span>
+          <span className="hr-video-play">Play video</span>
         </button>
 
         {previewError && (
