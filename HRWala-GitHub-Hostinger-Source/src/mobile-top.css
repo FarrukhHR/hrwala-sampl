@@ -2055,23 +2055,27 @@
   }
 
   /* Header ki height aur alignment */
-
-  .design-page {
-    --header-center: 110px;
+  .design-page [data-node-id="3:7"] {
+    height: 220px;
   }
 
   .design-page .design-header-logo {
-    top: calc(var(--header-center) - 50px);
+    top: 59px;
   }
 
   .design-page [data-node-id="474:14188"] {
-    top: calc(var(--header-center) - 60px);
+    top: 50px;
   }
 
   .design-page .site-mobile-navigation {
-    top: calc(var(--header-center) - 75px);
-  
-}
+    top: 35px;
+  }
+
+  /* Discover content header se neeche */
+  #home.design-page {
+    top: 70px !important;
+  }
+
   .discover-header-wrapper {
     display: block;
     position: absolute;
@@ -2088,5 +2092,23 @@
   /* Job Portal content header se neeche */
   .jp-page .design-page.jp-shared-header {
     height: 220px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .design-page {
+    --header-center: 110px;
+  }
+
+  .design-page .design-header-logo {
+    top: calc(var(--header-center) - 50px);
+  }
+
+  .design-page [data-node-id="474:14188"] {
+    top: calc(var(--header-center) - 60px);
+  }
+
+  .design-page .site-mobile-navigation {
+    top: calc(var(--header-center) - 75px);
   }
 }
