@@ -224,7 +224,7 @@ useLayoutEffect(() => {
     </span>
   </span>
   <br />
-  <span>That Open New Doors</span>
+  <span>That Opens New Doors</span>
 </h1>
 
 <p className="jp-hero-subtitle">
@@ -450,7 +450,7 @@ useLayoutEffect(() => {
     </div>
 
     <div className="jp-footer-links">
-      <h3>Jobs by Functional Area</h3>
+      <h3>Jobs by Area</h3>
       {[
         ['Sales & Business Development', 'Sales'],
         ['Administration', 'Administration'],
