@@ -979,3 +979,86 @@
 @media (max-width: 767px) and (prefers-reduced-motion: reduce) {
   .jp-employee-track { width: 200%; }
 }
+
+.jp-employees {
+  margin: 0 0 40px;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+}
+.jp-employees > h2 { margin: 0 36px 20px; }
+.jp-employee-window { padding: 5px 0; }
+.jp-employee-track { width: 300%; }
+
+.jp-employee-card {
+  min-height: 328px;
+  margin-right: 20px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px #0002;
+}
+.jp-employee-card > img:not(.jp-featured-badge) {
+  display: block;
+  width: 75%;
+  max-width: 210px;
+  aspect-ratio: 182.624 / 138.625;
+  object-fit: cover;
+  border-radius: 16px;
+  margin: 0 auto 16px;
+}
+.jp-employee-card > .jp-featured-badge {
+  position: absolute;
+  display: block;
+  top: 3px;
+  right: 3px;
+  width: 42px;
+  height: 53px;
+  object-fit: contain;
+  border-radius: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+.jp-employee-card h3 {
+  margin-top: 0;
+  font-size: 19.765px;
+  line-height: 1.3;
+  letter-spacing: -.7px;
+  color: #000;
+}
+.jp-employee-card .jp-employee-role {
+  margin-top: 4px;
+  font-size: 12.235px;
+  color: #757575;
+}
+.jp-employee-card .jp-employee-description {
+  margin-top: 10px;
+  font-size: 11px;
+  line-height: 1.4;
+  text-align: justify;
+  color: #757575;
+}
+
+@media (max-width: 767px) {
+  .jp-employees { margin: 0 0 28px; padding: 0; }
+  .jp-employees > h2 { margin: 0 20px 16px; }
+  .jp-employee-track { width: 400%; }
+  .jp-employee-card { min-height: 0; margin-right: 8px; padding: 8px; }
+  .jp-employee-card > img:not(.jp-featured-badge) {
+    width: 85%;
+    margin-bottom: 10px;
+    border-radius: 9px;
+  }
+  .jp-employee-card > .jp-featured-badge { width: 26px; height: 33px; }
+  .jp-employee-card h3 { font-size: 12px; letter-spacing: -.2px; }
+  .jp-employee-card .jp-employee-role,
+  .jp-employee-card .jp-employee-description { font-size: 10px; }
+  .jp-employee-card .jp-employee-description { text-align: left; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jp-employee-track { width: 150%; }
+}
+@media (max-width: 767px) and (prefers-reduced-motion: reduce) {
+  .jp-employee-track { width: 200%; }
+}

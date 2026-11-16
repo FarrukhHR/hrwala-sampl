@@ -379,6 +379,11 @@ useLayoutEffect(() => {
               }}
             >
               <img
+                className="jp-featured-badge"
+                src={asset('Yellow Featured badge with thicker white ring.png')}
+                alt=""
+              />
+              <img
                 src={employer.image}
                 alt={employer.name}
                 width="97"
