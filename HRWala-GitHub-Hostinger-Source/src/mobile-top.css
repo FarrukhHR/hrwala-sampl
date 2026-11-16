@@ -2112,3 +2112,33 @@
     top: calc(var(--header-center) - 75px);
   }
 }
+
+@media (max-width: 767px) {
+  #home.design-page {
+    top: 0 !important;
+  }
+
+  .discover-header-wrapper {
+    top: 0;
+  }
+
+  .design-viewport {
+    min-height: 1020vw;
+  }
+
+  .design-page [data-node-id="3:7"] {
+    height: 190px;
+  }
+
+  .design-page [data-node-id="474:14188"] {
+    top: 58px;
+  }
+
+  .design-page .site-mobile-navigation {
+    top: 43px;
+  }
+
+  .jp-page .design-page.jp-shared-header {
+    height: 190px !important;
+  }
+}
