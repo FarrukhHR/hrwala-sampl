@@ -7,7 +7,9 @@ const menuId = useId();
 useEffect(() => {
   if (!menuOpen) return;
 
-  menuRef.current?.querySelector<HTMLAnchorElement>('.site-mobile-menu a')?.focus();
+  menuRef.current
+    ?.querySelector<HTMLAnchorElement>('.site-mobile-menu a')
+    ?.focus();
 
   const closeOutside = (event: PointerEvent) => {
     if (event.target instanceof Node && !menuRef.current?.contains(event.target)) {
@@ -15,15 +17,20 @@ useEffect(() => {
     }
   };
 
-  if (event.key === 'Escape') {
-  setMenuOpen(false);
-  requestAnimationFrame(() => {
-    menuRef.current?.querySelector<HTMLButtonElement>('.site-mobile-menu-button')?.focus();
-  });
-}
+  const closeOnEscape = (event: KeyboardEvent) => {
+    if (event.key === 'Escape') {
+      setMenuOpen(false);
+      requestAnimationFrame(() => {
+        menuRef.current
+          ?.querySelector<HTMLButtonElement>('.site-mobile-menu-button')
+          ?.focus();
+      });
+    }
+  };
 
   document.addEventListener('pointerdown', closeOutside);
   document.addEventListener('keydown', closeOnEscape);
+
   return () => {
     document.removeEventListener('pointerdown', closeOutside);
     document.removeEventListener('keydown', closeOnEscape);
