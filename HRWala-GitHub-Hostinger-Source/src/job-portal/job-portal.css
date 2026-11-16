@@ -898,3 +898,84 @@
   .jp-footer { padding-bottom: 16px; }
   .jp-copyright { padding-top: 16px; }
 }
+
+.jp-employees {
+  margin: 0 28px 40px;
+  padding: 24px;
+  background: #e8f1ff;
+  border-radius: 32px;
+}
+.jp-employees > h2 { margin-bottom: 20px; }
+.jp-employee-window { overflow: hidden; }
+.jp-employee-window + .jp-employee-window { margin-top: 16px; }
+.jp-employee-track {
+  display: flex;
+  width: 200%;
+  animation: jpEmployeeScroll 26s linear infinite;
+}
+.jp-employee-window:nth-of-type(2) .jp-employee-track {
+  animation-direction: reverse;
+}
+.jp-employee-window:hover .jp-employee-track,
+.jp-employee-window:focus-within .jp-employee-track {
+  animation-play-state: paused;
+}
+.jp-employee-set {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  flex: 0 0 50%;
+  width: 50%;
+}
+.jp-employee-card {
+  position: relative;
+  min-width: 0;
+  margin-right: 12px;
+  padding: 12px;
+  background: #fff;
+  border-radius: 16px;
+}
+.jp-employee-profile { position: absolute; inset: 0; border-radius: inherit; }
+.jp-employee-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.jp-employee-card h3 {
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 1.25;
+  color: #0144ab;
+}
+.jp-employee-card .jp-employee-role {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #757575;
+}
+.jp-employee-card .jp-employee-description {
+  margin-top: 8px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: #757575;
+}
+@keyframes jpEmployeeScroll {
+  to { transform: translateX(-50%); }
+}
+@media (max-width: 767px) {
+  .jp-employees { margin: 0 14px 28px; padding: 16px; }
+  .jp-employee-track { width: 400%; }
+  .jp-employee-card { padding: 8px; margin-right: 8px; }
+  .jp-employee-card h3 { font-size: 12px; }
+  .jp-employee-card .jp-employee-role,
+  .jp-employee-card .jp-employee-description { font-size: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .jp-employee-window { overflow-x: auto; }
+  .jp-employee-track { width: 100%; animation: none; }
+  .jp-employee-set { width: 100%; flex-basis: 100%; }
+  .jp-employee-set[aria-hidden="true"] { display: none; }
+}
+@media (max-width: 767px) and (prefers-reduced-motion: reduce) {
+  .jp-employee-track { width: 200%; }
+}

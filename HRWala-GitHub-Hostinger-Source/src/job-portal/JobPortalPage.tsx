@@ -9,6 +9,20 @@ import './job-portal.css';
 import SiteHeader from '../SiteHeader';
 const base='/hrwala-job-portal/assets/';
 const asset=(name:string)=>base+name;
+const featuredEmployees = [
+  ["Farrukh Sohail", "Chief People Officer", "cd743.png", "HR scholar and SHRM-SCP certified C-level professional with 20 years of corporate experience spanning hospitality, real estate, information technology, and textiles."],
+  ["Qurat-ul-Ain", "Customer Support", "34e75.png", "Director of Business Development with eight years of experience growing B2B business and working with client portals."],
+  ["Muhammad Asim", "International Tech Recruiter", "40251.png", "Technology specialist focused on the U.S. and Canadian markets, with an understanding of how technology can support business needs and day-to-day operations."],
+  ["Yumna Khan", "HRwala Brand Ambassador", "f8ce2.png", "Renowned anchor and public speaker, serving as HRwala’s Brand Ambassador for the Karachi Region."],
+  ["Dr. Timothius Paul", "Study Abroad Ambassador", "9cc71.png", "Serving with a non-profit organization dedicated to developing and empowering leaders in under-resourced communities."],
+  ["Urooj Najam", "Study Abroad Ambassador", "2f0f8.png", "Study Abroad Ambassador who has guided 387 travelers on their journeys abroad."],
+  ["Rana Azeem", "Culinary Professional | Brand Ambassador", "e9d46.png", "Cluster Executive Chef, Culinary Professional, and Brand Ambassador overseeing culinary operations across the Central Region."],
+  ["Munir Ahmad", "Seasoned Financial Controller", "5fdb1.png", "Seasoned Financial Controller with over 20 years of experience in manufacturing finance, financial management, cost control, and compliance."],
+  ["Mian Asif", "Corporate Lawyer", "6db67.png", "Legal professional with 25 years of experience in criminal, civil, and corporate law."],
+  ["Qamar Butt", "Strategic Hospitality & F&B Leader", "0fef5.png", "Head of F&B with over 27 years of experience in hospitality operations, business development, and guest service. Holds an MBA and an MS in HRM."],
+  ["Arjumand Saqib", "Cyber Security Specialist", "5f647.png", "Information technology and cybersecurity specialist with a background at Stanford University in the U.S."],
+  ["Hussain Raza", "Web & Application Developer", "Young executive in silver glasses.png", "Web & Application Developer with 3 years of experience in digital solutions. Founder of Hoverizon Tech Solutions, helping businesses strengthen their digital presence."],
+];
 const areaCities = [
   'Lahore', 'Karachi', 'Islamabad', 'Rawalpindi', 'Faisalabad',
   'Multan', 'Peshawar', 'Quetta', 'Hyderabad', 'Hunza',
@@ -383,6 +397,45 @@ useLayoutEffect(() => {
         {filtered.length===0&&!loading&&<div className="jp-empty"><h2>{loadError?'Jobs unavailable':'No matching jobs'}</h2><p>{loadError?'Please try again later.':'Try another title, city or category. The current design listings have limited locations.'}</p><button type="button" className="jp-primary" onClick={reset}>Show all jobs</button></div>}
         <div className="jp-job-panels">{[{title:'Top',jobs:top},{title:'Featured',jobs:featured}].map(group=><section className="jp-job-panel" key={group.title} aria-label={`${group.title} jobs`}><h2><span>{group.title}</span> Jobs</h2><div className="jp-job-grid">{group.jobs.map(job=><JobCard key={job.id} job={job} onOpen={j=>setModal({kind:'job',job:j})}/>)}</div>{!group.jobs.length&&filtered.length>0&&<p className="jp-panel-empty">No {group.title.toLowerCase()} jobs match these filters.</p>}<button type="button" className="jp-view-all" onClick={showAll}>View all →</button></section>)}</div>
       </section>
+
+      <section className="jp-employees" aria-labelledby="featured-employees-title">
+  <h2 id="featured-employees-title"><span>Featured</span> Employee</h2>
+
+  {[0, 1].map(row => (
+    <div
+      className="jp-employee-window"
+      key={row}
+      tabIndex={0}
+      role="region"
+      aria-label={`Featured employees row ${row + 1}`}
+    >
+      <div className="jp-employee-track">
+        {[0, 1].map(copy => (
+          <div className="jp-employee-set" key={copy} aria-hidden={copy === 1}>
+            {featuredEmployees.slice(row * 6, row * 6 + 6).map(([name, role, image, description]) => (
+              <article className="jp-employee-card" key={name}>
+                {name === "Hussain Raza" && (
+                  <a
+                    className="jp-employee-profile"
+                    href="https://www.linkedin.com/in/hussain-raza-508611336"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    tabIndex={copy === 1 ? -1 : undefined}
+                    aria-label="Hussain Raza ki LinkedIn profile"
+                  />
+                )}
+                <img src={`/assets/${image}`} alt="" loading="lazy" />
+                <h3>{name}</h3>
+                <p className="jp-employee-role">{role}</p>
+                <p className="jp-employee-description">{description}</p>
+              </article>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  ))}
+</section>
     </main>
     <footer className="jp-footer">
   <div className="jp-footer-grid">
