@@ -505,3 +505,73 @@
     transform: none;
   }
 }
+
+/* Poori job card clickable */
+.jp-job-card {
+  cursor: pointer;
+}
+
+.jp-job-card h3 {
+  position: static;
+}
+
+.jp-job-card h3 button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.jp-job-card h3 button:focus-visible::after {
+  outline: 3px solid var(--jp-gold);
+  outline-offset: -3px;
+  border-radius: 10px;
+}
+
+/* View Job aur View All */
+.jp-page .jp-card-bottom > button,
+.jp-page .jp-view-all {
+  transition: color 250ms ease;
+}
+
+.jp-page .jp-card-bottom > button:hover,
+.jp-page .jp-view-all:hover {
+  color: var(--jp-gold);
+  text-decoration: none;
+}
+
+/* Featured ribbon */
+.jp-ribbon {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+
+.jp-ribbon > img {
+  display: none;
+}
+
+.jp-ribbon > span {
+  top: 21px;
+  right: -34px;
+  width: 125px;
+  padding: 3px 0;
+  font-size: 9px;
+  line-height: 14px;
+  color: white;
+  background: linear-gradient(180deg, #3375cf, #0144ab 55%, #003580);
+  box-shadow: 0 2px 4px #001c4b66;
+  transform: rotate(45deg);
+}
+
+.jp-featured-card h3 {
+  padding-right: 40px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jp-page .jp-card-bottom > button,
+  .jp-page .jp-view-all {
+    transition: none;
+  }
+}
