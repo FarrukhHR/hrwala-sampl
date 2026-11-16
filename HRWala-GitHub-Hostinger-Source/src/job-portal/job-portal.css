@@ -1330,3 +1330,16 @@
     animation-duration: 25s;
   }
 }
+
+.jp-employer-grid a {
+  display: block;
+  width: min(97px, calc(100% - 14px));
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 1px 5px #0004;
+  transition: transform .15s;
+}
+
+.jp-employer-grid a:hover {
+  transform: translateY(-3px);
+}

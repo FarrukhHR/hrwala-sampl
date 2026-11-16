@@ -57,6 +57,50 @@ const featuredPartnerLogos = [
   imgBestWesternLogoOnBlueGradient22,
     `${assetPathPrefix}/Hoverizon Tech Solutions logo.png`,
 ] as const;
+const partnerSites: Record<string, { name: string; url: string }> = {
+  [imgBestWesternLogoOnBlueGradient5]: {
+    name: 'Four Points by Sheraton',
+    url: 'https://www.marriott.com/brands/four-points-by-sheraton.mi',
+  },
+  [imgBestWesternLogoOnBlueGradient7]: {
+    name: 'Khoj Resorts',
+    url: 'https://www.khojresorts.com/',
+  },
+  [imgBestWesternLogoOnBlueGradient10]: {
+    name: 'Radisson Blu',
+    url: 'https://www.radissonhotels.com/en-us/brand/radisson-blu',
+  },
+  [imgBestWesternLogoOnBlueGradient17]: {
+    name: 'Ramada',
+    url: 'https://www.wyndhamhotels.com/ramada',
+  },
+  [imgBestWesternLogoOnBlueGradient22]: {
+    name: 'Riphah International University',
+    url: 'https://riphah.edu.pk/',
+  },
+  [`${assetPathPrefix}/Hoverizon Tech Solutions logo.png`]: {
+    name: 'Hoverizon Tech Solutions',
+    url: 'https://hoverizontechsolutions.com/',
+  },
+};
+
+function PartnerLogo({ logo, duplicate }: { logo: string; duplicate: boolean }) {
+  const partner = partnerSites[logo];
+
+  return partner ? (
+    <a
+      href={partner.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`Visit ${partner.name}`}
+      tabIndex={duplicate ? -1 : undefined}
+    >
+      <img src={logo} alt="" draggable="false" />
+    </a>
+  ) : (
+    <img src={logo} alt="" draggable="false" />
+  );
+}
 const imgFormalPortraitOnGray1 = `${assetPathPrefix}/58341.png`;
 const imgStraightOnPortraitInCharcoalSuit = `${assetPathPrefix}/Straight-on portrait in charcoal suit.png`;
 const imgCompleteHrCertificateWithBlueGoldBorders1 = `${assetPathPrefix}/362ad.png`;
@@ -1911,19 +1955,7 @@ useEffect(() => {
               {featuredPartnerLogos.map((logo, logoIndex) => (
                 <div className="featured-partners-item" key={`${setIndex}-${logoIndex}`}>
                  <div className="featured-partners-card">
-                  {logo === `${assetPathPrefix}/Hoverizon Tech Solutions logo.png` ? (
-                    <a
-                      href="https://hoverizontechsolutions.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="Visit Hoverizon Tech Solutions"
-                      tabIndex={setIndex === 1 ? -1 : undefined}
-                    >
-                      <img src={logo} alt="" draggable="false" />
-                    </a>
-                  ) : (
-                    <img src={logo} alt="" draggable="false" />
-                  )}
+                  <PartnerLogo logo={logo} duplicate={setIndex === 1} />
                 </div>
                   <div className="featured-partners-connector" aria-hidden="true">
                     <span />

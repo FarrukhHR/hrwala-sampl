@@ -53,6 +53,35 @@ const otherEmployers = [
   { name: 'Riphah International University', image: '/assets/1ab0e.png' },
 ];
 
+const employerSites: Record<string, string> = {
+  'Hoverizon Tech Solutions': 'https://hoverizontechsolutions.com/',
+  'Best Western': 'https://www.bestwestern.com/',
+  'Four Points by Sheraton': 'https://www.marriott.com/brands/four-points-by-sheraton.mi',
+  'Khoj Resorts': 'https://www.khojresorts.com/',
+  'Radisson Blu': 'https://www.radissonhotels.com/en-us/brand/radisson-blu',
+  'Ramada': 'https://www.wyndhamhotels.com/ramada',
+  'Riphah International University': 'https://riphah.edu.pk/',
+};
+
+function EmployerLogo({ name, image, onBrowse }: {
+  name: string;
+  image: string;
+  onBrowse: () => void;
+}) {
+  const url = employerSites[name];
+  const logo = <img src={image} alt="" width="97" height="55" loading="lazy" />;
+
+  return url ? (
+    <a href={url} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${name}`}>
+      {logo}
+    </a>
+  ) : (
+    <button type="button" aria-label={`Browse ${name} jobs`} onClick={onBrowse}>
+      {logo}
+    </button>
+  );
+}
+
 type ModalState={kind:'job';job:Job}|{kind:'contact';subject:string}|{kind:'info';title:string;message:string}|null;
 function Modal({title,onClose,children}:{title:string;onClose:()=>void;children:ReactNode}){
   const ref=useRef<HTMLDialogElement>(null);
@@ -338,30 +367,40 @@ useLayoutEffect(() => {
 
       <div className="jp-employer-grid">
         <div className="jp-employer-set jp-employer-set-first">
-          {employerFiles.map((n, i) => (
-            <button
-              type="button"
-              key={n}
-              aria-label={`Browse ${employerNames[i]} jobs`}
-              onClick={() => {
-                setQuery(employerNames[i]);
-                setSearch({ query: employerNames[i], city: '' });
-                setCity('');
-                setBrowse(null);
-                setSearched(true);
-                scrollResults();
-              }}
-            >
-              <img
-                src={asset(`imgArchVillasGoldLogoOnCrimsonBackground${n}.png`)}
-                alt={employerNames[i]}
-                width="97"
-                height="55"
-                loading="lazy"
-              />
-            </button>
-          ))}
-        </div>
+  {employerFiles.map((n, i) => (
+    <EmployerLogo
+      key={n}
+      name={employerNames[i]}
+      image={asset(`imgArchVillasGoldLogoOnCrimsonBackground${n}.png`)}
+      onBrowse={() => {
+        setQuery(employerNames[i]);
+        setSearch({ query: employerNames[i], city: '' });
+        setCity('');
+        setBrowse(null);
+        setSearched(true);
+        scrollResults();
+      }}
+    />
+  ))}
+</div>
+
+<div className="jp-employer-set jp-employer-set-second">
+  {otherEmployers.map(employer => (
+    <EmployerLogo
+      key={employer.name}
+      name={employer.name}
+      image={employer.image}
+      onBrowse={() => {
+        setQuery(employer.name);
+        setSearch({ query: employer.name, city: '' });
+        setCity('');
+        setBrowse(null);
+        setSearched(true);
+        scrollResults();
+      }}
+    />
+  ))}
+</div>
 
         <div className="jp-employer-set jp-employer-set-second">
           {otherEmployers.map(employer => (
