@@ -647,3 +647,18 @@
   scale: none;
   rotate: 180deg;
 }
+
+.jp-featured-card .jp-card-lines {
+  display: none;
+}
+
+.jp-featured-card {
+  border: 2px solid transparent;
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(
+      to bottom,
+      var(--jp-blue) 0% 50%,
+      var(--jp-gold) 50% 100%
+    ) border-box;
+}
