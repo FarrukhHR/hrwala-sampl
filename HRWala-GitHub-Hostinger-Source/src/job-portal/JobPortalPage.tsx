@@ -512,18 +512,18 @@ useLayoutEffect(() => {
     <div className="jp-footer-links">
       <h3>Role</h3>
       {[
-        ['Sales & Business Development', 'Sales'],
-        ['Administration', 'Administration'],
-        ['Teachers/Education, Training & Development', 'Education'],
-        ['Accounts, Finance & Financial Services', 'Finance'],
-        ['Human Resources', 'Human Resources'],
-        ['Project Management', 'Project Management'],
-        ['Engineering', 'Engineering'],
-        ['Health & Medicine', 'Health'],
-        ['Marketing', 'Marketing'],
-        ['Monitoring & Evaluation (M&E)', 'Monitoring'],
-        ['Retail', 'Retail'],
-        ['Operations', 'Operations'],
+        ['Sales & Business Growth', 'Sales'],
+        ['Office & Administrative Services', 'Administration'],
+        ['Education & Professional Learning', 'Education'],
+        ['Accounting & Financial Services', 'Finance'],
+        ['People & Talent Management', 'Human Resources'],
+        ['Project Planning & Delivery', 'Project Management'],
+        ['Engineering & Technical Services', 'Engineering'],
+        ['Healthcare & Medical Services', 'Health'],
+        ['Marketing & Brand Communications', 'Marketing'],
+        ['Performance Monitoring & Evaluation', 'Monitoring'],
+        ['Retail & Store Management', 'Retail'],
+        ['Business Operations & Management', 'Operations'],
       ].map(([label, searchTerm]) => (
         <button type="button" key={label} onClick={() => quickSearch(searchTerm)}>
           {label}
