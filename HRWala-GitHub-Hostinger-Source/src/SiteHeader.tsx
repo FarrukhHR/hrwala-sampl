@@ -7,15 +7,20 @@ const menuId = useId();
 useEffect(() => {
   if (!menuOpen) return;
 
+  menuRef.current?.querySelector<HTMLAnchorElement>('.site-mobile-menu a')?.focus();
+
   const closeOutside = (event: PointerEvent) => {
     if (event.target instanceof Node && !menuRef.current?.contains(event.target)) {
       setMenuOpen(false);
     }
   };
 
-  const closeOnEscape = (event: KeyboardEvent) => {
-    if (event.key === 'Escape') setMenuOpen(false);
-  };
+  if (event.key === 'Escape') {
+  setMenuOpen(false);
+  requestAnimationFrame(() => {
+    menuRef.current?.querySelector<HTMLButtonElement>('.site-mobile-menu-button')?.focus();
+  });
+}
 
   document.addEventListener('pointerdown', closeOutside);
   document.addEventListener('keydown', closeOnEscape);
@@ -78,7 +83,7 @@ useEffect(() => {
       </a>
 
       <div
-        className="absolute left-[1292.56px] size-[60px] top-[28.56px]"
+        className={`absolute left-[1292.56px] size-[60px] top-[28.56px] site-header-avatar${menuOpen ? ' is-menu-open' : ''}`}
         data-node-id="474:14188"
         data-name="Maroon blazer portrait on pale blue 1"
       >
@@ -89,27 +94,35 @@ useEffect(() => {
         />
       </div>
 
-      <div className="site-mobile-navigation" ref={menuRef}>
+      <div
+  className={`site-mobile-navigation${menuOpen ? ' is-menu-open' : ''}`}
+  ref={menuRef}
+>
   <button
     type="button"
     className="site-mobile-menu-button"
     aria-label="Navigation menu"
     aria-expanded={menuOpen}
     aria-controls={menuId}
-    onClick={() => setMenuOpen(open => !open)}
+    tabIndex={menuOpen ? -1 : 0}
+    onClick={() => setMenuOpen(true)}
   >
     <span />
     <span />
     <span />
   </button>
 
-  {menuOpen && (
-    <nav id={menuId} className="site-mobile-menu" aria-label="Main navigation">
-      <a href="/" onClick={() => setMenuOpen(false)}>Discover</a>
-      <a href="/job-portal" onClick={() => setMenuOpen(false)}>Job Portal</a>
-      <a href="/login" onClick={() => setMenuOpen(false)}>My Portal</a>
-    </nav>
-  )}
+  <nav
+    id={menuId}
+    className="site-mobile-menu"
+    aria-label="Main navigation"
+    aria-hidden={!menuOpen}
+    inert={!menuOpen}
+  >
+    <a href="/" onClick={() => setMenuOpen(false)}>Discover</a>
+    <a href="/job-portal" onClick={() => setMenuOpen(false)}>Job Portal</a>
+    <a href="/login" onClick={() => setMenuOpen(false)}>My Portal</a>
+  </nav>
 </div>
     </>
   );
