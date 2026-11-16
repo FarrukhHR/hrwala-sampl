@@ -552,10 +552,17 @@
   display: none;
 }
 
-/* Featured ribbon theme yellow */
 .jp-ribbon > span {
-  color: #003580;
+  top: 21px;
+  right: -34px;
+  width: 125px;
+  padding: 3px 0;
+  font-size: 9px;
+  line-height: 14px;
+  color: white;
   background: linear-gradient(180deg, #ffd45e, #f6ac04 55%, #c78300);
+  box-shadow: 0 2px 4px #001c4b66;
+  transform: rotate(45deg);
 }
 
 /* Job title ke neeche line nahi aayegi */
