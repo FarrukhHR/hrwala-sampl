@@ -852,3 +852,9 @@
     transition: none;
   }
 }
+
+.jp-footer {
+  margin-bottom: 0;
+  border-radius: 16px 16px 0 0;
+  background-image: none;
+}
