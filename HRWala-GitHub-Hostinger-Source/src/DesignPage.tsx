@@ -586,7 +586,7 @@ function VideoProject5() {
             setIsOpen(true);
           }}
         >
-          <span className="hr-video-play">Play video</span>
+          <span className="video-popup-play" aria-hidden="true">▶</span>
         </button>
 
         {previewError && (
@@ -624,8 +624,6 @@ function VideoProject5() {
                 src={videoProject5}
                 autoPlay
                 loop
-                controls
-                controlsList="nodownload"
                 playsInline
                 preload="auto"
                 tabIndex={0}
