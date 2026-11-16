@@ -10,16 +10,10 @@
     "format": "oxfmt"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
-
-  "dependencies": {
-  "@supabase/supabase-js": "^2.0.0",
-  "react": "^19.0.0",
-  "react-dom": "^19.0.0"
-},
-
   "devDependencies": {
     "@types/node": "^22.0.0",
     "@types/react": "^19.0.0",
@@ -29,9 +23,6 @@
     "@tailwindcss/vite": "^4.0.0",
     "oxfmt": "^0.76.0",
     "typescript": "^5.7.0",
-    "vite": "^8.0.5"
+    "vite": "^8.1.6"
   }
-  
 }
-
-
