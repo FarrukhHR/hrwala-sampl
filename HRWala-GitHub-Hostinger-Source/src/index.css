@@ -1894,6 +1894,15 @@ input, textarea, [contenteditable="true"], [contenteditable=""] {
   color: #fff;
   box-shadow: 0 2px 6px #0005;
   font-size: 13px;
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+.video-popup-preview:hover .video-popup-play,
+.video-popup-preview:focus-within .video-popup-play,
+.hr-video-preview:hover .video-popup-play,
+.hr-video-preview:focus-within .video-popup-play {
+  opacity: 1;
 }
 
 .video-popup-error {
@@ -1935,5 +1944,6 @@ input, textarea, [contenteditable="true"], [contenteditable=""] {
 @media (hover: none) {
   .video-popup-play {
     opacity: 1;
+
   }
 }
