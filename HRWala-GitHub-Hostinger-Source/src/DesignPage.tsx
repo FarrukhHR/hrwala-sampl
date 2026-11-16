@@ -2238,7 +2238,9 @@ useEffect(() => {
         platform. We empower professionals to advance their careers and support organizations in
         building stronger, more capable teams.
       </p>
-      <SiteHeader />
+      <div className="discover-header-wrapper">
+  <SiteHeader />
+</div>
       <a
         href="#home"
         aria-label="HRWala home"

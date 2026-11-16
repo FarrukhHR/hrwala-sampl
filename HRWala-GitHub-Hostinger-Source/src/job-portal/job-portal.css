@@ -719,3 +719,13 @@
     animation: none;
   }
 }
+
+@media (max-width: 767px) {
+  .jp-page .site-mobile-menu a {
+    font-size: 38px;
+  }
+
+  .jp-page .jp-shared-header + main {
+    padding-top: 16px;
+  }
+}

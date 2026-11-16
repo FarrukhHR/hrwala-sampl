@@ -2055,27 +2055,22 @@
   }
 
   /* Header ki height aur alignment */
-  .design-page [data-node-id="3:7"] {
-    height: 220px;
+  .design-page {
+    --header-center: 110px;
   }
 
   .design-page .design-header-logo {
-    top: 59px;
+    top: calc(var(--header-center) - 50px);
   }
 
   .design-page [data-node-id="474:14188"] {
-    top: 50px;
+    top: calc(var(--header-center) - 60px);
   }
 
   .design-page .site-mobile-navigation {
-    top: 35px;
+    top: calc(var(--header-center) - 75px);
   }
-
-  /* Discover content header se neeche */
-  #home.design-page {
-    top: 70px !important;
-  }
-
+}
   .discover-header-wrapper {
     display: block;
     position: absolute;
