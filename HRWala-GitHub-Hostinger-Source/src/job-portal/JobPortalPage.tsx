@@ -158,15 +158,38 @@ useLayoutEffect(() => {
   const [email,setEmail]=useState(''),[newsletterBusy,setNewsletterBusy]=useState(false),[newsletterStatus,setNewsletterStatus]=useState('');
   const results=useRef<HTMLElement>(null),queryInput=useRef<HTMLInputElement>(null);
   const {mobile,install}=useInstallApp();
-  const [pageWidth, setPageWidth] = useState(
-    () => document.documentElement.clientWidth
-  );
+const [viewportSize, setViewportSize] = useState(() => ({
+  pageWidth: document.documentElement.clientWidth,
+  viewportWidth: window.innerWidth,
+}));
 
-  useEffect(() => {
-    const updateWidth = () => setPageWidth(document.documentElement.clientWidth);
-    window.addEventListener('resize', updateWidth);
-    return () => window.removeEventListener('resize', updateWidth);
-  }, []);
+const { pageWidth, viewportWidth } = viewportSize;
+
+useLayoutEffect(() => {
+  const updateWidth = () => {
+    const next = {
+      pageWidth: document.documentElement.clientWidth,
+      viewportWidth: window.innerWidth,
+    };
+
+    setViewportSize(current =>
+      current.pageWidth === next.pageWidth &&
+      current.viewportWidth === next.viewportWidth
+        ? current
+        : next
+    );
+  };
+
+  const observer = new ResizeObserver(updateWidth);
+  observer.observe(document.documentElement);
+  window.addEventListener('resize', updateWidth);
+  updateWidth();
+
+  return () => {
+    observer.disconnect();
+    window.removeEventListener('resize', updateWidth);
+  };
+}, []);
   useEffect(()=>{const controller=new AbortController();setLoading(true);loadPublishedJobs(controller.signal).then(rows=>{if(rows!==null){setJobs(rows);setLive(true)}}).catch(error=>{if(!controller.signal.aborted){setJobs([]);setLoadError(error instanceof Error?error.message:'Unable to load jobs.')}}).finally(()=>{if(!controller.signal.aborted)setLoading(false)});return()=>controller.abort()},[]);
   const filtered=useMemo(()=>filterJobs(jobs,search.query,search.city,browse),[jobs,search,browse]);
   const top=filtered.filter(j=>!j.featured),featured=filtered.filter(j=>j.featured);
