@@ -487,8 +487,8 @@ useLayoutEffect(() => {
 
     <div className="jp-footer-links">
       <h3>Contact</h3>
-      <a href="tel:+923008523878">+92 300 8523878</a>
-      <a href="tel:+923055243737">+92 305 5243737</a>
+      <a href="https://wa.me/923008523878">+92 300 8523878</a>
+      <a href="https://wa.me/923055243737">+92 305 5243737</a>
       <a href="mailto:hello@hrwala.net">hello@hrwala.net</a>
     </div>
 
