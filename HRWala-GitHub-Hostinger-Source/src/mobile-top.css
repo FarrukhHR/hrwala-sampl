@@ -1928,3 +1928,53 @@
     z-index: 50;
   }
 }
+
+@media (max-width: 767px) {
+  .design-page .design-header-logo {
+    left: 58px;
+    top: 24px;
+    width: 360px;
+    height: 100px;
+  }
+
+  .design-page [data-node-id="474:14188"] {
+    display: block;
+    left: auto;
+    right: 270px;
+    top: 15px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .design-page .site-mobile-navigation {
+    top: 0;
+    right: 40px;
+  }
+
+  .site-mobile-menu-button {
+    width: 200px;
+    height: 150px;
+    gap: 12px;
+    border-radius: 20px;
+  }
+
+  .site-mobile-menu-button span {
+    width: 68px;
+    height: 12px;
+    border-radius: 8px;
+    background: #0144ab;
+  }
+
+  .site-mobile-menu {
+    top: 150px;
+    width: 570px;
+    border: 2px solid #dce8f8;
+    box-shadow: 0 14px 40px #001c4b26;
+  }
+
+  .site-mobile-menu-button:focus-visible,
+  .site-mobile-menu a:focus-visible {
+    outline: 8px solid #f6ac04;
+    outline-offset: 4px;
+  }
+}
