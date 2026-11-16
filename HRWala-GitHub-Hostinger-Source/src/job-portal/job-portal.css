@@ -1318,3 +1318,9 @@
     width: 95%;
   }
 }
+@media (width < 768px) {
+  .jp-employee-card {
+    width: 84%;
+    min-height: 220px;
+  }
+}
