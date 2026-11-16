@@ -55,7 +55,13 @@ function InquiryForm({subject}:{subject:string}){
 function JobCard({job,onOpen}:{job:Job;onOpen:(job:Job)=>void}){
   return <article className={`jp-job-card ${job.featured?'jp-featured-card':''}`}>
     <div className="jp-card-lines" aria-hidden="true"><img className="jp-card-line top-left" src={asset(job.featured?'imgGroup118.svg':'imgLine80.svg')} alt=""/><img className="jp-card-line top-right" src={asset(job.featured?'imgGroup115.svg':'imgLine78.svg')} alt=""/><img className="jp-card-line bottom-left" src={asset(job.featured?'imgGroup117.svg':'imgLine79.svg')} alt=""/><img className="jp-card-line bottom-right" src={asset(job.featured?'imgGroup116.svg':'imgLine77.svg')} alt=""/></div>
-    {job.featured&&<div className="jp-ribbon" aria-label="Featured job"><img src={asset('imgGroup129.svg')} alt=""/><span>Featured</span></div>}
+    {job.featured && (
+  <img
+    className="jp-featured-badge"
+    src={asset('Yellow Featured badge with thicker white ring.png')}
+    alt="Featured job"
+  />
+)}
     <h3><button type="button" onClick={()=>onOpen(job)}>{job.title}</button></h3><p>{job.company}</p><div className="jp-card-bottom"><span>{job.remote?'Remote':job.city}</span><button type="button" onClick={()=>onOpen(job)}>View Job</button></div>
   </article>;
 }
