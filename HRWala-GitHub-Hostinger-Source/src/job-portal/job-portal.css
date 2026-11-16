@@ -1431,7 +1431,7 @@
 
 @media (max-width: 767px) {
   .jp-hero h1 {
-    font-size: clamp(20px, 6.2vw, 34px);
+    font-size: clamp(22px, 6.2vw, 36px);
     letter-spacing: -0.7px;
   }
 
