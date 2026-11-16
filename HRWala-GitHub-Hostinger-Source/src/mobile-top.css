@@ -2055,6 +2055,7 @@
   }
 
   /* Header ki height aur alignment */
+
   .design-page {
     --header-center: 110px;
   }
@@ -2069,7 +2070,7 @@
 
   .design-page .site-mobile-navigation {
     top: calc(var(--header-center) - 75px);
-  }
+  
 }
   .discover-header-wrapper {
     display: block;
