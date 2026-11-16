@@ -399,7 +399,7 @@ useLayoutEffect(() => {
       </section>
 
       <section className="jp-employees" aria-labelledby="featured-employees-title">
-  <h2 id="featured-employees-title"><span>Featured</span> Employee</h2>
+  <h2 id="featured-employees-title"><span>Featured</span> Employees</h2>
 
   {[0, 1].map(row => (
     <div
@@ -425,13 +425,13 @@ useLayoutEffect(() => {
                   />
                 )}
                 <div className="jp-employee-photo-wrap">
-  <img src={`/assets/${image}`} alt="" loading="lazy" />
-  <img
-    className="jp-featured-badge"
-    src={asset('Yellow Featured badge with thicker white ring.png')}
-    alt=""
-  />
-</div>
+                <img src={`/assets/${image}`} alt="" loading="lazy" />
+                <img
+                  className="jp-featured-badge"
+                  src={asset('Yellow Featured badge with thicker white ring.png')}
+                  alt=""
+                />
+              </div>
                 <h3>{name}</h3>
                 <p className="jp-employee-role">{role}</p>
                 <p className="jp-employee-description">{description}</p>

@@ -1232,3 +1232,33 @@
     width: calc(100% - 20px);
   }
 }
+
+.jp-employee-track {
+  animation-duration: 20s;
+}
+
+@media (width < 768px) {
+  .jp-employee-track {
+    animation-duration: 30s;
+  }
+
+  .jp-employee-card h3 {
+    min-height: 2.6em;
+  }
+
+  .jp-employee-card .jp-employee-role {
+    min-height: 4.2em;
+  }
+
+  .jp-employee-card h3,
+  .jp-employee-card .jp-employee-role,
+  .jp-employee-card .jp-employee-description {
+    text-align: left;
+    overflow-wrap: anywhere;
+  }
+
+  .jp-employee-card .jp-employee-photo-wrap > .jp-featured-badge {
+    width: 22px;
+    height: 28px;
+  }
+}
