@@ -1921,5 +1921,18 @@ input, textarea, [contenteditable="true"], [contenteditable=""] {
   .video-popup-play {
     width: 28px;
     height: 28px;
+    opacity: 0;
+    transition: opacity 180ms ease;
+  }
+
+  .video-popup-preview:hover .video-popup-play,
+.video-popup-preview:focus-within .video-popup-play {
+  opacity: 1;
+}
+}
+
+@media (hover: none) {
+  .video-popup-play {
+    opacity: 1;
   }
 }

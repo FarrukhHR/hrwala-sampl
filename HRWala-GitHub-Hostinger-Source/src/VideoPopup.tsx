@@ -120,9 +120,6 @@ export default function VideoPopup({ src, title, previewClassName = "" }: Props)
               ref={videoRef}
               src={src}
               autoPlay
-              controls
-              controlsList="nodownload"
-              disablePictureInPicture
               playsInline
               preload="metadata"
               tabIndex={0}
