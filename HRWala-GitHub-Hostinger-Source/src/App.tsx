@@ -61,7 +61,7 @@ export default function App() {
 }, []);
 
   return (
-    <main className="design-viewport" style={{ height: (mobile ? 7330 + MOBILE_EXTRA : 7245.06) * scale }} aria-label="HRwala landing page">
+    <main className="design-viewport" style={{ height: (mobile ? 7330 + MOBILE_EXTRA : 7255.06) * scale }} aria-label="HRwala landing page">
       <div ref={canvas} className="design-canvas" style={{ transform: `scale(${scale}) translateX(-50%)` }}>
         <DesignPage className="design-page" />
       </div>

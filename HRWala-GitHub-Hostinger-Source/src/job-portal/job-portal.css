@@ -876,3 +876,17 @@
     font-size: 12px;
   }
 }
+
+.jp-footer-group { display: contents; }
+.jp-footer { padding-bottom: 32px; }
+.jp-copyright { padding-top: 32px; }
+
+@media (max-width: 767px) {
+  .jp-footer-group { display: block; }
+  .jp-footer-group > .jp-footer-links + .jp-footer-links { margin-top: 24px; }
+  .jp-footer { padding-bottom: 24px; }
+  .jp-copyright { padding-top: 24px; }
+
+  .jp-footer-grid > .jp-footer-links:nth-child(6) h3 { font-size: 15px; }
+  .jp-footer-grid > .jp-footer-links:nth-child(6) :is(button, a) { font-size: 12px; }
+}

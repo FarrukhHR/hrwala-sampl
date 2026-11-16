@@ -500,21 +500,25 @@ useLayoutEffect(() => {
       ))}
     </div>
 
-    <div className="jp-footer-links">
-      <h3>Explore</h3>
-      <a href="/">Discover</a>
-      <a href="/job-portal">Job Portal</a>
-      <a href="/#software">HRWala Software</a>
-      <a href="/#certifications">Certifications</a>
-    </div>
-
-    <div className="jp-footer-links">
-      <h3>Contact</h3>
-      <a href="https://wa.me/923008523878">+92 300 8523878</a>
-      <a href="https://wa.me/923055243737">+92 305 5243737</a>
-      <a href="mailto:hello@hrwala.net">hello@hrwala.net</a>
-    </div>
-
+    <div className="jp-footer-group">
+      {
+        <div className="jp-footer-links">
+          <h3>Explore</h3>
+          <a href="/">Discover</a>
+          <a href="/job-portal">Job Portal</a>
+          <a href="/#software">HRWala Software</a>
+          <a href="/#certifications">Certifications</a>
+        </div>
+      }
+      {
+        <div className="jp-footer-links">
+          <h3>Contact</h3>
+          <a href="https://wa.me/923008523878">+92 300 8523878</a>
+          <a href="https://wa.me/923055243737">+92 305 5243737</a>
+          <a href="mailto:hello@hrwala.net">hello@hrwala.net</a>
+        </div>
+      }
+      </div>
     <div className="jp-footer-links">
       <h3>International Jobs</h3>
       {['Saudi Arabia', 'Bahrain', 'Qatar', 'UAE', 'Malaysia'].map(country => (
