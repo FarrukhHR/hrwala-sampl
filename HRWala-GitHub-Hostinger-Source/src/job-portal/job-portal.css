@@ -858,3 +858,11 @@
   border-radius: 16px 16px 0 0;
   background-image: none;
 }
+
+@media (min-width: 768px) {
+  .jp-results[data-filtered="true"] .jp-job-grid {
+    flex: 0 0 auto;
+    grid-auto-rows: minmax(116px, auto);
+    align-content: start;
+  }
+}
