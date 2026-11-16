@@ -187,7 +187,7 @@ useLayoutEffect(() => {
       key={heroIndex}
       className={`jp-slide-text${heroLeaving ? ' is-leaving' : ''}`}
     >
-      {['Discover Jobs', 'Find a Job', 'Post a Job'][heroIndex % 3]}
+      {['Find a Job', 'Post a Job'][heroIndex % 2]}
     </span>
   </span>
   <br />
