@@ -1,5 +1,15 @@
-/* Applied once by JobPortalGate on the existing Discover page and portal. */
-html,body{max-width:100%;overflow-x:hidden}
-@supports(overflow:clip){html,body{overflow-x:clip}}
-.hrwala-portal-active #root{width:100%;max-width:100%;min-width:0;overflow:visible}
-.hrwala-portal-active body{margin:0;min-width:0;width:100%;background:#fff}
+@media (prefers-reduced-motion: no-preference) {
+  .hrwala-route {
+    animation: hrwala-page-enter 500ms ease-out;
+  }
+
+  @keyframes hrwala-page-enter {
+    from { opacity: 0.75; }
+    to { opacity: 1; }
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 500ms;
+  }
+}

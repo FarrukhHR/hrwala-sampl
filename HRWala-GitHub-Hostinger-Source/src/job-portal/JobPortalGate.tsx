@@ -2,13 +2,31 @@ import { useEffect, useState, type ReactNode } from 'react';
 import { registerPortalPwa } from './pwa';
 import './site-overflow.css';
 import JobPortalPage from './JobPortalPage';
+import { flushSync } from 'react-dom';
 const portalPath=(path:string)=>/^\/job-portal\/?$/.test(path);
 /** Wrap the existing <App /> once in main.tsx. Other routes keep the existing app. */
 export default function JobPortalGate({children}:{children:ReactNode}){
   const [path,setPath]=useState(()=>window.location.pathname);
   useEffect(()=>{
     const cleanupPwa=registerPortalPwa();
-    const update=()=>setPath(window.location.pathname);
+    const update = () => {
+  const renderPage = () => {
+    flushSync(() => setPath(window.location.pathname));
+  };
+
+  const transitionDocument = document as Document & {
+    startViewTransition?: (callback: () => void) => unknown;
+  };
+
+  if (
+    !window.matchMedia('(prefers-reduced-motion: reduce)').matches &&
+    typeof transitionDocument.startViewTransition === 'function'
+  ) {
+    transitionDocument.startViewTransition(renderPage);
+  } else {
+    renderPage();
+  }
+};
     function onClick(e: MouseEvent) {
     if (
       e.defaultPrevented ||
@@ -68,5 +86,9 @@ export default function JobPortalGate({children}:{children:ReactNode}){
     return()=>{cleanupPwa();window.removeEventListener('popstate',update);document.removeEventListener('click',onClick,true)};
   },[]);
   useEffect(()=>{document.documentElement.classList.toggle('hrwala-portal-active',portalPath(path));return()=>document.documentElement.classList.remove('hrwala-portal-active')},[path]);
- return portalPath(path) ? <JobPortalPage /> : <>{children}</>;
+ return (
+  <div className="hrwala-route" key={path}>
+    {portalPath(path) ? <JobPortalPage /> : children}
+  </div>
+);
 }
