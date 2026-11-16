@@ -1062,3 +1062,70 @@
 @media (max-width: 767px) and (prefers-reduced-motion: reduce) {
   .jp-employee-track { width: 200%; }
 }
+
+.jp-employee-card {
+  justify-self: center;
+  width: calc(100% - 20px);
+  max-width: 247px;
+  min-height: 328px;
+  margin-right: 0;
+  padding: 20px;
+  border-radius: 16.941px;
+  color: #000;
+}
+.jp-employee-card > img:not(.jp-featured-badge) {
+  width: min(100%, 182.624px);
+  max-width: 100%;
+  aspect-ratio: 182.624 / 137.41;
+  margin: 0 0 14px auto;
+  border-radius: 16.94px;
+  object-fit: cover;
+}
+.jp-employee-card h3 {
+  margin: 0;
+  color: #000;
+  font-weight: 700;
+  font-size: 19.765px;
+  line-height: 30px;
+  letter-spacing: -1.1859px;
+}
+.jp-employee-card .jp-employee-role {
+  margin-top: 3px;
+  font-size: 11.5px;
+  line-height: 18px;
+  letter-spacing: -.4px;
+  color: #757575;
+}
+.jp-employee-card .jp-employee-description {
+  margin-top: 8px;
+  font-size: 10.5px;
+  line-height: 15px;
+  letter-spacing: -.21px;
+  text-align: justify;
+  color: #757575;
+}
+
+@media (max-width: 767px) {
+  .jp-employee-card {
+    width: calc(100% - 8px);
+    min-height: 0;
+    padding: 8px;
+  }
+  .jp-employee-card > img:not(.jp-featured-badge) {
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 9px;
+  }
+  .jp-employee-card h3 {
+    font-size: 12px;
+    line-height: 1.3;
+    letter-spacing: -.2px;
+  }
+  .jp-employee-card .jp-employee-role,
+  .jp-employee-card .jp-employee-description {
+    font-size: 10px;
+    line-height: 1.4;
+    letter-spacing: normal;
+  }
+  .jp-employee-card .jp-employee-description { text-align: left; }
+}
