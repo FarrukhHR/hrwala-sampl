@@ -204,12 +204,12 @@ useLayoutEffect(() => {
   function showAll(){reset();scrollResults()}
   return <div
     className="jp-page"
-    style={{ zoom: pageWidth >= 768 ? pageWidth / 1440 : undefined }}
+    style={{ zoom: viewportWidth >= 768 ? pageWidth / 1440 : undefined }}
   >
     <a className="jp-skip" href="#jp-job-results">Skip to jobs</a>
     <div
   className="design-page jp-shared-header"
-  style={{ zoom: pageWidth < 768 ? pageWidth / 1440 : undefined }}
+  style={{ zoom: viewportWidth < 768 ? pageWidth / 1440 : undefined }}
 >
   <SiteHeader />
 </div>
