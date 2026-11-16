@@ -1859,3 +1859,72 @@
     margin-top: 0 !important;
   }
 }
+
+.site-mobile-navigation {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .design-page .design-header-link,
+  .design-page [data-node-id="474:14188"] {
+    display: none;
+  }
+
+  .design-page .site-mobile-navigation {
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 45px;
+    z-index: 10000;
+  }
+
+  .site-mobile-menu-button {
+    width: 180px;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+
+  .site-mobile-menu-button span {
+    display: block;
+    width: 90px;
+    height: 8px;
+    border-radius: 8px;
+    background: #0144ab;
+  }
+
+  .site-mobile-menu {
+    position: absolute;
+    top: 145px;
+    right: 0;
+    width: 620px;
+    padding: 20px;
+    border-radius: 24px;
+    background: white;
+    box-shadow: 0 12px 40px #001c4b33;
+  }
+
+  .site-mobile-menu a {
+    display: block;
+    padding: 28px;
+    color: #0144ab;
+    font-size: 52px;
+    line-height: 1.3;
+    text-decoration: none;
+    border-radius: 14px;
+  }
+
+  .site-mobile-menu a:hover {
+    background: #e6f0ff;
+  }
+
+  .jp-page .jp-shared-header {
+    z-index: 50;
+  }
+}

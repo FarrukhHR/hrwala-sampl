@@ -217,7 +217,14 @@ useLayoutEffect(() => {
 </p><p className="jp-hero-description">Connect with leading employers and employees across Pakistan.</p>
         <form className="jp-search" onSubmit={runSearch}><input ref={queryInput} type="search" value={query} onChange={e=>setQuery(e.target.value)} placeholder="Job title, skill or company" aria-label="Job title, skill or company"/><CitySelect value={city} onChange={setCity}/><button className="jp-primary" type="submit">Search jobs</button></form>
         <p className="jp-popular">Popular: {['IT & Software','Banking','Sales','Remote'].map((value,i)=><span key={value}>{i>0&&<span aria-hidden="true"> · </span>}<button type="button" onClick={()=>value==='Remote'?(setCity('Remote'),setQuery(''),setSearch({query:'',city:'Remote'}),setBrowse(null),setSearched(true),scrollResults()):quickSearch(value==='IT & Software'?'Information Technology':value)}>{value}</button></span>)}</p>
-        <div className="jp-hero-actions"><button type="button" className="jp-primary" onClick={()=>{queryInput.current?.focus();queryInput.current?.scrollIntoView({block:'center',behavior:'smooth'})}}>Find a Job</button><button type="button" className="jp-primary" onClick={()=>setModal({kind:'contact',subject:'Post a Job — Employer inquiry'})}>Post a Job</button><button type="button" className="jp-primary" onClick={()=>{setQuery('Freelance');setSearch({query:'Freelance',city:''});setCity('');setBrowse(null);setSearched(true);scrollResults()}}>Freelancers</button><button type="button" className="jp-app-button" onClick={installApp} aria-disabled={!mobile} title={mobile?'Install HRwala on your phone':'Available on mobile'}>Mobile App</button></div>
+        <div className="jp-hero-actions"><button type="button" className="jp-primary" onClick={()=>{queryInput.current?.focus();queryInput.current?.scrollIntoView({block:'center',behavior:'smooth'})}}>Find a Job</button><button type="button" className="jp-primary" onClick={()=>setModal({kind:'contact',subject:'Post a Job — Employer inquiry'})}>Post a Job</button><button type="button" className="jp-primary" onClick={()=>{setQuery('Freelance');setSearch({query:'Freelance',city:''});setCity('');setBrowse(null);setSearched(true);scrollResults()}}>Freelancers</button><button
+  type="button"
+  className="jp-app-button"
+  onClick={installApp}
+  title={mobile ? 'Install HRwala on your phone' : 'Install HRwala on your computer'}
+>
+  {mobile ? 'Mobile App' : 'Desktop App'}
+</button></div>
       </div><div className="jp-hero-portrait"><img src={asset('Businesswoman with laptop on transparent background.png')} alt="Career advisor with a laptop" width="559" height="540" fetchPriority="high"/></div></section>
       <section className="jp-browse" aria-labelledby="jp-browse-title">
   <h2 id="jp-browse-title"><span>Browse</span> Jobs</h2>

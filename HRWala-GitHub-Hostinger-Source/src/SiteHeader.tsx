@@ -1,4 +1,30 @@
+import { useEffect, useId, useRef, useState } from 'react';
 export default function SiteHeader() {
+  const [menuOpen, setMenuOpen] = useState(false);
+const menuRef = useRef<HTMLDivElement>(null);
+const menuId = useId();
+
+useEffect(() => {
+  if (!menuOpen) return;
+
+  const closeOutside = (event: PointerEvent) => {
+    if (event.target instanceof Node && !menuRef.current?.contains(event.target)) {
+      setMenuOpen(false);
+    }
+  };
+
+  const closeOnEscape = (event: KeyboardEvent) => {
+    if (event.key === 'Escape') setMenuOpen(false);
+  };
+
+  document.addEventListener('pointerdown', closeOutside);
+  document.addEventListener('keydown', closeOnEscape);
+  return () => {
+    document.removeEventListener('pointerdown', closeOutside);
+    document.removeEventListener('keydown', closeOnEscape);
+  };
+}, [menuOpen]);
+
   return (
     <>
       <div
@@ -62,6 +88,29 @@ export default function SiteHeader() {
           src="/assets/5bdd7.png"
         />
       </div>
+
+      <div className="site-mobile-navigation" ref={menuRef}>
+  <button
+    type="button"
+    className="site-mobile-menu-button"
+    aria-label="Navigation menu"
+    aria-expanded={menuOpen}
+    aria-controls={menuId}
+    onClick={() => setMenuOpen(open => !open)}
+  >
+    <span />
+    <span />
+    <span />
+  </button>
+
+  {menuOpen && (
+    <nav id={menuId} className="site-mobile-menu" aria-label="Main navigation">
+      <a href="/" onClick={() => setMenuOpen(false)}>Discover</a>
+      <a href="/job-portal" onClick={() => setMenuOpen(false)}>Job Portal</a>
+      <a href="/login" onClick={() => setMenuOpen(false)}>My Portal</a>
+    </nav>
+  )}
+</div>
     </>
   );
 }
