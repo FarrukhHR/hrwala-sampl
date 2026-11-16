@@ -10,11 +10,11 @@ import SiteHeader from '../SiteHeader';
 const base='/hrwala-job-portal/assets/';
 const asset=(name:string)=>base+name;
 const featuredEmployees = [
-  ["Farrukh Sohail", "Chief People Officer", "cd743.png", "HR scholar and SHRM-SCP certified C-level professional with 20 years of corporate experience spanning hospitality, real estate, information technology, and textiles."],
-  ["Qurat-ul-Ain", "Customer Support", "34e75.png", "Director of Business Development with eight years of experience growing B2B business and working with client portals."],
-  ["Muhammad Asim", "International Tech Recruiter", "40251.png", "Technology specialist focused on the U.S. and Canadian markets, with an understanding of how technology can support business needs and day-to-day operations."],
-  ["Yumna Khan", "HRwala Brand Ambassador", "f8ce2.png", "Renowned anchor and public speaker, serving as HRwala’s Brand Ambassador for the Karachi Region."],
-  ["Dr. Timothius Paul", "Study Abroad Ambassador", "9cc71.png", "Serving with a non-profit organization dedicated to developing and empowering leaders in under-resourced communities."],
+  ["Amaan Tariq", "Amaan.mp4", "Creative Designer Professional with 6+ years of experience managing international projects, creative teams, client relationships, technical pro."],
+  ["Ayesha Tariq", "Ayesha Tariq.mp4", "HR professional with experience in recruitment, onboarding, HRIS, employee records, administration and people management across retail, hospitality, events and technology sec."],
+  ["Chef Zaheer", "Chef Zaheer.mp4", "Executive Chef with 24+ years leading luxury hotel, resort, and Michelin-starred culinary operations worldwide, driving revenue growth, cost control, and world-class guest ex."],
+  ["Fatma Tariq", "Fatma Tariq.mp4", "Fashion marketing and merchandising graduate with social content experience at LAAM, blending trend insight, data skills, and a self-taught artist’s creative eye.."],
+  ["Imaan Rao", "Imaan Rao.mp4", "Investment and real estate professional with UAE experience, specializing in strategic advisory, property consultancy, media marketing, client relations, and bilingual communication."],
   ["Urooj Najam", "Study Abroad Ambassador", "2f0f8.png", "Study Abroad Ambassador who has guided 387 travelers on their journeys abroad."],
   ["Rana Azeem", "Culinary Professional | Brand Ambassador", "e9d46.png", "Cluster Executive Chef, Culinary Professional, and Brand Ambassador overseeing culinary operations across the Central Region."],
   ["Munir Ahmad", "Seasoned Financial Controller", "5fdb1.png", "Seasoned Financial Controller with over 20 years of experience in manufacturing finance, financial management, cost control, and compliance."],
