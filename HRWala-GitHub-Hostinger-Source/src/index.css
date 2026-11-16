@@ -1857,3 +1857,69 @@ input, textarea, [contenteditable="true"], [contenteditable=""] {
   -webkit-user-select: text;
   user-select: text;
 }
+
+.video-popup-preview {
+  overflow: hidden;
+  background: #aeb3ba;
+}
+
+.video-popup-preview > video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-popup-trigger {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.video-popup-play {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border-radius: 50%;
+  background: #0144ab;
+  color: #fff;
+  box-shadow: 0 2px 6px #0005;
+  font-size: 13px;
+}
+
+.video-popup-error {
+  position: absolute;
+  inset: auto 6px 6px;
+  padding: 4px;
+  background: #fff;
+  color: #a00;
+  font-size: 11px;
+  pointer-events: none;
+}
+
+.jp-employee-video-preview {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 182.624 / 137.41;
+  border-radius: 16.94px;
+}
+
+@media (max-width: 767px) {
+  .jp-employee-video-preview {
+    border-radius: 9px;
+  }
+
+  .video-popup-play {
+    width: 28px;
+    height: 28px;
+  }
+}

@@ -7,6 +7,7 @@ import { pakistanCities } from './pakistanCities';
 import { useInstallApp } from './pwa';
 import './job-portal.css';
 import SiteHeader from '../SiteHeader';
+import VideoPopup from "../VideoPopup";
 const base='/hrwala-job-portal/assets/';
 const asset=(name:string)=>base+name;
 const featuredEmployees = [
@@ -15,7 +16,7 @@ const featuredEmployees = [
   ["Chef Zaheer", "Chef Zaheer.mp4", "Executive Chef with 24+ years leading luxury hotel, resort, and Michelin-starred culinary operations worldwide, driving revenue growth, cost control, and world-class guest experience."],
   ["Fatma Tariq", "Fatma Tariq.mp4", "Fashion marketing and merchandising graduate with social content experience at LAAM, blending trend insight, data skills, and a self-taught artist’s creative eye."],
   ["Imaan Rao", "Imaan Rao.mp4", "Investment and real estate professional with UAE experience, specializing in strategic advisory, property consultancy, media marketing, client relations, and bilingual communication, seeking new opportunities."],
-  ["Urooj Najam", "Study Abroad Ambassador", "2f0f8.png", "Study Abroad Ambassador who has guided 387 travelers on their journeys abroad."],
+  ["Musician Zahid Shah", "Musician Zahid Shah.mp4", "Musician, Poianist, Vocalist, Hotel Lobbies, Music Nights, Events."],
   ["Rana Azeem", "Culinary Professional | Brand Ambassador", "e9d46.png", "Cluster Executive Chef, Culinary Professional, and Brand Ambassador overseeing culinary operations across the Central Region."],
   ["Munir Ahmad", "Seasoned Financial Controller", "5fdb1.png", "Seasoned Financial Controller with over 20 years of experience in manufacturing finance, financial management, cost control, and compliance."],
   ["Mian Asif", "Corporate Lawyer", "6db67.png", "Legal professional with 25 years of experience in criminal, civil, and corporate law."],
@@ -451,31 +452,51 @@ useLayoutEffect(() => {
       <div className="jp-employee-track">
         {[0, 1].map(copy => (
           <div className="jp-employee-set" key={copy} aria-hidden={copy === 1}>
-            {featuredEmployees.slice(row * 6, row * 6 + 6).map(([name, role, image, description]) => (
-              <article className="jp-employee-card" key={name}>
-                {name === "Hussain Raza" && (
-                  <a
-                    className="jp-employee-profile"
-                    href="https://www.linkedin.com/in/hussain-raza-508611336"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    tabIndex={copy === 1 ? -1 : undefined}
-                    aria-label="Hussain Raza ki LinkedIn profile"
-                  />
-                )}
-                <div className="jp-employee-photo-wrap">
-                <img src={`/assets/${image}`} alt="" loading="lazy" />
-                <img
-                  className="jp-featured-badge"
-                  src={asset('Yellow Featured badge with thicker white ring.png')}
-                  alt=""
-                />
-              </div>
-                <h3>{name}</h3>
-                <p className="jp-employee-role">{role}</p>
-                <p className="jp-employee-description">{description}</p>
-              </article>
-            ))}
+{featuredEmployees.slice(row * 6, row * 6 + 6).map(employee => {
+  const [name, roleOrVideo, imageOrDescription, oldDescription] = employee;
+  const videoFile =
+    typeof roleOrVideo === "string" && roleOrVideo.toLowerCase().endsWith(".mp4")
+      ? roleOrVideo
+      : undefined;
+  const role = videoFile ? "" : roleOrVideo;
+  const description = videoFile ? imageOrDescription : oldDescription;
+
+  return (
+    <article className="jp-employee-card" key={name}>
+      {name === "Hussain Raza" && (
+        <a
+          className="jp-employee-profile"
+          href="https://www.linkedin.com/in/hussain-raza-508611336"
+          target="_blank"
+          rel="noopener noreferrer"
+          tabIndex={copy === 1 ? -1 : undefined}
+          aria-label="Hussain Raza ki LinkedIn profile"
+        />
+      )}
+
+      <div className="jp-employee-photo-wrap">
+        {videoFile ? (
+          <VideoPopup
+            src={`/assets/${encodeURIComponent(videoFile)}`}
+            title={name ?? "Featured employee"}
+            previewClassName="jp-employee-video-preview"
+          />
+        ) : (
+          <img src={`/assets/${imageOrDescription}`} alt="" loading="lazy" />
+        )}
+        <img
+          className="jp-featured-badge"
+          src={asset("Yellow Featured badge with thicker white ring.png")}
+          alt=""
+        />
+      </div>
+
+      <h3>{name}</h3>
+      {role && <p className="jp-employee-role">{role}</p>}
+      <p className="jp-employee-description">{description}</p>
+    </article>
+  );
+})}
           </div>
         ))}
       </div>
