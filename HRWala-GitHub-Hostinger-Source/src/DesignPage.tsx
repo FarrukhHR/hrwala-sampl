@@ -624,6 +624,7 @@ function VideoProject5() {
                 autoPlay
                 loop
                 controls
+                controlsList="nodownload"
                 playsInline
                 preload="auto"
                 tabIndex={0}

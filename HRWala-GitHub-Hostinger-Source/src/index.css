@@ -1847,3 +1847,13 @@
   #home.design-page [data-node-id="296:2"] { height: 228.54px !important; }
   #home.design-page [data-node-id="299:19"] { top: 7203.18px !important; }
 }
+/* no download */
+body {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+input, textarea, [contenteditable="true"], [contenteditable=""] {
+  -webkit-user-select: text;
+  user-select: text;
+}
