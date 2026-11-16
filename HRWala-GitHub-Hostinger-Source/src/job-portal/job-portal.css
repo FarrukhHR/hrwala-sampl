@@ -1193,3 +1193,15 @@
 @media (min-width: 768px) and (prefers-reduced-motion: reduce) {
   .jp-employee-track { width: 100%; }
 }
+
+.jp-employee-track {
+  animation-duration: 24s;
+}
+
+@media (min-width: 768px) {
+  .jp-employee-track { width: 240%; }
+}
+
+@media (min-width: 768px) and (prefers-reduced-motion: reduce) {
+  .jp-employee-track { width: 120%; }
+}
