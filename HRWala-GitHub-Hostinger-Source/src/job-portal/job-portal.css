@@ -1439,3 +1439,48 @@
     white-space: nowrap;
   }
 }
+
+@media (max-width: 767px) {
+  .jp-hero h1 {
+    font-size: clamp(24px, 6.8vw, 40px);
+    letter-spacing: -0.7px;
+  }
+
+  .jp-hero h1 > span {
+    white-space: nowrap;
+  }
+
+  .jp-search {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr) 78px;
+    gap: 4px;
+    padding: 6px;
+  }
+
+  .jp-search > input {
+    min-height: 42px;
+    padding: 6px;
+    font-size: 11px;
+  }
+
+  .jp-city {
+    min-width: 0;
+    border-top: 0;
+    border-left: 1px solid #e3eaf4;
+    padding: 0 0 0 5px;
+  }
+
+  .jp-page .jp-city-trigger {
+    min-height: 42px;
+    gap: 3px;
+    padding: 4px;
+    font-size: 11px;
+  }
+
+  .jp-search > .jp-primary {
+    min-height: 42px;
+    margin-top: 0;
+    padding: 6px 4px;
+    font-size: 10px;
+    white-space: nowrap;
+  }
+}
