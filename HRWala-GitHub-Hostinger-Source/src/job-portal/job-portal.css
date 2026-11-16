@@ -67,7 +67,7 @@
 .jp-browse-panel{background:var(--jp-pale);border-radius:17px;padding:17px 27px 22px;min-width:0;height:374px;display:flex;flex-direction:column}
 .jp-browse-panel h3{font-size:18px;font-weight:700;letter-spacing:-.54px;margin-bottom:16px}
 .jp-browse-options{display:grid;grid-auto-flow:column;grid-template-rows:repeat(7,1fr);grid-template-columns:1.25fr 1fr .85fr;gap:18px 14px;overflow-y:auto;min-height:0;scrollbar-width:thin;scrollbar-color:#7da8e6 transparent;padding-right:5px;padding-bottom:5px}
-.jp-browse-options:has(>button:nth-child(22)){display:grid;grid-auto-flow:row;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:none;gap:12px}
+.jp-browse-options:has(>button:nth-child(22)){display:grid;grid-auto-flow:row;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:none;gap:18px 14px}
 .jp-browse-options button{text-align:left;color:#38465a;font-size:14.5px;line-height:1.45;overflow-wrap:anywhere;min-height:25px}
 .jp-browse-options button:hover{text-decoration:underline;text-underline-offset:4px;color:var(--jp-blue)}
 .jp-employers{background:var(--jp-pale);border-radius:20px;padding:10px 28px 30px;min-width:0}
