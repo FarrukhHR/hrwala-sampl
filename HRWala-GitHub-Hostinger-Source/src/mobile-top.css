@@ -2155,7 +2155,7 @@
   }
 }
 @media (max-width: 767px) {
-  #home.design-page { grid-template-rows: 15090px repeat(6, max-content) 1030px; }
-  #home.design-page [data-node-id="296:2"] { height: 970px !important; }
-  #home.design-page [data-node-id="299:19"] { top: 904px !important; }
+  #home.design-page { grid-template-rows: 15090px repeat(6, max-content) 952px; }
+  #home.design-page [data-node-id="296:2"] { height: 892px !important; }
+  #home.design-page [data-node-id="299:19"] { top: 865px !important; }
 }

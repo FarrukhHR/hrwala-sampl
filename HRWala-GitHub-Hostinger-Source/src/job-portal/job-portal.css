@@ -890,3 +890,11 @@
   .jp-footer-grid > .jp-footer-links:nth-child(6) h3 { font-size: 15px; }
   .jp-footer-grid > .jp-footer-links:nth-child(6) :is(button, a) { font-size: 12px; }
 }
+
+.jp-footer { padding-bottom: 12px; }
+.jp-copyright { padding-top: 12px; }
+
+@media (max-width: 767px) {
+  .jp-footer { padding-bottom: 16px; }
+  .jp-copyright { padding-top: 16px; }
+}
