@@ -1324,3 +1324,9 @@
     min-height: 220px;
   }
 }
+
+@media (width < 768px) {
+  .jp-employee-track {
+    animation-duration: 25s;
+  }
+}
