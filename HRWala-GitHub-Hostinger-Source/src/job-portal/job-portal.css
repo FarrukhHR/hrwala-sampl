@@ -916,8 +916,9 @@
 .jp-employee-window:nth-of-type(2) .jp-employee-track {
   animation-direction: reverse;
 }
-.jp-employee-window:hover .jp-employee-track,
-.jp-employee-window:focus-within .jp-employee-track {
+.jp-employee-track:has(.jp-employee-card:hover),
+.jp-employee-track:has(.jp-employee-card :focus-visible),
+.jp-employee-window:focus-visible .jp-employee-track {
   animation-play-state: paused;
 }
 .jp-employee-set {
@@ -1128,4 +1129,67 @@
     letter-spacing: normal;
   }
   .jp-employee-card .jp-employee-description { text-align: left; }
+}
+
+.jp-employee-window + .jp-employee-window {
+  margin-top: 32px;
+}
+
+.jp-employee-profile {
+  z-index: 3;
+}
+
+.jp-employee-photo-wrap {
+  position: relative;
+  width: min(100%, 182.624px);
+  max-width: 100%;
+  margin: 0 0 14px auto;
+}
+
+.jp-employee-card .jp-employee-photo-wrap > img:not(.jp-featured-badge) {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 182.624 / 137.41;
+  object-fit: cover;
+  border-radius: 16.94px;
+  margin: 0;
+}
+
+.jp-employee-card .jp-employee-photo-wrap > .jp-featured-badge {
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  width: 42px;
+  height: 53px;
+  object-fit: contain;
+  aspect-ratio: auto;
+  border-radius: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .jp-employee-track { width: 200%; }
+}
+
+@media (max-width: 767px) {
+  .jp-employee-photo-wrap {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .jp-employee-card .jp-employee-photo-wrap > img:not(.jp-featured-badge) {
+    border-radius: 9px;
+  }
+
+  .jp-employee-card .jp-employee-photo-wrap > .jp-featured-badge {
+    width: 26px;
+    height: 33px;
+  }
+}
+
+@media (min-width: 768px) and (prefers-reduced-motion: reduce) {
+  .jp-employee-track { width: 100%; }
 }

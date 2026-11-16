@@ -379,11 +379,6 @@ useLayoutEffect(() => {
               }}
             >
               <img
-                className="jp-featured-badge"
-                src={asset('Yellow Featured badge with thicker white ring.png')}
-                alt=""
-              />
-              <img
                 src={employer.image}
                 alt={employer.name}
                 width="97"
@@ -429,7 +424,14 @@ useLayoutEffect(() => {
                     aria-label="Hussain Raza ki LinkedIn profile"
                   />
                 )}
-                <img src={`/assets/${image}`} alt="" loading="lazy" />
+                <div className="jp-employee-photo-wrap">
+  <img src={`/assets/${image}`} alt="" loading="lazy" />
+  <img
+    className="jp-featured-badge"
+    src={asset('Yellow Featured badge with thicker white ring.png')}
+    alt=""
+  />
+</div>
                 <h3>{name}</h3>
                 <p className="jp-employee-role">{role}</p>
                 <p className="jp-employee-description">{description}</p>
