@@ -1205,3 +1205,30 @@
 @media (min-width: 768px) and (prefers-reduced-motion: reduce) {
   .jp-employee-track { width: 120%; }
 }
+
+@media (width < 768px) {
+  .jp-employee-track {
+    width: 600%;
+    animation-duration: 36s;
+  }
+}
+
+@media (width < 768px) and (prefers-reduced-motion: reduce) {
+  .jp-employee-track {
+    width: 300%;
+  }
+}
+.jp-employee-card {
+  max-width: 230px;
+}
+
+.jp-employee-photo-wrap {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (width < 768px) {
+  .jp-employee-card {
+    width: calc(100% - 20px);
+  }
+}
