@@ -1308,3 +1308,13 @@
     height: 35px;
   }
 }
+
+.jp-employee-photo-wrap {
+  width: 100%;
+}
+
+@media (width < 768px) {
+  .jp-employee-photo-wrap {
+    width: 95%;
+  }
+}
