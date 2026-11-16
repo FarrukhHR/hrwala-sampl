@@ -726,3 +726,129 @@
     padding-top: 0;
   }
 }
+
+.jp-footer-grid {
+  grid-template-columns: minmax(230px, 1.3fr) repeat(3, minmax(0, 1fr));
+  gap: 30px 24px;
+  min-height: 0;
+}
+
+.jp-footer-brand {
+  grid-row: span 2;
+  padding-right: 24px;
+}
+
+.jp-footer h3 {
+  white-space: normal;
+}
+
+.jp-footer-links button,
+.jp-footer-links a {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  color: #fff;
+  text-align: left;
+  text-decoration: none;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 8px;
+  transition: color .2s ease, transform .2s ease;
+}
+
+.jp-footer-links button:hover,
+.jp-footer-links button:focus-visible,
+.jp-footer-links a:hover,
+.jp-footer-links a:focus-visible {
+  color: var(--jp-gold);
+  text-decoration: none;
+  transform: translateX(4px);
+}
+
+.jp-footer .jp-newsletter {
+  margin-top: 24px;
+  max-width: 100%;
+}
+
+.jp-footer .jp-newsletter > h2 {
+  font-size: 21px;
+  white-space: normal;
+}
+
+.jp-footer .jp-newsletter form {
+  flex-wrap: wrap;
+}
+
+.jp-footer .jp-newsletter input {
+  flex: 1 1 140px;
+}
+
+.jp-socials {
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.jp-socials a {
+  display: inline-flex;
+  width: 27px;
+  height: 27px;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: color .2s ease, transform .2s ease;
+}
+
+.jp-footer-brand .jp-socials img,
+.jp-socials svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: filter .2s ease;
+}
+
+.jp-socials a:hover,
+.jp-socials a:focus-visible {
+  color: #f6ac04;
+  transform: translateY(-3px) scale(1.08);
+}
+
+.jp-socials a:hover img,
+.jp-socials a:focus-visible img {
+  filter: brightness(0) saturate(100%) invert(72%) sepia(96%)
+    saturate(2653%) hue-rotate(2deg) brightness(101%) contrast(97%);
+}
+
+@media (max-width: 900px) {
+  .jp-footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .jp-footer-brand {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    border-right: 0;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .jp-footer-grid {
+    gap: 24px 16px;
+  }
+
+  .jp-footer h3 {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jp-footer-links button,
+  .jp-footer-links a,
+  .jp-socials a,
+  .jp-socials img {
+    transition: none;
+  }
+}

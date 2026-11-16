@@ -9,7 +9,11 @@ import './job-portal.css';
 import SiteHeader from '../SiteHeader';
 const base='/hrwala-job-portal/assets/';
 const asset=(name:string)=>base+name;
-const areaCities=['Lahore','Karachi','Islamabad','Rawalpindi','Faisalabad','Multan','Gujranwala','Peshawar','Quetta','Hyderabad'];
+const areaCities = [
+  'Lahore', 'Karachi', 'Islamabad', 'Rawalpindi', 'Faisalabad',
+  'Multan', 'Peshawar', 'Quetta', 'Hyderabad', 'Hunza',
+  'Gilgit', 'Skardu', 'Muzaffarabad', 'Sukkur',
+];
 const sectors=['Business Development','Information Technology','Manufacturing','Recruitment','Services','Education','Banking','Real Estate','Healthcare','Insurance','N.G.O.','Retail','Accounting','Travel','Call Center','Construction','BPO','Consultants','Electronics'];
 const employerFiles = [3, 4, 5, 6, 7, 8, 9, 10, 11];
 const employerNames = [
@@ -357,11 +361,151 @@ useLayoutEffect(() => {
         <div className="jp-job-panels">{[{title:'Top',jobs:top},{title:'Featured',jobs:featured}].map(group=><section className="jp-job-panel" key={group.title} aria-label={`${group.title} jobs`}><h2><span>{group.title}</span> Jobs</h2><div className="jp-job-grid">{group.jobs.map(job=><JobCard key={job.id} job={job} onOpen={j=>setModal({kind:'job',job:j})}/>)}</div>{!group.jobs.length&&filtered.length>0&&<p className="jp-panel-empty">No {group.title.toLowerCase()} jobs match these filters.</p>}<button type="button" className="jp-view-all" onClick={showAll}>View all →</button></section>)}</div>
       </section>
     </main>
-    <footer className="jp-footer"><div className="jp-footer-grid"><div className="jp-footer-brand"><a href="/" aria-label="HRwala Discover"><img src={asset('imgHrWalaFullWhiteGold2.png')} alt="HRwala.net" width="153" height="44" loading="lazy"/></a><p>HRWala.net brings together talent, opportunities, and innovative HR solutions on one platform. We empower professionals to advance their careers and support organizations in building stronger, more capable teams.</p></div>
-      <div className="jp-footer-links"><h3>Jobs by Area</h3>{areaCities.map(c=><button type="button" key={c} onClick={()=>{setCity(c);setQuery('');setSearch({query:'',city:c});setBrowse(null);setSearched(true);scrollResults()}}>Jobs in {c}</button>)}</div>
-      <div className="jp-footer-links"><h3>Industry Jobs</h3>{sectors.slice(0,14).map(s=><button type="button" key={s} onClick={()=>quickSearch(s)}>{s==='Information Technology'?'IT':s} Jobs</button>)}</div>
-      <div className="jp-newsletter"><h2>Subscribe to our Newsletter</h2><form onSubmit={newsletter}><input type="email" name="email" aria-label="Email for newsletter" placeholder="Enter your email" autoComplete="email" value={email} onChange={e=>setEmail(e.target.value)} maxLength={254} required/><button disabled={newsletterBusy}>{newsletterBusy?'Sending…':'Subscribe'}</button></form><p className="jp-newsletter-status" role="status">{newsletterStatus}</p><div className="jp-socials">{[['imgVector.svg','LinkedIn'],['imgVector4.svg','Facebook'],['imgVector1.svg','Instagram'],['imgVector2.svg','YouTube']].map(([file,name])=><button type="button" key={name} aria-label={`${name} — contact HRwala`} onClick={()=>setModal({kind:'contact',subject:`${name} — Social media inquiry`})}><img src={asset(file)} alt={name} width={name==='YouTube'?36:27} height="27" loading="lazy"/></button>)}</div></div>
-    </div><p className="jp-copyright">© {new Date().getFullYear()} HRWala.net. All rights reserved.</p></footer>
+    <footer className="jp-footer">
+  <div className="jp-footer-grid">
+    <div className="jp-footer-brand">
+      <a href="/" aria-label="HRwala Discover">
+        <img
+          src={asset('imgHrWalaFullWhiteGold2.png')}
+          alt="HRwala.net"
+          width="153"
+          height="44"
+          loading="lazy"
+        />
+      </a>
+
+      <p>
+        HRWala.net brings together talent, opportunities, and innovative HR
+        solutions on one platform. We empower professionals to advance their
+        careers and support organizations in building stronger, more capable teams.
+      </p>
+
+      <div className="jp-newsletter">
+        <h2>Subscribe to our Newsletter</h2>
+        <form onSubmit={newsletter}>
+          <input
+            type="email"
+            name="email"
+            aria-label="Email for newsletter"
+            placeholder="Enter your email"
+            autoComplete="email"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+            maxLength={254}
+            required
+          />
+          <button disabled={newsletterBusy}>
+            {newsletterBusy ? 'Sending…' : 'Subscribe'}
+          </button>
+        </form>
+        <p className="jp-newsletter-status" role="status">{newsletterStatus}</p>
+      </div>
+
+      <nav className="jp-socials" aria-label="Social media">
+        {[
+          ['imgVector.svg', 'LinkedIn', 'https://www.linkedin.com/'],
+          ['imgVector4.svg', 'Facebook', 'https://www.facebook.com/'],
+          ['imgVector1.svg', 'Instagram', 'https://www.instagram.com/'],
+          ['imgVector2.svg', 'YouTube', 'https://www.youtube.com/'],
+        ].map(([file, name, url]) => (
+          <a key={name} href={url} target="_blank" rel="noopener noreferrer" aria-label={name}>
+            <img src={asset(file)} alt="" loading="lazy" />
+          </a>
+        ))}
+
+        <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M16.5 2c.2 2.4 1.6 3.9 4 4.1v3.2a8.3 8.3 0 0 1-4-1.2v6.8a6 6 0 1 1-5.2-5.9v3.3a2.8 2.8 0 1 0 2 2.7V2h3.2Z" />
+          </svg>
+        </a>
+        <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.6 5.5 22H2.4l7.2-8.3L1.8 2h6.5l4.4 6.7L18.9 2Zm-1.1 18h1.7L7.4 3.9H5.6L17.8 20Z" />
+          </svg>
+        </a>
+      </nav>
+    </div>
+
+    <div className="jp-footer-links">
+      <h3>Jobs by Functional Area</h3>
+      {[
+        ['Sales & Business Development', 'Sales'],
+        ['Administration', 'Administration'],
+        ['Teachers/Education, Training & Development', 'Education'],
+        ['Accounts, Finance & Financial Services', 'Finance'],
+        ['Human Resources', 'Human Resources'],
+        ['Project Management', 'Project Management'],
+        ['Engineering', 'Engineering'],
+        ['Health & Medicine', 'Health'],
+        ['Marketing', 'Marketing'],
+        ['Monitoring & Evaluation (M&E)', 'Monitoring'],
+        ['Retail', 'Retail'],
+        ['Operations', 'Operations'],
+      ].map(([label, searchTerm]) => (
+        <button type="button" key={label} onClick={() => quickSearch(searchTerm)}>
+          {label}
+        </button>
+      ))}
+    </div>
+
+    <div className="jp-footer-links">
+      <h3>Jobs by City</h3>
+      {areaCities.map(c => (
+        <button
+          type="button"
+          key={c}
+          onClick={() => {
+            setCity(c);
+            setQuery('');
+            setSearch({ query: '', city: c });
+            setBrowse(null);
+            setSearched(true);
+            scrollResults();
+          }}
+        >
+          Jobs in {c}
+        </button>
+      ))}
+    </div>
+
+    <div className="jp-footer-links">
+      <h3>Industry Jobs</h3>
+      {sectors.slice(0, 14).map(s => (
+        <button type="button" key={s} onClick={() => quickSearch(s)}>
+          {s === 'Information Technology' ? 'IT' : s} Jobs
+        </button>
+      ))}
+    </div>
+
+    <div className="jp-footer-links">
+      <h3>Explore</h3>
+      <a href="/">Discover</a>
+      <a href="/job-portal">Job Portal</a>
+      <a href="/#software">HRWala Software</a>
+      <a href="https://hrwala.net/certifications">Certifications</a>
+    </div>
+
+    <div className="jp-footer-links">
+      <h3>Contact</h3>
+      <a href="tel:+923008523878">+92 300 8523878</a>
+      <a href="tel:+923055243737">+92 305 5243737</a>
+      <a href="mailto:hello@hrwala.net">hello@hrwala.net</a>
+    </div>
+
+    <div className="jp-footer-links">
+      <h3>International Jobs</h3>
+      {['Saudi Arabia', 'Bahrain', 'Qatar', 'UAE', 'Malaysia'].map(country => (
+        <a key={country} href="#" onClick={e => e.preventDefault()}>
+          Jobs in {country}
+        </a>
+      ))}
+    </div>
+  </div>
+
+  <p className="jp-copyright">
+    © {new Date().getFullYear()} HRWala.net. All rights reserved.
+  </p>
+</footer>
     {modal&&<Modal title={modal.kind==='job'?modal.job.title:modal.kind==='contact'?modal.subject:modal.title} onClose={()=>setModal(null)}>{modal.kind==='job'?<><p className="jp-modal-company">{modal.job.company}</p><p>{modal.job.remote?'Remote':modal.job.city} · {modal.job.type} · {modal.job.experience}</p><p className="jp-job-description">{modal.job.description||`Explore this ${modal.job.title} opportunity with ${modal.job.company}. Contact HRwala for further information about this role.`}</p>{!live&&<p className="jp-demo-note">Example listing from the page design. Vacancy availability has not been verified.</p>}{modal.job.apply_url&&/^https:\/\//i.test(modal.job.apply_url)?<a className="jp-primary jp-apply-link" href={modal.job.apply_url} target="_blank" rel="noopener noreferrer">Apply at source ↗</a>:<button type="button" className="jp-primary" onClick={()=>setModal({kind:'contact',subject:`Job inquiry: ${modal.job.title} — ${modal.job.company}`})}>Enquire about this job</button>}</>:modal.kind==='contact'?<InquiryForm subject={modal.subject}/>:<p>{modal.message}</p>}</Modal>}
   </div>;
 }

@@ -3079,6 +3079,16 @@ useEffect(() => {
         <a href="https://www.youtube.com/" target="_blank" rel="noreferrer" aria-label="YouTube">
           <img src={imgVector2} alt="" />
         </a>
+        <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="currentColor" d="M16.5 2c.2 2.4 1.6 3.9 4 4.1v3.2a8.3 8.3 0 0 1-4-1.2v6.8a6 6 0 1 1-5.2-5.9v3.3a2.8 2.8 0 1 0 2 2.7V2h3.2Z" />
+        </svg>
+      </a>
+      <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="currentColor" d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.6 5.5 22H2.4l7.2-8.3L1.8 2h6.5l4.4 6.7L18.9 2Zm-1.1 18h1.7L7.4 3.9H5.6L17.8 20Z" />
+        </svg>
+      </a>
       </nav>
       <div className="absolute contents left-[27.06px] top-[4970.06px]" data-node-id="531:1062">
         <div
