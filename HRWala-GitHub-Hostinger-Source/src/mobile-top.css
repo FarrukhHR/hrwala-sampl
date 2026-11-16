@@ -2043,3 +2043,54 @@
     }
   }
 }
+
+.discover-header-wrapper {
+  display: contents;
+}
+
+@media (max-width: 767px) {
+  /* Chhote navigation words */
+  .site-mobile-menu a {
+    font-size: 38px;
+  }
+
+  /* Header ki height aur alignment */
+  .design-page [data-node-id="3:7"] {
+    height: 220px;
+  }
+
+  .design-page .design-header-logo {
+    top: 59px;
+  }
+
+  .design-page [data-node-id="474:14188"] {
+    top: 50px;
+  }
+
+  .design-page .site-mobile-navigation {
+    top: 35px;
+  }
+
+  /* Discover content header se neeche */
+  #home.design-page {
+    top: 70px !important;
+  }
+
+  .discover-header-wrapper {
+    display: block;
+    position: absolute;
+    top: -70px;
+    left: 0;
+    width: 1440px;
+    z-index: 50;
+  }
+
+  .design-viewport {
+    min-height: 1024.8611vw;
+  }
+
+  /* Job Portal content header se neeche */
+  .jp-page .design-page.jp-shared-header {
+    height: 220px !important;
+  }
+}
