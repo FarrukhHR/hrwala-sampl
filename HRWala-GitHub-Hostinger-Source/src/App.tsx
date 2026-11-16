@@ -50,7 +50,15 @@ export default function App() {
     });
   }, [mobile]);
 
-  
+  useEffect(() => {
+  if (window.location.hash !== "#certifications") return;
+
+  const frame = requestAnimationFrame(() => {
+    document.getElementById("certifications")?.scrollIntoView({ block: "start" });
+  });
+
+  return () => cancelAnimationFrame(frame);
+}, []);
 
   return (
     <main className="design-viewport" style={{ height: (7330 + (mobile ? MOBILE_EXTRA : 0)) * scale }} aria-label="HRwala landing page">

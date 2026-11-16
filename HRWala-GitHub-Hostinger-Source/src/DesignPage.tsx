@@ -2304,7 +2304,7 @@ useEffect(() => {
         <a href="#software" className="absolute font-['Poppins:Medium'] left-[526.76px] text-[11.294px] text-white top-[7228.82px] tracking-[-0.2259px] design-footer-link" data-node-id="299:24">
           HRWala Software
         </a>
-        <a href="https://hrwala.net/certifications" className="absolute font-['Poppins:Medium'] left-[526.76px] text-[11.294px] text-white top-[7256.12px] tracking-[-0.2259px] design-footer-link" data-node-id="299:34">
+        <a href="#certifications" className="absolute font-['Poppins:Medium'] left-[526.76px] text-[11.294px] text-white top-[7256.12px] tracking-[-0.2259px] design-footer-link" data-node-id="299:34">
           Certifications
         </a>
         <p
@@ -4684,7 +4684,7 @@ useEffect(() => {
         <p
           className="[word-break:break-word] absolute font-['Poppins:Bold'] h-[42.353px] leading-[normal] left-[77.06px] not-italic text-[#f6ac04] text-[25.412px] top-[calc(50%-1325.88px)] tracking-[-1.5247px] w-[313.412px]"
           dir="auto"
-          data-node-id="247:356"
+          data-node-id="247:356" id="certifications"
         >
           Professional Certification
         </p>

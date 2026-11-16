@@ -866,3 +866,13 @@
     align-content: start;
   }
 }
+
+@media (max-width: 767px) {
+  .jp-footer-grid > .jp-footer-links:is(:nth-child(2), :nth-child(3), :nth-child(4), :nth-child(7)) h3 {
+    font-size: 15px;
+  }
+
+  .jp-footer-grid > .jp-footer-links:is(:nth-child(2), :nth-child(3), :nth-child(4), :nth-child(7)) :is(button, a) {
+    font-size: 12px;
+  }
+}

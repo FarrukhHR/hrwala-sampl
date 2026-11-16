@@ -482,7 +482,7 @@ useLayoutEffect(() => {
       <a href="/">Discover</a>
       <a href="/job-portal">Job Portal</a>
       <a href="/#software">HRWala Software</a>
-      <a href="https://hrwala.net/certifications">Certifications</a>
+      <a href="/#certifications">Certifications</a>
     </div>
 
     <div className="jp-footer-links">
