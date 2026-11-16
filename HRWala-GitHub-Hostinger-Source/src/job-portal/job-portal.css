@@ -452,3 +452,57 @@
   }
   .jp-employer-set-second { display: none; }
 }
+
+/* Browse options hover */
+.jp-page .jp-browse-options button {
+  transition: color 250ms ease, transform 250ms ease;
+}
+
+@media (hover: hover) {
+  .jp-page .jp-browse-options button:hover {
+    color: var(--jp-blue);
+    text-decoration: none;
+    transform: translateX(4px);
+  }
+}
+
+/* Logos ko har cell ke center mein rakhein */
+.jp-employer-set {
+  width: 100%;
+  min-width: 0;
+  height: 255px;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0;
+}
+
+.jp-employer-grid button {
+  width: min(97px, calc(100% - 14px));
+}
+
+/* Dono sets zoom out / zoom in */
+@keyframes jp-employer-cycle {
+  0% { visibility: hidden; opacity: 1; transform: scale(.82); }
+  5%, 45% { visibility: visible; opacity: 1; transform: scale(1); }
+  50%, 100% { visibility: hidden; opacity: 1; transform: scale(.82); }
+}
+
+.jp-result-status:empty {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .jp-employer-set {
+    height: 215px;
+    gap: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jp-page .jp-browse-options button {
+    transition: none;
+  }
+
+  .jp-page .jp-browse-options button:hover {
+    transform: none;
+  }
+}
