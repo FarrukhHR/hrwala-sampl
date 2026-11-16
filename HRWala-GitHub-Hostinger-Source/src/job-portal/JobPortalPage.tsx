@@ -508,7 +508,7 @@ useLayoutEffect(() => {
     </div>
 
     <div className="jp-footer-links">
-      <h3>Jobs by Area</h3>
+      <h3>Role</h3>
       {[
         ['Sales & Business Development', 'Sales'],
         ['Administration', 'Administration'],
@@ -530,7 +530,7 @@ useLayoutEffect(() => {
     </div>
 
     <div className="jp-footer-links">
-      <h3>Jobs by City</h3>
+      <h3>City</h3>
       {areaCities.map(c => (
         <button
           type="button"
@@ -550,7 +550,7 @@ useLayoutEffect(() => {
     </div>
 
     <div className="jp-footer-links">
-      <h3>Industry Jobs</h3>
+      <h3>Sector</h3>
       {sectors.slice(0, 14).map(s => (
         <button type="button" key={s} onClick={() => quickSearch(s)}>
           {s === 'Information Technology' ? 'IT' : s} Jobs
