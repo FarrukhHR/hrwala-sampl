@@ -16,13 +16,13 @@ const featuredEmployees = [
   ["Chef Zaheer", "Chef Zaheer.mp4", "Executive Chef with 24+ years leading luxury hotel, resort, and Michelin-starred culinary operations worldwide, driving revenue growth, cost control, and world-class guest experience."],
   ["Fatma Tariq", "Fatma Tariq.mp4", "Fashion marketing and merchandising graduate with social content experience at LAAM, blending trend insight, data skills, and a self-taught artist’s creative eye."],
   ["Imaan Rao", "Imaan Rao.mp4", "Investment and real estate professional with UAE experience, specializing in strategic advisory, property consultancy, media marketing, client relations, and bilingual communication, seeking new opportunities."],
-  ["Musician Zahid Shah", "Musician Zahid Shah.mp4", "Musician, Poianist, Vocalist, Hotel Lobbies, Music Nights, Events."],
-  ["Rana Azeem", "Culinary Professional | Brand Ambassador", "e9d46.png", "Cluster Executive Chef, Culinary Professional, and Brand Ambassador overseeing culinary operations across the Central Region."],
-  ["Munir Ahmad", "Seasoned Financial Controller", "5fdb1.png", "Seasoned Financial Controller with over 20 years of experience in manufacturing finance, financial management, cost control, and compliance."],
-  ["Mian Asif", "Corporate Lawyer", "6db67.png", "Legal professional with 25 years of experience in criminal, civil, and corporate law."],
-  ["Qamar Butt", "Strategic Hospitality & F&B Leader", "0fef5.png", "Head of F&B with over 27 years of experience in hospitality operations, business development, and guest service. Holds an MBA and an MS in HRM."],
-  ["Arjumand Saqib", "Cyber Security Specialist", "5f647.png", "Information technology and cybersecurity specialist with a background at Stanford University in the U.S."],
-  ["Hussain Raza", "Web & Application Developer", "Young executive in silver glasses.png", "Web & Application Developer with 3 years of experience in digital solutions. Founder of Hoverizon Tech Solutions, helping businesses strengthen their digital presence."],
+  ["Musician Zahid Shah", "Amaan.mp4", "Musician, Poianist, Vocalist, Hotel Lobbies, Music Nights, Events."],
+  ["Rana Azeem", "Ayesha Tariq.mp4", "Culinary Professional | Brand Ambassador", "Cluster Executive Chef, Culinary Professional, and Brand Ambassador overseeing culinary operations across the Central Region."],
+  ["Munir Ahmad", "Chef Zaheer.mp4", "Seasoned Financial Controller", "Seasoned Financial Controller with over 20 years of experience in manufacturing finance, financial management, cost control, and compliance."],
+  ["Mian Asif", "Fatma Tariq.mp4", "Corporate Lawyer", "Legal professional with 25 years of experience in criminal, civil, and corporate law."],
+  ["Qamar Butt", "Imaan Rao.mp4", "Strategic Hospitality & F&B Leader", "Head of F&B with over 27 years of experience in hospitality operations, business development, and guest service. Holds an MBA and an MS in HRM."],
+  ["Arjumand Saqib", "Amaan.mp4", "Cyber Security Specialist", "Information technology and cybersecurity specialist with a background at Stanford University in the U.S."],
+  ["Hussain Raza", "Ayesha Tariq.mp4", "Web & Application Developer", "Web & Application Developer with 3 years of experience in digital solutions. Founder of Hoverizon Tech Solutions, helping businesses strengthen their digital presence."],
 ];
 const areaCities = [
   'Lahore', 'Karachi', 'Islamabad', 'Rawalpindi', 'Faisalabad',
@@ -458,8 +458,12 @@ useLayoutEffect(() => {
     typeof roleOrVideo === "string" && roleOrVideo.toLowerCase().endsWith(".mp4")
       ? roleOrVideo
       : undefined;
-  const role = videoFile ? "" : roleOrVideo;
-  const description = videoFile ? imageOrDescription : oldDescription;
+  const role = videoFile
+  ? (oldDescription !== undefined ? imageOrDescription : "")
+  : roleOrVideo;
+const description = videoFile
+  ? (oldDescription ?? imageOrDescription)
+  : oldDescription;
 
   return (
     <article className="jp-employee-card" key={name}>
