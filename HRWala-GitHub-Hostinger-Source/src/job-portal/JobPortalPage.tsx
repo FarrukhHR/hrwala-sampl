@@ -204,7 +204,7 @@ useLayoutEffect(() => {
     key={heroIndex}
     className={`jp-slide-text${heroLeaving ? ' is-leaving' : ''}`}
   >
-    {heroIndex % 2 === 0 ? 'MAN' : 'JOB'}
+    {heroIndex % 2 === 0 ? 'JOB' : 'MAN'}
   </span>
 </span>{' '}
   Changes Everything.
