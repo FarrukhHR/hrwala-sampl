@@ -810,12 +810,12 @@
 }
 
 .hr-video-play {
-  padding: 10px 20px;
+  padding: 8px 14px;
   border-radius: 999px;
   background: #0144ab;
   color: white;
   font-family: inherit;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
   line-height: 1.4;
   position: absolute;
