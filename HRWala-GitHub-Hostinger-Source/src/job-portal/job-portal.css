@@ -1566,3 +1566,22 @@
     gap: 7px;
   }
 }
+
+.jp-newsletter form button {
+  font-weight: 700; /* Bold, Extra Bold nahi */
+}
+
+.jp-disclaimer {
+  min-height: 370px;
+}
+
+.jp-socials {
+  margin-top: 20px;
+  row-gap: 6px;
+}
+
+@media (max-width: 767px) {
+  .jp-disclaimer {
+    min-height: 0;
+  }
+}
