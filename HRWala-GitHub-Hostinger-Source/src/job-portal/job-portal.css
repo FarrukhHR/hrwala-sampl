@@ -1454,6 +1454,7 @@
 .jp-disclaimer li {
   font-size: 10px;
   line-height: 1.45;
+  text-align: justify;
 }
 
 .jp-disclaimer ol {
@@ -1482,6 +1483,7 @@
   color: #fff;
   font-weight: 700;
   text-align: right;
+  text-align: left;
 }
 
 @media (max-width: 767px) {
