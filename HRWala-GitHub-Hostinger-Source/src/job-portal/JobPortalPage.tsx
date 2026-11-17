@@ -1074,7 +1074,7 @@ useLayoutEffect(() => {
       <section className="jp-results" id="jp-job-results" ref={results} aria-label="Job opportunities" tabIndex={-1} data-filtered={searched}>
         <div className="jp-result-status" role="status">{loading?'Loading jobs…':loadError|| (searched?`${filtered.length} matching ${filtered.length===1?'job':'jobs'}${search.city?` · ${search.city}`:''}${browse?` · ${browse.value}`:''}`:'')}{searched&&<button type="button" onClick={reset}>Clear filters</button>}</div>
         {filtered.length===0&&!loading&&<div className="jp-empty"><h2>{loadError?'Jobs unavailable':'No matching jobs'}</h2><p>{loadError?'Please try again later.':'Try another title, city or category. The current design listings have limited locations.'}</p><button type="button" className="jp-primary" onClick={reset}>Show all jobs</button></div>}
-        <div className="jp-job-panels">{[{title:'Top',jobs:top},{title:'Featured',jobs:featured}].map(group=><section className="jp-job-panel" key={group.title} aria-label={`${group.title} jobs`}><h2><span>{group.title}</span> Jobs</h2><div className="jp-job-grid">{group.jobs.map(job=><JobCard key={job.id} job={job} onOpen={j=>setModal({kind:'job',job:j})}/>)}</div>{!group.jobs.length&&filtered.length>0&&<p className="jp-panel-empty">No {group.title.toLowerCase()} jobs match these filters.</p>}<button type="button" className="jp-view-all" onClick={showAll}>View all →</button></section>)}</div>
+        <div className="jp-job-panels">{[{title:'Top',jobs:top},{title:'Featured',jobs:featured}].map(group=><section className="jp-job-panel" key={group.title} aria-label={`${group.title} jobs`} id={group.title === 'Featured' ? 'jp-featured-jobs' : undefined}><h2><span>{group.title}</span> Jobs</h2><div className="jp-job-grid">{group.jobs.map(job=><JobCard key={job.id} job={job} onOpen={j=>setModal({kind:'job',job:j})}/>)}</div>{!group.jobs.length&&filtered.length>0&&<p className="jp-panel-empty">No {group.title.toLowerCase()} jobs match these filters.</p>}<button type="button" className="jp-view-all" onClick={showAll}>View all →</button></section>)}</div>
       </section>
 
       <section className="jp-employees" aria-labelledby="featured-employees-title">
@@ -1187,29 +1187,7 @@ const description = videoFile
         <p className="jp-newsletter-status" role="status">{newsletterStatus}</p>
       </div>
 
-      <nav className="jp-socials" aria-label="Social media">
-        {[
-          ['imgVector.svg', 'LinkedIn', 'https://www.linkedin.com/'],
-          ['imgVector4.svg', 'Facebook', 'https://www.facebook.com/'],
-          ['imgVector1.svg', 'Instagram', 'https://www.instagram.com/'],
-          ['imgVector2.svg', 'YouTube', 'https://www.youtube.com/'],
-        ].map(([file, name, url]) => (
-          <a key={name} href={url} target="_blank" rel="noopener noreferrer" aria-label={name}>
-            <img src={asset(file)} alt="" loading="lazy" />
-          </a>
-        ))}
-
-        <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path fill="currentColor" d="M16.5 2c.2 2.4 1.6 3.9 4 4.1v3.2a8.3 8.3 0 0 1-4-1.2v6.8a6 6 0 1 1-5.2-5.9v3.3a2.8 2.8 0 1 0 2 2.7V2h3.2Z" />
-          </svg>
-        </a>
-        <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path fill="currentColor" d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.6 5.5 22H2.4l7.2-8.3L1.8 2h6.5l4.4 6.7L18.9 2Zm-1.1 18h1.7L7.4 3.9H5.6L17.8 20Z" />
-          </svg>
-        </a>
-      </nav>
+      
 
       <section className="jp-disclaimer" aria-labelledby="jp-disclaimer-title">
   <h3 id="jp-disclaimer-title">Disclaimer</h3>
@@ -1295,6 +1273,7 @@ const description = videoFile
           <a href="/job-portal">Job Portal</a>
           <a href="/#software">HRWala Software</a>
           <a href="/#certifications">Certifications</a>
+          <a href="#jp-featured-jobs">Featured Jobs</a>
         </div>
       }
       {
@@ -1303,12 +1282,36 @@ const description = videoFile
           <a href="https://wa.me/923008523878">+92 300 8523878</a>
           <a href="https://wa.me/923055243737">+92 305 5243737</a>
           <a href="mailto:hello@hrwala.net">hello@hrwala.net</a>
+
+          <nav className="jp-socials" aria-label="Social media">
+        {[
+          ['imgVector.svg', 'LinkedIn', 'https://www.linkedin.com/'],
+          ['imgVector4.svg', 'Facebook', 'https://www.facebook.com/'],
+          ['imgVector1.svg', 'Instagram', 'https://www.instagram.com/'],
+          ['imgVector2.svg', 'YouTube', 'https://www.youtube.com/'],
+        ].map(([file, name, url]) => (
+          <a key={name} href={url} target="_blank" rel="noopener noreferrer" aria-label={name}>
+            <img src={asset(file)} alt="" loading="lazy" />
+          </a>
+        ))}
+
+        <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M16.5 2c.2 2.4 1.6 3.9 4 4.1v3.2a8.3 8.3 0 0 1-4-1.2v6.8a6 6 0 1 1-5.2-5.9v3.3a2.8 2.8 0 1 0 2 2.7V2h3.2Z" />
+          </svg>
+        </a>
+        <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.6 5.5 22H2.4l7.2-8.3L1.8 2h6.5l4.4 6.7L18.9 2Zm-1.1 18h1.7L7.4 3.9H5.6L17.8 20Z" />
+          </svg>
+        </a>
+      </nav>
         </div>
       }
       </div>
     <div className="jp-footer-links">
       <h3>International Jobs</h3>
-      {['Saudi Arabia', 'Bahrain', 'Qatar', 'UAE', 'Malaysia'].map(country => (
+      {['Saudi Arabia', 'Bahrain', 'Qatar', 'UAE', 'Malaysia', 'Afghanistan'].map(country => (
         <a key={country} href="#" onClick={e => e.preventDefault()}>
           Jobs in {country}
         </a>

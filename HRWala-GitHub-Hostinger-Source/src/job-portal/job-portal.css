@@ -1491,3 +1491,7 @@
     font-size: 11px;
   }
 }
+
+#jp-featured-jobs {
+  scroll-margin-top: 24px;
+}

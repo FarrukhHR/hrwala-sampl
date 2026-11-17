@@ -54,8 +54,12 @@ export default function App() {
   if (window.location.hash !== "#certifications") return;
 
   const frame = requestAnimationFrame(() => {
-    document.getElementById("certifications")?.scrollIntoView({ block: "start" });
-  });
+    document.getElementById("certifications")?.scrollIntoView({
+  block: "start",
+  behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ? "auto"
+    : "smooth",
+});
 
   return () => cancelAnimationFrame(frame);
 }, []);
