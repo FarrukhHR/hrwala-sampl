@@ -2320,7 +2320,7 @@ useEffect(() => {
           className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Poppins:Medium'] justify-center leading-[0] left-[calc(50%-12.06px)] not-italic text-[12.235px] text-center text-white top-[7313.18px] tracking-[-0.2447px] w-[258.824px]"
           data-node-id="299:19"
         >
-          <p className="leading-[19.765px]">© 2015 HRWala.net. All rights reserved.</p>
+          <p className="leading-[19.765px]">© 2015 HRwala.net. All rights reserved.</p>
         </div>
       </div>
       <div
