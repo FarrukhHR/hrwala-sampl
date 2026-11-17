@@ -1439,3 +1439,39 @@
     white-space: nowrap;
   }
 }
+
+.jp-disclaimer {
+  max-width: 430px;
+  margin-top: 18px;
+  color: #fff;
+}
+
+.jp-disclaimer h3 {
+  margin-bottom: 6px;
+}
+
+.jp-disclaimer p,
+.jp-disclaimer li {
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.jp-disclaimer ol {
+  margin: 6px 0 0;
+  padding-left: 18px;
+}
+
+.jp-disclaimer li {
+  margin-bottom: 3px;
+}
+
+@media (max-width: 767px) {
+  .jp-disclaimer {
+    max-width: none;
+  }
+
+  .jp-disclaimer p,
+  .jp-disclaimer li {
+    font-size: 11px;
+  }
+}

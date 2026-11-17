@@ -1236,6 +1236,30 @@ const description = videoFile
           </svg>
         </a>
       </nav>
+
+      <section className="jp-disclaimer" aria-labelledby="jp-disclaimer-title">
+  <h3 id="jp-disclaimer-title">Disclaimer</h3>
+  <p>
+    I understand and accept the following terms, and hrwala.net’s role as a
+    connecting platform only, by signing-in / Loging-in and checking the empty
+    box, to the following:
+  </p>
+  <ol>
+    <li>I voluntarily share my CV, photo, contact details.</li>
+    <li>
+      My 30-second video may be publicly displayed. (Provide a tick mark in the
+      empty box additionally.)
+    </li>
+    <li>Employers may view my profile and contact me.</li>
+    <li>Interviews occur on Zoom; its privacy terms apply.</li>
+    <li>Data is used only for professional job placement.</li>
+    <li>Information I provide is true and accurate.</li>
+    <li>hrwala.net does not guarantee jobs, hiring, or candidates.</li>
+    <li>I may withdraw consent and delete data anytime.</li>
+    <li>Data may be stored on servers outside Pakistan.</li>
+    <li>hrwala.net isn’t liable for third-party conduct or misuse.</li>
+  </ol>
+</section>
     </div>
 
     <div className="jp-footer-links">
