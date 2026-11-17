@@ -1460,29 +1460,31 @@
   display: grid;
   gap: 7px;
   margin: 8px 0 0;
-  padding-left: 22px;
-  list-style-type: decimal;
-  list-style-position: outside;
+  padding: 0;
+  list-style: none;
+  counter-reset: disclaimer-item;
 }
 
 .jp-disclaimer li {
+  position: relative;
   margin: 0;
-  padding-left: 3px;
+  padding-left: 22px;
   font-size: 10px;
   line-height: 1.45;
+  counter-increment: disclaimer-item;
 }
 
-.jp-disclaimer li::marker {
-  color: var(--jp-gold);
+.jp-disclaimer li::before {
+  content: counter(disclaimer-item) ".";
+  position: absolute;
+  left: 0;
+  width: 16px;
+  color: #fff;
   font-weight: 700;
+  text-align: right;
 }
 
 @media (max-width: 767px) {
-  .jp-disclaimer {
-    max-width: none;
-  }
-
-  .jp-disclaimer p,
   .jp-disclaimer li {
     font-size: 11px;
   }
