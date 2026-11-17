@@ -59,6 +59,7 @@ export default function App() {
   behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
     ? "auto"
     : "smooth",
+  });
 });
 
   return () => cancelAnimationFrame(frame);
