@@ -1318,7 +1318,7 @@ const description = videoFile
   </div>
 
   <p className="jp-copyright">
-    © {new Date().getFullYear()} HRWala.net. All rights reserved.
+    © 2015 HRWala.net. All rights reserved.
   </p>
 </footer>
     {modal&&<Modal title={modal.kind==='job'?modal.job.title:modal.kind==='contact'?modal.subject:modal.title} onClose={()=>setModal(null)}>{modal.kind==='job'?<><p className="jp-modal-company">{modal.job.company}</p><p>{modal.job.remote?'Remote':modal.job.city} · {modal.job.type} · {modal.job.experience}</p><p className="jp-job-description">{modal.job.description||`Explore this ${modal.job.title} opportunity with ${modal.job.company}. Contact HRwala for further information about this role.`}</p>{!live&&<p className="jp-demo-note">Example listing from the page design. Vacancy availability has not been verified.</p>}{modal.job.apply_url&&/^https:\/\//i.test(modal.job.apply_url)?<a className="jp-primary jp-apply-link" href={modal.job.apply_url} target="_blank" rel="noopener noreferrer">Apply at source ↗</a>:<button type="button" className="jp-primary" onClick={()=>setModal({kind:'contact',subject:`Job inquiry: ${modal.job.title} — ${modal.job.company}`})}>Enquire about this job</button>}</>:modal.kind==='contact'?<InquiryForm subject={modal.subject}/>:<p>{modal.message}</p>}</Modal>}
