@@ -1535,3 +1535,34 @@
   font-size: 11px;
   line-height: 1.5;
 }
+
+.jp-disclaimer {
+  display: flex;
+  flex-direction: column;
+  min-height: 350px;
+}
+
+.jp-disclaimer ol {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0;
+}
+
+.jp-socials {
+  row-gap: 6px;
+  column-gap: 12px;
+}
+
+@media (max-width: 767px) {
+  .jp-disclaimer {
+    min-height: 0;
+  }
+
+  .jp-disclaimer ol {
+    flex: initial;
+    justify-content: flex-start;
+    gap: 7px;
+  }
+}
