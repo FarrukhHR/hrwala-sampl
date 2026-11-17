@@ -1442,7 +1442,7 @@
 
 .jp-disclaimer {
   max-width: 430px;
-  margin-top: 18px;
+  margin-top: 22px;
   color: #fff;
 }
 
@@ -1459,7 +1459,7 @@
 .jp-disclaimer ol {
   display: grid;
   gap: 7px;
-  margin: 8px 0 0;
+  margin: 0px 0 0;
   padding: 0;
   list-style: none;
   counter-reset: disclaimer-item;
