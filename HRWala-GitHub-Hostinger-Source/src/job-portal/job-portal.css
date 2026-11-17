@@ -1457,12 +1457,24 @@
 }
 
 .jp-disclaimer ol {
-  margin: 6px 0 0;
-  padding-left: 18px;
+  display: grid;
+  gap: 7px;
+  margin: 8px 0 0;
+  padding-left: 22px;
+  list-style-type: decimal;
+  list-style-position: outside;
 }
 
 .jp-disclaimer li {
-  margin-bottom: 3px;
+  margin: 0;
+  padding-left: 3px;
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.jp-disclaimer li::marker {
+  color: var(--jp-gold);
+  font-weight: 700;
 }
 
 @media (max-width: 767px) {
