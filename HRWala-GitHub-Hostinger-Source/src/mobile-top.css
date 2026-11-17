@@ -2160,3 +2160,9 @@
   #home.design-page [data-node-id="299:19"] { top: 865px !important; }
 }
 
+.jp-socials {
+  display: grid;
+  grid-template-columns: repeat(3, 30px);
+  column-gap: 14px;
+  row-gap: 6px;
+}
