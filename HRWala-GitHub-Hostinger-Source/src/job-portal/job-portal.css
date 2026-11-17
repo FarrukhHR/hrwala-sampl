@@ -1495,3 +1495,43 @@
 #jp-featured-jobs {
   scroll-margin-top: 24px;
 }
+
+.jp-socials {
+  display: grid;
+  grid-template-columns: repeat(3, 30px);
+  gap: 12px 14px;
+  width: max-content;
+  margin-top: 18px;
+}
+
+.jp-socials > a {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+}
+
+.jp-socials img,
+.jp-socials svg {
+  width: 26px;
+  height: 26px;
+}
+
+.jp-disclaimer {
+  max-width: 480px;
+  margin-top: 24px;
+}
+
+.jp-disclaimer p {
+  font-size: 11.5px;
+  line-height: 1.5;
+}
+
+.jp-disclaimer ol {
+  gap: 9px;
+}
+
+.jp-disclaimer li {
+  font-size: 11px;
+  line-height: 1.5;
+}

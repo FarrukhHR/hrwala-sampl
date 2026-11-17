@@ -1216,24 +1216,26 @@ const description = videoFile
 
     <div className="jp-footer-links">
       <h3>Role</h3>
-      {[
-        ['Sales & Business Growth', 'Sales'],
-        ['Office & Administrative Services', 'Administration'],
-        ['Education & Professional Learning', 'Education'],
-        ['Accounting & Financial Services', 'Finance'],
-        ['People & Talent Management', 'Human Resources'],
-        ['Project Planning & Delivery', 'Project Management'],
-        ['Engineering & Technical Services', 'Engineering'],
-        ['Healthcare & Medical Services', 'Health'],
-        ['Marketing & Brand Communications', 'Marketing'],
-        ['Performance Monitoring & Evaluation', 'Monitoring'],
-        ['Retail & Store Management', 'Retail'],
-        ['Business Operations & Management', 'Operations'],
-      ].map(([label, searchTerm]) => (
-        <button type="button" key={label} onClick={() => quickSearch(searchTerm)}>
-          {label}
-        </button>
-      ))}
+            {[
+        'Accounts Executive',
+        'Admin Executive',
+        'Business Development Executive',
+        'Chef de Partie',
+        'Data Analyst',
+        'Finance Executive',
+        'Graphic Designer',
+        'HR Officer',
+        'Project Engineer',
+        'Recruitment Executive',
+        'Restaurant Manager',
+        'Sales Executive',
+        'Software Engineer',
+        'Web Developer',
+      ].map(role => (
+        <button type="button" key={role} onClick={() => quickSearch(role)}>
+          {role}
+  </button>
+))}
     </div>
 
     <div className="jp-footer-links">
@@ -1274,6 +1276,7 @@ const description = videoFile
           <a href="/#software">HRWala Software</a>
           <a href="/#certifications">Certifications</a>
           <a href="#jp-featured-jobs">Featured Jobs</a>
+          <a href="#jp-featured-employees">Featured Employees</a>
         </div>
       }
       {
